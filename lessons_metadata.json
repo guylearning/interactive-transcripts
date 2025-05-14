@@ -1,0 +1,18 @@
+[
+  {
+    "title_original": "How Might We Learn?",
+    "video_name_clean": "how_might_we_learn",
+    "youtube_id": "b8s9sPTEA4I",
+    "tags": [
+      "UX",
+      "Learning",
+      "Design Thinking"
+    ],
+    "created_timestamp_iso": "2025-05-14T21:05:37.287719+00:00",
+    "uploader": "Andy Matuschak",
+    "duration_seconds": 3329,
+    "lesson_html_filename": "how_might_we_learn_interactive_lesson.html",
+    "json_transcript_path_on_repo": "how_might_we_learn/how_might_we_learn_transcript.json",
+    "vtt_transcript_path_on_repo": "how_might_we_learn/how_might_we_learn_transcript.vtt"
+  }
+]
