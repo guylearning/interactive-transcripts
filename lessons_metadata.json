@@ -184,5 +184,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_4_servers_node_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_4_servers_node/mit_web_lab_6_962_-_day_4_servers_node_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_4_servers_node/mit_web_lab_6_962_-_day_4_servers_node_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 4: Workshop 3 (Backend)",
+    "video_name_clean": "mit_web_lab_6_962_-_day_4_workshop_3_backend",
+    "youtube_id": "NVqAIYlszL4",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T20:34:00.359630+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 6544,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_4_workshop_3_backend_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_4_workshop_3_backend/mit_web_lab_6_962_-_day_4_workshop_3_backend_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_4_workshop_3_backend/mit_web_lab_6_962_-_day_4_workshop_3_backend_transcript.vtt"
   }
 ]
