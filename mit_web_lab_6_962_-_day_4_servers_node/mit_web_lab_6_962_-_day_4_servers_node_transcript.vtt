@@ -1,0 +1,2450 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 141523c8-e8c4-4555-8574-5d5eabd10433
+Created: 2025-05-15T20:27:48.082Z
+Duration: 3082.9976
+Channels: 1
+
+00:00:00.400 --> 00:00:04.640
+Great. Hi everybody. Hope you had a wonderful
+
+00:00:04.640 --> 00:00:06.640
+night's sleep and are ready to start the
+
+00:00:06.640 --> 00:00:13.360
+day with some APIs and promises. Yeah. So
+
+00:00:14.015 --> 00:00:16.735
+we're gonna continue with the slides from yesterday
+
+00:00:17.855 --> 00:00:20.735
+and we're gonna start with making request to
+
+00:00:20.735 --> 00:00:23.215
+APIs in JavaScript. We briefly talked about this
+
+00:00:23.215 --> 00:00:24.575
+yesterday but I just wanna go over it
+
+00:00:24.575 --> 00:00:28.170
+because I think the end of lecture yesterday
+
+00:00:28.330 --> 00:00:30.330
+probably went kind of quickly because I was
+
+00:00:30.330 --> 00:00:33.130
+trying to get through as much as possible.
+
+00:00:37.930 --> 00:00:41.465
+Basically once we hop into the code in
+
+00:00:41.465 --> 00:00:44.825
+workshop three, we're going to be writing get
+
+00:00:45.225 --> 00:00:48.105
+not from get and post request not from
+
+00:00:48.985 --> 00:00:53.240
+URLs, but rather from using these get and
+
+00:00:53.240 --> 00:00:56.440
+post functions that we have written for you
+
+00:00:57.560 --> 00:01:00.600
+in JavaScript. And what that will look like
+
+00:01:00.760 --> 00:01:06.865
+is you feed in an endpoint and then
+
+00:01:06.865 --> 00:01:10.225
+a set of parameters. And for get requests,
+
+00:01:10.705 --> 00:01:13.185
+your parameters will be put into the URL
+
+00:01:13.905 --> 00:01:17.425
+for you so that it will request the
+
+00:01:17.425 --> 00:01:21.670
+endpoint using those query parameters which are put
+
+00:01:21.670 --> 00:01:27.430
+in the URL. And then for post requests,
+
+00:01:27.670 --> 00:01:29.590
+it will also do the intended thing which
+
+00:01:29.590 --> 00:01:34.205
+is put your parameters into the body of
+
+00:01:34.205 --> 00:01:38.925
+the post request. So it'll post to that
+
+00:01:38.925 --> 00:01:41.725
+endpoint using the parameters which are in the
+
+00:01:41.725 --> 00:01:46.860
+body basically. And we'll review this a little
+
+00:01:46.860 --> 00:01:48.620
+more, but basically get in post requests have
+
+00:01:48.620 --> 00:01:54.460
+these two different formatting, is why when you
+
+00:01:54.460 --> 00:01:56.700
+call these functions, actually have to worry about
+
+00:01:56.700 --> 00:01:59.375
+these two different formatting, you should know that
+
+00:01:59.375 --> 00:02:02.495
+under the hood some slightly different things are
+
+00:02:02.495 --> 00:02:12.015
+happening basically. So once you get into the
+
+00:02:12.015 --> 00:02:14.655
+code and then you try typing out something
+
+00:02:14.700 --> 00:02:20.140
+this where you get from an endpoint. Maybe
+
+00:02:20.140 --> 00:02:23.420
+generally you can hover over any variable and
+
+00:02:23.420 --> 00:02:26.300
+figure out what type it is. You'll see
+
+00:02:26.300 --> 00:02:29.020
+that this user variable that you get back
+
+00:02:29.020 --> 00:02:33.305
+from the GET request is a promise any
+
+00:02:33.305 --> 00:02:36.985
+thing. And you might wonder, what is a
+
+00:02:36.985 --> 00:02:40.825
+promise? Let's say you try to console log
+
+00:02:40.825 --> 00:02:43.740
+user, you would get this object promise thing,
+
+00:02:43.740 --> 00:02:47.500
+which doesn't actually mean anything. It turns out
+
+00:02:47.500 --> 00:02:50.860
+these get functions return a promise. And so
+
+00:02:50.860 --> 00:02:56.780
+what actually is a promise? Basically, these API
+
+00:02:56.780 --> 00:03:01.135
+requests might take a while to resolve. And
+
+00:03:01.135 --> 00:03:03.535
+so if the API request had to return
+
+00:03:03.535 --> 00:03:05.855
+the result and the client had to wait
+
+00:03:05.855 --> 00:03:09.055
+for it the entire time let's say the
+
+00:03:09.055 --> 00:03:12.120
+API request took an entire second to resolve,
+
+00:03:12.120 --> 00:03:13.560
+then the client would just be sitting there
+
+00:03:13.560 --> 00:03:15.880
+for one second, not being able to do
+
+00:03:15.880 --> 00:03:19.160
+anything, waiting for this function to complete. So
+
+00:03:19.160 --> 00:03:20.760
+the promises allow the clients to do things
+
+00:03:20.760 --> 00:03:23.080
+while the server is taking its time fulfilling
+
+00:03:23.080 --> 00:03:26.955
+the request. For example, maybe they want to
+
+00:03:26.955 --> 00:03:28.235
+render the rest of the front end and
+
+00:03:28.235 --> 00:03:30.235
+then put a loading icon there, like some
+
+00:03:30.235 --> 00:03:33.275
+circle y thing that's spinning until, oh, I
+
+00:03:33.275 --> 00:03:34.475
+got the data, now I can just put
+
+00:03:34.475 --> 00:03:37.915
+it in. Yeah, let's say Bob the builder
+
+00:03:37.915 --> 00:03:39.675
+is trying to build a house and then
+
+00:03:39.675 --> 00:03:42.000
+he's like needs more wood, he asked the
+
+00:03:42.000 --> 00:03:46.240
+lumberjack, can I get more wood? And the
+
+00:03:46.240 --> 00:03:48.320
+lumberjack comes back with some wood. He had
+
+00:03:48.320 --> 00:03:49.520
+to go chop down some trees so it
+
+00:03:49.520 --> 00:03:51.440
+took him a while. But in the meantime,
+
+00:03:51.840 --> 00:03:54.080
+Bob did not have to wait the entire
+
+00:03:54.080 --> 00:03:57.935
+time just sitting there doing nothing. The promise
+
+00:03:57.935 --> 00:04:01.535
+allows the lumberjack to be like, Okay, I'm
+
+00:04:02.015 --> 00:04:04.575
+going to work on it, rather than Bob
+
+00:04:04.575 --> 00:04:07.215
+being like, Okay, I have to wait for
+
+00:04:07.375 --> 00:04:11.760
+the lumberjack while I do nothing basically. Yeah.
+
+00:04:11.760 --> 00:04:14.560
+And we'll talk more about this on Friday.
+
+00:04:15.520 --> 00:04:17.920
+Yeah. Okay. But for now, let's see some
+
+00:04:17.920 --> 00:04:20.080
+examples of how to use promises in JavaScript.
+
+00:04:22.640 --> 00:04:26.000
+So the first way that you kind of
+
+00:04:27.215 --> 00:04:30.415
+process code with promises is you use something
+
+00:04:30.415 --> 00:04:33.215
+called dot then. And so what this does
+
+00:04:33.215 --> 00:04:36.335
+is it takes a promise or more like
+
+00:04:36.335 --> 00:04:39.215
+you use dot then on a promise and
+
+00:04:40.930 --> 00:04:44.530
+it takes a callback function, which takes whatever
+
+00:04:44.530 --> 00:04:46.210
+the result of that promise is and does
+
+00:04:46.210 --> 00:04:49.330
+something with that result. So what this will
+
+00:04:49.330 --> 00:04:53.570
+do is basically get apistories. It returns a
+
+00:04:53.570 --> 00:04:56.345
+promise, But that promise is going to eventually
+
+00:04:56.345 --> 00:05:00.585
+resolve into some story object, basically. And once
+
+00:05:01.945 --> 00:05:05.305
+that resolves into those story objects, then you
+
+00:05:05.305 --> 00:05:10.230
+can set stories to story objects. Imagine set
+
+00:05:10.230 --> 00:05:13.190
+stories is some uState thing that we have.
+
+00:05:13.190 --> 00:05:15.350
+We can now set our state to story
+
+00:05:15.350 --> 00:05:34.835
+objects, basically. Any questions here? Cool? Okay. And
+
+00:05:34.835 --> 00:05:37.795
+then the second way that we have to
+
+00:05:37.795 --> 00:05:41.150
+deal with promises is using a .catch. Sometimes
+
+00:05:41.150 --> 00:05:44.030
+the promise is not going to resolve successfully.
+
+00:05:48.750 --> 00:05:51.470
+Maybe apistories is not actually implemented in the
+
+00:05:51.470 --> 00:05:55.485
+API. Then if you tried to get apistories,
+
+00:05:55.485 --> 00:05:57.965
+you're going to get back eventually an error.
+
+00:05:58.205 --> 00:05:59.485
+First you're going to get back a promise,
+
+00:05:59.485 --> 00:06:00.845
+and then that promise is going to resolve
+
+00:06:00.845 --> 00:06:03.005
+into, hey, I wasn't able to do this
+
+00:06:03.005 --> 00:06:04.525
+because I just simply do not have the
+
+00:06:04.525 --> 00:06:07.325
+resources. Or maybe I just messed up in
+
+00:06:07.325 --> 00:06:09.840
+the meantime and I errored out. Whatever reason
+
+00:06:09.840 --> 00:06:12.160
+it is, the promise can reject. And in
+
+00:06:12.160 --> 00:06:15.920
+that case, the dot catch will basically catch
+
+00:06:15.920 --> 00:06:21.285
+what happens in that case. And then you're
+
+00:06:21.285 --> 00:06:23.205
+able to feed in a callback function, which
+
+00:06:23.205 --> 00:06:24.725
+takes in whatever error it does and does
+
+00:06:24.725 --> 00:06:27.925
+something with it. So here, if the promise
+
+00:06:27.925 --> 00:06:30.325
+rejects, then it'll print out this is so
+
+00:06:30.325 --> 00:06:31.685
+sad and then the message of the error.
+
+00:06:33.720 --> 00:06:36.920
+So you can see generally we use a
+
+00:06:36.920 --> 00:06:40.040
+.then and then potentially a .catch to catch
+
+00:06:40.040 --> 00:06:49.555
+whatever errors might occur. Yeah. I think I'll
+
+00:06:49.555 --> 00:06:58.355
+skip this example. Okay. Oh, I'm not on
+
+00:06:58.355 --> 00:07:07.190
+Zoom. Great point. Wait. Am I on Zoom?
+
+00:07:07.670 --> 00:07:43.010
+Okay. Hi, Zoom people. I'm very sorry. Yeah.
+
+00:07:43.010 --> 00:07:45.685
+So, just a quick summary of what we
+
+00:07:45.685 --> 00:07:54.005
+just talked about. So we went over the
+
+00:07:54.005 --> 00:08:00.960
+basics of making API requests in JavaScript. And
+
+00:08:00.960 --> 00:08:04.000
+then we talked about promises, which is essentially
+
+00:08:04.000 --> 00:08:08.880
+what API requests will resolve to. And you
+
+00:08:08.880 --> 00:08:12.080
+need to wrap promises around these we talked
+
+00:08:11.905 --> 00:08:13.425
+about how you need to wrap promises around
+
+00:08:13.425 --> 00:08:19.345
+these .then and .catch keywords so that you
+
+00:08:19.345 --> 00:08:22.305
+can either process what the result of the
+
+00:08:22.305 --> 00:08:24.385
+promise eventually resolves to in the case that
+
+00:08:24.385 --> 00:08:28.620
+the promise does resolve. Or you can catch
+
+00:08:28.620 --> 00:08:31.500
+and do something with whatever error the promise
+
+00:08:31.820 --> 00:08:42.860
+happens to give if the promise fails. Yeah.
+
+00:08:40.685 --> 00:08:43.165
+Hopefully the slides are if you have any
+
+00:08:43.165 --> 00:08:45.245
+questions about it, feel free to ask in
+
+00:08:45.245 --> 00:08:56.850
+the questions doc. Oh shoot, sorry I accidentally
+
+00:08:56.850 --> 00:09:00.610
+just like gave the answer. My bad. Okay.
+
+00:09:01.970 --> 00:09:06.945
+Yeah, so let's go over this example. I
+
+00:09:06.945 --> 00:09:09.105
+realize that the code on the slides is
+
+00:09:09.185 --> 00:09:10.785
+kind of hard to read because the color
+
+00:09:10.785 --> 00:09:13.265
+scheme is kind of bad. But if you
+
+00:09:13.265 --> 00:09:14.945
+need to pull up the slides on your
+
+00:09:14.945 --> 00:09:19.400
+own computer, feel free to do that. But
+
+00:09:19.400 --> 00:09:21.880
+yeah, what gets printed here? Let's say the
+
+00:09:21.880 --> 00:09:25.480
+promise below is going to reject, where we
+
+00:09:25.480 --> 00:09:29.960
+have this const promise. Then yeah, this is
+
+00:09:29.960 --> 00:09:33.165
+really hard to read, actually. But let's say
+
+00:09:33.165 --> 00:09:37.085
+we define this const promise and we know
+
+00:09:37.085 --> 00:09:40.045
+that it will reject. Maybe there's a network
+
+00:09:40.045 --> 00:09:44.860
+issue or something like that. Then hold your
+
+00:09:44.860 --> 00:09:47.980
+hands up, finger one, two, three, four, or
+
+00:09:47.980 --> 00:09:51.340
+five. If you think you're going to get
+
+00:09:51.340 --> 00:09:55.020
+the first answer printed out, then raise up
+
+00:09:55.020 --> 00:09:56.700
+one. If you think you'll get the second
+
+00:09:56.700 --> 00:09:59.735
+answer printed out, then two, three, four, five.
+
+00:10:01.175 --> 00:10:03.015
+Which one do you guys think it will
+
+00:10:03.015 --> 00:10:10.855
+be printed out? I'll give you guys a
+
+00:10:10.855 --> 00:10:33.405
+second. Okay, yeah. Do people have an answer?
+
+00:10:34.045 --> 00:10:42.860
+I see a few fours. Yeah. Okay. Yeah,
+
+00:10:42.860 --> 00:10:45.980
+so we are going to get the fourth
+
+00:10:45.980 --> 00:10:47.900
+one. We're just going to get the error
+
+00:10:47.900 --> 00:10:54.725
+because when the promise resolves, it's going to
+
+00:10:54.725 --> 00:10:56.885
+reject. So we're not going to be able
+
+00:10:56.885 --> 00:10:58.885
+to process any of the .then, which will
+
+00:10:58.885 --> 00:11:04.165
+only process if the promise succeeds. And therefore,
+
+00:11:05.045 --> 00:11:06.645
+we'll skip straight to the .catch at the
+
+00:11:06.645 --> 00:11:09.650
+end, which console logs an error, basically. Yeah.
+
+00:11:10.450 --> 00:11:17.490
+Yeah, so let's look at this example now.
+
+00:11:18.050 --> 00:11:20.690
+Let's say the promise below where we define
+
+00:11:20.690 --> 00:11:24.065
+const promise is some way of getting a
+
+00:11:24.065 --> 00:11:27.025
+promise where we know that it's going to
+
+00:11:27.025 --> 00:11:28.545
+resolve after a little while. Let's say that
+
+00:11:28.545 --> 00:11:31.425
+the promise resolves after one second or something
+
+00:11:31.425 --> 00:11:35.185
+like that. Then when we write this code,
+
+00:11:37.080 --> 00:11:40.440
+which one of these choices are we going
+
+00:11:40.440 --> 00:11:44.360
+to get? I'll give you guys, again, a
+
+00:11:44.360 --> 00:11:49.640
+little bit to think about it. So basically,
+
+00:11:49.800 --> 00:11:54.555
+the code here, promise. Then, will console log.
+
+00:11:55.355 --> 00:11:56.795
+If we get a value, then we'll console
+
+00:11:56.795 --> 00:11:59.835
+log a. And then from there, if we
+
+00:11:59.835 --> 00:12:01.435
+were able to successfully do that, then we
+
+00:12:01.435 --> 00:12:06.330
+console log b. And in the process, if
+
+00:12:06.330 --> 00:12:07.770
+we caught any error, then we will console
+
+00:12:07.770 --> 00:12:44.700
+log error, basically. Really? Is it working now?
+
+00:12:53.225 --> 00:12:56.265
+Okay. Yeah, if people to if you have
+
+00:12:56.265 --> 00:12:59.625
+some guesses, hold up one for if you
+
+00:12:59.625 --> 00:13:01.225
+think the first one's going be printed out,
+
+00:13:01.225 --> 00:13:03.920
+two for the second one, three, four, and
+
+00:13:03.920 --> 00:13:12.160
+five, and so on. I see a few
+
+00:13:12.160 --> 00:13:15.200
+different answers. I think I see two and
+
+00:13:15.200 --> 00:13:19.305
+five the most. Let's look at the code.
+
+00:13:19.705 --> 00:13:24.425
+So what is like what exactly is going
+
+00:13:24.425 --> 00:13:29.540
+to happen? We'll run f of promise And
+
+00:13:30.100 --> 00:13:31.620
+when we run f of promise, we're not
+
+00:13:31.620 --> 00:13:34.660
+going to wait for this promise to resolve
+
+00:13:34.660 --> 00:13:36.740
+necessarily. We're kind of just going to send
+
+00:13:36.740 --> 00:13:38.980
+it off and wait for and whenever the
+
+00:13:38.980 --> 00:13:40.740
+promise resolves, then the rest of the body
+
+00:13:40.740 --> 00:13:46.115
+of f is going to run basically. So
+
+00:13:46.115 --> 00:13:47.795
+after we call f promise, can immediately move
+
+00:13:47.795 --> 00:13:49.075
+on to the next line, which prints hi
+
+00:13:49.075 --> 00:13:53.475
+there. And then if the promise resolves after
+
+00:13:53.475 --> 00:13:54.915
+maybe a second or something like that, then
+
+00:13:54.915 --> 00:13:56.275
+we'll get the rest of the output from
+
+00:13:56.275 --> 00:14:00.350
+f. So yeah, we're going to get the
+
+00:14:00.350 --> 00:14:02.350
+second output which is hi there and then
+
+00:14:02.350 --> 00:14:06.670
+a and then b. Cool. Okay, yeah. So
+
+00:14:06.670 --> 00:14:09.950
+that's it for this lecture. I think we
+
+00:14:09.950 --> 00:14:12.030
+were just finishing up slides from yesterday, so
+
+00:14:13.645 --> 00:14:15.005
+we'll just move on to the next lecture
+
+00:14:15.005 --> 00:14:20.045
+now, wherever that is. Yeah, in the meantime,
+
+00:14:20.045 --> 00:14:21.725
+you guys can take one minute to do
+
+00:14:21.725 --> 00:14:24.125
+weblab. Infeedback if you want, if you didn't
+
+00:14:24.125 --> 00:14:25.325
+already do it yesterday or if you want
+
+00:14:25.325 --> 00:14:29.420
+to give more feedback while we transition the
+
+00:14:29.420 --> 00:15:03.470
+slides. Alright. Can you guys hear me? Can
+
+00:15:03.470 --> 00:15:07.805
+guys hear me in the back? Alright, cool.
+
+00:15:07.805 --> 00:15:11.405
+Alright, so now we're going to go into
+
+00:15:11.405 --> 00:15:16.765
+servers and node. So what is a server?
+
+00:15:17.005 --> 00:15:22.045
+Well, a server is just some computer that
+
+00:15:20.790 --> 00:15:25.350
+our client requests data from. We're going to
+
+00:15:25.350 --> 00:15:26.630
+send a request to the server and it's
+
+00:15:26.630 --> 00:15:30.390
+going to give us back data. A server
+
+00:15:30.390 --> 00:15:34.150
+can actually handle many requests from multiple clients.
+
+00:15:34.585 --> 00:15:38.505
+This allows for scalability. We don't want a
+
+00:15:38.505 --> 00:15:41.465
+server for every client, because then there be
+
+00:15:41.945 --> 00:15:44.425
+many computers and it would just be a
+
+00:15:44.425 --> 00:15:48.700
+waste of money. And so why do we
+
+00:15:48.700 --> 00:15:52.540
+need a server? Well, first off, it's because
+
+00:15:52.540 --> 00:15:54.860
+we want to request the data from a
+
+00:15:54.860 --> 00:15:57.100
+central point, so we want all our clients
+
+00:15:57.100 --> 00:15:59.980
+to know that at this website or at
+
+00:15:59.980 --> 00:16:02.460
+this URL, we can get the data that
+
+00:16:02.460 --> 00:16:05.195
+we want. We also want a server for
+
+00:16:05.195 --> 00:16:09.115
+centralization. We want some ground truth to represent
+
+00:16:09.835 --> 00:16:11.835
+the data that we have in our server.
+
+00:16:12.395 --> 00:16:14.555
+An example would be, like, imagine you're playing
+
+00:16:14.555 --> 00:16:18.020
+Fortnite, and you shoot somebody, you want there
+
+00:16:18.020 --> 00:16:21.540
+to be some kind of true game state
+
+00:16:21.540 --> 00:16:24.420
+that both players can refer to if they
+
+00:16:24.420 --> 00:16:25.780
+want to see, or if they want to
+
+00:16:25.780 --> 00:16:29.620
+render something on their screen. And then the
+
+00:16:29.620 --> 00:16:32.085
+final need for a server is security. We
+
+00:16:32.085 --> 00:16:33.685
+don't want our client to be able to
+
+00:16:33.685 --> 00:16:36.085
+access our database and send any kind of
+
+00:16:36.085 --> 00:16:39.205
+query to request, maybe data that shouldn't be
+
+00:16:39.205 --> 00:16:41.605
+accessible to them. We want them to go
+
+00:16:41.605 --> 00:16:43.685
+send those requests to the server, and the
+
+00:16:43.685 --> 00:16:49.210
+server deals with the logic necessary to retrieve
+
+00:16:49.210 --> 00:16:54.570
+refined data to the client. But how do
+
+00:16:54.570 --> 00:16:57.370
+requests actually reach our server? Like, right now,
+
+00:16:57.370 --> 00:16:58.970
+we've been telling you that we send requests
+
+00:16:58.970 --> 00:17:02.145
+to a server, but how do these requests
+
+00:17:02.145 --> 00:17:07.265
+actually reach our server? I lied a little
+
+00:17:07.265 --> 00:17:08.705
+bit when I said that a server was
+
+00:17:08.705 --> 00:17:11.345
+a computer, was like a computer. In reality,
+
+00:17:12.720 --> 00:17:16.240
+server is a program. It's called a process,
+
+00:17:16.560 --> 00:17:20.400
+and on your computer, you can run multiple
+
+00:17:20.400 --> 00:17:24.080
+applications, multiple processes, like you can run Spotify,
+
+00:17:24.080 --> 00:17:26.080
+and then you can run Chrome, and some
+
+00:17:26.080 --> 00:17:28.975
+other applications at the same time. The same
+
+00:17:28.975 --> 00:17:32.975
+is true for a server computer. On a
+
+00:17:32.975 --> 00:17:37.455
+server computer, we have multiple ports, and a
+
+00:17:37.455 --> 00:17:39.935
+server just binds to a port. So a
+
+00:17:39.935 --> 00:17:42.255
+server will be an application that binds to
+
+00:17:42.255 --> 00:17:44.430
+a certain port, and on that port, that
+
+00:17:44.430 --> 00:17:46.990
+server will be listening for requests from some
+
+00:17:46.990 --> 00:17:52.350
+other computer. So an example for a port,
+
+00:17:52.350 --> 00:17:57.070
+like address, and a URL would be httpexample.com,
+
+00:17:57.070 --> 00:18:00.285
+and then 5173. And this indicates that we're
+
+00:18:00.285 --> 00:18:04.285
+sending a request to computer associated with the
+
+00:18:04.285 --> 00:18:07.725
+domain name example.com, and it's going to the
+
+00:18:07.725 --> 00:18:10.845
+port 500173, because that is where our data
+
+00:18:10.845 --> 00:18:14.610
+is going to be served. Another example would
+
+00:18:14.610 --> 00:18:18.370
+be example.com3thousand, and we use these port names
+
+00:18:18.370 --> 00:18:22.770
+because whenever you run npm run dev, you're
+
+00:18:22.770 --> 00:18:26.735
+actually hosting a server on your computer, which
+
+00:18:26.735 --> 00:18:28.735
+is just sending you the React files that
+
+00:18:28.735 --> 00:18:33.935
+your browser will render. And so here's the
+
+00:18:33.935 --> 00:18:40.095
+general structure for an address to a server.
+
+00:18:42.960 --> 00:18:44.720
+And why do we need to specify ports
+
+00:18:44.720 --> 00:18:48.320
+on most websites? Well, in actuality, most websites
+
+00:18:48.320 --> 00:18:51.920
+actually have a default port. So for example,
+
+00:18:53.600 --> 00:18:55.925
+the youtube.com servers, if you want to request
+
+00:18:55.925 --> 00:18:58.885
+the website from them, they will be using
+
+00:18:59.125 --> 00:19:03.365
+port four forty three to send you the
+
+00:19:03.365 --> 00:19:07.330
+website through the protocol HTTPS. If you're requesting
+
+00:19:07.330 --> 00:19:11.410
+a website from youtube.com using HTTP, you'd probably
+
+00:19:11.410 --> 00:19:15.250
+use port 80. And then there are other
+
+00:19:15.250 --> 00:19:17.250
+things that use different ports as well. So
+
+00:19:17.250 --> 00:19:21.170
+a Minecraft server would use port 25,565, and
+
+00:19:21.170 --> 00:19:23.185
+then if you want to send an email
+
+00:19:23.185 --> 00:19:27.745
+to somebody else, the email is like if
+
+00:19:27.745 --> 00:19:29.825
+you send an email to your friend, it's
+
+00:19:29.825 --> 00:19:32.465
+going to go to your friend's computer on
+
+00:19:32.465 --> 00:19:35.310
+Port 25, because that is where their email
+
+00:19:35.310 --> 00:19:39.230
+application is listening for emails from other people.
+
+00:19:43.070 --> 00:19:45.070
+You're while you guys are going be developing
+
+00:19:45.070 --> 00:19:47.550
+websites, you're going to be interested in how
+
+00:19:47.550 --> 00:19:49.585
+you can use your own machine as a
+
+00:19:49.585 --> 00:19:53.665
+server. And any computer can run server code.
+
+00:19:53.985 --> 00:19:55.905
+But what does it mean to run server
+
+00:19:55.905 --> 00:19:59.345
+code? Well that just means that oh my
+
+00:19:59.345 --> 00:20:01.665
+god. Well that just means that you'll run
+
+00:20:01.665 --> 00:20:04.700
+a program that is designed to actively listen
+
+00:20:04.700 --> 00:20:08.060
+for requests from other computers on the network,
+
+00:20:08.060 --> 00:20:11.180
+and then actually respond to those requests. So
+
+00:20:13.660 --> 00:20:17.660
+computer has a special domain called localhost, and
+
+00:20:17.235 --> 00:20:21.155
+localhost is just like a word that represents
+
+00:20:21.155 --> 00:20:23.235
+your IP address, so whenever you type it
+
+00:20:23.235 --> 00:20:25.235
+into your browser, you're actually just sending a
+
+00:20:25.235 --> 00:20:28.195
+request to your own computer through a certain
+
+00:20:28.195 --> 00:20:30.435
+port, depending on what you put after localhost.
+
+00:20:33.980 --> 00:20:36.300
+And so, this would be an example of
+
+00:20:36.460 --> 00:20:41.900
+connecting to a server on port 3,000. How
+
+00:20:41.900 --> 00:20:45.655
+do we write a server? So I've told
+
+00:20:45.655 --> 00:20:49.015
+you how a process can listen for requests
+
+00:20:49.255 --> 00:20:52.135
+on a port, and then actually respond to
+
+00:20:52.135 --> 00:20:54.695
+those requests, but you as developers, you guys
+
+00:20:54.935 --> 00:20:56.295
+want to be worrying about how to create
+
+00:20:56.295 --> 00:20:58.280
+your website. You don't really care about how
+
+00:20:58.280 --> 00:21:00.040
+your computer is handling these requests and then
+
+00:21:00.040 --> 00:21:03.160
+sending back responses. And so this is where
+
+00:21:03.160 --> 00:21:05.960
+frameworks come in. Basically what frameworks do is
+
+00:21:05.960 --> 00:21:09.480
+they have boilerplate code for low level request
+
+00:21:09.480 --> 00:21:12.265
+handling, and they just make it really nice
+
+00:21:12.265 --> 00:21:14.745
+so that you can use it easily. And
+
+00:21:14.745 --> 00:21:17.385
+so some examples of this would be Flask,
+
+00:21:17.545 --> 00:21:22.105
+Apache, Express. Js, Django, and all of these
+
+00:21:22.105 --> 00:21:25.580
+frameworks. The only difference between them is you'll
+
+00:21:25.580 --> 00:21:27.340
+use Flask if you're coding in Python for
+
+00:21:27.340 --> 00:21:30.380
+your back end, use Apache using Java, Express.
+
+00:21:30.380 --> 00:21:34.220
+Js using JavaScript. So it's just a way
+
+00:21:34.220 --> 00:21:37.580
+to abstract out all that low level communication
+
+00:21:37.580 --> 00:21:41.785
+stuff that you don't really care about. What
+
+00:21:41.785 --> 00:21:43.625
+framework will you be using? We're going be
+
+00:21:43.625 --> 00:21:46.665
+using express.js, and later Daniel will show you
+
+00:21:46.665 --> 00:21:49.145
+how you'll be able to write API endpoints
+
+00:21:49.145 --> 00:21:50.825
+on your back end, so on your server.
+
+00:21:52.260 --> 00:21:54.340
+But we also need a tool to run
+
+00:21:54.340 --> 00:21:57.780
+JavaScript code. You might be asking yourself, what
+
+00:21:58.020 --> 00:22:01.300
+do you mean? We already run JavaScript code
+
+00:22:01.300 --> 00:22:08.305
+on the browser. Yeah, that's true, but we're
+
+00:22:08.305 --> 00:22:09.585
+not going be running our server on a
+
+00:22:09.585 --> 00:22:13.825
+browser. The JavaScript that we run on the
+
+00:22:13.825 --> 00:22:15.585
+browser is for the client. It's used to
+
+00:22:15.585 --> 00:22:20.070
+render the HTML, CSS and JavaScript that some
+
+00:22:20.070 --> 00:22:22.950
+server sends to us that represents our website.
+
+00:22:24.630 --> 00:22:27.750
+So I'll give you guys a little refresher.
+
+00:22:28.150 --> 00:22:31.270
+So basically, whenever you send a request to
+
+00:22:31.510 --> 00:22:34.285
+some website like youtube.com, in order to actually
+
+00:22:34.285 --> 00:22:37.405
+render the website, you're going be asking the
+
+00:22:37.405 --> 00:22:40.365
+server for HTML, CSS and JavaScript. The server
+
+00:22:40.365 --> 00:22:43.645
+returns it, and your client, the browser, is
+
+00:22:43.645 --> 00:22:46.125
+going to be interpreting the HTML, CSS and
+
+00:22:46.125 --> 00:22:49.190
+JavaScript so that the website is actually rendered
+
+00:22:49.190 --> 00:22:54.470
+in front of you. But what about the
+
+00:22:54.470 --> 00:22:58.630
+code that actually handles these requests? This JavaScript
+
+00:22:58.630 --> 00:23:00.310
+code is going to be on the server.
+
+00:23:01.895 --> 00:23:03.735
+And so, like, have a little meme here,
+
+00:23:03.735 --> 00:23:05.175
+it's like, what if I told you that
+
+00:23:05.175 --> 00:23:07.655
+your computer does not know what JavaScript is?
+
+00:23:08.455 --> 00:23:10.775
+And it's because, like, if you gave your
+
+00:23:11.095 --> 00:23:14.535
+computer your machine, like, a file of JavaScript,
+
+00:23:14.615 --> 00:23:16.375
+it won't be able to interpret it unless
+
+00:23:16.375 --> 00:23:20.010
+it some packages that are installed to actually
+
+00:23:20.010 --> 00:23:24.410
+interpret JavaScript. And so essentially, your browser, like
+
+00:23:24.410 --> 00:23:26.810
+even though it's on your computer, it knows
+
+00:23:27.370 --> 00:23:29.930
+how to interpret JavaScript, but your computer, like
+
+00:23:30.185 --> 00:23:33.065
+your terminal, everything else, it doesn't know how
+
+00:23:33.065 --> 00:23:38.105
+to read JavaScript. And so that's why we
+
+00:23:38.105 --> 00:23:42.345
+have Node. Js, and Node basically just runs
+
+00:23:42.345 --> 00:23:45.530
+JavaScript on your machine. We've actually been using
+
+00:23:45.530 --> 00:23:48.250
+it to download any dependencies we need for
+
+00:23:48.250 --> 00:23:50.730
+our project, and I'll talk about that right
+
+00:23:50.730 --> 00:23:54.890
+now. Before that, any questions? I know that
+
+00:23:54.890 --> 00:23:58.345
+was a lot, and it's a little bit
+
+00:23:58.345 --> 00:24:00.185
+confusing, like connecting the front end and the
+
+00:24:00.185 --> 00:24:07.865
+back end. Anybody have questions about anything? All
+
+00:24:07.865 --> 00:24:13.000
+right. Cool. So node package manager. This is
+
+00:24:13.000 --> 00:24:15.080
+just going give some context on how we've
+
+00:24:15.080 --> 00:24:17.640
+been using NPM, so obviously we've been using
+
+00:24:17.640 --> 00:24:19.960
+it to download packages that our project needs
+
+00:24:19.960 --> 00:24:22.200
+using NPM install, and then we've also been
+
+00:24:22.200 --> 00:24:24.680
+using it to run our server in the
+
+00:24:24.680 --> 00:24:29.005
+background, or rather, running our server to service
+
+00:24:29.005 --> 00:24:31.165
+the React files on front end that we
+
+00:24:31.165 --> 00:24:33.405
+need to actually display on the browser using
+
+00:24:33.405 --> 00:24:42.000
+npm run dev. So importing packages. So if
+
+00:24:42.000 --> 00:24:45.600
+you guys look into Catbook, your folder for
+
+00:24:45.600 --> 00:24:47.440
+Catbook, you'll see that we have a package
+
+00:24:47.440 --> 00:24:50.880
+dot JSON file, and this file just has
+
+00:24:50.880 --> 00:24:53.840
+a lot of metadata about our project. So
+
+00:24:53.325 --> 00:24:57.085
+has a name, description, probably some scripts that
+
+00:24:57.085 --> 00:24:59.805
+you'll be running, like npm run dev, and
+
+00:25:00.045 --> 00:25:02.685
+dependencies. And we'll be looking at the dependency
+
+00:25:02.685 --> 00:25:09.710
+section. Whenever we run npm install, we download
+
+00:25:10.270 --> 00:25:13.310
+dependencies, and those dependencies will be shown in
+
+00:25:13.310 --> 00:25:17.230
+package. Json, and the actual packages that we
+
+00:25:17.230 --> 00:25:20.705
+download will be going into node modules. And
+
+00:25:20.705 --> 00:25:25.985
+whenever we push our project to GitHub Git
+
+00:25:25.985 --> 00:25:28.305
+repo, we don't want to include our node
+
+00:25:28.305 --> 00:25:30.625
+modules or whatever modules we download. That's why
+
+00:25:30.625 --> 00:25:33.345
+we always like NPM install whenever we pull
+
+00:25:33.810 --> 00:25:36.290
+from a Git repo, because if we pushed
+
+00:25:36.290 --> 00:25:37.890
+all those packages up to the Git repo,
+
+00:25:37.890 --> 00:25:40.290
+would be very slow, and we don't want
+
+00:25:40.290 --> 00:25:44.370
+to do that. So let's look at the
+
+00:25:44.370 --> 00:25:47.330
+big picture. What are our files actually doing?
+
+00:25:48.245 --> 00:25:50.325
+So for Kappa React, we're going to have
+
+00:25:50.325 --> 00:25:53.525
+a client folder and a server folder, and
+
+00:25:53.525 --> 00:25:55.685
+it might be a little bit confusing, like,
+
+00:25:55.685 --> 00:25:57.845
+having both of these folders in the same
+
+00:25:57.845 --> 00:26:00.085
+folder on our computer and then running the
+
+00:26:00.085 --> 00:26:03.530
+server and having a front end server as
+
+00:26:03.530 --> 00:26:07.690
+well, but because our computer has multiple ports,
+
+00:26:07.690 --> 00:26:10.810
+we can run multiple servers. So our client's
+
+00:26:10.810 --> 00:26:12.330
+going to deal with all of our React
+
+00:26:12.330 --> 00:26:16.115
+code, components, pages, utilities, etcetera, Our server is
+
+00:26:16.115 --> 00:26:18.915
+going to have all our backend code. And
+
+00:26:18.915 --> 00:26:21.315
+then all these other files are just set
+
+00:26:21.315 --> 00:26:23.875
+up by staff to configure React. Feel free
+
+00:26:23.875 --> 00:26:26.915
+to ask any questions about these files in
+
+00:26:26.915 --> 00:26:30.995
+office hours, or maybe after these lectures, if
+
+00:26:30.390 --> 00:26:36.710
+you want to learn more. Let's see if
+
+00:26:36.710 --> 00:26:41.670
+I have enough time. Okay, I'll go through
+
+00:26:41.670 --> 00:26:43.190
+this just to clarify a little bit more
+
+00:26:43.190 --> 00:26:47.155
+about endpoints. So an example for understanding endpoints,
+
+00:26:47.155 --> 00:26:49.075
+so we've been talking about sending requests to
+
+00:26:49.075 --> 00:26:57.395
+endpoints, youtube.com/results/ whatever. Results is an endpoint for
+
+00:26:57.395 --> 00:27:01.660
+the YouTube server, and whenever we send requests,
+
+00:27:02.460 --> 00:27:06.380
+those endpoints are kind of like addresses, because
+
+00:27:08.220 --> 00:27:11.980
+at those specific URLs, or specific endpoints, we
+
+00:27:11.980 --> 00:27:15.395
+have separate functionality. Whenever we send a request
+
+00:27:15.395 --> 00:27:17.315
+to a specific URL, that functionality is going
+
+00:27:17.315 --> 00:27:19.635
+to be ran, and we hopefully get the
+
+00:27:19.635 --> 00:27:21.955
+data that we want. So an example would
+
+00:27:21.955 --> 00:27:24.915
+be, like, suppose we're in Port 3000 Land,
+
+00:27:25.075 --> 00:27:27.235
+suppose I'm sending a request to local host
+
+00:27:27.235 --> 00:27:30.440
+3,000, and that request is going to be
+
+00:27:30.440 --> 00:27:34.200
+towards the endpoint apicomment. So I want to
+
+00:27:34.200 --> 00:27:37.640
+post a comment onto my cat book. Imagine
+
+00:27:37.640 --> 00:27:39.240
+we're the request and we're walking down Port
+
+00:27:39.240 --> 00:27:41.800
+3000 Land, and we see one house that's
+
+00:27:41.800 --> 00:27:45.505
+addressed as Apivideos. We know that that's not
+
+00:27:45.505 --> 00:27:46.945
+the endpoint that we're looking for, so we
+
+00:27:46.945 --> 00:27:49.825
+go on to the next house, and the
+
+00:27:49.825 --> 00:27:52.305
+next house is going be getapi comments, which
+
+00:27:52.305 --> 00:27:53.345
+is not what we're looking for, we want
+
+00:27:53.345 --> 00:27:55.185
+to post a comment. And then we find
+
+00:27:55.185 --> 00:27:56.980
+the URL that we're looking for. And so
+
+00:27:56.980 --> 00:27:59.300
+we go inside that house, we run whatever
+
+00:27:59.300 --> 00:28:01.940
+functionality we need, we get the data that
+
+00:28:02.180 --> 00:28:04.020
+we want, and then we get out of
+
+00:28:04.020 --> 00:28:06.100
+there and we're now a response object, and
+
+00:28:06.100 --> 00:28:08.820
+we go back to the client server. And
+
+00:28:08.820 --> 00:28:10.580
+then the rest of the houses are whatever
+
+00:28:10.580 --> 00:28:17.035
+URLs we're using. After that, we're going to
+
+00:28:17.035 --> 00:28:19.275
+create our first API endpoint, and I'll pass
+
+00:28:19.275 --> 00:28:33.110
+it on to Daniel. Realized that out is
+
+00:28:33.110 --> 00:28:38.710
+spelled incorrectly here or r. Okay. Well, anyways.
+
+00:28:39.350 --> 00:28:46.605
+Yeah. So our server. Js file that we
+
+00:28:46.605 --> 00:28:51.085
+mentioned earlier, we can start off by thinking
+
+00:28:51.085 --> 00:28:56.550
+of it as kind of these two lines
+
+00:28:56.550 --> 00:28:58.470
+and these two lines is enough to like
+
+00:28:58.470 --> 00:29:00.870
+essentially create an API endpoint for our front
+
+00:29:00.870 --> 00:29:05.350
+end to access. The first line is const
+
+00:29:05.350 --> 00:29:08.285
+app dot express and express is like some
+
+00:29:08.525 --> 00:29:15.645
+sort of imported package that we have from
+
+00:29:15.645 --> 00:29:18.125
+package dot JSON and then when we call
+
+00:29:18.125 --> 00:29:21.900
+express, we're going to get this app object
+
+00:29:21.900 --> 00:29:26.060
+that we can then use to create API
+
+00:29:26.060 --> 00:29:31.420
+endpoints. Whenever we call app. Get, this creates
+
+00:29:31.740 --> 00:29:34.700
+essentially a get request or sorry, a get
+
+00:29:34.700 --> 00:29:37.185
+endpoint that is able to be queried by
+
+00:29:37.185 --> 00:29:42.065
+any client at that endpoint. Similarly, app dot
+
+00:29:42.065 --> 00:29:47.745
+post will create a post endpoint. App dot
+
+00:29:47.745 --> 00:29:49.665
+get takes two arguments. It takes the first
+
+00:29:49.665 --> 00:29:51.890
+argument which is the endpoint and secondly it
+
+00:29:51.890 --> 00:29:55.250
+takes a callback function which is called whenever
+
+00:29:55.250 --> 00:30:00.130
+that endpoint is pinged basically. And here we
+
+00:30:00.130 --> 00:30:02.770
+have set up this get request so that
+
+00:30:02.770 --> 00:30:05.890
+whenever that endpoint is pinged it will return
+
+00:30:06.105 --> 00:30:10.025
+back to whoever sent that request. Wow, I
+
+00:30:10.025 --> 00:30:14.505
+made my first API. Yeah. So this is
+
+00:30:14.505 --> 00:30:17.305
+the HTTP method. So if we set this
+
+00:30:17.305 --> 00:30:19.040
+as post that we would get a post
+
+00:30:19.040 --> 00:30:22.560
+method. This is the route that express sets.
+
+00:30:23.520 --> 00:30:26.720
+So essentially the endpoint, whatever this will be
+
+00:30:26.720 --> 00:30:28.480
+tagged on to whatever base URL we have,
+
+00:30:28.480 --> 00:30:33.215
+for example localhost three thousand. And finally we
+
+00:30:33.215 --> 00:30:36.495
+have the function handler which takes in the
+
+00:30:36.495 --> 00:30:37.935
+function that we feed in should always take
+
+00:30:37.935 --> 00:30:42.175
+in two parameters, the request and the response
+
+00:30:42.175 --> 00:30:47.020
+object. I don't know if yeah. So this
+
+00:30:47.020 --> 00:30:50.460
+request and response object, request is basically the
+
+00:30:50.460 --> 00:30:52.300
+incoming request that we get and we're able
+
+00:30:52.300 --> 00:30:54.060
+to do things here like look at what
+
+00:30:54.060 --> 00:30:56.300
+the request body is or the request parameter
+
+00:30:56.300 --> 00:30:57.740
+is or things like that so we can
+
+00:30:57.740 --> 00:30:59.020
+find out whatever we want to know about
+
+00:30:59.020 --> 00:31:02.365
+what the original request was. And then res
+
+00:31:02.365 --> 00:31:05.245
+is the way that your server sends the
+
+00:31:05.245 --> 00:31:07.005
+response back to the client. So this res
+
+00:31:07.005 --> 00:31:10.045
+dot send thing is basically the syntax for
+
+00:31:10.045 --> 00:31:13.165
+the server sending back whatever information it needs
+
+00:31:13.165 --> 00:31:21.130
+to the client. And then this syntax is
+
+00:31:21.130 --> 00:31:24.890
+basically just the way that Express is set
+
+00:31:24.890 --> 00:31:27.610
+up. But the main thing that you need
+
+00:31:27.610 --> 00:31:29.105
+to know is this res dot send, You
+
+00:31:29.105 --> 00:31:31.185
+can put whatever you need inside of it.
+
+00:31:31.745 --> 00:31:38.385
+And it's basically like a return statement. Cool.
+
+00:31:38.545 --> 00:31:53.280
+Any questions here? Alright. We're going to talk
+
+00:31:53.280 --> 00:31:57.440
+a little bit about middleware now. So, now
+
+00:31:56.915 --> 00:31:59.555
+that we've kind of have a baseline understanding
+
+00:31:59.555 --> 00:32:05.715
+of what an endpoint is, middleware is basically
+
+00:32:06.115 --> 00:32:08.755
+what we can do between receiving a request
+
+00:32:08.755 --> 00:32:11.480
+and running the endpoint code. So you can
+
+00:32:11.480 --> 00:32:15.080
+imagine we get request somewhere over here and
+
+00:32:15.080 --> 00:32:19.640
+then maybe before we want to call the
+
+00:32:19.640 --> 00:32:21.880
+endpoint code, we want to do some extra
+
+00:32:21.880 --> 00:32:23.560
+stuff. And we'll give a few examples on
+
+00:32:23.560 --> 00:32:28.715
+the next slide basically. But you can imagine
+
+00:32:28.715 --> 00:32:30.795
+they're like workers in the assembly line which
+
+00:32:30.795 --> 00:32:33.435
+might do part of what we need to
+
+00:32:33.435 --> 00:32:36.795
+do and then pass it on to the
+
+00:32:36.795 --> 00:32:39.755
+next worker which will do something else and
+
+00:32:39.755 --> 00:32:41.960
+then etcetera until we get to the endpoint
+
+00:32:41.960 --> 00:32:44.600
+which finally completes our request with what needs
+
+00:32:44.600 --> 00:32:48.520
+to actually be done essentially. Middlewares are called
+
+00:32:48.520 --> 00:32:49.960
+an order of definition and we'll see what
+
+00:32:49.960 --> 00:32:51.480
+maybe what that means in a little bit.
+
+00:32:55.155 --> 00:32:59.235
+So a few examples of middleware. Maybe for
+
+00:32:59.235 --> 00:33:00.915
+every request coming in we want to log
+
+00:33:00.915 --> 00:33:04.675
+the request. And it would be pretty tedious
+
+00:33:04.675 --> 00:33:06.675
+to put in every single endpoint that we
+
+00:33:06.675 --> 00:33:10.120
+ever write before we do that endpoint to
+
+00:33:10.120 --> 00:33:13.080
+console log the request. So what we can
+
+00:33:13.080 --> 00:33:15.000
+do is we can just define a middleware
+
+00:33:15.080 --> 00:33:19.480
+in front of all of our endpoints to
+
+00:33:19.480 --> 00:33:21.240
+console log whatever is coming in. And what
+
+00:33:21.240 --> 00:33:23.465
+that will do is no matter what endpoint
+
+00:33:23.465 --> 00:33:25.865
+is being pinged, it will always console log
+
+00:33:26.505 --> 00:33:30.025
+whatever that request is. So that code will
+
+00:33:30.025 --> 00:33:31.545
+always be run and you don't have to
+
+00:33:31.545 --> 00:33:36.060
+put it in every single endpoint. Maybe we
+
+00:33:36.060 --> 00:33:37.820
+want to make sure that whenever the user
+
+00:33:37.820 --> 00:33:39.660
+makes a new request, check that they're logged
+
+00:33:39.660 --> 00:33:41.980
+in first. So maybe the user is feeding
+
+00:33:41.980 --> 00:33:44.380
+in some sort of credentials or something like
+
+00:33:44.380 --> 00:33:48.045
+that for whenever they make a request. We
+
+00:33:48.045 --> 00:33:49.885
+want to check that those credentials match what
+
+00:33:49.885 --> 00:33:52.765
+is on our server. So we would write
+
+00:33:52.765 --> 00:33:55.005
+a middleware to check that these credentials match
+
+00:33:55.005 --> 00:33:58.925
+what is actually on our server. And then
+
+00:33:59.085 --> 00:34:03.870
+finally, if we can write some middleware so
+
+00:34:03.870 --> 00:34:05.790
+that if any request ever results in an
+
+00:34:05.790 --> 00:34:07.070
+error then we can log that error to
+
+00:34:07.070 --> 00:34:09.390
+the server. And one thing to note is
+
+00:34:09.390 --> 00:34:12.190
+that whenever you console log on your server,
+
+00:34:12.190 --> 00:34:13.630
+it'll print to the terminal that you're running
+
+00:34:13.630 --> 00:34:17.315
+npm run start in. And we'll talk a
+
+00:34:17.315 --> 00:34:19.235
+little bit more about what that means. But
+
+00:34:20.435 --> 00:34:23.875
+basically it's not going to print to your
+
+00:34:23.875 --> 00:34:26.675
+browser. So that's like the main differentiation here
+
+00:34:26.675 --> 00:34:30.020
+which is that whatever whatever server code that
+
+00:34:30.020 --> 00:34:31.380
+you have that is running console. Log, you
+
+00:34:31.380 --> 00:34:33.220
+should not look to your browser but rather
+
+00:34:33.220 --> 00:34:40.980
+to your terminal. Yeah, so the way that
+
+00:34:40.980 --> 00:34:44.020
+we add middleware is by using this app
+
+00:34:44.020 --> 00:34:47.595
+dot use function. So we've talked about app
+
+00:34:47.595 --> 00:34:49.515
+dot get which creates a get request and
+
+00:34:49.515 --> 00:34:51.195
+similarly you can do app dot post which
+
+00:34:51.195 --> 00:34:53.515
+creates a post request. App dot use is
+
+00:34:53.515 --> 00:34:56.075
+another functionality of Express that allows you to
+
+00:34:56.075 --> 00:35:00.820
+register middleware. So the way that app dot
+
+00:35:00.820 --> 00:35:04.660
+use works is it takes an optional path
+
+00:35:04.660 --> 00:35:08.500
+in a middleware object and we won't talk
+
+00:35:08.500 --> 00:35:11.775
+about the path for now but basically if
+
+00:35:11.775 --> 00:35:14.415
+you just feed in one parameter, this parameter
+
+00:35:14.415 --> 00:35:17.135
+will be treated as a callback function which
+
+00:35:17.855 --> 00:35:20.255
+will be called whenever the request comes in.
+
+00:35:20.255 --> 00:35:24.095
+It takes three parameters, rec, res and next.
+
+00:35:26.490 --> 00:35:32.090
+So the next thing which is optional is
+
+00:35:32.490 --> 00:35:35.610
+just the next, it represents like the next
+
+00:35:35.610 --> 00:35:38.330
+middleware function that needs to be called. So
+
+00:35:37.805 --> 00:35:41.085
+if you only have one middleware passed in
+
+00:35:41.085 --> 00:35:44.125
+then you don't actually need this next parameter.
+
+00:35:44.205 --> 00:35:47.085
+But otherwise, the rec and the res are
+
+00:35:47.085 --> 00:35:51.165
+pretty similar to what rec and res are
+
+00:35:51.165 --> 00:35:56.490
+for app. Get, for example. The rec represents
+
+00:35:56.490 --> 00:35:58.490
+the incoming request and then the res represents
+
+00:35:58.490 --> 00:36:00.410
+how you send that result back to the
+
+00:36:00.410 --> 00:36:03.130
+server. Here we're not using any of the
+
+00:36:03.130 --> 00:36:05.530
+parameters. We're just going to log the time
+
+00:36:05.690 --> 00:36:11.085
+whenever any request comes in. So maybe turn
+
+00:36:11.085 --> 00:36:14.285
+and talk to somebody near you for thirty
+
+00:36:16.285 --> 00:36:19.805
+seconds, a minute, and try to understand what
+
+00:36:19.805 --> 00:37:10.175
+exactly this code is doing. Yeah, okay, cool.
+
+00:37:11.855 --> 00:37:13.615
+Do people need more time or are people
+
+00:37:13.615 --> 00:37:20.950
+good? I don't see anything. Okay, yeah. Cool.
+
+00:37:22.470 --> 00:37:27.030
+Basically what this code is doing is whenever
+
+00:37:27.030 --> 00:37:30.150
+we have any endpoint called, no matter what
+
+00:37:30.150 --> 00:37:32.725
+that endpoint is, we're going to basically just
+
+00:37:32.725 --> 00:37:37.205
+log the current time to the console. So
+
+00:37:37.205 --> 00:37:40.485
+if, for example, a slash apitest is called,
+
+00:37:41.365 --> 00:37:44.245
+what will happen is we'll log time and
+
+00:37:44.245 --> 00:37:46.485
+then we'll do whatever is defined in slash
+
+00:37:46.485 --> 00:37:52.960
+apitest. Okay. Now we'll talk about error middlewares
+
+00:37:52.960 --> 00:37:57.040
+for a little bit. Error middlewares are slightly
+
+00:37:57.040 --> 00:37:59.280
+different from middlewares in the sense that they're
+
+00:37:59.280 --> 00:38:03.205
+kind of a catch to what happens if
+
+00:38:03.765 --> 00:38:07.365
+whatever endpoint code or whatever middleware code that
+
+00:38:07.365 --> 00:38:10.885
+we run somehow errors in the process of
+
+00:38:11.045 --> 00:38:17.610
+those processing. It takes in four arguments, error,
+
+00:38:17.930 --> 00:38:23.290
+rec, res, and next. And the error thing
+
+00:38:23.290 --> 00:38:26.890
+is basically just an object which tells us
+
+00:38:26.890 --> 00:38:29.130
+a lot about what is going on in
+
+00:38:29.130 --> 00:38:34.045
+that error. So just as an example, if
+
+00:38:34.045 --> 00:38:35.805
+you type in error. Status, that will just
+
+00:38:35.805 --> 00:38:37.965
+represent the status code of the error that
+
+00:38:37.965 --> 00:38:40.445
+is coming in. And then all the other
+
+00:38:40.445 --> 00:38:42.045
+arguments represent the same thing that we just
+
+00:38:42.045 --> 00:38:48.460
+talked about for normal middlewares. Unlike normal middlewares,
+
+00:38:48.460 --> 00:38:50.940
+which are defined before endpoints, so they're processed
+
+00:38:50.940 --> 00:38:53.500
+before the endpoint actually processes, our error middleware
+
+00:38:53.500 --> 00:38:55.740
+is defined after all of our endpoints. So
+
+00:38:55.740 --> 00:38:58.380
+that if any of the endpoints or the
+
+00:38:58.380 --> 00:39:04.385
+middleware errors out, then it defaults into what
+
+00:39:04.385 --> 00:39:06.385
+is going on in our error middleware, basically.
+
+00:39:07.025 --> 00:39:10.545
+So when we call app dot use with
+
+00:39:10.625 --> 00:39:13.180
+error rec resin next, we can put in
+
+00:39:13.180 --> 00:39:15.580
+any error handling code inside. For example, maybe
+
+00:39:15.580 --> 00:39:17.580
+we print out the error to the console.
+
+00:39:19.900 --> 00:39:27.735
+Finally, we'll talk about catch all endpoints. And
+
+00:39:27.735 --> 00:39:30.375
+catch all endpoints are defined this is like
+
+00:39:30.375 --> 00:39:32.055
+kind of taking a step back from middlewares
+
+00:39:32.055 --> 00:39:35.335
+and going back to endpoints. Catch all endpoints
+
+00:39:35.335 --> 00:39:37.655
+are defined using app. Get and this star
+
+00:39:37.655 --> 00:39:42.055
+symbol. So all endpoints, which are not concretely
+
+00:39:42.055 --> 00:39:48.670
+defined, will hit the star endpoint. So just
+
+00:39:48.670 --> 00:39:54.510
+an example, what will we get when we
+
+00:39:54.750 --> 00:39:56.990
+get slash api slash test in the code
+
+00:39:56.990 --> 00:40:01.745
+below? Will we get iloveweblab, or are we
+
+00:40:01.745 --> 00:40:03.905
+going to get us four zero four not
+
+00:40:03.905 --> 00:40:09.985
+found? Maybe open hand for iloveweblab, close hand
+
+00:40:09.985 --> 00:40:19.580
+for not found. What do you think? Okay.
+
+00:40:19.740 --> 00:40:24.460
+I saw a mix. So we're actually going
+
+00:40:24.460 --> 00:40:27.020
+to get the four zero four not found
+
+00:40:28.315 --> 00:40:36.475
+because we misspelled slash apitest here. So if
+
+00:40:36.475 --> 00:40:38.235
+you're making a request to an endpoint and
+
+00:40:38.235 --> 00:40:40.235
+then you misspell the endpoint, then it's not
+
+00:40:40.235 --> 00:40:41.355
+going to hit the endpoint that you think
+
+00:40:41.355 --> 00:40:43.430
+you're hitting. So here we're going to get
+
+00:40:43.430 --> 00:40:44.950
+back four zero four because we used the
+
+00:40:44.950 --> 00:40:49.910
+wrong endpoint, basically. Yeah. So what happens is
+
+00:40:49.910 --> 00:40:53.510
+basically it'll miss the slash apitest endpoint, and
+
+00:40:53.510 --> 00:40:56.310
+then it'll hit the catchall endpoint, which is
+
+00:40:56.310 --> 00:40:59.115
+defined to catch anything that is not already
+
+00:40:59.115 --> 00:41:02.555
+caught by things that we already defined. Yeah.
+
+00:41:02.555 --> 00:41:03.595
+So we'll get this four zero four not
+
+00:41:03.595 --> 00:41:14.160
+found error. Cool. Any questions there? Okay. Yeah,
+
+00:41:14.160 --> 00:41:16.560
+so now I've written the exact same code,
+
+00:41:16.560 --> 00:41:18.080
+but I've switched the ordering of the two
+
+00:41:18.080 --> 00:41:20.880
+so that the app dot getstar comes first,
+
+00:41:21.120 --> 00:41:23.680
+and then the app dot sorry, yeah, app
+
+00:41:23.680 --> 00:41:25.280
+dot get slash api slash test is coming
+
+00:41:25.280 --> 00:41:30.605
+afterwards. So how is this code different? Basically
+
+00:41:30.605 --> 00:41:33.965
+what happens here is kind of something weird.
+
+00:41:34.365 --> 00:41:44.010
+Even though apitest is defined, when a client
+
+00:41:44.010 --> 00:41:47.370
+tries to query the apitest endpoint, it'll still
+
+00:41:47.370 --> 00:41:51.130
+return four zero four not found. Because in
+
+00:41:51.130 --> 00:41:53.050
+Express, it kind of goes top down in
+
+00:41:53.050 --> 00:41:55.155
+your file. So what happens is it will
+
+00:41:55.155 --> 00:41:57.955
+check each one in order. And then it
+
+00:41:57.955 --> 00:42:00.755
+will see, oh, one is like a catch
+
+00:42:00.755 --> 00:42:03.075
+all endpoint. And so I should be returning
+
+00:42:03.075 --> 00:42:04.275
+four zero four not found here. And it
+
+00:42:04.275 --> 00:42:08.115
+doesn't even see what's happening below. It won't
+
+00:42:08.115 --> 00:42:11.370
+even get to I love WebA. It'll see
+
+00:42:11.370 --> 00:42:15.130
+the catchall endpoint, which is catchingapitest, then it'll
+
+00:42:15.130 --> 00:42:18.330
+return the four zero four. In general, we
+
+00:42:18.330 --> 00:42:21.530
+don't want to do things like this because
+
+00:42:21.530 --> 00:42:23.450
+it's just not the behavior that we want.
+
+00:42:23.450 --> 00:42:26.735
+So we generally define our catchall endpoints after
+
+00:42:28.415 --> 00:42:34.095
+of our actual defined endpoints so that those
+
+00:42:34.095 --> 00:42:36.510
+catchall endpoints should only catch what happens in
+
+00:42:36.510 --> 00:42:38.910
+the case that we missed the endpoints that
+
+00:42:38.910 --> 00:42:44.110
+we actually wanted to define. Cool. Yeah. So
+
+00:42:44.110 --> 00:42:45.310
+we're going to check out a little bit
+
+00:42:45.310 --> 00:42:50.350
+of template code in Workshop three Starter. Yeah.
+
+00:42:50.350 --> 00:42:57.845
+So first we'll git reset hard, git checkout
+
+00:42:57.845 --> 00:43:02.405
+workshop three starter. Looks like we're a little
+
+00:43:02.405 --> 00:43:08.850
+behind. So and then what is going on?
+
+00:43:09.170 --> 00:43:13.090
+Okay, cool. Yeah, so you'll notice our folder
+
+00:43:16.530 --> 00:43:20.210
+is set up similarly to how what is
+
+00:43:20.210 --> 00:43:21.730
+mentioned in the sense that we have a
+
+00:43:21.730 --> 00:43:26.105
+client folder here which has all of our
+
+00:43:26.105 --> 00:43:29.145
+source code in it. Similar to what we
+
+00:43:29.305 --> 00:43:30.905
+basically this is what we worked on in
+
+00:43:30.905 --> 00:43:33.305
+workshop two. And then we have a server
+
+00:43:33.385 --> 00:43:35.065
+folder, which currently just has one file in
+
+00:43:35.065 --> 00:43:39.530
+it, server. Js. Yeah, so you can take
+
+00:43:39.530 --> 00:43:42.010
+a look through this and I'll be doing
+
+00:43:42.010 --> 00:43:43.770
+the rest of this on the slides. So
+
+00:43:43.930 --> 00:43:45.930
+it should match what is in your code,
+
+00:43:46.970 --> 00:43:48.490
+but I think the slides are a little
+
+00:43:48.490 --> 00:43:55.425
+more clear basically. So how do you run
+
+00:43:55.425 --> 00:43:57.425
+the code? So far we've been using NPM
+
+00:43:57.425 --> 00:43:59.265
+run dev to run our front end which
+
+00:43:59.265 --> 00:44:01.665
+runs our front end code on local host
+
+00:44:01.665 --> 00:44:04.705
+500173 but now we will have a back
+
+00:44:04.705 --> 00:44:07.710
+end as well. So in order to run
+
+00:44:07.710 --> 00:44:09.870
+that, we will be using npm start to
+
+00:44:09.870 --> 00:44:12.270
+run our back end which will run our
+
+00:44:12.270 --> 00:44:17.790
+back end on local host 3,000. Yeah. What's
+
+00:44:17.790 --> 00:44:19.470
+nice about this is that both of both
+
+00:44:19.470 --> 00:44:20.670
+the front end and the back end will
+
+00:44:20.670 --> 00:44:24.295
+auto refresh whenever you update a file. So
+
+00:44:24.295 --> 00:44:26.535
+you can just keep them basically running in
+
+00:44:26.535 --> 00:44:30.935
+the background whenever you're making changes to your
+
+00:44:30.935 --> 00:44:34.900
+files or doing development so that and like
+
+00:44:34.900 --> 00:44:36.180
+whenever you save a file it should be
+
+00:44:36.180 --> 00:44:38.260
+automatically reflected. So you don't have to like
+
+00:44:38.260 --> 00:44:40.820
+rerun these commands ever. You can kind of
+
+00:44:40.820 --> 00:44:42.580
+just keep them running and make changes to
+
+00:44:42.580 --> 00:44:51.605
+your files as necessary. Any questions here? Cool.
+
+00:44:53.365 --> 00:44:58.565
+Okay. Yeah so at the top of our
+
+00:44:58.565 --> 00:45:07.520
+express code, we have two libraries and basically
+
+00:45:07.840 --> 00:45:10.480
+when we have this const express equals require
+
+00:45:10.480 --> 00:45:13.920
+express thing, you can think of this basically
+
+00:45:13.920 --> 00:45:16.400
+as an import. It's just a different syntax
+
+00:45:16.400 --> 00:45:19.335
+for importing but generally on the back end
+
+00:45:19.335 --> 00:45:22.295
+we use this require syntax because that's just
+
+00:45:22.295 --> 00:45:29.255
+like the preferred syntax for express in back
+
+00:45:29.255 --> 00:45:32.420
+end in general. But it means the same
+
+00:45:32.420 --> 00:45:36.260
+thing as like a similar import expression basically.
+
+00:45:37.540 --> 00:45:40.180
+So yeah, these two lines import libraries that
+
+00:45:40.180 --> 00:45:43.620
+we might use in our backend. And then
+
+00:45:43.700 --> 00:45:46.180
+the next line which is const app dot
+
+00:45:46.180 --> 00:45:51.265
+express creates an app object that allows us
+
+00:45:51.265 --> 00:45:55.105
+to define any middlewares or endpoints that we
+
+00:45:55.105 --> 00:45:58.465
+use. The first thing that we define is
+
+00:45:58.465 --> 00:46:01.390
+this app dot use express dot JSON which
+
+00:46:01.390 --> 00:46:03.950
+is a middleware that converts our request bodies
+
+00:46:03.950 --> 00:46:09.630
+to JSON. Request bodies generally come as strings.
+
+00:46:11.230 --> 00:46:15.150
+So it'll just be like a string that
+
+00:46:14.225 --> 00:46:16.945
+probably has a list or an array or
+
+00:46:16.945 --> 00:46:23.905
+some JavaScript object in it. And our server
+
+00:46:23.905 --> 00:46:25.505
+won't know how to handle just a string
+
+00:46:25.505 --> 00:46:26.670
+that's coming in. So you need to be
+
+00:46:26.670 --> 00:46:28.510
+able to parse that string into a JSON
+
+00:46:28.510 --> 00:46:30.670
+object. So this app dot use express dot
+
+00:46:30.670 --> 00:46:35.390
+JSON converts whatever's coming in into a JSON
+
+00:46:35.390 --> 00:46:37.230
+format so that we can actually process it
+
+00:46:37.230 --> 00:46:43.215
+basically. Finally, have this app. Getapitest, which is
+
+00:46:43.215 --> 00:46:45.535
+our first API endpoint, as we talked about
+
+00:46:45.535 --> 00:46:48.335
+earlier. This essentially just sets up an API
+
+00:46:48.335 --> 00:46:59.280
+endpoint at this URL to return this message
+
+00:46:59.280 --> 00:47:09.015
+whenever it's pinged. Cool. Yeah. The next thing
+
+00:47:09.015 --> 00:47:10.775
+that we have in our code is this
+
+00:47:10.775 --> 00:47:18.470
+catchall error handler which uses this uses like
+
+00:47:18.470 --> 00:47:25.190
+the catch all star syntax. So you can
+
+00:47:25.190 --> 00:47:27.830
+turn and talk for a bit and discuss
+
+00:47:27.830 --> 00:47:29.510
+with somebody next to you, like what is
+
+00:47:29.510 --> 00:47:34.625
+this code doing? Yeah. I'll give you guys
+
+00:47:34.625 --> 00:48:15.480
+like a minute or something. Yeah. Okay. Cool.
+
+00:48:22.120 --> 00:48:23.640
+Do people need a little bit more time?
+
+00:48:28.045 --> 00:48:47.440
+I'll give a few more moments. Okay. I
+
+00:48:47.440 --> 00:48:50.320
+think I heard something like a few like
+
+00:48:50.320 --> 00:48:52.240
+correct things like being said around the room.
+
+00:48:55.985 --> 00:48:58.865
+Yeah, if we get some basically, whenever we
+
+00:48:58.865 --> 00:49:02.225
+get a request that is not something that
+
+00:49:02.225 --> 00:49:05.025
+we've already defined, then this app. All is
+
+00:49:05.025 --> 00:49:08.545
+going to catch it and print out both
+
+00:49:08.545 --> 00:49:11.400
+the method and the URL. And app. All
+
+00:49:11.400 --> 00:49:14.360
+is not something that we've talked about yet
+
+00:49:14.360 --> 00:49:17.800
+already, but if you guessed correctly, then good
+
+00:49:17.800 --> 00:49:19.640
+for you. Basically what it does is it
+
+00:49:20.360 --> 00:49:22.925
+processes all types of endpoints or sorry, all
+
+00:49:22.925 --> 00:49:26.125
+types of methods. So get, post, and any
+
+00:49:26.845 --> 00:49:30.205
+other methods that RRequest might have. So it
+
+00:49:30.205 --> 00:49:35.325
+defines it for both get and post, and
+
+00:49:35.325 --> 00:49:41.020
+maybe delete or whatever other things. And then
+
+00:49:41.020 --> 00:49:44.140
+once we catch the route, we'll console log
+
+00:49:44.140 --> 00:49:45.340
+the route to the terminal so we see
+
+00:49:45.340 --> 00:49:47.420
+it on the server side. And then the
+
+00:49:47.420 --> 00:49:50.860
+res. Status 404 sets the status to 404,
+
+00:49:50.860 --> 00:49:52.655
+and then we send it back to the
+
+00:49:52.655 --> 00:49:56.015
+client. So the idea here is the first
+
+00:49:56.015 --> 00:49:57.375
+line helps us see it on the server
+
+00:49:57.375 --> 00:49:59.055
+side, and then the second line helps us
+
+00:49:59.055 --> 00:50:02.735
+see it on the client side. Yeah, so
+
+00:50:02.735 --> 00:50:03.935
+when we send it back to the client,
+
+00:50:03.935 --> 00:50:05.135
+then the client will also see that there's
+
+00:50:05.135 --> 00:50:13.130
+an error. Cool. I think I will probably
+
+00:50:13.130 --> 00:50:16.010
+skim past this part. Basically this last part
+
+00:50:16.010 --> 00:50:21.455
+is server error handling middleware, which is error
+
+00:50:21.455 --> 00:50:24.495
+handling middleware, basically whenever we get an error
+
+00:50:24.495 --> 00:50:28.255
+from the server, we will log the error,
+
+00:50:28.575 --> 00:50:29.935
+which will be seen in terminal, and then
+
+00:50:29.935 --> 00:50:31.215
+we will send that error back to the
+
+00:50:31.215 --> 00:50:35.260
+browser. And if we have a status code
+
+00:50:35.340 --> 00:50:36.780
+that is already passed to us, then we
+
+00:50:36.780 --> 00:50:39.100
+will keep that status code. And otherwise, the
+
+00:50:39.100 --> 00:50:41.500
+default status code will be 500, which is
+
+00:50:41.500 --> 00:50:45.500
+basically something went wrong on the server side.
+
+00:50:46.540 --> 00:50:50.905
+And we apologize, but we have to log
+
+00:50:50.905 --> 00:50:53.305
+that the server errored and we also have
+
+00:50:53.305 --> 00:50:56.905
+to tell the client the server errored, basically.
+
+00:50:57.705 --> 00:51:02.505
+Yeah. Cool. Okay. I think that's it for
+
+00:51:02.505 --> 00:51:07.110
+this lecture. Yeah. So the next thing that's
+
+00:51:07.110 --> 00:51:09.830
+coming up is workshop three. For now, while
+
+00:51:09.830 --> 00:51:13.182
+we transition to that, take a few moments
+
+00:51:13.182 --> 00:51:18.782
+and fill out the feedback form, web. Isfeedback.
+
+00:51:19.903 --> 00:51:21.102
+And yeah.
