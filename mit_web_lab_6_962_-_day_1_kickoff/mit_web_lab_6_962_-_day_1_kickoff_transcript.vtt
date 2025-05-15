@@ -1,0 +1,944 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 4dc447e0-d94b-4aa1-8f37-bd24bc3dddd8
+Created: 2025-05-15T19:52:59.643Z
+Duration: 1041.3715
+Channels: 1
+
+00:00:00.000 --> 00:00:06.560
+Hello? Hi. Okay. Welcome to Web Lab twenty
+
+00:00:06.560 --> 00:00:09.520
+twenty five. My name's Stanley. I'm one of
+
+00:00:09.520 --> 00:00:12.480
+the co presidents. My name's Andy. I'm also
+
+00:00:12.480 --> 00:00:17.625
+co president. Just some few things to go
+
+00:00:17.625 --> 00:00:20.025
+over really quickly while we go over sort
+
+00:00:20.025 --> 00:00:22.905
+of our intro spiel. Make sure you have
+
+00:00:22.905 --> 00:00:25.865
+done the setup because we have workshops today,
+
+00:00:25.865 --> 00:00:28.105
+so you'll be following along. And you won't
+
+00:00:28.105 --> 00:00:29.385
+be able to do that if you haven't
+
+00:00:29.385 --> 00:00:31.520
+gotten your stuff set up. So if you
+
+00:00:31.520 --> 00:00:36.880
+haven't, go to weblab.ishomework0 and just make sure
+
+00:00:36.880 --> 00:00:39.280
+you finish the setup. If you already have
+
+00:00:39.280 --> 00:00:47.735
+it done, then good job. Okay, let's talk
+
+00:00:47.735 --> 00:00:50.695
+about what Web Lab is. Web Lab is
+
+00:00:50.695 --> 00:00:53.655
+essentially a web development class. We teach front
+
+00:00:53.655 --> 00:00:56.375
+end to back end full stack web development.
+
+00:00:56.695 --> 00:00:58.935
+We have free lunch every day of lecture.
+
+00:00:59.720 --> 00:01:01.800
+We also run a competition for the second
+
+00:01:01.800 --> 00:01:05.320
+half of the class throughout IEP and there's
+
+00:01:05.320 --> 00:01:06.840
+a lot of cash prizes for you to
+
+00:01:06.840 --> 00:01:09.960
+win. And if you register on Websys, we
+
+00:01:09.960 --> 00:01:12.440
+are graded a PDF and we give you
+
+00:01:12.440 --> 00:01:17.715
+guys six units of unrestricted elective credit. So
+
+00:01:17.715 --> 00:01:21.635
+this is this year's course staff. They're sitting
+
+00:01:21.635 --> 00:01:23.875
+over there. They'll be the ones helping you
+
+00:01:24.275 --> 00:01:31.440
+throughout this class. Some more reminders, make sure
+
+00:01:31.440 --> 00:01:34.320
+you're registered on the portal. The portal is
+
+00:01:34.320 --> 00:01:36.560
+also where we send email communications and it's
+
+00:01:36.560 --> 00:01:38.080
+also where you guys are going to be
+
+00:01:38.080 --> 00:01:41.280
+submitting your milestones so make sure you have
+
+00:01:41.280 --> 00:01:47.015
+that done. Also join the Piazza. We're going
+
+00:01:47.015 --> 00:01:49.655
+to be posting a bunch of important info
+
+00:01:49.655 --> 00:01:52.535
+on Piazza and also it's a great place
+
+00:01:52.535 --> 00:01:55.895
+to ask questions, so make sure you have
+
+00:01:55.895 --> 00:01:59.510
+that done as well. Lectures will also be
+
+00:01:59.510 --> 00:02:02.630
+livestreamed and recorded to YouTube, and you can
+
+00:02:02.630 --> 00:02:06.630
+join the livestream at weblab.islivestream. The lectures are
+
+00:02:06.630 --> 00:02:09.030
+not mandatory and we don't take attendance. This
+
+00:02:09.030 --> 00:02:11.270
+is just purely what you put into the
+
+00:02:11.270 --> 00:02:12.870
+class is what you get out of the
+
+00:02:12.870 --> 00:02:16.305
+class. And, yeah, you can also join the
+
+00:02:16.305 --> 00:02:20.145
+Zoom directly if you just wanna watch the
+
+00:02:20.145 --> 00:02:24.865
+lecture being streamed. We'll go over some logistics
+
+00:02:24.865 --> 00:02:28.380
+now. So the competition is not mandatory, it's
+
+00:02:28.380 --> 00:02:31.020
+a second half and it's completely optional. But
+
+00:02:31.020 --> 00:02:32.940
+we'd highly encourage you to submit your website
+
+00:02:32.940 --> 00:02:35.020
+anyways because who knows, maybe you'll win some
+
+00:02:35.020 --> 00:02:38.540
+cash. We'll also have live help during the
+
+00:02:38.540 --> 00:02:42.095
+workshops and the lectures. And you can go
+
+00:02:42.095 --> 00:02:45.135
+to weblab. And then you can just create
+
+00:02:45.135 --> 00:02:47.615
+a ticket and we'll be walking around helping
+
+00:02:47.615 --> 00:02:51.295
+you answer questions and stuff like that. You
+
+00:02:51.295 --> 00:02:53.400
+can also go to the questions doc at
+
+00:02:53.400 --> 00:02:56.920
+weblab.isquestions and here you could just ask questions
+
+00:02:56.920 --> 00:03:00.840
+anonymously. There's also an old doc with questions
+
+00:03:00.840 --> 00:03:02.520
+that were asked in previous years so you
+
+00:03:02.520 --> 00:03:03.880
+can also check there to see if your
+
+00:03:03.880 --> 00:03:06.585
+question has been asked before. And then we
+
+00:03:06.585 --> 00:03:10.585
+also have weblab.ininfo so you can go here
+
+00:03:10.585 --> 00:03:13.545
+to find a bunch of useful short links,
+
+00:03:13.625 --> 00:03:17.945
+resources, stuff like that. And we'll also have
+
+00:03:17.945 --> 00:03:20.505
+a team finding mixer at the end of
+
+00:03:20.505 --> 00:03:22.980
+lectures today So if you don't have a
+
+00:03:22.980 --> 00:03:26.180
+team yet, don't worry. You can stay after
+
+00:03:26.180 --> 00:03:30.420
+class and find some people. So here's a
+
+00:03:30.420 --> 00:03:34.740
+little course overview. This is our general schedule.
+
+00:03:34.740 --> 00:03:36.855
+So week one we're gonna be sort of
+
+00:03:36.855 --> 00:03:39.175
+laying the groundworks, learning the basics and building
+
+00:03:39.175 --> 00:03:41.735
+an app from scratch together. Week two we're
+
+00:03:41.735 --> 00:03:43.815
+gonna start getting a little more complicated. We're
+
+00:03:43.815 --> 00:03:45.735
+gonna add some cool features, go into some
+
+00:03:45.735 --> 00:03:48.535
+advanced topics and also get some sponsor lectures.
+
+00:03:49.590 --> 00:03:51.510
+And then week three is where we're done
+
+00:03:51.510 --> 00:03:54.390
+with class and now we're entering the competition
+
+00:03:54.390 --> 00:03:56.390
+phase. So now you're going to be working.
+
+00:03:56.550 --> 00:03:58.470
+You can either submit your website to the
+
+00:03:58.470 --> 00:04:00.790
+competition or just simply for the milestone for
+
+00:04:00.790 --> 00:04:05.485
+credit. And then week four, you finalize your
+
+00:04:05.485 --> 00:04:08.445
+projects, you make your final submissions, we're gonna
+
+00:04:08.445 --> 00:04:10.125
+judge them, and then we go to the
+
+00:04:10.125 --> 00:04:12.765
+award ceremony. And you can check the schedule
+
+00:04:12.765 --> 00:04:15.725
+on the website if you need any specifics.
+
+00:04:18.140 --> 00:04:21.100
+We take you end to end and what
+
+00:04:21.100 --> 00:04:23.260
+that means is we take you from front
+
+00:04:23.260 --> 00:04:25.340
+end to back end. The world of websites
+
+00:04:25.340 --> 00:04:27.260
+is really big. There's a lot that goes
+
+00:04:27.260 --> 00:04:32.780
+on with something like Facebook, Club Penguin, ChatGBT.
+
+00:04:33.985 --> 00:04:38.225
+So how does it all work? This is
+
+00:04:38.385 --> 00:04:40.945
+just a bit of an intro to what
+
+00:04:40.945 --> 00:04:42.625
+you'll be seeing this week and sort of
+
+00:04:42.625 --> 00:04:47.585
+next week. Any time we access a website,
+
+00:04:47.665 --> 00:04:50.380
+we're going to Chrome and then entering a
+
+00:04:50.380 --> 00:04:54.300
+URL. But what really happens, you know? So
+
+00:04:54.300 --> 00:04:56.380
+you are the client. Think of yourself as
+
+00:04:56.380 --> 00:05:01.420
+a computer. And think of the server as
+
+00:05:01.420 --> 00:05:04.620
+just another computer, let's say, like Facebook's computer,
+
+00:05:05.155 --> 00:05:07.555
+where you want to send a request to
+
+00:05:07.555 --> 00:05:10.835
+get the website that you put into your
+
+00:05:10.835 --> 00:05:15.955
+URL or into Chrome. So essentially, you're sending
+
+00:05:15.955 --> 00:05:19.870
+a GET request to Facebook to get the
+
+00:05:19.870 --> 00:05:23.710
+website that you want. And this computer responds
+
+00:05:25.630 --> 00:05:27.870
+because it stores and serves the website that
+
+00:05:27.870 --> 00:05:30.750
+you're actually requesting. So it responds with the
+
+00:05:30.750 --> 00:05:35.345
+web page files, which are then taken by
+
+00:05:35.345 --> 00:05:39.265
+the browser that you're using, probably Chrome, which
+
+00:05:39.265 --> 00:05:40.865
+is then used to view the website. So
+
+00:05:40.865 --> 00:05:43.025
+that's how we see everything on the Internet.
+
+00:05:43.505 --> 00:05:47.340
+We have URLs, and request websites from servers.
+
+00:05:47.340 --> 00:05:49.660
+We get back those web page files and
+
+00:05:49.660 --> 00:05:51.260
+then we see whatever we see on the
+
+00:05:51.260 --> 00:05:55.260
+screen. So it's a pretty oversimplified view of
+
+00:05:55.580 --> 00:06:01.075
+the client server architecture. And then these actual
+
+00:06:01.075 --> 00:06:04.115
+web page files that we're receiving are HTML
+
+00:06:04.115 --> 00:06:07.635
+files, which display content like the basic building
+
+00:06:07.635 --> 00:06:13.920
+blocks, CSS files, which style the HTML, JavaScript,
+
+00:06:13.920 --> 00:06:16.720
+which lets these files, I guess, have, like,
+
+00:06:16.960 --> 00:06:22.560
+actions, and then assets, like images, GIFs, etcetera.
+
+00:06:24.160 --> 00:06:28.415
+Yeah. So what exactly are we gonna be
+
+00:06:28.415 --> 00:06:30.655
+building in this first week and leading into
+
+00:06:30.655 --> 00:06:34.975
+next week? I'll open up this website just
+
+00:06:34.975 --> 00:06:36.655
+for you guys to see it really quickly.
+
+00:06:36.815 --> 00:06:39.775
+But essentially, we're gonna be building this entire
+
+00:06:39.775 --> 00:06:42.620
+website from the ground up. It's going to
+
+00:06:42.620 --> 00:06:45.260
+be called Catbook, and you can also visit
+
+00:06:45.260 --> 00:06:47.900
+it by going to this link. But it's
+
+00:06:47.900 --> 00:06:50.060
+going to have a home page, a profile,
+
+00:06:50.940 --> 00:06:54.700
+live chats, a game, and then other aspects
+
+00:06:54.700 --> 00:07:03.005
+as well, such as authentication. So more about
+
+00:07:03.005 --> 00:07:05.485
+the course now. There's gonna be four milestones
+
+00:07:05.485 --> 00:07:07.325
+for everyone to complete if you're taking this
+
+00:07:07.325 --> 00:07:10.930
+class for credit. Milestones zero is gonna be
+
+00:07:10.930 --> 00:07:13.890
+due this Wednesday, and it's gonna be ideation.
+
+00:07:13.890 --> 00:07:16.210
+Essentially, you're just gonna be creating a list
+
+00:07:16.210 --> 00:07:19.170
+of topics or project ideas on a Google
+
+00:07:19.170 --> 00:07:21.330
+Form and then submitting that Google Form. It's
+
+00:07:21.330 --> 00:07:23.250
+pretty simple, and it should really only take
+
+00:07:23.250 --> 00:07:27.705
+like an hour or even less. But yeah,
+
+00:07:27.705 --> 00:07:30.505
+we'll be sending out information soon for that.
+
+00:07:32.585 --> 00:07:34.265
+Next is project pitches. It's going to be
+
+00:07:34.265 --> 00:07:36.585
+this weekend. You're going to have to sign
+
+00:07:36.585 --> 00:07:40.120
+up for a time slot for some slot
+
+00:07:41.080 --> 00:07:43.640
+either Saturday or Sunday from one to 5PM.
+
+00:07:43.880 --> 00:07:45.720
+It's gonna be around, I think, thirty minutes
+
+00:07:45.720 --> 00:07:49.080
+or maybe less. But at this point, you
+
+00:07:49.080 --> 00:07:51.160
+would have a project idea, and you would
+
+00:07:51.160 --> 00:07:54.505
+be pitching your projects to some of the
+
+00:07:54.505 --> 00:07:56.745
+staff members and we'll give feedback about it
+
+00:07:56.825 --> 00:07:59.545
+and hopefully give some helpful advice about how
+
+00:07:59.545 --> 00:08:02.185
+to get started, what pitfalls you might fall
+
+00:08:02.185 --> 00:08:06.025
+into, and how to navigate the entire course.
+
+00:08:09.520 --> 00:08:13.040
+Milestone two is pretty long after. It's gonna
+
+00:08:13.040 --> 00:08:15.520
+be Wednesday, January 22. And this is your
+
+00:08:15.520 --> 00:08:19.600
+MVP. So some sort of working prototype for
+
+00:08:19.600 --> 00:08:22.755
+your project. We're not expecting the whole thing,
+
+00:08:22.755 --> 00:08:24.275
+but we want to see a lot of
+
+00:08:24.275 --> 00:08:30.035
+functionality already figured out by then. And then
+
+00:08:30.035 --> 00:08:33.115
+the final website, Milestone three, is due January
+
+00:08:33.115 --> 00:08:36.720
+29. That's around the end of IEP during
+
+00:08:36.720 --> 00:08:47.155
+week four. Any questions about these milestones? And
+
+00:08:47.155 --> 00:08:50.995
+as a reminder, passing the class just requires
+
+00:08:50.995 --> 00:08:53.555
+you to do all four of these milestones,
+
+00:08:53.555 --> 00:08:56.275
+so it's not too hard. As long as
+
+00:08:56.275 --> 00:08:58.195
+you put in effort and it's clear that
+
+00:08:58.195 --> 00:09:00.515
+you have, then you'll be on your way
+
+00:09:00.515 --> 00:09:07.040
+to passing the class. So more about the
+
+00:09:07.040 --> 00:09:11.040
+actual websites that you will be building. So
+
+00:09:11.040 --> 00:09:13.760
+you'll be building some dynamic website supported by
+
+00:09:13.760 --> 00:09:15.360
+a back end, so not just like a
+
+00:09:15.360 --> 00:09:17.245
+front end you might be able to build
+
+00:09:17.245 --> 00:09:20.045
+through like some website builders. You're gonna be
+
+00:09:20.045 --> 00:09:22.525
+creating pretty much the whole thing yourselves. So
+
+00:09:22.525 --> 00:09:25.405
+front end, back end, database, everything is gonna
+
+00:09:25.405 --> 00:09:29.740
+be built by you. We want the website
+
+00:09:29.740 --> 00:09:33.500
+to have personalized experience based on user accounts,
+
+00:09:33.500 --> 00:09:35.820
+so some sort of authentication like you saw
+
+00:09:35.820 --> 00:09:38.700
+on the example website. We want it to
+
+00:09:38.700 --> 00:09:45.325
+be different based on who's logged in. Minimum
+
+00:09:45.325 --> 00:09:47.725
+security requirements fulfilled. This isn't that big of
+
+00:09:47.725 --> 00:09:50.045
+a deal, but yeah, we don't want your
+
+00:09:50.045 --> 00:09:57.080
+website to be a vulnerability or whatever. We
+
+00:09:57.080 --> 00:09:58.520
+want you to be creative and have your
+
+00:09:58.520 --> 00:10:01.160
+own original design for the website and implementation.
+
+00:10:02.040 --> 00:10:03.160
+A lot of the code is going be
+
+00:10:03.160 --> 00:10:05.720
+given to you from the skeleton code that
+
+00:10:05.720 --> 00:10:08.920
+we'll provide, but past that, we'd like you
+
+00:10:08.920 --> 00:10:12.465
+to implement as much as possible yourself. All
+
+00:10:12.465 --> 00:10:14.625
+the code should be your own. And then
+
+00:10:14.625 --> 00:10:17.025
+if you do use any other outside code,
+
+00:10:17.825 --> 00:10:22.465
+to just cite it properly and limit that
+
+00:10:22.465 --> 00:10:28.250
+use if possible. And then everyone should have
+
+00:10:28.250 --> 00:10:30.730
+a GitHub repo by now or if you
+
+00:10:30.730 --> 00:10:33.370
+haven't already, that's okay. You should have received
+
+00:10:33.370 --> 00:10:35.930
+instructions from an email to set up the
+
+00:10:35.930 --> 00:10:38.635
+GitHub repo and this should be shared between
+
+00:10:38.635 --> 00:10:41.115
+your teammates. It's only private to you guys
+
+00:10:41.675 --> 00:10:43.595
+and we can also like check out this
+
+00:10:43.595 --> 00:10:46.395
+repository so that we can help you on
+
+00:10:46.395 --> 00:10:53.770
+our end. Some cannots for the website. You
+
+00:10:53.770 --> 00:10:56.890
+cannot create a website using pre existing, like,
+
+00:10:56.890 --> 00:11:02.535
+website builders like WordSpace WordPress or Squarespace. You
+
+00:11:02.535 --> 00:11:04.935
+cannot use any part of a previous project,
+
+00:11:05.575 --> 00:11:07.495
+just so that the playing field is level
+
+00:11:07.495 --> 00:11:13.095
+for everyone. You cannot outsource your development. You
+
+00:11:13.095 --> 00:11:15.255
+can't tell your friends who are really good
+
+00:11:15.255 --> 00:11:16.700
+at web development who are not taking the
+
+00:11:16.700 --> 00:11:19.580
+class to do the website for you. We
+
+00:11:19.580 --> 00:11:22.060
+hope that this class is more or is
+
+00:11:22.060 --> 00:11:24.700
+mostly just like an opportunity for you to
+
+00:11:24.700 --> 00:11:33.775
+learn by actually creating. Yeah. So for judging,
+
+00:11:33.775 --> 00:11:37.135
+there's four categories. The first is functionality, so
+
+00:11:37.135 --> 00:11:39.775
+just like whether or not your website works
+
+00:11:39.775 --> 00:11:43.295
+as intended. These are like the technical components
+
+00:11:43.455 --> 00:11:45.100
+and we'll just be like playing around with
+
+00:11:45.100 --> 00:11:46.940
+your website to make sure that it's working
+
+00:11:46.940 --> 00:11:50.780
+fine. Usability is more about like the user
+
+00:11:50.780 --> 00:11:53.660
+experience, making sure that the website is easy
+
+00:11:53.660 --> 00:12:00.075
+to use. Aesthetics, self explanatory. And then concept
+
+00:12:00.075 --> 00:12:03.595
+execution. We want your website to sort of
+
+00:12:03.595 --> 00:12:08.475
+have a purpose. Main use of web development
+
+00:12:08.475 --> 00:12:10.315
+is really to just create products that are
+
+00:12:10.315 --> 00:12:13.675
+actually useful or achieve some goal. So we
+
+00:12:13.675 --> 00:12:16.590
+want your website to do something or solve
+
+00:12:16.590 --> 00:12:20.030
+some problem that you have come up with
+
+00:12:20.510 --> 00:12:26.590
+like a good solution. Okay. So how do
+
+00:12:26.590 --> 00:12:30.665
+you get help throughout this entire course? Number
+
+00:12:30.665 --> 00:12:33.785
+one tool is Piazza. If you haven't already,
+
+00:12:33.785 --> 00:12:38.265
+please join weblab.ispiazza. Ask questions at any time.
+
+00:12:38.265 --> 00:12:40.185
+I think our average response time is like
+
+00:12:40.185 --> 00:12:44.180
+five minutes during the course. We're constantly on
+
+00:12:44.180 --> 00:12:47.060
+it answering questions as fast as we can.
+
+00:12:48.500 --> 00:12:49.940
+Go to the course website if you have
+
+00:12:49.940 --> 00:12:53.700
+more questions about the course logistics, if you
+
+00:12:53.700 --> 00:12:55.300
+want to visit the schedule, if you want
+
+00:12:55.300 --> 00:12:57.220
+to read the rules about the competition more.
+
+00:12:59.535 --> 00:13:03.455
+Visit the course website info or weblab.isinfo for
+
+00:13:03.455 --> 00:13:07.855
+resources. It has all of the links that
+
+00:13:08.655 --> 00:13:12.890
+you can I'll actually just open it. At
+
+00:13:12.890 --> 00:13:14.730
+the bottom, you can find all the things
+
+00:13:14.730 --> 00:13:16.410
+that we're pretty much going over in these
+
+00:13:16.410 --> 00:13:19.210
+slides, as well as more information about the
+
+00:13:19.210 --> 00:13:26.985
+contest here, and then FAQ. And then please
+
+00:13:26.985 --> 00:13:28.745
+show up to office hours too. I think
+
+00:13:28.745 --> 00:13:31.785
+in person feedback and help is a lot
+
+00:13:31.785 --> 00:13:36.185
+more useful than Piazza actually. Yeah. So office
+
+00:13:36.185 --> 00:13:38.025
+hours are usually seven to nine, and you
+
+00:13:38.025 --> 00:13:46.760
+can find them on the schedule. So, yeah,
+
+00:13:46.840 --> 00:13:48.840
+today we should have office hours from seven
+
+00:13:48.840 --> 00:13:51.800
+to 9PM. If you need help with homework
+
+00:13:51.800 --> 00:13:55.055
+zero, setting stuff up, please show up. Or
+
+00:13:55.055 --> 00:13:57.295
+if you have other questions from lecture, also
+
+00:13:57.295 --> 00:14:00.015
+please show up. Office hours are gonna be
+
+00:14:00.015 --> 00:14:03.375
+in thirty two zero eight two, so in
+
+00:14:03.375 --> 00:14:08.590
+Status Center. And then finally, we have extended
+
+00:14:08.590 --> 00:14:12.350
+office hours called Hackathons. They basically run from
+
+00:14:12.350 --> 00:14:16.190
+7PM to 1AM. So our sponsors are going
+
+00:14:16.190 --> 00:14:18.430
+be there as well to sort of see
+
+00:14:18.430 --> 00:14:22.105
+how everyone's doing. But yeah, these are during
+
+00:14:22.105 --> 00:14:24.265
+week two and three. There's gonna be two
+
+00:14:24.265 --> 00:14:27.945
+of them. There'll be food provided, drinks, etcetera.
+
+00:14:28.585 --> 00:14:35.580
+It's pretty fun and very helpful. Okay. Yeah.
+
+00:14:36.300 --> 00:14:40.780
+So what else is there to WebLab? Besides
+
+00:14:40.780 --> 00:14:44.620
+just building the website from scratch, you'll learn
+
+00:14:44.620 --> 00:14:48.825
+a lot about UI design, learning version control,
+
+00:14:48.825 --> 00:14:50.825
+which is really helpful in all the MIT
+
+00:14:50.825 --> 00:14:53.065
+classes you take in the future. This is
+
+00:14:53.065 --> 00:14:57.465
+what I was referring to earlier, git. If
+
+00:14:57.465 --> 00:14:59.385
+you're not a course six three or some
+
+00:14:59.385 --> 00:15:01.305
+course six, this is sort of a taste
+
+00:15:01.385 --> 00:15:04.840
+of course six three at MIT. Hopefully, you
+
+00:15:04.840 --> 00:15:06.920
+enjoy and take more CS classes in the
+
+00:15:06.920 --> 00:15:11.080
+future. And then if this is your first
+
+00:15:11.080 --> 00:15:13.240
+time learning web development, hopefully this is a
+
+00:15:13.240 --> 00:15:16.175
+great first experience for you to create something,
+
+00:15:16.175 --> 00:15:19.055
+create your own thing from the ground up
+
+00:15:21.935 --> 00:15:28.820
+and much more. So most importantly, WebLab is
+
+00:15:28.820 --> 00:15:32.180
+not a classic MIT class. It is rendering
+
+00:15:32.180 --> 00:15:35.140
+IAP and we are on the PDF scale,
+
+00:15:35.220 --> 00:15:39.380
+so you're only graded pass fail pretty much.
+
+00:15:39.620 --> 00:15:41.620
+As long as you do all the milestones,
+
+00:15:42.045 --> 00:15:44.925
+you'll be good, and you'll receive a pass.
+
+00:15:45.805 --> 00:15:47.485
+Make sure that you're also in the portal
+
+00:15:47.485 --> 00:15:49.405
+once again so that we can actually mark
+
+00:15:49.405 --> 00:15:53.485
+down the milestones for you. It's also all
+
+00:15:53.485 --> 00:15:57.240
+student run, so everyone who's a TA or
+
+00:15:57.240 --> 00:16:00.040
+a staff for WebLab is here so that
+
+00:16:00.040 --> 00:16:01.960
+your experience in this class is as good
+
+00:16:01.960 --> 00:16:04.520
+as possible. We want to help as much
+
+00:16:04.520 --> 00:16:06.360
+as possible, that's why we're TA ing this
+
+00:16:06.360 --> 00:16:09.265
+class. And at any time, if you have
+
+00:16:09.265 --> 00:16:15.505
+questions during class, please visit weblab.isquestions or weblab.isq.
+
+00:16:16.065 --> 00:16:18.465
+Q lets you ask a question on a
+
+00:16:18.465 --> 00:16:20.625
+ticket and then a staff member will actually
+
+00:16:20.625 --> 00:16:22.880
+go and visit you to help answer your
+
+00:16:22.880 --> 00:16:27.280
+question in person. WebLab is also just a
+
+00:16:27.280 --> 00:16:29.920
+great opportunity for you to meet new people
+
+00:16:29.920 --> 00:16:33.760
+during lecture, during office hours, and hackathons. Hopefully,
+
+00:16:33.760 --> 00:16:35.040
+you'll spend a lot of time with your
+
+00:16:35.040 --> 00:16:37.200
+team to create a website you guys all
+
+00:16:37.200 --> 00:16:39.225
+love and then you'll have a great time.
+
+00:16:43.065 --> 00:16:45.465
+Okay. So the last part is every year
+
+00:16:45.465 --> 00:16:48.745
+we have a theme. In past years, the
+
+00:16:48.745 --> 00:16:50.585
+themes have been around the world, remember the
+
+00:16:50.585 --> 00:16:53.385
+future, and then two years ago it was
+
+00:16:53.100 --> 00:16:54.460
+and I, last year it was send it
+
+00:16:54.460 --> 00:16:57.340
+or blend it. They're pretty open ended. But
+
+00:16:57.340 --> 00:17:01.420
+this theme is essentially like what your website's
+
+00:17:01.420 --> 00:17:03.500
+gonna be sort of some take on this
+
+00:17:03.500 --> 00:17:07.595
+theme. Hopefully it's open ended enough to the
+
+00:17:07.595 --> 00:17:09.275
+point where you can just do whatever you
+
+00:17:09.275 --> 00:17:13.595
+want and adapt it, sort of relate it
+
+00:17:13.595 --> 00:17:19.035
+to the theme. And as is tradition, we
+
+00:17:19.035 --> 00:17:20.875
+have a theme reveal video.
