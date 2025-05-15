@@ -3,7 +3,7 @@
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --text-color: #1d1d1f; 
     --text-color-secondary: #6a6a6f; 
-    --link-color: #007bff; /* Apple Blue, hoặc bạn có thể dùng #007aff */
+    --link-color: #007bff; /* Apple Blue */
     --bg-color: #f0f0f5; 
     --content-bg: #ffffff; 
     --border-color: #d1d1d6; 
@@ -16,7 +16,6 @@
     --video-height-normal: 40vh; /* Default video height */
     --video-height-minimal: 50px; /* Height for minimal video (controls) */
     --header-height: 95px;    /* Approximate height for title and settings */
-    --timeline-width: 190px; /* Increased for better spacing */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,9 +49,6 @@ body {
 body.video-minimal-mode .video-section {
     height: var(--video-height-minimal);
 }
-/* Optional: Make iframe content less prominent in minimal mode if just reducing height isn't enough */
-/* body.video-minimal-mode #youtube-player-iframe iframe { opacity: 0.1; } */
-
 
 #youtube-player-iframe { 
     width: 100%; 
@@ -101,157 +97,172 @@ body.video-minimal-mode .page-header {
 .settings-bar label { display: flex; align-items: center; cursor: pointer; color: var(--text-color-secondary); }
 .settings-bar input[type=checkbox] { margin-right: 6px; accent-color: var(--link-color); width:14px; height:14px; }
 
-.content-section { /* Main scrollable area for timeline and transcript */
+.content-section { /* Main scrollable area for transcript with integrated timeline */
     display: flex; 
+    flex-direction: column;
     flex-grow: 1; 
     width: 100%; 
-    max-width: 1440px; 
+    max-width: 1200px; 
     margin: 0 auto; 
-    overflow-y: auto; /* This container handles the primary scroll */
-    /* Height calculated to fill space below sticky header */
+    overflow-y: auto;
     height: calc(100vh - var(--video-height-normal) - var(--header-height)); 
-    position: relative; /* For potential absolute positioning of children or pseudo-elements */
+    position: relative;
 }
 body.video-minimal-mode .content-section {
     height: calc(100vh - var(--video-height-minimal) - var(--header-height));
 }
 
-#timeline-container { 
-    width: var(--timeline-width); 
-    flex-shrink: 0; 
-    padding: 25px 10px 25px 20px; /* Left padding for timestamp, right for potential scrollbar of .content-section */
-    border-right: 1px solid var(--border-color);
-    position: sticky; /* Timeline itself is sticky *within* the .content-section */
-    top: 0; 
-    align-self: flex-start; 
-    height: 100%; /* Takes full height of its parent .content-section's scrollable area */
-    background-color: #fcfcfd; /* Slightly different from transcript for visual separation */
-    /* No overflow-y here, it scrolls with .content-section */
+/* New combined paragraph container */
+.paragraph-container {
+    display: flex;
+    margin-bottom: 1.5em;
+    position: relative;
+    cursor: pointer;
 }
 
-.timeline-list { 
-    list-style: none; 
-    padding: 0; 
-    margin:0; 
-    position: relative; 
+/* Timeline component (left side) */
+.paragraph-timeline {
+    width: 100px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px; /* Align with paragraph text */
 }
 
-/* Vertical line running through the center of the dots */
-.timeline-list::before {
-    content: '';
-    position: absolute;
-    left: calc(65px + 15px + 5.5px - 1px); /* timestamp_width + padding_right + dot_container_padding_left + dot_radius - line_width/2 */
-    top: 15px; /* Align with first dot's center */
-    bottom: 15px; /* Align with last dot's center */
-    width: 2px; /* Thinner line */
-    background-color: var(--timeline-line-color);
-    z-index: 0; /* Behind dots */
+.paragraph-timeline-dot-container {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
 
-.timeline-item { 
-    position: relative; 
-    display: flex; 
-    align-items: center; 
-    min-height: 28px; /* Ensure consistent item height */
-    padding: 6px 0; /* Reduced vertical padding */
-    cursor: pointer; 
-    border-radius: 6px; 
-    margin-right: 5px; /* Space from right edge for potential scrollbar */
-    transition: background-color .15s ease; 
+.paragraph-timeline-dot {
+    width: 9px;
+    height: 9px;
+    background-color: var(--content-bg);
+    border-radius: 50%;
+    border: 2px solid var(--timeline-dot-color);
+    transition: all .2s ease-in-out;
+    opacity: 0.7;
 }
-.timeline-item:hover { background-color: rgba(0,0,0,.03); }
 
-.timeline-timestamp { 
-    font-size: .75em; 
-    color: var(--text-color-secondary); 
-    width: 65px; 
-    text-align: right; 
-    padding-right: 15px; 
-    font-variant-numeric: tabular-nums; 
-    z-index: 1;
+.paragraph-container.active .paragraph-timeline-dot {
+    border-color: var(--timeline-dot-active-color);
+    background-color: var(--timeline-dot-active-color);
+    transform: scale(1.4);
+    opacity: 1;
+    box-shadow: 0 0 6px var(--timeline-dot-active-color);
+}
+
+.paragraph-timeline-timestamp {
+    font-size: .75em;
+    color: var(--text-color-secondary);
+    text-align: center;
+    padding: 4px 0;
+    font-variant-numeric: tabular-nums;
     transition: color 0.2s ease, font-weight 0.2s ease;
 }
 
-.timeline-dot-container { 
-    width: 22px; /* Width for the dot and its immediate surroundings */
-    height: 22px;
-    display:flex; 
-    align-items: center;
-    justify-content: center; /* Center the dot within this container */
-    position: relative;
+.paragraph-container.active .paragraph-timeline-timestamp {
+    color: var(--timeline-dot-active-color);
+    font-weight: 600;
+}
+
+/* Timeline connection line */
+.timeline-connection {
+    position: absolute;
+    width: 2px;
+    background-color: var(--timeline-line-color);
+    top: 0;
+    bottom: 0;
+    left: 50px; /* Center in the timeline area */
     z-index: 1;
 }
 
-.timeline-dot { 
-    width: 9px; 
-    height: 9px; 
-    background-color: var(--content-bg); 
-    border-radius: 50%; 
-    border: 2px solid var(--timeline-dot-color); 
-    transition: all .2s ease-in-out; 
-    opacity: 0.6; /* Inactive dots are more transparent */
+/* Transcript component (right side) */
+.paragraph-text {
+    flex-grow: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+    transition: background-color 0.2s ease;
 }
 
-.timeline-item.active .timeline-dot { 
-    border-color: var(--timeline-dot-active-color); 
-    background-color: var(--timeline-dot-active-color); 
-    transform: scale(1.4); /* Make active dot significantly larger */
-    opacity: 1;
-    box-shadow: 0 0 6px var(--timeline-dot-active-color); /* Subtle glow */
+.paragraph-container.active .paragraph-text {
+    background-color: var(--highlight-paragraph-bg);
 }
 
-.timeline-item.active .timeline-timestamp { 
-    color: var(--timeline-dot-active-color); 
-    font-weight: 600; /* Bold active timestamp */
-}
-        
-#transcript-content-container { 
-    flex-grow: 1; 
-    padding: 25px; 
-    /* No overflow-y and height here, it scrolls with .content-section */
+/* Sentence highlighting */
+.transcript-sentence {
+    cursor: pointer;
+    padding: 0.5px 2px;
+    margin-right: 2px;
+    border-radius: 3px;
+    transition: background-color .15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Transcript paragraph and sentence styles remain similar */
-.transcript-paragraph-text { margin-bottom: 1.8em; padding: 10px 12px; border-radius: 8px; font-size: 1rem; line-height:1.65; letter-spacing: -0.01em; }
-.transcript-paragraph-text.highlighted-paragraph { background-color: var(--highlight-paragraph-bg); }
-.transcript-sentence { cursor: pointer; padding: 0.5px 2px; margin-right: 2px; border-radius: 3px; transition: background-color .15s ease-in-out, box-shadow 0.15s ease-in-out; }
-.transcript-sentence:hover { background-color: rgba(0,0,0,.04); }
-.transcript-sentence.highlighted-sentence { background-color: var(--highlight-sentence-bg); }
-.no-transcript-message { padding: 20px; text-align: center; color: var(--text-color-secondary); }
+.transcript-sentence:hover {
+    background-color: rgba(0,0,0,.04);
+}
+
+.transcript-sentence.highlighted-sentence {
+    background-color: var(--highlight-sentence-bg);
+}
+
+.no-transcript-message {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color-secondary);
+}
 
 /* Responsive adjustments */
-@media (max-width:900px) { 
-    :root { --timeline-width: 100%; /* Timeline takes full width before transcript on smaller screens */ }
-    .content-section { flex-direction:column; }
-    #timeline-container {
-        width: 100%; 
-        height: auto; /* Adjust to content */
-        max-height: 120px; /* Allow horizontal scroll if many items */
-        border-right: none; 
-        border-bottom: 1px solid var(--border-color);
-        padding: 10px; 
-        overflow-x: auto; 
-        overflow-y: hidden; 
-        position: static; /* No longer sticky inside a column flex */
-        background-color: var(--content-bg); /* Match content background */
+@media (max-width:900px) {
+    .paragraph-container {
+        flex-direction: column;
     }
-    .timeline-list { display: flex; flex-direction: row; align-items: center; width:max-content; }
-    .timeline-list::before { display:none; } /* Hide vertical line */
-    .timeline-list::after { /* Horizontal line for mobile */
-        content: ''; position: absolute; left: 15px; right: 15px; top: calc(50% + 10px); 
-        height: 2.5px; background-color: var(--timeline-line-color); z-index: 0; border-radius:3px;
+    
+    .paragraph-timeline {
+        width: 100%;
+        flex-direction: row;
+        padding: 5px 0;
+        justify-content: flex-start;
     }
-    .timeline-item { padding: 5px 10px; display: flex; flex-direction: column; align-items: center; min-width: 85px; }
-    .timeline-timestamp { width: auto; text-align: center; padding-right: 0; margin-bottom: 4px; order: -1; font-size:0.7em; }
-    .timeline-dot-container { width: auto; padding-left:0; justify-content:center; }
-    .timeline-dot { margin-bottom: 0; }
-    #transcript-content-container { padding-top: 15px; }
+    
+    .paragraph-timeline-timestamp {
+        margin-left: 15px;
+        text-align: left;
+    }
+    
+    .timeline-connection {
+        width: 4px;
+        left: 10px;
+    }
+    
+    .paragraph-text {
+        margin-left: 30px; /* Indent to align with timeline */
+    }
 }
-@media (max-width:600px) { 
-    :root { --video-height-normal: 30vh; --header-height: 75px;}
-    .content-section { font-size:.9rem; }
-    .transcript-paragraph-text { font-size: 0.95rem; }
+
+@media (max-width:600px) {
+    :root { --video-height-normal: 30vh; --header-height: 75px; }
+    .content-section { font-size: .9rem; }
+    .paragraph-text { font-size: 0.95rem; }
     .video-info h1 { font-size: 1.1em; }
     .video-info p { font-size: 0.7em; }
     .settings-bar { font-size: 0.75em; }
+    
+    .paragraph-timeline {
+        padding: 3px 0;
+    }
+    
+    .paragraph-timeline-timestamp {
+        font-size: 0.7em;
+    }
 }
