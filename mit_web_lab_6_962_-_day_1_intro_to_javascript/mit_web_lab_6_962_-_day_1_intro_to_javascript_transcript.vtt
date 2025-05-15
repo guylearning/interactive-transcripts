@@ -1,0 +1,1805 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 345a64ce-c49a-4b7b-b5f7-334dfca317a7
+Created: 2025-05-15T20:03:19.950Z
+Duration: 1929.1951
+Channels: 1
+
+00:00:06.960 --> 00:00:08.960
+Alright. Can I have everyone's attention? We're gonna
+
+00:00:08.960 --> 00:00:11.840
+get started of our last lecture of the
+
+00:00:11.840 --> 00:00:15.120
+day. Congratulations, you guys, for making it almost
+
+00:00:15.120 --> 00:00:16.855
+to the end. I know that sitting in
+
+00:00:16.855 --> 00:00:19.335
+twenty six one hundred from eleven to three
+
+00:00:19.335 --> 00:00:22.375
+is kind of a marathon. So thank you
+
+00:00:22.375 --> 00:00:25.255
+guys. Y'all are amazing. So the way this
+
+00:00:25.255 --> 00:00:27.495
+lecture is going to work is it's on
+
+00:00:27.495 --> 00:00:30.295
+basic JavaScript. We're assuming that most of you
+
+00:00:30.295 --> 00:00:32.310
+guys are coming from background where you have
+
+00:00:32.310 --> 00:00:35.190
+some programming experience in a language like Python,
+
+00:00:35.430 --> 00:00:36.950
+because that's what most of the MIT classes
+
+00:00:36.950 --> 00:00:40.470
+teach. And most of you guys are probably
+
+00:00:40.470 --> 00:00:43.910
+not gonna have experience with JavaScript specifically. So
+
+00:00:43.910 --> 00:00:46.550
+this lecture is designed with people from that
+
+00:00:46.550 --> 00:00:48.595
+background where we're just gonna quickly, like, blaze
+
+00:00:48.595 --> 00:00:50.835
+through a bunch of JavaScript syntax, and then
+
+00:00:50.835 --> 00:00:52.115
+you can just sort of look at the
+
+00:00:52.115 --> 00:00:54.915
+slide, map it into mentally how it lines
+
+00:00:54.915 --> 00:00:56.675
+up with what programming you already know, like,
+
+00:00:56.675 --> 00:00:58.435
+oh, this syntax is a little bit different
+
+00:00:58.435 --> 00:01:00.835
+this way. And then you should be good
+
+00:01:00.835 --> 00:01:03.630
+to go. But if you have no programming
+
+00:01:03.630 --> 00:01:05.790
+experience at all, this might be a little
+
+00:01:05.790 --> 00:01:08.030
+bit fast for you, in which case, we
+
+00:01:08.030 --> 00:01:09.950
+recommend a resource which is gonna be linked
+
+00:01:09.950 --> 00:01:12.830
+on our website that will go through the
+
+00:01:12.830 --> 00:01:15.710
+basics of coding in JavaScript more step by
+
+00:01:15.285 --> 00:01:17.525
+step. So if all of this flies over
+
+00:01:17.525 --> 00:01:19.125
+your head, don't worry. Just go to that
+
+00:01:19.125 --> 00:01:20.725
+resource after class and then you'll be able
+
+00:01:20.725 --> 00:01:24.565
+to get caught up. So earlier we talked
+
+00:01:24.565 --> 00:01:27.205
+about HTML and CSS. HTML being sort of
+
+00:01:27.205 --> 00:01:29.445
+the bones of what your website actually has
+
+00:01:29.445 --> 00:01:32.550
+in it, and then CSS being the presentation
+
+00:01:32.550 --> 00:01:35.830
+of it, making it pretty, etcetera. Now how
+
+00:01:35.830 --> 00:01:39.110
+JavaScript fits into this picture is if HTML
+
+00:01:39.110 --> 00:01:40.550
+is the bones and CSS is like the
+
+00:01:40.550 --> 00:01:42.870
+clothing and stuff, then JavaScript is like the
+
+00:01:42.870 --> 00:01:45.625
+organs and muscles that make everything work. So
+
+00:01:45.625 --> 00:01:48.665
+JavaScript is a programming language that takes the
+
+00:01:48.665 --> 00:01:51.305
+content of a web page and manipulates it,
+
+00:01:51.305 --> 00:01:53.625
+so it's what allows the website to change
+
+00:01:53.625 --> 00:01:57.465
+as you're interacting with it. And it's used
+
+00:01:57.465 --> 00:02:01.450
+by basically every website in existence and it
+
+00:02:01.450 --> 00:02:05.130
+is not related to Java. Please just note.
+
+00:02:06.090 --> 00:02:09.690
+So where we run JavaScript code is there
+
+00:02:09.690 --> 00:02:10.970
+are a few places we can run it.
+
+00:02:10.970 --> 00:02:13.370
+Later today, before class tomorrow, you guys are
+
+00:02:13.370 --> 00:02:16.570
+going to need to install Node JS, which
+
+00:02:15.555 --> 00:02:17.475
+a program that allows you to run JavaScript
+
+00:02:17.475 --> 00:02:20.275
+on your own machine. But every all of
+
+00:02:20.275 --> 00:02:22.595
+our web browsers know how to run JavaScript.
+
+00:02:22.755 --> 00:02:26.355
+So if we want to run JavaScript and
+
+00:02:26.355 --> 00:02:27.875
+if you wanna play around with it, I'd
+
+00:02:27.875 --> 00:02:31.130
+recommend opening up the console. So you can
+
+00:02:31.130 --> 00:02:34.410
+do that by going to inspect element here,
+
+00:02:34.810 --> 00:02:36.490
+opening up here, and then the console's gonna
+
+00:02:36.490 --> 00:02:39.130
+be one of these tabs here. And then
+
+00:02:40.170 --> 00:02:42.250
+in the console, I can type in any
+
+00:02:42.250 --> 00:02:44.570
+sort of JavaScript I want. I can print
+
+00:02:44.570 --> 00:02:51.495
+something. That's a typo, but whatever. And I
+
+00:02:51.735 --> 00:02:55.975
+can do math. Two to the power of
+
+00:02:55.975 --> 00:02:59.255
+three is eight, etcetera. I can run any
+
+00:02:59.255 --> 00:03:01.655
+JavaScript that I want in the console here.
+
+00:03:02.135 --> 00:03:03.710
+And so for the time being, we'll be
+
+00:03:03.710 --> 00:03:05.230
+using the console to just play around with
+
+00:03:05.230 --> 00:03:07.150
+it. Feel free to open up your computers,
+
+00:03:07.230 --> 00:03:08.990
+open up the console, and just play around
+
+00:03:08.990 --> 00:03:11.310
+with things as I'm going through the syntax.
+
+00:03:14.505 --> 00:03:19.785
+So now back to actual JavaScript. JavaScript has
+
+00:03:19.785 --> 00:03:22.745
+five primitive data types. So if you notice
+
+00:03:22.745 --> 00:03:25.705
+in some languages, such as Java, they make
+
+00:03:25.705 --> 00:03:28.120
+a distinction between int and float, like integer
+
+00:03:28.120 --> 00:03:31.480
+types and ones with decimal points. JavaScript does
+
+00:03:31.480 --> 00:03:33.320
+not. So everything is just a number, or
+
+00:03:33.320 --> 00:03:35.720
+a boolean, true or false, string, or JavaScript
+
+00:03:35.720 --> 00:03:37.480
+has these two funky types called null and
+
+00:03:37.480 --> 00:03:39.720
+undefined. We will get into what those are
+
+00:03:39.720 --> 00:03:44.575
+later. They're a little bit tricky. For operators,
+
+00:03:44.575 --> 00:03:46.815
+things pretty much work exactly as you would
+
+00:03:46.815 --> 00:03:49.295
+expect. You can add, subtract, multiply, raise something
+
+00:03:49.295 --> 00:03:54.910
+to a power, divide, and concatenate strings. But
+
+00:03:54.910 --> 00:03:57.150
+the thing that doesn't work exactly as you
+
+00:03:57.150 --> 00:03:59.470
+would expect from most other programming languages is
+
+00:03:59.470 --> 00:04:01.870
+comparing things. So if you wanna compare whether
+
+00:04:01.870 --> 00:04:04.430
+two things are equal, typically in JavaScript, we
+
+00:04:04.430 --> 00:04:06.270
+use the triple equal sign, or if it's
+
+00:04:06.270 --> 00:04:09.230
+not equal, the exclamation point and two equal
+
+00:04:09.230 --> 00:04:15.755
+signs. So in most programming languages, we would
+
+00:04:15.755 --> 00:04:18.395
+use double equal sign to compare whether two
+
+00:04:18.395 --> 00:04:20.315
+values are equal. And JavaScript does have the
+
+00:04:20.315 --> 00:04:25.640
+double equal sign operator, but so question. Two
+
+00:04:25.640 --> 00:04:27.560
+double equal sign two, is that true or
+
+00:04:27.560 --> 00:04:31.320
+false? Open hand, true. Closed hand, false. Yeah.
+
+00:04:31.320 --> 00:04:33.720
+It's not a trick question. It's true. What
+
+00:04:34.280 --> 00:04:40.735
+is this? True or false? Okay. I'm getting
+
+00:04:40.735 --> 00:04:42.975
+a big mix, like, maybe half and half
+
+00:04:42.975 --> 00:04:45.375
+for true and for false. So in most
+
+00:04:45.375 --> 00:04:47.615
+programming languages, we kinda want this to be
+
+00:04:47.615 --> 00:04:49.935
+false. Because if we have two things of
+
+00:04:49.935 --> 00:04:54.540
+different data types, those are different entities in
+
+00:04:54.540 --> 00:04:56.620
+memory. We can do different things with them.
+
+00:04:57.900 --> 00:05:01.420
+But in JavaScript, it doesn't do this. In
+
+00:05:01.420 --> 00:05:05.045
+JavaScript, two double equal sign two as a
+
+00:05:05.045 --> 00:05:09.525
+string is true because JavaScript performs type coercion,
+
+00:05:09.525 --> 00:05:11.445
+so it just converts one of the types
+
+00:05:11.445 --> 00:05:13.045
+to be the same as the other type
+
+00:05:13.045 --> 00:05:16.165
+before it compares them. Which is generally what
+
+00:05:16.165 --> 00:05:17.845
+we don't want in programming because we don't
+
+00:05:17.925 --> 00:05:20.630
+It causes a lot of unpredictable behavior. And
+
+00:05:20.630 --> 00:05:23.670
+so in JavaScript, basically, the bottom line is
+
+00:05:23.670 --> 00:05:25.990
+we always use triple equal sign when comparing
+
+00:05:25.990 --> 00:05:32.070
+things. Alright. Let's go over some pretty basic
+
+00:05:32.070 --> 00:05:36.055
+syntax. JavaScript has a semicolon at the end
+
+00:05:36.055 --> 00:05:39.095
+of every single statement. So any command that
+
+00:05:39.095 --> 00:05:42.935
+you do ends in a semicolon. It doesn't
+
+00:05:42.935 --> 00:05:45.335
+matter whether you indent things properly or not.
+
+00:05:45.415 --> 00:05:47.540
+So if this was a complete garbage mess
+
+00:05:47.540 --> 00:05:50.180
+with no indenting whatsoever and white space all
+
+00:05:50.180 --> 00:05:51.620
+over the place, JavaScript would be able to
+
+00:05:51.620 --> 00:05:54.340
+execute it just fine. But please indent things
+
+00:05:54.340 --> 00:05:59.395
+properly for readability. You use curly braces to
+
+00:05:59.395 --> 00:06:01.315
+denote where blocks begin and end. So in
+
+00:06:01.315 --> 00:06:03.955
+Python, you would have a function the function
+
+00:06:03.955 --> 00:06:05.795
+signature, and then a colon, and then an
+
+00:06:05.795 --> 00:06:08.675
+indentured block. In JavaScript, it's different. You use
+
+00:06:08.675 --> 00:06:10.675
+an open and close curly brace to indicate
+
+00:06:10.675 --> 00:06:16.140
+that block. And similarly for loops. And then
+
+00:06:16.140 --> 00:06:19.900
+you can make comments using the double slash.
+
+00:06:22.460 --> 00:06:25.405
+So in JavaScript, defining variables is kind of
+
+00:06:25.405 --> 00:06:26.845
+different from how you would have done it
+
+00:06:26.845 --> 00:06:29.965
+in most other languages. The standard way of
+
+00:06:29.965 --> 00:06:32.285
+defining variables is by using the keyword let.
+
+00:06:32.285 --> 00:06:34.365
+So you use let, your variable name, and
+
+00:06:34.365 --> 00:06:36.125
+then you can set it equal to something.
+
+00:06:37.790 --> 00:06:41.150
+Convention for naming variables is camel case. So
+
+00:06:41.710 --> 00:06:44.270
+if you're like me, you will start coding
+
+00:06:44.270 --> 00:06:46.590
+in JavaScript and then use the snake case
+
+00:06:46.590 --> 00:06:49.870
+with the underscores and everything, and then you
+
+00:06:49.870 --> 00:06:51.950
+will be sad because your code base is
+
+00:06:51.950 --> 00:06:54.375
+not up to JavaScript convention. So use camel
+
+00:06:54.375 --> 00:06:58.295
+case. So normally, we use let, but if
+
+00:06:58.295 --> 00:07:00.215
+we have a variable that we want to
+
+00:07:00.375 --> 00:07:01.815
+where we don't want to be able to
+
+00:07:01.815 --> 00:07:05.590
+reassign later, we use const. If we say
+
+00:07:05.590 --> 00:07:07.510
+const answer to life equals six one four
+
+00:07:07.510 --> 00:07:09.430
+eight, that's the old course number for WebLab,
+
+00:07:09.670 --> 00:07:11.590
+and then we try and reassign this variable
+
+00:07:11.590 --> 00:07:13.590
+to something else, JavaScript will give us an
+
+00:07:13.590 --> 00:07:17.125
+error. You might ask why we bother using
+
+00:07:17.125 --> 00:07:19.445
+const at all because let just does the
+
+00:07:19.445 --> 00:07:22.965
+same thing. But it's generally safe code practice
+
+00:07:22.965 --> 00:07:24.805
+to define something as const if you know
+
+00:07:24.805 --> 00:07:26.725
+that you're not gonna wanna change it. So
+
+00:07:26.725 --> 00:07:28.805
+that if things change later, JavaScript gives you
+
+00:07:28.805 --> 00:07:32.750
+an error, know something's wrong. And then there's
+
+00:07:32.750 --> 00:07:34.990
+also another keyword that you can use to
+
+00:07:34.990 --> 00:07:38.030
+define variables in JavaScript, it's called var. In
+
+00:07:38.030 --> 00:07:40.350
+old, if you Google around, you might see
+
+00:07:40.350 --> 00:07:43.870
+code that uses this. Basically, just don't use
+
+00:07:43.575 --> 00:07:47.175
+it. We don't use that anymore. Technically speaking,
+
+00:07:47.175 --> 00:07:50.215
+var is function scoped, so a variable defined
+
+00:07:50.215 --> 00:07:52.295
+with var exists within the function that it
+
+00:07:52.295 --> 00:07:55.815
+was defined in. But that is very different
+
+00:07:55.815 --> 00:07:57.655
+from any other, the way any other programming
+
+00:07:57.655 --> 00:08:00.340
+language works, where your variables are typically block
+
+00:08:00.340 --> 00:08:03.300
+scoped, defined within whatever curly braces they're defined
+
+00:08:03.300 --> 00:08:05.060
+in, or that exist within whatever curly braces
+
+00:08:05.060 --> 00:08:08.260
+they're defined in. And so just don't use
+
+00:08:08.260 --> 00:08:11.620
+var. It's kind of sad. Any questions on
+
+00:08:11.620 --> 00:08:18.395
+what we've gone over so far? Alright. So
+
+00:08:18.395 --> 00:08:20.635
+null and undefined are two things that you
+
+00:08:20.635 --> 00:08:23.915
+might not have seen before. Undefined means that
+
+00:08:23.915 --> 00:08:26.395
+you have not assigned something a value yet.
+
+00:08:26.395 --> 00:08:29.010
+So you can declare a variable, let first
+
+00:08:29.010 --> 00:08:30.850
+name and then a semi colon, without assigning
+
+00:08:30.850 --> 00:08:34.130
+it any value, and then JavaScript will automatically
+
+00:08:34.130 --> 00:08:36.930
+assign the value of that variable to be
+
+00:08:36.930 --> 00:08:41.010
+undefined. And alternatively, we can also use null
+
+00:08:41.010 --> 00:08:44.195
+to explicitly say, there is no value for
+
+00:08:44.195 --> 00:08:47.875
+this variable and, yeah, if just if in
+
+00:08:47.875 --> 00:08:49.475
+the purposes of your code, you want to
+
+00:08:49.475 --> 00:08:51.715
+know whether this variable has, like, no value.
+
+00:08:54.840 --> 00:09:01.880
+Pretty simple, console dot log prints something. And
+
+00:09:02.200 --> 00:09:03.880
+it's good for debugging, so you can put
+
+00:09:03.880 --> 00:09:05.640
+console logs all over your code, and then
+
+00:09:05.640 --> 00:09:07.880
+it'll print out things that are useful for
+
+00:09:07.880 --> 00:09:14.065
+you to know. Okay. JavaScript also supports template
+
+00:09:14.065 --> 00:09:17.105
+strings. So if you want to normally, you
+
+00:09:17.105 --> 00:09:19.585
+would define a string using the quotation marks,
+
+00:09:19.585 --> 00:09:22.305
+regular quotation marks. But if we define a
+
+00:09:22.305 --> 00:09:24.945
+string with the back tick, which is in
+
+00:09:24.570 --> 00:09:27.450
+the top left corner of our keyboard, then
+
+00:09:28.170 --> 00:09:32.330
+we can put in little bits like this
+
+00:09:32.490 --> 00:09:34.490
+that have the dollar sign and then curly
+
+00:09:34.490 --> 00:09:36.650
+braces, and then inside those curly braces, we
+
+00:09:36.650 --> 00:09:40.005
+can put any JavaScript expression we want. So
+
+00:09:40.005 --> 00:09:44.085
+basically, this will evaluate this JavaScript expression, multiply
+
+00:09:44.085 --> 00:09:48.085
+these two variables together, and then stick that
+
+00:09:48.085 --> 00:09:51.525
+right into the string. So these are called
+
+00:09:51.525 --> 00:09:57.180
+template strings. Another way of debugging, if you
+
+00:09:57.180 --> 00:09:58.940
+want, you can use an alert which will
+
+00:09:58.940 --> 00:10:00.940
+generate a pop up on your web screen.
+
+00:10:03.100 --> 00:10:05.260
+Okay. Any questions on what we covered so
+
+00:10:05.260 --> 00:10:07.260
+far? Sorry. We are just, like, blazing through
+
+00:10:07.260 --> 00:10:12.755
+this one thing at a time. Alright. So
+
+00:10:12.755 --> 00:10:15.315
+for arrays, this is pretty similar to lists
+
+00:10:15.315 --> 00:10:18.995
+in Python or whatever, but we can fill
+
+00:10:18.995 --> 00:10:22.140
+our array with literally anything we want. Remember
+
+00:10:22.140 --> 00:10:26.060
+that in all programming languages, arrays are zero
+
+00:10:26.060 --> 00:10:28.940
+indexed, which means that the first index, if
+
+00:10:28.940 --> 00:10:32.380
+we want to get out the element at
+
+00:10:32.380 --> 00:10:34.540
+index three of pets, which is what this
+
+00:10:34.540 --> 00:10:37.935
+is doing, then this is index zero, this
+
+00:10:37.935 --> 00:10:40.815
+is index one, index two, index three, so
+
+00:10:40.815 --> 00:10:44.095
+this one is bird. This is not index
+
+00:10:44.095 --> 00:10:49.150
+one. And then we can replace an element
+
+00:10:49.150 --> 00:10:51.070
+of our array with whatever we want. So
+
+00:10:51.070 --> 00:10:53.630
+if we want the second, the element at
+
+00:10:53.630 --> 00:10:56.430
+index two of pets to be hamster, then
+
+00:10:56.430 --> 00:10:59.950
+we go index zero, one, two, replace that
+
+00:10:59.950 --> 00:11:06.195
+with hamster. Any questions on this? K. And
+
+00:11:06.195 --> 00:11:07.635
+then another thing we can do with arrays
+
+00:11:07.635 --> 00:11:09.635
+in JavaScript that's kind of unique to JavaScript
+
+00:11:09.635 --> 00:11:12.115
+is push and pop. Push allows you to
+
+00:11:12.115 --> 00:11:14.035
+just add something directly to the end of
+
+00:11:14.035 --> 00:11:16.195
+the array, and pop takes something off of
+
+00:11:16.195 --> 00:11:18.140
+the end of the array. So here, we're
+
+00:11:18.140 --> 00:11:20.540
+popping off, we have cat, dog, guinea pig,
+
+00:11:20.540 --> 00:11:22.540
+and bird. We're gonna pop off the last
+
+00:11:22.540 --> 00:11:24.620
+element, which is bird, and now our array
+
+00:11:24.620 --> 00:11:26.780
+looks like this. And then we're gonna push
+
+00:11:26.780 --> 00:11:29.660
+rabbit onto the end, and so now our
+
+00:11:29.660 --> 00:11:38.895
+array looks like this. Questions? Okay. Conditional work
+
+00:11:38.975 --> 00:11:42.655
+as pretty similarly to every other language. We
+
+00:11:42.655 --> 00:11:45.920
+have if, if, else if and else. So
+
+00:11:45.920 --> 00:11:48.720
+if whatever value is stored in our variable
+
+00:11:48.720 --> 00:11:51.680
+hour is less than 12, it'll print this.
+
+00:11:51.760 --> 00:11:53.680
+But if it's not less than twelve, then
+
+00:11:53.680 --> 00:11:55.520
+it will go on to the next statement
+
+00:11:55.520 --> 00:11:59.405
+here and check if that is true. So
+
+00:11:59.405 --> 00:12:00.845
+if it's not less than twelve but less
+
+00:12:00.845 --> 00:12:03.805
+than 16, then it'll print this. And then
+
+00:12:03.805 --> 00:12:06.205
+if it's not less than 12 or 16
+
+00:12:06.205 --> 00:12:08.445
+but less than 20, it'll print this. And
+
+00:12:08.445 --> 00:12:10.445
+then finally, if it's greater than 20, it'll
+
+00:12:10.445 --> 00:12:19.090
+print this. Okay. And indentation is good but
+
+00:12:19.090 --> 00:12:24.050
+not necessary for your code to work. While
+
+00:12:24.050 --> 00:12:26.925
+loops, also pretty familiar. You can define some
+
+00:12:26.925 --> 00:12:29.885
+kind of variable and then perform an action
+
+00:12:29.885 --> 00:12:32.285
+as long as this variable is satisfied. So
+
+00:12:32.285 --> 00:12:34.925
+if we set z to be one, then
+
+00:12:35.325 --> 00:12:37.405
+it'll go here, check if this condition is
+
+00:12:37.405 --> 00:12:39.485
+true. If it is, which it is because
+
+00:12:39.485 --> 00:12:42.290
+z is one, then it'll go execute what's
+
+00:12:42.290 --> 00:12:44.530
+inside of here, and then come back up
+
+00:12:44.530 --> 00:12:46.370
+here, check if the condition is still true,
+
+00:12:46.370 --> 00:12:48.370
+if it is, we execute it again, and
+
+00:12:48.370 --> 00:12:49.410
+so on and so on and so on
+
+00:12:49.410 --> 00:12:53.010
+until this condition becomes false. So this block
+
+00:12:53.010 --> 00:12:56.705
+of code will print everything up until and
+
+00:12:56.705 --> 00:12:59.825
+including ten twenty four because we console dot
+
+00:12:59.825 --> 00:13:01.585
+log it first and then we go back
+
+00:13:01.585 --> 00:13:03.025
+up and check if it's less than a
+
+00:13:03.025 --> 00:13:08.225
+thousand. And if we want to iterate through
+
+00:13:08.225 --> 00:13:10.560
+an array, we have to do this funky
+
+00:13:10.560 --> 00:13:12.000
+thing, which you will have seen if you're
+
+00:13:12.000 --> 00:13:13.840
+familiar with Java or c or one of
+
+00:13:13.840 --> 00:13:18.400
+these other languages. We define an array, define
+
+00:13:18.400 --> 00:13:21.760
+a index that or a variable that contains
+
+00:13:21.760 --> 00:13:23.440
+the index of our array that we're currently
+
+00:13:23.440 --> 00:13:25.515
+looking at. So we'll set it equal to
+
+00:13:25.515 --> 00:13:29.115
+zero, and then we iterate through every index
+
+00:13:29.115 --> 00:13:32.635
+of the array until we hit the length.
+
+00:13:33.035 --> 00:13:35.275
+So if the length here is four, so
+
+00:13:35.275 --> 00:13:38.555
+this is four elements in the array, then
+
+00:13:39.530 --> 00:13:40.810
+we're going to, I is going to start
+
+00:13:40.810 --> 00:13:42.970
+at zero, and then it's going to keep
+
+00:13:42.970 --> 00:13:46.570
+incrementing until I is one, two, and three.
+
+00:13:46.570 --> 00:13:48.170
+And then once it's equal to the length,
+
+00:13:48.170 --> 00:13:50.090
+because remember, the length is four, then it
+
+00:13:50.090 --> 00:13:53.050
+will stop. So we'll iterate through indices zero,
+
+00:13:53.050 --> 00:13:55.235
+one, two, three, and iterate through the entire
+
+00:13:55.235 --> 00:14:04.115
+array. Any questions on this? Okay. And then
+
+00:14:04.115 --> 00:14:06.915
+if you've seen array iterating through arrays in
+
+00:14:06.915 --> 00:14:09.440
+Python, this might look a little more familiar
+
+00:14:09.440 --> 00:14:11.600
+to you. This just iterates not through the
+
+00:14:11.600 --> 00:14:14.480
+indices of the array, but through the elements
+
+00:14:14.480 --> 00:14:17.920
+themselves. So we define a variable const animal
+
+00:14:17.920 --> 00:14:20.720
+and then we say of pets. And then
+
+00:14:20.720 --> 00:14:25.475
+that will and then animal sorry, JavaScript will
+
+00:14:25.475 --> 00:14:28.915
+just keep going through and reassigning or redeclaring
+
+00:14:29.075 --> 00:14:32.355
+animal to be the next element of the
+
+00:14:32.355 --> 00:14:35.320
+array. So animal will be, at first, the
+
+00:14:35.320 --> 00:14:37.720
+string cat, and then the string dog, and
+
+00:14:37.720 --> 00:14:41.560
+then guinea pig and bird, etcetera. Questions on
+
+00:14:41.560 --> 00:14:50.485
+this? Okay. And now we're going on to
+
+00:14:50.485 --> 00:14:53.445
+some more complicated stuff. In JavaScript, there are
+
+00:14:53.445 --> 00:14:56.085
+some things that we don't have primitive data
+
+00:14:56.085 --> 00:14:58.565
+types for, more complicated entities that we wanna
+
+00:14:58.565 --> 00:15:02.340
+represent in code. And so we can use
+
+00:15:02.340 --> 00:15:05.460
+something called JavaScript objects. This is kind of
+
+00:15:05.460 --> 00:15:09.380
+different than objects in most other languages, most
+
+00:15:09.380 --> 00:15:12.915
+other object oriented languages. A JavaScript object is
+
+00:15:12.915 --> 00:15:15.955
+more similar to a Python dictionary because it's
+
+00:15:15.955 --> 00:15:22.755
+just a set of keys and values. And
+
+00:15:22.755 --> 00:15:26.835
+you can access the properties of an object
+
+00:15:26.835 --> 00:15:30.310
+using the syntax that's very similar to a
+
+00:15:30.310 --> 00:15:32.550
+dictionary in most other languages, where you use
+
+00:15:32.550 --> 00:15:35.430
+the square brackets and then the string for
+
+00:15:35.430 --> 00:15:40.505
+whatever the property name is. Or you can
+
+00:15:40.505 --> 00:15:43.225
+use a syntax that's more similar to objects
+
+00:15:43.225 --> 00:15:46.825
+in other programming languages, such as Python, by
+
+00:15:46.825 --> 00:15:49.225
+using the name of the object, which in
+
+00:15:49.225 --> 00:15:51.305
+this case, we're defining as a car, and
+
+00:15:51.305 --> 00:15:53.385
+then the dot, and then the name of
+
+00:15:53.385 --> 00:15:58.930
+the property. Questions on any of this? Alright.
+
+00:16:00.850 --> 00:16:02.610
+And then something kind of special that you
+
+00:16:02.610 --> 00:16:05.090
+can do in JavaScript is object destructuring. If
+
+00:16:05.090 --> 00:16:07.890
+you want to get multiple properties at once,
+
+00:16:08.290 --> 00:16:11.225
+then you can either use multiple lines like
+
+00:16:11.225 --> 00:16:14.025
+this and just set two variables, make and
+
+00:16:14.025 --> 00:16:16.985
+model, to be whatever we pulled out of
+
+00:16:17.145 --> 00:16:20.905
+this my car object, or we can also
+
+00:16:22.400 --> 00:16:25.360
+put these fancy little curly braces here and
+
+00:16:25.360 --> 00:16:28.240
+stick make and model in here, and then
+
+00:16:28.320 --> 00:16:31.360
+this code is exactly equivalent to this code.
+
+00:16:31.360 --> 00:16:34.160
+So it's just a shorthand way of assigning
+
+00:16:34.160 --> 00:16:38.160
+variables to the values in a JavaScript object.
+
+00:16:38.615 --> 00:16:41.255
+And we'll probably be using this a bit
+
+00:16:41.255 --> 00:16:48.135
+in our web programming. Okay. So earlier, talked
+
+00:16:48.135 --> 00:16:50.535
+about equality, where we can check if two
+
+00:16:50.535 --> 00:16:53.495
+parameter values are equal using the triple equal
+
+00:16:53.495 --> 00:16:58.720
+sign. However, what does this mean for arrays
+
+00:16:58.720 --> 00:17:02.400
+and objects? So if we have two arrays
+
+00:17:02.400 --> 00:17:05.200
+and we initialize them with the exact same
+
+00:17:05.200 --> 00:17:07.280
+values, but then we do triple equal sign
+
+00:17:07.685 --> 00:17:11.285
+on these two arrays, we get that this
+
+00:17:11.285 --> 00:17:14.485
+is false. Turn and talk to someone next
+
+00:17:14.485 --> 00:17:16.165
+to you why you think this is the
+
+00:17:16.165 --> 00:17:37.815
+case. Yeah? Yes. Alright. I'm going to pull
+
+00:17:37.815 --> 00:17:41.735
+it back. So the reason why these are
+
+00:17:41.735 --> 00:17:44.455
+false, as I'm guessing a lot of you
+
+00:17:44.455 --> 00:17:47.690
+know, is that object variables are references. So
+
+00:17:47.690 --> 00:17:49.690
+they point to the location of memory where
+
+00:17:49.690 --> 00:17:51.850
+this is stored. So what we're doing when
+
+00:17:51.850 --> 00:17:54.410
+we say, let person one equal this, is
+
+00:17:54.410 --> 00:17:59.795
+we're creating a new object. Okay. Oh, wait
+
+00:17:59.795 --> 00:18:01.395
+wait, sorry. I was gonna do this on
+
+00:18:01.395 --> 00:18:04.115
+the board. So when we create a new
+
+00:18:04.115 --> 00:18:09.075
+person one object, we are creating a new
+
+00:18:09.395 --> 00:18:15.660
+variable in memory, some new object that has
+
+00:18:15.660 --> 00:18:22.700
+name Bill Gates. Sorry, my handwriting is terrible.
+
+00:18:23.260 --> 00:18:25.660
+And then we say person one is pointing
+
+00:18:25.660 --> 00:18:33.125
+to that. And then on line two, when
+
+00:18:33.125 --> 00:18:35.045
+we create a new person, we create person
+
+00:18:35.045 --> 00:18:39.525
+two. We're creating another object in memory that
+
+00:18:39.525 --> 00:18:46.200
+also has name Bill Gates, but and we
+
+00:18:46.200 --> 00:18:52.440
+have person two pointing to that. And when
+
+00:18:52.440 --> 00:18:54.760
+we check if person one is equal to
+
+00:18:54.760 --> 00:18:57.080
+person two with the triple equal sign, then
+
+00:18:57.080 --> 00:18:59.945
+we're checking actually whether the location of memory
+
+00:18:59.945 --> 00:19:01.785
+that person one is pointing to is the
+
+00:19:01.785 --> 00:19:04.345
+same location of memory as what person two
+
+00:19:04.345 --> 00:19:06.185
+is pointing to. And they're not, because they're
+
+00:19:06.185 --> 00:19:08.745
+different places in memory, even though they have
+
+00:19:08.745 --> 00:19:11.625
+the same value. But if we were to
+
+00:19:11.625 --> 00:19:13.625
+do something like the code we have here
+
+00:19:13.625 --> 00:19:16.320
+on the bottom, where we say we create
+
+00:19:16.320 --> 00:19:18.400
+a new object with the name Bill Gates,
+
+00:19:18.400 --> 00:19:22.640
+but then we define person two by setting
+
+00:19:22.640 --> 00:19:25.600
+it equal to person one, then they're pointing
+
+00:19:25.600 --> 00:19:29.505
+to the same location of memory and this
+
+00:19:29.505 --> 00:19:35.585
+will evaluate to true. And because of that,
+
+00:19:35.585 --> 00:19:39.185
+that also means that copying arrays and objects
+
+00:19:39.185 --> 00:19:44.370
+is not so easy. Because if we had
+
+00:19:45.170 --> 00:19:47.490
+array pointing to an array, one, two, three,
+
+00:19:47.490 --> 00:19:49.250
+and then we set copy array to the
+
+00:19:49.250 --> 00:19:51.570
+array, similar to what we had over there,
+
+00:19:51.570 --> 00:19:54.450
+we have two variables pointing to the same
+
+00:19:54.450 --> 00:19:58.385
+location in memory. And so if we do
+
+00:19:58.385 --> 00:20:00.945
+something like copy array at index one is
+
+00:20:00.945 --> 00:20:05.105
+equal to 10 gazillion, then it would update
+
+00:20:05.105 --> 00:20:07.345
+and edit not only copy array, but also
+
+00:20:07.345 --> 00:20:09.265
+array, because they're pointing to the same array
+
+00:20:09.265 --> 00:20:12.550
+in memory. So this will not work. This
+
+00:20:12.550 --> 00:20:15.510
+will make you sad with lots of bugs.
+
+00:20:15.510 --> 00:20:18.070
+But you can copy arrays and objects using
+
+00:20:18.070 --> 00:20:20.790
+the spread operator, which, I mean, what it
+
+00:20:20.790 --> 00:20:23.750
+does is it literally just takes all of
+
+00:20:22.755 --> 00:20:26.115
+the elements of this array and unpacks them
+
+00:20:26.115 --> 00:20:27.875
+and then we can create a new array
+
+00:20:27.875 --> 00:20:32.275
+or a new object with them. Any questions
+
+00:20:32.275 --> 00:20:33.795
+on any of this that we've gone over
+
+00:20:33.795 --> 00:20:39.060
+so far? Alrighty then. We are moving right
+
+00:20:39.060 --> 00:20:43.620
+along. Last main topic for today, functions. Functions
+
+00:20:43.620 --> 00:20:45.540
+take in an input and do something with
+
+00:20:45.540 --> 00:20:48.100
+it. And sometimes we want it to return
+
+00:20:48.100 --> 00:20:52.505
+an output value, sometimes we don't. The JavaScript
+
+00:20:52.505 --> 00:20:54.825
+function syntax is quite different from what you
+
+00:20:54.825 --> 00:20:57.145
+have seen in other languages. So in JavaScript,
+
+00:20:57.145 --> 00:20:58.745
+there are multiple ways to define a function.
+
+00:20:58.745 --> 00:21:01.385
+So if you go poking around online, you
+
+00:21:01.385 --> 00:21:03.785
+might see different ways of defining a function.
+
+00:21:03.785 --> 00:21:05.065
+But the way that we're gonna use for
+
+00:21:05.065 --> 00:21:09.100
+WebLab takes in parameters in parentheses, and then
+
+00:21:09.100 --> 00:21:10.940
+it has a little arrow, and then it
+
+00:21:10.940 --> 00:21:12.540
+has the body of the function in curly
+
+00:21:12.540 --> 00:21:15.580
+braces. And this is kind of nice because
+
+00:21:15.820 --> 00:21:18.140
+it sort of mirrors this diagram that I
+
+00:21:18.140 --> 00:21:20.025
+have above, where we have our function that
+
+00:21:20.025 --> 00:21:21.865
+takes in an input and feeds it into
+
+00:21:21.865 --> 00:21:23.785
+the body of a function to do something
+
+00:21:23.785 --> 00:21:29.385
+with that input. Okay. So here's an example
+
+00:21:29.385 --> 00:21:31.305
+of a function definition. It takes in a
+
+00:21:31.305 --> 00:21:34.260
+temperature in Celsius and then feeds that into
+
+00:21:34.260 --> 00:21:36.660
+the body of the function where we're computing
+
+00:21:36.660 --> 00:21:39.700
+the equivalent temperature in Fahrenheit and then returning
+
+00:21:39.700 --> 00:21:47.485
+it. Any questions on this code? Cool. I'll
+
+00:21:47.485 --> 00:21:49.405
+give you a minute to, like, digest it.
+
+00:21:54.525 --> 00:22:01.370
+Alright. And so if I have this function
+
+00:22:01.370 --> 00:22:04.410
+definition, exactly the same as what I just
+
+00:22:04.410 --> 00:22:07.210
+showed you, the only problem with this is
+
+00:22:07.210 --> 00:22:13.675
+that we can't quite call this function. So
+
+00:22:13.835 --> 00:22:15.115
+just think for a sec. What do we
+
+00:22:15.115 --> 00:22:16.955
+need to add so that we can actually
+
+00:22:16.955 --> 00:22:19.115
+make this refer to this function and call
+
+00:22:19.115 --> 00:22:22.315
+it? Well, for that, we need to add
+
+00:22:22.315 --> 00:22:23.755
+a name. We need to have some kind
+
+00:22:23.755 --> 00:22:26.640
+of way of referring to this function. And
+
+00:22:26.640 --> 00:22:28.400
+so let's call, let's say we wanna name
+
+00:22:28.400 --> 00:22:31.840
+our function Celsius to Fahrenheit. And so we
+
+00:22:31.840 --> 00:22:35.200
+have this function stored stored in memory somewhere
+
+00:22:35.200 --> 00:22:37.680
+on our computer, in this big gray box.
+
+00:22:37.840 --> 00:22:39.255
+And then we wanna have a name or
+
+00:22:39.255 --> 00:22:41.015
+a variable that can point to that location
+
+00:22:41.015 --> 00:22:44.535
+in memory. And so in order to do
+
+00:22:44.535 --> 00:22:47.255
+that, we define a variable and set it
+
+00:22:47.255 --> 00:22:51.430
+equal to the function itself. So const just
+
+00:22:51.430 --> 00:22:53.990
+means that this cannot be reassigned where in
+
+00:22:53.990 --> 00:22:55.510
+memory this points to, which we don't want
+
+00:22:55.510 --> 00:22:58.150
+it to be. And then this is the
+
+00:22:58.150 --> 00:23:00.150
+name of our variable. We're setting our variable
+
+00:23:00.150 --> 00:23:04.515
+equal to this entire function. And then, of
+
+00:23:04.515 --> 00:23:07.875
+course, there's a semi colon. And so the
+
+00:23:07.875 --> 00:23:10.435
+bottom line of this is that a function
+
+00:23:10.675 --> 00:23:13.475
+is this big gray thing, a value stored
+
+00:23:13.475 --> 00:23:15.875
+in memory just the same as a string,
+
+00:23:15.875 --> 00:23:18.420
+an int, array, etcetera. So that means that
+
+00:23:18.420 --> 00:23:20.100
+we can assign a variable to point to
+
+00:23:20.100 --> 00:23:21.460
+it, and that's how we give our function
+
+00:23:21.460 --> 00:23:27.140
+a name. And then if we want to
+
+00:23:27.140 --> 00:23:29.620
+call our function, we use parentheses, just like
+
+00:23:29.620 --> 00:23:32.020
+any other programming language, and put in whatever
+
+00:23:32.020 --> 00:23:34.925
+input we want. And then this, Celsius to
+
+00:23:34.925 --> 00:23:39.085
+Fahrenheit of 26, will be 78.8, and then
+
+00:23:39.085 --> 00:23:41.405
+that value will be assigned to the variable
+
+00:23:41.405 --> 00:23:47.170
+room temp. Alright. And then as a quick
+
+00:23:47.170 --> 00:23:49.410
+preview to the lecture that we're going to
+
+00:23:49.410 --> 00:23:51.170
+talk about, where we're gonna talk more about
+
+00:23:51.170 --> 00:23:54.290
+this tomorrow. But as a preview, we can
+
+00:23:54.290 --> 00:23:56.290
+pass around a function just like any other
+
+00:23:56.290 --> 00:23:59.225
+value. So that means that we can give
+
+00:23:59.225 --> 00:24:01.865
+a function as an argument to another function
+
+00:24:01.865 --> 00:24:06.745
+and we call that a callback. So one,
+
+00:24:07.305 --> 00:24:10.265
+as a quick practice actually, no, I'm gonna
+
+00:24:10.265 --> 00:24:13.810
+skip this for the sake of time. But
+
+00:24:14.530 --> 00:24:17.570
+we have an example of set timeout, which
+
+00:24:17.570 --> 00:24:20.290
+is a JavaScript library function that calls a
+
+00:24:20.290 --> 00:24:23.650
+function after a certain delay. So this function
+
+00:24:23.650 --> 00:24:25.810
+takes in two parameters, the function to call
+
+00:24:25.905 --> 00:24:27.745
+and the delay. So if I call the
+
+00:24:27.745 --> 00:24:29.905
+set timeout function, I'm gonna say, okay, do
+
+00:24:29.905 --> 00:24:33.745
+this, whatever function I'm passing in, after this
+
+00:24:33.745 --> 00:24:39.680
+many milliseconds. So how can we print our
+
+00:24:39.680 --> 00:24:41.760
+message, call this print something function that I
+
+00:24:41.760 --> 00:24:44.160
+defined at the top of the slide, after
+
+00:24:44.160 --> 00:24:50.400
+five seconds? So give me actually, you know
+
+00:24:50.400 --> 00:24:54.675
+what? Take a minute, look, think about whether
+
+00:24:54.675 --> 00:24:56.915
+these which ones of these are valid, talk
+
+00:24:56.915 --> 00:24:59.315
+to someone next to you about which ones
+
+00:24:59.315 --> 00:25:01.795
+of these will work. And raise your hand
+
+00:25:01.795 --> 00:25:23.145
+if you have any questions. I detect general
+
+00:25:23.145 --> 00:25:26.105
+confusion. So could someone raise their hand and
+
+00:25:26.345 --> 00:25:29.145
+ask me to re explain something about what
+
+00:25:29.145 --> 00:25:44.000
+they're confused about? Alright. In that case, I
+
+00:25:44.000 --> 00:25:48.655
+guess I will just keep flowing forward then.
+
+00:25:50.015 --> 00:25:56.255
+So if you think a will work to
+
+00:25:56.335 --> 00:25:57.775
+give me open hand. If you think it
+
+00:25:57.775 --> 00:26:02.140
+won't work, give me close hand. Okay. I'm
+
+00:26:02.140 --> 00:26:07.100
+getting a mix. Alright. A does work. So
+
+00:26:07.100 --> 00:26:11.980
+print something is a variable that holds that
+
+00:26:11.980 --> 00:26:14.355
+holds the value that is this function. And
+
+00:26:14.355 --> 00:26:17.315
+so we're giving this function into the set
+
+00:26:17.315 --> 00:26:19.555
+timeout and saying, call this function after five
+
+00:26:19.555 --> 00:26:22.995
+seconds. Give me open hands if you think
+
+00:26:22.995 --> 00:26:24.515
+b works, closed hands if you think it
+
+00:26:24.515 --> 00:26:29.220
+doesn't. Also a mix. So b does not
+
+00:26:29.220 --> 00:26:34.500
+work. B will call print something, so when
+
+00:26:34.500 --> 00:26:37.700
+you put these parentheses next to your function,
+
+00:26:37.700 --> 00:26:39.875
+that calls it right away. So we're gonna
+
+00:26:39.875 --> 00:26:41.955
+call the function right away and then take
+
+00:26:41.955 --> 00:26:44.835
+whatever this function returned and pass that into
+
+00:26:44.835 --> 00:26:46.835
+set timeout, which is not what we want.
+
+00:26:46.835 --> 00:26:49.315
+Because this function returns nothing. Null, null, or
+
+00:26:49.315 --> 00:26:54.450
+undefined or something like that. And raise your
+
+00:26:54.530 --> 00:26:56.210
+open hand if you think c works, close
+
+00:26:56.210 --> 00:27:01.410
+hand if you think it doesn't. Okay. Alright.
+
+00:27:01.570 --> 00:27:03.490
+Most of y'all are getting it. C does
+
+00:27:03.490 --> 00:27:08.015
+work because this function here, defined in c,
+
+00:27:08.015 --> 00:27:10.415
+is exactly the same as the function that
+
+00:27:10.415 --> 00:27:12.335
+we set the variable to print something. So
+
+00:27:12.335 --> 00:27:21.800
+it does the exact same thing. Yes. Exactly.
+
+00:27:21.800 --> 00:27:24.520
+It will be a different object, a different
+
+00:27:24.520 --> 00:27:26.360
+function, or like define in a different place
+
+00:27:26.360 --> 00:27:28.280
+in memory, but it'll be a function that
+
+00:27:28.280 --> 00:27:32.760
+does the same thing. Yes. So don't do
+
+00:27:32.235 --> 00:27:34.555
+b. Don't call your function and you need
+
+00:27:34.555 --> 00:27:37.275
+to pass in the function itself. Alright. Seems
+
+00:27:37.275 --> 00:27:38.795
+like y'all got c, so I'm not going
+
+00:27:38.795 --> 00:27:42.315
+to spend time and explain it. But these
+
+00:27:42.315 --> 00:27:44.155
+are two functions that you might find useful
+
+00:27:44.155 --> 00:27:46.555
+in your projects at some point. Set interval
+
+00:27:46.555 --> 00:27:48.770
+calls a function after a delay. Set time
+
+00:27:48.770 --> 00:27:51.970
+out calls a function, like, every at certain
+
+00:27:51.970 --> 00:27:53.810
+intervals. So if we want to call a
+
+00:27:53.810 --> 00:27:56.610
+function every, like, ten milliseconds or something, we
+
+00:27:56.610 --> 00:27:58.530
+would use set time out and pass in
+
+00:27:58.530 --> 00:28:03.785
+our function as a callback. Alright. Slide is
+
+00:28:03.785 --> 00:28:05.465
+just here so you guys know that classes
+
+00:28:05.465 --> 00:28:08.585
+in JavaScript exist. They're a thing. We're not
+
+00:28:08.585 --> 00:28:10.185
+gonna be using them in WebLab so you
+
+00:28:10.185 --> 00:28:11.465
+don't need to know how they work for
+
+00:28:11.465 --> 00:28:16.490
+the purposes of WebLab. But they exist. Okay.
+
+00:28:16.490 --> 00:28:18.650
+And if a lot of this lecture went
+
+00:28:18.650 --> 00:28:21.370
+flying over your head, don't worry, that's very
+
+00:28:21.370 --> 00:28:25.450
+normal. We have I found this website online
+
+00:28:25.450 --> 00:28:28.005
+that I thought was pretty good. It introduces
+
+00:28:28.005 --> 00:28:31.365
+JavaScript concepts in a pretty beginner friendly way
+
+00:28:31.365 --> 00:28:33.445
+and you can go through some exercises to
+
+00:28:33.445 --> 00:28:37.765
+practice so you can see that afterward. Okay.
+
+00:28:37.765 --> 00:28:41.270
+Time for feedback. If you can pull out
+
+00:28:41.270 --> 00:28:44.870
+your phones or whatever or devices and fill
+
+00:28:44.870 --> 00:28:47.030
+out this form, it only takes one minute,
+
+00:28:47.110 --> 00:28:51.750
+that would be much appreciated. I'll give you
+
+00:28:51.750 --> 00:28:53.990
+one minute to do that and then we'll
+
+00:28:53.595 --> 00:28:56.075
+move on to announcements, and y'all will be
+
+00:28:56.555 --> 00:29:05.755
+free. Just, like, look at me and give
+
+00:29:05.755 --> 00:29:06.955
+me a thumbs up when you're done with
+
+00:29:06.955 --> 00:29:41.410
+the feedback form so I know. Alright. If
+
+00:29:41.410 --> 00:29:42.930
+you're not done with the feedback form, feel
+
+00:29:42.930 --> 00:29:45.010
+free to continue. But for the sake of
+
+00:29:45.010 --> 00:29:48.285
+time, I'm going to segue into final announcements.
+
+00:29:48.445 --> 00:29:51.485
+So important announcement is that if you have
+
+00:29:51.485 --> 00:29:53.485
+not done the second part of homework zero
+
+00:29:53.485 --> 00:29:55.565
+of our setup to install Node JS on
+
+00:29:55.565 --> 00:29:57.485
+your system, you're gonna need that for class
+
+00:29:57.485 --> 00:29:59.485
+tomorrow. So make sure to do that. It's
+
+00:29:59.485 --> 00:30:02.280
+super quick. If you run into issues with
+
+00:30:02.280 --> 00:30:04.360
+setup or you had run into any issues
+
+00:30:04.360 --> 00:30:06.040
+today that you weren't able to get resolved
+
+00:30:06.040 --> 00:30:08.360
+during lecture, feel free to come to office
+
+00:30:08.360 --> 00:30:11.080
+hours, seven to 9PM tonight in the basement
+
+00:30:11.080 --> 00:30:13.800
+of the Status Center right over there. Or
+
+00:30:13.800 --> 00:30:15.320
+if you're new to programming and you just
+
+00:30:15.320 --> 00:30:17.795
+wanna, like you just wanna talk about it
+
+00:30:17.795 --> 00:30:19.475
+with someone and we can we can teach
+
+00:30:19.475 --> 00:30:21.555
+you stuff in office hours. We we have
+
+00:30:21.555 --> 00:30:26.195
+a lot of staff. Another thing is team
+
+00:30:26.195 --> 00:30:29.260
+finding. So if you need a team, please
+
+00:30:29.260 --> 00:30:32.060
+join the Zoom, weblive.is/zoom, or if you're on
+
+00:30:32.060 --> 00:30:37.820
+the Zoom already, then that's great. We will
+
+00:30:37.820 --> 00:30:39.980
+have a little team finding mini mixer in,
+
+00:30:39.980 --> 00:30:44.755
+like, a couple minutes. And then team finalizing
+
+00:30:44.755 --> 00:30:47.875
+your team and submitting brainstorming and submitting 10
+
+00:30:47.875 --> 00:30:50.355
+ideas for your website is due by the
+
+00:30:50.355 --> 00:30:51.715
+end of day the end of the day
+
+00:30:51.715 --> 00:30:53.555
+on Wednesday. So just have that on your
+
+00:30:53.555 --> 00:30:57.830
+radar. And for recordings for today, you will
+
+00:30:57.830 --> 00:31:01.030
+have that posted as soon as we edit
+
+00:31:01.030 --> 00:31:04.150
+and finalize things. But you should be able
+
+00:31:04.150 --> 00:31:05.350
+to I think you should be able to
+
+00:31:05.350 --> 00:31:08.805
+see the livestream still on YouTube, like, right
+
+00:31:08.805 --> 00:31:12.325
+after this is over. And then it should
+
+00:31:12.325 --> 00:31:16.085
+also be available on Panopto, on weblab.is/panopto. We'll
+
+00:31:16.085 --> 00:31:21.530
+send out that link as well. Yeah. Okay.
+
+00:31:21.530 --> 00:31:23.610
+So if you needed to find a team,
+
+00:31:23.610 --> 00:31:26.250
+feel free to stay here and just hop
+
+00:31:26.250 --> 00:31:29.610
+on weblab.is/zoom. Do you have any other announcements?
+
+00:31:29.610 --> 00:31:32.970
+Yeah. Thanks, Abi. A few more announcements. We
+
+00:31:32.970 --> 00:31:35.455
+have a few extra shirts from last year.
+
+00:31:35.615 --> 00:31:37.855
+It's free, free merch. You can go up
+
+00:31:37.855 --> 00:31:40.095
+to the top where Stanley and Daniel are
+
+00:31:40.335 --> 00:31:43.535
+to pick up free shirts. And there's also
+
+00:31:43.535 --> 00:31:47.535
+extra pizza. So if you want extra pizza,
+
+00:31:47.535 --> 00:31:50.490
+take it, please. We're otherwise left with a
+
+00:31:50.490 --> 00:31:52.410
+lot of pizza we don't know what to
+
+00:31:52.410 --> 00:31:52.650
+do with.

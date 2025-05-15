@@ -72,5 +72,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_1_workshop_0_htmlcss_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_workshop_0_htmlcss/mit_web_lab_6_962_-_day_1_workshop_0_htmlcss_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_workshop_0_htmlcss/mit_web_lab_6_962_-_day_1_workshop_0_htmlcss_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 1: Intro to JavaScript",
+    "video_name_clean": "mit_web_lab_6_962_-_day_1_intro_to_javascript",
+    "youtube_id": "OMuYHyBi-Ms",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T20:03:22.306361+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 1929,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_1_intro_to_javascript_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_intro_to_javascript/mit_web_lab_6_962_-_day_1_intro_to_javascript_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_intro_to_javascript/mit_web_lab_6_962_-_day_1_intro_to_javascript_transcript.vtt"
   }
 ]
