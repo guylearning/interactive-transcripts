@@ -156,5 +156,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router/mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router/mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 3: APIs/Promises",
+    "video_name_clean": "mit_web_lab_6_962_-_day_3_apispromises",
+    "youtube_id": "kUtiBmHQuc4",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T20:24:38.921340+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 1654,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_3_apispromises_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_3_apispromises/mit_web_lab_6_962_-_day_3_apispromises_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_3_apispromises/mit_web_lab_6_962_-_day_3_apispromises_transcript.vtt"
   }
 ]

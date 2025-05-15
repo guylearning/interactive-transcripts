@@ -1,0 +1,1376 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 01312b73-c504-4ed6-b12b-4f137a0f6fea
+Created: 2025-05-15T20:24:36.717Z
+Duration: 1653.7861
+Channels: 1
+
+00:00:00.480 --> 00:00:02.560
+Now we're going to get into APIs and
+
+00:00:02.560 --> 00:00:06.560
+promises. So currently, our cat book is static.
+
+00:00:06.960 --> 00:00:10.880
+There isn't any information showing or using the
+
+00:00:10.880 --> 00:00:13.840
+fact that we're different users. So, I mean,
+
+00:00:13.840 --> 00:00:15.245
+unless you hard coded it, don't think think
+
+00:00:15.245 --> 00:00:17.245
+it says your name. It says like Shannon
+
+00:00:17.245 --> 00:00:21.885
+Wu or something. And also, every time you
+
+00:00:21.885 --> 00:00:24.525
+click, you get some number, but then whenever
+
+00:00:24.525 --> 00:00:27.325
+you refresh, it just resets back to zero.
+
+00:00:27.645 --> 00:00:29.530
+And if if you look to our posts,
+
+00:00:29.530 --> 00:00:32.490
+they're all the same for us. And maybe
+
+00:00:32.490 --> 00:00:34.570
+we'd want some kind of data that is
+
+00:00:34.570 --> 00:00:38.570
+specific to each user. And so that's where
+
+00:00:38.570 --> 00:00:40.570
+the back end comes in. Back end is
+
+00:00:40.570 --> 00:00:43.530
+used for data storage and data manipulation. So
+
+00:00:44.355 --> 00:00:46.115
+our front end would send requests to our
+
+00:00:46.115 --> 00:00:48.435
+back end and our back end would send
+
+00:00:48.435 --> 00:00:50.915
+whatever we find information that our front end
+
+00:00:50.915 --> 00:00:58.590
+wants. And so, we're going be using the
+
+00:00:58.590 --> 00:01:02.750
+client server architecture. So currently, you guys are
+
+00:01:03.550 --> 00:01:06.910
+the clients, browsers, and you guys will be
+
+00:01:06.910 --> 00:01:11.165
+sending requests to some server. And after the
+
+00:01:11.165 --> 00:01:14.045
+server receives your request, it's going send back
+
+00:01:14.045 --> 00:01:17.485
+a response back to you, the client. And
+
+00:01:18.045 --> 00:01:20.285
+basically, the server is just where we have
+
+00:01:20.285 --> 00:01:24.285
+all of our information. And so right now,
+
+00:01:24.285 --> 00:01:28.460
+whenever we're doing NPM run dev, the front
+
+00:01:28.460 --> 00:01:30.540
+end is being served to you. So all
+
+00:01:30.540 --> 00:01:33.740
+the HTML, CSS, and JavaScript it takes to
+
+00:01:33.740 --> 00:01:37.740
+render your website is all sent from currently
+
+00:01:37.740 --> 00:01:42.345
+a server, but it's not necessarily sending any
+
+00:01:42.345 --> 00:01:45.145
+data back to you guys yet, so we'll
+
+00:01:45.145 --> 00:01:50.105
+be working on that. For that, how do
+
+00:01:50.105 --> 00:01:54.550
+we actually send requests to a server? There
+
+00:01:54.550 --> 00:01:56.150
+has to be some standardized way. We can't
+
+00:01:56.150 --> 00:01:58.870
+just send an e mail to a server
+
+00:01:58.870 --> 00:02:02.550
+asking for data. We can't telepathically ask a
+
+00:02:02.550 --> 00:02:04.870
+server to send this information. So there has
+
+00:02:04.870 --> 00:02:07.510
+to be some standardized way of sending information
+
+00:02:07.590 --> 00:02:10.470
+or rather sending requests from a client to
+
+00:02:09.885 --> 00:02:13.805
+server and then receiving a response that we
+
+00:02:13.805 --> 00:02:21.325
+can access. And so the protocol that we'll
+
+00:02:21.325 --> 00:02:25.780
+be using is HTTP, and basically what HTTP
+
+00:02:25.780 --> 00:02:30.020
+stands for is Hypertext Transfer Protocol, and you've
+
+00:02:30.020 --> 00:02:34.500
+actually been using HTTP requests and responses every
+
+00:02:34.500 --> 00:02:37.775
+time you request a website or I don't
+
+00:02:37.775 --> 00:02:39.775
+know, you want to load a specific video
+
+00:02:39.775 --> 00:02:43.775
+from YouTube, the way that you get all
+
+00:02:43.775 --> 00:02:48.095
+that information is through HTTP requests. And HTTPS
+
+00:02:48.095 --> 00:02:52.300
+is just HTTP but secure, so all the
+
+00:02:52.300 --> 00:02:55.100
+information that's being sent back and forth is
+
+00:02:56.540 --> 00:02:59.740
+encrypted in some way, and so people who
+
+00:02:59.740 --> 00:03:03.100
+are in between you and the server won't
+
+00:03:02.735 --> 00:03:05.215
+be able to actually decipher what your request
+
+00:03:05.215 --> 00:03:08.575
+has, so it's safe from anybody trying to,
+
+00:03:08.895 --> 00:03:11.295
+I don't know, modify your request in some
+
+00:03:11.295 --> 00:03:13.775
+way or receive information in a malicious way.
+
+00:03:16.400 --> 00:03:19.760
+So right now, we're going be going over
+
+00:03:19.760 --> 00:03:23.280
+the structure of an HTTP request. So we
+
+00:03:23.280 --> 00:03:27.040
+have the request target plus parameters, HTTP method,
+
+00:03:27.120 --> 00:03:30.835
+headers and body. And to give you guys
+
+00:03:30.835 --> 00:03:34.195
+some kind of motivation to why we care
+
+00:03:34.195 --> 00:03:36.675
+about this structure, I'll give you guys an
+
+00:03:36.675 --> 00:03:42.195
+example. So if we Let's see if I
+
+00:03:42.195 --> 00:03:49.360
+can If we were to send a request
+
+00:03:49.360 --> 00:03:52.480
+to YouTube to show us any videos that
+
+00:03:52.480 --> 00:03:54.960
+have Web Lab in its description or in
+
+00:03:54.960 --> 00:03:57.920
+the video, then we would be sending this
+
+00:03:57.920 --> 00:04:00.855
+URL into our browser. I'll talk about the
+
+00:04:00.855 --> 00:04:03.735
+many ways to send HTTP requests later, but
+
+00:04:03.735 --> 00:04:05.815
+just putting a URL into a browser is
+
+00:04:05.815 --> 00:04:11.015
+one of them. So here we have a
+
+00:04:11.015 --> 00:04:13.335
+YouTube request and it's going be a GET
+
+00:04:13.335 --> 00:04:15.360
+request since we want to get data. We
+
+00:04:15.360 --> 00:04:17.520
+aren't posting data to a YouTube server, so
+
+00:04:17.520 --> 00:04:19.600
+that would be like, I don't know, uploading
+
+00:04:19.600 --> 00:04:21.200
+a video to YouTube which would be a
+
+00:04:21.200 --> 00:04:24.720
+POST request. We have some metadata and then
+
+00:04:26.000 --> 00:04:28.640
+our body of HTTP request would be empty
+
+00:04:28.640 --> 00:04:31.255
+because it's a GET request. So now we're
+
+00:04:31.255 --> 00:04:32.855
+going go into the nitty gritty of an
+
+00:04:32.855 --> 00:04:39.895
+HTTP request. So first, the target URL and
+
+00:04:39.895 --> 00:04:45.590
+query parameters. So HTTPS just tells us that
+
+00:04:45.590 --> 00:04:47.510
+the protocol that we're using to send a
+
+00:04:47.510 --> 00:04:54.845
+request is HTTPS. Next, we have www.youtube.com/results, and
+
+00:04:54.845 --> 00:04:57.325
+that's the URL of a server. So this
+
+00:04:57.325 --> 00:05:00.685
+is where we're sending our request to. Generally,
+
+00:05:00.685 --> 00:05:02.845
+YouTube would have some kind of mega computer
+
+00:05:02.845 --> 00:05:07.580
+with a bunch of data storage, and we're
+
+00:05:07.580 --> 00:05:10.060
+sending it to the computer with that IP
+
+00:05:10.060 --> 00:05:13.740
+address. And then results just tells us that
+
+00:05:15.500 --> 00:05:18.380
+So the computer for YouTube is going to
+
+00:05:18.380 --> 00:05:21.205
+have some kind of endpoint where we would
+
+00:05:21.205 --> 00:05:27.765
+send requests specifically for searching specific YouTube videos.
+
+00:05:27.765 --> 00:05:31.285
+So here in this case, we have the
+
+00:05:31.285 --> 00:05:35.285
+videos with the search query being WebLab. So
+
+00:05:37.110 --> 00:05:41.350
+if we just sent a request without any
+
+00:05:41.350 --> 00:05:44.630
+query parameters, we wouldn't receive any YouTube videos,
+
+00:05:44.790 --> 00:05:46.790
+but this search query helps us refine what
+
+00:05:46.790 --> 00:05:51.195
+data we want to receive from YouTube server.
+
+00:05:54.635 --> 00:06:00.475
+Any questions before we move on? No? All
+
+00:06:00.475 --> 00:06:06.920
+good? Okay, cool. So HTTP methods. So there
+
+00:06:06.920 --> 00:06:09.000
+are many types of requests to send to
+
+00:06:09.000 --> 00:06:12.040
+a server. Of them, there are get request
+
+00:06:12.040 --> 00:06:14.600
+which gets data. We have the post request
+
+00:06:14.600 --> 00:06:17.655
+which sends data. We have the put request,
+
+00:06:17.655 --> 00:06:19.975
+which places data, and the delete request, which
+
+00:06:19.975 --> 00:06:24.615
+deletes data. For this class and mostly in
+
+00:06:24.615 --> 00:06:27.015
+general, you'll be using get and post requests
+
+00:06:27.335 --> 00:06:30.615
+for sending and posting data. I mean, receiving
+
+00:06:30.615 --> 00:06:40.170
+and posting data. Yeah. Questions? Alright, so now
+
+00:06:40.170 --> 00:06:43.130
+we're going look into the request body and
+
+00:06:43.130 --> 00:06:47.625
+request headers. So request headers for an HTTP
+
+00:06:47.625 --> 00:06:50.825
+request is all the fancy stuff that comes
+
+00:06:50.825 --> 00:06:54.025
+with the information that we want or information
+
+00:06:54.025 --> 00:06:58.780
+that we're sending to a server. So for
+
+00:06:58.780 --> 00:07:02.860
+example, if we're sending some data to a
+
+00:07:02.860 --> 00:07:06.140
+server and we want to specify, oh, what's
+
+00:07:06.140 --> 00:07:10.780
+the timestamp of this request, what language is
+
+00:07:10.780 --> 00:07:13.695
+this request in, All that metadata about our
+
+00:07:13.695 --> 00:07:16.815
+request is stored in our request headers. Then
+
+00:07:16.815 --> 00:07:21.775
+our request body is where we put any
+
+00:07:21.775 --> 00:07:25.990
+data associated with a post request. So, for
+
+00:07:25.990 --> 00:07:27.190
+example, like if you want to post a
+
+00:07:27.190 --> 00:07:31.750
+YouTube video into server's YouTube server, we'd be
+
+00:07:31.750 --> 00:07:33.990
+sending a YouTube video through the request body.
+
+00:07:34.870 --> 00:07:42.195
+However, for get requests, again, like four, we
+
+00:07:42.195 --> 00:07:45.395
+put whatever parameters we want in our target
+
+00:07:45.395 --> 00:07:51.475
+URL. So an example of a request body
+
+00:07:51.475 --> 00:07:54.595
+would look like this. So a request body
+
+00:07:54.595 --> 00:07:57.080
+uses a JSON format, and basically what a
+
+00:07:57.080 --> 00:08:02.120
+JSON format is, is just key value pairs.
+
+00:08:04.520 --> 00:08:08.680
+So you can see that for a name
+
+00:08:08.680 --> 00:08:14.295
+or key of name, we'd have a value
+
+00:08:14.295 --> 00:08:18.135
+that's actually a name and a specific language.
+
+00:08:19.095 --> 00:08:20.935
+So this is how most of our data
+
+00:08:20.935 --> 00:08:24.775
+is going to be organized and that is
+
+00:08:24.775 --> 00:08:30.630
+how the request body is organized. So now
+
+00:08:30.630 --> 00:08:33.750
+that we've covered how a request is structured,
+
+00:08:34.070 --> 00:08:35.750
+we're going to look at how a response
+
+00:08:35.750 --> 00:08:40.950
+is structured. So let's get into that. So
+
+00:08:41.465 --> 00:08:44.265
+status codes. So whenever we send a request
+
+00:08:44.265 --> 00:08:46.345
+to a server, the server is going respond
+
+00:08:46.345 --> 00:08:50.425
+in some way, and an example would be
+
+00:08:50.425 --> 00:08:54.560
+the dreaded 404. So this means that the
+
+00:08:54.560 --> 00:08:56.640
+resource that you were looking for could not
+
+00:08:56.640 --> 00:08:59.360
+be found, and this can happen if, I
+
+00:08:59.360 --> 00:09:01.120
+don't know, you put in the wrong URL,
+
+00:09:02.400 --> 00:09:05.840
+or maybe the resource you were looking for
+
+00:09:05.840 --> 00:09:08.855
+was moved to a different endpoint, so you'd
+
+00:09:08.855 --> 00:09:11.175
+have to look through the website's documentation to
+
+00:09:11.175 --> 00:09:15.015
+see where you could find the information that
+
+00:09:15.015 --> 00:09:20.455
+you're looking for. Another common error is 400,
+
+00:09:20.855 --> 00:09:24.250
+a bad request, And this could happen if,
+
+00:09:24.410 --> 00:09:27.850
+I don't know, you malform your query parameters,
+
+00:09:27.850 --> 00:09:30.970
+so you put a query parameter that maybe
+
+00:09:30.970 --> 00:09:34.410
+doesn't exist for the data that you're looking
+
+00:09:34.410 --> 00:09:40.325
+for, or yeah. And then another common one
+
+00:09:40.325 --> 00:09:44.725
+is 505 means that the server errored out
+
+00:09:44.725 --> 00:09:49.610
+in some way. So so it's not your
+
+00:09:49.610 --> 00:09:52.810
+fault, it's the server's fault. And then you
+
+00:09:52.810 --> 00:09:55.290
+have a 200. Two hundred, it's good. Your
+
+00:09:55.290 --> 00:09:58.970
+request reached the server and it was handled
+
+00:09:58.970 --> 00:10:06.395
+correctly. And so, generally, hundreds place of your
+
+00:10:06.395 --> 00:10:10.715
+error code signifies what kind of error code
+
+00:10:10.715 --> 00:10:12.875
+it is. If it starts with a one,
+
+00:10:12.875 --> 00:10:15.595
+it's informational. If it starts with a 2,
+
+00:10:15.595 --> 00:10:18.260
+you succeeded. Starts with a 3, you got
+
+00:10:18.260 --> 00:10:21.300
+redirected. Starts with a 4, you did something
+
+00:10:21.300 --> 00:10:23.700
+wrong, and then start with a 5, server
+
+00:10:23.700 --> 00:10:27.220
+did something wrong. And usually, you'll be seeing
+
+00:10:27.220 --> 00:10:29.860
+two, four, and five, and maybe some threes
+
+00:10:29.860 --> 00:10:37.115
+if your website uses caching. That's the response
+
+00:10:37.115 --> 00:10:46.620
+body. Any questions? All right. I mean, sorry.
+
+00:10:46.620 --> 00:10:49.260
+That's status codes. So now let's look at
+
+00:10:49.260 --> 00:10:52.460
+response headers and response body. So the response
+
+00:10:52.460 --> 00:10:55.660
+headers, like request headers, is just a bunch
+
+00:10:55.660 --> 00:10:58.540
+of metadata about a request and usually you
+
+00:10:58.540 --> 00:10:59.900
+don't have to worry about that stuff, just
+
+00:10:59.900 --> 00:11:02.505
+content type, content length, boring stuff that we
+
+00:11:02.505 --> 00:11:04.825
+don't care about. Then we have the response
+
+00:11:04.825 --> 00:11:07.865
+body. So the response body is going to
+
+00:11:07.865 --> 00:11:09.945
+hold all the information that we requested from
+
+00:11:09.945 --> 00:11:13.465
+our server if we sent a get request
+
+00:11:13.465 --> 00:11:17.110
+to server. And usually, whenever we have a
+
+00:11:17.110 --> 00:11:20.310
+post request, like if we're posting a comment
+
+00:11:20.310 --> 00:11:22.870
+onto Catbook or something, we'll probably send it
+
+00:11:22.870 --> 00:11:25.430
+back just to confirm that this comment was
+
+00:11:25.430 --> 00:11:28.630
+actually posted on our website. And again, this
+
+00:11:28.630 --> 00:11:33.725
+is also in JSON format. So that's the
+
+00:11:33.725 --> 00:11:45.580
+response. Questions? So, I mentioned earlier that there
+
+00:11:45.580 --> 00:11:52.300
+are many ways to send requests and we'll
+
+00:11:52.300 --> 00:11:55.340
+actually just go into a Catalog example to
+
+00:11:55.340 --> 00:11:57.580
+see how these requests are sent from a
+
+00:11:57.580 --> 00:12:00.635
+website. So you guys don't have to do
+
+00:12:00.635 --> 00:12:19.930
+anything, but let's see. Go to capbook.capbook. Example
+
+00:12:20.010 --> 00:12:25.930
+or actually, weblab. Isexample. Let's see if I
+
+00:12:25.930 --> 00:12:34.525
+can screen share this. Okay. I'm sorry for
+
+00:12:34.525 --> 00:12:38.365
+the Zoom people. You can't see this. Okay.
+
+00:12:38.365 --> 00:12:42.445
+Cool. So if we open up inspect tab
+
+00:12:42.765 --> 00:12:46.830
+and then go to network, network is where
+
+00:12:46.830 --> 00:12:49.070
+we see all the requests that our website
+
+00:12:49.070 --> 00:12:53.150
+makes. If we request, we see all these
+
+00:12:53.150 --> 00:12:56.685
+requests, requests to PNGs, requests to the comments,
+
+00:12:56.685 --> 00:13:01.485
+requests to stories. And if we actually click
+
+00:13:01.485 --> 00:13:03.645
+on one of these, click the one that
+
+00:13:03.645 --> 00:13:06.685
+represents our stories, you can see that it's
+
+00:13:06.685 --> 00:13:08.610
+a get request because we want to get
+
+00:13:08.610 --> 00:13:12.210
+our stories. The URL is going to be
+
+00:13:12.610 --> 00:13:14.850
+the server that we're using. This is not
+
+00:13:14.850 --> 00:13:17.570
+the Catbook that we're implementing right now, so
+
+00:13:17.570 --> 00:13:21.650
+it's a different server. And we can go
+
+00:13:21.650 --> 00:13:24.665
+to response. You can see that it is
+
+00:13:24.665 --> 00:13:29.865
+all in JSON format. So that's just a
+
+00:13:29.865 --> 00:13:31.305
+cool way if you guys want to mess
+
+00:13:31.305 --> 00:13:33.865
+around in the network tab to see more
+
+00:13:33.865 --> 00:13:53.055
+about requests. Now, another way to send requests,
+
+00:13:53.055 --> 00:13:55.935
+like usually you're sending requests through your browser,
+
+00:13:55.935 --> 00:13:59.935
+you can just type a URL. Those types
+
+00:13:59.935 --> 00:14:02.360
+of requests are all get requests since you
+
+00:14:02.360 --> 00:14:05.400
+don't have any space to put all the
+
+00:14:05.400 --> 00:14:07.720
+information you would like in a post request.
+
+00:14:08.440 --> 00:14:12.440
+Put stuff in the request body, but there's
+
+00:14:12.440 --> 00:14:14.360
+no place to put stuff in the request
+
+00:14:14.360 --> 00:14:18.735
+body for a URL. So there are other
+
+00:14:18.735 --> 00:14:23.135
+ways to actually send post requests. I think
+
+00:14:23.135 --> 00:14:25.855
+an interesting example of another way to send
+
+00:14:25.855 --> 00:14:27.855
+requests is through your terminal. You can do
+
+00:14:27.855 --> 00:14:29.935
+it independent of your browser. So if you
+
+00:14:29.935 --> 00:14:31.215
+guys would like, you guys can open up
+
+00:14:31.215 --> 00:14:44.450
+your terminal and just run curl httpswww.google.com. And
+
+00:14:44.450 --> 00:14:46.965
+you end up getting a bunch of HTML,
+
+00:14:46.965 --> 00:14:50.645
+CSS, and JavaScript that represent the website for
+
+00:14:50.645 --> 00:14:55.685
+www.google.com. As you can see, we have some
+
+00:14:55.685 --> 00:14:58.405
+HTML up here, and then this is badly
+
+00:14:58.405 --> 00:15:02.840
+formatted. It's all JavaScript. And so that's just
+
+00:15:02.840 --> 00:15:06.840
+another way to send HTTP requests. And then
+
+00:15:07.480 --> 00:15:11.880
+finally, the way that you guys will be
+
+00:15:11.880 --> 00:15:16.785
+sending HTTP requests will be through JavaScript. So,
+
+00:15:17.025 --> 00:15:19.265
+I'll give you guys a second to parse
+
+00:15:19.265 --> 00:15:25.425
+all of this. But essentially what we're doing
+
+00:15:25.425 --> 00:15:29.400
+is we're using the fetch function in JavaScript
+
+00:15:29.400 --> 00:15:33.960
+to send a request to some server and
+
+00:15:33.960 --> 00:15:36.600
+we abstracted out the fetch function so that
+
+00:15:36.600 --> 00:15:38.360
+you can just put an endpoint and the
+
+00:15:38.360 --> 00:15:45.555
+parameters for get request and for both the
+
+00:15:45.555 --> 00:15:48.195
+get and post request. And this is how
+
+00:15:48.195 --> 00:15:51.875
+you'll be requestingmodifying most of your data and
+
+00:15:51.875 --> 00:15:54.910
+you'll be using it in workshop three. I'm
+
+00:15:54.910 --> 00:15:56.590
+going pass it on to Daniel so that
+
+00:15:56.590 --> 00:16:28.180
+he can go over APIs. Oh, wait. Yeah.
+
+00:16:49.490 --> 00:16:55.970
+Hi everybody. Hi. I'm Daniel and I'll be
+
+00:16:55.970 --> 00:16:59.970
+talking about APIs. So API stands for Application
+
+00:16:59.970 --> 00:17:03.805
+Program Interface. And in summary, it's basically a
+
+00:17:03.805 --> 00:17:06.685
+set of endpoints that some service provides that
+
+00:17:06.685 --> 00:17:08.685
+allows you to make requests to that service
+
+00:17:08.685 --> 00:17:10.765
+in order to perform a function. That might
+
+00:17:10.765 --> 00:17:12.925
+sound confusing to you but I'll give a
+
+00:17:12.925 --> 00:17:15.165
+few examples right here and then I think
+
+00:17:15.165 --> 00:17:16.525
+it'll make a lot more sense after I
+
+00:17:16.525 --> 00:17:19.590
+explain the examples. Examples. So a lot of
+
+00:17:19.590 --> 00:17:22.310
+companies provide APIs that you can use to
+
+00:17:22.710 --> 00:17:25.350
+essentially incorporate into your own website. So just
+
+00:17:25.350 --> 00:17:29.110
+as an example, the Google Calendar API, our
+
+00:17:29.110 --> 00:17:33.475
+WebLab website at weblab.mit. Actually uses the Google
+
+00:17:33.475 --> 00:17:37.875
+Calendar API to display all of our lectures
+
+00:17:38.835 --> 00:17:41.475
+on the on our course calendar. So we
+
+00:17:41.475 --> 00:17:43.475
+just have a Google Calendar that we update
+
+00:17:43.475 --> 00:17:45.560
+and then the website automatically pulls from that
+
+00:17:45.560 --> 00:17:48.440
+Google Calendar and updates our website. So the
+
+00:17:48.440 --> 00:17:49.560
+way that we do that is by using
+
+00:17:49.560 --> 00:17:52.280
+a Google Calendar API that Google provides that
+
+00:17:52.280 --> 00:17:55.240
+our website is then able to use to
+
+00:17:55.240 --> 00:17:58.295
+display our calendar. Another example is the Amazon
+
+00:17:58.295 --> 00:18:01.335
+selling partner API. Let's say you wanted to
+
+00:18:01.335 --> 00:18:04.135
+incorporate into your website a way for you
+
+00:18:04.135 --> 00:18:06.855
+to essentially buy thing buy a product on
+
+00:18:06.855 --> 00:18:10.630
+Amazon, then you could do that by using
+
+00:18:10.630 --> 00:18:15.110
+the Amazon API to incorporate some sort of
+
+00:18:15.110 --> 00:18:19.270
+Amazon interactive portion of your website so that
+
+00:18:19.270 --> 00:18:20.710
+if you're selling some product, you're able to
+
+00:18:20.710 --> 00:18:23.190
+click some buttons on your website and it
+
+00:18:23.190 --> 00:18:26.055
+kind of like shoots off some Amazon order
+
+00:18:26.055 --> 00:18:29.495
+for your website. And then lastly is maybe
+
+00:18:29.495 --> 00:18:34.695
+an OpenAI LLM API. So OpenAI provides a
+
+00:18:34.695 --> 00:18:36.295
+bunch of APIs that you can use online
+
+00:18:36.600 --> 00:18:38.760
+where essentially you can send it some request
+
+00:18:38.760 --> 00:18:41.320
+and it'll respond with some data. So maybe
+
+00:18:41.320 --> 00:18:43.560
+you send it some random request for like
+
+00:18:43.560 --> 00:18:45.080
+help me with my math homework and then
+
+00:18:45.080 --> 00:18:50.495
+it responds with like some response with that
+
+00:18:50.495 --> 00:18:53.295
+answers your question basically. And there's thousands of
+
+00:18:53.295 --> 00:18:56.255
+APIs online, some are free, some cost money.
+
+00:18:57.615 --> 00:19:00.815
+Like I think the OpenAI one might cost
+
+00:19:00.815 --> 00:19:02.495
+like some amount of money per query that
+
+00:19:02.495 --> 00:19:06.340
+you have but like in general, they are
+
+00:19:06.340 --> 00:19:08.100
+there to help you be able to do
+
+00:19:08.100 --> 00:19:10.420
+things that maybe are really difficult to do
+
+00:19:10.420 --> 00:19:12.020
+or impossible for you to do on your
+
+00:19:12.020 --> 00:19:16.180
+own. So the purpose of an API, if
+
+00:19:16.180 --> 00:19:18.820
+you're going to need to access data or
+
+00:19:18.900 --> 00:19:21.595
+something or like do some things that maybe
+
+00:19:21.595 --> 00:19:25.435
+your website doesn't have access to. And the
+
+00:19:25.435 --> 00:19:27.515
+servers won't just let you, like for example
+
+00:19:27.515 --> 00:19:29.755
+Google, they won't just let you look directly
+
+00:19:29.755 --> 00:19:31.755
+into their servers and be like, Oh, what's
+
+00:19:31.755 --> 00:19:34.075
+going on over here? And then you'd be
+
+00:19:34.075 --> 00:19:35.690
+able to just kind of look at every
+
+00:19:35.690 --> 00:19:37.930
+single user potentially in their database and that
+
+00:19:37.930 --> 00:19:40.330
+would potentially be a security nightmare because you
+
+00:19:40.330 --> 00:19:42.410
+could maybe just look at everybody's passwords and
+
+00:19:42.410 --> 00:19:43.930
+be like, oh great, I can just log
+
+00:19:43.930 --> 00:19:45.850
+into my friend's account now and do whatever
+
+00:19:45.850 --> 00:19:50.165
+I want. But what they do provide is
+
+00:19:50.165 --> 00:19:51.445
+a way for you to interact with that
+
+00:19:51.445 --> 00:19:53.925
+data by doing predefined functions that they give
+
+00:19:53.925 --> 00:19:56.965
+you. So yeah, so that's what APIs essentially
+
+00:19:56.965 --> 00:19:58.965
+are. And now you can basically do whatever
+
+00:19:58.965 --> 00:20:00.885
+you want or not whatever you want but
+
+00:20:00.885 --> 00:20:02.485
+kind of a lot of things just by
+
+00:20:02.485 --> 00:20:04.640
+asking the right people and in the right
+
+00:20:04.640 --> 00:20:11.120
+way. So as Lucas talked about already, we
+
+00:20:11.120 --> 00:20:12.720
+are working in kind of a client server
+
+00:20:12.720 --> 00:20:15.120
+model. So far we've only coded our client
+
+00:20:15.120 --> 00:20:16.655
+in workshop two but we're going to be
+
+00:20:16.655 --> 00:20:18.895
+coding our server in workshop three which will
+
+00:20:18.895 --> 00:20:23.295
+respond to our client using HTTP responses and
+
+00:20:23.375 --> 00:20:27.295
+sorry, requests and responses. So you might imagine
+
+00:20:27.295 --> 00:20:29.135
+that your client sends a GET or a
+
+00:20:29.135 --> 00:20:30.335
+POST request to your server and then your
+
+00:20:30.335 --> 00:20:34.180
+server responds with an HTTP response. That server
+
+00:20:34.180 --> 00:20:35.860
+is eventually going to be connected to a
+
+00:20:35.860 --> 00:20:38.580
+database which will store data that your server
+
+00:20:38.580 --> 00:20:40.900
+needs and so that that data will persist
+
+00:20:40.900 --> 00:20:43.620
+forever. But even if your server crashes, it'll
+
+00:20:43.620 --> 00:20:47.140
+be able to retrieve that data still because
+
+00:20:46.785 --> 00:20:48.865
+the data will still reside in that database.
+
+00:20:49.905 --> 00:20:51.505
+Now let's imagine that you wanted to connect
+
+00:20:51.505 --> 00:20:53.265
+like some APIs to your website. Let's say
+
+00:20:53.265 --> 00:20:57.905
+like Google Calendar and OpenAI and you want
+
+00:20:57.905 --> 00:21:03.390
+to interact with both of these. What the
+
+00:21:03.390 --> 00:21:09.630
+essentially like the things that I don't know,
+
+00:21:11.070 --> 00:21:12.615
+responses and requests will look like is that
+
+00:21:12.615 --> 00:21:15.415
+your client will send these responses through your
+
+00:21:15.415 --> 00:21:17.175
+server and then your server will forward those
+
+00:21:17.175 --> 00:21:21.335
+responses to the APIs which will then be
+
+00:21:21.335 --> 00:21:25.680
+able to respond back to your server and
+
+00:21:25.680 --> 00:21:27.600
+your server can then respond back to your
+
+00:21:27.600 --> 00:21:30.880
+client with the response that it needs basically.
+
+00:21:31.280 --> 00:21:33.920
+Being like, hey, you asked for this from
+
+00:21:33.920 --> 00:21:36.880
+the API, I got that from the API
+
+00:21:36.880 --> 00:21:38.320
+and now here I'll give it back to
+
+00:21:38.320 --> 00:21:41.725
+you. So your code is basically responsible for
+
+00:21:41.725 --> 00:21:43.965
+everything in the client, the server, and the
+
+00:21:43.965 --> 00:21:47.325
+database. In workshop three we'll basically be talking
+
+00:21:47.325 --> 00:21:49.645
+about how to get this client and server
+
+00:21:49.965 --> 00:21:56.510
+interaction going. Yeah. So what is the purpose
+
+00:21:56.510 --> 00:21:57.870
+of the server? You might ask why can't
+
+00:21:57.870 --> 00:22:00.190
+this client just directly interact with the database
+
+00:22:00.190 --> 00:22:02.910
+and directly interact with the APIs? Well in
+
+00:22:02.910 --> 00:22:04.750
+our model the client is kind of like
+
+00:22:04.750 --> 00:22:07.715
+the browser. So if your client was able
+
+00:22:07.715 --> 00:22:09.875
+to directly interact with the database or the
+
+00:22:09.875 --> 00:22:12.195
+other APIs, then that would mean that when
+
+00:22:12.195 --> 00:22:14.115
+you inspect element in your browser you would
+
+00:22:14.115 --> 00:22:15.555
+be able to see everything that is going
+
+00:22:15.555 --> 00:22:18.115
+on. Which is kind of a problem because
+
+00:22:18.115 --> 00:22:19.715
+then maybe you'll be able to see like,
+
+00:22:19.715 --> 00:22:22.430
+oh here's my API key for this API.
+
+00:22:22.910 --> 00:22:25.070
+And if you're writing a website, you don't
+
+00:22:25.070 --> 00:22:26.350
+want users of your website to be able
+
+00:22:26.350 --> 00:22:29.150
+to see all of the potential keys and
+
+00:22:29.150 --> 00:22:30.990
+database passwords and stuff like that that you're
+
+00:22:30.990 --> 00:22:32.590
+using. So you kind of want this server
+
+00:22:32.590 --> 00:22:34.955
+that you manage and then clients are able
+
+00:22:34.955 --> 00:22:38.155
+to request and respond to your server basically.
+
+00:22:38.155 --> 00:22:39.835
+So the server is kind of your code
+
+00:22:39.835 --> 00:22:43.915
+that you control whereas the client kind of
+
+00:22:46.410 --> 00:22:48.970
+the client's going to be users of your
+
+00:22:48.970 --> 00:22:50.650
+website that you might not be able to
+
+00:22:50.650 --> 00:22:53.530
+control exactly what they're doing over there. So
+
+00:22:53.530 --> 00:22:54.650
+the easiest way that you can think of
+
+00:22:54.650 --> 00:22:56.650
+is just like going into inspect element and
+
+00:22:56.650 --> 00:22:58.970
+changing some stuff around on your website. That's
+
+00:22:58.970 --> 00:23:00.170
+not changing what's going on in the server
+
+00:23:00.170 --> 00:23:01.610
+but it's changing on what's going on within
+
+00:23:01.610 --> 00:23:08.385
+the client. Yeah so as Lucas already mentioned,
+
+00:23:08.385 --> 00:23:10.065
+whenever we access a URL you're making a
+
+00:23:10.065 --> 00:23:14.145
+request to an endpoint. So just some examples,
+
+00:23:14.145 --> 00:23:16.225
+these are from our example website. We have
+
+00:23:16.225 --> 00:23:17.790
+a GET request for all the stories, a
+
+00:23:17.790 --> 00:23:20.670
+POST request for a story, etcetera, etcetera. I
+
+00:23:20.670 --> 00:23:21.710
+think I'm just going to skip past this
+
+00:23:21.710 --> 00:23:26.590
+part. So we're going to just look at
+
+00:23:26.590 --> 00:23:27.870
+one quick example. How much time do I
+
+00:23:27.870 --> 00:23:32.265
+have left? Oh shit. Okay. How much time
+
+00:23:32.265 --> 00:23:37.385
+can I no? Okay. Okay. No. Okay so
+
+00:23:37.465 --> 00:23:42.185
+here's the YouTube API. Okay I won't go
+
+00:23:42.185 --> 00:23:45.670
+over the example but I think in the
+
+00:23:45.670 --> 00:23:47.110
+slides you can just kind of look over
+
+00:23:47.110 --> 00:23:50.310
+it and I think it's decently, hopefully kind
+
+00:23:50.310 --> 00:23:55.110
+of self explanatory. When you have an endpoint
+
+00:23:55.110 --> 00:23:57.575
+and query parameters, those query parameters will get
+
+00:23:57.575 --> 00:24:01.495
+formatted after the question mark each following key
+
+00:24:01.495 --> 00:24:04.935
+value pairs. So the colors are just mapped
+
+00:24:04.935 --> 00:24:07.015
+to the same color. Hopefully that makes sense.
+
+00:24:08.215 --> 00:24:10.695
+Here's some examples of some really cool APIs
+
+00:24:10.695 --> 00:24:12.710
+that you could think about incorporating into your
+
+00:24:12.710 --> 00:24:15.190
+own website. I already went over a few
+
+00:24:15.190 --> 00:24:18.630
+of these but like the dog API, you
+
+00:24:18.630 --> 00:24:21.350
+can just query for cute examples of random
+
+00:24:21.350 --> 00:24:23.990
+dogs. Yeah. I would encourage you guys to
+
+00:24:23.990 --> 00:24:26.235
+look over these and maybe some other online
+
+00:24:26.235 --> 00:24:28.475
+API lists to like an example for maybe
+
+00:24:28.475 --> 00:24:29.995
+things that you can incorporate into your own
+
+00:24:29.995 --> 00:24:35.515
+website. Okay, yeah so we've gone over how
+
+00:24:35.515 --> 00:24:42.930
+these API requests work if you just write
+
+00:24:42.930 --> 00:24:44.290
+it out into your URL, but you can
+
+00:24:44.290 --> 00:24:47.010
+also do these in JavaScript. The way that
+
+00:24:47.010 --> 00:24:48.530
+we do this is using the get and
+
+00:24:48.530 --> 00:24:57.255
+post functions that Lucas talked about. Instead of,
+
+00:24:57.815 --> 00:25:01.495
+sorry the first parameter of the get or
+
+00:25:01.495 --> 00:25:03.335
+the post function is generally just the endpoint
+
+00:25:03.335 --> 00:25:04.855
+that we want to query and then it's
+
+00:25:04.855 --> 00:25:06.455
+followed by whatever parameters that we want to
+
+00:25:06.455 --> 00:25:08.375
+use and then the get and post functions
+
+00:25:08.375 --> 00:25:11.450
+will actually just do all the work for
+
+00:25:11.450 --> 00:25:13.690
+you. It'll send a fetch request for that
+
+00:25:13.690 --> 00:25:16.090
+URL. So basically you can think of it
+
+00:25:16.090 --> 00:25:20.010
+as these functions are doing the dirty work
+
+00:25:20.010 --> 00:25:22.410
+of actually filling in the URL and filling
+
+00:25:22.410 --> 00:25:24.090
+in the body of it for you. So
+
+00:25:24.090 --> 00:25:26.545
+you can just fill in the URL and
+
+00:25:26.545 --> 00:25:27.905
+fill in the parameters and that's all you
+
+00:25:27.905 --> 00:25:44.870
+need to worry about. Okay. Can you go
+
+00:25:44.870 --> 00:25:53.115
+to the announcement slide? Where's that? Alright. Could
+
+00:25:53.115 --> 00:25:54.795
+you guys open up the feedback link and
+
+00:25:54.795 --> 00:25:56.315
+give us feedback? We'll give you like one
+
+00:25:56.315 --> 00:26:27.605
+minute to do that. Yeah. While you're doing
+
+00:26:27.605 --> 00:26:28.965
+that, I can show you guys something cool
+
+00:26:28.965 --> 00:26:31.685
+from the example. If you look at the
+
+00:26:31.685 --> 00:26:34.030
+answer here, it should work if you copy
+
+00:26:34.030 --> 00:26:37.950
+paste into your own browser. So if you
+
+00:26:37.950 --> 00:26:39.710
+like just do it here, you'll get the
+
+00:26:39.710 --> 00:26:42.510
+response that let me zoom in a bit.
+
+00:26:42.510 --> 00:26:46.030
+You'll get the response from the YouTube server
+
+00:26:46.325 --> 00:26:48.565
+that tells you that it's essentially listing out
+
+00:26:48.565 --> 00:26:51.365
+all the playlists that we that we requested
+
+00:26:51.365 --> 00:26:53.525
+and we use the web lab YouTube for
+
+00:26:53.525 --> 00:26:55.605
+the request. So we just take this ID
+
+00:26:55.605 --> 00:26:57.445
+here for example and then we go to
+
+00:26:57.445 --> 00:27:03.050
+youtube.com/playlist and then list equals and then we
+
+00:27:03.050 --> 00:27:07.450
+copy paste this in here, we'll get the
+
+00:27:07.450 --> 00:27:10.410
+IAP 2025 playlist from Web Lab. So yeah,
+
+00:27:10.410 --> 00:27:11.690
+that's pretty cool. I think, yeah, this should
+
+00:27:11.690 --> 00:27:32.031
+work on your own computers too. Okay.
