@@ -212,5 +212,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_4_ui_figma_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_4_ui_figma/mit_web_lab_6_962_-_day_4_ui_figma_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_4_ui_figma/mit_web_lab_6_962_-_day_4_ui_figma_transcript.vtt"
+  },
+  {
+    "title_original": "Let's Debug Catbook Part 1 Answers (debug-challenge)",
+    "video_name_clean": "lets_debug_catbook_part_1_answers_debug-challenge",
+    "youtube_id": "UqbkFjD6BTk",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T20:36:59.110855+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 1309,
+    "lesson_html_filename": "lets_debug_catbook_part_1_answers_debug-challenge_interactive_lesson.html",
+    "json_transcript_path_on_repo": "lets_debug_catbook_part_1_answers_debug-challenge/lets_debug_catbook_part_1_answers_debug-challenge_transcript.json",
+    "vtt_transcript_path_on_repo": "lets_debug_catbook_part_1_answers_debug-challenge/lets_debug_catbook_part_1_answers_debug-challenge_transcript.vtt"
   }
 ]
