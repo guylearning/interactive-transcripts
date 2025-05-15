@@ -1,0 +1,1385 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 27582036-e5e2-4d94-905b-91d96a5a5b03
+Created: 2025-05-15T20:35:20.565Z
+Duration: 1276.0033
+Channels: 1
+
+00:00:00.080 --> 00:00:04.000
+Okay. So now we'll go into something that's
+
+00:00:04.000 --> 00:00:08.400
+no code and a bit more fun. Okay.
+
+00:00:08.400 --> 00:00:11.200
+So how do we design a website? To
+
+00:00:11.200 --> 00:00:13.120
+address this question, I think a better question
+
+00:00:13.120 --> 00:00:15.075
+to ask is, why do we design our
+
+00:00:15.075 --> 00:00:19.155
+websites? And in the center of any website
+
+00:00:19.155 --> 00:00:21.315
+design is our users. So we design a
+
+00:00:21.315 --> 00:00:23.155
+website to serve our users. We want our
+
+00:00:23.155 --> 00:00:26.675
+website to be usable, and two core concepts
+
+00:00:26.675 --> 00:00:29.750
+we consider as a website designer is UI
+
+00:00:29.750 --> 00:00:33.270
+and UX. UI dictates the visuals of our
+
+00:00:33.270 --> 00:00:36.070
+website, so it's the initial impression that our
+
+00:00:36.070 --> 00:00:39.030
+users get when they come onto our website
+
+00:00:39.030 --> 00:00:41.990
+and interact with it, and UX describes more
+
+00:00:41.990 --> 00:00:44.445
+of the user flow as our user goes
+
+00:00:44.445 --> 00:00:46.125
+from page to page as they interact with
+
+00:00:46.125 --> 00:00:50.365
+their website. So any good a good UI
+
+00:00:50.365 --> 00:00:52.445
+UX is a UI UX that delivers the
+
+00:00:52.445 --> 00:00:54.525
+content and functionality of a website to its
+
+00:00:54.525 --> 00:00:57.250
+users well, But this can take a lot
+
+00:00:57.250 --> 00:00:59.170
+of different forms. There's no one good recipe
+
+00:00:59.170 --> 00:01:03.570
+to make a good UI UX. So first,
+
+00:01:03.570 --> 00:01:05.570
+we'll take a look into user interface or
+
+00:01:05.570 --> 00:01:09.905
+UI. Your UI should be led by a
+
+00:01:09.905 --> 00:01:12.465
+design guideline and this is specified by the
+
+00:01:12.465 --> 00:01:15.825
+fonts used in your website, color palettes, the
+
+00:01:15.825 --> 00:01:18.945
+spacing and layout, and maybe the reusable components
+
+00:01:18.945 --> 00:01:23.460
+you use in your front end. So here's
+
+00:01:23.460 --> 00:01:25.300
+the design guideline that was used for many
+
+00:01:25.300 --> 00:01:28.260
+years on the WebLab website and our slides,
+
+00:01:28.260 --> 00:01:30.260
+but recently we had a UI change on
+
+00:01:30.260 --> 00:01:32.100
+our website so you might not see this
+
+00:01:32.340 --> 00:01:34.955
+UI format on the website anymore. But as
+
+00:01:34.955 --> 00:01:37.435
+you can see, in this UI guideline, specify
+
+00:01:37.435 --> 00:01:41.115
+the fonts we use for different text throughout
+
+00:01:41.115 --> 00:01:44.475
+our website and the color palette used throughout
+
+00:01:44.475 --> 00:01:49.550
+the website. The fonts and colors that you
+
+00:01:49.550 --> 00:01:51.470
+use can give off a very strong initial
+
+00:01:51.470 --> 00:01:53.550
+impression of your website to your user. So
+
+00:01:53.550 --> 00:01:55.870
+they're very important and you should definitely take
+
+00:01:55.870 --> 00:01:57.790
+some time to think about what fonts and
+
+00:01:57.790 --> 00:02:00.430
+colors you pick for your UI guidelines as
+
+00:02:00.430 --> 00:02:03.775
+you design your websites. So first, we'll start
+
+00:02:03.775 --> 00:02:05.855
+off with fonts. So if you're an MIT
+
+00:02:05.855 --> 00:02:08.175
+student here, you have access to the Adobe
+
+00:02:08.175 --> 00:02:10.575
+Creative Cloud and that allows you to use
+
+00:02:10.575 --> 00:02:13.455
+Adobe Fonts. So this is the Adobe Fonts
+
+00:02:13.455 --> 00:02:17.215
+website and you can add any family of
+
+00:02:17.215 --> 00:02:19.920
+fonts to your web application or download any
+
+00:02:19.920 --> 00:02:23.120
+fonts. And I really recommend it. It's a
+
+00:02:23.120 --> 00:02:25.200
+great tool for finding fonts for your website.
+
+00:02:25.200 --> 00:02:29.280
+You can filter by tags for like maybe
+
+00:02:29.280 --> 00:02:33.725
+different fonts you're looking for. And so this
+
+00:02:33.725 --> 00:02:35.405
+is the front page of Adobe Fonts and
+
+00:02:35.405 --> 00:02:37.725
+as you can see, these different fonts give
+
+00:02:37.725 --> 00:02:40.845
+off very different impressions already. So I just
+
+00:02:40.845 --> 00:02:42.845
+like went ahead and wrote down maybe my
+
+00:02:42.845 --> 00:02:45.325
+initial impressions of all these fonts and I'm
+
+00:02:45.325 --> 00:02:46.925
+sure that you can you have different impressions
+
+00:02:46.925 --> 00:02:48.960
+of these fonts as well. Like for Ivy
+
+00:02:48.960 --> 00:02:50.880
+style, this is a very modern and clean
+
+00:02:50.880 --> 00:02:52.800
+font and you might wanna use it for
+
+00:02:53.440 --> 00:02:56.880
+a very modern user interface, whereas for mini
+
+00:02:56.880 --> 00:02:59.120
+arcade or Limon, you might not wanna use
+
+00:02:59.120 --> 00:03:01.120
+those for your body text of any website
+
+00:03:01.120 --> 00:03:02.975
+and those might be more suited for a
+
+00:03:02.975 --> 00:03:06.735
+heading of your website. So same thing for
+
+00:03:06.735 --> 00:03:09.935
+colors. This is coolers.co and it allows you
+
+00:03:09.935 --> 00:03:13.855
+to pick color palettes and edit color palettes
+
+00:03:13.855 --> 00:03:17.580
+and similarly colors also give off a very
+
+00:03:17.580 --> 00:03:20.220
+strong initial impression to the user. So I
+
+00:03:20.220 --> 00:03:22.220
+also went through this and like wrote down
+
+00:03:22.220 --> 00:03:25.100
+my initial impressions. You might have similar initial
+
+00:03:25.100 --> 00:03:29.015
+impressions, maybe not. But yeah, that's one thing
+
+00:03:29.015 --> 00:03:32.215
+to consider and yeah, here are some tools
+
+00:03:32.215 --> 00:03:33.735
+you can use on coolers. You can pick
+
+00:03:33.735 --> 00:03:37.895
+palettes and adjust the palettes. And another thing
+
+00:03:37.895 --> 00:03:41.015
+to think about is color psychology, which you
+
+00:03:41.015 --> 00:03:45.490
+can look through on your own. So the
+
+00:03:45.490 --> 00:03:47.570
+impression that are so as we saw just
+
+00:03:47.570 --> 00:03:49.810
+saw, UI can give off a very strong
+
+00:03:49.810 --> 00:03:52.930
+impression to your users through fonts and colors,
+
+00:03:53.090 --> 00:03:55.570
+but this depends largely on your user base.
+
+00:03:55.650 --> 00:03:58.530
+So your users will change throughout time and
+
+00:03:59.125 --> 00:04:02.485
+throughout culture. So yeah, UI trends change over
+
+00:04:02.485 --> 00:04:05.205
+time and vary across culture. And now we'll
+
+00:04:05.205 --> 00:04:07.285
+take a look at some examples of how
+
+00:04:07.285 --> 00:04:10.965
+it does that. So here's the MIT website
+
+00:04:10.965 --> 00:04:14.310
+in 02/2003 versus now. So as you can
+
+00:04:14.310 --> 00:04:17.510
+see, the MIT website moved towards a more
+
+00:04:17.510 --> 00:04:20.070
+minimal UI. We have a white background now
+
+00:04:20.070 --> 00:04:22.470
+instead of the teal and green background. We
+
+00:04:22.470 --> 00:04:24.710
+have more spacing for the words so that
+
+00:04:25.510 --> 00:04:29.655
+there's a more minimal and empty layout and
+
+00:04:29.655 --> 00:04:34.135
+we also replace text with icons where possible.
+
+00:04:35.495 --> 00:04:37.255
+So overall, we see a trend towards a
+
+00:04:37.255 --> 00:04:39.575
+more minimal UI in the past decade and
+
+00:04:39.575 --> 00:04:41.255
+a great example of how we can see
+
+00:04:41.255 --> 00:04:43.390
+this shift is by looking at how icons
+
+00:04:43.390 --> 00:04:45.390
+change over time. So here's the trash can
+
+00:04:45.390 --> 00:04:49.470
+icon and icons were originally introduced in 1973
+
+00:04:49.470 --> 00:04:52.910
+when Xerox introduced the graphical user interface. So
+
+00:04:52.910 --> 00:04:55.070
+in the very beginning, we have very primitive
+
+00:04:55.070 --> 00:04:57.985
+and pixelated icons and as we move through
+
+00:04:57.985 --> 00:05:01.505
+the .com bubble in the early late nineties
+
+00:05:01.505 --> 00:05:04.385
+and early two thousands, we move towards skeuomorphic
+
+00:05:04.385 --> 00:05:08.065
+icons which were originally designed to be very
+
+00:05:08.065 --> 00:05:11.185
+user friendly because they mimic how these icons
+
+00:05:11.185 --> 00:05:13.070
+might look in real life. But as we
+
+00:05:13.070 --> 00:05:14.750
+move through the twenty tens and in the
+
+00:05:14.750 --> 00:05:17.230
+past decade, we have more minimal and flat
+
+00:05:17.230 --> 00:05:22.270
+UI icon layouts. But recently, I think we're
+
+00:05:22.270 --> 00:05:24.430
+starting to move away from the minimal UI
+
+00:05:24.510 --> 00:05:27.085
+as a lot of icons now have more
+
+00:05:27.085 --> 00:05:31.405
+shadows and maybe some dimension added to them.
+
+00:05:32.925 --> 00:05:34.445
+Here's a cool website you can check out
+
+00:05:34.445 --> 00:05:36.605
+on your own time. So you might wanna
+
+00:05:36.605 --> 00:05:38.765
+see how your favorite websites have changed over
+
+00:05:38.765 --> 00:05:43.940
+time. This is the web design museum. So
+
+00:05:44.020 --> 00:05:45.700
+as we just saw, we've been moving towards
+
+00:05:45.700 --> 00:05:48.020
+a more minimal UI, but the minimal UI
+
+00:05:48.020 --> 00:05:50.340
+isn't preferred by all users in today's digital
+
+00:05:50.340 --> 00:05:53.700
+age. One example of this is how the
+
+00:05:53.700 --> 00:05:57.835
+UI for web design varies between western culture
+
+00:05:57.835 --> 00:06:01.595
+and sorry, western websites and maybe some what's
+
+00:06:01.675 --> 00:06:04.075
+websites in East Asia. So this is the
+
+00:06:04.075 --> 00:06:06.635
+Yahoo front page and on the left is
+
+00:06:06.635 --> 00:06:08.715
+the English Yahoo web page that you can
+
+00:06:08.715 --> 00:06:11.790
+log into in The US, and on the
+
+00:06:11.790 --> 00:06:14.110
+right side is the Japanese Yahoo front page.
+
+00:06:14.430 --> 00:06:17.710
+So something really interesting is that Japan's UI
+
+00:06:17.710 --> 00:06:21.230
+more mimics how websites in the West look
+
+00:06:21.230 --> 00:06:24.030
+during the .com bubble and it's a lot
+
+00:06:24.030 --> 00:06:26.775
+more cluttered. There's no there's no central focal
+
+00:06:26.775 --> 00:06:29.415
+point, and it's a lot less minimal. And
+
+00:06:29.415 --> 00:06:31.975
+this is because across culture, users have different
+
+00:06:31.975 --> 00:06:36.375
+needs. In the West, users prefer a more
+
+00:06:36.375 --> 00:06:39.735
+simplistic layout with major focal points that summarize
+
+00:06:39.735 --> 00:06:43.470
+the information, whereas in East Asia culture, there
+
+00:06:43.470 --> 00:06:47.790
+are high context cultures that prefer more information
+
+00:06:47.790 --> 00:06:51.870
+that tell them more about a website. So
+
+00:06:51.870 --> 00:06:53.950
+this really brings home the point that you
+
+00:06:53.950 --> 00:06:55.790
+really need to consider your user base when
+
+00:06:55.790 --> 00:06:58.465
+you're designing a website. So how do we
+
+00:06:58.465 --> 00:07:01.825
+make our own website's UI look good? As
+
+00:07:01.825 --> 00:07:04.625
+we mentioned earlier, you should use UI guidelines
+
+00:07:04.625 --> 00:07:07.745
+because this provides consistency throughout your website. So
+
+00:07:07.745 --> 00:07:09.425
+here are some tools for you to pick
+
+00:07:09.425 --> 00:07:12.970
+colors and typography, and another important point is
+
+00:07:12.970 --> 00:07:16.010
+to reuse components. So one thing you can
+
+00:07:16.010 --> 00:07:19.130
+use is the UI component library. Here's an
+
+00:07:19.130 --> 00:07:21.210
+example of a component library that I like.
+
+00:07:21.210 --> 00:07:23.530
+It's called Mantine and it allows you to
+
+00:07:23.530 --> 00:07:26.250
+customize your components and reuse them throughout your
+
+00:07:26.250 --> 00:07:31.585
+website. Another important part of making your UI
+
+00:07:31.585 --> 00:07:34.305
+look good is responsive design and this means
+
+00:07:34.305 --> 00:07:37.345
+that your website will look good on all
+
+00:07:37.345 --> 00:07:40.065
+devices of different sizes. So one thing you
+
+00:07:40.065 --> 00:07:42.145
+can do to check how your website looks
+
+00:07:42.145 --> 00:07:45.340
+on screens of different sizes is by using
+
+00:07:45.340 --> 00:07:48.220
+inspect element and changing the dimensions of the
+
+00:07:48.220 --> 00:07:50.860
+website. So for example, here's the web lab
+
+00:07:50.860 --> 00:07:55.215
+website. We can go to inspect and on
+
+00:07:55.215 --> 00:07:58.095
+the on the right panel, on the top
+
+00:07:58.095 --> 00:08:00.415
+left of the right panel, you can toggle
+
+00:08:00.415 --> 00:08:05.215
+device toolbar and pick dimensions. So here's how
+
+00:08:05.215 --> 00:08:09.320
+it might look on the iPhone SE. As
+
+00:08:09.320 --> 00:08:11.560
+you can see, everything resizes and it still
+
+00:08:11.560 --> 00:08:13.240
+looks good on a small screen. So this
+
+00:08:13.240 --> 00:08:18.680
+is what we call responsive design. Stanley. Yeah.
+
+00:08:18.680 --> 00:08:22.280
+Thank you, Stanley. So just a quick aside,
+
+00:08:22.280 --> 00:08:26.975
+interactivity is also really cool. Interactivity is when
+
+00:08:26.975 --> 00:08:28.815
+a user can interact with the website and
+
+00:08:28.815 --> 00:08:30.655
+maybe when you hover around or click on
+
+00:08:30.655 --> 00:08:33.375
+something, you'll get a response back. This is
+
+00:08:33.375 --> 00:08:37.820
+cool and it makes your website like really
+
+00:08:37.820 --> 00:08:40.300
+catch someone's eye, but there are drawbacks and
+
+00:08:40.300 --> 00:08:42.140
+it could take away from usability or be
+
+00:08:42.140 --> 00:08:45.580
+very resource heavy on your browser. So here's
+
+00:08:45.580 --> 00:08:48.380
+an example of an interactive website designed by
+
+00:08:48.380 --> 00:08:51.475
+our CodePres Stanley. So as you can see,
+
+00:08:51.475 --> 00:08:53.955
+we went through a recent UI change and
+
+00:08:53.955 --> 00:08:55.715
+with the new UI, it's a lot more
+
+00:08:55.715 --> 00:08:58.595
+interactive like you can hover over things and
+
+00:08:58.595 --> 00:09:03.260
+they'll change colors or opacity or you have
+
+00:09:03.260 --> 00:09:07.580
+emoji, I don't know. Really cool. But yeah,
+
+00:09:07.580 --> 00:09:09.900
+our old website didn't have any user interactivity
+
+00:09:09.900 --> 00:09:11.500
+at all. So it's a lot more eye
+
+00:09:11.500 --> 00:09:14.380
+catching on the new website. Another example of
+
+00:09:14.380 --> 00:09:18.525
+interactivity is for HackMIT, we're working on three
+
+00:09:18.525 --> 00:09:21.645
+JS website for our upcoming high school hackathon
+
+00:09:21.645 --> 00:09:23.725
+blueprint. I don't know if you guys saw
+
+00:09:23.725 --> 00:09:28.685
+that but oops. No, it's gone. But we
+
+00:09:28.845 --> 00:09:32.550
+use a three d modeling apps to make
+
+00:09:32.550 --> 00:09:34.790
+this cool room. Oh, why is it gone?
+
+00:09:35.270 --> 00:09:38.230
+Oh, and allows the users to like play
+
+00:09:38.230 --> 00:09:39.830
+around with the room and click on different
+
+00:09:39.830 --> 00:09:41.670
+items in the room. And on the right,
+
+00:09:41.670 --> 00:09:44.790
+it was just a cool profile page, portfolio
+
+00:09:44.790 --> 00:09:46.390
+page that I found that where you can
+
+00:09:46.390 --> 00:09:48.605
+interact with the different objects on the website.
+
+00:09:48.765 --> 00:10:09.480
+Now we'll go to UX. Oh, okay. Hi.
+
+00:10:09.480 --> 00:10:11.400
+I'm Annabel. Wait. I think you should stay
+
+00:10:11.400 --> 00:10:15.835
+connected to yours for now. Okay. I'm gonna
+
+00:10:15.835 --> 00:10:18.075
+talk about UX. I'm speed through it a
+
+00:10:18.075 --> 00:10:19.515
+bit because I think Sophie covered a lot
+
+00:10:19.515 --> 00:10:22.075
+of the really important points in her UI
+
+00:10:22.075 --> 00:10:25.675
+section. But really quickly, basically, UX, we want
+
+00:10:25.675 --> 00:10:28.635
+to consider things like how intuitive is navigation
+
+00:10:28.635 --> 00:10:30.780
+gonna be for our users, what queues can
+
+00:10:30.780 --> 00:10:32.860
+they use on the website, how visible are
+
+00:10:32.860 --> 00:10:34.940
+the essential elements that we really wanna highlight
+
+00:10:34.940 --> 00:10:37.100
+on our web page, and is the information
+
+00:10:37.100 --> 00:10:39.580
+that we're presenting presented in, like, a logical
+
+00:10:39.580 --> 00:10:41.260
+manner where it's organized in a way that
+
+00:10:41.260 --> 00:10:43.740
+users can easily understand how things are flowing.
+
+00:10:44.045 --> 00:10:45.805
+So let's take a really quick poll. Between
+
+00:10:45.805 --> 00:10:48.045
+these two ketchup bottles one and two, which
+
+00:10:48.045 --> 00:10:50.605
+one do you think better optimizes the UX
+
+00:10:50.605 --> 00:10:52.845
+for users? You can do like one finger
+
+00:10:52.845 --> 00:10:56.280
+for like one and two for two. Yeah.
+
+00:10:56.280 --> 00:10:58.600
+I'm seeing like only twos. And this is
+
+00:10:58.600 --> 00:11:01.080
+correct because basically, like you can see in
+
+00:11:01.080 --> 00:11:03.960
+the old Heinz ketchup bottle design, it's really
+
+00:11:03.960 --> 00:11:05.800
+unintuitive to use because like if you have
+
+00:11:05.800 --> 00:11:07.560
+ketchup left over, you're like digging at the
+
+00:11:07.560 --> 00:11:09.625
+bottle to get the like leftovers out. Whereas
+
+00:11:09.625 --> 00:11:12.025
+here, you're able to squeeze it much easier,
+
+00:11:12.025 --> 00:11:14.825
+so it very much prioritizes user experience. And
+
+00:11:14.825 --> 00:11:16.105
+we want to do the same thing with
+
+00:11:16.105 --> 00:11:19.865
+our web applications. So we want to use
+
+00:11:19.865 --> 00:11:22.905
+symbols, concept, and colors that are commonly understood
+
+00:11:22.905 --> 00:11:25.520
+across different cultures. Earlier, Sophie talked about how
+
+00:11:25.520 --> 00:11:28.320
+UIs can differ between Western and East Asian,
+
+00:11:28.320 --> 00:11:31.280
+like, applications. But we will icons are kind
+
+00:11:31.280 --> 00:11:33.760
+of universal, and we can use, like, specific
+
+00:11:33.760 --> 00:11:35.840
+symbols that most people can understand to mean
+
+00:11:35.840 --> 00:11:37.840
+certain things. For example, you can look at
+
+00:11:37.840 --> 00:11:39.765
+the icon bars here and see, like, the
+
+00:11:39.765 --> 00:11:42.005
+home page is, like, represented with a house,
+
+00:11:42.005 --> 00:11:44.245
+the search bar with the magnifying glass, etcetera.
+
+00:11:44.245 --> 00:11:45.925
+And there's also a lot of colors, like
+
+00:11:45.925 --> 00:11:48.565
+green is symbolizing, like, money usually or things
+
+00:11:48.565 --> 00:11:52.180
+to deal with, like, wealth. So just more
+
+00:11:52.180 --> 00:11:54.260
+on, like, the color psychology that Sophie kind
+
+00:11:54.260 --> 00:11:56.500
+of mentioned earlier. So this is, like, a
+
+00:11:56.500 --> 00:11:59.540
+good ideal ratio to have, like, 60% of
+
+00:11:59.540 --> 00:12:02.020
+a main color, 30% of a secondary color,
+
+00:12:02.020 --> 00:12:04.740
+and 10% of an accent color. There's also,
+
+00:12:04.740 --> 00:12:06.745
+like, studies that show, like, which colors are
+
+00:12:06.745 --> 00:12:08.985
+more preferred by, like, different genders. And also,
+
+00:12:08.985 --> 00:12:11.385
+like, this website below, contrast checker, is really
+
+00:12:11.385 --> 00:12:13.705
+good for making your website accessible because you
+
+00:12:13.705 --> 00:12:15.545
+can check to make sure, like, you can
+
+00:12:15.545 --> 00:12:17.305
+play with your website on grayscale to see
+
+00:12:17.305 --> 00:12:19.065
+if it's still visible to, like, people who
+
+00:12:18.780 --> 00:12:20.940
+are red green color blind. And also, like,
+
+00:12:21.100 --> 00:12:23.020
+that you have enough contrast for people who
+
+00:12:23.020 --> 00:12:25.260
+might have, like, issues with, like, vision that
+
+00:12:25.260 --> 00:12:28.780
+it can see all the colors appropriately. So
+
+00:12:28.780 --> 00:12:30.300
+I'm sure you guys are all familiar with
+
+00:12:30.300 --> 00:12:33.100
+Discord's UI, but one of the ways that
+
+00:12:33.100 --> 00:12:35.355
+Discord optimizes its UX as well is by
+
+00:12:35.355 --> 00:12:37.835
+having the buttons really centralized and very easy
+
+00:12:37.835 --> 00:12:39.675
+to click, so you know exactly, like, what
+
+00:12:39.675 --> 00:12:41.915
+your options are upon entering the web page.
+
+00:12:42.075 --> 00:12:44.315
+So this was Facebook's old UI, and as
+
+00:12:44.315 --> 00:12:45.755
+you can see, it's like it was, like,
+
+00:12:45.755 --> 00:12:49.120
+pretty unintuitive because the create an account boxes
+
+00:12:49.120 --> 00:12:51.120
+are like super, super large, which is like
+
+00:12:51.120 --> 00:12:53.600
+not great because like most of the time,
+
+00:12:53.600 --> 00:12:55.040
+users are not gonna be creating a new
+
+00:12:55.040 --> 00:12:57.280
+account. Instead, they're probably gonna be logging in,
+
+00:12:57.280 --> 00:12:58.880
+and the login is like really tiny at
+
+00:12:58.880 --> 00:13:00.880
+the top here. So that's like super unintuitive.
+
+00:13:00.880 --> 00:13:02.560
+Right? So we want our information flow to
+
+00:13:02.560 --> 00:13:05.025
+be really easy for users to digest and
+
+00:13:05.025 --> 00:13:07.185
+understand. So this is why Facebook switched to
+
+00:13:07.185 --> 00:13:09.665
+their new UI, is very clean, very nice.
+
+00:13:09.665 --> 00:13:11.825
+We have the login front and center, and
+
+00:13:11.825 --> 00:13:13.745
+then create new account below that, which is
+
+00:13:13.745 --> 00:13:15.585
+much more intuitive. Right? Because we're probably not
+
+00:13:15.585 --> 00:13:17.490
+going be creating a new account every single
+
+00:13:17.490 --> 00:13:20.210
+time. Okay. Let's talk about wireframing now. So
+
+00:13:20.210 --> 00:13:21.890
+this is super, super important for you guys'
+
+00:13:21.890 --> 00:13:23.490
+projects. So if you're tuning out, you should
+
+00:13:23.490 --> 00:13:27.090
+pay attention now. Basically, wireframing is just like
+
+00:13:27.090 --> 00:13:28.945
+creating a super rough draft of your web
+
+00:13:28.945 --> 00:13:31.905
+application. But it's very helpful because once you
+
+00:13:31.905 --> 00:13:33.505
+hard code things, it's going to be more
+
+00:13:33.505 --> 00:13:35.105
+difficult to change than if you have a
+
+00:13:35.105 --> 00:13:36.785
+clear idea of what your application is going
+
+00:13:36.785 --> 00:13:38.545
+to look like before you actually start the
+
+00:13:38.545 --> 00:13:40.625
+coding. So you want to focus on the
+
+00:13:40.625 --> 00:13:42.690
+overall structure of what your application is going
+
+00:13:42.690 --> 00:13:44.370
+to look like and where key elements are
+
+00:13:44.370 --> 00:13:45.570
+going to go. So you can see here
+
+00:13:45.570 --> 00:13:47.730
+in this example, right, like, they have the
+
+00:13:47.730 --> 00:13:49.410
+sidebar, they know what their nav bar is
+
+00:13:49.410 --> 00:13:50.770
+going look like, and they know what sort
+
+00:13:50.770 --> 00:13:52.370
+of tabs and pages they want on their
+
+00:13:52.370 --> 00:13:55.275
+application. It can very drafty. It doesn't need
+
+00:13:55.275 --> 00:13:56.795
+to be anything formal. Just think of it
+
+00:13:56.795 --> 00:13:58.955
+as like a rough draft mock up of
+
+00:13:58.955 --> 00:14:02.235
+what your website might look like. So to
+
+00:14:02.235 --> 00:14:04.555
+make a wireframe, we have several different options.
+
+00:14:04.555 --> 00:14:06.155
+We can use Figma, which is what we're
+
+00:14:06.155 --> 00:14:08.330
+going be talking about later. You can also
+
+00:14:08.330 --> 00:14:10.410
+honestly just make one on Google Slides, which
+
+00:14:10.410 --> 00:14:12.490
+is nice because you can show transitions between
+
+00:14:12.490 --> 00:14:14.250
+different pages. You can just draw it on
+
+00:14:14.250 --> 00:14:16.650
+pen and paper or any other wireframe software
+
+00:14:16.650 --> 00:14:18.970
+like Photoshop or Sketch. But we're going to
+
+00:14:18.970 --> 00:14:22.025
+be using Figma because it has something that
+
+00:14:22.025 --> 00:14:25.545
+can be really helpful called prototyping. So prototyping
+
+00:14:25.545 --> 00:14:27.625
+is basically where you're just taking your wireframe
+
+00:14:27.625 --> 00:14:29.465
+and you're bringing it to life. So you're
+
+00:14:29.465 --> 00:14:32.345
+going to add interactions to your wireframe and
+
+00:14:32.345 --> 00:14:35.280
+show which pages go where, which basically helps
+
+00:14:35.280 --> 00:14:38.400
+improve your UI because you know exactly the
+
+00:14:38.400 --> 00:14:42.560
+technical requirements needed to code it and where
+
+00:14:42.560 --> 00:14:45.440
+users should be redirected to. It can be
+
+00:14:45.440 --> 00:14:46.720
+very similar to the real thing. As you
+
+00:14:46.720 --> 00:14:48.835
+can see, this is a very good prototype
+
+00:14:48.835 --> 00:14:51.395
+that includes all the interactions, like scrolling and
+
+00:14:51.395 --> 00:14:54.435
+redirects and things like that. So we're going
+
+00:14:54.435 --> 00:14:56.915
+to be using Figma because it has really
+
+00:14:56.915 --> 00:15:00.195
+good real time collaboration as well as options
+
+00:15:00.195 --> 00:15:03.530
+for prototyping and adding interactions to your wireframe.
+
+00:15:03.610 --> 00:15:06.330
+So it's very helpful for our purposes. And
+
+00:15:06.330 --> 00:15:08.090
+also, I think it's very intuitive for beginners
+
+00:15:08.090 --> 00:15:10.570
+to use. Okay. So we're gonna transition into
+
+00:15:10.570 --> 00:15:14.570
+a Figma demo or mini workshop. Basically, I'm
+
+00:15:14.570 --> 00:15:16.570
+gonna go over the steps of, like, where
+
+00:15:16.570 --> 00:15:18.615
+key things are, and then you guys are
+
+00:15:18.615 --> 00:15:19.895
+gonna get some time to play around with
+
+00:15:19.895 --> 00:15:21.015
+it on your own. I know we don't
+
+00:15:21.015 --> 00:15:22.855
+have, like, a lot of time, but hopefully,
+
+00:15:22.855 --> 00:15:24.055
+I can speed run, and then you guys
+
+00:15:24.055 --> 00:15:25.575
+will get some time to try it on
+
+00:15:25.575 --> 00:15:31.360
+your own. I don't know. Yeah. You can
+
+00:15:31.360 --> 00:16:06.360
+you can wait. There's still slides Okay. Cool.
+
+00:16:08.200 --> 00:16:11.320
+Yeah. So basically, all remember oh, can we
+
+00:16:10.905 --> 00:16:12.505
+see the slide? So yeah. Okay. We all
+
+00:16:12.505 --> 00:16:15.625
+remember Catbook and what our this is like
+
+00:16:15.625 --> 00:16:17.225
+if we were to create a wireframe for
+
+00:16:17.225 --> 00:16:19.305
+Catbook. So we're gonna just go through that
+
+00:16:19.305 --> 00:16:21.625
+really quickly. So you guys can follow along
+
+00:16:21.625 --> 00:16:23.465
+with this step right now. Basically, you just
+
+00:16:23.465 --> 00:16:26.505
+wanna make a Figma account at figma.com. And
+
+00:16:27.130 --> 00:16:28.650
+I already have my account, as you can
+
+00:16:28.650 --> 00:16:31.210
+see. But what we're gonna do is we
+
+00:16:31.210 --> 00:16:33.370
+basically want once you get to the Figma
+
+00:16:33.370 --> 00:16:35.770
+homepage, you wanna create, like, a new file.
+
+00:16:36.410 --> 00:16:38.010
+You would just click, like, create file, create
+
+00:16:38.010 --> 00:16:39.770
+new in this corner right here, and then
+
+00:16:39.770 --> 00:16:42.330
+you're gonna select design file. I'm just gonna
+
+00:16:42.330 --> 00:16:44.865
+use the Catbook wireframe that I already created.
+
+00:16:45.505 --> 00:16:48.945
+But basically, upon creating a new file oh,
+
+00:16:48.945 --> 00:16:50.625
+you can also open this cheat sheet for
+
+00:16:50.625 --> 00:16:52.705
+reference if you need any help or get
+
+00:16:52.705 --> 00:16:57.280
+stuck on things. It's weblab.is/figmacheat sheet. So just
+
+00:16:57.280 --> 00:17:00.080
+some, like, quick basics. Everything in Figma is
+
+00:17:00.080 --> 00:17:03.280
+kind of organized into layers. So you're gonna
+
+00:17:03.280 --> 00:17:05.440
+see, like, on your sidebar that you have,
+
+00:17:05.440 --> 00:17:07.680
+like, your different pages, and then your elements
+
+00:17:07.680 --> 00:17:10.725
+are all gonna shown there. Canvas, this center
+
+00:17:10.725 --> 00:17:12.645
+part is where all your stuff is gonna
+
+00:17:12.645 --> 00:17:15.285
+be shown. Tools at the bottom. So this
+
+00:17:15.285 --> 00:17:17.845
+is showing, like, Figma's old UI. So right
+
+00:17:17.845 --> 00:17:20.805
+now, tools got relocated to the bottom. And
+
+00:17:20.805 --> 00:17:23.090
+then on the right hand side, you have
+
+00:17:23.090 --> 00:17:26.770
+options for selecting additional things, which we're gonna
+
+00:17:26.770 --> 00:17:30.450
+go over later. But I think the tools
+
+00:17:30.450 --> 00:17:32.050
+are pretty intuitive, so I'm not gonna go
+
+00:17:32.050 --> 00:17:34.850
+over them in-depth. But basically, you have move
+
+00:17:34.850 --> 00:17:37.255
+and scale options, you can make frames, You
+
+00:17:37.255 --> 00:17:38.695
+can make shapes. You can draw with, like,
+
+00:17:38.695 --> 00:17:40.135
+the pen and pencil. You can also do
+
+00:17:40.135 --> 00:17:42.215
+text, and you can leave comments, which is
+
+00:17:42.215 --> 00:17:45.895
+why it's really good for collaboration. Okay. So
+
+00:17:45.895 --> 00:17:48.055
+the basics of Figma is everything is going
+
+00:17:48.055 --> 00:17:49.895
+to be kinda contained in a frame. So
+
+00:17:49.895 --> 00:17:52.535
+let's start by making a frame. We just
+
+00:17:52.580 --> 00:17:53.780
+I'm just gonna click here, and then you
+
+00:17:53.780 --> 00:17:56.820
+can see you can choose different, like, devices
+
+00:17:56.820 --> 00:17:59.220
+for your frame. I'm just gonna choose, like,
+
+00:18:00.580 --> 00:18:03.940
+desktop, and then let's do, MacBook Pro 14
+
+00:18:03.940 --> 00:18:07.615
+inch. So here's our frame. A frame is
+
+00:18:07.615 --> 00:18:09.455
+a container for elements, and so this is
+
+00:18:09.455 --> 00:18:11.615
+going to house everything on kind of like
+
+00:18:11.615 --> 00:18:16.095
+a page of our application. Right? So I'm
+
+00:18:16.095 --> 00:18:18.175
+sorry. I did this. But frames are very,
+
+00:18:18.175 --> 00:18:20.095
+very powerful. So if you guys have used
+
+00:18:20.095 --> 00:18:22.470
+any image creation software before, even just like,
+
+00:18:22.470 --> 00:18:24.790
+PowerPoint or Google Slides, I'm sure you probably,
+
+00:18:24.790 --> 00:18:27.350
+like, are familiar with grouping items or objects.
+
+00:18:27.590 --> 00:18:30.310
+But instead of grouping objects for Figma, I
+
+00:18:30.310 --> 00:18:31.910
+would recommend you to just make a frame
+
+00:18:31.910 --> 00:18:34.070
+every time you wanna group objects because it's
+
+00:18:34.070 --> 00:18:36.285
+much more powerful than grouping objects because you
+
+00:18:36.285 --> 00:18:39.165
+can size everything within the frame independently. You
+
+00:18:39.165 --> 00:18:41.805
+can also have, like, cool overflow content options.
+
+00:18:41.965 --> 00:18:44.125
+So that allows you to take advantage of,
+
+00:18:44.125 --> 00:18:47.405
+like, clipping text. And overall, it's just better
+
+00:18:47.405 --> 00:18:49.805
+for if you wanna apply, like, consistent styles
+
+00:18:49.805 --> 00:18:53.970
+to everything. So let's make Catbook's homepage. So
+
+00:18:53.970 --> 00:18:56.290
+for Catbook's navbar, I'm gonna do a frame
+
+00:18:56.290 --> 00:18:59.250
+right here. And then you can change the
+
+00:18:59.250 --> 00:19:01.090
+fill here. So you can see I'm changing
+
+00:19:01.090 --> 00:19:09.175
+the color. The hex code is 2B73FF. So
+
+00:19:09.175 --> 00:19:11.015
+this is, like, gonna be our nav bar
+
+00:19:11.015 --> 00:19:13.655
+frame. Right? And then we can just drag
+
+00:19:13.655 --> 00:19:15.415
+text inside of it. So text is at
+
+00:19:15.415 --> 00:19:17.920
+the bottom on the tools here, and we
+
+00:19:17.920 --> 00:19:24.720
+just wanna write, like, Catbook. Yeah. And then
+
+00:19:24.720 --> 00:19:26.640
+you can, like, resize as you see fit
+
+00:19:26.640 --> 00:19:28.875
+on the side, like how big you want
+
+00:19:28.875 --> 00:19:31.195
+your text, what font, etcetera. I'm gonna go
+
+00:19:31.195 --> 00:19:32.875
+over all of it right now, because I
+
+00:19:32.875 --> 00:19:34.635
+think you guys can play around with it
+
+00:19:34.635 --> 00:19:37.275
+on your own. But one of the key
+
+00:19:37.275 --> 00:19:39.515
+things about Figma that's really nice is, let's
+
+00:19:39.515 --> 00:19:41.190
+say we wanna make a profile page. Right?
+
+00:19:41.190 --> 00:19:43.190
+Like, would we copy and paste our nav
+
+00:19:43.190 --> 00:19:45.430
+bar over to our profile page? Like, thumbs
+
+00:19:45.430 --> 00:19:49.590
+up if yes, thumbs down if no. Yeah.
+
+00:19:49.590 --> 00:19:51.190
+I probably wouldn't be asking this question if
+
+00:19:51.190 --> 00:19:53.590
+the answer was yes. Right? So we're gonna
+
+00:19:53.590 --> 00:19:56.265
+reuse it instead as a component. So you
+
+00:19:56.265 --> 00:19:59.385
+can see here, I have conveniently already done
+
+00:19:59.385 --> 00:20:04.105
+it. But basically, if I go to, like,
+
+00:20:04.425 --> 00:20:07.385
+the frame that we were just on and
+
+00:20:07.385 --> 00:20:10.600
+I click on it, I can right click,
+
+00:20:10.600 --> 00:20:13.080
+and then I can do create component, which
+
+00:20:13.080 --> 00:20:15.720
+will essentially create a reusable instance of this
+
+00:20:15.720 --> 00:20:17.720
+navbar element for me. So if I go
+
+00:20:17.720 --> 00:20:20.200
+to my assets, I've already made, like, a
+
+00:20:20.200 --> 00:20:24.155
+better looking navbar component here. So this is
+
+00:20:24.155 --> 00:20:26.235
+the one that we'll be using. But basically,
+
+00:20:26.235 --> 00:20:29.835
+you can, like, create components which are reusable
+
+00:20:29.835 --> 00:20:31.755
+instances of stuff that you wanna reuse across
+
+00:20:31.755 --> 00:20:33.915
+multiple pages, like your nav bar, for example.
+
+00:20:35.550 --> 00:20:37.150
+So now, if we want to make a
+
+00:20:37.150 --> 00:20:39.790
+profile page instead of, like, remaking our nav
+
+00:20:39.790 --> 00:20:41.230
+bar or copying and pasting it, we can
+
+00:20:41.230 --> 00:20:42.590
+go to assets, and then we can just,
+
+00:20:42.590 --> 00:20:45.550
+like, insert instance here. And so we can
+
+00:20:45.550 --> 00:20:49.575
+get, like, another nav bar, basically. Yeah. So
+
+00:20:49.575 --> 00:20:53.655
+that's how we would reuse our components. And
+
+00:20:53.655 --> 00:20:56.215
+then this step is pretty intuitive as well.
+
+00:20:56.215 --> 00:20:58.615
+You're basically just copying and pasting images. You
+
+00:20:58.615 --> 00:21:01.735
+can shape things by going here, and then
+
+00:21:01.735 --> 00:21:03.975
+you can change, like, the radius. So this
+
+00:21:03.360 --> 00:21:08.960
+how I made it, like, rounded. Yeah. You
+
+00:21:08.960 --> 00:21:10.480
+can review the slides more on your own
+
+00:21:10.480 --> 00:21:13.200
+time. But, basically, when you edit components, when
+
+00:21:13.200 --> 00:21:15.280
+you edit the main instance, it's gonna change
+
+00:21:15.280 --> 00:21:17.440
+all other
