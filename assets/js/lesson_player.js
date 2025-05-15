@@ -3,12 +3,11 @@ var player;
 var allParagraphsData = [];
 var autoScrollTranscriptEnabled = true;
 
-var currentActiveTimelineItem = null;
-var currentActiveParagraphText = null;
+var currentActiveParagraphContainer = null;
 var currentActiveSentence = null;
 
-var mainContentAreaEl; // This is now the primary scroll container
-var paragraphObserver, videoTimeUpdaterInterval;
+var mainContentAreaEl;
+var videoTimeUpdaterInterval;
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -38,26 +37,32 @@ function onPlayerReady(event) {
     
     const transcriptDataElem = document.getElementById('allTranscriptData');
     if (transcriptDataElem && transcriptDataElem.textContent) {
-        try { allParagraphsData = JSON.parse(transcriptDataElem.textContent); }
-        catch (e) { console.error("Parse allTranscriptData failed:", e);
-            const tcEl = document.getElementById('transcript-content-container');
-            if(tcEl) tcEl.innerHTML = "<p class='no-transcript-message'>Error loading transcript.</p>"; return; 
+        try { 
+            allParagraphsData = JSON.parse(transcriptDataElem.textContent); 
+            generateCombinedTranscript();
+        }
+        catch (e) { 
+            console.error("Parse allTranscriptData failed:", e);
+            const tcEl = document.getElementById('mainContentArea');
+            if(tcEl) tcEl.innerHTML = "<p class='no-transcript-message'>Error loading transcript.</p>"; 
+            return; 
         }
     }
     if (allParagraphsData.length === 0) {
-        const tcEl = document.getElementById('transcript-content-container');
+        const tcEl = document.getElementById('mainContentArea');
         if(tcEl && !tcEl.querySelector('.no-transcript-message')) { // Avoid duplicate messages
              tcEl.innerHTML = "<p class='no-transcript-message'>No transcript data found.</p>";
         }
     }
 
     setupClickHandlers();
-    setupScrollAndVideoSync();
 
     const autoScrollCheckbox = document.getElementById('autoScrollTranscriptCheckbox');
     if (autoScrollCheckbox) {
         autoScrollTranscriptEnabled = autoScrollCheckbox.checked;
-        autoScrollCheckbox.addEventListener('change', function() { autoScrollTranscriptEnabled = this.checked; });
+        autoScrollCheckbox.addEventListener('change', function() { 
+            autoScrollTranscriptEnabled = this.checked; 
+        });
     }
 
     const minimalVideoToggle = document.getElementById('minimalVideoToggle');
@@ -79,136 +84,219 @@ function onPlayerReady(event) {
     }
 }
 
-function setupClickHandlers() {
-    document.querySelectorAll('.timeline-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const startTime = parseFloat(item.dataset.startTime);
-            const targetTranscriptId = item.dataset.targetTranscriptId;
-            const targetElement = document.getElementById(targetTranscriptId);
-            
-            if (targetElement && mainContentAreaEl) {
-                let scrollTargetY = targetElement.offsetTop - mainContentAreaEl.offsetTop - (mainContentAreaEl.clientHeight * 0.1);
-                mainContentAreaEl.scrollTo({ top: Math.max(0, scrollTargetY), behavior: "smooth" });
-            }
-            if (player && player.seekTo) { player.seekTo(startTime, true); if (player.getPlayerState() !== YT.PlayerState.PLAYING) player.playVideo(); }
-        });
-    });
-    document.querySelectorAll('.transcript-sentence').forEach(sentEl => {
-        sentEl.addEventListener('click', () => {
-            const startTime = parseFloat(sentEl.dataset.startTime);
-            if (player && player.seekTo) { player.seekTo(startTime, true); if (player.getPlayerState() !== YT.PlayerState.PLAYING) player.playVideo(); }
-        });
-    });
+function formatTimestamp(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
 
-function setupScrollAndVideoSync() {
-    if (mainContentAreaEl && typeof IntersectionObserver !== 'undefined') {
-        const observerOptions = {
-            root: mainContentAreaEl, 
-            rootMargin: "-25% 0px -65% 0px", // Adjust to pick paragraph closer to top
-            threshold: 0.01 
-        };
-        paragraphObserver = new IntersectionObserver((entries) => {
-            if (player && player.getPlayerState() === YT.PlayerState.PLAYING && autoScrollTranscriptEnabled) return;
-
-            let topmostEntry = null;
-            for (const entry of entries) {
-                if (entry.isIntersecting) {
-                    if (!topmostEntry || entry.boundingClientRect.top < topmostEntry.boundingClientRect.top) {
-                        topmostEntry = entry;
-                    }
-                }
-            }
-            if (topmostEntry) {
-                const paragraphIdx = parseInt(topmostEntry.target.dataset.paragraphIdx, 10);
-                updateActiveStates(paragraphIdx, null, false); 
-            }
-        }, observerOptions);
-        document.querySelectorAll('.transcript-paragraph-text').forEach(p => paragraphObserver.observe(p));
-    }
-    startVideoTimeUpdater(); 
-}
+function generateCombinedTranscript() {
+    if (!mainContentAreaEl || allParagraphsData.length === 0) return;
+    
+    // Create a container for the timeline connection line
+    const timelineConnection = document.createElement('div');
+    timelineConnection.className = 'timeline-connection';
+    mainContentAreaEl.appendChild(timelineConnection);
+    
+    // Clear existing content
+    const existingContent = Array.from(mainContentAreaEl.querySelectorAll('.paragraph-container'));
+    existingContent.forEach(el => el.remove());
+    
+    // Generate new combined paragraph containers
+    allParagraphsData.forEach((paragraph, index) => {
+        const paragraphContainer = document.createElement('div');
+        paragraphContainer.className = 'paragraph-container';
+        paragraphContainer.dataset.paragraphIdx = paragraph.paragraph_idx;
+        paragraphContainer.dataset.startTime = paragraph.start;
+        paragraphContainer.dataset.endTime = paragraph.end;
+        paragraphContainer.dataset.paragraphId = paragraph.id;
         
+        // Create timeline component
+        const timelineComponent = document.createElement('div');
+        timelineComponent.className = 'paragraph-timeline';
+        
+        const dotContainer = document.createElement('div');
+        dotContainer.className = 'paragraph-timeline-dot-container';
+        
+        const dot = document.createElement('div');
+        dot.className = 'paragraph-timeline-dot';
+        dotContainer.appendChild(dot);
+        
+        const timestamp = document.createElement('div');
+        timestamp.className = 'paragraph-timeline-timestamp';
+        timestamp.textContent = formatTimestamp(paragraph.start);
+        
+        timelineComponent.appendChild(dotContainer);
+        timelineComponent.appendChild(timestamp);
+        
+        // Create paragraph text component
+        const paragraphText = document.createElement('div');
+        paragraphText.className = 'paragraph-text';
+        paragraphText.id = `text-${paragraph.id}`;
+        
+        // Add sentences to the paragraph
+        paragraph.sentences.forEach(sentence => {
+            const sentenceEl = document.createElement('span');
+            sentenceEl.className = 'transcript-sentence';
+            sentenceEl.id = sentence.id;
+            sentenceEl.textContent = sentence.text;
+            sentenceEl.dataset.startTime = sentence.start;
+            sentenceEl.dataset.endTime = sentence.end;
+            
+            // Add click event for sentence seeking
+            sentenceEl.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent triggering paragraph click
+                const startTime = parseFloat(sentence.start);
+                if (player && player.seekTo) { 
+                    player.seekTo(startTime, true); 
+                    if (player.getPlayerState() !== YT.PlayerState.PLAYING) player.playVideo(); 
+                }
+            });
+            
+            paragraphText.appendChild(sentenceEl);
+            // Add a space after each sentence
+            paragraphText.appendChild(document.createTextNode(' '));
+        });
+        
+        // Assemble container
+        paragraphContainer.appendChild(timelineComponent);
+        paragraphContainer.appendChild(paragraphText);
+        
+        // Add click event for paragraph seeking
+        paragraphContainer.addEventListener('click', () => {
+            const startTime = parseFloat(paragraph.start);
+            if (player && player.seekTo) { 
+                player.seekTo(startTime, true); 
+                if (player.getPlayerState() !== YT.PlayerState.PLAYING) player.playVideo(); 
+            }
+        });
+        
+        mainContentAreaEl.appendChild(paragraphContainer);
+    });
+    
+    // Start the video time updater
+    startVideoTimeUpdater();
+}
+
+function setupClickHandlers() {
+    // All click handlers are now set up in the generateCombinedTranscript function
+    // for both paragraphs and sentences
+}
+
 function onPlayerStateChange(event) { 
     if (event.data === YT.PlayerState.PLAYING) startVideoTimeUpdater(); 
     else stopVideoTimeUpdater(); 
 }
-function startVideoTimeUpdater() { if (videoTimeUpdaterInterval) clearInterval(videoTimeUpdaterInterval); videoTimeUpdaterInterval = setInterval(updateHighlightsAndScrollsBasedOnVideoTime, 180); } // Slightly adjusted interval
-function stopVideoTimeUpdater() { clearInterval(videoTimeUpdaterInterval); }
 
-function updateActiveStates(activeParagraphIndex, activeSentenceId, scrollMainContentIfNeeded) {
-    const targetTimelineItem = document.querySelector(`.timeline-item[data-paragraph-idx='${activeParagraphIndex}']`);
-    if (currentActiveTimelineItem !== targetTimelineItem) {
-        if (currentActiveTimelineItem) currentActiveTimelineItem.classList.remove('active');
-        if (targetTimelineItem) targetTimelineItem.classList.add('active');
-        currentActiveTimelineItem = targetTimelineItem;
-    }
+function startVideoTimeUpdater() { 
+    if (videoTimeUpdaterInterval) clearInterval(videoTimeUpdaterInterval); 
+    videoTimeUpdaterInterval = setInterval(updateHighlightsBasedOnVideoTime, 180); 
+}
 
-    const targetParagraphText = document.querySelector(`.transcript-paragraph-text[data-paragraph-idx='${activeParagraphIndex}']`);
-    if (currentActiveParagraphText !== targetParagraphText) {
-        if (currentActiveParagraphText) currentActiveParagraphText.classList.remove('highlighted-paragraph');
-        if (targetParagraphText) {
-            targetParagraphText.classList.add('highlighted-paragraph');
-            if (scrollMainContentIfNeeded && autoScrollTranscriptEnabled && mainContentAreaEl) {
-                 let scrollTargetY = targetParagraphText.offsetTop - mainContentAreaEl.offsetTop - (mainContentAreaEl.clientHeight * 0.1); // Aim for top 10%
-                 mainContentAreaEl.scrollTo({ top: Math.max(0, scrollTargetY), behavior: "smooth" });
+function stopVideoTimeUpdater() { 
+    clearInterval(videoTimeUpdaterInterval); 
+}
+
+function updateActiveParagraph(paragraphContainer, shouldScroll = false) {
+    if (currentActiveParagraphContainer !== paragraphContainer) {
+        if (currentActiveParagraphContainer) {
+            currentActiveParagraphContainer.classList.remove('active');
+        }
+        
+        if (paragraphContainer) {
+            paragraphContainer.classList.add('active');
+            
+            // Scroll to paragraph if needed
+            if (shouldScroll && autoScrollTranscriptEnabled && mainContentAreaEl) {
+                let scrollTargetY = paragraphContainer.offsetTop - mainContentAreaEl.offsetTop - (mainContentAreaEl.clientHeight * 0.2);
+                mainContentAreaEl.scrollTo({ top: Math.max(0, scrollTargetY), behavior: "smooth" });
             }
         }
-        currentActiveParagraphText = targetParagraphText;
+        
+        currentActiveParagraphContainer = paragraphContainer;
     }
+}
 
-    const sentenceEl = activeSentenceId ? document.getElementById(activeSentenceId) : null;
+function updateActiveSentence(sentenceEl, shouldScroll = false) {
     if (currentActiveSentence !== sentenceEl) {
-        if (currentActiveSentence) currentActiveSentence.classList.remove('highlighted-sentence');
+        if (currentActiveSentence) {
+            currentActiveSentence.classList.remove('highlighted-sentence');
+        }
+        
         if (sentenceEl) {
             sentenceEl.classList.add('highlighted-sentence');
-            if (scrollMainContentIfNeeded && autoScrollTranscriptEnabled && mainContentAreaEl && targetParagraphText && targetParagraphText.classList.contains('highlighted-paragraph')) {
-                // Check if sentence is out of view *within* the mainContentAreaEl viewport
-                const sR = sentenceEl.getBoundingClientRect();
-                const mainContentRect = mainContentAreaEl.getBoundingClientRect(); 
-                // Ensure sentence is visible, or scroll to make it so
-                if (sR.top < mainContentRect.top + 20 || sR.bottom > mainContentRect.bottom - 20) {
+            
+            // Fine-tune scroll for sentence if paragraph is already active
+            if (shouldScroll && autoScrollTranscriptEnabled && mainContentAreaEl && 
+                currentActiveParagraphContainer && currentActiveParagraphContainer.classList.contains('active')) {
+                const sRect = sentenceEl.getBoundingClientRect();
+                const mainContentRect = mainContentAreaEl.getBoundingClientRect();
+                
+                // Ensure sentence is visible
+                if (sRect.top < mainContentRect.top + 20 || sRect.bottom > mainContentRect.bottom - 20) {
                     let sentScrollOffset = sentenceEl.offsetTop - mainContentAreaEl.offsetTop - (mainContentAreaEl.clientHeight / 2) + (sentenceEl.offsetHeight / 2);
                     mainContentAreaEl.scrollTo({ top: Math.max(0, sentScrollOffset), behavior: "smooth" });
                 }
             }
         }
+        
         currentActiveSentence = sentenceEl;
     }
 }
 
-function updateHighlightsAndScrollsBasedOnVideoTime() {
+function updateHighlightsBasedOnVideoTime() {
     if (!player || typeof player.getCurrentTime !== 'function' || allParagraphsData.length === 0) return;
+    
     const currentTime = player.getCurrentTime();
     let activeParagraphData = null, activeSentenceData = null;
-
-    for (const para of allParagraphsData) { if (currentTime >= para.start && currentTime < para.end) { activeParagraphData = para; break; } }
-    if (!activeParagraphData) { for (let i = allParagraphsData.length - 1; i >= 0; i--) { if (currentTime >= allParagraphsData[i].start) { activeParagraphData = allParagraphsData[i]; break; } } }
+    
+    // Find the active paragraph
+    for (const para of allParagraphsData) {
+        if (currentTime >= para.start && currentTime < para.end) {
+            activeParagraphData = para;
+            break;
+        }
+    }
+    
+    // If no exact match, find the last paragraph that started
+    if (!activeParagraphData) {
+        for (let i = allParagraphsData.length - 1; i >= 0; i--) {
+            if (currentTime >= allParagraphsData[i].start) {
+                activeParagraphData = allParagraphsData[i];
+                break;
+            }
+        }
+    }
     
     if (activeParagraphData) {
-        let shouldScrollMain = autoScrollTranscriptEnabled;
-        // Only trigger a main scroll if the *paragraph* itself has changed
-        // and auto-scroll is on. Sentence changes within the same paragraph shouldn't re-scroll the whole paragraph.
-        if (currentActiveParagraphText && currentActiveParagraphText.id === `text-${activeParagraphData.id}`) {
-            shouldScrollMain = false; // Already on this paragraph, let sentence scroll handle fine-tuning
+        const paragraphContainer = document.querySelector(`.paragraph-container[data-paragraph-id="${activeParagraphData.id}"]`);
+        updateActiveParagraph(paragraphContainer, autoScrollTranscriptEnabled);
+        
+        // Find active sentence within the paragraph
+        for (const sent of activeParagraphData.sentences) {
+            if (currentTime >= sent.start && currentTime < sent.end) {
+                activeSentenceData = sent;
+                break;
+            }
         }
         
-        updateActiveStates(activeParagraphData.paragraph_idx, null, shouldScrollMain); // Update paragraph and timeline first
-
-        // Now find and update sentence within the (now potentially scrolled to) active paragraph
-        const paragraphTextEl = document.getElementById(`text-${activeParagraphData.id}`); // Re-fetch in case DOM changed
-        if (paragraphTextEl) { // Check if paragraphTextEl is valid
-            for (const sent of activeParagraphData.sentences) { if (currentTime >= sent.start && currentTime < sent.end) { activeSentenceData = sent; break; } }
-            if (!activeSentenceData) { for (let i = activeParagraphData.sentences.length - 1; i >= 0; i--) { if (currentTime >= activeParagraphData.sentences[i].start) { activeSentenceData = activeParagraphData.sentences[i]; break; } } }
-            
-            // Call updateActiveStates again, but only to update the sentence and potentially fine-tune scroll for sentence
-            updateActiveStates(activeParagraphData.paragraph_idx, activeSentenceData ? activeSentenceData.id : null, autoScrollTranscriptEnabled); 
+        // If no exact match, find the last sentence that started
+        if (!activeSentenceData && activeParagraphData.sentences.length > 0) {
+            for (let i = activeParagraphData.sentences.length - 1; i >= 0; i--) {
+                if (currentTime >= activeParagraphData.sentences[i].start) {
+                    activeSentenceData = activeParagraphData.sentences[i];
+                    break;
+                }
+            }
         }
-
-    } else { // No active paragraph
-        if (currentActiveTimelineItem) currentActiveTimelineItem.classList.remove('active');
-        if (currentActiveParagraphText) currentActiveParagraphText.classList.remove('highlighted-paragraph');
-        if (currentActiveSentence) currentActiveSentence.classList.remove('highlighted-sentence');
-        currentActiveTimelineItem = null; currentActiveParagraphText = null; currentActiveSentence = null;
+        
+        if (activeSentenceData) {
+            const sentenceEl = document.getElementById(activeSentenceData.id);
+            updateActiveSentence(sentenceEl, autoScrollTranscriptEnabled);
+        }
+    } else {
+        // No active paragraph found
+        updateActiveParagraph(null);
+        updateActiveSentence(null);
     }
 }
