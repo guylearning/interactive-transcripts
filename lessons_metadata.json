@@ -142,5 +142,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_23_react_lifecycle_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_23_react_lifecycle/mit_web_lab_6_962_-_day_23_react_lifecycle_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_23_react_lifecycle/mit_web_lab_6_962_-_day_23_react_lifecycle_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 3: Workshop 2 (Feed + Router)",
+    "video_name_clean": "mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router",
+    "youtube_id": "0MGufC3rG2Q",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T20:22:54.616677+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 5514,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router/mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router/mit_web_lab_6_962_-_day_3_workshop_2_feed_+_router_transcript.vtt"
   }
 ]
