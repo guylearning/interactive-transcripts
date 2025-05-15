@@ -1,0 +1,1331 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 95c8abbb-1326-4de4-829b-5cb47f58c1a9
+Created: 2025-05-15T20:43:37.950Z
+Duration: 1578.24
+Channels: 1
+
+00:00:04.880 --> 00:00:07.680
+Hello, everybody. My name is David. My name
+
+00:00:07.680 --> 00:00:09.520
+is Lucas. And today, we'll be talking about
+
+00:00:09.520 --> 00:00:14.105
+promises and await. So before we start, we
+
+00:00:14.105 --> 00:00:15.625
+wanted to define a few terms that we'll
+
+00:00:15.625 --> 00:00:19.385
+be using throughout this lecture. And for our
+
+00:00:19.385 --> 00:00:21.385
+first term, it's gonna be okay. Is it
+
+00:00:21.385 --> 00:00:32.240
+better? Is it better? Okay. Cool. Okay. Cool.
+
+00:00:32.400 --> 00:00:35.040
+So does it define our first term? It's
+
+00:00:35.040 --> 00:00:38.080
+synchronous. So synchronous essentially is a process which
+
+00:00:38.080 --> 00:00:40.720
+happens consecutively where you have one thing happen
+
+00:00:40.720 --> 00:00:44.305
+after another. And to use an example, basically
+
+00:00:44.305 --> 00:00:46.385
+we have, for example, classes where we have
+
+00:00:46.385 --> 00:00:48.065
+six one hundred a and then six one
+
+00:00:48.065 --> 00:00:51.345
+zero one. Six, six one hundred a is
+
+00:00:51.345 --> 00:00:52.705
+a prereq for six one zero one, so
+
+00:00:52.705 --> 00:00:53.985
+you have to take one before you take
+
+00:00:53.985 --> 00:00:59.470
+the other. Yeah. And for asynchronous, asynchronous is
+
+00:00:59.470 --> 00:01:01.870
+different where it's an idea where multiple processes
+
+00:01:01.870 --> 00:01:03.790
+can run at the same time. So using
+
+00:01:03.790 --> 00:01:06.190
+that analogy earlier, you can have for example,
+
+00:01:06.190 --> 00:01:08.510
+if you're taking a HasCos and then 6101,
+
+00:01:08.510 --> 00:01:10.590
+they don't if they don't have any conflicting
+
+00:01:10.590 --> 00:01:12.350
+prereqs, then you could take both at the
+
+00:01:12.350 --> 00:01:17.585
+same time. So to start off, we're gonna
+
+00:01:17.585 --> 00:01:20.065
+use an analogy where we have Abby, an
+
+00:01:20.065 --> 00:01:22.225
+avid cat lover, who wants to buy cats
+
+00:01:22.225 --> 00:01:27.120
+from a catalog. So in order to do
+
+00:01:27.120 --> 00:01:29.760
+this in today's society, you basically would go
+
+00:01:29.760 --> 00:01:32.560
+to an online retailer, a massive online retailer,
+
+00:01:32.560 --> 00:01:36.480
+place an order. And then after you place
+
+00:01:36.480 --> 00:01:38.960
+the order, after some time passes, you can
+
+00:01:38.960 --> 00:01:43.195
+have one of three things happen. First thing
+
+00:01:43.195 --> 00:01:44.875
+that can happen is if everything goes well,
+
+00:01:44.875 --> 00:01:47.515
+you can have the package get delivered. Abby's
+
+00:01:47.515 --> 00:01:52.075
+happy. Everyone's happy. You can have another scenario
+
+00:01:52.075 --> 00:01:56.070
+where you can have the delivery get delayed.
+
+00:01:56.230 --> 00:02:03.350
+So Abby's, anxiously waiting for the package. And
+
+00:02:03.350 --> 00:02:07.510
+lastly, and I guess disastrously, that something had
+
+00:02:07.510 --> 00:02:08.870
+happened to the package where it can get
+
+00:02:08.870 --> 00:02:10.525
+lost and as you can see, Abby is
+
+00:02:10.525 --> 00:02:16.445
+very sad. So in essence, this analogy also
+
+00:02:16.445 --> 00:02:18.445
+fares very well for promises as well because
+
+00:02:18.445 --> 00:02:21.165
+after placing a delivery order or creating a
+
+00:02:21.165 --> 00:02:23.245
+promise, you can have one of three statuses.
+
+00:02:24.460 --> 00:02:26.300
+You can have fulfilled or resolved where the
+
+00:02:26.300 --> 00:02:30.540
+delivery is completely successful. You have pending where
+
+00:02:30.540 --> 00:02:32.780
+the delivery is just currently being in, like,
+
+00:02:32.780 --> 00:02:36.540
+this middle state between, like, being fulfilled or
+
+00:02:36.780 --> 00:02:38.620
+you can have it be rejected or something
+
+00:02:38.620 --> 00:02:45.155
+happened, something wrong. So applying this idea to
+
+00:02:45.155 --> 00:02:46.835
+dot then, this should be a bit of
+
+00:02:46.835 --> 00:02:49.235
+a review but basically we have, let's say,
+
+00:02:49.235 --> 00:02:52.595
+have a post request and this post request
+
+00:02:52.595 --> 00:02:56.115
+essentially using our analogy earlier represents a order
+
+00:02:55.800 --> 00:02:58.760
+that Abby would place where this is basically
+
+00:02:58.760 --> 00:03:02.840
+our initial order for the cats. And from
+
+00:03:02.840 --> 00:03:04.840
+this from this order, if the promise is
+
+00:03:04.840 --> 00:03:06.600
+fulfilled, then we can use a dot then
+
+00:03:06.600 --> 00:03:09.855
+where this will represent our delivered cats and
+
+00:03:09.855 --> 00:03:11.935
+let's say the cats are delivered, we can
+
+00:03:11.935 --> 00:03:13.615
+do like for example a hug function where
+
+00:03:13.615 --> 00:03:19.615
+we hug the cats. If the promise is
+
+00:03:19.615 --> 00:03:22.095
+rejected, then we could do other things where,
+
+00:03:22.095 --> 00:03:23.935
+for example, we can use a dot catch
+
+00:03:23.790 --> 00:03:26.910
+method where if, if something went wrong then
+
+00:03:26.910 --> 00:03:29.070
+we can, for example, log it, say, oh
+
+00:03:29.070 --> 00:03:34.510
+no, something happened here. And just to be
+
+00:03:34.510 --> 00:03:37.195
+very clear on the idea of what, like,
+
+00:03:37.195 --> 00:03:39.115
+for example, in this code segment here, what
+
+00:03:39.115 --> 00:03:41.755
+story objects means, this represents in the case
+
+00:03:41.755 --> 00:03:43.835
+where it's a failed, it represents the cats
+
+00:03:43.835 --> 00:03:45.995
+or whatever object we want to retrieve from
+
+00:03:45.995 --> 00:03:50.960
+the promise. And just to reiterate, if we
+
+00:03:50.960 --> 00:03:53.040
+have an error occur, if we have the
+
+00:03:53.040 --> 00:03:56.160
+doc catch method here, we can easily, log
+
+00:03:56.160 --> 00:03:58.720
+that mistake or log that error that occurs
+
+00:03:58.720 --> 00:04:00.640
+and very easily tell that something went wrong.
+
+00:04:04.825 --> 00:04:07.545
+So back to this idea of synchronous versus
+
+00:04:07.545 --> 00:04:11.225
+asynchronous. So let's imagine Abby is operating in
+
+00:04:11.225 --> 00:04:14.265
+a synchronous process where, in essence, once she
+
+00:04:14.265 --> 00:04:16.745
+places the order, she can't do anything in
+
+00:04:16.470 --> 00:04:18.870
+the meantime where she just simply has to
+
+00:04:18.870 --> 00:04:20.790
+wait until the order finishes before she can
+
+00:04:20.790 --> 00:04:25.110
+do anything else. So the delivery comes, the
+
+00:04:25.110 --> 00:04:27.110
+order is placed. Once again, she's can't do
+
+00:04:27.110 --> 00:04:30.465
+anything in the process, delivery comes. But let's
+
+00:04:30.465 --> 00:04:31.905
+say she wants to do something else in
+
+00:04:31.905 --> 00:04:33.985
+the process. Let's say she wants to cook,
+
+00:04:34.305 --> 00:04:36.305
+let's say she wants to lecture the lectures,
+
+00:04:37.745 --> 00:04:40.945
+let's say she wants to get gains. She
+
+00:04:40.945 --> 00:04:43.530
+can't she can only do these things while
+
+00:04:43.530 --> 00:04:46.090
+well and also not do the orders. Basically,
+
+00:04:46.090 --> 00:04:47.690
+she can only do one or the other.
+
+00:04:48.250 --> 00:04:49.770
+And let's say she goes back to the
+
+00:04:49.930 --> 00:04:51.930
+like placing an order. In that case, she
+
+00:04:51.930 --> 00:04:54.410
+can only place the order and then wait
+
+00:04:54.410 --> 00:04:57.445
+for the delivery in the process as you
+
+00:04:57.445 --> 00:05:00.565
+can see here. However, basically one of the
+
+00:05:00.565 --> 00:05:01.925
+big things here is that this wastes a
+
+00:05:01.925 --> 00:05:04.805
+lot of time. And if you compare this
+
+00:05:04.805 --> 00:05:07.045
+to an asynchronous process, what Abby can do
+
+00:05:07.045 --> 00:05:09.365
+instead is place the orders and while the
+
+00:05:09.365 --> 00:05:12.080
+orders are being delivered, you can she can
+
+00:05:12.080 --> 00:05:15.840
+cook, she can lecture the lectures, she can
+
+00:05:15.840 --> 00:05:19.280
+get swole, and in the process, these deliveries
+
+00:05:19.280 --> 00:05:22.720
+are coming in the background. And in essence,
+
+00:05:22.720 --> 00:05:24.880
+this is the difference between synchronous and asynchronous,
+
+00:05:24.875 --> 00:05:27.595
+where in synchronous, basically, Abby can only do
+
+00:05:27.595 --> 00:05:30.395
+one order at a time, while in asynchronous,
+
+00:05:30.395 --> 00:05:31.995
+she can do multiple orders at the same
+
+00:05:31.995 --> 00:05:37.035
+time. And just like promises stop Abby from
+
+00:05:37.035 --> 00:05:39.595
+wasting her time watching her orders, promises can
+
+00:05:39.595 --> 00:05:42.440
+let us run other code in the background.
+
+00:05:44.920 --> 00:05:46.680
+So what does that look like in code?
+
+00:05:46.680 --> 00:05:49.960
+Right? In terms of this, we have a
+
+00:05:49.960 --> 00:05:52.520
+use effect here. Right? And this use effect,
+
+00:05:52.520 --> 00:05:55.000
+we call asynchronous function which is our cat
+
+00:05:55.000 --> 00:05:58.095
+orders which Abby would place. And in this
+
+00:05:58.095 --> 00:05:59.695
+case, have a slow cat order then we
+
+00:05:59.695 --> 00:06:04.095
+have, a dot den where once the order
+
+00:06:04.095 --> 00:06:05.855
+is fulfilled then we do console dot log
+
+00:06:05.855 --> 00:06:10.310
+of the cats being delivered. Now basically, yeah,
+
+00:06:10.310 --> 00:06:11.830
+this idea of, like, we have our slow
+
+00:06:11.830 --> 00:06:13.350
+cat order and then we have our callback
+
+00:06:13.350 --> 00:06:16.150
+function which if the order isn't filled, then
+
+00:06:16.150 --> 00:06:19.990
+we do this. Now let's say we have
+
+00:06:19.990 --> 00:06:22.470
+some code that's outside of that function where
+
+00:06:22.470 --> 00:06:25.685
+we have console dot log of once again
+
+00:06:25.685 --> 00:06:28.485
+cooking some food, lecturing the lectures, and getting
+
+00:06:28.485 --> 00:06:32.565
+gains. Now I wanna take a few seconds
+
+00:06:32.565 --> 00:06:36.030
+for you guys to just consider. Even though
+
+00:06:36.030 --> 00:06:38.030
+this code is run-in order, if we were
+
+00:06:38.030 --> 00:06:39.310
+to, like, if we were to run this
+
+00:06:39.310 --> 00:06:41.630
+code in the terminal or just run this
+
+00:06:41.630 --> 00:06:43.470
+program as a whole, what do you guys
+
+00:06:43.470 --> 00:06:46.270
+think will happen? Will the cats delivered be
+
+00:06:46.830 --> 00:06:49.070
+printed out or do you guys think that
+
+00:06:49.230 --> 00:06:50.670
+the do you think do you guys think
+
+00:06:50.670 --> 00:06:52.325
+that something else will happen where maybe the
+
+00:06:52.325 --> 00:06:55.445
+console dot logs later on will be printed
+
+00:06:55.445 --> 00:06:58.805
+out before the slow cat order is finished?
+
+00:06:58.805 --> 00:07:00.165
+I want you guys to take like five
+
+00:07:00.165 --> 00:07:35.830
+seconds to consider that. Yeah. Yeah, exactly. Basically
+
+00:07:35.830 --> 00:07:37.510
+in the next slide, this is the idea
+
+00:07:37.510 --> 00:07:38.950
+I'm showing where let's say we have like
+
+00:07:38.950 --> 00:07:43.270
+that blue region where, the blue region represents
+
+00:07:43.270 --> 00:07:44.710
+this low cat order and then the red
+
+00:07:44.710 --> 00:07:48.685
+region represents console. Logs in the background. As
+
+00:07:48.685 --> 00:07:51.165
+we see here in in this output, even
+
+00:07:51.165 --> 00:07:53.245
+though the slow cat order is written first,
+
+00:07:53.405 --> 00:07:54.765
+we can still we can have a case
+
+00:07:54.765 --> 00:07:58.045
+where the the other console. Logs are printed
+
+00:07:58.045 --> 00:07:59.725
+first and then the slow cat order is
+
+00:07:59.725 --> 00:08:04.410
+finished, which represents this idea of asynchronous where
+
+00:08:04.410 --> 00:08:05.850
+the slow cat order is running in the
+
+00:08:05.850 --> 00:08:07.930
+background while the other console dot logs in
+
+00:08:07.930 --> 00:08:12.490
+the red region are being run. Yeah. Pass
+
+00:08:12.490 --> 00:08:21.135
+off Lucas. Alright, so can you guys hear
+
+00:08:21.135 --> 00:08:24.175
+me in the back? Thumbs up? Alright, cool.
+
+00:08:24.175 --> 00:08:25.615
+So now we're going be looking into using
+
+00:08:25.615 --> 00:08:28.815
+multiple promises. So we have this piece of
+
+00:08:28.815 --> 00:08:30.575
+code here, I'll give you guys like ten
+
+00:08:30.575 --> 00:08:34.320
+seconds to parse it. Essentially, what we have
+
+00:08:34.320 --> 00:08:38.400
+is slow number, which is an asynchronous call,
+
+00:08:38.640 --> 00:08:42.560
+which takes in an input, some number, and
+
+00:08:42.640 --> 00:08:48.315
+returns it to our front end after one
+
+00:08:48.315 --> 00:08:52.155
+second. So essentially, what slow number returns whenever
+
+00:08:52.155 --> 00:08:55.035
+we run this code is first a promise,
+
+00:08:55.915 --> 00:08:58.715
+and so a and b are promises. And
+
+00:08:58.715 --> 00:09:00.635
+at the end, we console log a plus
+
+00:09:00.635 --> 00:09:03.950
+b. Now, I want you guys to take
+
+00:09:03.950 --> 00:09:07.230
+around ten seconds to think about what the
+
+00:09:07.230 --> 00:09:19.565
+console log would actually print. Put one finger
+
+00:09:19.565 --> 00:09:21.085
+up if you think it's nineteen, two fingers
+
+00:09:21.085 --> 00:09:22.765
+up if you think it's nine ten, three
+
+00:09:22.765 --> 00:09:24.285
+if it errors out, and four if it's
+
+00:09:24.285 --> 00:09:32.650
+object promise, object promise. Come on guys. I
+
+00:09:32.650 --> 00:09:38.410
+see some threes, some fours, 34. Okay, cool.
+
+00:09:39.130 --> 00:09:42.410
+It actually prints out object promise, object promise,
+
+00:09:42.410 --> 00:09:45.255
+because JavaScript just interprets a and b as
+
+00:09:45.255 --> 00:09:48.855
+promises and then concatenates them together. You would
+
+00:09:48.855 --> 00:09:51.975
+expect that we'd actually want to add up
+
+00:09:51.975 --> 00:09:54.615
+the numbers that these promises return, and so
+
+00:09:54.615 --> 00:09:59.080
+in order to kind of unshell the promise
+
+00:09:59.080 --> 00:10:00.920
+and get the value that we want inside,
+
+00:10:01.000 --> 00:10:03.240
+we need to wait for these promises to
+
+00:10:03.240 --> 00:10:07.800
+actually resolve. So you guys know how to
+
+00:10:07.800 --> 00:10:10.360
+do this, you guys just use dot then,
+
+00:10:10.360 --> 00:10:13.000
+so dot then awaits for our promise to
+
+00:10:13.000 --> 00:10:15.245
+resolve and runs some callback function with the
+
+00:10:15.245 --> 00:10:18.205
+data that we received from our asynchronous function
+
+00:10:18.205 --> 00:10:22.125
+call. Here, a dot then, that waits for
+
+00:10:22.125 --> 00:10:24.045
+promise a, and then it runs our callback
+
+00:10:24.045 --> 00:10:28.760
+function, which takes in eval and then waits
+
+00:10:28.760 --> 00:10:31.720
+for promise b to resolve as well. And
+
+00:10:31.720 --> 00:10:34.200
+so then we just console log a val
+
+00:10:34.200 --> 00:10:39.960
+plus b val. Now that we're going into
+
+00:10:39.960 --> 00:10:43.685
+dealing with multiple promises, there are multiple ways
+
+00:10:43.685 --> 00:10:47.285
+to actually create behavior from multiple promises. So
+
+00:10:47.285 --> 00:10:51.365
+we'll look into that. Assume that we have
+
+00:10:51.365 --> 00:10:54.325
+multiple promises, we send a get request to
+
+00:10:54.325 --> 00:10:57.120
+our server for some comments with different parent
+
+00:10:57.120 --> 00:11:00.560
+IDs, and so we have our five promises
+
+00:11:00.880 --> 00:11:05.040
+and we put them in an array. We
+
+00:11:05.040 --> 00:11:07.520
+can make a promise out of all of
+
+00:11:07.520 --> 00:11:10.480
+these promises, and so what promise dot all
+
+00:11:10.480 --> 00:11:14.515
+does here is it resolves if all of
+
+00:11:14.515 --> 00:11:17.555
+our promises in our array resolve, and it
+
+00:11:17.555 --> 00:11:19.955
+rejects if at least one of the promises
+
+00:11:19.955 --> 00:11:22.675
+in our array rejects. So you can imagine
+
+00:11:22.675 --> 00:11:25.235
+that maybe on our Kappa server, we want
+
+00:11:25.235 --> 00:11:29.150
+all of our comments to render, and if
+
+00:11:29.150 --> 00:11:32.590
+one comment is not retrieved correctly, then we
+
+00:11:32.590 --> 00:11:34.190
+don't render anything at all and we run
+
+00:11:34.190 --> 00:11:38.030
+our error callback function that is in dot
+
+00:11:38.030 --> 00:11:40.670
+catch. So if all the promises resolve, we
+
+00:11:40.670 --> 00:11:42.815
+run our functionality in dot then using all
+
+00:11:42.815 --> 00:11:46.015
+the information, otherwise we run the callback function
+
+00:11:46.015 --> 00:11:54.415
+in catch. Any questions? Alright, cool. Now let's
+
+00:11:54.415 --> 00:11:57.920
+look at promise dot race. Promise. Race essentially
+
+00:11:57.920 --> 00:12:00.400
+takes in our array of promises and then
+
+00:12:00.400 --> 00:12:03.520
+waits for the first promise to either resolve
+
+00:12:03.520 --> 00:12:06.080
+or reject. And depending on whether that promise
+
+00:12:06.080 --> 00:12:10.645
+resolves or rejects, we run or rather, the
+
+00:12:10.645 --> 00:12:13.445
+promise that we return resolves or rejects. So
+
+00:12:14.245 --> 00:12:17.685
+if, let's say, promise one is the first
+
+00:12:17.765 --> 00:12:21.685
+to resolve, then we run the dot then
+
+00:12:21.685 --> 00:12:24.405
+callback function with the data that promise one
+
+00:12:24.970 --> 00:12:29.290
+retrieves. But let's say in another case, promise
+
+00:12:29.290 --> 00:12:31.530
+four actually rejects first, so we get a
+
+00:12:31.530 --> 00:12:34.490
+result from promise four first, then we run
+
+00:12:34.490 --> 00:12:37.770
+our error function with the error that promise
+
+00:12:37.770 --> 00:12:46.205
+four returns. Any questions? Alright, cool. Then promise
+
+00:12:46.205 --> 00:12:50.845
+dot any takes an iterable of promises and
+
+00:12:51.725 --> 00:12:56.430
+rejects whenever all the promises reject and resolves
+
+00:12:56.430 --> 00:12:59.390
+if at least one promise resolves. So you
+
+00:12:59.390 --> 00:13:01.310
+can imagine that promise one rejects, promise two
+
+00:13:01.310 --> 00:13:03.550
+rejects, promise three rejects, but then promise four
+
+00:13:03.550 --> 00:13:06.590
+resolves, so we use the result from promise
+
+00:13:06.590 --> 00:13:08.910
+four inside of our dot then callback function
+
+00:13:09.255 --> 00:13:13.895
+and yeah, but if we have the case
+
+00:13:13.895 --> 00:13:16.695
+where all our promises reject, then we end
+
+00:13:16.695 --> 00:13:19.015
+up running the callback function in dot catch.
+
+00:13:19.975 --> 00:13:26.020
+All good? Cool. Now let's talk about async
+
+00:13:26.020 --> 00:13:30.820
+and await. So in order to actually understand
+
+00:13:31.140 --> 00:13:33.380
+why we use promises, and this is just
+
+00:13:33.380 --> 00:13:36.660
+like reiterating the example that David showed us,
+
+00:13:37.060 --> 00:13:39.155
+let's talk about a synchronous program and an
+
+00:13:39.155 --> 00:13:42.115
+asynchronous program from the view of actual code.
+
+00:13:43.235 --> 00:13:46.755
+Imagine that our red block of code depends
+
+00:13:46.755 --> 00:13:48.675
+on our orange block of code. So our
+
+00:13:48.675 --> 00:13:50.835
+orange block produces some data that our red
+
+00:13:50.835 --> 00:13:54.720
+block must use, and so our orange block
+
+00:13:54.720 --> 00:13:57.280
+must run before our red block. And it's
+
+00:13:57.280 --> 00:13:59.200
+also supposed that our orange block is not
+
+00:13:59.200 --> 00:14:02.320
+dependent on our green block, so if we
+
+00:14:02.320 --> 00:14:04.320
+wanted to, we can execute them in whatever
+
+00:14:04.320 --> 00:14:08.205
+order we wanted. And so in a synchronous
+
+00:14:08.205 --> 00:14:11.485
+program, we would have one piece of code
+
+00:14:11.485 --> 00:14:14.205
+ran after the other, we can't run them
+
+00:14:14.205 --> 00:14:16.205
+at the same time. So we would run
+
+00:14:16.205 --> 00:14:18.125
+our green piece of code, our orange piece
+
+00:14:18.125 --> 00:14:19.245
+of code, and then our red piece of
+
+00:14:19.245 --> 00:14:24.370
+code. And this would end up taking six
+
+00:14:24.370 --> 00:14:31.410
+time units. However, in an asynchronous program, this
+
+00:14:31.410 --> 00:14:35.185
+is where we take advantage of the fact
+
+00:14:35.185 --> 00:14:37.105
+that our green block and our orange block
+
+00:14:37.105 --> 00:14:40.065
+are not dependent on each other. So we
+
+00:14:40.065 --> 00:14:42.945
+can run our green block of code, but
+
+00:14:42.945 --> 00:14:44.465
+while our green block of code is running,
+
+00:14:44.465 --> 00:14:46.945
+like maybe we send some API for some
+
+00:14:46.945 --> 00:14:48.465
+data that we know that our red block
+
+00:14:48.465 --> 00:14:52.820
+of code will need run, then that API
+
+00:14:52.820 --> 00:14:55.220
+call can be ran on some other computer
+
+00:14:55.220 --> 00:14:57.300
+other than our own, and we can run
+
+00:14:57.300 --> 00:15:01.060
+our green block of code. And so by
+
+00:15:01.060 --> 00:15:03.700
+the time that our API kind of finishes,
+
+00:15:03.645 --> 00:15:05.965
+finishes, it's going to return that information to
+
+00:15:05.965 --> 00:15:10.285
+our own local computer, and once we finish
+
+00:15:10.285 --> 00:15:11.965
+our green block of code, we can simply
+
+00:15:11.965 --> 00:15:14.365
+transition into the red block of code. And
+
+00:15:14.365 --> 00:15:17.085
+in this case, instead of six time units,
+
+00:15:17.430 --> 00:15:20.390
+we actually just run our program in four.
+
+00:15:23.910 --> 00:15:27.590
+And so now let's talk about await. So
+
+00:15:27.590 --> 00:15:29.830
+if you guys remember the example that I
+
+00:15:29.830 --> 00:15:32.345
+showed you guys earlier, we actually need to
+
+00:15:32.345 --> 00:15:34.505
+wait for our promises to resolve in order
+
+00:15:34.505 --> 00:15:36.585
+to use the data that our promises hold.
+
+00:15:37.065 --> 00:15:39.545
+And so one way to do this is
+
+00:15:39.545 --> 00:15:42.345
+to use the dot thens that I showed
+
+00:15:42.345 --> 00:15:44.505
+you, but you can also use a keyword
+
+00:15:44.505 --> 00:15:49.720
+called await, await just essentially, it awaits for
+
+00:15:49.720 --> 00:15:56.920
+our promise to resolve. And so here's I'll
+
+00:15:56.920 --> 00:16:01.055
+give you guys some practice questions to consider
+
+00:16:01.055 --> 00:16:04.655
+how long a program will take using, just
+
+00:16:04.655 --> 00:16:13.060
+like waiting for promises. In this example, we
+
+00:16:13.060 --> 00:16:15.380
+send a get request to some URL and
+
+00:16:15.380 --> 00:16:17.860
+then immediately await it. We send another get
+
+00:16:17.860 --> 00:16:19.860
+request, we immediately await it, and then we
+
+00:16:19.860 --> 00:16:22.580
+console dot log. If a takes three seconds
+
+00:16:22.580 --> 00:16:25.025
+to await and b takes five seconds, how
+
+00:16:25.025 --> 00:16:26.145
+long do you guys think it will take
+
+00:16:26.145 --> 00:16:28.065
+before we print something through our console dot
+
+00:16:28.065 --> 00:16:34.305
+log? And I'll give you guys fifteen seconds
+
+00:16:34.305 --> 00:16:53.855
+to think about it. Okay. Now I want
+
+00:16:53.855 --> 00:16:54.975
+you guys to put up the number of
+
+00:16:54.975 --> 00:16:58.895
+fingers you think how many minutes or seconds
+
+00:16:58.895 --> 00:17:00.255
+do you think it will take to actually
+
+00:17:00.255 --> 00:17:01.775
+execute this code, or to actually print it
+
+00:17:01.775 --> 00:17:08.340
+out? Five, five, some fives, three, I see
+
+00:17:08.340 --> 00:17:12.420
+an eight. Eight, okay cool guys. And so
+
+00:17:13.540 --> 00:17:16.740
+this actually takes eight seconds, and the reason
+
+00:17:16.740 --> 00:17:19.540
+behind this is we send our get request
+
+00:17:19.540 --> 00:17:22.815
+to random URL and we immediately await it.
+
+00:17:22.815 --> 00:17:24.735
+So we send the request, all the work
+
+00:17:24.735 --> 00:17:26.495
+is being done on some other computer, and
+
+00:17:26.495 --> 00:17:28.655
+we simply await the data to be returned.
+
+00:17:28.735 --> 00:17:30.735
+So we're not doing any other work on
+
+00:17:30.735 --> 00:17:35.350
+our local computer. And then that's in order
+
+00:17:35.350 --> 00:17:38.470
+for our get request to actually retrieve information,
+
+00:17:38.470 --> 00:17:40.230
+it's going take three seconds, and then we
+
+00:17:40.230 --> 00:17:41.990
+move on to the next get request, and
+
+00:17:41.990 --> 00:17:43.990
+then we immediately await it, and it doesn't
+
+00:17:43.990 --> 00:17:45.990
+take another five seconds. So in total, it's
+
+00:17:45.990 --> 00:17:50.425
+going to be eight seconds. Now, this is
+
+00:17:50.425 --> 00:17:52.905
+another example. So what if we actually do
+
+00:17:52.905 --> 00:17:56.665
+these get requests before we await them? And
+
+00:17:56.665 --> 00:17:58.825
+I'll give you guys another twenty seconds to
+
+00:17:58.825 --> 00:18:01.065
+think about how long does it take if
+
+00:18:01.145 --> 00:18:02.905
+a takes three seconds to wait, b takes
+
+00:18:02.905 --> 00:18:25.055
+five. Yeah. Alright. So it's actually five, and
+
+00:18:25.055 --> 00:18:27.695
+I want you guys to turn around, talk
+
+00:18:27.695 --> 00:18:30.095
+to your neighbors, and if you guys have
+
+00:18:30.095 --> 00:18:33.770
+any differing answers, like explain, why you think
+
+00:18:33.770 --> 00:19:17.355
+it's five. Alright. Let's bring it back now.
+
+00:19:18.315 --> 00:19:21.755
+So whenever we send our get request to
+
+00:19:21.755 --> 00:19:25.750
+random URL and other random URL, you can
+
+00:19:25.750 --> 00:19:28.150
+imagine that we have two different computers that
+
+00:19:28.150 --> 00:19:31.350
+are doing separate work, and so the moment
+
+00:19:31.350 --> 00:19:34.710
+that we send those get requests, the work
+
+00:19:34.710 --> 00:19:37.350
+that they have to do starts and then
+
+00:19:37.350 --> 00:19:40.955
+we start awaiting promise one, And it would
+
+00:19:40.955 --> 00:19:43.195
+take whenever we await promise one, we know
+
+00:19:43.195 --> 00:19:46.875
+that it's going to take three seconds, and
+
+00:19:46.875 --> 00:19:48.635
+so we await promise one, it takes three
+
+00:19:48.635 --> 00:19:51.035
+seconds, and in those three seconds, both of
+
+00:19:51.035 --> 00:19:54.970
+our get requests are being processed. So our
+
+00:19:54.970 --> 00:19:56.810
+promise two has already done three seconds of
+
+00:19:56.810 --> 00:19:59.130
+work. So by the time that we get
+
+00:19:59.130 --> 00:20:01.770
+to awaiting promise two, we only have to
+
+00:20:01.770 --> 00:20:04.490
+wait two more seconds for it to resolve.
+
+00:20:05.050 --> 00:20:08.090
+And so that's going to end up taking
+
+00:20:08.090 --> 00:20:15.405
+five seconds. Any questions? Alright, cool. And now
+
+00:20:15.405 --> 00:20:17.565
+I'm going give you guys a final example.
+
+00:20:18.605 --> 00:20:21.405
+What if instead, a takes five seconds to
+
+00:20:21.405 --> 00:20:23.805
+await and b takes three seconds to await?
+
+00:20:24.510 --> 00:20:26.910
+And so I want you guys to talk
+
+00:20:26.910 --> 00:20:29.070
+to your partner, probably like go through the
+
+00:20:29.070 --> 00:21:10.955
+code and explain your thought process. Alright, cool.
+
+00:21:10.955 --> 00:21:14.555
+Let's bring it back now. So this actually
+
+00:21:14.555 --> 00:21:17.275
+takes five seconds as well, and so similar
+
+00:21:17.275 --> 00:21:20.510
+to our previous example, we're sending both get
+
+00:21:20.510 --> 00:21:23.390
+requests. We await promise one, promise one is
+
+00:21:23.390 --> 00:21:27.950
+going to take five seconds, and so we
+
+00:21:27.950 --> 00:21:29.870
+do five seconds of work for both of
+
+00:21:29.870 --> 00:21:31.630
+the requests, and by the time we get
+
+00:21:31.630 --> 00:21:33.710
+to promise two, well, we've already done five
+
+00:21:33.710 --> 00:21:35.465
+seconds of work, and we've only needed three
+
+00:21:35.465 --> 00:21:38.345
+seconds of work. So our promise two has
+
+00:21:38.345 --> 00:21:40.665
+already been resolved, and so we don't wait
+
+00:21:40.665 --> 00:21:42.585
+any extra time. And so by the time
+
+00:21:42.585 --> 00:21:45.545
+that we console log done, five seconds have
+
+00:21:45.545 --> 00:21:53.880
+passed, and that's it. And so the thing
+
+00:21:53.880 --> 00:21:56.920
+about using await as opposed to dot then
+
+00:21:56.920 --> 00:22:00.280
+is that only asynchronous functions can use await,
+
+00:22:00.280 --> 00:22:02.200
+and so what does it mean for a
+
+00:22:02.200 --> 00:22:05.705
+function to be asynchronous? Well, it just means
+
+00:22:05.705 --> 00:22:08.665
+that we use the async keyword whenever we
+
+00:22:08.665 --> 00:22:12.585
+define the function. So we just use async,
+
+00:22:12.905 --> 00:22:14.985
+and then inside of that async function, we
+
+00:22:14.985 --> 00:22:20.740
+can freely use await. And so now let's
+
+00:22:20.740 --> 00:22:23.700
+put the await code and the dot then
+
+00:22:23.700 --> 00:22:27.300
+dot then code side by side. So imagine
+
+00:22:27.300 --> 00:22:30.660
+that somewhere up in the code we do
+
+00:22:30.660 --> 00:22:34.265
+our get request for a and b, and
+
+00:22:34.265 --> 00:22:38.265
+then we simply want to await for those
+
+00:22:38.265 --> 00:22:43.145
+promises. And so for our function that uses
+
+00:22:43.145 --> 00:22:45.865
+await, it's as simple as just await a
+
+00:22:45.865 --> 00:22:49.270
+plus await b. And then for our dot
+
+00:22:49.270 --> 00:22:51.750
+then, it's a little bit uglier since we're
+
+00:22:51.750 --> 00:22:56.630
+nesting in two dot thens, and whenever we're
+
+00:22:57.190 --> 00:23:00.150
+awaiting multiple promises, it can get a little
+
+00:23:00.150 --> 00:23:02.825
+bit ugly, and so this is just like
+
+00:23:02.825 --> 00:23:05.385
+one benefit of using await as opposed to
+
+00:23:05.385 --> 00:23:12.505
+dot then. Another difference between using await and
+
+00:23:12.665 --> 00:23:15.545
+dot then is that for traditional promises, we
+
+00:23:15.545 --> 00:23:20.380
+use dot then, and so for our useEffects,
+
+00:23:21.180 --> 00:23:24.460
+if we have a get request, we simply
+
+00:23:24.460 --> 00:23:26.540
+get the data from that get request and
+
+00:23:26.540 --> 00:23:31.805
+then run our callback function, but for useEffects,
+
+00:23:31.805 --> 00:23:37.645
+we can't have asynchronous callback functions inside of
+
+00:23:37.645 --> 00:23:42.205
+useEffects. And so in order to actually run
+
+00:23:43.950 --> 00:23:46.670
+our await function, we have to define a
+
+00:23:46.670 --> 00:23:49.630
+get stories function inside of our use effect
+
+00:23:49.630 --> 00:23:52.990
+callback function, so inside here, and then actually
+
+00:23:52.990 --> 00:23:57.785
+call get stories. Yeah, so that's just like
+
+00:23:57.785 --> 00:23:59.065
+a small difference that you guys will have
+
+00:23:59.065 --> 00:24:11.780
+to take into account. Questions? And I don't
+
+00:24:11.780 --> 00:24:13.220
+know if I have enough time for this,
+
+00:24:13.220 --> 00:24:16.980
+Abby? No, okay. But if you guys have
+
+00:24:16.980 --> 00:24:19.380
+any questions or have ever wondered how JavaScript
+
+00:24:19.380 --> 00:24:22.900
+actually handles async calls, please go to office
+
+00:24:22.900 --> 00:24:27.145
+hours. It's a little bit confusing that we
+
+00:24:27.145 --> 00:24:28.905
+wait for promises and then we run a
+
+00:24:28.905 --> 00:24:31.225
+callback function, but when do we actually have
+
+00:24:31.225 --> 00:24:33.145
+the time to run that callback function if
+
+00:24:33.145 --> 00:24:36.185
+we're running other code? So if you guys
+
+00:24:36.185 --> 00:24:38.800
+are interested in that, please come to office
+
+00:24:38.800 --> 00:24:42.080
+hours and I'll do the mini presentation there.
+
+00:24:46.400 --> 00:24:51.760
+And so when should we use asynchronous functions?
+
+00:24:52.615 --> 00:24:56.295
+And so we use async functions or API
+
+00:24:56.295 --> 00:25:03.095
+requests, or rather, promises whenever we have background
+
+00:25:03.095 --> 00:25:08.110
+tasks that don't know how long these background
+
+00:25:08.110 --> 00:25:10.830
+tasks will take. So for example, it could
+
+00:25:10.830 --> 00:25:16.270
+be fetching data, or downloading slash uploading data
+
+00:25:16.270 --> 00:25:21.315
+on YouTube, and it's very important to realize
+
+00:25:22.595 --> 00:25:27.955
+why promises contribute to user interactivity. Let's say
+
+00:25:28.595 --> 00:25:31.730
+we're on YouTube and we're waiting for everything
+
+00:25:31.730 --> 00:25:35.410
+on YouTube to render, so we're requesting videos,
+
+00:25:35.570 --> 00:25:41.810
+we're requesting comments, but we can still scroll
+
+00:25:41.810 --> 00:25:45.495
+through the YouTube app or YouTube website even
+
+00:25:45.495 --> 00:25:49.015
+when some videos haven't rendered. And that's very
+
+00:25:49.015 --> 00:25:53.735
+important because if we used synchronous, or if
+
+00:25:53.735 --> 00:25:56.220
+our website was synchronous, then we would have
+
+00:25:56.220 --> 00:25:58.060
+to request all of our data, and then
+
+00:25:58.060 --> 00:26:00.060
+only when we have received all this data
+
+00:26:00.060 --> 00:26:04.380
+we can scroll through our website. And so
+
+00:26:04.700 --> 00:26:10.025
+that's just why asynchronous functions are important. Yeah.
+
+00:26:10.665 --> 00:26:13.465
+I really appreciate if you guys gave us
+
+00:26:13.465 --> 00:26:15.705
+feedback. It's really important for us to improve
+
+00:26:15.705 --> 00:26:17.945
+our lectures. Thank you guys.
