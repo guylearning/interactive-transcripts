@@ -240,5 +240,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_5_databases_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_5_databases/mit_web_lab_6_962_-_day_5_databases_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_5_databases/mit_web_lab_6_962_-_day_5_databases_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 5: Workshop 4 (Databases)",
+    "video_name_clean": "mit_web_lab_6_962_-_day_5_workshop_4_databases",
+    "youtube_id": "vJK4LqKzqvY",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T20:40:34.272860+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 2110,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_5_workshop_4_databases_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_5_workshop_4_databases/mit_web_lab_6_962_-_day_5_workshop_4_databases_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_5_workshop_4_databases/mit_web_lab_6_962_-_day_5_workshop_4_databases_transcript.vtt"
   }
 ]
