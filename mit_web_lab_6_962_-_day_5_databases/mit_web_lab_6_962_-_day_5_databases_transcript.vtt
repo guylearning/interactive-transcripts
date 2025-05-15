@@ -1,0 +1,1532 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: a72e2844-3597-4523-883b-a10df50ca644
+Created: 2025-05-15T20:38:22.014Z
+Duration: 1527.4056
+Channels: 1
+
+00:00:02.080 --> 00:00:04.560
+Okay. Hi, everyone. Hope we all had a
+
+00:00:04.560 --> 00:00:07.520
+very productive morning debugging Catbook. I saw a
+
+00:00:07.520 --> 00:00:11.360
+lot of really good thinking going on. Anyways,
+
+00:00:11.360 --> 00:00:14.465
+today we're gonna be talking about databases. I'm
+
+00:00:14.465 --> 00:00:18.705
+Annabel. And I'm Sophie. Yeah. So let's start
+
+00:00:18.705 --> 00:00:21.425
+with a quick introduction to what databases are.
+
+00:00:22.145 --> 00:00:24.545
+So currently, the way that we are storing
+
+00:00:24.545 --> 00:00:26.705
+data in Catbook is that when a client
+
+00:00:26.705 --> 00:00:28.950
+sends a request and they ping, like, the
+
+00:00:28.950 --> 00:00:31.910
+API slash story endpoint, for example, like, trying
+
+00:00:31.910 --> 00:00:34.150
+to write a new story, this is sent
+
+00:00:34.150 --> 00:00:36.630
+to the server, and all our data is
+
+00:00:36.710 --> 00:00:39.030
+stored directly on an array called stories in
+
+00:00:39.030 --> 00:00:40.950
+our server. So this is going to add
+
+00:00:40.950 --> 00:00:43.385
+a new story directly on our server. So
+
+00:00:43.385 --> 00:00:45.785
+here's like the code in API.JS right now.
+
+00:00:45.785 --> 00:00:47.705
+Right? We have like this data object that
+
+00:00:47.705 --> 00:00:49.545
+has the array of all of our stories
+
+00:00:49.545 --> 00:00:52.265
+with fields like ID, creator name, and content.
+
+00:00:54.985 --> 00:00:57.225
+But there's a couple of issues with storing
+
+00:00:57.225 --> 00:00:59.600
+data in our server just as a variable.
+
+00:01:00.080 --> 00:01:01.760
+And you might have already encountered some of
+
+00:01:01.760 --> 00:01:04.080
+them or have already, like, an idea of
+
+00:01:04.080 --> 00:01:06.800
+what some of the issues might be. So
+
+00:01:06.800 --> 00:01:09.760
+let's say everything is fine and we're all
+
+00:01:09.760 --> 00:01:11.520
+good, right, we're posting stories on our cat
+
+00:01:11.520 --> 00:01:13.520
+book, you guys are, like, busy debugging or
+
+00:01:13.520 --> 00:01:16.145
+whatever, the clients are sending are pinging the
+
+00:01:16.145 --> 00:01:21.025
+apistory endpoint. And then our stories object is
+
+00:01:21.025 --> 00:01:23.185
+being updated accordingly, right? So we're adding the
+
+00:01:23.185 --> 00:01:26.865
+hi, hello. But let's say, oh no, our
+
+00:01:26.865 --> 00:01:32.340
+server crashes. So our server is down for
+
+00:01:32.340 --> 00:01:35.860
+some number of unbearable hours. And let's see
+
+00:01:35.860 --> 00:01:38.180
+what happens if once our server comes back
+
+00:01:38.180 --> 00:01:41.860
+up, all of our data is going to
+
+00:01:41.860 --> 00:01:44.020
+be lost inside the stories array. So everything
+
+00:01:44.020 --> 00:01:46.015
+that was just sent is now gone. And
+
+00:01:46.015 --> 00:01:48.095
+obviously, we don't want this. Right? Like, don't
+
+00:01:48.095 --> 00:01:49.295
+want all of our data to just be
+
+00:01:49.295 --> 00:01:51.775
+gone if the server crashes. And it's not
+
+00:01:51.775 --> 00:01:53.775
+just if the server crashes. If we close
+
+00:01:53.775 --> 00:01:56.175
+our terminal or if, like, your laptop runs
+
+00:01:56.175 --> 00:01:57.695
+out of battery, then all of your data
+
+00:01:57.695 --> 00:01:59.390
+will be gone and all the stories that
+
+00:01:59.390 --> 00:02:00.990
+you just posted are not going to persist
+
+00:02:00.990 --> 00:02:03.710
+on Catbook. And you can imagine that with
+
+00:02:03.710 --> 00:02:05.470
+any web application, you want your data to
+
+00:02:05.470 --> 00:02:06.750
+persist, and you want to be able to
+
+00:02:06.750 --> 00:02:09.310
+retrieve and display the data that your users
+
+00:02:09.310 --> 00:02:14.155
+have previously submitted, even if something crashes. The
+
+00:02:14.155 --> 00:02:15.995
+other thing that happens is, let's say our
+
+00:02:15.995 --> 00:02:17.995
+server never crashes and it's some, like, super
+
+00:02:17.995 --> 00:02:21.035
+powerful, like, mega server. But Catbook has a
+
+00:02:21.035 --> 00:02:22.235
+lot of users. Right? Like, all of you
+
+00:02:22.235 --> 00:02:23.755
+guys are already using it in class right
+
+00:02:23.755 --> 00:02:25.755
+now. And this is going to lead to
+
+00:02:25.755 --> 00:02:27.435
+a lot of RAM issues because that's gonna
+
+00:02:27.435 --> 00:02:29.520
+be a of memory, and we're storing, like,
+
+00:02:29.520 --> 00:02:31.920
+hundreds of gigabytes of stories and comments. So
+
+00:02:31.920 --> 00:02:34.800
+this is also kind of an issue. So
+
+00:02:34.800 --> 00:02:38.080
+we wanna store our data permanently. And so
+
+00:02:38.080 --> 00:02:39.840
+one of the other ways, the alternatives that
+
+00:02:39.840 --> 00:02:41.635
+we have instead of storing the data directly
+
+00:02:41.635 --> 00:02:43.555
+on the server, is that we can use
+
+00:02:43.555 --> 00:02:45.075
+a text file. And we can store this
+
+00:02:45.075 --> 00:02:47.395
+text file on our hard disk instead of
+
+00:02:47.395 --> 00:02:49.795
+storing everything directly on the server. So this
+
+00:02:49.795 --> 00:02:52.995
+seems more permanent. Right? We also have, like,
+
+00:02:53.235 --> 00:02:56.675
+functions that we can use to access and
+
+00:02:55.950 --> 00:02:58.590
+send data to our text file. So if
+
+00:02:58.590 --> 00:03:00.270
+we wanna load data, we can use read
+
+00:03:00.270 --> 00:03:02.190
+data from file, which if you guys have
+
+00:03:02.190 --> 00:03:05.550
+taken, like, 608 before, you've probably seen it's
+
+00:03:05.550 --> 00:03:07.950
+like a very basic, like, read data function.
+
+00:03:08.645 --> 00:03:11.285
+And basically, this is just taking in what
+
+00:03:11.285 --> 00:03:13.285
+we have in our data dot txt file
+
+00:03:13.285 --> 00:03:15.125
+and reading that. And then if we want
+
+00:03:15.125 --> 00:03:17.045
+to save data to data dot txt, can
+
+00:03:17.045 --> 00:03:21.700
+use the function write data to file. So
+
+00:03:21.700 --> 00:03:23.860
+here's how we would implement it, for example,
+
+00:03:23.860 --> 00:03:28.180
+in, like, API yeah, in our API endpoint.
+
+00:03:29.540 --> 00:03:30.900
+And this is if we wanted to, like,
+
+00:03:30.900 --> 00:03:34.615
+load the data from the file. So you
+
+00:03:34.615 --> 00:03:36.295
+might be thinking, yay, we solved the problem.
+
+00:03:36.295 --> 00:03:38.135
+Now we are storing everything in this text
+
+00:03:38.135 --> 00:03:40.135
+file on our hard drive, and it's all
+
+00:03:40.135 --> 00:03:42.535
+good because now it's permanent. But there's still
+
+00:03:42.535 --> 00:03:44.775
+a couple of issues with this. So what's
+
+00:03:44.775 --> 00:03:46.730
+wrong with data. Txt? Does anyone want to
+
+00:03:46.730 --> 00:03:48.410
+take a stab at just like one problem
+
+00:03:48.410 --> 00:04:07.025
+that they can potentially think of? Yes. Yeah,
+
+00:04:07.025 --> 00:04:09.185
+exactly. So one of the big issues is
+
+00:04:09.185 --> 00:04:10.945
+if we're looking up things, it's going to
+
+00:04:10.945 --> 00:04:15.100
+be extremely slow. So that's like one of
+
+00:04:15.100 --> 00:04:16.540
+the issues I'll talk about later. But some
+
+00:04:16.540 --> 00:04:17.980
+of the other issues we have are also
+
+00:04:17.980 --> 00:04:20.380
+like, kinda like adjacent to what you mentioned,
+
+00:04:20.460 --> 00:04:22.940
+is if we're saving stories and comments, the
+
+00:04:22.940 --> 00:04:24.460
+write speed is also gonna be very slow
+
+00:04:24.460 --> 00:04:26.220
+because we have to call that function every
+
+00:04:26.220 --> 00:04:28.295
+single time. And you can imagine that's going
+
+00:04:28.295 --> 00:04:30.375
+be very tedious and slow. The other thing
+
+00:04:30.375 --> 00:04:32.695
+is, you can imagine, we're still keeping everything
+
+00:04:32.695 --> 00:04:34.615
+in our RAM, so we can still run
+
+00:04:34.615 --> 00:04:36.615
+out of storage on our hard drive. So
+
+00:04:36.615 --> 00:04:38.215
+it's kind of similar to the problems we
+
+00:04:38.215 --> 00:04:40.215
+had before, like if you run out of
+
+00:04:40.215 --> 00:04:42.055
+storage in your RAM, this is still an
+
+00:04:42.055 --> 00:04:44.790
+issue. Also, this is what you're saying. Right?
+
+00:04:44.790 --> 00:04:46.870
+The query speed is very slow because if
+
+00:04:46.870 --> 00:04:49.590
+we want to just return one story posted
+
+00:04:49.590 --> 00:04:51.750
+by a given user ID, right, we have
+
+00:04:51.750 --> 00:04:53.350
+to linear search through every single one of
+
+00:04:53.350 --> 00:04:55.430
+the stories, and this can be very, very
+
+00:04:55.430 --> 00:04:58.425
+slow. Also, your laptop hard drive can still
+
+00:04:58.425 --> 00:05:00.825
+break. It's not immune. You can drop your
+
+00:05:00.825 --> 00:05:03.065
+laptop in a pool or something. This is
+
+00:05:03.145 --> 00:05:07.305
+not fail proof. Also, if two users post
+
+00:05:07.305 --> 00:05:09.180
+at the exact same time, we don't actually
+
+00:05:09.180 --> 00:05:11.180
+know what ends up getting stored in data.
+
+00:05:11.180 --> 00:05:13.340
+Txt because we don't know, like, which user's
+
+00:05:13.340 --> 00:05:17.420
+request was actually fulfilled to, like, write data
+
+00:05:17.420 --> 00:05:20.300
+to the file. So that's kind of scary
+
+00:05:20.300 --> 00:05:21.580
+if we don't know what's being saved in
+
+00:05:21.580 --> 00:05:24.525
+data. Txt. Now how do we fix all
+
+00:05:24.525 --> 00:05:28.525
+these issues? Well, we have this really cool
+
+00:05:28.525 --> 00:05:32.445
+thing called databases. Yeah. So there's like SQL
+
+00:05:32.445 --> 00:05:36.450
+databases and then also like, MongoDB, which is
+
+00:05:36.450 --> 00:05:37.970
+what we're gonna be using for our web
+
+00:05:37.970 --> 00:05:39.970
+application, which Sophie is gonna talk more about
+
+00:05:39.970 --> 00:05:42.930
+later. But basically, SQL databases are, like, really
+
+00:05:42.930 --> 00:05:44.770
+good for, like, relational data and, like, very
+
+00:05:44.770 --> 00:05:47.570
+structured data. But we're gonna use MongoDB because
+
+00:05:47.570 --> 00:05:49.250
+it's a little more flexible for our purposes.
+
+00:05:51.525 --> 00:05:54.245
+Basically, a database is just a really organized
+
+00:05:54.245 --> 00:05:55.845
+collection of data, and it's a way to
+
+00:05:55.845 --> 00:05:57.605
+store all of the data that you're going
+
+00:05:57.605 --> 00:05:59.445
+to be handling in your application in, like,
+
+00:05:59.445 --> 00:06:03.850
+an organized manner. A database management system, DBMS,
+
+00:06:03.850 --> 00:06:06.010
+is basically a collection of functions that lets
+
+00:06:06.010 --> 00:06:08.090
+you perform operation on your data from your
+
+00:06:08.090 --> 00:06:11.370
+database, like retrieving data, adding data, modifying it,
+
+00:06:11.370 --> 00:06:14.810
+deleting it, etcetera. So our database is basically
+
+00:06:14.810 --> 00:06:17.770
+like our substitution for data.txt, but much better,
+
+00:06:17.805 --> 00:06:19.565
+And we'll talk about the reasons why in
+
+00:06:19.565 --> 00:06:21.885
+a bit. And the database management system is
+
+00:06:21.885 --> 00:06:23.645
+very similar to the read write data from
+
+00:06:23.645 --> 00:06:25.965
+file functions that we just talked about earlier,
+
+00:06:26.045 --> 00:06:28.045
+but also better. And we'll also talk about
+
+00:06:28.045 --> 00:06:29.805
+why. So there's a lot of different types
+
+00:06:29.805 --> 00:06:31.965
+of databases, but we're not really gonna get
+
+00:06:31.560 --> 00:06:33.560
+into it. If you're interested, you can, like,
+
+00:06:33.960 --> 00:06:36.040
+do more reading on your own. But some
+
+00:06:36.040 --> 00:06:38.040
+cool examples, I think, are, like, graph based
+
+00:06:38.040 --> 00:06:40.920
+databases, which show kind of, like, really emphasize
+
+00:06:40.920 --> 00:06:43.240
+the relations between data, and also time series
+
+00:06:43.240 --> 00:06:47.725
+databases, like InfluxDB, which shows time stamped data.
+
+00:06:48.445 --> 00:06:49.885
+So it's really useful if you're trying to
+
+00:06:49.885 --> 00:06:52.765
+track things over time. And then hierarchical databases,
+
+00:06:52.765 --> 00:06:55.885
+like IBM, IMS, which shows everything in kind
+
+00:06:55.885 --> 00:06:58.605
+of like a tree structure. So it'll show
+
+00:06:58.605 --> 00:07:02.790
+relationships using nodes. That's cool. Anyways, now Sophie
+
+00:07:02.790 --> 00:07:04.630
+is gonna talk more about how we can
+
+00:07:04.630 --> 00:07:07.670
+perform different operations with our databases. Yeah. So
+
+00:07:07.670 --> 00:07:10.390
+we just went over how we're gonna replace
+
+00:07:10.390 --> 00:07:13.110
+data dot TXT with a database, and we're
+
+00:07:13.110 --> 00:07:15.190
+gonna replace our read and write functions with
+
+00:07:15.190 --> 00:07:17.495
+a DBMS. So let's talk a bit more
+
+00:07:17.495 --> 00:07:20.135
+about the reads and writes through the DBMS.
+
+00:07:27.575 --> 00:07:31.110
+So yesterday in workshop three, we talked about
+
+00:07:31.110 --> 00:07:32.950
+how we can make a GET request from
+
+00:07:32.950 --> 00:07:35.670
+our front end to the slash API slash
+
+00:07:35.670 --> 00:07:39.510
+comments endpoints to request comments from our server.
+
+00:07:39.750 --> 00:07:42.790
+And by doing that, our back end server
+
+00:07:42.790 --> 00:07:44.470
+is gonna send the comments back to the
+
+00:07:44.470 --> 00:07:47.315
+front end. So what actually happens in the
+
+00:07:47.315 --> 00:07:49.155
+back end if we now have a database
+
+00:07:49.155 --> 00:08:00.670
+and Okay. Is this better? Test, test, test.
+
+00:08:01.390 --> 00:08:05.710
+Okay. So let's talk about what actually happens
+
+00:08:05.710 --> 00:08:09.790
+in the back end server. So after we
+
+00:08:09.790 --> 00:08:12.910
+make the API request to the back end
+
+00:08:12.910 --> 00:08:15.255
+server, our back end server can call a
+
+00:08:15.255 --> 00:08:18.695
+read function through the DBMS and the DBMS
+
+00:08:18.695 --> 00:08:21.735
+is gonna go to our database, gather all
+
+00:08:21.735 --> 00:08:24.535
+the stories from the database, send it back
+
+00:08:24.535 --> 00:08:26.375
+to the server, and the server can now
+
+00:08:26.375 --> 00:08:28.215
+send that back to the front end client.
+
+00:08:31.120 --> 00:08:34.240
+So similarly for writing to the database, if
+
+00:08:34.240 --> 00:08:36.880
+you remember in workshop three, yesterday, we learned
+
+00:08:36.880 --> 00:08:38.480
+how we can make a post request to
+
+00:08:38.480 --> 00:08:40.640
+slash API slash comment in the back end
+
+00:08:40.640 --> 00:08:43.215
+server and what this does is we write
+
+00:08:43.215 --> 00:08:45.375
+a new comment to the back end server,
+
+00:08:45.455 --> 00:08:47.055
+and now the back end server is gonna
+
+00:08:47.055 --> 00:08:49.935
+store it in the data variable and tell
+
+00:08:49.935 --> 00:08:51.935
+our front end that it has been successfully
+
+00:08:51.935 --> 00:08:54.175
+posted. So now let's take a look at
+
+00:08:54.175 --> 00:08:56.095
+what happens in the back end with our
+
+00:08:56.095 --> 00:09:01.480
+DBMS database system now. So similarly, our server
+
+00:09:01.480 --> 00:09:03.320
+is gonna call a write function and through
+
+00:09:03.320 --> 00:09:05.960
+this write function, this DBMS is gonna take
+
+00:09:05.960 --> 00:09:09.000
+the new story and add it to our
+
+00:09:09.000 --> 00:09:12.845
+database. Yeah. So let's take a look at
+
+00:09:12.845 --> 00:09:16.205
+some pseudo code for read and write functions
+
+00:09:16.205 --> 00:09:20.205
+through DBMS. So typically, our DBMS is gonna
+
+00:09:20.205 --> 00:09:21.885
+be a package that we'll want to import
+
+00:09:21.885 --> 00:09:26.420
+into our back end server, And one operation
+
+00:09:26.420 --> 00:09:28.260
+we can perform is a read. We could
+
+00:09:28.260 --> 00:09:30.820
+read all of the stories in the database.
+
+00:09:35.700 --> 00:09:39.285
+Okay. Another read we can do is with
+
+00:09:39.285 --> 00:09:42.405
+the query. We could filter the database for
+
+00:09:42.405 --> 00:09:44.645
+certain stories that we want. So in this
+
+00:09:44.645 --> 00:09:47.205
+pseudocode, we'll be filtering for all the stories
+
+00:09:47.205 --> 00:09:49.285
+with ID four. And that'll just be one
+
+00:09:49.285 --> 00:09:52.750
+story since an ID is a unique identifier
+
+00:09:52.750 --> 00:09:56.510
+for each object in our database. We can
+
+00:09:56.510 --> 00:09:59.150
+also do a write as we're familiar with
+
+00:09:59.230 --> 00:10:03.485
+yesterday. And we could also delete and delete
+
+00:10:03.485 --> 00:10:06.525
+by a query. So this example might delete
+
+00:10:06.525 --> 00:10:08.765
+all the stories posted by a certain username,
+
+00:10:08.765 --> 00:10:12.525
+Joyce. We could also update a story that's
+
+00:10:12.525 --> 00:10:15.325
+already been written to the database. And this
+
+00:10:15.325 --> 00:10:19.640
+would make an update to stories with the
+
+00:10:19.640 --> 00:10:24.440
+author j. But, yeah, this isn't real code,
+
+00:10:24.440 --> 00:10:25.960
+so don't try writing it in your back
+
+00:10:25.960 --> 00:10:29.480
+end server. So let's talk about what types
+
+00:10:29.480 --> 00:10:33.655
+of databases we might use. So the common
+
+00:10:33.655 --> 00:10:35.975
+example of storing data you might be familiar
+
+00:10:35.975 --> 00:10:38.215
+with is through, like, Excel and Google Sheets.
+
+00:10:38.215 --> 00:10:40.295
+And usually, you'll be storing data, like, in
+
+00:10:40.295 --> 00:10:46.290
+a row column format. So a relational database
+
+00:10:47.970 --> 00:10:51.250
+in a relational database, each spreadsheet is called
+
+00:10:51.250 --> 00:10:54.370
+a table, and you'll have rows and columns
+
+00:10:55.490 --> 00:11:00.105
+for categories of data. So for our example,
+
+00:11:00.105 --> 00:11:02.505
+you might want a users table showing all
+
+00:11:02.505 --> 00:11:04.825
+the users using your app and also maybe
+
+00:11:04.825 --> 00:11:07.145
+a stories table showing all the stories being
+
+00:11:07.145 --> 00:11:11.190
+posted for your Catbook app. And you'll have
+
+00:11:11.190 --> 00:11:13.990
+relations between the users and stories. For example,
+
+00:11:13.990 --> 00:11:16.310
+in the stories, you might want a column
+
+00:11:16.790 --> 00:11:19.670
+showing the user IDs. So for each story,
+
+00:11:19.670 --> 00:11:23.335
+which user is posting the story? And you'll
+
+00:11:23.335 --> 00:11:26.135
+want but for a relational database, you'll need
+
+00:11:26.135 --> 00:11:29.015
+to write overhead code for dictating the relations
+
+00:11:29.015 --> 00:11:31.815
+between the users and stories table as shown
+
+00:11:31.815 --> 00:11:35.735
+here. Some example of relational databases is SQL,
+
+00:11:35.735 --> 00:11:39.870
+which stands for Structured Query Language. So we
+
+00:11:39.870 --> 00:11:42.750
+have some problems with this. In the table
+
+00:11:42.750 --> 00:11:45.470
+shown earlier, the data for one user is
+
+00:11:45.470 --> 00:11:48.350
+spread out across multiple tables. And as your
+
+00:11:48.350 --> 00:11:50.510
+web application gets larger and you wanna be
+
+00:11:50.510 --> 00:11:53.235
+storing more data, this can get really complicated
+
+00:11:53.235 --> 00:11:54.995
+because you'll have to write overhead code for
+
+00:11:54.995 --> 00:11:58.915
+any relationship between tables. So this can make
+
+00:11:58.915 --> 00:12:01.475
+our code hard to understand. And as your
+
+00:12:01.475 --> 00:12:03.955
+web app gets larger, it'll make add adding
+
+00:12:03.955 --> 00:12:06.610
+features a lot more difficult. And as I
+
+00:12:06.610 --> 00:12:08.850
+mentioned earlier, you'll need overhead code for dealing
+
+00:12:08.850 --> 00:12:12.530
+with the relations between tables. So as a
+
+00:12:12.530 --> 00:12:14.130
+programmer, we'll have to write all the code
+
+00:12:14.130 --> 00:12:16.610
+to accommodate the structure of our database, and
+
+00:12:16.610 --> 00:12:19.410
+that's bad. We want our database to adjust
+
+00:12:19.410 --> 00:12:21.825
+to the needs as a programmer and have
+
+00:12:21.825 --> 00:12:26.385
+it be flexible for adding new features and
+
+00:12:26.385 --> 00:12:30.625
+data. So instead of thinking about our data
+
+00:12:30.625 --> 00:12:32.850
+in terms of rows and columns, we can
+
+00:12:32.850 --> 00:12:34.770
+think about a piece of data as an
+
+00:12:34.770 --> 00:12:37.410
+object as we're already familiar with. So this
+
+00:12:37.410 --> 00:12:40.930
+is called a document database. Instead of storing
+
+00:12:41.650 --> 00:12:44.290
+your objects in rows and columns, we can
+
+00:12:44.290 --> 00:12:46.885
+think of a object with all the fields
+
+00:12:46.885 --> 00:12:48.965
+as a document. And this is very similar
+
+00:12:48.965 --> 00:12:51.445
+to JSON objects that you've been working with
+
+00:12:51.445 --> 00:12:56.245
+in CAPiC already. And documents don't need to
+
+00:12:56.245 --> 00:12:57.845
+have the same field. So this allows for
+
+00:12:57.845 --> 00:13:00.565
+a lot of flexibility. So for example, this
+
+00:13:00.565 --> 00:13:03.870
+is what a document database might look for
+
+00:13:04.110 --> 00:13:06.430
+look like for the example earlier. But in
+
+00:13:06.430 --> 00:13:13.070
+this example, the object for Annabel's Annabel's user
+
+00:13:13.070 --> 00:13:15.235
+object object doesn't have any content. So you
+
+00:13:15.235 --> 00:13:17.715
+can have very flexible fields. But as we'll
+
+00:13:17.715 --> 00:13:21.395
+see later, you might want a structure for
+
+00:13:21.395 --> 00:13:23.235
+your fields, and we'll talk about how we
+
+00:13:23.235 --> 00:13:26.850
+can do that in the back end. So
+
+00:13:26.850 --> 00:13:29.970
+back to yesterday's workshop three, we were working
+
+00:13:29.970 --> 00:13:32.050
+with comments that looked like this. And as
+
+00:13:32.050 --> 00:13:34.290
+you see, this has the same object layout
+
+00:13:34.290 --> 00:13:37.810
+that a document database will be using. So
+
+00:13:37.890 --> 00:13:39.815
+it's a lot more natural and intuitive to
+
+00:13:39.815 --> 00:13:42.055
+work with as a programmer rather than working
+
+00:13:42.055 --> 00:13:46.135
+in rows and columns. So the specific document
+
+00:13:46.135 --> 00:13:49.255
+database we'll be using is called MongoDB. And
+
+00:13:49.255 --> 00:13:51.495
+this is a document database that stores data
+
+00:13:51.495 --> 00:13:56.060
+in JSON like documents. So you have documents
+
+00:13:56.060 --> 00:13:59.900
+which represent each object in a collection of
+
+00:13:59.900 --> 00:14:02.940
+data. And maybe you'll want very similar looking
+
+00:14:02.940 --> 00:14:05.100
+documents that live in a collection. So you
+
+00:14:05.100 --> 00:14:07.605
+might want all your common objects, which are
+
+00:14:07.605 --> 00:14:09.445
+now called documents, to live in a common
+
+00:14:09.445 --> 00:14:12.245
+collection. And similarly, you might want a stories
+
+00:14:12.245 --> 00:14:15.845
+collection containing all of your stories documents, which
+
+00:14:15.845 --> 00:14:18.725
+are, like, JSON objects. And you want all
+
+00:14:18.725 --> 00:14:20.965
+of your collections to live in a database,
+
+00:14:20.965 --> 00:14:24.150
+which will correspond to all the data you
+
+00:14:24.150 --> 00:14:26.390
+wanna hold for your web application. So we
+
+00:14:26.390 --> 00:14:29.910
+might have a CAPDUC database. So now instead
+
+00:14:29.910 --> 00:14:31.830
+of having a text file that lives on
+
+00:14:31.830 --> 00:14:37.125
+our hard drive, We can use MongoDB and
+
+00:14:37.125 --> 00:14:42.485
+the corresponding database management system. So this optimizes
+
+00:14:42.485 --> 00:14:44.565
+our write speed because a lot of engineers
+
+00:14:44.565 --> 00:14:47.045
+at MongoDB have thought about this and thought
+
+00:14:47.045 --> 00:14:51.380
+about ways to optimize it. We're also optimizing
+
+00:14:51.380 --> 00:14:53.620
+our memory usage because we're no longer storing
+
+00:14:53.620 --> 00:14:55.300
+all of our data in a variable in
+
+00:14:55.300 --> 00:14:59.060
+our server. Query speed and concurrency issues are
+
+00:14:59.060 --> 00:15:02.820
+also solved thanks to engineers at MongoDB. Yeah.
+
+00:15:02.820 --> 00:15:04.900
+Just as a reminder, earlier, we were storing
+
+00:15:04.785 --> 00:15:06.625
+all of this data as a variable in
+
+00:15:06.625 --> 00:15:08.225
+our server, so that takes up a lot
+
+00:15:08.225 --> 00:15:11.745
+of RAM. But there's still one more issue.
+
+00:15:13.185 --> 00:15:15.585
+Our hard drive could still break. We wanna
+
+00:15:15.585 --> 00:15:17.425
+make sure that our web app is foolproof
+
+00:15:17.425 --> 00:15:19.750
+so that any fault we might encounter is
+
+00:15:19.750 --> 00:15:24.070
+tolerated and doesn't interfere with the with how
+
+00:15:24.070 --> 00:15:25.990
+our web app operates and how our users
+
+00:15:25.990 --> 00:15:28.390
+use our web app. So how do you
+
+00:15:28.390 --> 00:15:30.950
+make storage of our database fault tolerant? Does
+
+00:15:30.950 --> 00:15:39.825
+anyone have an idea? Yeah. Yes. The naive
+
+00:15:39.825 --> 00:15:42.625
+solution is redundancy, and that's exactly what MongoDB
+
+00:15:42.625 --> 00:15:45.825
+does. It duplicates data across different hard drives
+
+00:15:45.825 --> 00:15:47.840
+so that in case anyone fails, we can
+
+00:15:47.840 --> 00:15:50.160
+just access a different hard drive that contains
+
+00:15:50.160 --> 00:15:54.160
+all of our data. So MongoDB Atlas does
+
+00:15:54.160 --> 00:15:57.040
+this for us. Instead of storing our database
+
+00:15:57.040 --> 00:15:59.360
+on our computer's hard drive, we can use
+
+00:15:59.360 --> 00:16:01.745
+MongoDB Atlas and store it somewhere over the
+
+00:16:01.745 --> 00:16:04.705
+cloud, and this makes our life easier. We
+
+00:16:04.705 --> 00:16:06.465
+no longer have to deal with running the
+
+00:16:06.465 --> 00:16:09.425
+database on our laptop and dealing with problems
+
+00:16:09.425 --> 00:16:11.905
+in case it breaks. The database is managed
+
+00:16:11.905 --> 00:16:14.410
+for you by MongoDB Atlas, and you can
+
+00:16:14.410 --> 00:16:16.650
+also share your data with your teammates as
+
+00:16:16.650 --> 00:16:20.330
+you're working on your web lab project. And
+
+00:16:20.330 --> 00:16:21.850
+this is a lot more reliable than your
+
+00:16:21.850 --> 00:16:23.930
+laptop's hard drive because it replicates your data.
+
+00:16:25.495 --> 00:16:27.655
+So now your back end server is gonna
+
+00:16:27.655 --> 00:16:31.415
+store your data over the cloud. And what
+
+00:16:31.415 --> 00:16:33.975
+this looks like is it'll be accessing your
+
+00:16:33.975 --> 00:16:37.655
+primary MongoDB instance on one hard drive, and
+
+00:16:37.655 --> 00:16:42.630
+you have replicate sets of this instance. So
+
+00:16:42.630 --> 00:16:46.070
+in case the primary MongoDB dies, the hard
+
+00:16:46.070 --> 00:16:50.150
+disk breaks, you can access a replica set.
+
+00:16:51.825 --> 00:16:53.585
+So let's take a look at the MongoDB
+
+00:16:53.585 --> 00:16:57.185
+user interface. So if you have here's a
+
+00:16:57.185 --> 00:17:00.465
+Catbook database and in it, I have comments,
+
+00:17:00.625 --> 00:17:03.825
+stories, and users collections. Right now, I have
+
+00:17:03.825 --> 00:17:06.540
+the stories collections clicked. And inside the stories
+
+00:17:06.540 --> 00:17:09.820
+collection, I have different documents. These look like
+
+00:17:09.820 --> 00:17:12.940
+JSON objects, and they have different fields. And
+
+00:17:12.940 --> 00:17:16.380
+if you're working on making some data, like
+
+00:17:16.380 --> 00:17:19.775
+Mickey Mouse data for your web application later
+
+00:17:19.775 --> 00:17:21.615
+on for your web lab project, you can
+
+00:17:21.615 --> 00:17:24.735
+just edit fields in directly from the MongoDB
+
+00:17:24.735 --> 00:17:29.375
+interface and add new documents. So let's put
+
+00:17:29.375 --> 00:17:33.420
+everything together. When we make a GET request,
+
+00:17:33.580 --> 00:17:36.860
+the front end code is gonna send that
+
+00:17:36.860 --> 00:17:40.780
+request to the back end. And it's gonna
+
+00:17:40.780 --> 00:17:42.780
+make it to the API stories endpoint if
+
+00:17:42.780 --> 00:17:45.535
+we're trying to read stories data. And now
+
+00:17:45.535 --> 00:17:48.495
+the backend, instead of sending data from the
+
+00:17:48.495 --> 00:17:52.015
+stories file, it's gonna make it's gonna call
+
+00:17:52.015 --> 00:17:54.095
+the DBMS, which is gonna go to the
+
+00:17:54.095 --> 00:17:58.010
+database, find all the stories. The database is
+
+00:17:58.010 --> 00:17:59.690
+gonna send this back to the back end,
+
+00:17:59.690 --> 00:18:00.970
+which can send it back to the front
+
+00:18:00.970 --> 00:18:05.130
+end as we went over yesterday. Similarly, we
+
+00:18:05.130 --> 00:18:07.850
+can now make POST requests to create, update,
+
+00:18:07.850 --> 00:18:10.730
+or delete data. So the front end, maybe
+
+00:18:10.730 --> 00:18:12.730
+your user is making an edit to their
+
+00:18:12.730 --> 00:18:17.515
+story or adding a new story. The front
+
+00:18:17.515 --> 00:18:19.755
+end will make a POST request to the
+
+00:18:19.755 --> 00:18:23.595
+slash apistories endpoint. The back end receives this
+
+00:18:23.595 --> 00:18:26.235
+request. It's gonna call maybe some write function
+
+00:18:26.235 --> 00:18:29.930
+or delete functions via the DBMS. And now
+
+00:18:29.930 --> 00:18:33.690
+it can perform the operation in the database.
+
+00:18:34.250 --> 00:18:37.050
+So in summary, rather than storing data on
+
+00:18:37.050 --> 00:18:39.690
+our server or in a text file, we'll
+
+00:18:39.690 --> 00:18:41.610
+be using a database to store our data.
+
+00:18:42.035 --> 00:18:44.195
+And the specific database we'll be using is
+
+00:18:44.195 --> 00:18:48.195
+a document database called MongoDB. And specifically, instead
+
+00:18:48.195 --> 00:18:51.555
+of running MongoDB on our hard disk to
+
+00:18:51.555 --> 00:18:54.195
+make our database more fault tolerant, we'll run
+
+00:18:54.195 --> 00:18:56.610
+it over the cloud using Atlas because Atlas
+
+00:18:56.610 --> 00:19:01.570
+automatically has redundancy for us in case the
+
+00:19:01.570 --> 00:19:05.810
+primary MongoDB hard disk breaks. So after lunch,
+
+00:19:05.810 --> 00:19:12.725
+we'll talk about how we can oh, okay.
+
+00:19:13.445 --> 00:19:16.165
+So now we'll talk a bit about MongoDB
+
+00:19:16.165 --> 00:19:27.570
+specifics. Feel free to leave some feedback for
+
+00:19:27.570 --> 00:19:40.025
+the intro databases lecture. Yay. Okay. Yeah. Okay.
+
+00:19:40.025 --> 00:19:45.385
+Now we'll talk about MongoDB specifically. What is
+
+00:19:45.385 --> 00:19:48.825
+MongoDB? So as we just mentioned, it's a
+
+00:19:48.825 --> 00:19:52.590
+document database that allows our JSON objects to
+
+00:19:52.590 --> 00:19:54.670
+be stored directly in the database like we're
+
+00:19:54.670 --> 00:19:57.950
+familiar with. So here's an example of a
+
+00:19:57.950 --> 00:20:00.910
+JSON object. There's three fields, a name field
+
+00:20:00.910 --> 00:20:03.390
+for my name, Sophie, my age, which is
+
+00:20:03.390 --> 00:20:05.395
+a number, and my hobbies, which is an
+
+00:20:05.395 --> 00:20:08.435
+array of strings. So these are examples of
+
+00:20:08.435 --> 00:20:10.435
+objects that might be stored in the database.
+
+00:20:10.835 --> 00:20:13.395
+So why are we using MongoDB? So it's
+
+00:20:13.395 --> 00:20:14.915
+efficient when we need to write a lot
+
+00:20:14.915 --> 00:20:19.030
+to the database, a humongous amount. So actually,
+
+00:20:19.030 --> 00:20:23.030
+Mongo is an abbreviation for humongous, and it's
+
+00:20:23.030 --> 00:20:25.430
+also useful for the when our the structure
+
+00:20:25.430 --> 00:20:27.030
+of our data is very prone to changes
+
+00:20:27.030 --> 00:20:30.470
+because just as we talked about, the fields
+
+00:20:31.235 --> 00:20:33.075
+allow us a lot of flexibility because we
+
+00:20:33.075 --> 00:20:34.835
+can add new fields or change the amount
+
+00:20:34.835 --> 00:20:37.235
+of fields in a document. And it's relatively
+
+00:20:37.235 --> 00:20:39.235
+easy to use as a programmer because it's
+
+00:20:39.235 --> 00:20:45.490
+very intuitive in the object oriented nature. So
+
+00:20:45.490 --> 00:20:47.730
+let's talk a bit more about the structure
+
+00:20:47.730 --> 00:20:51.090
+of MongoDB. So in each object, you might
+
+00:20:51.090 --> 00:20:55.090
+have fields to describe the object. So maybe
+
+00:20:55.330 --> 00:20:58.850
+we'll have a field describing the color, length,
+
+00:20:58.850 --> 00:21:01.195
+or how poofy or how angry our object
+
+00:21:01.195 --> 00:21:04.555
+is. I've been calling it a corgi, but
+
+00:21:04.555 --> 00:21:09.275
+apparently this is a Shiva. Yeah. Okay. And
+
+00:21:09.275 --> 00:21:12.715
+we'll have documents which correspond to each object.
+
+00:21:12.715 --> 00:21:16.250
+So inside the document, we have fields and
+
+00:21:16.250 --> 00:21:19.050
+this document might correspond to a corgi. And
+
+00:21:19.050 --> 00:21:20.970
+we might have a collection of corgis which
+
+00:21:20.970 --> 00:21:25.210
+might look like oh. Oh, by the way,
+
+00:21:25.210 --> 00:21:27.370
+I'm trying to make a parallel to a
+
+00:21:27.370 --> 00:21:31.095
+warehouse. Warehouse. So paralleling to a warehouse, a
+
+00:21:31.095 --> 00:21:34.775
+collection might be a crate of corgis, and
+
+00:21:34.775 --> 00:21:37.815
+a database might be a bunch of crates,
+
+00:21:37.815 --> 00:21:40.695
+which are collections. So your database might hold
+
+00:21:40.695 --> 00:21:42.600
+a bunch of different types of collections, collections
+
+00:21:42.600 --> 00:21:46.120
+which each have different objects in them. And
+
+00:21:46.120 --> 00:21:48.280
+a MongoDB instance might be like a warehouse
+
+00:21:48.280 --> 00:21:53.640
+of storage units. So to reiterate in words,
+
+00:21:53.720 --> 00:21:56.280
+a MongoDB instance is a group of databases
+
+00:21:56.280 --> 00:21:58.825
+that live on one server. And remember that
+
+00:21:58.825 --> 00:22:02.985
+we have duplicate replica sets of MongoDB instances.
+
+00:22:03.705 --> 00:22:06.825
+A database lives inside your instance, and it
+
+00:22:06.825 --> 00:22:09.545
+usually corresponds to one web application and holds
+
+00:22:09.545 --> 00:22:12.870
+all the data you want to store for
+
+00:22:12.870 --> 00:22:15.990
+that web application. And a database might have
+
+00:22:15.990 --> 00:22:19.350
+a bunch of different collections, and each collection
+
+00:22:19.430 --> 00:22:21.510
+is a group of very similar pieces of
+
+00:22:21.510 --> 00:22:23.750
+data. So maybe we'll want a collection for
+
+00:22:23.750 --> 00:22:26.745
+our stories, a collection for our users, a
+
+00:22:26.745 --> 00:22:31.225
+collection for our comments, and etcetera. Inside each
+
+00:22:31.225 --> 00:22:34.825
+collection, we're gonna hold many different documents which
+
+00:22:34.825 --> 00:22:37.945
+we want to have similar structures. So maybe
+
+00:22:37.945 --> 00:22:40.390
+in our stories collection, we want all our
+
+00:22:40.390 --> 00:22:42.950
+documents to share similar fields such as name,
+
+00:22:42.950 --> 00:22:51.030
+content, ID, and yeah. So this here is
+
+00:22:51.110 --> 00:22:54.150
+a diagram of the structure of our storage
+
+00:22:54.015 --> 00:22:56.495
+facility. And also, this is a sneak peek
+
+00:22:56.495 --> 00:22:59.215
+of the prizes we'll have at our hackathon
+
+00:23:00.015 --> 00:23:02.655
+or giveaway prizes. So make sure to come.
+
+00:23:03.775 --> 00:23:12.600
+And this corresponds to these MongoDB objects. Yeah.
+
+00:23:12.600 --> 00:23:15.000
+Okay. So if you have any questions, feel
+
+00:23:15.000 --> 00:23:19.960
+free to drop them in weblab. Isquestions. So
+
+00:23:19.960 --> 00:23:23.145
+remember, we talked about why we're using MongoDB
+
+00:23:23.145 --> 00:23:25.145
+and it's because it allows our databases to
+
+00:23:25.145 --> 00:23:28.345
+be very flexible compared to a SQL database.
+
+00:23:29.865 --> 00:23:31.705
+So this means that different documents in the
+
+00:23:31.705 --> 00:23:33.785
+collection can have different fields as we just
+
+00:23:33.785 --> 00:23:36.400
+went over. So here's an example. So say
+
+00:23:36.400 --> 00:23:38.720
+we have a CORGI collections with these three
+
+00:23:38.720 --> 00:23:42.400
+documents, a document for three CORGIs named Sophie,
+
+00:23:42.400 --> 00:23:44.720
+Annabel, and Abby. All three of these documents
+
+00:23:44.720 --> 00:23:47.040
+have the name field, but you notice that
+
+00:23:47.040 --> 00:23:49.760
+they shared the other fields that they are,
+
+00:23:50.145 --> 00:23:52.785
+other fields that they have, they don't share.
+
+00:23:53.345 --> 00:23:55.665
+But if we're working on a web application,
+
+00:23:55.665 --> 00:23:57.425
+we might want all of our documents to
+
+00:23:57.425 --> 00:24:00.785
+share the same fields in a collection. So
+
+00:24:00.785 --> 00:24:02.785
+what if we wanna enforce the same structure
+
+00:24:02.785 --> 00:24:06.450
+for all documents in a collection so that
+
+00:24:06.450 --> 00:24:09.010
+all of these QWERTY documents have all same
+
+00:24:09.010 --> 00:24:12.530
+five fields with the same type for their
+
+00:24:12.690 --> 00:24:16.610
+value, we can use Mongoose. Mongoose is an
+
+00:24:16.610 --> 00:24:19.305
+object data modeling JavaScript library that we'll use
+
+00:24:19.305 --> 00:24:21.305
+in our back end server that will allow
+
+00:24:21.305 --> 00:24:23.945
+us to enforce a structure for the documents
+
+00:24:23.945 --> 00:24:28.585
+in our collection. So fun fact, a Mongoose
+
+00:24:28.585 --> 00:24:33.070
+is also a mammal And the plural is
+
+00:24:33.070 --> 00:24:37.710
+mongooses, not mongeese. Okay. So what is mongoose?
+
+00:24:37.870 --> 00:24:40.350
+Mongoose is a JavaScript library that we'll use
+
+00:24:40.350 --> 00:24:42.350
+in our back end server, and it allows
+
+00:24:42.350 --> 00:24:46.215
+us to interact with MongoDB. It allows us
+
+00:24:46.215 --> 00:24:48.295
+to enforce a structure for our collections from
+
+00:24:48.295 --> 00:24:50.695
+the very beginning. So once we start making
+
+00:24:50.695 --> 00:24:53.895
+post requests and get requests to our database,
+
+00:24:53.895 --> 00:24:57.940
+they'll already have the structure. So what does
+
+00:24:57.940 --> 00:25:00.820
+Mongoose do? It connects to the MongoDB cluster,
+
+00:25:00.820 --> 00:25:02.980
+which we'll cover code for in the workshop.
+
+00:25:03.460 --> 00:25:06.500
+It enforces schemas and models, which dictate the
+
+00:25:06.500 --> 00:25:09.300
+structure of the documents in the collection. It
+
+00:25:09.300 --> 00:25:14.455
+allows us to create documents by having functions
+
+00:25:14.455 --> 00:25:18.775
+that kinda parallel the DBMS, and that allows
+
+00:25:18.775 --> 00:25:21.095
+us to interact with the database using with
+
+00:25:21.095 --> 00:25:24.535
+create functions, read, updates, deletes, and more. And
+
+00:25:24.535 --> 00:25:27.335
+I think we'll end here. Yeah? Okay.
