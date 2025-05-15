@@ -1,0 +1,3365 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 64699ce9-917f-465d-9870-9306cb2411f5
+Created: 2025-05-15T06:07:31.571Z
+Duration: 3328.6792
+Channels: 1
+
+00:00:02.640 --> 00:00:06.640
+Talks about learning technology often center on technology.
+
+00:00:07.280 --> 00:00:09.280
+So instead, I'd like to begin by asking:
+
+00:00:09.840 --> 00:00:13.840
+What do you want learning to be like
+
+00:00:12.665 --> 00:00:15.545
+for yourself? If you could just snap your
+
+00:00:15.545 --> 00:00:19.465
+fingers and have the ideal perfect learning environment,
+
+00:00:19.785 --> 00:00:23.865
+what would that be like? One way to
+
+00:00:23.865 --> 00:00:26.265
+start getting at this question is to ask,
+
+00:00:27.190 --> 00:00:31.910
+what were the most rewarding high growth periods
+
+00:00:31.910 --> 00:00:35.910
+of your life? I've noticed two patterns when
+
+00:00:35.910 --> 00:00:39.605
+I ask people this question. First, people will
+
+00:00:39.605 --> 00:00:41.205
+tell me about a period in their life
+
+00:00:41.205 --> 00:00:44.565
+where they learned a ton, but where learning
+
+00:00:44.565 --> 00:00:48.085
+wasn't the point. Instead, they were totally immersed
+
+00:00:48.085 --> 00:00:49.845
+in some project with a great deal of
+
+00:00:49.845 --> 00:00:52.885
+personal meaning, like a scrappy startup or a
+
+00:00:52.885 --> 00:00:56.260
+research project or an artistic urge or just
+
+00:00:56.260 --> 00:01:00.420
+a fiery curiosity. And a lot of learning
+
+00:01:00.420 --> 00:01:02.820
+happened just along the way. They learned whatever
+
+00:01:02.820 --> 00:01:04.740
+they needed. They dove in. They got their
+
+00:01:04.740 --> 00:01:09.915
+hands dirty. Secondly, in these stories, learning really
+
+00:01:10.075 --> 00:01:15.675
+worked. People emerged feeling transformed, newly capable, filled
+
+00:01:15.675 --> 00:01:17.915
+with insights that remained with them years later.
+
+00:01:19.570 --> 00:01:21.650
+These stories are so vivid in part because
+
+00:01:21.650 --> 00:01:26.210
+learning rarely feels this way. People are often
+
+00:01:26.210 --> 00:01:28.210
+telling me somewhat wistfully about an experience that
+
+00:01:28.210 --> 00:01:31.170
+occurred years or decades earlier. Learning rarely feels
+
+00:01:31.170 --> 00:01:34.265
+so subordinated to an authentic pursuit. Often if
+
+00:01:34.265 --> 00:01:36.345
+we try to just dive in, we dive
+
+00:01:36.345 --> 00:01:38.425
+into a brick wall, or we find ourselves
+
+00:01:38.425 --> 00:01:41.465
+uneasily cargo culting others without any real understanding
+
+00:01:41.465 --> 00:01:44.745
+of what's actually going on. So why can't
+
+00:01:44.745 --> 00:01:48.080
+we just dive in all the time? Instead,
+
+00:01:48.080 --> 00:01:49.600
+it often feels like we have to put
+
+00:01:49.600 --> 00:01:51.680
+our aims on hold while we go do
+
+00:01:51.680 --> 00:01:55.840
+some homework and learn properly. And worse, learning
+
+00:01:55.840 --> 00:01:59.280
+so often just doesn't really work. We take
+
+00:01:59.280 --> 00:02:02.095
+the class, we read the book, And then
+
+00:02:02.095 --> 00:02:03.295
+when we try to put that knowledge into
+
+00:02:03.295 --> 00:02:06.575
+practice, we find that it's fragile. It doesn't
+
+00:02:06.575 --> 00:02:10.335
+transfer well. Worse, we'll often find that we've
+
+00:02:10.335 --> 00:02:11.695
+forgotten half of it by the time we
+
+00:02:11.695 --> 00:02:14.255
+try to use it. Why does learning so
+
+00:02:14.255 --> 00:02:19.080
+often fail to actually work? These questions connect
+
+00:02:19.080 --> 00:02:21.080
+to an age old conflict among educators and
+
+00:02:21.080 --> 00:02:24.280
+learning scientists between implicit learning, also known as
+
+00:02:24.280 --> 00:02:28.040
+discovery learning, inquiry learning, situated learning, and guided
+
+00:02:28.040 --> 00:02:30.760
+learning, which is often represented by cognitive scientists
+
+00:02:30.760 --> 00:02:32.600
+of the kind we find here at UCSD.
+
+00:02:33.695 --> 00:02:35.855
+Advocates of implicit learning methods argue that we
+
+00:02:35.855 --> 00:02:40.175
+should prioritize discovery, motivation, authentic involvement, and being
+
+00:02:40.175 --> 00:02:43.135
+situated in a community of practice. In the
+
+00:02:43.135 --> 00:02:46.175
+opposing camp, cognitive psychologists argue that you really
+
+00:02:46.175 --> 00:02:47.855
+do need to pay attention to the architecture
+
+00:02:47.855 --> 00:02:50.360
+of cognition, to long term memory, to procedural
+
+00:02:50.360 --> 00:02:53.800
+fluency, and to scaffold appropriately for cognitive load.
+
+00:02:54.760 --> 00:02:57.640
+In my view, each of these of view
+
+00:03:01.320 --> 00:03:03.195
+contains a lot of truth. And they also
+
+00:03:03.195 --> 00:03:07.195
+ignore each other to their detriment. Implicit learning
+
+00:03:07.195 --> 00:03:10.875
+aptly recognizes meaning and emotion but ignores the
+
+00:03:10.875 --> 00:03:13.515
+often decisive constraints of cognition what we need
+
+00:03:13.515 --> 00:03:17.290
+to actually make learning work. Guided learning advocates
+
+00:03:17.290 --> 00:03:19.930
+are focused on making learning work, and they
+
+00:03:19.930 --> 00:03:23.450
+sometimes succeed, but usually by sacrificing that purposeful
+
+00:03:23.450 --> 00:03:25.690
+sense of immersion that we love about those
+
+00:03:25.690 --> 00:03:29.835
+rewarding high growth periods. One obvious approach is
+
+00:03:29.835 --> 00:03:32.715
+to try compromise. Project based learning is a
+
+00:03:32.715 --> 00:03:35.435
+good representation of that. By creating a scaffolded
+
+00:03:35.435 --> 00:03:37.595
+series of projects, the suggestion is that we
+
+00:03:37.595 --> 00:03:39.275
+can get some of the benefits of implicit
+
+00:03:39.275 --> 00:03:44.620
+learning authenticity, motivation, transferability while also getting the
+
+00:03:44.620 --> 00:03:47.500
+instructional control and the cognitive awareness that might
+
+00:03:47.500 --> 00:03:52.860
+be typical of traditional courses. The trouble is
+
+00:03:52.860 --> 00:03:54.620
+that usually we get the worst of both
+
+00:03:54.620 --> 00:03:57.915
+worlds. I remember when I was in college,
+
+00:03:57.915 --> 00:03:59.755
+I was interested in three d game programming,
+
+00:03:59.755 --> 00:04:01.275
+so I signed up for a project based
+
+00:04:01.275 --> 00:04:04.635
+course on computer graphics. The trouble was that
+
+00:04:04.635 --> 00:04:07.675
+those projects weren't my projects. So a few
+
+00:04:07.675 --> 00:04:10.260
+weeks in, I ended up implementing array marching
+
+00:04:10.260 --> 00:04:13.060
+for more efficient bump mapping. And unfortunately, I
+
+00:04:13.060 --> 00:04:15.220
+was really just implementing some math that I
+
+00:04:15.220 --> 00:04:16.660
+was handed because this course was trying to
+
+00:04:16.660 --> 00:04:18.500
+take project based learning seriously. So there weren't
+
+00:04:18.500 --> 00:04:21.700
+long textbook readings, weren't long problem sets. But
+
+00:04:21.700 --> 00:04:24.055
+I didn't understand the math. What What I
+
+00:04:24.055 --> 00:04:25.335
+ended up with was a project that I
+
+00:04:25.335 --> 00:04:27.655
+didn't care about implementing something I didn't understand.
+
+00:04:29.175 --> 00:04:31.975
+Instead, I suggest, we should take both views
+
+00:04:31.975 --> 00:04:34.935
+seriously. Find a way to synthesize the two.
+
+00:04:35.495 --> 00:04:38.055
+You really do want to make doing the
+
+00:04:38.055 --> 00:04:41.720
+thing the primary activity. But the realities of
+
+00:04:41.720 --> 00:04:44.520
+cognitive psychology mean that in many cases, you
+
+00:04:44.520 --> 00:04:48.120
+really do need explicit guidance, scaffolding, practice, intention
+
+00:04:48.120 --> 00:04:52.280
+and memory support. Learning by immersion works naturalistically
+
+00:04:52.215 --> 00:04:53.975
+when the material has a low enough complexity
+
+00:04:53.975 --> 00:04:55.895
+relative to your prior knowledge that you can
+
+00:04:55.895 --> 00:04:57.975
+successfully process it on the fly and when
+
+00:04:57.975 --> 00:05:02.695
+natural participation routinely reinforces everything important, giving you
+
+00:05:02.695 --> 00:05:05.970
+fluency. When those conditions aren't satisfied, which is
+
+00:05:05.970 --> 00:05:07.410
+most of the time, you will need some
+
+00:05:07.410 --> 00:05:10.530
+support. You want to just dive in. And
+
+00:05:10.530 --> 00:05:13.650
+you want learning to actually work. To make
+
+00:05:13.650 --> 00:05:15.650
+that happen, we need to infuse your authentic
+
+00:05:15.650 --> 00:05:19.115
+projects with guided support, where necessary, inspired by
+
+00:05:19.115 --> 00:05:21.515
+the best ideas from cognitive science. And if
+
+00:05:21.515 --> 00:05:24.875
+there's something that requires more focused, explicit learning,
+
+00:05:25.115 --> 00:05:27.275
+then you want those experiences to be utterly
+
+00:05:27.275 --> 00:05:32.060
+in service to your actual aims. Now I've
+
+00:05:32.060 --> 00:05:33.980
+been thinking about this synthesis for many years,
+
+00:05:33.980 --> 00:05:37.740
+and honestly, I've mostly been pretty stuck. Recently
+
+00:05:37.740 --> 00:05:39.900
+though, I've been thinking a lot about AI,
+
+00:05:40.540 --> 00:05:43.100
+which I know gets an eye roll. Certainly
+
+00:05:44.245 --> 00:05:47.285
+every mention of AI in education gets an
+
+00:05:47.285 --> 00:05:50.165
+eye roll from me. But I confess, the
+
+00:05:50.165 --> 00:05:53.205
+possibility of AI has helped me finally get
+
+00:05:53.205 --> 00:05:55.765
+what feels like some traction on this particular
+
+00:05:55.765 --> 00:05:58.085
+problem. So I'd like to share some of
+
+00:05:58.085 --> 00:06:01.540
+those early concepts today. We'll explore this possible
+
+00:06:01.540 --> 00:06:05.060
+synthesis through a story in six parts. Meet
+
+00:06:05.060 --> 00:06:08.660
+Sam. Sam studied computer science in university, and
+
+00:06:08.660 --> 00:06:10.420
+they're now working as a software engineer at
+
+00:06:10.420 --> 00:06:14.655
+a big tech company. But Sam is bored
+
+00:06:14.975 --> 00:06:17.935
+at their day job. Not everything is boring,
+
+00:06:17.935 --> 00:06:20.015
+though. Every time Sam sees a tweet announcing
+
+00:06:20.015 --> 00:06:22.415
+new results in brain computer interfaces, they're absolutely
+
+00:06:22.415 --> 00:06:25.375
+captivated. These projects seem so much more interesting
+
+00:06:25.375 --> 00:06:28.050
+than what they're doing by day. Sam pulls
+
+00:06:28.050 --> 00:06:30.370
+up the papers looking for some way to
+
+00:06:30.370 --> 00:06:32.690
+contribute, but they hit a brick wall with
+
+00:06:32.690 --> 00:06:36.690
+so many unfamiliar topics all at once. What
+
+00:06:36.690 --> 00:06:38.850
+if Sam could ask for help finding some
+
+00:06:38.850 --> 00:06:43.375
+meaningful way to start participating? With Sam's permission,
+
+00:06:43.615 --> 00:06:45.695
+our AI, and let's assume it's a local
+
+00:06:45.695 --> 00:06:47.775
+AI, can build up a huge amount of
+
+00:06:47.775 --> 00:06:50.975
+context about their background. From old documents on
+
+00:06:50.975 --> 00:06:53.215
+Sam's hard drive, our AI knows all about
+
+00:06:53.215 --> 00:06:55.600
+their university coursework. It can see their current
+
+00:06:55.600 --> 00:06:58.160
+skills through work projects. It knows something about
+
+00:06:58.160 --> 00:07:02.000
+Sam's interests through their browsing history. So it
+
+00:07:02.000 --> 00:07:04.160
+suggests a few ideas, and Sam is excited
+
+00:07:04.160 --> 00:07:06.240
+about the idea of reproducing the paper's data
+
+00:07:06.240 --> 00:07:08.400
+analysis. That seems to play to their strengths.
+
+00:07:09.765 --> 00:07:12.565
+They notice that the authors use a custom
+
+00:07:12.565 --> 00:07:14.805
+Python package to do their analysis, but that
+
+00:07:14.805 --> 00:07:17.525
+code was never published. And that seems intriguing.
+
+00:07:17.525 --> 00:07:20.405
+Sam has built open source tools before. Maybe
+
+00:07:20.405 --> 00:07:22.405
+they could contribute here by building an open
+
+00:07:22.405 --> 00:07:25.950
+source version of this signal processing pipeline. So
+
+00:07:25.950 --> 00:07:29.390
+Sam dives in. They've found an open access
+
+00:07:29.390 --> 00:07:32.270
+dataset, and they've taken the first steps to
+
+00:07:32.270 --> 00:07:35.950
+start working with it. Tools like Copilot help
+
+00:07:35.950 --> 00:07:38.030
+Sam get started. But to follow some of
+
+00:07:38.030 --> 00:07:40.185
+these signal processing steps, what Sam really needs
+
+00:07:40.185 --> 00:07:43.945
+here is something like Copilot, but with awareness
+
+00:07:43.945 --> 00:07:46.025
+of the paper in addition to the code
+
+00:07:46.185 --> 00:07:48.345
+and with context about what Sam's actually trying
+
+00:07:48.345 --> 00:07:52.985
+to do. This AI system isn't trapped in
+
+00:07:52.985 --> 00:07:55.110
+its own chat box or in the sidebar
+
+00:07:55.110 --> 00:07:57.590
+of one application. It can see what's going
+
+00:07:57.590 --> 00:08:00.310
+on across multiple applications, and it can propose
+
+00:08:00.310 --> 00:08:04.790
+actions across multiple applications. Sam can click that
+
+00:08:04.790 --> 00:08:07.430
+button to view a change set with the
+
+00:08:07.430 --> 00:08:10.945
+potential implementation. Here that is. And then they
+
+00:08:10.945 --> 00:08:13.985
+can continue the conversation, smoothly switching into the
+
+00:08:13.985 --> 00:08:17.105
+context of the code editor. Like, what is
+
+00:08:17.105 --> 00:08:21.745
+this axis equals one parameter? The explanation depends
+
+00:08:21.745 --> 00:08:24.670
+on context from the code editor, from the
+
+00:08:24.670 --> 00:08:27.470
+paper being implemented, and also the documentation that
+
+00:08:27.470 --> 00:08:29.470
+came with the data set Sam's working with.
+
+00:08:30.190 --> 00:08:33.630
+The AI underlines assumptions made based on specific
+
+00:08:33.630 --> 00:08:37.495
+information and turns those things into links. So
+
+00:08:37.495 --> 00:08:39.815
+Sam can click on that in this dataset
+
+00:08:39.815 --> 00:08:42.775
+link, and our AI opens the ReadMe to
+
+00:08:42.775 --> 00:08:46.135
+the relevant line. All this is to support
+
+00:08:46.135 --> 00:08:48.775
+our central aim, which is that Sam can
+
+00:08:48.775 --> 00:08:52.230
+immerse themselves as much as possible in what
+
+00:08:52.230 --> 00:08:55.110
+they're actually trying to do, but get the
+
+00:08:55.110 --> 00:08:57.830
+support they need to understand what they're doing.
+
+00:08:59.030 --> 00:09:00.790
+And that support doesn't have to just mean
+
+00:09:00.790 --> 00:09:05.365
+text. Sam next needs to implement a downsampling
+
+00:09:05.365 --> 00:09:09.605
+stage. And this time, guidance includes synthesized dynamic
+
+00:09:09.605 --> 00:09:12.645
+media so that Sam can understand what downsampling
+
+00:09:12.645 --> 00:09:16.520
+does through scaffolded immersion. Doesn't need to read
+
+00:09:16.520 --> 00:09:18.920
+an abstract explanation and try to imagine what
+
+00:09:18.920 --> 00:09:21.320
+that would do to different signals. Instead, as
+
+00:09:21.320 --> 00:09:23.560
+they try different sampling rates, real time feedback
+
+00:09:23.560 --> 00:09:25.720
+can help them internalize the effect on different
+
+00:09:25.720 --> 00:09:30.165
+signals. By playing with the dynamic media, Sam
+
+00:09:30.165 --> 00:09:31.685
+notices that some of the peaks are lost
+
+00:09:31.685 --> 00:09:36.245
+when the signal is downsampled. These dynamic media
+
+00:09:36.245 --> 00:09:39.285
+aren't trapped in the chat box. They're using
+
+00:09:39.285 --> 00:09:42.005
+the same input data and libraries that Sam
+
+00:09:42.005 --> 00:09:44.240
+is using in their notebook. So at any
+
+00:09:44.240 --> 00:09:46.640
+time, Sam can just view source to tinker
+
+00:09:46.640 --> 00:09:48.560
+with this figure or to use some of
+
+00:09:48.560 --> 00:09:55.360
+its code in their own notebook. Now Sam
+
+00:09:55.360 --> 00:10:00.045
+presses on. But as they dig into bandpass
+
+00:10:00.045 --> 00:10:03.165
+filters, the high level explanations they can get
+
+00:10:03.165 --> 00:10:06.125
+from these short chat interactions really just don't
+
+00:10:06.125 --> 00:10:09.805
+feel like enough. What is a frequency domain?
+
+00:10:10.045 --> 00:10:12.910
+What is a Nyquist rate? Sam can copy
+
+00:10:12.910 --> 00:10:15.150
+and paste some AI generated code all day,
+
+00:10:15.230 --> 00:10:17.230
+but they don't understand what's going on at
+
+00:10:17.230 --> 00:10:20.590
+all. A chat interface is just not a
+
+00:10:20.590 --> 00:10:24.670
+great medium for long form conceptual explanation. It's
+
+00:10:24.670 --> 00:10:29.045
+time here for something deeper. Now, our AI
+
+00:10:29.045 --> 00:10:31.765
+knows Sam's background and aims here, so it
+
+00:10:31.765 --> 00:10:34.645
+suggests an appropriate undergraduate text with a practical
+
+00:10:34.645 --> 00:10:38.805
+focus. And more importantly, the AI reassures Sam
+
+00:10:38.930 --> 00:10:41.490
+that they don't necessarily need to read this
+
+00:10:41.490 --> 00:10:45.410
+entire thousand page book right now. It focuses
+
+00:10:45.410 --> 00:10:48.130
+on Sam's goal here and suggests a range
+
+00:10:48.130 --> 00:10:50.930
+of accessible paths that Sam can choose according
+
+00:10:50.930 --> 00:10:52.690
+to how deeply they would like to understand
+
+00:10:52.690 --> 00:10:56.135
+this material. The AI has made a personal
+
+00:10:56.135 --> 00:10:58.775
+map in the book's table of contents so
+
+00:10:58.775 --> 00:11:00.855
+that if Sam, for instance, just wants to
+
+00:11:00.855 --> 00:11:03.895
+understand what these filters are doing and why,
+
+00:11:04.055 --> 00:11:06.535
+there's a 25 page path for that. But
+
+00:11:06.535 --> 00:11:08.375
+if they want to know the mathematical background
+
+00:11:08.375 --> 00:11:11.040
+how these filters work, there's a deeper path.
+
+00:11:11.040 --> 00:11:12.480
+And if they want to actually be able
+
+00:11:12.480 --> 00:11:15.440
+to implement them themselves, there's an even deeper
+
+00:11:15.440 --> 00:11:19.600
+path. You can choose a journey here. When
+
+00:11:19.600 --> 00:11:21.760
+Sam digs into the book, you'll find notes
+
+00:11:21.760 --> 00:11:23.360
+from the AI at the start of each
+
+00:11:23.360 --> 00:11:26.015
+section and scattered throughout, which ground the material
+
+00:11:26.015 --> 00:11:30.255
+in Sam's context, Sam's project, Sam's purpose. This
+
+00:11:30.255 --> 00:11:31.695
+section will help you understand how to think
+
+00:11:31.695 --> 00:11:34.255
+about signals in terms of frequency spectra. That's
+
+00:11:34.255 --> 00:11:38.360
+what low pass filters manipulate. Sam is spending
+
+00:11:38.360 --> 00:11:39.960
+some time away from their project in a
+
+00:11:39.960 --> 00:11:43.400
+more traditionally instructional setting. But that doesn't mean
+
+00:11:43.400 --> 00:11:45.640
+the experience has to lose its connection to
+
+00:11:45.640 --> 00:11:50.600
+their authentic purpose. Incidentally, I've heard some technologists
+
+00:11:50.600 --> 00:11:52.280
+suggest that we should just use AI to
+
+00:11:52.280 --> 00:11:55.505
+synthesize the whole book. We'll get per person
+
+00:11:55.505 --> 00:11:58.545
+bespoke textbooks. But I think that there's actually
+
+00:11:58.545 --> 00:12:00.625
+a huge amount of value in having shared
+
+00:12:00.625 --> 00:12:03.265
+canonical artifacts. In any given field, there are
+
+00:12:03.265 --> 00:12:05.185
+key texts that we can all point to,
+
+00:12:05.265 --> 00:12:06.705
+and they form a common ground for the
+
+00:12:06.705 --> 00:12:09.460
+culture. I think we can preserve that by
+
+00:12:09.460 --> 00:12:11.860
+layering personalized context on top as a lens
+
+00:12:11.860 --> 00:12:16.260
+like this. In my ideal future, of course,
+
+00:12:16.260 --> 00:12:19.540
+our canonical shared artifacts are dynamic media, not
+
+00:12:19.540 --> 00:12:23.035
+digital representations of dead trees. But until all
+
+00:12:23.035 --> 00:12:25.515
+of our canonical works are rewritten as a
+
+00:12:25.515 --> 00:12:27.835
+transitional measure, we can at least wave our
+
+00:12:27.835 --> 00:12:30.155
+hands and imagine that our AI could synthesize
+
+00:12:30.155 --> 00:12:32.795
+dynamic media versions of figures like this one.
+
+00:12:33.755 --> 00:12:35.780
+Now, as Sam reads through the book, they
+
+00:12:35.780 --> 00:12:37.300
+can continue to engage with the text by
+
+00:12:37.300 --> 00:12:40.260
+asking questions as before, and our AI's responses
+
+00:12:40.260 --> 00:12:42.660
+will continue to be grounded in their project.
+
+00:12:43.940 --> 00:12:46.420
+As Sam highlights the text or makes comments
+
+00:12:46.420 --> 00:12:48.980
+about details which seem particularly important or surprising,
+
+00:12:49.525 --> 00:12:52.005
+those annotations won't end up trapped inside the
+
+00:12:52.005 --> 00:12:54.965
+PDF. Instead, they will feed into future discussions
+
+00:12:54.965 --> 00:12:58.885
+and practice, as we'll see later. In addition
+
+00:12:58.885 --> 00:13:01.525
+to Sam asking questions of the AI, the
+
+00:13:01.525 --> 00:13:03.845
+AI can insert questions for Sam to consider,
+
+00:13:04.580 --> 00:13:07.460
+again grounded in their project, to promote deeper
+
+00:13:07.460 --> 00:13:11.140
+processing of the material. And just as our
+
+00:13:11.140 --> 00:13:13.460
+AI guided Sam to the right sections of
+
+00:13:13.460 --> 00:13:16.020
+this thousand page book, it can point out
+
+00:13:16.020 --> 00:13:18.740
+which exercises might be most valuable, considering both
+
+00:13:18.740 --> 00:13:23.355
+Sam's background and their aims. Better, it can
+
+00:13:23.355 --> 00:13:26.635
+connect the exercises to Sam's aims so that
+
+00:13:26.635 --> 00:13:30.555
+aspirationally, doing those problems feels continuous with Sam's
+
+00:13:30.555 --> 00:13:34.395
+authentic practice. Even if the exercises do still
+
+00:13:34.395 --> 00:13:37.970
+feel somewhat decontextualized, Sam can at least feel
+
+00:13:37.970 --> 00:13:39.730
+more confident that the work is going to
+
+00:13:39.730 --> 00:13:41.810
+help them do what they want to do.
+
+00:13:43.410 --> 00:13:45.890
+So Sam ends the day with some rewarding
+
+00:13:45.890 --> 00:13:48.690
+progress on their project and a newfound understanding
+
+00:13:48.690 --> 00:13:51.695
+of quite a few topics. But this isn't
+
+00:13:51.695 --> 00:13:55.855
+yet robust knowledge. SAM has very little fluency.
+
+00:13:55.855 --> 00:13:58.015
+If they try to use this material seriously,
+
+00:13:58.015 --> 00:14:00.175
+they'll probably feel like they're standing on shaky
+
+00:14:00.175 --> 00:14:04.820
+ground. And more prosaically, they will probably forget
+
+00:14:04.820 --> 00:14:08.500
+much of what they just learned. So I'd
+
+00:14:08.500 --> 00:14:09.700
+like to focus on memory for a bit
+
+00:14:09.700 --> 00:14:13.700
+here. It's worth asking, why do we sometimes
+
+00:14:13.700 --> 00:14:17.795
+remember conceptual material and sometimes not? Often we
+
+00:14:17.795 --> 00:14:20.275
+take a class or read a book or
+
+00:14:20.275 --> 00:14:22.755
+even just look something up and find that
+
+00:14:22.755 --> 00:14:25.555
+a short time later, have retained almost nothing.
+
+00:14:26.435 --> 00:14:28.835
+But sometimes things seem to stick. Why is
+
+00:14:28.835 --> 00:14:33.190
+that? There are some easier cases. If you're
+
+00:14:33.190 --> 00:14:34.630
+learning something new in a domain that you
+
+00:14:34.630 --> 00:14:36.950
+know well, each new fact connects to lots
+
+00:14:36.950 --> 00:14:39.670
+of prior knowledge, and that creates more cues
+
+00:14:39.670 --> 00:14:43.705
+for recall and more opportunities for reinforcement. Likewise,
+
+00:14:43.705 --> 00:14:45.385
+if you're in some setting where you need
+
+00:14:45.385 --> 00:14:47.705
+that knowledge every single day, you will find
+
+00:14:47.705 --> 00:14:51.145
+that your memory becomes reliable pretty quickly. Conceptual
+
+00:14:51.145 --> 00:14:53.865
+material like what Sam just learned doesn't usually
+
+00:14:53.865 --> 00:14:57.640
+get reinforced every day like that. But sometimes
+
+00:14:57.640 --> 00:15:00.520
+the world conspires to give those memories the
+
+00:15:00.520 --> 00:15:04.360
+reinforcement it needs. Sometimes you read about a
+
+00:15:04.360 --> 00:15:07.240
+topic, and then later in that evening, that
+
+00:15:07.240 --> 00:15:09.480
+topic comes up in conversation with the collaborator.
+
+00:15:10.775 --> 00:15:12.695
+You have to retrieve what you learned, and
+
+00:15:12.695 --> 00:15:16.055
+that retrieval reinforces the memory. Then, maybe two
+
+00:15:16.055 --> 00:15:18.375
+days later, it comes up again. You need
+
+00:15:18.375 --> 00:15:21.335
+to recall that knowledge for a project. Each
+
+00:15:21.335 --> 00:15:23.415
+time you reinforce the memory this way, you
+
+00:15:23.415 --> 00:15:26.210
+forget it more slowly. Now perhaps a week
+
+00:15:26.210 --> 00:15:27.890
+can go by and you're still likely to
+
+00:15:27.890 --> 00:15:30.610
+remember, then maybe a few weeks, then a
+
+00:15:30.610 --> 00:15:34.210
+few months, and so on. With a surprisingly
+
+00:15:34.210 --> 00:15:36.770
+small number of retrievals, if they're placed close
+
+00:15:36.770 --> 00:15:39.585
+enough to avoid forgetting, you can retain that
+
+00:15:39.585 --> 00:15:43.585
+knowledge for months or years. By contrast, sometimes
+
+00:15:43.585 --> 00:15:45.585
+when you learn something, it doesn't come up
+
+00:15:45.585 --> 00:15:48.225
+again until, say, the next week. Then you
+
+00:15:48.225 --> 00:15:50.065
+try to retrieve the knowledge, but maybe it's
+
+00:15:50.065 --> 00:15:52.305
+already been forgotten. So you have to look
+
+00:15:52.305 --> 00:15:54.790
+it up. Looking it up doesn't reinforce your
+
+00:15:54.790 --> 00:15:57.590
+memory very much. And then if it doesn't
+
+00:15:57.590 --> 00:15:59.510
+come up again for a while longer, you
+
+00:15:59.510 --> 00:16:01.590
+may still not remember the next time. So
+
+00:16:01.590 --> 00:16:03.510
+you have to look it up again. And
+
+00:16:03.510 --> 00:16:06.950
+so on. The key insight here is that
+
+00:16:06.950 --> 00:16:10.735
+it's possible to arrange the timeline for yourself.
+
+00:16:11.535 --> 00:16:15.215
+And of course, courses sometimes do when each
+
+00:16:15.215 --> 00:16:17.775
+problem set consistently interleaves knowledge from the prior
+
+00:16:17.775 --> 00:16:22.335
+problem sets. But immersive learning and for that
+
+00:16:22.335 --> 00:16:26.080
+matter, most learning usually doesn't arrange this properly,
+
+00:16:26.080 --> 00:16:29.680
+so you usually forget a lot. What if
+
+00:16:29.680 --> 00:16:32.160
+this kind of reinforcement were woven into the
+
+00:16:32.160 --> 00:16:37.325
+grain of the learning region? Collaborator Michael Nielsen
+
+00:16:37.325 --> 00:16:40.045
+and I created a quantum computing primer, Quantum
+
+00:16:40.045 --> 00:16:44.205
+Country, to explore this idea. It's available for
+
+00:16:44.205 --> 00:16:47.005
+free online. If you head to quantum.country, you'll
+
+00:16:47.005 --> 00:16:48.285
+see what looks at first like a normal
+
+00:16:48.285 --> 00:16:55.370
+book. And after a few minutes of reading,
+
+00:16:55.610 --> 00:16:58.250
+the text is interrupted with a small set
+
+00:16:58.250 --> 00:17:02.250
+of review questions. They're designed to take just
+
+00:17:02.250 --> 00:17:04.325
+a few seconds each. Think the answer to
+
+00:17:04.325 --> 00:17:06.725
+yourself. Then mark whether or not you were
+
+00:17:06.725 --> 00:17:10.085
+able to answer correctly. And so far, these
+
+00:17:10.085 --> 00:17:13.525
+look like simple flashcards. But as we've discussed,
+
+00:17:13.605 --> 00:17:15.605
+even if you can answer these questions now,
+
+00:17:15.605 --> 00:17:17.205
+that doesn't mean you'll be able to in
+
+00:17:17.205 --> 00:17:19.090
+a few weeks or even in a few
+
+00:17:19.090 --> 00:17:22.690
+days. So notice these markings at the bottom
+
+00:17:22.690 --> 00:17:26.450
+of each question. These represent intervals. So you
+
+00:17:26.450 --> 00:17:28.610
+practice the questions while you're reading the text.
+
+00:17:28.930 --> 00:17:30.770
+Then one week later, you'll get an email
+
+00:17:30.770 --> 00:17:32.850
+that says, Hey, you have probably started to
+
+00:17:32.850 --> 00:17:35.435
+forget some of what you've learned. Do you
+
+00:17:35.435 --> 00:17:37.195
+want to take five minutes to quickly review
+
+00:17:37.195 --> 00:17:40.635
+that material again? Each time you answer successfully,
+
+00:17:40.635 --> 00:17:43.035
+the interval increases to a few weeks and
+
+00:17:43.035 --> 00:17:45.355
+a few months and so on. If you
+
+00:17:45.355 --> 00:17:48.075
+begin to forget, then the intervals tighten up
+
+00:17:48.280 --> 00:17:51.000
+to provide more reinforcement. Now you may have
+
+00:17:51.000 --> 00:17:53.480
+seen systems like this before. Language learners and
+
+00:17:53.480 --> 00:17:55.800
+medical students in particular often use tools called
+
+00:17:55.800 --> 00:17:59.080
+spaced repetition memory systems to remember vocabulary and
+
+00:17:59.080 --> 00:18:02.725
+basic facts. But the same cognitive mechanisms should
+
+00:18:02.725 --> 00:18:05.845
+work for more complex conceptual knowledge as well.
+
+00:18:06.965 --> 00:18:10.245
+There are 112 of these questions scattered throughout
+
+00:18:10.245 --> 00:18:12.245
+the first chapter of the book on that
+
+00:18:12.245 --> 00:18:15.230
+basis. Quantum country is a kind of new
+
+00:18:15.230 --> 00:18:18.830
+medium, a mnemonic medium, integrating a spaced repetition
+
+00:18:18.830 --> 00:18:22.590
+memory system with an explanatory text aspirationally to
+
+00:18:22.590 --> 00:18:24.910
+make it easier for people to absorb complex
+
+00:18:24.910 --> 00:18:29.135
+material reliably. We now have millions of practice
+
+00:18:29.135 --> 00:18:30.895
+data points, so we can start to see
+
+00:18:30.895 --> 00:18:34.335
+how well it's working. This plot shows the
+
+00:18:34.335 --> 00:18:36.575
+amount of time spent practicing on the x
+
+00:18:36.575 --> 00:18:41.800
+axis versus the reader's demonstrated retention that is,
+
+00:18:41.800 --> 00:18:43.080
+how long a reader was able to go
+
+00:18:43.080 --> 00:18:45.800
+without practicing and still answer at least 90%
+
+00:18:45.800 --> 00:18:49.560
+of questions correctly. These five dots represent the
+
+00:18:49.560 --> 00:18:53.160
+median user's first five repetitions for the first
+
+00:18:53.160 --> 00:18:56.625
+chapter. Notice that the y axis is logarithmic,
+
+00:18:56.625 --> 00:18:59.025
+so this straight line plot we're seeing here
+
+00:18:59.025 --> 00:19:02.225
+represents a very nice exponential growth. Each extra
+
+00:19:02.225 --> 00:19:05.665
+repetition, which is a constant extra time input,
+
+00:19:05.665 --> 00:19:10.020
+yields increasing output, I. E. Retention. And so
+
+00:19:10.180 --> 00:19:12.180
+in exchange for about an hour and a
+
+00:19:12.180 --> 00:19:14.820
+half of total practice, the median reader was
+
+00:19:14.820 --> 00:19:17.780
+able to correctly answer over 100 detailed questions
+
+00:19:17.780 --> 00:19:20.100
+about the first chapter after more than two
+
+00:19:20.100 --> 00:19:23.975
+months without any practice. Now, the first chapter
+
+00:19:23.975 --> 00:19:26.535
+takes most readers about four hours to read
+
+00:19:26.535 --> 00:19:29.415
+the first time. So this plot implies that
+
+00:19:29.415 --> 00:19:32.135
+an extra overhead of less than 50% in
+
+00:19:32.135 --> 00:19:36.215
+time commitment can yield months or years of
+
+00:19:36.215 --> 00:19:40.080
+detailed retention. It's also interesting to explore the
+
+00:19:40.080 --> 00:19:43.200
+counterfactual: how much would people have forgotten if
+
+00:19:43.200 --> 00:19:46.240
+they didn't have this extra reinforcement? So as
+
+00:19:46.240 --> 00:19:48.880
+an experiment, we removed nine questions from the
+
+00:19:48.880 --> 00:19:51.425
+first chapter for some readers and then covertly
+
+00:19:51.425 --> 00:19:54.065
+reinserted the questions one month later into their
+
+00:19:54.065 --> 00:19:58.305
+practice sessions. This graph shows what happened. These
+
+00:19:58.305 --> 00:20:01.425
+nine points represent those nine questions. The y
+
+00:20:01.425 --> 00:20:03.505
+axis shows the percentage of readers who are
+
+00:20:03.505 --> 00:20:05.580
+able to answer that question correctly after one
+
+00:20:05.580 --> 00:20:08.140
+month with no support at all. You can
+
+00:20:08.140 --> 00:20:10.460
+see that some questions are harder than others.
+
+00:20:10.540 --> 00:20:11.980
+All the way over here on the left,
+
+00:20:11.980 --> 00:20:13.900
+one month later, the majority of readers missed
+
+00:20:13.900 --> 00:20:16.940
+the hardest three questions. And about thirty percent
+
+00:20:16.940 --> 00:20:19.420
+missed the middle three, about fifteen percent missed
+
+00:20:19.420 --> 00:20:23.235
+the easiest three. We can compare these to
+
+00:20:23.235 --> 00:20:25.555
+another group of users who got practice while
+
+00:20:25.555 --> 00:20:27.235
+reading the essay, like we saw in the
+
+00:20:27.235 --> 00:20:30.115
+video a moment ago. And for any questions
+
+00:20:30.115 --> 00:20:31.475
+they missed, they got a bonus round of
+
+00:20:31.475 --> 00:20:34.355
+practice the next day. Then these questions disappeared
+
+00:20:34.355 --> 00:20:36.870
+for a month, at which point we tested.
+
+00:20:37.590 --> 00:20:40.550
+These readers performed noticeably better, though a big
+
+00:20:40.550 --> 00:20:42.550
+chunk of them are still missing several of
+
+00:20:42.550 --> 00:20:46.710
+these questions. Now, here's one last group, like
+
+00:20:46.710 --> 00:20:49.365
+the previous one, except they got just one
+
+00:20:49.365 --> 00:20:51.365
+extra round of practice a week after reading
+
+00:20:51.365 --> 00:20:53.445
+the book. Then we tested them again at
+
+00:20:53.445 --> 00:20:54.645
+the one month mark, and that's what you're
+
+00:20:54.645 --> 00:20:58.085
+seeing here. Each question takes six seconds on
+
+00:20:58.085 --> 00:21:00.325
+average to answer. So this is less than
+
+00:21:00.325 --> 00:21:02.565
+a minute of extra practice in total for
+
+00:21:02.565 --> 00:21:04.960
+these nine questions. But now, for all of
+
+00:21:04.960 --> 00:21:06.800
+these questions, at least 90% of readers were
+
+00:21:06.800 --> 00:21:10.640
+able to answer correctly. Of course, some readers
+
+00:21:10.640 --> 00:21:14.240
+have a much easier time than others. So
+
+00:21:14.240 --> 00:21:16.560
+the left plot here focuses on the bottom
+
+00:21:16.560 --> 00:21:19.895
+quartile of users. That is, the readers who
+
+00:21:19.895 --> 00:21:21.735
+missed the most questions while they were first
+
+00:21:21.735 --> 00:21:24.055
+reading the essay. Notice that I've had to
+
+00:21:24.055 --> 00:21:26.695
+lengthen the y axis downwards here because we
+
+00:21:26.695 --> 00:21:28.935
+can see that without any practice at all,
+
+00:21:29.415 --> 00:21:31.255
+most of these people in the bottom quartile
+
+00:21:31.255 --> 00:21:33.735
+forgot two thirds of these held out questions.
+
+00:21:35.490 --> 00:21:39.170
+If they only had in essay practice, roughly
+
+00:21:39.170 --> 00:21:41.570
+half of them were left for getting roughly
+
+00:21:41.570 --> 00:21:45.490
+half of the questions. And here, with just
+
+00:21:45.490 --> 00:21:47.890
+one extra round of practice, that extra slightly
+
+00:21:47.890 --> 00:21:50.155
+less than a minute of extra practice, even
+
+00:21:50.155 --> 00:21:52.875
+this bottom quartile of readers performs quite well,
+
+00:21:52.875 --> 00:21:59.035
+almost as well as the overall population. So
+
+00:21:59.035 --> 00:22:02.155
+this is the power of practice efficient practice,
+
+00:22:02.155 --> 00:22:05.570
+at least. And this mechanism is useful for
+
+00:22:05.570 --> 00:22:09.010
+more than just quantum computing. In my personal
+
+00:22:09.010 --> 00:22:11.570
+practice, I have accumulated thousands and thousands of
+
+00:22:11.570 --> 00:22:15.090
+questions. I write questions about scientific papers, about
+
+00:22:15.090 --> 00:22:18.835
+conversations, about lectures, about memorable meals. I will
+
+00:22:18.835 --> 00:22:20.675
+definitely be writing a bunch about meetings I've
+
+00:22:20.675 --> 00:22:23.395
+had here today. All of this makes my
+
+00:22:23.395 --> 00:22:26.595
+daily life more rewarding because I know that
+
+00:22:26.595 --> 00:22:28.915
+if I invest my intention in something, I
+
+00:22:28.915 --> 00:22:32.920
+will internalize it indefinitely. Central to this is
+
+00:22:32.920 --> 00:22:35.880
+the idea of a daily ritual, a vessel
+
+00:22:35.880 --> 00:22:40.360
+for practice. Like meditation or exercise, I spend
+
+00:22:40.360 --> 00:22:42.440
+about ten minutes a day using this memory
+
+00:22:42.440 --> 00:22:46.135
+system. And because these exponential schedules are very
+
+00:22:46.135 --> 00:22:49.095
+efficient, those ten minutes are enough to maintain
+
+00:22:49.095 --> 00:22:51.735
+my memory for thousands of these questions and
+
+00:22:51.735 --> 00:22:53.415
+to allow me to add about 40 new
+
+00:22:53.415 --> 00:22:57.850
+questions every day. But there are some problems.
+
+00:22:58.490 --> 00:22:59.450
+So I want to mention a few of
+
+00:22:59.450 --> 00:23:04.010
+these problems. One is pattern matching. Once a
+
+00:23:04.010 --> 00:23:06.490
+question comes up a few times, I may
+
+00:23:06.490 --> 00:23:09.050
+recognize the text of the question without really
+
+00:23:09.050 --> 00:23:12.245
+thinking about its meaning. This creates the unpleasant
+
+00:23:12.245 --> 00:23:15.205
+feeling of parroting. But more importantly, I suspect
+
+00:23:15.205 --> 00:23:17.925
+it often leaves my memory brittle. I'll remember
+
+00:23:17.925 --> 00:23:20.805
+the answer, but only when queued exactly as
+
+00:23:20.805 --> 00:23:23.445
+I've practiced it. I wish the questions had
+
+00:23:23.445 --> 00:23:28.050
+more variability. Likewise, the questions are necessarily somewhat
+
+00:23:28.050 --> 00:23:31.570
+abstract. When I face a real problem in
+
+00:23:31.570 --> 00:23:34.690
+this domain, I won't always recognize what knowledge
+
+00:23:34.690 --> 00:23:36.530
+I should use or how to adapt it
+
+00:23:36.530 --> 00:23:39.515
+to that medium. A cognitive scientist would say
+
+00:23:39.515 --> 00:23:43.275
+maybe that I need to acquire schemas. Now,
+
+00:23:43.275 --> 00:23:45.915
+unless I intervene, these questions stay the same
+
+00:23:45.915 --> 00:23:49.355
+over years. They're maintaining my memory, but ideally
+
+00:23:49.355 --> 00:23:52.395
+they would push for further processing, increasing depth
+
+00:23:52.395 --> 00:23:56.530
+over time. And finally, returning to this talk's
+
+00:23:56.530 --> 00:23:59.970
+thesis, memory systems are too often disconnected from
+
+00:23:59.970 --> 00:24:03.090
+my authentic practice, what I'm actually interested in.
+
+00:24:03.490 --> 00:24:05.490
+Say I'm studying a topic in signal processing
+
+00:24:05.490 --> 00:24:08.610
+for a creative project. Unless I'm very careful,
+
+00:24:09.825 --> 00:24:11.665
+the questions that I get from that probably
+
+00:24:11.665 --> 00:24:14.465
+won't feel very connected to my project. They
+
+00:24:14.465 --> 00:24:17.265
+will probably feel like generic textbook questions about
+
+00:24:17.265 --> 00:24:23.265
+signal processing. Let's return to SAM now and
+
+00:24:22.600 --> 00:24:23.960
+see if we can apply some of these
+
+00:24:23.960 --> 00:24:27.720
+ideas about practice and memory. So Sam did
+
+00:24:27.720 --> 00:24:30.200
+the work to study that signal processing material.
+
+00:24:30.200 --> 00:24:31.960
+They want to make sure it actually sticks.
+
+00:24:32.120 --> 00:24:35.240
+How might that work? Let's say they can
+
+00:24:35.240 --> 00:24:38.715
+install a home screen widget, which ambiently exposes
+
+00:24:38.715 --> 00:24:42.555
+them to practice prompts drawn from highlights, questions
+
+00:24:42.555 --> 00:24:45.035
+asked, and any other activity that the AI
+
+00:24:45.035 --> 00:24:48.155
+can access. Sam can flip through these questions
+
+00:24:48.155 --> 00:24:49.995
+while waiting in line or on the bus.
+
+00:24:50.980 --> 00:24:53.540
+And notice that this isn't a generic textbook
+
+00:24:53.540 --> 00:24:56.180
+signal processing question. It's actually grounded in the
+
+00:24:56.180 --> 00:24:59.140
+details of Sam's brain computer interface project so
+
+00:24:59.140 --> 00:25:02.260
+that, at least aspirationally, practice feels somewhat more
+
+00:25:02.260 --> 00:25:08.415
+continuous with authentic doing. These synthesized prompts can
+
+00:25:08.415 --> 00:25:10.575
+vary each time they're asked so that Sam
+
+00:25:10.575 --> 00:25:15.215
+gets practice accessing the same idea from different
+
+00:25:15.215 --> 00:25:21.580
+angles. The prompts get deeper and more complex
+
+00:25:21.580 --> 00:25:24.300
+over time as Sam gets more confident with
+
+00:25:24.300 --> 00:25:27.980
+the material. Notice also that this question isn't
+
+00:25:27.980 --> 00:25:31.580
+so abstract. It's really about applying what Sam
+
+00:25:31.580 --> 00:25:33.820
+has learned in a bite sized form factor
+
+00:25:34.005 --> 00:25:38.085
+that can do anywhere. Now the widget can
+
+00:25:38.085 --> 00:25:40.805
+also include kind of more open ended discussion
+
+00:25:40.805 --> 00:25:44.805
+questions. Why do we think Metzger et al
+
+00:25:44.805 --> 00:25:50.260
+downsampled their signals to 200 Hertz? Maybe it's
+
+00:25:50.260 --> 00:25:55.140
+for performance? Here Sam gets some elaborative feedback
+
+00:25:55.380 --> 00:25:57.620
+and extra detail to consider in their answer.
+
+00:26:00.165 --> 00:26:02.245
+Now when questions are synthesized like this, it's
+
+00:26:02.245 --> 00:26:04.805
+important that Sam can steer them with feedback
+
+00:26:06.245 --> 00:26:09.445
+assuring that future questions are synthesized accordingly. Because
+
+00:26:09.445 --> 00:26:11.045
+again, what we're trying to do here is
+
+00:26:11.045 --> 00:26:13.285
+to make all of this not be homework,
+
+00:26:13.285 --> 00:26:15.250
+but to actually support what Sam is really
+
+00:26:15.250 --> 00:26:19.090
+trying to do. So far we've been looking
+
+00:26:19.090 --> 00:26:21.010
+at bite sized questions Sam can answer while
+
+00:26:21.010 --> 00:26:23.250
+they're out and about. But if they make
+
+00:26:23.250 --> 00:26:25.250
+time for a longer dedicated session, we can
+
+00:26:25.250 --> 00:26:28.735
+suggest meatier tasks like this one. And what's
+
+00:26:28.735 --> 00:26:30.495
+more, we can move that work out of
+
+00:26:30.495 --> 00:26:33.935
+fake practice land and into Sam's real context
+
+00:26:33.935 --> 00:26:37.535
+here at Jupyter Notebook. Notice that the task
+
+00:26:37.535 --> 00:26:39.695
+is still framed in terms of Sam's specific
+
+00:26:39.695 --> 00:26:42.815
+aims rather than some generic signal processing pipeline.
+
+00:26:45.190 --> 00:26:47.830
+Now, Sam got into this project not as
+
+00:26:47.830 --> 00:26:50.790
+a learning exercise, but as a way to
+
+00:26:50.790 --> 00:26:54.150
+start legitimately participating to start working with BCIs
+
+00:26:54.150 --> 00:26:57.465
+while playing to existing strengths. So just as
+
+00:26:57.465 --> 00:26:59.545
+our AI can help Sam find a tractable
+
+00:26:59.545 --> 00:27:01.785
+way into this space, it can also facilitate
+
+00:27:01.785 --> 00:27:04.665
+connections to communities of practice, here suggesting a
+
+00:27:04.665 --> 00:27:07.865
+local neurotech meetup. So let's say Sam goes
+
+00:27:07.865 --> 00:27:10.425
+to this meetup, meets a local scientist, and
+
+00:27:10.425 --> 00:27:13.840
+sets up a coffee date. With permission, Sam
+
+00:27:13.840 --> 00:27:16.720
+records the meeting, knowing the notes will probably
+
+00:27:16.720 --> 00:27:19.040
+be helpful later. And of course, Sam ends
+
+00:27:19.040 --> 00:27:21.600
+up surprised and intrigued quite a lot in
+
+00:27:21.600 --> 00:27:26.160
+this conversation. Our AI can notice these moments
+
+00:27:26.160 --> 00:27:30.865
+of surprise and help Sam metabolize them. Here,
+
+00:27:30.865 --> 00:27:33.345
+that insight turns into a reflective practice prompt.
+
+00:27:36.625 --> 00:27:39.425
+Four big design principles are threaded through Sam's
+
+00:27:39.425 --> 00:27:41.610
+story. I'd like to review them now, and
+
+00:27:41.610 --> 00:27:43.610
+for each, point out the ways that AI
+
+00:27:43.610 --> 00:27:48.330
+has helped me think about them. First, we
+
+00:27:48.330 --> 00:27:52.330
+bring guided learning to authentic contexts rather than
+
+00:27:52.330 --> 00:27:55.035
+thinking about it as a separate activity. We're
+
+00:27:55.035 --> 00:27:56.955
+able to make that happen by imagining an
+
+00:27:56.955 --> 00:27:59.755
+AI which can perceive and act across applications
+
+00:27:59.755 --> 00:28:02.955
+on Sam's computer. And as the audio transcript
+
+00:28:02.955 --> 00:28:04.875
+at the end of the story here alluded
+
+00:28:04.875 --> 00:28:08.155
+to, that action can potentially extend to activities
+
+00:28:08.155 --> 00:28:11.670
+outside of the computer as well. The AI
+
+00:28:11.670 --> 00:28:14.630
+can give appropriate guidance in part because, with
+
+00:28:14.630 --> 00:28:17.510
+permission and executing locally, it can learn from
+
+00:28:17.510 --> 00:28:19.670
+every piece of text that has ever crossed
+
+00:28:19.670 --> 00:28:22.870
+Sam's screen, every action they've ever taken on
+
+00:28:22.870 --> 00:28:27.315
+the computer. It can synthesize scaffolded dynamic media
+
+00:28:27.315 --> 00:28:29.955
+so that Sam can learn by doing, but
+
+00:28:29.955 --> 00:28:35.475
+with guidance. And then, when explicit learning activities
+
+00:28:35.475 --> 00:28:38.915
+are necessary, we suffuse them with authentic context.
+
+00:28:39.770 --> 00:28:42.810
+The AI in our story grounds all of
+
+00:28:42.810 --> 00:28:44.730
+the reading and practice Sam's doing in their
+
+00:28:44.730 --> 00:28:47.930
+actual aims. It helps Sam match the learning
+
+00:28:47.930 --> 00:28:51.130
+activities to their depth of interest. And it
+
+00:28:51.130 --> 00:28:53.930
+draws on important moments that happen while Sam
+
+00:28:53.930 --> 00:28:56.745
+is doing, like insights from that coffee meeting
+
+00:28:56.745 --> 00:28:59.545
+at the end or questions asked while implementing
+
+00:28:59.545 --> 00:29:02.105
+parts of the project. And it brings those
+
+00:29:02.105 --> 00:29:06.585
+moments into study activities. Besides connecting these two
+
+00:29:06.585 --> 00:29:09.225
+domains, we can also strengthen each of them.
+
+00:29:10.760 --> 00:29:14.120
+So our AI suggests tractable ways for Sam
+
+00:29:14.120 --> 00:29:16.920
+to just dive in to a new interest.
+
+00:29:17.560 --> 00:29:19.880
+And it helps Sam build connections with a
+
+00:29:19.880 --> 00:29:23.605
+community of practice. On the other side, when
+
+00:29:23.605 --> 00:29:25.925
+we are spending time in explicit learning activities,
+
+00:29:25.925 --> 00:29:29.125
+let's make sure that they actually work. So
+
+00:29:29.125 --> 00:29:31.685
+our AI creates a dynamic vessel for ongoing
+
+00:29:31.685 --> 00:29:35.445
+reinforcement. It varies what's in that vessel over
+
+00:29:35.445 --> 00:29:37.870
+time so that knowledge transfers more effectively to
+
+00:29:37.870 --> 00:29:41.790
+real situations. And it doesn't just maintain memory.
+
+00:29:41.870 --> 00:29:47.230
+It increases depth of understanding over time. Now
+
+00:29:47.230 --> 00:29:49.710
+I'd like to give two cheers for chatbot
+
+00:29:49.710 --> 00:29:53.815
+tutors. Most discussion of AI and education at
+
+00:29:53.815 --> 00:29:55.815
+the moment revolves around the framing of chatbot
+
+00:29:55.815 --> 00:29:58.455
+tutors. And I think this framing correctly identifies
+
+00:29:58.455 --> 00:30:01.335
+something really wonderful about language models, which is
+
+00:30:01.335 --> 00:30:03.495
+that they are so good at answering long
+
+00:30:03.495 --> 00:30:06.290
+tail questions if the user can articulate the
+
+00:30:06.290 --> 00:30:08.690
+question clearly enough. And if the user is
+
+00:30:08.690 --> 00:30:11.410
+trying to perform a routine task, chatbot tutors
+
+00:30:11.410 --> 00:30:13.970
+can often diagnose problems and find good ways
+
+00:30:13.970 --> 00:30:16.210
+to get the user unstuck. And that's great.
+
+00:30:17.105 --> 00:30:19.025
+But when I look at others' visions of
+
+00:30:19.025 --> 00:30:21.825
+chatbot tutors through the broader framing that we've
+
+00:30:21.825 --> 00:30:24.545
+been discussing, they're clearly missing a lot of
+
+00:30:24.545 --> 00:30:27.825
+what I want. I think these visions often
+
+00:30:27.825 --> 00:30:29.505
+fail to take seriously just how much a
+
+00:30:29.505 --> 00:30:32.080
+real tutor can really do. Large part, I
+
+00:30:32.080 --> 00:30:33.680
+think that's because the authors of these visions
+
+00:30:33.680 --> 00:30:37.440
+are usually thinking about educating, something they want
+
+00:30:37.440 --> 00:30:41.120
+to do to others rather than learning, something
+
+00:30:41.120 --> 00:30:44.475
+they want for themselves. Now a sad truth
+
+00:30:44.475 --> 00:30:46.395
+about the world is that postdocs and graduate
+
+00:30:46.395 --> 00:30:49.595
+students are incredibly underpaid. So it is actually
+
+00:30:49.595 --> 00:30:51.595
+surprisingly affordable to get an expert tutor for
+
+00:30:51.595 --> 00:30:54.955
+a technical topic I care about. But if
+
+00:30:54.955 --> 00:30:56.635
+I hire a real tutor as an adult
+
+00:30:56.700 --> 00:30:58.860
+to learn about signal processing, I will tell
+
+00:30:58.860 --> 00:31:01.260
+them about my interest in brain computer interfaces.
+
+00:31:01.260 --> 00:31:03.180
+And I will expect them to ground every
+
+00:31:03.180 --> 00:31:05.980
+conversation in that purpose. My goal here is
+
+00:31:05.980 --> 00:31:08.620
+not to learn signal processing. It is to
+
+00:31:08.620 --> 00:31:11.180
+participate in the creation of brain computer interfaces.
+
+00:31:12.015 --> 00:31:14.655
+Chatbot tutors are not interested in what I'm
+
+00:31:14.655 --> 00:31:16.975
+trying to do. There's a set of things
+
+00:31:16.975 --> 00:31:19.535
+they think I should know or should be
+
+00:31:19.535 --> 00:31:21.295
+able to do, and they view me as
+
+00:31:21.295 --> 00:31:25.390
+defective until I say the right things. If
+
+00:31:25.390 --> 00:31:27.230
+I hire a real tutor, I might ask
+
+00:31:27.230 --> 00:31:28.590
+them to sit beside me as I try
+
+00:31:28.590 --> 00:31:30.990
+to actually do something involving the material. They
+
+00:31:30.990 --> 00:31:32.750
+can see everything I'm doing, see what I'm
+
+00:31:32.750 --> 00:31:35.150
+pointing at. And if it's appropriate, I can
+
+00:31:35.150 --> 00:31:36.910
+scoot over and they can drive for a
+
+00:31:36.910 --> 00:31:40.075
+minute. By comparison, the typical conception of a
+
+00:31:40.075 --> 00:31:43.595
+chatbot tutor lives in a windowless box, and
+
+00:31:43.595 --> 00:31:45.595
+it can only see whatever's provided on scraps
+
+00:31:45.595 --> 00:31:47.995
+of paper passed under the door. It can
+
+00:31:47.995 --> 00:31:51.840
+have no effect on the outside world. My
+
+00:31:51.840 --> 00:31:54.240
+goal here is to dive in, to immerse
+
+00:31:54.240 --> 00:31:57.520
+myself, to start doing the thing. But these
+
+00:31:57.520 --> 00:31:59.200
+chatbot tutors can't join me where the action
+
+00:31:59.200 --> 00:32:02.800
+is. So interactions with them create distance and
+
+00:32:02.800 --> 00:32:06.065
+pull me away from immersion. If I hire
+
+00:32:06.065 --> 00:32:09.985
+a real tutor, we'll build a relationship. With
+
+00:32:09.985 --> 00:32:12.065
+every session, they'll learn more about me: my
+
+00:32:12.065 --> 00:32:15.825
+interests, my strengths, my confusions. Chatbot tutors, on
+
+00:32:15.825 --> 00:32:18.865
+the other hand, as typically conceived, are transactional,
+
+00:32:19.180 --> 00:32:22.380
+amnesiac. Now, we can fix that as context
+
+00:32:22.380 --> 00:32:26.140
+windows get longer. But that relationship is also
+
+00:32:26.140 --> 00:32:29.980
+important to my emotional connection. If I view
+
+00:32:29.980 --> 00:32:32.005
+conversation with my tutor as a kind of
+
+00:32:32.005 --> 00:32:35.045
+peripheral participation in the community I'm hoping to
+
+00:32:35.045 --> 00:32:37.605
+enter, an interaction between a novice in the
+
+00:32:37.605 --> 00:32:40.725
+discipline and an expert in the discipline, then
+
+00:32:40.725 --> 00:32:42.885
+tutoring just becomes part of doing the thing.
+
+00:32:43.920 --> 00:32:45.600
+But if my interaction with the tutor is
+
+00:32:45.600 --> 00:32:48.080
+transactional, that will tend to make my tutoring
+
+00:32:48.080 --> 00:32:52.000
+sessions feel like learning time, separate from doing
+
+00:32:52.000 --> 00:32:55.760
+the thing. Finally, people talk about how Aristotle
+
+00:32:55.760 --> 00:32:58.565
+was a tutor for Alexander the Great. But
+
+00:32:58.565 --> 00:33:01.045
+what's most valuable about having Aristotle as your
+
+00:33:01.045 --> 00:33:04.325
+tutor is not that he can diagnose misconceptions,
+
+00:33:04.485 --> 00:33:06.725
+but rather that he's modeling the practices and
+
+00:33:06.725 --> 00:33:10.885
+values of an earnest, intellectually engaged adult. He's
+
+00:33:10.530 --> 00:33:12.290
+He's demonstrating how and why he thinks about
+
+00:33:12.290 --> 00:33:15.810
+problems his taste and the discipline. The high
+
+00:33:15.810 --> 00:33:18.130
+growth periods that we love transform the way
+
+00:33:18.130 --> 00:33:21.170
+that we see the world. They reshape our
+
+00:33:21.170 --> 00:33:25.735
+identity. In my demo earlier, I showed a
+
+00:33:25.735 --> 00:33:27.735
+chatbot, but it didn't really work like most
+
+00:33:27.735 --> 00:33:31.495
+chatbot tutors I described. It focused all its
+
+00:33:31.495 --> 00:33:34.135
+actions on the user's interests rather than bringing
+
+00:33:34.135 --> 00:33:36.375
+its own agenda. It wasn't trapped in a
+
+00:33:36.375 --> 00:33:38.695
+little text box. It could see and take
+
+00:33:38.695 --> 00:33:42.150
+action in the context of authentic use. It
+
+00:33:42.150 --> 00:33:44.710
+can communicate through dynamic media. It had a
+
+00:33:44.710 --> 00:33:46.950
+deep memory drawing on everything I'd ever seen
+
+00:33:46.950 --> 00:33:49.750
+and written. So in some ways, the system
+
+00:33:49.750 --> 00:33:52.310
+I've shown is more like a real tutor.
+
+00:33:52.950 --> 00:33:54.870
+But in my ideal world, I don't want
+
+00:33:54.870 --> 00:33:58.535
+a tutor. I want to legitimately participate in
+
+00:33:58.535 --> 00:34:00.775
+some new discipline and learn what I need
+
+00:34:00.775 --> 00:34:03.095
+as much as possible from interaction with real
+
+00:34:03.095 --> 00:34:06.055
+practitioners. So I view the role of the
+
+00:34:06.055 --> 00:34:09.520
+augmented learning system as helping me act on
+
+00:34:09.520 --> 00:34:12.080
+my creative interests, ideally by letting me just
+
+00:34:12.080 --> 00:34:14.160
+dive in and start doing as much as
+
+00:34:14.160 --> 00:34:17.840
+possible. That will often mean scaffolding connections to
+
+00:34:17.840 --> 00:34:22.815
+and interactions with communities of practice. One theme
+
+00:34:22.815 --> 00:34:25.055
+for this Design at Large series is the
+
+00:34:25.055 --> 00:34:28.175
+ethics of AI and its likely enormous social
+
+00:34:28.175 --> 00:34:30.415
+impacts. So let me say, I am tremendously
+
+00:34:30.415 --> 00:34:32.895
+worried about those impacts in the general case.
+
+00:34:32.895 --> 00:34:34.575
+I am worried about despots locking in their
+
+00:34:34.575 --> 00:34:39.150
+powers. Lowering the bar to bioweapons, economic chaos.
+
+00:34:39.390 --> 00:34:42.430
+I would not feel comfortable ethically with researching
+
+00:34:42.430 --> 00:34:46.830
+more powerful frontier models myself. But within the
+
+00:34:46.830 --> 00:34:49.230
+narrower domain of learning that we've been discussing,
+
+00:34:49.555 --> 00:34:51.955
+my main moral concern is that we will
+
+00:34:51.955 --> 00:34:55.395
+end up trapped in a sad, narrow future.
+
+00:34:56.435 --> 00:35:00.355
+A condescending authoritarian frame dominates the narrative in
+
+00:35:00.355 --> 00:35:03.260
+the future of learning. I'll caricature it to
+
+00:35:03.260 --> 00:35:06.460
+make the point. With AI, we can finally
+
+00:35:06.460 --> 00:35:08.460
+take all of these defective kids that don't
+
+00:35:08.460 --> 00:35:10.380
+know the stuff they're supposed to know and
+
+00:35:10.380 --> 00:35:12.620
+get them to know it. You know, that's
+
+00:35:12.620 --> 00:35:15.580
+personalized learning. The AI lets us precisely identify
+
+00:35:15.580 --> 00:35:17.785
+where the kids are wrong or where they're
+
+00:35:17.785 --> 00:35:20.585
+ignorant and fix them. Then we can fill
+
+00:35:20.585 --> 00:35:22.025
+their heads to the brim with what's good
+
+00:35:22.025 --> 00:35:26.105
+for them. By contrast, the famous bicycle for
+
+00:35:26.105 --> 00:35:28.905
+the mind metaphor has no agenda other than
+
+00:35:28.905 --> 00:35:31.320
+the one that you bring. It just lets
+
+00:35:31.320 --> 00:35:33.240
+you reach a wider range of destinations than
+
+00:35:33.240 --> 00:35:34.760
+you could on foot, and it makes the
+
+00:35:34.760 --> 00:35:37.160
+journey more fun, maybe particularly if you're biking
+
+00:35:37.160 --> 00:35:39.960
+along with some friends. The bicycle asks, Where
+
+00:35:39.960 --> 00:35:42.840
+do you want to go? Of course, that
+
+00:35:42.840 --> 00:35:46.055
+question assumes your destination is well known and
+
+00:35:46.055 --> 00:35:49.815
+charted on some map. But those most rewarding,
+
+00:35:49.815 --> 00:35:52.775
+high growth experiences are often centered on a
+
+00:35:52.775 --> 00:35:55.095
+creative project. You're trying to get somewhere no
+
+00:35:55.095 --> 00:35:57.335
+one's ever gone before to reach the frontier
+
+00:35:57.335 --> 00:36:00.055
+and then starting charting links into the unknown.
+
+00:36:00.870 --> 00:36:04.630
+Learning in service of creation. It's a dynamic,
+
+00:36:04.710 --> 00:36:08.310
+context laden kind of learning. It's about more
+
+00:36:08.310 --> 00:36:11.590
+than just efficiency and correctness. More than just
+
+00:36:11.590 --> 00:36:14.565
+faster gears on a bike. And that's the
+
+00:36:14.565 --> 00:36:16.165
+kind of learning that I feel an almost
+
+00:36:16.165 --> 00:36:28.150
+moral imperative to help create. Thank you. I
+
+00:36:28.150 --> 00:36:30.070
+think we maybe have time for questions. We
+
+00:36:30.070 --> 00:36:38.150
+have some time for questions. Love to talk.
+
+00:36:38.230 --> 00:36:40.230
+Thank you. I really like a lot of
+
+00:36:40.230 --> 00:36:41.505
+what you said. One One thing that I'm
+
+00:36:41.505 --> 00:36:43.665
+curious about is you mentioned that you add
+
+00:36:43.665 --> 00:36:47.985
+questions to your own, like for your space
+
+00:36:47.985 --> 00:36:50.465
+repetition routine, you add questions every And you
+
+00:36:50.465 --> 00:36:52.785
+said you add 40 questions a day. So
+
+00:36:52.785 --> 00:36:55.270
+I guess what I'm wondering is, in your
+
+00:36:55.270 --> 00:36:57.750
+example you took one topic, but many people
+
+00:36:57.750 --> 00:37:00.550
+are often learning multiple things. And very often
+
+00:37:00.550 --> 00:37:02.230
+we don't know that we want to learn
+
+00:37:02.230 --> 00:37:05.910
+something until we've built some momentum. So my
+
+00:37:05.910 --> 00:37:07.670
+question is broadly, how do you decide what
+
+00:37:07.670 --> 00:37:09.990
+questions you want to add and how do
+
+00:37:09.990 --> 00:37:13.005
+you plan for your future self in some
+
+00:37:13.005 --> 00:37:15.725
+way? Right, right. First, should clarify. So I
+
+00:37:15.725 --> 00:37:17.885
+don't, in fact, add 40 questions a day.
+
+00:37:18.525 --> 00:37:21.485
+That is the carrying capacity of my practice
+
+00:37:21.485 --> 00:37:24.285
+time. Ten minutes will support 40 a day
+
+00:37:24.285 --> 00:37:27.090
+added. In practice, it ends up like some
+
+00:37:27.090 --> 00:37:30.770
+kind of Poisson distribution or something. But how
+
+00:37:30.770 --> 00:37:31.810
+do I do this? How do I plan
+
+00:37:31.810 --> 00:37:34.850
+appropriately? You can't know what's going to be
+
+00:37:34.850 --> 00:37:38.130
+important to you in advance. Sometimes you can,
+
+00:37:38.130 --> 00:37:41.135
+but in general you can't. So the system
+
+00:37:41.135 --> 00:37:43.135
+needs to be resilient to that. The way
+
+00:37:43.135 --> 00:37:46.255
+that that works right now is very coarse.
+
+00:37:46.255 --> 00:37:48.415
+You can delete questions that you add if
+
+00:37:48.415 --> 00:37:50.495
+you decide that you don't like them. I
+
+00:37:50.495 --> 00:37:52.575
+view this as an interface problem of sorts.
+
+00:37:52.575 --> 00:37:54.420
+I think ideally you don't need to plan
+
+00:37:54.420 --> 00:37:56.020
+for what's going to be important. You can
+
+00:37:56.020 --> 00:37:59.140
+just do stuff, and stuff will get reinforced,
+
+00:37:59.140 --> 00:38:00.980
+and you can steer more of this, less
+
+00:38:00.980 --> 00:38:05.300
+of that. And I think that's an interesting
+
+00:38:05.300 --> 00:38:07.860
+challenge in interface design to create systems that
+
+00:38:07.860 --> 00:38:09.855
+behave more like that and less like these
+
+00:38:09.855 --> 00:38:12.575
+kind of discrete destructive actions destroy this question.
+
+00:38:14.495 --> 00:38:17.295
+Andy, I love that vision over here for
+
+00:38:17.295 --> 00:38:21.055
+that. Especially liked how you talked about how
+
+00:38:21.055 --> 00:38:24.410
+the AI could reinforce things you've learned and
+
+00:38:24.410 --> 00:38:27.210
+challenge you. It could integrate you with communities.
+
+00:38:27.210 --> 00:38:30.170
+Love all those ideas. What I didn't get,
+
+00:38:30.170 --> 00:38:31.770
+and maybe I guess I walked in two
+
+00:38:31.770 --> 00:38:35.610
+minutes late, was that an actual demo that
+
+00:38:35.610 --> 00:38:37.770
+you've created? No. Or is that just a
+
+00:38:37.770 --> 00:38:39.315
+vision for how you want it to be
+
+00:38:39.315 --> 00:38:41.395
+in the future? Yeah, I'm sorry for not
+
+00:38:41.395 --> 00:38:43.155
+making that clear. If wasn't, I thought it
+
+00:38:43.155 --> 00:38:46.515
+looked sufficiently fake. No, this is concept art.
+
+00:38:47.395 --> 00:38:50.035
+Thank you for asking. There is, I suppose,
+
+00:38:50.035 --> 00:38:52.515
+a grand tradition in our discipline of smoke
+
+00:38:52.515 --> 00:38:56.180
+and mirror concept art. I have been using
+
+00:38:56.180 --> 00:38:58.180
+this talk as an excuse to figure out
+
+00:38:58.180 --> 00:39:01.700
+what I think I want to do with
+
+00:39:01.700 --> 00:39:04.580
+respect to AI and learning. And so these
+
+00:39:04.580 --> 00:39:10.695
+drawings are part of that process. I was
+
+00:39:10.695 --> 00:39:13.495
+curious, I wanted to follow-up on the question
+
+00:39:13.495 --> 00:39:17.175
+about sometimes I don't know what I want.
+
+00:39:17.175 --> 00:39:19.015
+And I think if you look at some
+
+00:39:19.015 --> 00:39:23.610
+of the more Montessori or Papert esque learning
+
+00:39:23.610 --> 00:39:28.410
+experiences, when you know when you have like,
+
+00:39:28.410 --> 00:39:29.690
+you know, if you just said school is
+
+00:39:29.690 --> 00:39:32.170
+gonna be whatever you're interested in forever. Yeah.
+
+00:39:32.170 --> 00:39:37.705
+It has lots of benefits. A challenge is
+
+00:39:37.705 --> 00:39:41.065
+that there are topics that I might benefit
+
+00:39:41.065 --> 00:39:44.345
+from, and I loved your paternalistic caricature as
+
+00:39:44.345 --> 00:39:46.585
+being that's what we don't want. There is
+
+00:39:46.585 --> 00:39:51.910
+a, like, the psychologist Dan Gilbert defines the
+
+00:39:51.910 --> 00:39:55.590
+happiness challenge as the delta between our current
+
+00:39:55.590 --> 00:39:57.590
+self and what our future self would have
+
+00:39:57.590 --> 00:40:01.110
+wanted us to do. I can, like a
+
+00:40:01.110 --> 00:40:03.895
+nice thing about a good tutor, your talk
+
+00:40:03.895 --> 00:40:06.615
+for example, is I'm learning things that will
+
+00:40:06.615 --> 00:40:08.615
+be valuable to me in the future that
+
+00:40:08.615 --> 00:40:11.175
+at 04:00 today I wouldn't have thought to
+
+00:40:11.175 --> 00:40:14.215
+ask for. Right. Yeah, yeah, I think this
+
+00:40:14.215 --> 00:40:16.110
+is totally right. I think the way that
+
+00:40:16.110 --> 00:40:17.150
+I think about this is a kind of
+
+00:40:17.150 --> 00:40:19.950
+unbundling. Normally when we think about schooling, we
+
+00:40:19.950 --> 00:40:22.110
+ask schooling to do two jobs: one, to
+
+00:40:22.110 --> 00:40:23.470
+decide what is it that I should know
+
+00:40:23.470 --> 00:40:24.990
+and then two, to cause me to know
+
+00:40:24.990 --> 00:40:27.790
+it. I think there are all kinds of
+
+00:40:27.790 --> 00:40:30.255
+cultural institutions that help us figure out what
+
+00:40:30.255 --> 00:40:32.655
+is it that we want to know. In
+
+00:40:32.655 --> 00:40:34.415
+the example that I showed, Sam figures out
+
+00:40:34.415 --> 00:40:36.255
+that they may be interested in brain computer
+
+00:40:36.255 --> 00:40:39.615
+interfaces through Twitter. If you are in San
+
+00:40:39.615 --> 00:40:41.695
+Diego, you can decide to attend this talk.
+
+00:40:42.210 --> 00:40:43.970
+Ideally, it doesn't feel like schooling. Hope it
+
+00:40:43.970 --> 00:40:45.650
+doesn't feel like schooling. And you can decide,
+
+00:40:45.650 --> 00:40:47.330
+oh, maybe I'm interested in studying some of
+
+00:40:47.330 --> 00:40:49.410
+the cognitive science that Andy mentioned. So I
+
+00:40:49.410 --> 00:40:53.010
+think there's a variety of cultural institutions and
+
+00:40:53.010 --> 00:40:55.330
+venues and channels we can use to help
+
+00:40:55.330 --> 00:41:00.615
+deliver that first part, and then possibly use
+
+00:41:00.615 --> 00:41:05.975
+separate tools for the other part. Good afternoon.
+
+00:41:07.095 --> 00:41:09.335
+Should we be planning for the day where
+
+00:41:09.335 --> 00:41:12.055
+we won't have to work due to artificial
+
+00:41:12.055 --> 00:41:17.550
+intelligence, automation, computers and robotics? Your thoughts. Thank
+
+00:41:17.550 --> 00:41:19.870
+you. I'm so grateful that you asked that
+
+00:41:19.870 --> 00:41:21.630
+question because I spent a month preparing for
+
+00:41:21.630 --> 00:41:25.790
+this talk, writing another version of this talk
+
+00:41:25.790 --> 00:41:27.585
+that I didn't give that was called What's
+
+00:41:27.585 --> 00:41:30.065
+Worth Learning in the Age of Strong AI?
+
+00:41:30.545 --> 00:41:32.545
+And it didn't end up aligning, so I
+
+00:41:32.545 --> 00:41:33.985
+didn't end up getting to present any of
+
+00:41:33.985 --> 00:41:37.345
+it. I'll give you a piece of that.
+
+00:41:39.620 --> 00:41:44.660
+Say that you are a composer, and you
+
+00:41:44.660 --> 00:41:46.900
+have some very vague idea about a new
+
+00:41:46.900 --> 00:41:48.740
+cello concerto that you would like to write.
+
+00:41:49.860 --> 00:41:51.940
+I claim that you can't just ask the
+
+00:41:51.940 --> 00:41:54.155
+AI to write it for you, because you
+
+00:41:54.155 --> 00:41:56.635
+don't know what it is that you want.
+
+00:41:57.115 --> 00:41:58.795
+In fact, you discover what the cello concerto
+
+00:41:58.795 --> 00:42:00.395
+is supposed to be through the process of
+
+00:42:00.395 --> 00:42:05.595
+composing it. Likewise, when we talk about software.
+
+00:42:05.595 --> 00:42:08.220
+An interesting thing about software is that it
+
+00:42:08.300 --> 00:42:10.220
+feels so messy and unpleasant so much of
+
+00:42:10.220 --> 00:42:11.900
+the time. We want a particular piece of
+
+00:42:11.900 --> 00:42:13.660
+software. We ask some people to go start
+
+00:42:13.660 --> 00:42:15.420
+making it for us. And then they come
+
+00:42:15.420 --> 00:42:18.940
+back 3x over time, 3x over budget, one
+
+00:42:18.940 --> 00:42:21.340
+third x quality. Why is software so hard?
+
+00:42:21.340 --> 00:42:23.875
+Why can't we just tell the system what
+
+00:42:23.875 --> 00:42:26.835
+we want and get the thing out the
+
+00:42:26.835 --> 00:42:28.915
+other side? And it turns out we actually
+
+00:42:28.915 --> 00:42:31.555
+do have that kind of technology. It's called
+
+00:42:31.555 --> 00:42:33.155
+formal modeling. We've had it for a long
+
+00:42:33.155 --> 00:42:35.075
+time. And I think the reason why it's
+
+00:42:35.075 --> 00:42:36.970
+not more widely used is that that's not
+
+00:42:36.970 --> 00:42:40.330
+how we think about designing software. Namely, we
+
+00:42:40.330 --> 00:42:42.090
+figure out what software we want in the
+
+00:42:42.090 --> 00:42:46.490
+process of making it. It's continuously negotiated. It's
+
+00:42:46.490 --> 00:42:49.290
+contingent. So I think there are many activities
+
+00:42:49.290 --> 00:42:51.755
+in human life that have that characteristic where
+
+00:42:51.755 --> 00:42:54.315
+we can't actually appropriately specify what it is
+
+00:42:54.315 --> 00:42:55.515
+that we want to the model. We can't
+
+00:42:55.515 --> 00:42:57.435
+externalize it or make it legible. We have
+
+00:42:57.435 --> 00:43:00.315
+to participate in the creation of the thing.
+
+00:43:00.315 --> 00:43:01.515
+And then we can ask, what do we
+
+00:43:01.515 --> 00:43:03.195
+need to know in order to participate in
+
+00:43:03.195 --> 00:43:04.635
+that creation? What are the dynamics of that
+
+00:43:04.635 --> 00:43:08.280
+participation? How much injection of involvement is necessary
+
+00:43:08.280 --> 00:43:11.880
+to steer appropriately. And I have some thoughts
+
+00:43:11.880 --> 00:43:13.640
+on that, but I should probably move on
+
+00:43:13.640 --> 00:43:15.880
+to the next question. So yes, I hope
+
+00:43:15.880 --> 00:43:22.505
+that's somewhat helpful. Yeah. Hi. So with my
+
+00:43:22.505 --> 00:43:25.145
+question, I was thinking about how with the
+
+00:43:25.145 --> 00:43:27.225
+AI, what you have is you like say
+
+00:43:27.225 --> 00:43:29.785
+that AI advancement will lead to some dystopian
+
+00:43:29.785 --> 00:43:31.545
+feature where we find people the knowledge and
+
+00:43:31.545 --> 00:43:33.580
+then we force them to know it. But
+
+00:43:33.580 --> 00:43:35.180
+who's to say that that is still already
+
+00:43:35.180 --> 00:43:37.020
+happening to some extent with curriculum right now
+
+00:43:37.020 --> 00:43:41.100
+without AI? Isn't necessarily a concern as much
+
+00:43:41.100 --> 00:43:43.180
+as other things, I think. But beyond that,
+
+00:43:43.180 --> 00:43:45.420
+I think it's kind of like, because that
+
+00:43:45.420 --> 00:43:47.555
+problem can happen, like when we don't look
+
+00:43:47.555 --> 00:43:49.555
+at the root problem, it can happen in
+
+00:43:49.555 --> 00:43:52.675
+the most immersive learning. In ethnic studies class,
+
+00:43:52.675 --> 00:43:54.515
+you can still end up restricting someone to
+
+00:43:54.515 --> 00:43:57.235
+that specific topic instead of connecting identity as
+
+00:43:57.235 --> 00:43:58.515
+much as you would in say a math
+
+00:43:58.515 --> 00:44:00.940
+class or something like that. So what if
+
+00:44:00.940 --> 00:44:04.700
+you could implement that like sort of, I
+
+00:44:04.700 --> 00:44:06.940
+guess to give another example of how in
+
+00:44:06.940 --> 00:44:08.620
+the other hand, you can do something really
+
+00:44:08.620 --> 00:44:11.100
+well, even in a math class, for example,
+
+00:44:11.100 --> 00:44:12.700
+if you look at the higher concepts or
+
+00:44:12.700 --> 00:44:14.545
+if someone explains it really well, or in
+
+00:44:14.545 --> 00:44:16.705
+like say neuroscience and those sorts of fields,
+
+00:44:17.025 --> 00:44:18.705
+there might be content that is above the
+
+00:44:18.705 --> 00:44:20.865
+cost that is interesting that would make someone
+
+00:44:20.865 --> 00:44:22.705
+more interested and able to learn the class
+
+00:44:22.705 --> 00:44:25.185
+themselves, especially if it connects to their own
+
+00:44:25.185 --> 00:44:27.330
+prior knowledge. So what would you think if
+
+00:44:27.330 --> 00:44:30.530
+like, guess, how do you think you would
+
+00:44:30.530 --> 00:44:32.930
+implement this into like a learning system to
+
+00:44:32.930 --> 00:44:34.850
+take advantage of it like say Canvas? Do
+
+00:44:34.850 --> 00:44:35.970
+you think that you could do it in
+
+00:44:35.970 --> 00:44:38.290
+a way that you could customize in part
+
+00:44:38.290 --> 00:44:41.010
+assignments to synthesize the students' interests and the
+
+00:44:41.010 --> 00:44:44.255
+teachers' intent to teach people necessary content and
+
+00:44:44.255 --> 00:44:46.255
+teach people the content that they want to
+
+00:44:46.255 --> 00:44:48.255
+know in a way that they might be
+
+00:44:48.255 --> 00:44:50.655
+doing more, but ultimately less because it's easier
+
+00:44:50.655 --> 00:44:52.495
+for them if they know the context and
+
+00:44:52.495 --> 00:44:55.660
+can connect to it. Cool. I think I
+
+00:44:55.660 --> 00:44:58.620
+followed. So to your first question, yeah, I
+
+00:44:58.620 --> 00:45:02.780
+think you're right. That part of the talk
+
+00:45:02.780 --> 00:45:07.500
+was part of a complaint about schooling in
+
+00:45:07.500 --> 00:45:13.385
+general. And AI doesn't necessarily make that worse,
+
+00:45:13.385 --> 00:45:15.705
+though it may continue trends I don't like.
+
+00:45:16.425 --> 00:45:18.985
+To your second point, or your second question,
+
+00:45:20.425 --> 00:45:24.265
+I have deliberately avoided the question of schooling
+
+00:45:24.265 --> 00:45:28.160
+in this talk. And I did that for
+
+00:45:28.160 --> 00:45:29.840
+a reason. I think it makes everything very
+
+00:45:29.840 --> 00:45:34.800
+complicated. So in terms of integrating into Canvas,
+
+00:45:35.360 --> 00:45:38.800
+I think it's a very difficult position to
+
+00:45:38.800 --> 00:45:42.755
+start. I have done a bunch of collaborations
+
+00:45:43.155 --> 00:45:46.995
+these past few years with professors in higher
+
+00:45:46.995 --> 00:45:52.035
+ed teaching large classes. And what I experience
+
+00:45:52.035 --> 00:45:55.960
+again and again is just an enormous fraction
+
+00:45:55.960 --> 00:45:58.680
+of the student body that is just fundamentally
+
+00:45:58.680 --> 00:46:01.640
+not engaged with the class. And I don't
+
+00:46:01.640 --> 00:46:05.480
+think any amount of UI chicanery or AI
+
+00:46:05.480 --> 00:46:09.485
+involvement is going to change that. And I
+
+00:46:09.485 --> 00:46:11.325
+think I basically don't want to put myself
+
+00:46:11.325 --> 00:46:13.485
+into that problem solving situation. In some sense,
+
+00:46:13.485 --> 00:46:18.125
+that's actually why I left Khan Academy. Hey,
+
+00:46:18.125 --> 00:46:20.525
+Andy. My name's Taylor. I'm a software engineer
+
+00:46:20.525 --> 00:46:22.840
+at Replit. So I would say, in some
+
+00:46:22.840 --> 00:46:25.160
+sense, my salary depends on some of the
+
+00:46:25.160 --> 00:46:26.680
+ideas in your talk, which is to say
+
+00:46:26.680 --> 00:46:28.920
+that AI can be an effective tool for
+
+00:46:28.920 --> 00:46:33.000
+teaching difficult concepts like computer programming. So my
+
+00:46:33.000 --> 00:46:35.480
+question to you is, have you seen any
+
+00:46:35.880 --> 00:46:39.705
+inklings of this being true, the ideas in
+
+00:46:39.705 --> 00:46:43.065
+your talk of the delta between something like
+
+00:46:43.065 --> 00:46:46.345
+a GBT, being a teacher, and what you're
+
+00:46:46.345 --> 00:46:50.105
+outlining? Have you seen any of those ideas
+
+00:46:50.105 --> 00:46:51.860
+actually start to play out? Or do you
+
+00:46:51.860 --> 00:46:53.700
+think this is purely speculative with what we
+
+00:46:53.700 --> 00:46:56.180
+have today? Yeah. I think we're seeing a
+
+00:46:56.180 --> 00:47:01.860
+lot of hints at what I described already.
+
+00:47:01.860 --> 00:47:05.495
+So lots of people already use GPT to
+
+00:47:05.495 --> 00:47:09.415
+just dive into stuff. It's missing that universal
+
+00:47:09.415 --> 00:47:12.935
+IO. It's missing the billion token context window.
+
+00:47:13.335 --> 00:47:15.495
+And yet it's still already able to deliver
+
+00:47:15.495 --> 00:47:19.900
+some value, which is great. I think missing
+
+00:47:19.900 --> 00:47:23.900
+also that the bridge to textbooks again and
+
+00:47:23.900 --> 00:47:25.900
+again, I've been talking to people not that
+
+00:47:25.900 --> 00:47:27.660
+textbooks are the answer. Here I'm using textbook
+
+00:47:27.660 --> 00:47:30.140
+as synecdoche for some kind of deeper, more
+
+00:47:30.140 --> 00:47:33.665
+focused learning experience. I talk to a lot
+
+00:47:33.665 --> 00:47:37.025
+of people who get a really good start
+
+00:47:37.025 --> 00:47:39.665
+with GPT because they can get the couple
+
+00:47:39.665 --> 00:47:41.665
+sentence answers, and that lets them make a
+
+00:47:41.665 --> 00:47:43.585
+certain amount of progress. And that's really motivating.
+
+00:47:43.585 --> 00:47:45.265
+You can kick up some momentum, and momentum
+
+00:47:45.265 --> 00:47:47.905
+is very powerful. But they hit a wall.
+
+00:47:48.760 --> 00:47:51.000
+And I had a section that I cut
+
+00:47:51.000 --> 00:47:53.720
+talking about programming. I think it's really interesting
+
+00:47:53.720 --> 00:47:55.720
+that in programming, a lot of people can
+
+00:47:55.720 --> 00:47:59.400
+manage to self teach programming. And in part,
+
+00:47:59.400 --> 00:48:02.275
+I think that's because of things like syntax,
+
+00:48:02.275 --> 00:48:04.595
+for instance, is reinforced every time you sit
+
+00:48:04.595 --> 00:48:08.435
+down to program. Obscure facets of syntax, which
+
+00:48:08.435 --> 00:48:11.155
+are not reinforced regularly, like maybe your macro
+
+00:48:11.155 --> 00:48:13.875
+library or whatever, people do tend to forget.
+
+00:48:14.915 --> 00:48:18.830
+But again and again you meet people who
+
+00:48:18.830 --> 00:48:22.030
+are like, I don't understand how pointers work
+
+00:48:22.030 --> 00:48:24.590
+though. That asterisk can see. It's like it's
+
+00:48:24.590 --> 00:48:26.350
+a bridge too far. So there's a certain
+
+00:48:26.350 --> 00:48:29.230
+amount of conceptual understanding that seems acquirable with
+
+00:48:29.230 --> 00:48:31.950
+the frontier of self learning tools that are
+
+00:48:31.950 --> 00:48:34.395
+widely available. And then as soon as you
+
+00:48:34.395 --> 00:48:37.115
+run into difficult conceptual territory, it's just a
+
+00:48:37.115 --> 00:48:40.155
+cliff. So I think we're seeing glimmers of
+
+00:48:40.315 --> 00:48:44.075
+progress in this vein, and perhaps this talk
+
+00:48:44.075 --> 00:48:45.595
+will inspire people to try some more stuff.
+
+00:48:49.320 --> 00:48:52.520
+Hello. Hi. So my question is, to what
+
+00:48:52.520 --> 00:48:56.440
+extent do you think the desire to learn
+
+00:48:56.440 --> 00:48:59.400
+comes from the innate pleasure of learning or
+
+00:48:59.400 --> 00:49:01.480
+specific to whatever material the person learning is?
+
+00:49:01.685 --> 00:49:03.765
+And to what extent do you think the
+
+00:49:03.765 --> 00:49:06.245
+desire to learn comes from some sort of
+
+00:49:06.245 --> 00:49:08.805
+use of the material the person learns? And
+
+00:49:08.805 --> 00:49:13.765
+do you think making this distinction is important
+
+00:49:13.765 --> 00:49:17.210
+to the design of systems for learning? Yeah,
+
+00:49:17.210 --> 00:49:20.570
+probably. This is a good question, and it's
+
+00:49:20.570 --> 00:49:23.130
+something that I don't emphasize perhaps quite clearly
+
+00:49:23.290 --> 00:49:27.210
+enough. In the example story that I gave,
+
+00:49:27.850 --> 00:49:31.555
+everything is motivated by this persona, Sam, wanting
+
+00:49:31.555 --> 00:49:33.635
+to do a project. It's very concrete. It's
+
+00:49:33.635 --> 00:49:37.635
+out in the world. That doesn't mean that
+
+00:49:37.635 --> 00:49:41.075
+curiosity based learning is any less legitimate or
+
+00:49:41.075 --> 00:49:42.515
+that I think any of the claims don't
+
+00:49:42.515 --> 00:49:45.450
+apply. It's just that what authentic practice and
+
+00:49:45.450 --> 00:49:49.290
+legitimate participation looks like is different. So in
+
+00:49:49.290 --> 00:49:51.290
+mathematics, for instance, which may be very abstract,
+
+00:49:51.290 --> 00:49:52.890
+it may not be like a project I'm
+
+00:49:52.890 --> 00:49:54.410
+trying to do as I learn about algebraic
+
+00:49:54.410 --> 00:49:57.985
+topology or something like that, What legitimate practice
+
+00:49:57.985 --> 00:50:01.265
+looks like is engaging with problems and questions
+
+00:50:01.265 --> 00:50:05.665
+in algebraic topology that I find authentically interesting.
+
+00:50:07.585 --> 00:50:09.345
+And as soon as you make that move,
+
+00:50:09.345 --> 00:50:10.705
+rather than thinking about, well, I need to
+
+00:50:10.705 --> 00:50:12.520
+learn algebraic topology in order to do this
+
+00:50:12.520 --> 00:50:14.360
+four d renderer that I was working on
+
+00:50:14.360 --> 00:50:16.680
+for a game project, if you think about
+
+00:50:16.680 --> 00:50:19.000
+it from the perspective of authentic curiosity, then
+
+00:50:19.000 --> 00:50:21.720
+I think much of what I'm saying applies.
+
+00:50:22.520 --> 00:50:28.205
+However, there are issues with rendering legible the
+
+00:50:28.205 --> 00:50:30.285
+nature of the curiosity and the interest to
+
+00:50:30.285 --> 00:50:33.085
+the AI. A lot of what's happening is
+
+00:50:33.085 --> 00:50:35.245
+internal, and that may make a lot of
+
+00:50:35.245 --> 00:50:40.080
+what I'm describing somewhat more difficult. The nature
+
+00:50:40.080 --> 00:50:42.560
+of relation to community of practices changes somewhat,
+
+00:50:42.960 --> 00:50:47.200
+although not completely. So it's a partial answer,
+
+00:50:47.200 --> 00:50:49.280
+I suppose. Is there someone with the microphone?
+
+00:50:49.280 --> 00:50:52.960
+Hi, Jonathan. Hi, Andy. This is great. Love
+
+00:50:54.325 --> 00:50:58.005
+the deepness of the reflective practice you're demonstrating
+
+00:50:58.005 --> 00:51:01.845
+for us I think, is it Aristotle that
+
+00:51:01.845 --> 00:51:04.325
+said, give me a child till the age
+
+00:51:04.325 --> 00:51:06.005
+of seven and I'll show you the man?
+
+00:51:06.340 --> 00:51:09.620
+And when you bring up the ethical issues,
+
+00:51:09.620 --> 00:51:11.940
+this is what scares me the most is
+
+00:51:12.420 --> 00:51:17.780
+for an AI tutor. Have you thought about
+
+00:51:19.895 --> 00:51:24.535
+adversarial tutoring? Given that we're going to have,
+
+00:51:24.535 --> 00:51:27.095
+if we do, if we hypothesize AI tutors
+
+00:51:27.095 --> 00:51:28.775
+are out there and that we have the
+
+00:51:28.775 --> 00:51:33.250
+schooling industrial complex producing them, how do we
+
+00:51:33.250 --> 00:51:37.730
+counteract them? I love that. It's like manufacturing
+
+00:51:38.130 --> 00:51:41.330
+the mythical and often in the teaching community
+
+00:51:41.330 --> 00:51:46.930
+maligned Robin Williams character, the teacher film whose
+
+00:51:46.930 --> 00:51:50.715
+name I'm forgetting. I haven't thought about that.
+
+00:51:50.715 --> 00:51:55.995
+It's a lovely provocation. I feel uncomfortable with
+
+00:51:55.995 --> 00:52:00.075
+an activist framing, where it's like, I need
+
+00:52:00.075 --> 00:52:01.915
+to get out there because I know what's
+
+00:52:01.915 --> 00:52:04.320
+best for the people or for the kids.
+
+00:52:04.320 --> 00:52:06.000
+They're doing it wrong. I'm going make a
+
+00:52:06.000 --> 00:52:08.240
+thing that's going to put fluoride in the
+
+00:52:08.240 --> 00:52:11.040
+drinking water so that they end up in
+
+00:52:11.040 --> 00:52:17.225
+the right spot. I'm uncomfortable with that. I
+
+00:52:17.225 --> 00:52:19.385
+feel much more comfortable saying, well, I can
+
+00:52:19.385 --> 00:52:20.425
+make a thing that lets you pursue the
+
+00:52:20.425 --> 00:52:21.785
+things you're interested in, if you would like
+
+00:52:21.785 --> 00:52:26.825
+that. That feels less complicated. So I will
+
+00:52:26.825 --> 00:52:28.505
+need to think about your question. Find it
+
+00:52:28.505 --> 00:52:35.660
+very provocative. Thank you. Hey, Andy. I have
+
+00:52:35.660 --> 00:52:38.380
+a question for you about this idea of
+
+00:52:38.380 --> 00:52:42.940
+that AI tutor. I'm wondering, is there a
+
+00:52:42.940 --> 00:52:46.355
+limit to what kind of disciplines that that
+
+00:52:46.355 --> 00:52:48.755
+course kind of technology could be applied to?
+
+00:52:48.995 --> 00:52:52.195
+I've always deemed myself as being book smarts
+
+00:52:52.195 --> 00:52:56.275
+but not street smarts. That's a great question.
+
+00:52:56.835 --> 00:53:00.070
+One of the inspirations for this talk was
+
+00:53:00.070 --> 00:53:03.990
+trying to exorcise myself of the young ladies
+
+00:53:03.990 --> 00:53:05.990
+illustrated primer. I don't know if that phrase
+
+00:53:05.990 --> 00:53:08.230
+means anything to you. Ah, that's a shame.
+
+00:53:08.390 --> 00:53:11.830
+Okay, so an inspiration for many educational technologists
+
+00:53:12.535 --> 00:53:14.135
+is this book called The Diamond Age by
+
+00:53:14.135 --> 00:53:17.255
+Neal Stephenson, which depicts a sort of far
+
+00:53:17.255 --> 00:53:20.695
+future utopian learning environment. It's like a magical
+
+00:53:20.695 --> 00:53:25.550
+book that transforms a young girl's life. And
+
+00:53:25.550 --> 00:53:27.230
+one of the things that's interesting about this
+
+00:53:27.230 --> 00:53:29.070
+book that I think is underappreciated is that
+
+00:53:29.070 --> 00:53:31.470
+it is almost exclusively focused on street smarts.
+
+00:53:31.470 --> 00:53:33.870
+So this book teaches her martial arts and
+
+00:53:33.870 --> 00:53:36.430
+getting out of sticky situations and persuading people
+
+00:53:36.430 --> 00:53:40.565
+and so on. And I chose not to
+
+00:53:40.565 --> 00:53:44.965
+deal with any of that. I think the
+
+00:53:44.965 --> 00:53:48.325
+way that I would handle much of that
+
+00:53:48.485 --> 00:53:52.680
+looks very different. And I'm afraid I haven't
+
+00:53:52.680 --> 00:53:55.320
+really thought about how I would handle that.
+
+00:53:57.080 --> 00:54:00.600
+It's difficult to think about authentic practice of
+
+00:54:00.600 --> 00:54:04.200
+street smarts. Like what does that look like?
+
+00:54:04.200 --> 00:54:06.115
+Is it like I'm going to go to
+
+00:54:06.115 --> 00:54:08.915
+a bad neighborhood and like look purposeful as
+
+00:54:08.915 --> 00:54:11.875
+I walk? And then but that's not exactly
+
+00:54:11.875 --> 00:54:13.715
+authentic practice because like you went to this
+
+00:54:13.715 --> 00:54:16.595
+neighborhood just for that purpose. So I find
+
+00:54:16.595 --> 00:54:21.110
+myself confused thinking about this. And I find
+
+00:54:21.110 --> 00:54:25.350
+myself most comfortable when I think about people
+
+00:54:25.350 --> 00:54:29.270
+who enjoy practicing martial arts not as a
+
+00:54:29.270 --> 00:54:35.355
+kind of preparatory measure for imagined conflict in
+
+00:54:35.355 --> 00:54:37.275
+the future, but rather because they like the
+
+00:54:37.275 --> 00:54:38.715
+way it makes their body feel. They like
+
+00:54:38.715 --> 00:54:42.875
+their community at the dojo. And so if
+
+00:54:42.875 --> 00:54:45.810
+we start thinking about that, like, oh, it
+
+00:54:45.810 --> 00:54:47.330
+would be fun to do some exercise with
+
+00:54:47.330 --> 00:54:50.290
+others, then I think some of the same
+
+00:54:50.290 --> 00:54:53.170
+techniques can help. So you can probably use
+
+00:54:53.170 --> 00:54:55.410
+tools to help you find an appropriate community
+
+00:54:55.410 --> 00:54:58.370
+and perhaps to help you practice appropriately. I
+
+00:54:58.370 --> 00:55:01.295
+play the piano. And that's not exactly book
+
+00:55:01.295 --> 00:55:05.135
+smart, but one can use practice systems, vessels
+
+00:55:05.135 --> 00:55:08.015
+for practice like I've described, to orchestrate piano
+
+00:55:08.015 --> 00:55:11.215
+practice. You can imagine extending that to martial
+
+00:55:11.215 --> 00:55:12.575
+arts. I don't know about other kinds of
+
+00:55:12.575 --> 00:55:16.140
+street smarts, but perhaps. Thanks for the question.
+
+00:55:16.140 --> 00:55:18.300
+Let's thank Andy, and I'm sure he'll stay
+
+00:55:18.300 --> 00:55:23.980
+around a few little. Thanks everybody. Appreciate you.
