@@ -2,20 +2,21 @@
 :root {
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --text-color: #1d1d1f; 
-    --text-color-secondary: #6a6a6f; /* Slightly adjusted secondary */
+    --text-color-secondary: #6a6a6f; 
     --link-color: #007aff;
-    --bg-color: #f0f0f5; /* Lighter page background */
+    --bg-color: #f0f0f5; 
     --content-bg: #ffffff; 
     --border-color: #d1d1d6; 
-    --timeline-dot-color: #c7ced4; 
+    --timeline-dot-color: #d1d1d6; /* Màu dot inactive */
     --timeline-dot-active-color: var(--link-color);
-    --timeline-line-color: #e0e2e5; /* Lighter line */
+    --timeline-line-color: #e4e6e8; 
     --highlight-paragraph-bg: rgba(0, 122, 255, 0.06); 
-    --highlight-sentence-bg: rgba(255, 204, 0, 0.3);
-    --video-height-normal: 40vh;
-    --video-height-minimal: 60px; /* Height for minimal video player (controls only) */
-    --header-height: 100px; /* Approximate height for the new header */
-    --timeline-width: 180px; /* Slightly wider timeline */
+    --highlight-sentence-bg: rgba(255, 193, 7, 0.35);
+    
+    --video-height-normal: 38vh; /* Chiều cao video bình thường */
+    --video-height-minimal: 50px; /* Chiều cao video khi tối giản (chỉ controls) */
+    --header-height: 90px;    /* Chiều cao của header chứa title và settings */
+    --timeline-width: 180px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,39 +25,76 @@ body {
     font-family: var(--font-sans); 
     background-color: var(--bg-color); 
     color: var(--text-color); 
-    line-height: 1.65; /* Improved line height */
-    font-size: 16px; /* Base font size */
+    line-height: 1.65; 
+    font-size: 16px; 
+    overflow: hidden; /* Ngăn cuộn body, .page-container sẽ xử lý */
 }
 
 .page-container { 
     display: flex; 
     flex-direction: column; 
     height: 100vh; 
-    overflow: hidden; 
+    /* overflow: hidden; Không cần ở đây nữa nếu content-section cuộn */
 }
 
-.page-header { /* New header section */
-    padding: 15px 25px;
+.video-section { /* Video luôn ở trên cùng */
+    width: 100%; 
+    height: var(--video-height-normal); 
+    background-color: #000; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1001; /* Trên header */
+    transition: height 0.3s ease-in-out;
+}
+body.video-minimal-mode .video-section {
+    height: var(--video-height-minimal);
+}
+/* Tùy chọn: ẩn nội dung iframe khi minimal, chỉ để lại controls (khó thực hiện hoàn hảo với YouTube API) */
+/* body.video-minimal-mode #youtube-player-iframe iframe { opacity: 0; pointer-events: none; } */
+
+
+#youtube-player-iframe { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+}
+
+.page-header { /* Header nằm dưới video */
+    padding: 12px 25px;
     background-color: var(--content-bg);
     border-bottom: 1px solid var(--border-color);
     width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    z-index: 1001; /* Above video when video is not sticky */
-    position: sticky; /* Header is sticky */
-    top: 0;
+    /* max-width: 1440px; /* Bỏ max-width ở đây để nó full-width cùng video */
+    /* margin: 0 auto; */
+    z-index: 1000;
+    position: sticky;
+    top: var(--video-height-normal); /* Dính dưới video section */
+    transition: top 0.3s ease-in-out;
+    height: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body.video-minimal-mode .page-header {
+    top: var(--video-height-minimal);
 }
 
 .video-info h1 {
-    font-size: 1.6em; /* Reduced for header */
+    font-size: 1.4em; 
     font-weight: 600;
-    margin-bottom: 0.15em;
+    margin-bottom: 0.1em;
     color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .video-info p {
-    font-size: 0.85em;
+    font-size: 0.8em;
     color: var(--text-color-secondary);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .settings-bar { 
@@ -77,58 +115,34 @@ body {
     width:14px; height:14px; 
 }
 
-
-.video-section { 
-    width: 100%; 
-    height: var(--video-height-normal); 
-    background-color: #000; 
-    position: sticky; 
-    top: var(--header-height); /* Sticky below the new header */
-    z-index: 1000; 
-    transition: height 0.3s ease-in-out;
-}
-body.video-minimal-mode .video-section {
-    height: var(--video-height-minimal);
-}
-/* Optionally hide the iframe content in minimal mode, though reducing height might be enough */
-body.video-minimal-mode #youtube-player-iframe {
-    /* visibility: hidden; Could also use this but might affect controls */
-}
-
-
-#youtube-player-iframe { 
-    width: 100%; 
-    height: 100%; 
-    border: none; 
-}
-
-.content-section { 
+.content-section { /* Container chính cho timeline và transcript, sẽ cuộn */
     display: flex; 
     flex-grow: 1; 
     width: 100%; 
     max-width: 1440px; 
     margin: 0 auto; 
-    overflow-y: auto; /* THIS IS THE MAIN SCROLLABLE AREA NOW */
-    /* Height will be determined by flex-grow */
-    scroll-behavior: smooth; /* For JS-driven scrolling */
+    overflow-y: auto; /* CUỘN CHÍNH Ở ĐÂY */
+    /* Chiều cao còn lại sau video và header */
+    height: calc(100vh - var(--video-height-normal) - var(--header-height));
+    position: relative; /* Để timeline có thể sticky bên trong */
 }
+body.video-minimal-mode .content-section {
+    height: calc(100vh - var(--video-height-minimal) - var(--header-height));
+}
+
 
 #timeline-container { 
     width: var(--timeline-width); 
     flex-shrink: 0; 
-    padding: 25px 10px 25px 25px; 
-    /* No overflow-y: auto; No fixed height. It scrolls with .content-section */
+    padding: 25px 10px 25px 20px; 
+    /* Bỏ overflow-y và height cố định, nó sẽ cuộn cùng .content-section */
     border-right: 1px solid var(--border-color);
-    position: sticky; /* Make timeline sticky within .content-section */
-    top: 0; /* Stick to the top of .content-section scroll area */
-    height: calc(100vh - var(--video-height-normal) - var(--header-height)); /* Ensure it can fill the view */
-    /* Background color for the timeline column */
-    background-color: #fdfdff; /* Slightly different from main content for distinction */
+    position: sticky; /* Timeline dính lại khi cuộn .content-section */
+    top: 0; 
+    align-self: flex-start; /* Quan trọng để sticky hoạt động đúng trong flex container */
+    height: 100%; /* Chiếm toàn bộ chiều cao của .content-section (vùng cuộn) */
+    background-color: #fdfdfe; /* Màu nền nhạt hơn cho timeline */
 }
-body.video-minimal-mode #timeline-container {
-    height: calc(100vh - var(--video-height-minimal) - var(--header-height));
-}
-
 
 .timeline-list { 
     list-style: none; 
@@ -137,66 +151,78 @@ body.video-minimal-mode #timeline-container {
     position: relative; 
 }
 
-.timeline-list::before { /* Main vertical line */
-    content: ''; 
-    position: absolute; 
-    left: 65px + 15px - 1.5px; /* timestamp width + padding - line_width/2 */
-    top: 15px; 
-    bottom: 15px; 
-    width: 3px; 
-    background-color: var(--timeline-line-color); 
-    border-radius: 3px; 
-    z-index: 0;
+/* Đường kẻ dọc chính của timeline, chạy qua tâm các dot */
+.timeline-list::before {
+    content: '';
+    position: absolute;
+    /* (timestamp width 65px) + (padding-right of timestamp 15px) + (half of dot-container's effective left space 15px) - (half of line width 1.5px) */
+    left: calc(65px + 15px + ( (var(--timeline-width) - 65px - 25px - 15px - 12px) / 2 ) + 15px - 1.5px); 
+    /* Tạm thời tính toán đơn giản hơn, căn vào giữa timeline-dot-container */
+    left: calc(65px + 15px + ( (var(--timeline-width) - 65px - 25px - 15px ) / 2 ) - 1.5px ); /* Khoảng 90px */
+
+    top: 12px; /* Để bắt đầu từ dot đầu tiên */
+    bottom: 12px; /* Kết thúc ở dot cuối cùng */
+    width: 2.5px; /* Đường kẻ đậm hơn chút */
+    background-color: var(--timeline-line-color);
+    border-radius: 2px;
+    z-index: 0; /* Nằm dưới dot */
 }
+
 
 .timeline-item { 
     position: relative; 
     display: flex; 
     align-items: center; 
-    padding: 8px 0; 
+    min-height: 30px; /* Chiều cao tối thiểu cho mỗi item */
+    padding: 5px 0; /* Giảm padding dọc để timeline đỡ thưa */
     cursor: pointer; 
     border-radius: 6px; 
-    margin-right: 5px; /* Space from right edge of container */
+    margin-right: 5px;
     transition: background-color .15s ease; 
 }
 .timeline-item:hover { background-color: rgba(0,0,0,.03); }
 
 .timeline-timestamp { 
-    font-size: .78em; 
+    font-size: .75em; 
     color: var(--text-color-secondary); 
     width: 65px; 
     text-align: right; 
     padding-right: 15px; 
     font-variant-numeric: tabular-nums; 
     z-index: 1;
+    transition: color 0.2s ease, font-weight 0.2s ease;
 }
 
 .timeline-dot-container { 
-    /* This container's main purpose is to hold the dot and ensure it's above the line */
-    position: relative;
-    width: 15px; /* Width of the dot + some space */
-    height: 15px; /* Height of the dot + some space */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Căn chỉnh dot lên đường kẻ dọc */
+    width: calc(var(--timeline-width) - 65px - 25px); /* timeline_width - timestamp_width - timeline_container_padding_left */
+    display:flex; 
+    justify-content: flex-start; /* Dot sẽ nằm ở đầu container này */
+    padding-left: calc(15px + ( ( (var(--timeline-width) - 65px - 25px - 15px ) / 2 ) - 1.5px ) - (12px/2)  ); /* Tính toán để dot nằm trên đường kẻ */
+    /* Đơn giản hóa: */
+    padding-left: calc( (var(--timeline-width) - 65px - 25px - 12px) / 2 ); /* Căn dot vào giữa không gian còn lại */
+
+
     z-index: 1;
 }
 
 .timeline-dot { 
-    width: 9px; 
-    height: 9px; 
-    background-color: var(--timeline-dot-color); 
+    width: 10px; 
+    height: 10px; 
+    background-color: var(--content-bg); 
     border-radius: 50%; 
-    border: 2px solid var(--content-bg); /* Creates an "inner dot" effect */
-    box-shadow: 0 0 0 1px var(--timeline-dot-color); /* Outer ring */
+    border: 2px solid var(--timeline-dot-color); 
     transition: all .2s ease-in-out; 
+    flex-shrink:0;
+    opacity: 0.7; /* Dot inactive mờ hơn */
 }
 
 .timeline-item.active .timeline-dot { 
+    border-color: var(--timeline-dot-active-color); 
     background-color: var(--timeline-dot-active-color); 
-    border-color: var(--content-bg);
-    box-shadow: 0 0 0 2px var(--timeline-dot-active-color), 0 0 5px var(--timeline-dot-active-color); /* Glow effect */
-    transform: scale(1.3); 
+    transform: scale(1.35); 
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(0,122,255,0.5);
 }
 
 .timeline-item.active .timeline-timestamp { 
@@ -207,81 +233,46 @@ body.video-minimal-mode #timeline-container {
 #transcript-content-container { 
     flex-grow: 1; 
     padding: 25px; 
-    /* No overflow-y: auto; No fixed height. Scrolls with .content-section */
+    /* Bỏ overflow-y và height cố định, nó sẽ cuộn cùng .content-section */
 }
 
-.transcript-paragraph-text { 
-    margin-bottom: 1.5em; 
-    padding: 10px 12px; 
-    border-radius: 8px; 
-    font-size: 1rem; /* Apple's default is often 17px, 1rem is ~16px */
-    line-height:1.65; 
-    letter-spacing: -0.01em; /* Apple-like letter spacing */
-}
-
-.transcript-paragraph-text.highlighted-paragraph { 
-    background-color: var(--highlight-paragraph-bg); 
-    /* box-shadow: 0 1px 3px rgba(0,0,0,0.05); */
-}
-
-.transcript-sentence { 
-    cursor: pointer; 
-    padding: 0.5px 2px; 
-    margin-right: 2px; 
-    border-radius: 3px; 
-    transition: background-color .15s ease-in-out, box-shadow 0.15s ease-in-out; 
-}
+.transcript-paragraph-text { margin-bottom: 1.8em; padding: 10px 12px; border-radius: 8px; font-size: 1rem; line-height:1.65; letter-spacing: -0.01em; }
+.transcript-paragraph-text.highlighted-paragraph { background-color: var(--highlight-paragraph-bg); }
+.transcript-sentence { cursor: pointer; padding: 0.5px 2px; margin-right: 2px; border-radius: 3px; transition: background-color .15s ease-in-out, box-shadow 0.15s ease-in-out; }
 .transcript-sentence:hover { background-color: rgba(0,0,0,.04); }
-.transcript-sentence.highlighted-sentence { 
-    background-color: var(--highlight-sentence-bg); 
-    /* color: #000; Slightly darker text on highlight for contrast */
-}
+.transcript-sentence.highlighted-sentence { background-color: var(--highlight-sentence-bg); }
 .no-transcript-message { padding: 20px; text-align: center; color: var(--text-color-secondary); }
 
 /* Responsive adjustments */
 @media (max-width:900px) { 
+    :root { --timeline-width: 120px; /* Giảm chiều rộng timeline cho màn hình nhỏ hơn */ }
+    .content-section { 
+        /* Không cuộn riêng nữa, page-container sẽ cuộn */
+        /* overflow-y: auto; */ 
+        /* height: calc(100vh - var(--video-height-normal) - var(--header-height)); */
+    }
     #timeline-container {
-        order: -1; /* Timeline on top on mobile */
-        width: 100%; 
-        height: auto; 
-        max-height: 100px; /* Adjust as needed for horizontal scroll */
-        border-right: none; 
-        border-bottom: 1px solid var(--border-color);
-        padding: 10px; 
-        overflow-x: auto; 
-        overflow-y: hidden; 
-        display:flex;
-        position: relative; /* No longer sticky within column layout */
-        top: auto;
+        /* Timeline sẽ không sticky theo kiểu cũ nữa khi .content-section cuộn */
+        /* position: static; */
+        /* height: auto; */
+        /* overflow-y: visible; */
+        padding: 20px 15px 20px 15px;
     }
-    .timeline-list { display: flex; flex-direction: row; align-items: center; width:max-content; }
-    .timeline-list::before { display:none; }
-    .timeline-list::after { /* Horizontal line */
-        content: ''; position: absolute; left: 15px; right: 15px; top: calc(50% + 8px); 
-        height: 3px; background-color: var(--timeline-line-color); z-index: 0; border-radius:3px;
-    }
-    .timeline-item { padding: 5px 12px; display: flex; flex-direction: column; align-items: center; min-width: 80px; margin-right:0;}
-    .timeline-timestamp { width: auto; text-align: center; padding-right: 0; margin-bottom: 4px; order: -1; font-size:0.75em; }
-    .timeline-dot-container { width: auto; padding-left:0; justify-content:center; }
-    .timeline-dot { margin-bottom: 0; }
-    
-    #transcript-content-container { 
-        /* Height is now determined by its content within the scrollable .content-section */
-        height: auto; 
-        padding-top: 15px; /* Add some space from timeline */
-    }
-    .content-section { /* Main content section itself becomes primary scroll on mobile */
-        overflow-y: auto;
-        height: calc(100vh - var(--video-height-normal) - var(--header-height) - 100px); /* Approx height of timeline */
-    }
-    body.video-minimal-mode .content-section {
-        height: calc(100vh - var(--video-height-minimal) - var(--header-height) - 100px);
-    }
+    body { overflow-y: auto; } /* Cho phép body cuộn trên mobile nếu content dài */
+    .page-container { height: auto; }
+    .content-section { overflow-y: visible; height: auto; max-width: 100%; padding: 0 15px; }
+
+     /* Có thể ẩn timeline hoàn toàn trên màn hình rất nhỏ, hoặc làm nó ngang */
+    #timeline-container { display: none; } /* Đơn giản nhất là ẩn đi */
+    #transcript-content-container { padding: 20px 15px; }
 
 }
 @media (max-width:600px) { 
-    .video-section { height: 30vh; }
+    :root { --video-height-normal: 30vh; --header-height: 80px;}
     body.video-minimal-mode .video-section { height: var(--video-height-minimal); }
     .content-section { font-size:.9rem; }
     .transcript-paragraph-text { font-size: 0.95rem; }
+    .video-info h1 { font-size: 1.2em; }
+    .video-info p { font-size: 0.75em; }
+    .settings-bar { font-size: 0.8em; }
 }
