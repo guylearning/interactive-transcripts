@@ -2,32 +2,30 @@
 :root {
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --text-color: #1d1d1f; 
-    --text-color-secondary: #58585b; 
+    --text-color-secondary: #6a6a6f; /* Slightly adjusted secondary */
     --link-color: #007aff;
-    --bg-color: #f9f9f9; 
+    --bg-color: #f0f0f5; /* Lighter page background */
     --content-bg: #ffffff; 
-    --border-color: #dcdcdc;
+    --border-color: #d1d1d6; 
     --timeline-dot-color: #c7ced4; 
     --timeline-dot-active-color: var(--link-color);
-    --timeline-line-color: #e4e6e8;
-    --highlight-paragraph-bg: rgba(0, 122, 255, 0.07); 
-    --highlight-sentence-bg: rgba(255, 193, 7, 0.3); /* Vàng nhạt hơn cho câu */
-    --video-height: 40vh; 
-    --timeline-width: 160px; 
-    --settings-bar-height: 48px;
+    --timeline-line-color: #e0e2e5; /* Lighter line */
+    --highlight-paragraph-bg: rgba(0, 122, 255, 0.06); 
+    --highlight-sentence-bg: rgba(255, 204, 0, 0.3);
+    --video-height-normal: 40vh;
+    --video-height-minimal: 60px; /* Height for minimal video player (controls only) */
+    --header-height: 100px; /* Approximate height for the new header */
+    --timeline-width: 180px; /* Slightly wider timeline */
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
     font-family: var(--font-sans); 
     background-color: var(--bg-color); 
     color: var(--text-color); 
-    line-height: 1.6; 
+    line-height: 1.65; /* Improved line height */
+    font-size: 16px; /* Base font size */
 }
 
 .page-container { 
@@ -37,15 +35,66 @@ body {
     overflow: hidden; 
 }
 
+.page-header { /* New header section */
+    padding: 15px 25px;
+    background-color: var(--content-bg);
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    z-index: 1001; /* Above video when video is not sticky */
+    position: sticky; /* Header is sticky */
+    top: 0;
+}
+
+.video-info h1 {
+    font-size: 1.6em; /* Reduced for header */
+    font-weight: 600;
+    margin-bottom: 0.15em;
+    color: var(--text-color);
+}
+.video-info p {
+    font-size: 0.85em;
+    color: var(--text-color-secondary);
+    margin-bottom: 10px;
+}
+
+.settings-bar { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    font-size: .85em; 
+}
+.settings-bar label { 
+    display: flex; 
+    align-items: center; 
+    cursor: pointer; 
+    color: var(--text-color-secondary); 
+}
+.settings-bar input[type=checkbox] { 
+    margin-right: 6px; 
+    accent-color: var(--link-color); 
+    width:14px; height:14px; 
+}
+
+
 .video-section { 
     width: 100%; 
-    height: var(--video-height); 
+    height: var(--video-height-normal); 
     background-color: #000; 
     position: sticky; 
-    top: 0; 
+    top: var(--header-height); /* Sticky below the new header */
     z-index: 1000; 
-    box-shadow: 0 2px 5px rgba(0,0,0,.1); 
+    transition: height 0.3s ease-in-out;
 }
+body.video-minimal-mode .video-section {
+    height: var(--video-height-minimal);
+}
+/* Optionally hide the iframe content in minimal mode, though reducing height might be enough */
+body.video-minimal-mode #youtube-player-iframe {
+    /* visibility: hidden; Could also use this but might affect controls */
+}
+
 
 #youtube-player-iframe { 
     width: 100%; 
@@ -53,57 +102,33 @@ body {
     border: none; 
 }
 
-.settings-bar-container { 
-    padding: 0 20px; 
-    background-color: var(--content-bg); 
-    border-bottom: 1px solid var(--border-color); 
-    width: 100%; 
-    max-width: 1440px; /* Giới hạn chiều rộng tối đa của page */
-    margin: 0 auto; 
-    height:var(--settings-bar-height); 
-    display:flex; 
-    align-items:center;
-}
-
-.settings-bar { 
-    display: flex; 
-    align-items: center; 
-    gap: 20px; 
-    font-size: .9em; 
-}
-
-.settings-bar label { 
-    display: flex; 
-    align-items: center; 
-    cursor: pointer; 
-    color: var(--text-color-secondary); 
-}
-
-.settings-bar input[type=checkbox] { 
-    margin-right: 7px; 
-    accent-color: var(--link-color); 
-    width:15px; 
-    height:15px; 
-}
-
 .content-section { 
     display: flex; 
     flex-grow: 1; 
     width: 100%; 
-    max-width: 1440px; /* Giới hạn chiều rộng tối đa của page */
+    max-width: 1440px; 
     margin: 0 auto; 
-    overflow: hidden; 
+    overflow-y: auto; /* THIS IS THE MAIN SCROLLABLE AREA NOW */
+    /* Height will be determined by flex-grow */
+    scroll-behavior: smooth; /* For JS-driven scrolling */
 }
 
 #timeline-container { 
     width: var(--timeline-width); 
     flex-shrink: 0; 
-    padding: 20px 0 20px 25px; 
-    border-right: 1px solid var(--border-color); 
-    position: relative; 
-    overflow-y: auto; 
-    height: calc(100vh - var(--video-height) - var(--settings-bar-height)); 
+    padding: 25px 10px 25px 25px; 
+    /* No overflow-y: auto; No fixed height. It scrolls with .content-section */
+    border-right: 1px solid var(--border-color);
+    position: sticky; /* Make timeline sticky within .content-section */
+    top: 0; /* Stick to the top of .content-section scroll area */
+    height: calc(100vh - var(--video-height-normal) - var(--header-height)); /* Ensure it can fill the view */
+    /* Background color for the timeline column */
+    background-color: #fdfdff; /* Slightly different from main content for distinction */
 }
+body.video-minimal-mode #timeline-container {
+    height: calc(100vh - var(--video-height-minimal) - var(--header-height));
+}
+
 
 .timeline-list { 
     list-style: none; 
@@ -115,111 +140,148 @@ body {
 .timeline-list::before { /* Main vertical line */
     content: ''; 
     position: absolute; 
-    left: calc(var(--timeline-width) - 25px - 15px - 1.5px); /* (timeline width - left padding of timeline) - (timestamp width + padding) - (dot width / 2) - (line width / 2) */
-    top: 10px; 
-    bottom: 10px; 
+    left: 65px + 15px - 1.5px; /* timestamp width + padding - line_width/2 */
+    top: 15px; 
+    bottom: 15px; 
     width: 3px; 
     background-color: var(--timeline-line-color); 
     border-radius: 3px; 
+    z-index: 0;
 }
 
 .timeline-item { 
     position: relative; 
     display: flex; 
     align-items: center; 
-    padding: 10px 0; 
+    padding: 8px 0; 
     cursor: pointer; 
     border-radius: 6px; 
-    margin-right:15px; /* Space for scrollbar if needed */
+    margin-right: 5px; /* Space from right edge of container */
     transition: background-color .15s ease; 
 }
-.timeline-item:hover { background-color: rgba(0,0,0,.04); }
+.timeline-item:hover { background-color: rgba(0,0,0,.03); }
 
 .timeline-timestamp { 
-    font-size: .8em; 
+    font-size: .78em; 
     color: var(--text-color-secondary); 
     width: 65px; 
     text-align: right; 
     padding-right: 15px; 
     font-variant-numeric: tabular-nums; 
+    z-index: 1;
 }
 
 .timeline-dot-container { 
-    width: calc(var(--timeline-width) - 65px - 25px); /* timeline-container padding-left is 25px */
-    display:flex; 
-    justify-content: flex-start; 
-    padding-left: 15px; /* Space from timestamp to where dot should align with the line */
+    /* This container's main purpose is to hold the dot and ensure it's above the line */
+    position: relative;
+    width: 15px; /* Width of the dot + some space */
+    height: 15px; /* Height of the dot + some space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
 .timeline-dot { 
-    width: 12px; 
-    height: 12px; 
-    background-color: var(--content-bg); 
+    width: 9px; 
+    height: 9px; 
+    background-color: var(--timeline-dot-color); 
     border-radius: 50%; 
-    border: 2.5px solid var(--timeline-dot-color); 
+    border: 2px solid var(--content-bg); /* Creates an "inner dot" effect */
+    box-shadow: 0 0 0 1px var(--timeline-dot-color); /* Outer ring */
     transition: all .2s ease-in-out; 
-    z-index: 1; 
-    flex-shrink:0;
 }
 
 .timeline-item.active .timeline-dot { 
-    border-color: var(--timeline-dot-active-color); 
     background-color: var(--timeline-dot-active-color); 
-    transform: scale(1.2); 
+    border-color: var(--content-bg);
+    box-shadow: 0 0 0 2px var(--timeline-dot-active-color), 0 0 5px var(--timeline-dot-active-color); /* Glow effect */
+    transform: scale(1.3); 
 }
 
 .timeline-item.active .timeline-timestamp { 
     color: var(--timeline-dot-active-color); 
-    font-weight: 500; 
+    font-weight: 600; 
 }
         
 #transcript-content-container { 
     flex-grow: 1; 
     padding: 25px; 
-    overflow-y: auto; 
-    height: calc(100vh - var(--video-height) - var(--settings-bar-height)); 
-    scroll-behavior: smooth; 
+    /* No overflow-y: auto; No fixed height. Scrolls with .content-section */
 }
 
 .transcript-paragraph-text { 
-    margin-bottom: 1.8em; 
-    padding: 12px; 
+    margin-bottom: 1.5em; 
+    padding: 10px 12px; 
     border-radius: 8px; 
-    font-size: 1rem; 
+    font-size: 1rem; /* Apple's default is often 17px, 1rem is ~16px */
     line-height:1.65; 
+    letter-spacing: -0.01em; /* Apple-like letter spacing */
 }
 
 .transcript-paragraph-text.highlighted-paragraph { 
     background-color: var(--highlight-paragraph-bg); 
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.05); */
 }
 
 .transcript-sentence { 
     cursor: pointer; 
-    padding: 1px 3px; 
-    margin-right: 2px; /* Small space between sentences */
+    padding: 0.5px 2px; 
+    margin-right: 2px; 
     border-radius: 3px; 
-    transition: background-color .15s ease-in-out; 
+    transition: background-color .15s ease-in-out, box-shadow 0.15s ease-in-out; 
 }
-.transcript-sentence:hover { background-color: rgba(0,0,0,.05); }
-.transcript-sentence.highlighted-sentence { background-color: var(--highlight-sentence-bg); }
+.transcript-sentence:hover { background-color: rgba(0,0,0,.04); }
+.transcript-sentence.highlighted-sentence { 
+    background-color: var(--highlight-sentence-bg); 
+    /* color: #000; Slightly darker text on highlight for contrast */
+}
 .no-transcript-message { padding: 20px; text-align: center; color: var(--text-color-secondary); }
 
 /* Responsive adjustments */
 @media (max-width:900px) { 
-    .content-section{flex-direction:column} 
-    #timeline-container{width:100%;height:auto;max-height:90px;border-right:none;border-bottom:1px solid var(--border-color);padding:5px 10px;overflow-x:auto;overflow-y:hidden;display:flex} 
-    .timeline-list{display:flex;flex-direction:row;align-items:center;width:max-content} 
-    .timeline-list::before{display:none} 
-    .timeline-list::after{content:'';position:absolute;left:15px;right:15px;top:calc(50% + 10px);height:3px;background-color:var(--timeline-line-color);z-index:0;border-radius:3px} 
-    .timeline-item{padding:5px 10px;display:flex;flex-direction:column;align-items:center;min-width:90px;margin-right:0} 
-    .timeline-timestamp{width:auto;text-align:center;padding-right:0;margin-bottom:5px;order:-1} 
-    .timeline-dot-container{width:auto;padding-left:0;justify-content:center} 
-    .timeline-dot{margin-bottom:0} 
-    #transcript-content-container,#timeline-container{height:calc((100vh - var(--video-height) - var(--settings-bar-height) - 1px)/2)} 
-    #transcript-content-container{border-top:1px solid var(--border-color)} 
+    #timeline-container {
+        order: -1; /* Timeline on top on mobile */
+        width: 100%; 
+        height: auto; 
+        max-height: 100px; /* Adjust as needed for horizontal scroll */
+        border-right: none; 
+        border-bottom: 1px solid var(--border-color);
+        padding: 10px; 
+        overflow-x: auto; 
+        overflow-y: hidden; 
+        display:flex;
+        position: relative; /* No longer sticky within column layout */
+        top: auto;
+    }
+    .timeline-list { display: flex; flex-direction: row; align-items: center; width:max-content; }
+    .timeline-list::before { display:none; }
+    .timeline-list::after { /* Horizontal line */
+        content: ''; position: absolute; left: 15px; right: 15px; top: calc(50% + 8px); 
+        height: 3px; background-color: var(--timeline-line-color); z-index: 0; border-radius:3px;
+    }
+    .timeline-item { padding: 5px 12px; display: flex; flex-direction: column; align-items: center; min-width: 80px; margin-right:0;}
+    .timeline-timestamp { width: auto; text-align: center; padding-right: 0; margin-bottom: 4px; order: -1; font-size:0.75em; }
+    .timeline-dot-container { width: auto; padding-left:0; justify-content:center; }
+    .timeline-dot { margin-bottom: 0; }
+    
+    #transcript-content-container { 
+        /* Height is now determined by its content within the scrollable .content-section */
+        height: auto; 
+        padding-top: 15px; /* Add some space from timeline */
+    }
+    .content-section { /* Main content section itself becomes primary scroll on mobile */
+        overflow-y: auto;
+        height: calc(100vh - var(--video-height-normal) - var(--header-height) - 100px); /* Approx height of timeline */
+    }
+    body.video-minimal-mode .content-section {
+        height: calc(100vh - var(--video-height-minimal) - var(--header-height) - 100px);
+    }
+
 }
 @media (max-width:600px) { 
-    .video-section{height:30vh} 
-    #transcript-content-container,#timeline-container{height:calc((100vh - var(--video-height) - var(--settings-bar-height) - 1px)/2);font-size:.9rem} 
-    .transcript-paragraph-text{font-size:.95rem} 
+    .video-section { height: 30vh; }
+    body.video-minimal-mode .video-section { height: var(--video-height-minimal); }
+    .content-section { font-size:.9rem; }
+    .transcript-paragraph-text { font-size: 0.95rem; }
 }
