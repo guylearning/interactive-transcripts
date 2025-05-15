@@ -21,66 +21,62 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
-    font-family: var(--font-sans); 
-    background-color: var(--bg-color); 
-    color: var(--text-color); 
-    line-height: 1.65; 
-    font-size: 16px; /* Base font size ~1rem */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
     overflow-y: hidden; /* Let .page-container handle main scroll */
 }
 
 .page-container { 
-    display: flex; 
-    flex-direction: column; 
-    height: 100vh; 
-    /* overflow: hidden; Let content-section scroll */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .video-section { /* Video always at the top */
-    width: 100%; 
-    height: var(--video-height-normal); 
+    margin-bottom: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background-color: #000; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1001; 
-    transition: height 0.3s ease-in-out;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-body.video-minimal-mode .video-section {
-    height: var(--video-height-minimal);
+    transition: all 0.3s ease;
 }
 
-#youtube-player-iframe { 
-    width: 100%; 
-    height: 100%; 
-    border: none; 
+#youtube-player-iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    display: block;
+}
+
+.video-section.minimal-mode {
+    width: 320px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .page-header { /* Header below video, also sticky */
-    padding: 12px 25px;
-    background-color: var(--content-bg);
-    border-bottom: 1px solid var(--border-color);
-    width: 100%;
-    z-index: 1000; /* Below video */
-    position: sticky;
-    top: var(--video-height-normal); /* Sticks below the normal video height */
-    transition: top 0.3s ease-in-out;
-    height: var(--header-height);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin-bottom: 20px;
 }
-body.video-minimal-mode .page-header {
-    top: var(--video-height-minimal); /* Adjust sticky position when video is minimal */
+
+.video-info {
+    margin-bottom: 15px;
 }
 
 .video-info h1 {
-    font-size: 1.5em; 
-    font-weight: 600;
-    margin-bottom: 0.2em;
-    color: var(--text-color);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100% - 150px); /* Avoid overlap with settings */
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #2c3e50;
 }
+
 .video-info p {
     font-size: 0.85em;
     color: var(--text-color-secondary);
@@ -88,165 +84,208 @@ body.video-minimal-mode .page-header {
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-.settings-bar { 
-    display: flex; 
-    align-items: center; 
-    gap: 20px; 
-    font-size: .85em; 
+.settings-bar {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
 }
-.settings-bar label { display: flex; align-items: center; cursor: pointer; color: var(--text-color-secondary); }
+
+.settings-bar label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
 .settings-bar input[type=checkbox] { margin-right: 6px; accent-color: var(--link-color); width:14px; height:14px; }
 
 .content-section { /* Main scrollable area for transcript with integrated timeline */
-    display: flex; 
-    flex-direction: column;
-    flex-grow: 1; 
-    width: 100%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    overflow-y: auto;
-    height: calc(100vh - var(--video-height-normal) - var(--header-height)); 
-    position: relative;
-}
-body.video-minimal-mode .content-section {
-    height: calc(100vh - var(--video-height-minimal) - var(--header-height));
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 30px;
 }
 
-/* New combined paragraph container */
+.transcript-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-column {
+    width: 60px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.transcript-column {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+    padding-right: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f0f0f0;
+}
+
+.transcript-column::-webkit-scrollbar {
+    width: 8px;
+}
+
+.transcript-column::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.transcript-column::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* Timeline elements */
+.timeline-connecting-line {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background-color: #dde;
+    transform: translateX(-50%);
+}
+
 .paragraph-container {
     display: flex;
-    margin-bottom: 1.5em;
+    margin-bottom: 20px;
     position: relative;
-    cursor: pointer;
 }
 
-/* Timeline component (left side) */
-.paragraph-timeline {
-    width: 100px;
-    flex-shrink: 0;
-    position: relative;
+.timeline-dot-wrapper {
+    width: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px; /* Align with paragraph text */
-}
-
-.paragraph-timeline-dot-container {
     position: relative;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+    margin-top: 8px;
+    flex-shrink: 0;
 }
 
-.paragraph-timeline-dot {
-    width: 9px;
-    height: 9px;
-    background-color: var(--content-bg);
+.timeline-dot {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    border: 2px solid var(--timeline-dot-color);
-    transition: all .2s ease-in-out;
-    opacity: 0.7;
+    background-color: #ccc;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.paragraph-container.active .paragraph-timeline-dot {
-    border-color: var(--timeline-dot-active-color);
-    background-color: var(--timeline-dot-active-color);
-    transform: scale(1.4);
-    opacity: 1;
-    box-shadow: 0 0 6px var(--timeline-dot-active-color);
+.timeline-dot:hover {
+    transform: scale(1.2);
+    background-color: #90caf9;
 }
 
-.paragraph-timeline-timestamp {
-    font-size: .75em;
-    color: var(--text-color-secondary);
+.timeline-timestamp {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
     text-align: center;
-    padding: 4px 0;
-    font-variant-numeric: tabular-nums;
-    transition: color 0.2s ease, font-weight 0.2s ease;
 }
 
-.paragraph-container.active .paragraph-timeline-timestamp {
-    color: var(--timeline-dot-active-color);
-    font-weight: 600;
-}
-
-/* Timeline connection line */
-.timeline-connection {
-    position: absolute;
-    width: 2px;
-    background-color: var(--timeline-line-color);
-    top: 0;
-    bottom: 0;
-    left: 50px; /* Center in the timeline area */
-    z-index: 1;
-}
-
-/* Transcript component (right side) */
+/* Paragraph and sentence styles */
 .paragraph-text {
-    flex-grow: 1;
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 1rem;
-    line-height: 1.65;
-    letter-spacing: -0.01em;
-    transition: background-color 0.2s ease;
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
 }
 
-.paragraph-container.active .paragraph-text {
-    background-color: var(--highlight-paragraph-bg);
+.paragraph-active .paragraph-text {
+    background-color: rgba(144, 202, 249, 0.2);
 }
 
-/* Sentence highlighting */
+.paragraph-active .timeline-dot {
+    background-color: #2196F3;
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+}
+
+.transcript-sentence {
+    transition: background-color 0.3s ease;
+    padding: 2px 0;
+}
+
+.sentence-active {
+    background-color: rgba(33, 150, 243, 0.3);
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+
+/* Interactive elements */
 .transcript-sentence {
     cursor: pointer;
-    padding: 0.5px 2px;
-    margin-right: 2px;
-    border-radius: 3px;
-    transition: background-color .15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .transcript-sentence:hover {
-    background-color: rgba(0,0,0,.04);
+    background-color: rgba(220, 220, 220, 0.5);
+    border-radius: 3px;
 }
 
-.transcript-sentence.highlighted-sentence {
-    background-color: var(--highlight-sentence-bg);
-}
-
+/* No transcript message */
 .no-transcript-message {
     padding: 20px;
     text-align: center;
-    color: var(--text-color-secondary);
+    color: #777;
+    font-style: italic;
 }
 
-/* Responsive adjustments */
-@media (max-width:900px) {
-    .paragraph-container {
+/* Responsive design */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 10px;
+    }
+    
+    .video-section.minimal-mode {
+        width: 240px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .timeline-column {
+        width: 50px;
+    }
+    
+    .timeline-connecting-line {
+        left: 25px;
+    }
+    
+    .timeline-dot-wrapper {
+        width: 50px;
+    }
+    
+    .timeline-timestamp {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header {
         flex-direction: column;
     }
     
-    .paragraph-timeline {
-        width: 100%;
-        flex-direction: row;
-        padding: 5px 0;
-        justify-content: flex-start;
+    .settings-bar {
+        flex-direction: column;
+        gap: 10px;
     }
     
-    .paragraph-timeline-timestamp {
-        margin-left: 15px;
-        text-align: left;
+    .video-section.minimal-mode {
+        width: 180px;
     }
     
-    .timeline-connection {
-        width: 4px;
-        left: 10px;
-    }
-    
-    .paragraph-text {
-        margin-left: 30px; /* Indent to align with timeline */
+    .content-section {
+        padding: 15px 10px;
     }
 }
 
@@ -258,11 +297,19 @@ body.video-minimal-mode .content-section {
     .video-info p { font-size: 0.7em; }
     .settings-bar { font-size: 0.75em; }
     
-    .paragraph-timeline {
-        padding: 3px 0;
+    .timeline-column {
+        width: 50px;
     }
     
-    .paragraph-timeline-timestamp {
-        font-size: 0.7em;
+    .timeline-connecting-line {
+        left: 25px;
     }
-}
+    
+    .timeline-dot-wrapper {
+        width: 50px;
+    }
+    
+    .timeline-timestamp {
+        font-size: 10px;
+    }
+} 
