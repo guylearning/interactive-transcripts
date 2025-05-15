@@ -114,5 +114,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_2_intro_to_react_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_2_intro_to_react/mit_web_lab_6_962_-_day_2_intro_to_react_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_2_intro_to_react/mit_web_lab_6_962_-_day_2_intro_to_react_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 2: Workshop 1 (React)",
+    "video_name_clean": "mit_web_lab_6_962_-_day_2_workshop_1_react",
+    "youtube_id": "bNk_AcIkrLo",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T20:10:37.242607+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 4062,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_2_workshop_1_react_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_2_workshop_1_react/mit_web_lab_6_962_-_day_2_workshop_1_react_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_2_workshop_1_react/mit_web_lab_6_962_-_day_2_workshop_1_react_transcript.vtt"
   }
 ]
