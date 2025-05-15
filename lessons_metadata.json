@@ -44,5 +44,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_1_kickoff_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_kickoff/mit_web_lab_6_962_-_day_1_kickoff_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_kickoff/mit_web_lab_6_962_-_day_1_kickoff_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 1: HTML/CSS",
+    "video_name_clean": "mit_web_lab_6_962_-_day_1_htmlcss",
+    "youtube_id": "wcCbbSTE8I4",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-15T19:57:26.682874+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 1192,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_1_htmlcss_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_htmlcss/mit_web_lab_6_962_-_day_1_htmlcss_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_1_htmlcss/mit_web_lab_6_962_-_day_1_htmlcss_transcript.vtt"
   }
 ]

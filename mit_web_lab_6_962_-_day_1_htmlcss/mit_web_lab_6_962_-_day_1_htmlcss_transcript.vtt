@@ -1,0 +1,1172 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 7c58acf2-b80e-47a4-95b1-a92ab5a467bd
+Created: 2025-05-15T19:57:25.008Z
+Duration: 1191.8628
+Channels: 1
+
+00:00:00.480 --> 00:00:02.560
+Okay. Since we're a little bit behind schedule
+
+00:00:02.560 --> 00:00:04.640
+already, I'm gonna go ahead and jump into
+
+00:00:04.640 --> 00:00:06.960
+the next lecture. So as an introduction, I'm
+
+00:00:06.960 --> 00:00:12.400
+Sanvit. Oh, and this is Evan. He doesn't
+
+00:00:12.400 --> 00:00:13.600
+have a mic, so I'm saying his name
+
+00:00:13.600 --> 00:00:18.155
+for him. Yeah. So our lecture's going to
+
+00:00:18.155 --> 00:00:20.955
+be on HTML and CSS. You might have
+
+00:00:20.955 --> 00:00:22.715
+already seen this before, but again, we're going
+
+00:00:22.715 --> 00:00:24.315
+to start off a little bit slow and
+
+00:00:24.315 --> 00:00:27.035
+then speed up gradually. And if this is
+
+00:00:27.035 --> 00:00:29.115
+new to you, don't worry, because again, we'll
+
+00:00:29.115 --> 00:00:31.540
+have the lectures on our website for you
+
+00:00:31.540 --> 00:00:35.940
+to review. Before we jump in, let's talk
+
+00:00:35.940 --> 00:00:37.940
+a little bit about why HTML and CSS
+
+00:00:37.940 --> 00:00:42.500
+is important to learn. So arguably, the thing
+
+00:00:42.500 --> 00:00:45.165
+in website design is conveying information to a
+
+00:00:45.165 --> 00:00:47.005
+user in a way that's, like, nice to
+
+00:00:47.005 --> 00:00:49.565
+see. And HTML and CSS are going to
+
+00:00:49.565 --> 00:00:51.405
+be our core two things for front end
+
+00:00:51.405 --> 00:00:55.245
+development for that purpose. So here's a website
+
+00:00:55.245 --> 00:00:57.565
+that you might be familiar with, and here
+
+00:00:57.565 --> 00:01:02.260
+is the HTML and CSS kind of extracted
+
+00:01:02.260 --> 00:01:07.140
+from it. So HTML stands for Hypertext Markup
+
+00:01:07.140 --> 00:01:09.300
+Language. You can basically just think of it
+
+00:01:09.300 --> 00:01:11.060
+as the language that your Web browser is
+
+00:01:11.060 --> 00:01:13.940
+reading through in order to describe what web
+
+00:01:13.940 --> 00:01:18.845
+page you're looking at. A common analogy people
+
+00:01:18.845 --> 00:01:21.485
+will use is that HTML is like or
+
+00:01:21.485 --> 00:01:23.165
+if, like, a Web page was, like, a
+
+00:01:23.165 --> 00:01:25.645
+fully formed person, then HTML is the skeleton
+
+00:01:25.645 --> 00:01:28.125
+that's holding the structure together, and CSS is
+
+00:01:28.125 --> 00:01:29.485
+like the bells and whistles, like the nice
+
+00:01:29.485 --> 00:01:31.165
+flesh that makes it appealing to look at.
+
+00:01:34.010 --> 00:01:36.090
+Fortunately, the main idea of this lecture is
+
+00:01:36.090 --> 00:01:38.650
+going be that HTML is really simple, and
+
+00:01:38.650 --> 00:01:40.250
+you can actually just think of it as
+
+00:01:40.250 --> 00:01:43.850
+a bunch of nested boxes or containers. So
+
+00:01:43.850 --> 00:01:46.475
+let's see what that actually means using this
+
+00:01:46.475 --> 00:01:50.715
+example from xkcd. All HTML is really describing
+
+00:01:50.715 --> 00:01:53.995
+on this Web page are these containers. So
+
+00:01:53.995 --> 00:01:56.075
+here's a big one. Here's the container that
+
+00:01:56.075 --> 00:01:58.510
+contains the entire Web page. Here is one
+
+00:01:58.510 --> 00:02:00.910
+that contains a little bit more closely all
+
+00:02:00.910 --> 00:02:03.230
+the information on the Web page. Here are
+
+00:02:03.230 --> 00:02:06.190
+three containers contained within that that have the
+
+00:02:06.190 --> 00:02:10.190
+NavBar, the title, and the actual content, and
+
+00:02:10.190 --> 00:02:15.155
+so on and so on. So let's look
+
+00:02:15.155 --> 00:02:16.675
+into the code to see how this is
+
+00:02:16.675 --> 00:02:20.755
+actually done. Here's a really, really simple website.
+
+00:02:21.875 --> 00:02:24.675
+The code on the left generates this kind
+
+00:02:24.675 --> 00:02:27.155
+of bare bones looking website on the right.
+
+00:02:27.635 --> 00:02:30.650
+So let's walk through the code and see
+
+00:02:30.650 --> 00:02:34.010
+how every part of it affects the site
+
+00:02:34.010 --> 00:02:36.890
+that we see. So first, in any HTML
+
+00:02:36.890 --> 00:02:39.370
+document, you want to include this header thing
+
+00:02:39.370 --> 00:02:42.505
+called doctype. Html. It basically just tells your
+
+00:02:42.505 --> 00:02:44.105
+web browser to use the latest version of
+
+00:02:44.105 --> 00:02:46.985
+HTML. It's pretty easy to forget, but it's
+
+00:02:46.985 --> 00:02:52.105
+kind of important, so try to remember. Next,
+
+00:02:52.105 --> 00:02:54.185
+we move on to our first HTML element,
+
+00:02:54.710 --> 00:02:56.870
+and you'll see that it has this kind
+
+00:02:56.870 --> 00:03:01.190
+of opening and closing structure. And of course,
+
+00:03:01.190 --> 00:03:03.030
+that's because the elements are containers, like I
+
+00:03:03.030 --> 00:03:07.110
+mentioned before. So the key structure of HTML
+
+00:03:07.110 --> 00:03:08.685
+elements elements is that they have an opening
+
+00:03:08.685 --> 00:03:11.485
+tag, which is just the name of it
+
+00:03:11.485 --> 00:03:14.205
+with these bracket things, and then a closing
+
+00:03:14.205 --> 00:03:15.405
+tag, which is the same thing, but with
+
+00:03:15.405 --> 00:03:18.285
+a forward slash. And anything that's contained within
+
+00:03:18.285 --> 00:03:23.550
+it will go in between. Pretty intuitive. And
+
+00:03:23.550 --> 00:03:25.630
+you can see that container structure right here,
+
+00:03:25.870 --> 00:03:28.030
+where we have the HTML container. It's containing
+
+00:03:28.030 --> 00:03:30.270
+both the head and the body, and then
+
+00:03:30.270 --> 00:03:32.190
+both of those contain other things as well.
+
+00:03:35.485 --> 00:03:37.565
+I think the syntax for HTML is pretty
+
+00:03:37.565 --> 00:03:39.405
+simple, as long as you keep in mind
+
+00:03:39.725 --> 00:03:42.365
+that it has to respect the fact that
+
+00:03:42.365 --> 00:03:44.845
+it's a container, right? So you can't have
+
+00:03:44.845 --> 00:03:48.760
+this kind of thing where you're starting something,
+
+00:03:48.760 --> 00:03:50.600
+starting another thing, and then closing the first
+
+00:03:50.600 --> 00:03:52.680
+thing before you close the other one. So
+
+00:03:53.160 --> 00:03:54.840
+this is basically the only thing to remember.
+
+00:03:54.840 --> 00:03:57.240
+Just make sure that it's nested properly, and
+
+00:03:57.240 --> 00:04:02.755
+you should be fine. All right, I'll pause
+
+00:04:02.755 --> 00:04:07.475
+here for questions, if there are any. Okay,
+
+00:04:07.475 --> 00:04:09.955
+cool. So let's go back to the code
+
+00:04:09.955 --> 00:04:11.955
+and look at things a little bit more
+
+00:04:11.955 --> 00:04:14.900
+deeply. So I mentioned the structure of this
+
+00:04:14.900 --> 00:04:16.100
+thing, but I didn't actually tell you what
+
+00:04:16.100 --> 00:04:18.180
+it does. This one is called the root,
+
+00:04:18.180 --> 00:04:20.660
+and it's just going to contain all things
+
+00:04:20.660 --> 00:04:22.900
+in the web page. And the syntax is
+
+00:04:22.900 --> 00:04:27.915
+pretty simple, it's just HTML. Within those, you're
+
+00:04:27.915 --> 00:04:29.835
+always going to include the head and the
+
+00:04:29.835 --> 00:04:33.355
+body. Within the head, you store what's called
+
+00:04:33.355 --> 00:04:36.715
+metadata. So metadata is things that aren't going
+
+00:04:36.715 --> 00:04:39.275
+to be displayed on the website, but they'll
+
+00:04:39.275 --> 00:04:40.715
+help it, like, do what it needs to
+
+00:04:40.715 --> 00:04:42.980
+do. So for example, we'll include the title
+
+00:04:42.980 --> 00:04:45.140
+here, and you'll see that it's not actually
+
+00:04:45.940 --> 00:04:47.540
+on the document. It's not in, like, heading
+
+00:04:47.540 --> 00:04:49.380
+or paragraph, but it's in the top here
+
+00:04:49.460 --> 00:04:51.780
+in this tab thing. Other things you'll include
+
+00:04:51.780 --> 00:04:54.740
+in there are links to other files, like
+
+00:04:54.740 --> 00:04:56.900
+style sheets, which Evan will talk about later
+
+00:04:57.195 --> 00:05:02.395
+in the lecture. Next is the body, and
+
+00:05:02.395 --> 00:05:04.075
+this is going to contain everything that's actually
+
+00:05:04.075 --> 00:05:09.035
+displayed. So that means the heading and the
+
+00:05:09.035 --> 00:05:13.250
+paragraph, which have the following names for their
+
+00:05:13.250 --> 00:05:18.610
+tags. So as a quick stopping point, the
+
+00:05:18.610 --> 00:05:20.370
+HTML tags that we've covered so far are
+
+00:05:20.370 --> 00:05:24.210
+HTML, head, body, the headers, and the paragraphs.
+
+00:05:25.115 --> 00:05:26.955
+I also included these other ones, div and
+
+00:05:26.955 --> 00:05:29.915
+span. They're pretty important, and I'll talk about
+
+00:05:29.915 --> 00:05:31.195
+it in a little bit, but they're kind
+
+00:05:31.195 --> 00:05:34.075
+of like your generic if you don't know
+
+00:05:34.075 --> 00:05:36.155
+what else to do, you use those tags.
+
+00:05:39.240 --> 00:05:41.640
+There's also this notion of attributes for HTML
+
+00:05:41.640 --> 00:05:45.560
+elements. So we see this plain structure here
+
+00:05:45.560 --> 00:05:47.640
+that I showed you before. But what if
+
+00:05:47.640 --> 00:05:50.280
+you wanted to modify your element in a
+
+00:05:50.280 --> 00:05:51.720
+way that you couldn't just do by adding
+
+00:05:51.720 --> 00:05:55.085
+text or adding, like, something inside of it.
+
+00:05:56.205 --> 00:05:58.685
+What you do is, within the opening tag,
+
+00:05:58.685 --> 00:06:01.085
+you add an attribute. So an attribute will
+
+00:06:01.085 --> 00:06:04.605
+be defined by putting the name of the
+
+00:06:04.605 --> 00:06:06.685
+attribute and then setting it equal to something
+
+00:06:06.685 --> 00:06:11.470
+within a string. Attributes, and that's the value.
+
+00:06:12.590 --> 00:06:14.750
+So some common places that you might be
+
+00:06:14.750 --> 00:06:18.270
+using attributes. One very common one is inserting
+
+00:06:18.270 --> 00:06:20.910
+links. So the syntax for link is just
+
+00:06:20.910 --> 00:06:25.285
+a, stands for anchor, if you're curious. Insert
+
+00:06:25.285 --> 00:06:27.605
+a link, you'll add the attribute for href,
+
+00:06:28.005 --> 00:06:29.445
+and the value is just going to be
+
+00:06:29.445 --> 00:06:33.605
+the link. Here's an example of that. If
+
+00:06:33.605 --> 00:06:34.645
+you click on this link, it'll go to
+
+00:06:34.645 --> 00:06:40.160
+weblab.mit.edu. Another really common one is going to
+
+00:06:40.160 --> 00:06:43.440
+be images. So for image, to insert an
+
+00:06:43.440 --> 00:06:46.560
+image, you'll go to the source attribute, src,
+
+00:06:46.720 --> 00:06:48.800
+and then you set that equal to the
+
+00:06:48.800 --> 00:06:50.720
+name of the image, wherever that is, like
+
+00:06:50.720 --> 00:06:57.255
+relative to your directory. Now, there's something a
+
+00:06:57.255 --> 00:06:59.655
+little bit weird here with this opening and
+
+00:06:59.655 --> 00:07:02.535
+closing thing for images, because when you have
+
+00:07:02.535 --> 00:07:04.215
+an image, you're not really going to put
+
+00:07:04.215 --> 00:07:06.055
+anything inside of it. You're not going to
+
+00:07:06.055 --> 00:07:08.455
+put text of your image, or you might,
+
+00:07:08.455 --> 00:07:11.930
+but probably not in this way. So instead,
+
+00:07:11.930 --> 00:07:14.650
+what HTML lets you do is get rid
+
+00:07:14.650 --> 00:07:17.930
+of the closing tag entirely and make what's
+
+00:07:17.930 --> 00:07:21.130
+called a self closing tag. So for this,
+
+00:07:21.130 --> 00:07:22.890
+it'll display the same thing that it did
+
+00:07:22.890 --> 00:07:26.595
+before, just an image. But because you don't
+
+00:07:26.595 --> 00:07:28.675
+need anything inside of the opening and closing,
+
+00:07:28.675 --> 00:07:36.850
+you just make it one tag. Oh, another
+
+00:07:36.850 --> 00:07:38.290
+thing to keep in mind, as I mentioned
+
+00:07:38.290 --> 00:07:40.130
+before, you have to navigate to the correct,
+
+00:07:40.770 --> 00:07:44.610
+like, file name. So if your HTML file
+
+00:07:44.610 --> 00:07:47.410
+was in, like, the same directory, like, directly
+
+00:07:47.410 --> 00:07:50.855
+as your image or GIF or whatever, you
+
+00:07:50.855 --> 00:07:52.615
+can just put it like this. But if
+
+00:07:52.615 --> 00:07:55.655
+it's in within another folder, then you need
+
+00:07:55.655 --> 00:08:01.015
+to update that accordingly. Another quick thing is,
+
+00:08:01.255 --> 00:08:03.175
+in the case that your browser doesn't display
+
+00:08:03.175 --> 00:08:05.730
+an image correctly, it's good practice to just
+
+00:08:05.730 --> 00:08:09.170
+add alt text so that maybe a user
+
+00:08:09.170 --> 00:08:11.170
+who's confused why they don't see a picture
+
+00:08:11.330 --> 00:08:15.010
+will understand. This is also good for semantics.
+
+00:08:15.010 --> 00:08:17.170
+If you're just reading through your code and
+
+00:08:17.170 --> 00:08:19.250
+not looking at the web page, it may
+
+00:08:18.925 --> 00:08:21.245
+be good to label things with alt text
+
+00:08:21.245 --> 00:08:26.045
+and things like that. I'll stop here for
+
+00:08:26.045 --> 00:08:35.020
+questions once again. Alright. Some other common elements
+
+00:08:35.020 --> 00:08:37.820
+are lists. List is pretty simple. You can
+
+00:08:37.820 --> 00:08:41.260
+have ordered or unordered lists, and they contain
+
+00:08:41.260 --> 00:08:46.955
+list elements. I think that one's pretty self
+
+00:08:46.955 --> 00:08:49.115
+explanatory. Okay. Back to the ones that I
+
+00:08:49.115 --> 00:08:51.435
+mentioned before, div and span. So div and
+
+00:08:51.435 --> 00:08:52.715
+span are going to be your, like, go
+
+00:08:52.715 --> 00:08:55.275
+to generic elements. And all they really do
+
+00:08:55.595 --> 00:08:58.280
+or they don't do anything, like, specific. All
+
+00:08:58.280 --> 00:09:01.720
+they do is just group together other elements.
+
+00:09:01.720 --> 00:09:04.840
+So they're just like plain containers. The difference
+
+00:09:04.840 --> 00:09:06.760
+between them is that div will group, like,
+
+00:09:06.760 --> 00:09:09.320
+a block section, while span will group something
+
+00:09:09.320 --> 00:09:11.075
+that's, like, in line. So if you wanted
+
+00:09:11.075 --> 00:09:12.755
+to select, like let's say you have, like,
+
+00:09:12.755 --> 00:09:14.195
+a paragraph and you wanted to select, like,
+
+00:09:14.195 --> 00:09:16.515
+one thing to maybe, like, style it, then
+
+00:09:16.515 --> 00:09:18.755
+you could use span around that, like, word
+
+00:09:18.755 --> 00:09:21.555
+or, like, a couple words, and then it
+
+00:09:21.555 --> 00:09:22.755
+would stay in line. Whereas if you use
+
+00:09:22.755 --> 00:09:24.515
+div, then it would, like, try to, like,
+
+00:09:24.515 --> 00:09:26.275
+do a line break or something like that.
+
+00:09:27.820 --> 00:09:30.140
+So here's an example of two divs and
+
+00:09:30.140 --> 00:09:31.900
+two spans. So as you can see, like,
+
+00:09:31.900 --> 00:09:33.660
+the divs are stacked on top of each
+
+00:09:33.660 --> 00:09:37.100
+other, whereas the spans are they respect, like,
+
+00:09:37.180 --> 00:09:46.495
+they're not stacked anymore. So if we wanted
+
+00:09:46.495 --> 00:09:49.935
+to add a div to our old website,
+
+00:09:50.575 --> 00:09:53.135
+we could just, I don't know, box our
+
+00:09:53.135 --> 00:09:56.095
+body around with the div. You might be
+
+00:09:56.095 --> 00:09:57.775
+wondering, oh, why did I do that? It
+
+00:09:57.775 --> 00:10:00.630
+doesn't really do anything. But now we have
+
+00:10:00.630 --> 00:10:02.710
+this nice box where we can just refer
+
+00:10:02.710 --> 00:10:04.230
+to like the div and then it'll refer
+
+00:10:04.230 --> 00:10:06.390
+to both the heading and the paragraph. And
+
+00:10:06.390 --> 00:10:08.470
+this becomes helpful when you're doing styling and
+
+00:10:08.470 --> 00:10:11.910
+stuff. Evan will talk about that more. Yeah.
+
+00:10:14.605 --> 00:10:16.045
+So I threw a whole lot of tags
+
+00:10:16.045 --> 00:10:18.445
+at you and maybe not like that much
+
+00:10:18.605 --> 00:10:21.565
+time to remember all of them. But don't
+
+00:10:21.565 --> 00:10:24.045
+worry, because Google is gonna be your best
+
+00:10:24.045 --> 00:10:25.725
+friend with this. It's not that hard to
+
+00:10:25.725 --> 00:10:28.365
+find HTML elements and like what they're best
+
+00:10:28.365 --> 00:10:30.490
+used for. You can go to this site
+
+00:10:30.490 --> 00:10:32.970
+called MDN Web Docs and it has pretty
+
+00:10:32.970 --> 00:10:37.690
+good descriptions of all the elements. All right.
+
+00:10:37.690 --> 00:10:42.890
+I'll stop here for questions again. Okay, cool.
+
+00:10:45.135 --> 00:10:47.055
+So as I mentioned before, div is like
+
+00:10:47.055 --> 00:10:50.255
+a very generic element and you're probably going
+
+00:10:50.255 --> 00:10:51.295
+to want to use it a lot when
+
+00:10:51.295 --> 00:10:55.375
+you're doing styling and referring to groups of
+
+00:10:55.375 --> 00:11:00.550
+things like that. And at some point, I'm
+
+00:11:00.550 --> 00:11:02.070
+sure you'll wonder, like, why not just use
+
+00:11:02.070 --> 00:11:05.910
+div for everything? And there's a couple reasons.
+
+00:11:06.950 --> 00:11:08.630
+If we look at the MDN Web Docs,
+
+00:11:08.630 --> 00:11:10.710
+actually, they say that div should only be
+
+00:11:10.710 --> 00:11:13.745
+used when there's no other semantic element that's
+
+00:11:13.745 --> 00:11:15.985
+appropriate. And a semantic element is just one
+
+00:11:15.985 --> 00:11:18.145
+that's, like, labeled with what exactly it's supposed
+
+00:11:18.145 --> 00:11:20.705
+to do. So, for example, like nav bar,
+
+00:11:20.785 --> 00:11:24.385
+that's a semantic element. It's just nav. Header,
+
+00:11:24.385 --> 00:11:27.280
+footer, section, these are all just better things
+
+00:11:27.280 --> 00:11:34.400
+to use. One is for readability, because maybe
+
+00:11:34.400 --> 00:11:36.480
+you come back to your project a week
+
+00:11:36.480 --> 00:11:38.080
+later and you forgot what all these divs
+
+00:11:38.080 --> 00:11:39.895
+are supposed to do. But then, if you
+
+00:11:39.895 --> 00:11:42.055
+have semantic elements, then it's easier to, like,
+
+00:11:42.055 --> 00:11:44.935
+parse your code. It's also helpful for, like,
+
+00:11:44.935 --> 00:11:46.775
+Web crawlers and bots that are just looking
+
+00:11:46.775 --> 00:11:52.230
+through your website. Yeah. So to sum up,
+
+00:11:52.230 --> 00:11:55.430
+don't just use div. It's useful, it's helpful,
+
+00:11:55.430 --> 00:11:57.110
+it's like the first thing you'll go to,
+
+00:11:57.190 --> 00:11:58.950
+but try to use MDN Web Docs to
+
+00:11:58.950 --> 00:12:00.710
+find the element that best fits your needs.
+
+00:12:04.145 --> 00:12:07.025
+Alright. This has been our intro to HTML.
+
+00:12:07.105 --> 00:12:08.545
+And I'll pass it on to Evan to
+
+00:12:08.545 --> 00:12:28.640
+talk about CSS. So CSS stands for cascading
+
+00:12:28.640 --> 00:12:31.305
+style sheets. And it's used used for styling
+
+00:12:31.305 --> 00:12:33.465
+your browser. And cascading stands for sort of
+
+00:12:33.465 --> 00:12:36.185
+how the rules are applied, because they're applied
+
+00:12:36.185 --> 00:12:39.785
+in sort of other rules override others depending
+
+00:12:39.785 --> 00:12:43.310
+on the order they're written. So back to
+
+00:12:43.310 --> 00:12:45.550
+the Cafe Bon Appetit website, this is what
+
+00:12:45.550 --> 00:12:48.750
+it looks like with CSS and HTML. But
+
+00:12:48.750 --> 00:12:50.670
+if you take away the CSS, then you
+
+00:12:50.670 --> 00:12:52.270
+end up with something like this. And you
+
+00:12:52.270 --> 00:12:53.630
+can test this out for yourself in your
+
+00:12:53.630 --> 00:12:55.310
+browser if you just go to the website
+
+00:12:55.310 --> 00:12:57.630
+and then open Developer Tools. And you can
+
+00:12:57.630 --> 00:12:59.525
+go into the head of the HTML and
+
+00:12:59.525 --> 00:13:01.925
+delete all the style sheets which are linked.
+
+00:13:03.285 --> 00:13:06.165
+So back to our analogy, CSS sort of
+
+00:13:06.165 --> 00:13:08.325
+adds a look to your skeleton that HTML
+
+00:13:08.325 --> 00:13:13.010
+gives you. Here's what a basic CSS rule
+
+00:13:13.010 --> 00:13:15.970
+set looks like. At the top, you have
+
+00:13:15.970 --> 00:13:20.530
+your selector. This lets you indicate which HTML
+
+00:13:20.530 --> 00:13:23.250
+element you're trying to style. This might be
+
+00:13:23.250 --> 00:13:25.485
+something like div or h1, so an actual
+
+00:13:25.485 --> 00:13:27.325
+HTML element, but it could also be something
+
+00:13:27.325 --> 00:13:28.845
+like a class or an ID, which we'll
+
+00:13:28.845 --> 00:13:31.325
+talk about in a sec. After that, you
+
+00:13:31.325 --> 00:13:33.725
+also have the property, which is, in this
+
+00:13:33.725 --> 00:13:36.685
+case, color. And this selects what property you're
+
+00:13:36.685 --> 00:13:38.525
+going to adjust with your style, and then
+
+00:13:38.525 --> 00:13:40.240
+you add the actual value that you're going
+
+00:13:40.240 --> 00:13:44.720
+to adjust. So let's see what this looks
+
+00:13:44.720 --> 00:13:49.120
+like. If we have our heading and paragraph
+
+00:13:49.120 --> 00:13:53.520
+here, we'll add one more line, which we'll
+
+00:13:53.520 --> 00:13:56.005
+use later. Then if we add the div
+
+00:13:56.005 --> 00:13:58.565
+styling sheet, which has the color set to
+
+00:13:58.565 --> 00:14:00.165
+red and the font set to Arial, we
+
+00:14:00.165 --> 00:14:03.925
+see that it changes from serif font to
+
+00:14:09.380 --> 00:14:12.580
+the red aerial. And I have to join
+
+00:14:12.580 --> 00:14:53.315
+the Zoom real quick. Alright. Yeah. So if
+
+00:14:53.315 --> 00:14:55.155
+you add in the style sheet of div,
+
+00:14:55.155 --> 00:14:57.235
+then you change the font and color to
+
+00:14:57.235 --> 00:15:07.140
+red Arial. Now one more thing we can
+
+00:15:07.140 --> 00:15:08.660
+do is instead of doing the selector for
+
+00:15:08.660 --> 00:15:10.260
+div, is we can do a selector for
+
+00:15:10.260 --> 00:15:12.020
+class. So in this case, if we create
+
+00:15:12.020 --> 00:15:13.905
+a class, the syntax for that is you
+
+00:15:13.905 --> 00:15:15.265
+just do a dot, and then you follow
+
+00:15:15.265 --> 00:15:17.505
+it with the class name. Then instead of
+
+00:15:17.505 --> 00:15:20.225
+selecting all divs within the HTML document, you
+
+00:15:20.225 --> 00:15:21.985
+can select only those which you indicate with
+
+00:15:21.985 --> 00:15:23.825
+the class info. And so in this case,
+
+00:15:23.825 --> 00:15:25.585
+you see that only info is red and
+
+00:15:25.585 --> 00:15:27.905
+Arial, whereas paragraph is still serif and black.
+
+00:15:29.450 --> 00:15:31.290
+Another one you can use is something called
+
+00:15:31.290 --> 00:15:33.130
+an ID. And so ID is different. You
+
+00:15:33.130 --> 00:15:35.290
+put in the attribute ID. And on the
+
+00:15:35.290 --> 00:15:37.850
+CSS side, you put in a hashtag to
+
+00:15:37.850 --> 00:15:39.770
+indicate that it's an ID. So in this
+
+00:15:39.770 --> 00:15:40.970
+case, it sort of looks like they do
+
+00:15:40.970 --> 00:15:43.065
+the exact same thing, but we can talk
+
+00:15:44.265 --> 00:15:47.065
+a little bit about how they're different. So
+
+00:15:47.625 --> 00:15:49.305
+the first thing is if you have a
+
+00:15:49.305 --> 00:15:52.105
+given HTML element, you can only have one
+
+00:15:52.105 --> 00:15:54.185
+ID. So within the ID attribute, you can
+
+00:15:54.185 --> 00:15:56.560
+only put in a single ID. Whereas for
+
+00:15:56.560 --> 00:15:58.080
+classes, you can list out a bunch of
+
+00:15:58.080 --> 00:16:01.520
+classes spaced out. And if you put in
+
+00:16:01.520 --> 00:16:03.360
+multiple classes, like class one, class two, class
+
+00:16:03.360 --> 00:16:05.600
+three, this can imply the style from class
+
+00:16:05.600 --> 00:16:08.240
+one, two, and three. Whereas with an ID,
+
+00:16:08.240 --> 00:16:09.520
+you only get the style from the single
+
+00:16:09.520 --> 00:16:14.475
+ID. Furthermore, IDs must be only given to
+
+00:16:14.475 --> 00:16:17.515
+a single element on the HTML document. So
+
+00:16:17.595 --> 00:16:20.315
+you can't have one div with a given
+
+00:16:20.315 --> 00:16:21.915
+ID and then another div that has the
+
+00:16:21.915 --> 00:16:24.155
+same ID to apply the same styling. If
+
+00:16:24.155 --> 00:16:25.040
+you want to do that, you have to
+
+00:16:25.040 --> 00:16:26.560
+use a class, and you can place the
+
+00:16:26.560 --> 00:16:32.000
+class on multiple different elements. And the syntax
+
+00:16:32.000 --> 00:16:34.080
+is, of course, different, the hashtag versus the
+
+00:16:34.080 --> 00:16:38.625
+dot. One more thing to talk about in
+
+00:16:38.625 --> 00:16:41.105
+terms of these IDs and classes is the
+
+00:16:41.105 --> 00:16:44.065
+hierarchy. So this is the cascading part of
+
+00:16:44.065 --> 00:16:47.985
+the CSS. And so the lowest specificity is
+
+00:16:47.985 --> 00:16:50.580
+when we have elements and we select for
+
+00:16:50.580 --> 00:16:52.500
+example, we selected a div and added styling
+
+00:16:52.500 --> 00:16:54.420
+to it. And the highest specificity is when
+
+00:16:54.420 --> 00:16:56.580
+you do inline styling. And so that's with
+
+00:16:56.580 --> 00:16:59.300
+something called the style attribute, but we don't
+
+00:16:59.300 --> 00:17:02.465
+usually use it because it's bad practice. So
+
+00:17:02.465 --> 00:17:04.065
+on this hierarchy, we see that IDs are
+
+00:17:04.065 --> 00:17:06.545
+higher than classes. And what this means is
+
+00:17:06.545 --> 00:17:08.305
+if you have some CSS code like this
+
+00:17:08.305 --> 00:17:11.505
+where you have a class like info and
+
+00:17:11.505 --> 00:17:13.025
+you set the color to red, and then
+
+00:17:13.025 --> 00:17:15.745
+let's say you have the lower specificity div,
+
+00:17:15.745 --> 00:17:18.190
+which sets the color to blue, Then the
+
+00:17:18.190 --> 00:17:20.590
+div with the class info okay, wait, ignore
+
+00:17:20.590 --> 00:17:22.510
+the paragraph. That should actually be blue. But
+
+00:17:22.510 --> 00:17:28.510
+the div with info, which has class info,
+
+00:17:28.510 --> 00:17:30.495
+takes on the color red because the class
+
+00:17:30.495 --> 00:17:33.855
+takes higher precedence over the HTML element. And
+
+00:17:33.855 --> 00:17:35.295
+we see that the Arial font family is
+
+00:17:35.295 --> 00:17:38.735
+still applied, not on the paragraph, on the
+
+00:17:38.735 --> 00:17:46.100
+info still. That's wrong, my bad. Yeah, so
+
+00:17:46.100 --> 00:17:49.060
+that's the hierarchy. We go from elements, then
+
+00:17:49.060 --> 00:17:51.860
+you apply your class styling. And then if
+
+00:17:51.860 --> 00:17:53.940
+you have an ID, the ID styling overrides
+
+00:17:53.940 --> 00:17:57.780
+any of that. So best practice is to
+
+00:17:57.780 --> 00:18:00.020
+mainly use classes because they're the most flexible.
+
+00:18:01.225 --> 00:18:02.665
+You can reuse them so that you don't
+
+00:18:02.665 --> 00:18:04.105
+have to rewrite your CSS over and over
+
+00:18:04.105 --> 00:18:08.425
+again. And it's your highest specificity over your
+
+00:18:08.425 --> 00:18:13.305
+general element selectors. Are there any questions on
+
+00:18:13.305 --> 00:18:19.100
+CSS? If not, we can briefly look at
+
+00:18:19.100 --> 00:18:20.860
+how you actually put this into your website.
+
+00:18:21.100 --> 00:18:22.940
+So if we go back to our hello
+
+00:18:22.940 --> 00:18:25.580
+HTML, we have this head section, which is
+
+00:18:25.580 --> 00:18:27.660
+where we want to put our metadata. And
+
+00:18:27.660 --> 00:18:29.660
+so that's where we link our stylesheet. So
+
+00:18:29.660 --> 00:18:32.475
+we link our stylesheet. Css that we just
+
+00:18:32.475 --> 00:18:35.195
+wrote, and then that'll put in the style.
+
+00:18:35.195 --> 00:18:36.715
+So then if you want to apply any
+
+00:18:36.715 --> 00:18:38.715
+classes that we wrote within the stylesheet, such
+
+00:18:38.715 --> 00:18:40.555
+as my class, then you can just put
+
+00:18:40.555 --> 00:18:43.115
+it in as an HTML attribute, and then
+
+00:18:43.940 --> 00:18:48.020
+you should get everything that you want. And
+
+00:18:48.020 --> 00:18:50.020
+you can link multiple style sheets as well.
+
+00:18:50.180 --> 00:18:51.220
+If you have a style sheet where you
+
+00:18:51.220 --> 00:18:55.460
+specifically focus on styling fonts and then another
+
+00:18:55.460 --> 00:18:58.235
+for specifically styling how you want things ordered
+
+00:18:58.235 --> 00:18:59.755
+with respect to each other. You could have
+
+00:18:59.755 --> 00:19:01.755
+different style sheets to organize that and then
+
+00:19:01.755 --> 00:19:03.995
+apply them all at once within the HTML
+
+00:19:03.995 --> 00:19:08.795
+document. So I guess in conclusion, HTML is
+
+00:19:08.795 --> 00:19:11.195
+your nested boxes and CSS is your list
+
+00:19:11.195 --> 00:19:14.500
+of descriptions. And you put it all together
+
+00:19:14.900 --> 00:19:18.820
+to get your website. Are there any questions?
+
+00:19:29.425 --> 00:19:31.345
+If not, then you can put more feedback
+
+00:19:31.345 --> 00:19:36.385
+for this. Yeah. You can put your feedback
+
+00:19:36.385 --> 00:19:36.785
+here.
