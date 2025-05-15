@@ -1,0 +1,1802 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: f023535d-c824-44cc-a04f-75db7da2fa63
+Created: 2025-05-15T19:39:40.846Z
+Duration: 2095.7517
+Channels: 1
+
+00:00:01.440 --> 00:00:04.160
+Alright. Can everyone hear me okay? Can y'all
+
+00:00:04.160 --> 00:00:08.400
+hear me in the back? Alright. Amazing. And
+
+00:00:08.400 --> 00:00:09.760
+Zoom people, let me know if you can't
+
+00:00:09.760 --> 00:00:13.360
+hear me or anything. Okay. First off, welcome
+
+00:00:13.360 --> 00:00:15.675
+everyone to WebLab. I am so it makes
+
+00:00:15.675 --> 00:00:18.075
+me so excited to see you guys. I'm
+
+00:00:18.075 --> 00:00:20.155
+Abby. I am the academic chair for WebLab,
+
+00:00:20.155 --> 00:00:21.755
+which means I am in charge of coordinating
+
+00:00:21.755 --> 00:00:24.795
+basically everything that you all of the academic
+
+00:00:24.795 --> 00:00:26.635
+lecture content that you see over the next
+
+00:00:26.635 --> 00:00:28.510
+two weeks. So if you have a problem
+
+00:00:28.510 --> 00:00:30.110
+with the lecture content and you're like, Oh
+
+00:00:30.110 --> 00:00:33.230
+my gosh, this was terrible, or, Please help,
+
+00:00:33.390 --> 00:00:36.110
+then come ask me. Any questions are okay.
+
+00:00:36.430 --> 00:00:38.510
+So we're gonna start by learning about Git.
+
+00:00:38.510 --> 00:00:40.990
+If you have a CS background, you probably
+
+00:00:40.990 --> 00:00:43.630
+already know Git to some extent. If you
+
+00:00:43.630 --> 00:00:45.525
+do, feel to tune me out. But hopefully
+
+00:00:45.525 --> 00:00:50.325
+this lecture will be helpful. Is So WebLab
+
+00:00:50.325 --> 00:00:52.805
+is designed to be friendly to people who
+
+00:00:52.805 --> 00:00:55.525
+have no coding experience whatsoever, which is why
+
+00:00:55.525 --> 00:00:58.620
+we're starting from ground zero. However, it does
+
+00:00:58.620 --> 00:01:01.740
+go fast. So if we're going through Git
+
+00:01:01.740 --> 00:01:03.900
+stuff or whatever and you don't understand and
+
+00:01:03.900 --> 00:01:06.220
+you get lost, please just don't worry about
+
+00:01:06.220 --> 00:01:08.220
+it. Take a breath. You can come to
+
+00:01:08.220 --> 00:01:09.900
+office hours and we'll help you learn the
+
+00:01:09.900 --> 00:01:12.915
+concepts And also, you'll just get familiar with
+
+00:01:12.915 --> 00:01:14.675
+it as you keep going on and doing
+
+00:01:14.675 --> 00:01:16.755
+more of it. So don't worry if you
+
+00:01:16.755 --> 00:01:19.715
+cannot pick up 100% of it at the
+
+00:01:19.715 --> 00:01:23.475
+very beginning. So yeah. Without further ado, let's
+
+00:01:23.475 --> 00:01:27.240
+dive into it. So the main question for
+
+00:01:27.240 --> 00:01:29.720
+today is how do we collaborate on code?
+
+00:01:29.720 --> 00:01:31.480
+This is Tony, he was co academic chair
+
+00:01:31.480 --> 00:01:33.080
+with me last year. This is Tisai, you'll
+
+00:01:33.080 --> 00:01:34.920
+meet him soon, and that's me. And we're
+
+00:01:34.920 --> 00:01:38.200
+working together on a coding project. So how
+
+00:01:38.200 --> 00:01:42.665
+do we work together? Well, you might think,
+
+00:01:42.905 --> 00:01:45.545
+let's do something like Google Docs, but Google
+
+00:01:45.545 --> 00:01:49.305
+Code. And it'll live update, so any changes
+
+00:01:49.305 --> 00:01:51.465
+I make, everyone will be able to immediately
+
+00:01:51.465 --> 00:01:56.940
+see. That's great, right? Well, not quite. Consider
+
+00:01:56.940 --> 00:02:00.060
+the following. So let's say that Tony and
+
+00:02:00.060 --> 00:02:02.300
+Nick are working together on this project, and
+
+00:02:02.300 --> 00:02:03.820
+Nick is working on the home page while
+
+00:02:03.820 --> 00:02:06.140
+Tony is simultaneously working on another part of
+
+00:02:06.140 --> 00:02:08.380
+the website that the home page needs in
+
+00:02:08.380 --> 00:02:12.675
+order to run. And then Tony is working
+
+00:02:12.675 --> 00:02:14.115
+on it, and then the thing that he's
+
+00:02:14.115 --> 00:02:15.795
+working on goes down as he is making
+
+00:02:15.795 --> 00:02:17.795
+his improvements. And Nick is like, bro, what
+
+00:02:17.795 --> 00:02:20.115
+happened? And Tony is very happy about the
+
+00:02:20.115 --> 00:02:22.195
+upgrades that he's making. But Nick is not
+
+00:02:22.195 --> 00:02:24.035
+as happy about the upgrades Tony is making.
+
+00:02:25.850 --> 00:02:28.170
+And so the basic idea is we need
+
+00:02:28.170 --> 00:02:30.650
+independent copies of the code so that both
+
+00:02:30.650 --> 00:02:32.650
+Nick and Tony can work on the code,
+
+00:02:32.890 --> 00:02:36.250
+or Nick can work on his part while
+
+00:02:36.410 --> 00:02:38.410
+Tony can work on his part, but if
+
+00:02:38.410 --> 00:02:40.855
+Tony breaks this thing as he's making his
+
+00:02:40.855 --> 00:02:42.855
+upgrades, Nick still has a copy of the
+
+00:02:42.855 --> 00:02:45.975
+old working version of whatever Tony was working
+
+00:02:45.975 --> 00:02:48.215
+on so that he can still work on
+
+00:02:48.215 --> 00:02:53.110
+his homepage. But then if we have independent
+
+00:02:53.110 --> 00:02:54.790
+copies of the code, that creates a lot
+
+00:02:54.790 --> 00:02:58.390
+of problems for us. Because now, typically when
+
+00:02:58.390 --> 00:02:59.910
+we're coding, we don't have just one file.
+
+00:02:59.910 --> 00:03:01.670
+We have a heck ton of files. And
+
+00:03:01.670 --> 00:03:03.430
+so there are all these files that Nick
+
+00:03:03.430 --> 00:03:05.110
+has a copy of and Tony has a
+
+00:03:05.110 --> 00:03:08.815
+copy of. And let's say they're making changes.
+
+00:03:08.975 --> 00:03:10.815
+Maybe they're making changes in different parts of
+
+00:03:10.815 --> 00:03:14.655
+the files, but if you notice, both Nick
+
+00:03:14.655 --> 00:03:16.495
+and Tony have made changes in the same
+
+00:03:16.495 --> 00:03:19.535
+file. And then in order to merge those
+
+00:03:19.535 --> 00:03:21.440
+changes together, one of them has to do
+
+00:03:21.440 --> 00:03:23.440
+the hard work of copying over the changes
+
+00:03:23.440 --> 00:03:26.560
+one by one, and that's really sad. So
+
+00:03:26.560 --> 00:03:29.680
+an hour of copying and pasting later, after
+
+00:03:29.680 --> 00:03:33.895
+making 10 gazillion changes to this file, Tony
+
+00:03:33.895 --> 00:03:36.535
+realizes, oh, crap. I just needed those lines
+
+00:03:36.535 --> 00:03:39.495
+that we just deleted. And so when I
+
+00:03:39.495 --> 00:03:43.335
+see this slide, I imagine, like, the, like,
+
+00:03:43.335 --> 00:03:45.815
+suspenseful movie music playing and everyone, like, typing
+
+00:03:45.815 --> 00:03:47.550
+furiously on their computers. Computers. But let's just
+
+00:03:47.550 --> 00:03:50.110
+say, okay, for the sake of example, that
+
+00:03:50.110 --> 00:03:51.870
+Nick and Tony are just really good at
+
+00:03:51.870 --> 00:03:54.270
+collaborating. Nick is a beast with a copy
+
+00:03:54.270 --> 00:03:57.550
+and paste. They're so good at communication. But
+
+00:03:57.550 --> 00:04:00.455
+then I come in. I'm like, hey, guys.
+
+00:04:00.455 --> 00:04:02.215
+What you doing? Can I join? Can I
+
+00:04:02.215 --> 00:04:04.215
+help you guys? And then I don't know
+
+00:04:04.215 --> 00:04:08.615
+what the heck is going on. So to
+
+00:04:08.615 --> 00:04:12.455
+summarize the problems that we just described, there's
+
+00:04:12.455 --> 00:04:13.910
+a few things that we need in order
+
+00:04:13.910 --> 00:04:16.790
+to collaborate on code. One, what makes this
+
+00:04:16.790 --> 00:04:18.390
+different from document editing is that we need
+
+00:04:18.390 --> 00:04:20.790
+independent local copies of the code base. So
+
+00:04:20.790 --> 00:04:22.470
+I can work on stuff on my computer
+
+00:04:22.470 --> 00:04:25.830
+without breaking anybody else's code. We also need
+
+00:04:25.830 --> 00:04:27.805
+to be able to merge the changes that
+
+00:04:27.805 --> 00:04:29.645
+I'm making with the changes that someone else
+
+00:04:29.645 --> 00:04:32.525
+is making pretty seamlessly. We need to be
+
+00:04:32.525 --> 00:04:33.965
+able to keep track of versions, so if
+
+00:04:33.965 --> 00:04:36.045
+I realize that I broke something and I
+
+00:04:36.045 --> 00:04:38.045
+don't know what the crap just happened to
+
+00:04:38.285 --> 00:04:39.965
+what what I just did to my code,
+
+00:04:39.965 --> 00:04:42.620
+I can roll it back. And we need
+
+00:04:42.620 --> 00:04:44.380
+to know, obviously, which version is the most
+
+00:04:44.380 --> 00:04:47.580
+up to date. So we could think about
+
+00:04:47.580 --> 00:04:49.340
+all these problems and do all of this
+
+00:04:49.340 --> 00:04:52.220
+ourselves, but thankfully, really smart people have already
+
+00:04:52.220 --> 00:04:54.060
+thought about this and solved it all for
+
+00:04:54.060 --> 00:04:57.725
+us and they made Git. So what is
+
+00:04:57.725 --> 00:05:00.845
+Git exactly? At a core level, it basically
+
+00:05:00.845 --> 00:05:03.565
+just tracks changes in files using some fancy
+
+00:05:03.565 --> 00:05:07.005
+math. So if I'm editing a file, I
+
+00:05:07.005 --> 00:05:08.925
+type in, like corgis, at the bottom of
+
+00:05:08.925 --> 00:05:11.670
+this doc, and I delete the line and
+
+00:05:11.670 --> 00:05:14.710
+about cats, then the core functionality of git
+
+00:05:14.710 --> 00:05:17.190
+is just keeping track of these changes that
+
+00:05:17.190 --> 00:05:20.550
+I made. So this information that I added
+
+00:05:20.550 --> 00:05:23.030
+this and deleted that is what git stores.
+
+00:05:25.190 --> 00:05:27.615
+Oops. Oh, yes. We are gonna see an
+
+00:05:27.615 --> 00:05:29.695
+example. Okay. So before we go on any
+
+00:05:29.695 --> 00:05:31.935
+further and explain what's going on, we're going
+
+00:05:31.935 --> 00:05:33.935
+to I'm gonna show you how to create
+
+00:05:33.935 --> 00:05:36.255
+a Git repo and also show you a
+
+00:05:36.255 --> 00:05:40.860
+few basic terminal commands in the process. So
+
+00:05:41.340 --> 00:05:43.820
+if you have done the homework zero setup,
+
+00:05:44.140 --> 00:05:46.060
+then you will have git installed on your
+
+00:05:46.060 --> 00:05:47.660
+machine. It should be already if you have
+
+00:05:47.660 --> 00:05:48.940
+a Mac, but if you have a Windows,
+
+00:05:48.940 --> 00:05:51.740
+you might need to install git bash. So
+
+00:05:51.740 --> 00:05:54.220
+I'm gonna open up my Versus code, and
+
+00:05:54.220 --> 00:05:55.765
+I have a folder called web lab that
+
+00:05:55.765 --> 00:05:56.965
+I'm gonna put all of my web lab
+
+00:05:56.965 --> 00:06:01.525
+stuff in. And here, if I go to
+
+00:06:01.525 --> 00:06:04.005
+terminal and then new terminal, then I can
+
+00:06:04.005 --> 00:06:06.245
+open up this guy. If you're on Windows,
+
+00:06:06.245 --> 00:06:07.845
+then you might need to hit the plus
+
+00:06:07.845 --> 00:06:09.525
+down arrow button in order to get the
+
+00:06:09.525 --> 00:06:11.410
+terminal here to be git bash and not,
+
+00:06:11.410 --> 00:06:15.090
+like, something silly like command prompt. Or you
+
+00:06:15.090 --> 00:06:17.730
+can also, alternatively, open up the terminal or
+
+00:06:17.730 --> 00:06:21.570
+git bash in your, like, just in your
+
+00:06:21.570 --> 00:06:24.185
+computer as a whole. This and this are
+
+00:06:24.185 --> 00:06:26.185
+the same thing. Since I'm on Windows, I'm
+
+00:06:26.185 --> 00:06:27.945
+using Git Bash, but if you're on Mac,
+
+00:06:27.945 --> 00:06:30.505
+you would just use terminal. And the terminal
+
+00:06:30.505 --> 00:06:32.025
+is basically just a way for us to
+
+00:06:32.025 --> 00:06:34.185
+interact with our computer. So I can interact
+
+00:06:34.185 --> 00:06:35.945
+with my computer by clicking and dragging things
+
+00:06:35.945 --> 00:06:39.060
+if by going to file explorer or finder.
+
+00:06:39.380 --> 00:06:42.420
+And this is just insanely more powerful way
+
+00:06:42.420 --> 00:06:46.900
+of doing that. So some basic terminal commands
+
+00:06:46.900 --> 00:06:50.465
+you'll probably need are l s, which means
+
+00:06:50.465 --> 00:06:52.545
+list. So it's just going to list out
+
+00:06:52.545 --> 00:06:54.945
+everything that I have in the directory or
+
+00:06:54.945 --> 00:06:59.585
+folder that I'm currently in. Another command you'll
+
+00:06:59.585 --> 00:07:01.665
+need is c d. So that stands for
+
+00:07:01.665 --> 00:07:04.305
+change directory. So let's say I wanna go
+
+00:07:03.570 --> 00:07:07.970
+into my catbook react directory. You'll see what
+
+00:07:07.970 --> 00:07:10.850
+that is later. Then I go inside, and
+
+00:07:10.850 --> 00:07:13.090
+now you'll notice that I'm inside my catbook
+
+00:07:13.090 --> 00:07:15.250
+react directory. And if I l s, I
+
+00:07:15.250 --> 00:07:17.995
+can see everything that's inside of there. Now
+
+00:07:17.995 --> 00:07:19.915
+let's say I wanna go back out of
+
+00:07:19.915 --> 00:07:22.715
+Catbook React, back into my web lab folder,
+
+00:07:22.715 --> 00:07:24.155
+I'll do c d dot dot, and that
+
+00:07:24.155 --> 00:07:26.155
+just stands for the directory that's one directory
+
+00:07:26.155 --> 00:07:31.355
+back from where I currently am. Okay. Feel
+
+00:07:31.355 --> 00:07:32.580
+free to follow along, but you don't have
+
+00:07:32.580 --> 00:07:33.700
+to. I'll give you time to try it
+
+00:07:33.700 --> 00:07:36.180
+out on your own. And then another command
+
+00:07:36.180 --> 00:07:38.500
+that I'll use is make directory, m k
+
+00:07:38.500 --> 00:07:44.420
+d I r, and that will create a
+
+00:07:44.420 --> 00:07:46.100
+new folder. So I'm gonna create a new
+
+00:07:46.100 --> 00:07:49.355
+folder called git demo for this lecture's purposes.
+
+00:07:50.635 --> 00:07:53.755
+And I hate these Zoom floating meeting controls.
+
+00:07:54.875 --> 00:07:59.675
+Alright. And so now that I have this
+
+00:07:59.675 --> 00:08:01.115
+new folder, I'm going to go into it,
+
+00:08:01.115 --> 00:08:04.550
+c d into git demo, and issue this
+
+00:08:04.550 --> 00:08:06.950
+command called git init. And that just creates
+
+00:08:06.950 --> 00:08:10.310
+a new git repository within that folder that
+
+00:08:10.310 --> 00:08:14.710
+I'm currently in. So now, we have this
+
+00:08:14.710 --> 00:08:17.285
+file called dot git, and dot git is
+
+00:08:17.285 --> 00:08:18.485
+the file that we don't need to worry
+
+00:08:18.485 --> 00:08:20.725
+about, but git uses in order to track
+
+00:08:20.725 --> 00:08:23.045
+all of the changes to any files within
+
+00:08:23.045 --> 00:08:25.285
+my git demo folder. And so now, my
+
+00:08:25.285 --> 00:08:29.270
+git demo folder is a git repository. Cool.
+
+00:08:29.510 --> 00:08:31.350
+Alright. So now I'm gonna give you guys
+
+00:08:31.350 --> 00:08:34.310
+a chance to try that yourselves. So I'll
+
+00:08:34.310 --> 00:08:36.710
+give you, like, two minutes to try creating
+
+00:08:36.710 --> 00:08:38.870
+a new directory, c d ing into it,
+
+00:08:38.870 --> 00:08:41.685
+calling git init. I'll give you, like, one
+
+00:08:41.685 --> 00:08:43.045
+minute and then we'll see where people are
+
+00:08:43.045 --> 00:09:07.970
+at. I need my phone to time. And
+
+00:09:07.970 --> 00:09:10.450
+if you're having any technical issues, feel free
+
+00:09:10.450 --> 00:09:13.275
+to add yourself to weblab.is/q and a staff
+
+00:09:13.275 --> 00:09:15.115
+member will come help you. You're free to
+
+00:09:15.115 --> 00:09:16.795
+add yourself to the queue even while I'm
+
+00:09:16.795 --> 00:09:21.115
+yapping, and people can come help you. And
+
+00:09:21.115 --> 00:09:22.475
+let me know if you have any questions.
+
+00:10:03.160 --> 00:10:05.240
+Alright. If you think you need more time,
+
+00:10:05.320 --> 00:10:07.785
+please hold up a finger, one, two, three,
+
+00:10:07.785 --> 00:10:09.785
+four, etcetera, for how many more minutes you
+
+00:10:09.785 --> 00:10:14.825
+think you need. Okay. We've got a few
+
+00:10:14.825 --> 00:10:17.945
+people. I'll give you guys a little bit
+
+00:10:17.945 --> 00:10:35.335
+more time. Alright. If you're having trouble I'm
+
+00:10:35.335 --> 00:10:36.775
+gonna move on. But if you're having trouble
+
+00:10:36.775 --> 00:10:38.695
+and you need a reference, the commands to
+
+00:10:38.695 --> 00:10:40.695
+run, you can either look on with someone
+
+00:10:40.695 --> 00:10:44.375
+nearby, or if you go to weblab.is/schedule, all
+
+00:10:44.375 --> 00:10:46.695
+of the slides are linked there. So if
+
+00:10:46.695 --> 00:10:49.560
+you just go to weblab.is/schedule, find my lecture,
+
+00:10:49.560 --> 00:10:52.040
+git basics, click on the Google Docs, Google
+
+00:10:52.040 --> 00:10:53.640
+Slides link, then you should be able to
+
+00:10:53.640 --> 00:10:55.560
+pull up the slides and reference anything that
+
+00:10:55.560 --> 00:10:59.800
+you might be behind on. Okay. So now
+
+00:10:59.800 --> 00:11:01.640
+we're gonna talk about what we actually, as
+
+00:11:01.640 --> 00:11:04.705
+programmers, do with git. And that is make
+
+00:11:04.705 --> 00:11:07.745
+changes to our code, because we're productive programmers.
+
+00:11:08.385 --> 00:11:12.145
+So the basic idea of Git is that
+
+00:11:12.145 --> 00:11:14.225
+it keeps track of a history of all
+
+00:11:14.225 --> 00:11:15.600
+of the changes that we've made to our
+
+00:11:15.600 --> 00:11:18.080
+code, and the individual sort of units of
+
+00:11:18.080 --> 00:11:21.440
+changes that we make are called commits. And
+
+00:11:21.440 --> 00:11:23.760
+it's almost like they're it's a package set
+
+00:11:23.760 --> 00:11:26.320
+of code changes. What do I mean by
+
+00:11:26.320 --> 00:11:31.315
+that? Well, let's say we're making we're here,
+
+00:11:31.315 --> 00:11:33.155
+and we're editing a bunch of our files.
+
+00:11:33.475 --> 00:11:35.795
+We delete the line, I like cats, from
+
+00:11:35.795 --> 00:11:37.715
+one file, we add the line, I like
+
+00:11:37.715 --> 00:11:40.755
+corgis, to another file, add more lines, make
+
+00:11:40.755 --> 00:11:45.640
+more code changes, etcetera. And then once we're
+
+00:11:45.640 --> 00:11:48.520
+ready to sort of package those changes up,
+
+00:11:48.600 --> 00:11:52.280
+then and add it to our commit history,
+
+00:11:52.360 --> 00:11:54.520
+then we have something called the staging area.
+
+00:11:54.840 --> 00:11:57.000
+And this is basically where we put all
+
+00:11:57.000 --> 00:11:59.645
+of the code changes that we're going to
+
+00:11:59.645 --> 00:12:03.165
+want to package up into our commit. So
+
+00:12:03.165 --> 00:12:05.165
+the command we use is called git add,
+
+00:12:05.165 --> 00:12:06.285
+and then we put in the name of
+
+00:12:06.285 --> 00:12:08.045
+the file. So let's say we do git
+
+00:12:08.045 --> 00:12:10.720
+add woof dot py. That will add all
+
+00:12:10.720 --> 00:12:13.040
+of the changes we've made to woof dot
+
+00:12:13.040 --> 00:12:17.120
+py to the staging area. And then if
+
+00:12:17.120 --> 00:12:19.120
+we add cats dot py as well, then
+
+00:12:19.120 --> 00:12:21.040
+we're adding the change we made there also
+
+00:12:21.040 --> 00:12:23.200
+to the staging area. And once we're ready
+
+00:12:23.200 --> 00:12:25.405
+to commit, we do git commit dash m
+
+00:12:25.405 --> 00:12:27.325
+with a message that describes what that commit
+
+00:12:27.325 --> 00:12:30.125
+is. Oops, that slide is not right. There
+
+00:12:30.125 --> 00:12:31.965
+should be the cats thing in there too.
+
+00:12:32.925 --> 00:12:34.605
+And let's say we call it dogs and
+
+00:12:34.605 --> 00:12:37.370
+cats. And then what that does is it
+
+00:12:37.370 --> 00:12:38.810
+takes all those changes that were in the
+
+00:12:38.810 --> 00:12:41.690
+staging area, boxes them up, slaps on a
+
+00:12:41.690 --> 00:12:44.330
+label that says what the changes are about,
+
+00:12:44.650 --> 00:12:48.490
+and adds it to our commit history. And
+
+00:12:48.490 --> 00:12:52.005
+so then, the staging area is refreshed and
+
+00:12:52.005 --> 00:12:53.605
+there's a new box and we can do
+
+00:12:53.605 --> 00:12:55.365
+git add more to add to our next
+
+00:12:55.365 --> 00:12:58.405
+commit. Okay. So I'm going to demo what
+
+00:12:58.405 --> 00:13:01.125
+that looks like in our Versus code, and
+
+00:13:01.125 --> 00:13:02.805
+why do I keep having the floating meeting
+
+00:13:02.805 --> 00:13:09.540
+controls? Oh my gosh. Okay. So we have
+
+00:13:09.540 --> 00:13:11.940
+our git demo folder, and let's make some
+
+00:13:11.940 --> 00:13:14.980
+changes. I am going to add a new
+
+00:13:14.980 --> 00:13:18.155
+file, and I'm going to call it abby
+
+00:13:18.155 --> 00:13:22.235
+dot t x t. And I am not
+
+00:13:22.235 --> 00:13:24.955
+going to use Copilot to write something. I'm
+
+00:13:24.955 --> 00:13:29.435
+gonna say, Abby likes cats. I'll just type
+
+00:13:29.435 --> 00:13:32.430
+that. And then I'm gonna use a command
+
+00:13:32.430 --> 00:13:34.990
+called git status to just see where I
+
+00:13:34.990 --> 00:13:37.550
+am, and it tells me that I'm I
+
+00:13:37.550 --> 00:13:40.270
+don't have any commits yet, and there's one
+
+00:13:40.270 --> 00:13:42.350
+file that they call untracked that has not
+
+00:13:42.350 --> 00:13:43.870
+been added to the staging area, so that's
+
+00:13:43.870 --> 00:13:47.035
+why it's red. Git recorded that I made
+
+00:13:47.035 --> 00:13:48.475
+this change, but it's not in the staging
+
+00:13:48.475 --> 00:13:50.235
+area yet, so I'm gonna add it. So
+
+00:13:50.235 --> 00:13:52.155
+I'm gonna say git add, and then abby
+
+00:13:52.155 --> 00:13:55.035
+dot txt. And now, if I do git
+
+00:13:55.035 --> 00:13:58.075
+status, I can see that it says, changes
+
+00:13:58.075 --> 00:14:00.600
+to be committed, new file abby dot t
+
+00:14:00.600 --> 00:14:02.840
+x t. So that means that git says
+
+00:14:02.840 --> 00:14:05.560
+that this file is in my staging area.
+
+00:14:06.200 --> 00:14:07.480
+And if I wanna commit it, then I
+
+00:14:07.480 --> 00:14:10.600
+can do git commit m abby, or whatever
+
+00:14:10.600 --> 00:14:12.840
+I wanna call it, and it created my
+
+00:14:12.840 --> 00:14:14.955
+commit. And now I can run a command
+
+00:14:14.955 --> 00:14:18.155
+called git log, and git log just tells
+
+00:14:18.155 --> 00:14:21.195
+me all of the oh, sorry, all of
+
+00:14:21.195 --> 00:14:22.955
+the commits that I have in my history.
+
+00:14:23.195 --> 00:14:25.995
+So when I say git log, now there's
+
+00:14:25.995 --> 00:14:28.155
+one commit that I just made in my
+
+00:14:28.155 --> 00:14:30.950
+log. And if I want to make more
+
+00:14:30.950 --> 00:14:35.190
+changes, make more commits, then those commits will
+
+00:14:35.190 --> 00:14:38.550
+show up in my commit log. So now
+
+00:14:38.550 --> 00:14:40.070
+I'm gonna give you guys a chance to
+
+00:14:40.070 --> 00:14:42.475
+try that in your own repos. So I'll
+
+00:14:42.475 --> 00:14:44.155
+give you, like, two to three minutes to
+
+00:14:44.155 --> 00:14:46.235
+play around with it, make as many changes,
+
+00:14:46.235 --> 00:14:48.475
+make as many commits as you want. And
+
+00:14:48.475 --> 00:14:50.715
+again, if you have any questions, let me
+
+00:14:50.715 --> 00:14:58.510
+know or add yourself to the queue. Also,
+
+00:14:58.510 --> 00:15:00.030
+Zoom people, you can also add yourself to
+
+00:15:00.030 --> 00:15:01.230
+the queue. You can just put a Zoom
+
+00:15:01.230 --> 00:15:06.110
+link for, like, your own Zoom room if
+
+00:15:06.110 --> 00:15:29.340
+you need technical help. How's it going over
+
+00:15:29.340 --> 00:15:31.660
+here? Any questions? Oh, wait. I need to
+
+00:15:31.660 --> 00:16:15.105
+turn this off. Alright. Same as before. Give
+
+00:16:15.105 --> 00:16:17.905
+me a one, two, three, four, etcetera fingers
+
+00:16:17.905 --> 00:16:21.170
+if you need more time. Cool. I see
+
+00:16:21.170 --> 00:16:23.010
+a lot of hands. So I will give
+
+00:16:23.010 --> 00:17:28.105
+you guys a couple more minutes. Alright. Hopefully,
+
+00:17:28.105 --> 00:17:32.025
+was enough time. We're going to move on.
+
+00:17:40.490 --> 00:17:44.810
+Okay. So in git, once we've made our
+
+00:17:44.810 --> 00:17:48.250
+commits and everything, in the previous slide, we
+
+00:17:48.250 --> 00:17:50.570
+were showing commits as a package set of
+
+00:17:50.570 --> 00:17:53.965
+code changes and we were using these little
+
+00:17:53.965 --> 00:17:57.165
+package things with the labels as our picture.
+
+00:17:57.485 --> 00:18:00.765
+But in typical, like, whenever you If you
+
+00:18:00.765 --> 00:18:02.925
+look up anything about git, they will typically
+
+00:18:02.925 --> 00:18:04.525
+use graphs that look a little bit more
+
+00:18:04.525 --> 00:18:08.540
+like this. And these are, basically, each circle
+
+00:18:08.540 --> 00:18:13.260
+just represents a commit. And each circle, each
+
+00:18:13.260 --> 00:18:15.820
+commit has a unique ID, which is going
+
+00:18:15.820 --> 00:18:18.460
+to be, if we look in our git
+
+00:18:18.460 --> 00:18:21.665
+log, you'll notice that there's the commit message
+
+00:18:21.665 --> 00:18:25.185
+here, but there's also this gigantic, redonkulous looking
+
+00:18:25.185 --> 00:18:28.225
+string. And that's the ID for our commit.
+
+00:18:28.225 --> 00:18:29.985
+So any time in git, if we want
+
+00:18:29.985 --> 00:18:32.305
+to do something and refer to that particular
+
+00:18:32.305 --> 00:18:34.065
+commit that we made, then we're going to
+
+00:18:34.065 --> 00:18:37.700
+use this ID. And so this slide is
+
+00:18:37.700 --> 00:18:40.740
+just to familiarize you with the notion of
+
+00:18:40.740 --> 00:18:43.460
+having these graphs where each circle represents a
+
+00:18:43.460 --> 00:18:47.220
+commit. And so this represents the history of
+
+00:18:47.220 --> 00:18:49.700
+all of the sets of changes that we've
+
+00:18:49.700 --> 00:18:56.595
+made. Okay. So now consider the following. We
+
+00:18:56.595 --> 00:18:58.675
+have a scenario. Tony is working on his
+
+00:18:58.675 --> 00:19:01.635
+new and improved homepage to his website, and
+
+00:19:01.635 --> 00:19:04.510
+then Andrew comes along. Andrew was one of
+
+00:19:04.510 --> 00:19:07.070
+our staff last year. And he's like, can
+
+00:19:07.070 --> 00:19:08.350
+you help me fix this bug on the
+
+00:19:08.350 --> 00:19:12.030
+home page? And Tony's like, I got you,
+
+00:19:12.030 --> 00:19:15.950
+bro. And then Abby comes in and she
+
+00:19:15.950 --> 00:19:18.535
+goes, Tony, we need a WebLab Tinder feature
+
+00:19:18.535 --> 00:19:20.375
+to be added to our website tomorrow, and
+
+00:19:20.375 --> 00:19:23.415
+you need to do it right now. And
+
+00:19:23.415 --> 00:19:25.735
+so now Tony's a little bit confused, because
+
+00:19:25.735 --> 00:19:27.815
+he was working on his home page. He
+
+00:19:27.815 --> 00:19:29.575
+was trying to make a new version of
+
+00:19:29.575 --> 00:19:31.680
+the home page, and so he was changing
+
+00:19:31.680 --> 00:19:33.760
+a ton of stuff in the code, deleting
+
+00:19:33.760 --> 00:19:36.320
+stuff, adding things. And then Andrew comes along
+
+00:19:36.320 --> 00:19:38.160
+and he's like, can you help me fix
+
+00:19:38.160 --> 00:19:40.160
+this bug on the original home page? So
+
+00:19:40.160 --> 00:19:42.880
+now Tony has to somehow go back to
+
+00:19:42.880 --> 00:19:44.560
+the code on the original home page in
+
+00:19:44.560 --> 00:19:47.045
+order to fix the bug on that. And
+
+00:19:47.045 --> 00:19:49.045
+then Abby comes along and is like, we
+
+00:19:49.045 --> 00:19:51.045
+need you to work on this. And then
+
+00:19:51.045 --> 00:19:53.525
+he somehow has to revert again in order
+
+00:19:53.525 --> 00:19:55.925
+to work off of the original working code
+
+00:19:55.925 --> 00:19:58.405
+to make this new WebLab Tinder feature. It's
+
+00:19:58.405 --> 00:19:59.845
+kind of It would be kind of a
+
+00:19:59.845 --> 00:20:04.780
+mess. And that's where git branching comes in.
+
+00:20:05.340 --> 00:20:08.140
+So basically, what we can do is, earlier
+
+00:20:08.140 --> 00:20:10.140
+I mentioned how each of these circles represents
+
+00:20:10.140 --> 00:20:13.020
+a commit, and it represents a series of,
+
+00:20:13.020 --> 00:20:16.345
+like, packaged code changes. But if each circle
+
+00:20:16.345 --> 00:20:18.185
+represents a series of packaged code changes, then
+
+00:20:18.185 --> 00:20:21.065
+it kind of also represents a version of
+
+00:20:21.065 --> 00:20:22.825
+our code, like a snapshot of what our
+
+00:20:22.825 --> 00:20:24.425
+code looks like at any one point in
+
+00:20:24.425 --> 00:20:28.200
+time. So you can think of this as
+
+00:20:28.200 --> 00:20:30.520
+the version of the code after we've made
+
+00:20:30.520 --> 00:20:34.280
+this set of changes. And so if we
+
+00:20:34.280 --> 00:20:36.600
+want So in order for Tony to work
+
+00:20:36.600 --> 00:20:38.680
+on all of these different things, kind of
+
+00:20:38.680 --> 00:20:42.765
+simultaneously, then he can branch off. So let's
+
+00:20:42.765 --> 00:20:46.365
+say that this is the last working version
+
+00:20:46.365 --> 00:20:47.965
+of our home page, that's the standard one
+
+00:20:47.965 --> 00:20:51.325
+that everyone's using right now. Then he's branching
+
+00:20:51.325 --> 00:20:53.990
+off from that and making changes to make
+
+00:20:53.990 --> 00:20:55.590
+his new home page, but when he wants
+
+00:20:55.590 --> 00:20:57.590
+to fix this bug for Andrew, he's gonna
+
+00:20:57.590 --> 00:21:01.270
+go back to the last working version of
+
+00:21:01.270 --> 00:21:03.750
+the home page in git, and then start
+
+00:21:03.750 --> 00:21:05.670
+making new changes for his bug fix for
+
+00:21:05.670 --> 00:21:07.835
+Andrew. Then he can go back again and
+
+00:21:07.835 --> 00:21:10.235
+make new changes off of that for WebLab
+
+00:21:10.235 --> 00:21:14.155
+Tinder. And so the benefit of branching is
+
+00:21:14.155 --> 00:21:15.995
+just that he can make all of these
+
+00:21:15.995 --> 00:21:18.715
+changes, and Git will remember that he's made
+
+00:21:18.715 --> 00:21:20.150
+all of these changes to the home page.
+
+00:21:20.150 --> 00:21:22.070
+So once he's finished WebLab Tinder and this
+
+00:21:22.070 --> 00:21:23.670
+bug fix, then he can go back and
+
+00:21:23.670 --> 00:21:25.830
+just keep working where he left off on
+
+00:21:25.830 --> 00:21:30.870
+this branch. So now I'm going to demo
+
+00:21:30.870 --> 00:21:33.270
+how to create a new branch in Git.
+
+00:21:39.175 --> 00:21:43.575
+Okay. So we have our there's a command
+
+00:21:43.575 --> 00:21:46.295
+called git checkout, and git checkout, the purpose
+
+00:21:46.295 --> 00:21:48.455
+of it is to switch from one branch
+
+00:21:48.455 --> 00:21:50.890
+to another. If I do git branch, then
+
+00:21:50.890 --> 00:21:52.330
+I can see all of the branches that
+
+00:21:52.330 --> 00:21:54.010
+I have. Right now, there's only one, that's
+
+00:21:54.010 --> 00:21:56.650
+main. But if I do git checkout dash
+
+00:21:56.650 --> 00:21:59.050
+b, dash b says create a new branch,
+
+00:21:59.530 --> 00:22:04.015
+I'm gonna call it cat, I don't know.
+
+00:22:06.095 --> 00:22:07.935
+Now, I created a new branch and I
+
+00:22:07.935 --> 00:22:09.215
+switched to it. So if I do git
+
+00:22:09.215 --> 00:22:13.855
+branch again, then I can see that there
+
+00:22:13.855 --> 00:22:15.375
+is the main branch, and now there's a
+
+00:22:15.375 --> 00:22:16.975
+cat branch, and the current branch I'm on
+
+00:22:16.975 --> 00:22:19.430
+is the cat branch. And so let's say
+
+00:22:19.430 --> 00:22:25.430
+I'm going to make some more changes to
+
+00:22:25.430 --> 00:22:28.230
+my file, and I'm going to do git
+
+00:22:28.230 --> 00:22:30.790
+status, check out, yep, git notices that I
+
+00:22:30.790 --> 00:22:34.475
+made those changes. I'm going to add abby.txt
+
+00:22:34.475 --> 00:22:36.795
+to add that change to my staging area.
+
+00:22:37.115 --> 00:22:38.235
+So now you can see it's in the
+
+00:22:38.235 --> 00:22:44.155
+staging area. I'm gonna commit lots of cats.
+
+00:22:46.880 --> 00:22:49.440
+And so now, if you think in your
+
+00:22:49.440 --> 00:22:51.840
+head about what the object diagraph, what the
+
+00:22:51.840 --> 00:22:53.440
+git graph for this is going to look
+
+00:22:53.440 --> 00:22:57.280
+like, if I git log here, I see
+
+00:22:57.280 --> 00:22:59.520
+both my original change that was on my
+
+00:22:59.520 --> 00:23:02.715
+original branch, and then the new change that
+
+00:23:02.715 --> 00:23:05.115
+I just made on my new branch. But
+
+00:23:05.115 --> 00:23:06.715
+if I go back, if I git checkout
+
+00:23:06.715 --> 00:23:12.075
+back to main, and then I git log
+
+00:23:12.075 --> 00:23:15.210
+here, then I only see the original branch.
+
+00:23:15.450 --> 00:23:20.490
+And so my object graph looks something a
+
+00:23:20.490 --> 00:23:22.890
+little bit like this. Where I have my
+
+00:23:22.890 --> 00:23:24.890
+original commit on the main branch, and then
+
+00:23:24.890 --> 00:23:26.675
+this is my cat branch, and then I
+
+00:23:26.675 --> 00:23:30.275
+have a new commit on my cat branch.
+
+00:23:33.075 --> 00:23:36.035
+Okay. Same as before, gonna give you a
+
+00:23:36.035 --> 00:23:38.915
+chance to try it out yourselves. Add yourself
+
+00:23:38.915 --> 00:23:47.440
+to the queue if you get stuck. Actually,
+
+00:23:47.440 --> 00:23:48.800
+before I go on, does anyone have any
+
+00:23:48.800 --> 00:23:51.280
+questions or confusions about what I was just
+
+00:23:51.280 --> 00:23:55.875
+talking about? I can't tell if the silence
+
+00:23:55.875 --> 00:23:57.715
+means that y'all are all confused or y'all
+
+00:23:57.715 --> 00:27:52.730
+are all good and just, like, working. Alright.
+
+00:27:53.370 --> 00:27:56.410
+If you got lost or confused, feel free
+
+00:27:56.410 --> 00:27:57.930
+to add yourself to the queue and one
+
+00:27:57.930 --> 00:27:59.690
+of our amazing staff members could help you.
+
+00:27:59.965 --> 00:28:02.285
+Even while I'm yapping, you can ask the
+
+00:28:02.285 --> 00:28:06.125
+other staff for help. And also, if you
+
+00:28:06.125 --> 00:28:10.045
+got completely lost and don't know where we're
+
+00:28:10.045 --> 00:28:13.725
+going now, please do not stress out. You'll
+
+00:28:13.725 --> 00:28:16.880
+be fine. And we can get you caught
+
+00:28:16.880 --> 00:28:19.120
+up on whatever you got confused on, either
+
+00:28:19.120 --> 00:28:21.600
+after lecture or at office hours, or you
+
+00:28:21.600 --> 00:28:23.520
+can your friends can help you as well.
+
+00:28:24.160 --> 00:28:27.915
+So unfortunately, I have to keep us moving
+
+00:28:27.915 --> 00:28:31.115
+along. So what is happening in the object
+
+00:28:31.115 --> 00:28:35.275
+graph when we create a branch? Well, whichever
+
+00:28:35.275 --> 00:28:37.035
+commit we were on when we created our
+
+00:28:37.035 --> 00:28:38.795
+branch, that's gonna be the one we're branching
+
+00:28:38.795 --> 00:28:40.875
+off from. So I can create new commands
+
+00:28:40.875 --> 00:28:42.715
+in the WebLab Tinder branch, I can commit
+
+00:28:42.875 --> 00:28:44.210
+or I can switch back to the main
+
+00:28:44.210 --> 00:28:48.530
+branch and create new commits there. And then
+
+00:28:48.530 --> 00:28:52.210
+let's say that I was working, or Tony
+
+00:28:52.210 --> 00:28:54.050
+was working on the WebLab Tinder branch and
+
+00:28:54.050 --> 00:28:56.695
+he was making his commits, And then someone
+
+00:28:56.695 --> 00:28:58.215
+else was working on the main branch, and
+
+00:28:58.215 --> 00:28:59.815
+they were fixing some bugs or something like
+
+00:28:59.815 --> 00:29:01.815
+that. And now we wanna put these commits
+
+00:29:01.815 --> 00:29:05.015
+back together and merge WebLab Tinder and bring
+
+00:29:05.015 --> 00:29:07.735
+all of those changes into main. How do
+
+00:29:07.735 --> 00:29:14.250
+we do that? That's something called merging. So
+
+00:29:15.210 --> 00:29:17.930
+basically, if I want to merge all my
+
+00:29:17.930 --> 00:29:22.970
+commits from my cat's branch into my main
+
+00:29:22.970 --> 00:29:29.145
+branch, then I hate this Zoom thing. Then
+
+00:29:29.145 --> 00:29:31.145
+let's see. So right now, I'm on main.
+
+00:29:32.665 --> 00:29:36.105
+If I were on what did I call
+
+00:29:36.105 --> 00:29:39.710
+my branch? Cat? I'll do git branch to
+
+00:29:39.710 --> 00:29:43.070
+see. I called it cat. So if I
+
+00:29:43.070 --> 00:29:44.910
+check out cat and I'm on cat, then
+
+00:29:44.910 --> 00:29:47.550
+I can't merge cat into main. I need
+
+00:29:47.550 --> 00:29:49.390
+to be on main in order to merge
+
+00:29:49.390 --> 00:29:53.275
+cat back in. So I'll check out main.
+
+00:29:54.395 --> 00:29:55.835
+And you'll notice that when I check out
+
+00:29:55.835 --> 00:29:59.115
+different branches, the version of the code in
+
+00:29:59.115 --> 00:30:01.995
+my Versus Code window will change based on
+
+00:30:01.995 --> 00:30:05.035
+whatever the most recent commit in that particular
+
+00:30:05.035 --> 00:30:08.770
+branch is. So now, all I can do
+
+00:30:08.770 --> 00:30:10.050
+is all I have to do is you
+
+00:30:10.050 --> 00:30:13.570
+git merge cat, and that will merge the
+
+00:30:13.570 --> 00:30:15.890
+changes from cat into main. And so now
+
+00:30:15.890 --> 00:30:17.650
+you'll notice that I'm in main, but I
+
+00:30:17.650 --> 00:30:19.170
+have all the changes that I made on
+
+00:30:19.170 --> 00:30:23.025
+the cat branch. And then typically, practice is
+
+00:30:23.025 --> 00:30:27.745
+just shut up. Good practice is to delete
+
+00:30:28.865 --> 00:30:34.590
+the branch that I was on before, now
+
+00:30:34.590 --> 00:30:35.790
+that I'm done with it, now that all
+
+00:30:35.790 --> 00:30:40.590
+the changes have been merged into main. Alright.
+
+00:30:40.590 --> 00:30:43.150
+Same as before? Oh, wait. Sorry. I am
+
+00:30:43.150 --> 00:30:47.795
+not going to okay. I'm not gonna give
+
+00:30:47.795 --> 00:30:49.155
+you time to work on that yourselves because
+
+00:30:49.155 --> 00:30:50.675
+it's pretty quick, and we're going to actually
+
+00:30:50.675 --> 00:30:53.795
+go into more detail on merging in the
+
+00:30:53.795 --> 00:30:55.555
+second git lecture that we have at the
+
+00:30:55.555 --> 00:31:00.670
+end of this week. Okay. So when we
+
+00:31:00.670 --> 00:31:03.390
+put them back together, the object graph looks
+
+00:31:03.390 --> 00:31:06.110
+something like this. It's not quite the same
+
+00:31:06.110 --> 00:31:07.470
+as this. We'll go into more detail on
+
+00:31:07.470 --> 00:31:11.230
+that later. But then the question that we
+
+00:31:11.230 --> 00:31:14.635
+have finally is, well, how does collaboration work
+
+00:31:14.635 --> 00:31:16.315
+then? Because we did all of this stuff
+
+00:31:16.315 --> 00:31:20.875
+with Git, branching, creating new Git repos, creating
+
+00:31:20.875 --> 00:31:24.075
+commits, etcetera, but all of that was locally
+
+00:31:24.075 --> 00:31:25.915
+on our own computer. How are we supposed
+
+00:31:25.915 --> 00:31:28.075
+to share this and collaborate with other people?
+
+00:31:29.810 --> 00:31:32.050
+And that's where a server such as GitHub
+
+00:31:32.050 --> 00:31:35.330
+comes in. So GitHub is just a giant
+
+00:31:35.330 --> 00:31:38.210
+server somewhere that hosts all of our code.
+
+00:31:38.850 --> 00:31:41.490
+And so there will now be a version
+
+00:31:41.730 --> 00:31:42.850
+How this works is there will now be
+
+00:31:42.850 --> 00:31:45.515
+a version of our code on GitHub, a
+
+00:31:45.515 --> 00:31:47.915
+version of our code on our own computers,
+
+00:31:47.915 --> 00:31:50.395
+and the computers of whoever we're collaborating with.
+
+00:31:51.915 --> 00:31:57.210
+And so this introduces interesting complexity because now
+
+00:31:57.210 --> 00:32:00.010
+we have another independent local copy of our
+
+00:32:00.010 --> 00:32:02.890
+code on GitHub. So let's say that Nick
+
+00:32:02.890 --> 00:32:04.650
+is working, and there's a copy of his
+
+00:32:04.650 --> 00:32:06.810
+code on his computer, and the GitHub is
+
+00:32:06.810 --> 00:32:09.210
+updated with what he's got on his computer.
+
+00:32:09.610 --> 00:32:11.995
+And now Tony wants to join in. He's
+
+00:32:11.995 --> 00:32:14.235
+going to do git clone on the repo
+
+00:32:14.235 --> 00:32:15.675
+in GitHub, and we'll show you how to
+
+00:32:15.675 --> 00:32:18.635
+do that pretty soon. So he's gonna git
+
+00:32:18.635 --> 00:32:20.955
+clone that, and now there's a copy of
+
+00:32:20.955 --> 00:32:22.715
+the object graph, like all the commits that
+
+00:32:22.715 --> 00:32:25.050
+have been made, the full history, and all
+
+00:32:25.050 --> 00:32:26.970
+of the files, of course, on his computer
+
+00:32:26.970 --> 00:32:30.090
+that exactly matches everything else. Now if Tony
+
+00:32:30.090 --> 00:32:32.890
+wants to make some commands, some commits, sorry,
+
+00:32:32.890 --> 00:32:35.770
+some changes, he'll make his commit, and then
+
+00:32:35.770 --> 00:32:38.515
+he'll use a command called git push to
+
+00:32:38.515 --> 00:32:42.115
+update whatever GitHub has with whatever he has,
+
+00:32:42.115 --> 00:32:45.795
+with the commits that he just made. And
+
+00:32:45.795 --> 00:32:49.315
+if Nick wants to take the commit that
+
+00:32:49.315 --> 00:32:52.930
+Tony just pushed onto the remote server and
+
+00:32:52.930 --> 00:32:55.730
+bring it onto his local development environment, he'll
+
+00:32:55.730 --> 00:32:58.530
+use the command git fetch, and that basically
+
+00:32:58.530 --> 00:33:03.410
+just looks and updates whatever he's got on
+
+00:33:03.410 --> 00:33:07.555
+his computer with whatever was added to the
+
+00:33:07.555 --> 00:33:09.955
+remote server. But then he can do something
+
+00:33:09.955 --> 00:33:12.275
+called git pull, and how that's different from
+
+00:33:12.275 --> 00:33:15.715
+git fetch is that git pull actually merges
+
+00:33:15.715 --> 00:33:18.035
+the command, the commits from the remote server
+
+00:33:18.035 --> 00:33:20.950
+into what he has locally. So if he
+
+00:33:20.950 --> 00:33:23.350
+does git pull, then it will actually update
+
+00:33:23.350 --> 00:33:25.670
+his Versus code with the commit that Tony
+
+00:33:25.670 --> 00:33:31.350
+had made. So the basic commands that you
+
+00:33:31.350 --> 00:33:34.565
+need to know are git clone to take
+
+00:33:34.565 --> 00:33:36.725
+a repo and bring it onto your computer,
+
+00:33:36.965 --> 00:33:38.725
+and then you can make your commits, and
+
+00:33:38.725 --> 00:33:41.285
+then you push, git push, to bring those
+
+00:33:41.285 --> 00:33:43.045
+commands to update the remote server with those
+
+00:33:43.045 --> 00:33:45.700
+commits that you made. And then git pull
+
+00:33:45.700 --> 00:33:48.020
+to pull those commits that other people have
+
+00:33:48.020 --> 00:33:50.740
+made and put onto GitHub onto your local
+
+00:33:50.740 --> 00:33:55.220
+computer, your local development environment. And then another
+
+00:33:55.220 --> 00:33:56.500
+command that we'll be using a lot in
+
+00:33:56.500 --> 00:33:58.535
+web lab workshops, which you actually should never
+
+00:33:58.535 --> 00:34:00.775
+use in practice, but for our jank web
+
+00:34:00.775 --> 00:34:03.335
+lab workshop development setup, we use this. It's
+
+00:34:03.335 --> 00:34:05.335
+called git reset dash dash hard. There should
+
+00:34:05.335 --> 00:34:08.135
+be two dashes there. And that wipes all
+
+00:34:08.135 --> 00:34:11.815
+of the uncommitted, unstaged local changes that you've
+
+00:34:11.815 --> 00:34:13.750
+made. So if you were coding and then
+
+00:34:13.750 --> 00:34:14.870
+you were like, oh, shoot, I don't wanna
+
+00:34:14.870 --> 00:34:16.630
+do that, you do git reset dash dash
+
+00:34:16.630 --> 00:34:20.070
+hard and that just wipes everything except what
+
+00:34:20.070 --> 00:34:25.925
+has been committed already. Okay. That was it
+
+00:34:25.925 --> 00:34:29.845
+for git. Please, everyone, stand up. It's been
+
+00:34:29.845 --> 00:34:32.085
+a long time of sitting. Get a good
+
+00:34:32.085 --> 00:34:36.325
+stretch. And go to weblab.is/feedback to give me
+
+00:34:36.325 --> 00:34:38.170
+feedback on that lecture that I just gave.
+
+00:34:38.170 --> 00:34:40.730
+It's, like, super quick. It'll take thirty seconds.
+
+00:34:41.210 --> 00:34:43.930
+And we'll be doing this after every single
+
+00:34:43.930 --> 00:34:45.610
+lecture so that we can get good data
+
+00:34:45.610 --> 00:34:47.690
+on what you guys liked and what you
+
+00:34:47.690 --> 00:34:51.317
+guys had trouble with. Alright. Take a two
+
+00:34:51.317 --> 00:34:53.717
+minute break before we move on to our
+
+00:34:53.717 --> 00:34:55.077
+next lecture.
