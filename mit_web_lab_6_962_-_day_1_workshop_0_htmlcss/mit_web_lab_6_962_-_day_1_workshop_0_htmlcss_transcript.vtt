@@ -1,0 +1,2780 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 6d4cfe0a-1c2f-4cf9-9735-0451249fa627
+Created: 2025-05-15T20:01:34.439Z
+Duration: 4803.004
+Channels: 1
+
+00:00:00.000 --> 00:00:03.360
+Hello again, everyone. Hope pizza was good. We're
+
+00:00:03.360 --> 00:00:04.880
+gonna go ahead and start on our first
+
+00:00:04.880 --> 00:00:15.885
+workshop now. Yeah. Yeah. So our first workshop
+
+00:00:15.885 --> 00:00:18.925
+is So as Andy mentioned, we're gonna be
+
+00:00:18.925 --> 00:00:22.365
+working through building this Catbook website. And this
+
+00:00:22.365 --> 00:00:24.125
+is gonna be our first step. And we're
+
+00:00:24.125 --> 00:00:25.965
+gonna use some of the HTML CSS ideas
+
+00:00:25.965 --> 00:00:32.740
+that we talked about earlier today. So for
+
+00:00:32.740 --> 00:00:34.820
+today, we're going to be using both Versus
+
+00:00:34.820 --> 00:00:37.860
+Code and the terminal. So if you could
+
+00:00:37.860 --> 00:00:40.785
+go ahead and open those up, that would
+
+00:00:40.785 --> 00:00:45.425
+be great. If you haven't set up everything,
+
+00:00:46.305 --> 00:00:50.625
+you can go to weblab.ishomework0 and get that
+
+00:00:50.625 --> 00:00:53.265
+set up real quick. And as always, if
+
+00:00:53.265 --> 00:01:07.665
+there's questions, then go to the queue. Alright,
+
+00:01:07.665 --> 00:01:13.185
+cool. I'll move on then. Okay, so first
+
+00:01:13.185 --> 00:01:15.425
+we're going to open up our terminal. I'm
+
+00:01:15.425 --> 00:01:16.865
+just going use the terminal on Versus Code
+
+00:01:16.865 --> 00:01:19.985
+because I think it's nicer. But yeah, use
+
+00:01:19.985 --> 00:01:22.080
+any terminal that you'd like. If you're on
+
+00:01:22.080 --> 00:01:23.520
+Windows, make sure you're using the Git Bash
+
+00:01:23.520 --> 00:01:27.760
+terminal. And I think Abby showed you how
+
+00:01:27.760 --> 00:01:39.125
+to change that. Okay. First step, we're going
+
+00:01:39.125 --> 00:01:41.285
+to change directory into whatever folder that we'd
+
+00:01:41.285 --> 00:01:43.125
+like. I'm just going to choose desktop, but
+
+00:01:43.125 --> 00:01:45.045
+you can also make a folder if you'd
+
+00:01:45.045 --> 00:01:47.925
+like, like using m k d I r,
+
+00:01:48.725 --> 00:01:51.720
+call it web lab or something. Yeah. Move
+
+00:01:51.720 --> 00:02:09.075
+into whichever folder that you'd like. Alright. Now
+
+00:02:09.075 --> 00:02:13.235
+we're going to clone the repository. Steps for
+
+00:02:13.235 --> 00:02:16.995
+this are pretty simple. You'll go to this
+
+00:02:16.995 --> 00:02:25.370
+site right here. I'll open it up. That's
+
+00:02:27.210 --> 00:02:30.810
+weblab. Iscatbook. I'll leave it up for a
+
+00:02:30.810 --> 00:02:32.490
+moment so that everyone can get to it.
+
+00:02:36.925 --> 00:02:43.885
+Okay. Everyone good? Okay. Cool. Alright. Once we're
+
+00:02:43.885 --> 00:02:46.845
+on the page, you can click code here.
+
+00:02:50.960 --> 00:02:52.320
+Once you're on the page, click the green
+
+00:02:52.320 --> 00:02:57.760
+code button. And then we're just gonna copy
+
+00:02:58.560 --> 00:03:05.265
+the command here or the link. Copy that.
+
+00:03:17.690 --> 00:03:27.210
+Once that's copied, has everyone gotten to that
+
+00:03:27.210 --> 00:03:32.995
+page and copied the link? Then you're going
+
+00:03:32.995 --> 00:03:34.755
+to type in this command here into your
+
+00:03:34.755 --> 00:03:45.715
+terminal. Git clone, and then you can copy
+
+00:03:45.715 --> 00:03:54.770
+paste the link. And then you should see
+
+00:03:55.810 --> 00:04:01.755
+some messages resolving deltas, And that should mean
+
+00:04:01.755 --> 00:04:06.235
+it's cloned. Okay. I'll wait for a second.
+
+00:04:08.075 --> 00:04:17.480
+Let's get up there. Okay. Alright. Next, we're
+
+00:04:17.480 --> 00:04:20.440
+going to move into that directory. So once
+
+00:04:20.440 --> 00:04:27.240
+again, use that command. And then in your
+
+00:04:27.240 --> 00:04:29.915
+command line, should see you're in Catbook React.
+
+00:04:45.570 --> 00:04:46.930
+Alright. And then we're going to type in
+
+00:04:46.930 --> 00:05:00.865
+this command, git checkout w zero starter. And
+
+00:05:00.865 --> 00:05:02.545
+it should say that you switch to a
+
+00:05:02.545 --> 00:05:23.605
+new branch, the v zero starter. Alright. Is
+
+00:05:23.605 --> 00:05:26.725
+everyone good with that? Okay. Cool. Then we're
+
+00:05:26.725 --> 00:05:29.525
+going to open up that folder. You can
+
+00:05:29.525 --> 00:05:31.125
+do this easily on Versus Code. Go to
+
+00:05:31.125 --> 00:05:35.685
+open. It'll be in desktop and then in
+
+00:05:35.685 --> 00:05:38.810
+KappaC React, and you can just click open.
+
+00:05:47.050 --> 00:05:49.050
+And then if you wanna open up index.
+
+00:05:49.050 --> 00:05:52.455
+Html, drag it out here. And then if
+
+00:05:52.455 --> 00:06:10.410
+that's something that looks like this. Before we
+
+00:06:10.410 --> 00:06:13.210
+dive in, we're going to encourage you to
+
+00:06:13.210 --> 00:06:16.650
+do some nice formatting. Formatting is good, obviously,
+
+00:06:16.650 --> 00:06:18.570
+because it'll help you read your code better,
+
+00:06:19.130 --> 00:06:21.225
+especially when you're collaborating with other people. You
+
+00:06:21.225 --> 00:06:22.985
+want to make pretty code so that other
+
+00:06:22.985 --> 00:06:25.545
+people can easily understand where your project is
+
+00:06:25.545 --> 00:06:29.065
+at. Thankfully, we can use an extension that'll
+
+00:06:29.065 --> 00:06:31.385
+do most of this for us. So we'll
+
+00:06:31.385 --> 00:06:37.920
+go ahead and download that. It's called Prettier,
+
+00:06:38.080 --> 00:06:39.920
+and I'll show you how to get it.
+
+00:06:41.920 --> 00:06:44.240
+Once you're at this page in Versus Code,
+
+00:06:45.520 --> 00:06:52.335
+go to this icon right here, extensions, And
+
+00:06:52.335 --> 00:06:54.095
+you should see something that looks like this.
+
+00:06:59.615 --> 00:07:02.015
+Once you're here, you can just type in
+
+00:07:02.015 --> 00:07:06.260
+Prettier. And there should be an install button
+
+00:07:06.260 --> 00:07:09.060
+here. I already have it, so it won't
+
+00:07:09.060 --> 00:07:11.140
+show up. But go ahead and install it.
+
+00:07:20.315 --> 00:07:22.555
+Once that's done, then we need to change
+
+00:07:22.555 --> 00:07:27.435
+the settings so that it's in use. So
+
+00:07:28.235 --> 00:07:31.035
+you go down here, click the gear button,
+
+00:07:31.650 --> 00:07:35.970
+and then there should be a settings option.
+
+00:07:37.010 --> 00:07:43.570
+Click settings, and then you're going to want
+
+00:07:43.570 --> 00:07:48.015
+to search for formatter. It should have some
+
+00:07:48.015 --> 00:07:50.255
+default option, but you want to change it
+
+00:07:50.255 --> 00:07:52.975
+to prettier, and you can do that just
+
+00:07:52.975 --> 00:08:14.575
+by searching through the drop down. All right.
+
+00:08:15.135 --> 00:08:16.415
+We also need to change it so that
+
+00:08:16.415 --> 00:08:18.495
+it formats on every save. So that means
+
+00:08:18.495 --> 00:08:20.655
+every time you press Control S, then it'll
+
+00:08:20.655 --> 00:08:24.335
+automatically format your code, which is really nice.
+
+00:08:24.735 --> 00:08:27.350
+So we'll type in format on save in
+
+00:08:27.350 --> 00:08:28.550
+here, and then you just need to check
+
+00:08:28.550 --> 00:08:50.975
+this little box. Alright. I'll wait for a
+
+00:08:50.975 --> 00:08:58.740
+moment. Alright, is everyone good? And again, if
+
+00:08:58.740 --> 00:09:00.900
+you're behind, then just feel free to join
+
+00:09:00.900 --> 00:09:02.580
+the queue and we'll be ready to help.
+
+00:09:06.340 --> 00:09:08.420
+Alright, here's a little demo of what Prettier
+
+00:09:08.420 --> 00:09:10.555
+does. Yeah, If you control s, then it
+
+00:09:10.555 --> 00:09:12.875
+looks much nicer and much easier to read,
+
+00:09:13.195 --> 00:09:22.475
+understand what's going on. Let's go back and
+
+00:09:22.475 --> 00:09:28.330
+look at the code. It should have something
+
+00:09:28.330 --> 00:09:39.275
+similar to what's on here. If we'd like
+
+00:09:39.275 --> 00:09:45.035
+to look at the actual sites, then what
+
+00:09:45.035 --> 00:10:43.065
+you can do is But basically, to view
+
+00:10:43.065 --> 00:10:44.985
+the file, all you need to do is
+
+00:10:44.985 --> 00:10:49.410
+navigate to the folder in Finder or whatever
+
+00:10:49.490 --> 00:10:54.370
+using Windows. You can drag it up here,
+
+00:10:57.010 --> 00:11:01.555
+and it should display whatever the website is
+
+00:11:01.555 --> 00:11:05.315
+rendering. So as you can see, we only
+
+00:11:05.315 --> 00:11:06.755
+have Hello Worlds, and then our title is
+
+00:11:06.755 --> 00:11:09.875
+Cat Book. It's pretty much what we expect,
+
+00:11:10.195 --> 00:11:21.560
+and it's up there. I'll let everyone try
+
+00:11:21.560 --> 00:11:23.400
+that out for a moment before we jump
+
+00:11:23.400 --> 00:11:29.545
+in. So again, all you need to do
+
+00:11:29.545 --> 00:11:35.065
+is go to Finder, navigate to the folder
+
+00:11:35.065 --> 00:11:37.385
+for Catbook React, and then just drag in
+
+00:11:37.385 --> 00:11:40.745
+index. Html into your browser, and then it
+
+00:11:40.745 --> 00:12:02.935
+should pop up the web page. Alright. I'll
+
+00:12:02.935 --> 00:12:08.135
+move on. Okay. So looking forward, our goal
+
+00:12:08.135 --> 00:12:09.400
+at the end of this is to be
+
+00:12:09.400 --> 00:12:12.840
+able to build this profile page in Catbook.
+
+00:12:12.920 --> 00:12:14.120
+So this is our goal for the end
+
+00:12:14.120 --> 00:12:21.800
+of this workshop. Okay. Before I begin, I'll
+
+00:12:21.800 --> 00:12:23.560
+explain a little bit about our workflow for
+
+00:12:23.560 --> 00:12:26.095
+the workshops. So the idea is going to
+
+00:12:26.095 --> 00:12:29.455
+be that I will explain something that we
+
+00:12:29.455 --> 00:12:32.335
+want to add to our website. You guys
+
+00:12:32.335 --> 00:12:34.415
+can talk with your friends for a minute
+
+00:12:34.415 --> 00:12:36.655
+or five minutes or so. Try to implement
+
+00:12:36.655 --> 00:12:38.880
+it yourself, and then we'll come back, we'll
+
+00:12:38.880 --> 00:12:41.200
+touch base, and then we'll implement it together.
+
+00:12:44.400 --> 00:12:46.800
+If you get lost or fall behind, don't
+
+00:12:46.800 --> 00:12:49.040
+worry because we have some things that'll help
+
+00:12:49.040 --> 00:12:53.255
+you stay up to speed. Buckle up because
+
+00:12:53.255 --> 00:12:55.575
+we have 11 steps in this workshop. So
+
+00:12:55.575 --> 00:12:58.615
+it's kind of a long one, but yeah,
+
+00:12:58.615 --> 00:13:05.940
+we'll get through it together. Okay. First, it's
+
+00:13:05.940 --> 00:13:07.220
+just going be doing some work in the
+
+00:13:07.220 --> 00:13:12.820
+bare bones HTML. So all I'd like you
+
+00:13:12.820 --> 00:13:15.140
+to do is add some more text into
+
+00:13:15.140 --> 00:13:18.020
+your document. And with that, we're going to
+
+00:13:18.020 --> 00:13:19.780
+use some of the tags that I talked
+
+00:13:19.780 --> 00:13:25.915
+about before. If you want, try to make
+
+00:13:25.915 --> 00:13:28.555
+it look like this using the tags that
+
+00:13:28.555 --> 00:13:32.155
+I've listed up here. And keep in mind
+
+00:13:32.155 --> 00:13:35.275
+that we could use things like div that
+
+00:13:35.275 --> 00:13:37.250
+I talked about before, but we like to
+
+00:13:37.250 --> 00:13:40.610
+keep it more semantically nice. So we can
+
+00:13:40.610 --> 00:13:44.930
+use things like section. And this one here,
+
+00:13:45.010 --> 00:13:47.890
+we'll just add a horizontal rule. So that's
+
+00:13:47.890 --> 00:13:53.535
+how get the line. So take like three
+
+00:13:53.535 --> 00:13:55.695
+minutes, talk to the person next to you,
+
+00:13:56.015 --> 00:13:57.135
+and try to get as close as you
+
+00:13:57.135 --> 00:13:59.135
+can to making your website look like that.
+
+00:14:04.335 --> 00:14:05.560
+And if you want to see the changes
+
+00:14:05.560 --> 00:14:07.480
+on your website, if you still have the
+
+00:14:07.480 --> 00:14:09.160
+tab open in your browser, all you need
+
+00:14:09.160 --> 00:14:12.920
+to do is reload. I haven't made any
+
+00:14:12.920 --> 00:14:29.505
+changes, so you won't see anything. Hello and
+
+00:14:29.505 --> 00:14:31.585
+if you're too shy to add yourself to
+
+00:14:31.585 --> 00:14:33.265
+the queue which you should not be because
+
+00:14:33.265 --> 00:14:35.940
+the queue is very approachable But if you
+
+00:14:35.940 --> 00:14:37.620
+don't wanna add yourself to the queue, we
+
+00:14:37.620 --> 00:14:40.100
+have Lucas and Daniel walking around so you
+
+00:14:40.100 --> 00:14:41.700
+can just flag them down if you need
+
+00:14:41.700 --> 00:14:56.585
+help with anything real quick. Okay. I'll give
+
+00:14:56.585 --> 00:15:00.265
+you guys like three more minutes to try
+
+00:15:00.265 --> 00:16:12.640
+to get it done. Also if you wanted
+
+00:16:12.640 --> 00:16:14.800
+an alternative to opening up the thing without
+
+00:16:14.800 --> 00:16:17.440
+having to go through Finder or anything, another
+
+00:16:17.440 --> 00:16:21.385
+thing you can do is right click on
+
+00:16:21.385 --> 00:16:24.985
+the file and just copy the path here.
+
+00:16:26.825 --> 00:16:29.465
+Copy the path, and then if you go
+
+00:16:29.465 --> 00:16:32.825
+into browser, think you can just paste it,
+
+00:16:33.740 --> 00:16:59.595
+and then it'll open up. Same thing. Alright.
+
+00:16:59.595 --> 00:17:01.115
+We're gonna start working through it together now.
+
+00:17:04.620 --> 00:17:07.580
+So going through what we see up here,
+
+00:17:08.300 --> 00:17:11.420
+obviously we see this big header up here,
+
+00:17:11.500 --> 00:17:14.380
+buka buka. And for that, I think we're
+
+00:17:14.380 --> 00:17:25.435
+gonna use the header tags h one. Oh,
+
+00:17:25.435 --> 00:17:30.075
+wait. Did you get the printouts? It's in
+
+00:17:30.075 --> 00:17:43.910
+my bag. Is that good? One more. One
+
+00:17:43.910 --> 00:17:55.725
+more. Alright. Under that, we have our line
+
+00:17:55.725 --> 00:17:57.645
+here. And I mentioned that you can use
+
+00:17:57.645 --> 00:18:00.900
+the HR tag. And it's actually a self
+
+00:18:00.900 --> 00:18:03.060
+closing tag. Maybe I should have mentioned that.
+
+00:18:03.060 --> 00:18:04.500
+But of course, you could just use the
+
+00:18:04.500 --> 00:18:06.980
+MDN web docs to find that out. And
+
+00:18:06.980 --> 00:18:08.180
+it makes sense because you're not going to
+
+00:18:08.180 --> 00:18:13.665
+really enclose anything within a line. Next, you
+
+00:18:13.665 --> 00:18:15.425
+didn't have to do this, but I'd like
+
+00:18:15.425 --> 00:18:19.425
+for you to do a section tag so
+
+00:18:19.425 --> 00:18:20.945
+that we can group up our about me
+
+00:18:20.945 --> 00:18:24.545
+and our favorite type of cat. And within
+
+00:18:24.545 --> 00:18:31.290
+the first section, we'll do a header for
+
+00:18:31.290 --> 00:18:34.490
+about me. And you'll notice that I used
+
+00:18:34.490 --> 00:18:38.570
+h four here. Something about the header tags
+
+00:18:38.570 --> 00:18:41.465
+is that they have like different default sizings
+
+00:18:41.465 --> 00:18:44.345
+under them already, and the higher the number,
+
+00:18:44.345 --> 00:18:47.065
+the smaller the text. So if you want
+
+00:18:47.065 --> 00:18:50.905
+various subheadings, you can use h three, h
+
+00:18:50.905 --> 00:18:53.865
+five, h whatever. But I'll use h four
+
+00:18:53.865 --> 00:18:57.380
+for this. And then over here, we're gonna
+
+00:18:57.380 --> 00:19:05.220
+use p. And then I won't talk about
+
+00:19:05.220 --> 00:19:06.420
+the full text, but you can do it
+
+00:19:06.420 --> 00:19:12.195
+if you want. Then we'll have the other
+
+00:19:12.195 --> 00:19:48.295
+section. I turned it off. This is about
+
+00:19:48.295 --> 00:19:51.095
+what it should look like. If we go
+
+00:19:51.095 --> 00:19:54.610
+to add up here and reload, then we
+
+00:19:54.610 --> 00:19:56.530
+should see that it looks closer to what
+
+00:19:56.530 --> 00:20:00.850
+we want. And feel free to just add
+
+00:20:00.850 --> 00:20:02.610
+whatever text you want. I don't really care.
+
+00:20:10.365 --> 00:20:12.445
+Alright, I'll wait for a moment for everyone
+
+00:20:12.445 --> 00:20:15.245
+to get up to speed and make sure
+
+00:20:15.245 --> 00:20:18.125
+that you can see this in your browser.
+
+00:20:33.280 --> 00:20:38.315
+Okay. Cool. Alright, we're going to move on.
+
+00:20:39.035 --> 00:20:40.795
+And before we do that, I'd like you
+
+00:20:40.795 --> 00:20:43.355
+to type in these commands into your terminal.
+
+00:20:44.555 --> 00:20:50.395
+First, we're going to type in git reset
+
+00:20:50.875 --> 00:20:54.750
+hard. And I'll explain what this does exactly
+
+00:20:54.750 --> 00:20:58.910
+in a second. And then we're going to
+
+00:20:58.910 --> 00:21:02.510
+type in git checkouts. That'll be zero step
+
+00:21:02.510 --> 00:21:10.305
+one. Wait for a moment for everyone to
+
+00:21:10.305 --> 00:21:20.450
+do that. Okay. So yeah, what exactly are
+
+00:21:20.450 --> 00:21:25.970
+these commands doing? Okay. The first one that
+
+00:21:25.970 --> 00:21:27.410
+I told you to do was git reset
+
+00:21:27.810 --> 00:21:30.530
+hard. So git reset hard is going to
+
+00:21:30.530 --> 00:21:33.675
+reset your local version of the code to
+
+00:21:33.675 --> 00:21:36.875
+be whatever was last committed. So for example,
+
+00:21:36.875 --> 00:21:40.155
+let's say you were working on some code,
+
+00:21:40.875 --> 00:21:42.235
+it kind of got away from you and
+
+00:21:42.235 --> 00:21:44.155
+you don't know what's going on anymore, and
+
+00:21:44.155 --> 00:21:45.435
+you just want to go back to the
+
+00:21:45.435 --> 00:21:50.260
+last landmark point that you were at. Then
+
+00:21:50.260 --> 00:21:52.260
+you can just type in git recess hard,
+
+00:21:52.260 --> 00:21:55.300
+and it'll reset your code to wherever you
+
+00:21:55.300 --> 00:21:59.300
+last committed. You can kind of think of
+
+00:21:59.300 --> 00:22:02.275
+GitHub as the place where all the nice
+
+00:22:02.275 --> 00:22:04.915
+code is. You give it to you, and
+
+00:22:04.915 --> 00:22:09.635
+then you do your work on it. And
+
+00:22:09.635 --> 00:22:13.235
+maybe you mess up, and you wish that
+
+00:22:13.235 --> 00:22:15.970
+you could undo all of your work, but
+
+00:22:15.970 --> 00:22:19.410
+not undo everything. Right? Then you can just
+
+00:22:19.410 --> 00:22:22.210
+do git reset dash dash hard, and your
+
+00:22:22.210 --> 00:22:27.170
+code will be good as new. The checkout
+
+00:22:27.170 --> 00:22:29.170
+step, we kind of mentioned before in our
+
+00:22:29.170 --> 00:22:32.485
+git basics lecture, but all it's doing is
+
+00:22:32.485 --> 00:22:35.605
+changing or it's switching your version of the
+
+00:22:35.605 --> 00:22:38.005
+code to a different branch of the repository.
+
+00:22:40.245 --> 00:22:45.120
+Yeah. There's a slight difference between the one
+
+00:22:45.120 --> 00:22:47.360
+we showed you the first time with dash
+
+00:22:47.360 --> 00:22:48.720
+b. So that's going to make a new
+
+00:22:48.720 --> 00:22:51.120
+branch. This one is just switching to a
+
+00:22:51.120 --> 00:23:00.435
+branch that we already have created. So in
+
+00:23:00.435 --> 00:23:02.995
+summary, if you ever get lost, then don't
+
+00:23:02.995 --> 00:23:04.515
+worry because you can just type in git
+
+00:23:04.515 --> 00:23:06.995
+reset hard and then check out whatever step
+
+00:23:06.995 --> 00:23:10.275
+we're on, and you'll be good as new,
+
+00:23:10.275 --> 00:23:12.035
+and you can just follow along from there.
+
+00:23:14.720 --> 00:23:16.560
+A quick note is that you shouldn't abuse
+
+00:23:16.560 --> 00:23:20.000
+git recess dash dash hard for every project
+
+00:23:20.000 --> 00:23:21.760
+that you do. It works really well for
+
+00:23:21.760 --> 00:23:26.240
+our workshops because we're just trying to through
+
+00:23:26.240 --> 00:23:29.835
+something together. But if you're doing your projects
+
+00:23:29.835 --> 00:23:31.355
+and you make a lot of changes and
+
+00:23:31.355 --> 00:23:33.035
+you just get recess dash dash hard, then
+
+00:23:33.035 --> 00:23:35.595
+it'll be lost forever. So keep that in
+
+00:23:35.595 --> 00:23:42.555
+mind. Okay. So back to where we were.
+
+00:23:43.035 --> 00:23:49.170
+We'll type in those two commands. And you'll
+
+00:23:49.170 --> 00:23:53.970
+notice that it actually has the correct solution
+
+00:23:53.970 --> 00:23:57.170
+code to have exactly what is up on
+
+00:23:57.170 --> 00:24:06.685
+the slide. Again, if I try to do
+
+00:24:06.685 --> 00:24:11.965
+this, then my code matches what it should
+
+00:24:11.965 --> 00:24:22.710
+be. Okay. Cool. Move on to our first
+
+00:24:22.710 --> 00:24:25.670
+step, and that's gonna be to add an
+
+00:24:25.670 --> 00:24:31.125
+image. And I'll have the commands for to
+
+00:24:31.125 --> 00:24:32.565
+get to whatever step we're on in the
+
+00:24:32.565 --> 00:24:36.165
+corner or on this page here. And I'll
+
+00:24:36.165 --> 00:24:38.165
+have the progress bar to help you see
+
+00:24:38.165 --> 00:24:45.230
+where we are. So, yeah, let's try to
+
+00:24:45.230 --> 00:24:48.510
+add an image to our website. We're gonna
+
+00:24:48.510 --> 00:24:50.430
+put it above the buka buka, and it's
+
+00:24:50.430 --> 00:24:52.590
+gonna be an image that's already in our
+
+00:24:52.590 --> 00:24:55.150
+folder. It'll be cat dot p n g.
+
+00:24:55.470 --> 00:25:00.565
+It's just like a cat. And I'll give
+
+00:25:00.565 --> 00:25:03.205
+you guys two minutes to use the image
+
+00:25:03.205 --> 00:25:04.805
+tag that we talked about in the earlier
+
+00:25:04.805 --> 00:25:08.005
+lecture and try to get your website to
+
+00:25:08.005 --> 00:25:26.435
+look like that. Once you've got the image
+
+00:25:26.435 --> 00:25:29.235
+showing up, also remember to add some alt
+
+00:25:29.235 --> 00:25:53.885
+text. You can make whatever you want. And
+
+00:25:53.885 --> 00:25:55.805
+remember, if you forget the syntax for anything,
+
+00:25:55.805 --> 00:26:07.880
+it's just a Google search away. Alright. I'll
+
+00:26:07.880 --> 00:26:09.640
+go ahead and work through it with you
+
+00:26:09.640 --> 00:26:13.560
+guys. So if you recall, image is a
+
+00:26:13.560 --> 00:26:16.920
+self closing tag, and we use this attribute
+
+00:26:17.735 --> 00:26:21.735
+to get the right picture. And I'm just
+
+00:26:21.735 --> 00:26:24.455
+using this name because the name of our
+
+00:26:24.455 --> 00:26:27.495
+image is cat p n g. And it's
+
+00:26:27.495 --> 00:26:29.495
+in the same directory as our HTML document,
+
+00:26:29.495 --> 00:26:31.495
+so I don't need to do anything fancy.
+
+00:26:31.495 --> 00:26:33.550
+And then for alt text, I can just
+
+00:26:33.550 --> 00:26:44.830
+say cat or whatever. And remember, it's self
+
+00:26:44.830 --> 00:26:46.510
+closing, so we don't need to have opening
+
+00:26:46.510 --> 00:26:48.585
+and closing tags. We just add this forward
+
+00:26:48.585 --> 00:26:52.025
+slash at the end. It will render correctly.
+
+00:26:54.745 --> 00:27:05.720
+Let's reload, and there's our image. I'll give
+
+00:27:05.720 --> 00:27:07.880
+everyone a moment to get caught up again.
+
+00:27:19.665 --> 00:27:21.985
+Alright. Sounds like people are done, so I'll
+
+00:27:21.985 --> 00:27:25.265
+move on. Alright. Next, we're going to do
+
+00:27:25.265 --> 00:27:30.120
+some centering. Before we do that, remember to
+
+00:27:30.120 --> 00:27:31.560
+type in the commands that you see over
+
+00:27:31.560 --> 00:27:33.800
+there. So we're going to get reset hard
+
+00:27:33.800 --> 00:28:08.630
+and check out the next step. Okay. For
+
+00:28:08.630 --> 00:28:10.550
+this step, I'd like to do some centering.
+
+00:28:10.550 --> 00:28:12.150
+So I want to move So if you
+
+00:28:12.150 --> 00:28:13.585
+see how all of our text is, like,
+
+00:28:13.585 --> 00:28:16.065
+on the left side, I'd like to change,
+
+00:28:16.065 --> 00:28:17.585
+like, at least one thing so that it
+
+00:28:17.585 --> 00:28:20.065
+can be in the center because that's what
+
+00:28:20.065 --> 00:28:23.745
+our end goal kind of looks like. So
+
+00:28:24.945 --> 00:28:29.530
+here's what I'll do. For this, we're gonna
+
+00:28:29.530 --> 00:28:38.890
+open up our CSS document. And we're gonna
+
+00:28:38.890 --> 00:28:46.195
+define a class. Or actually first, how about
+
+00:28:46.195 --> 00:28:51.715
+we just link our stylesheet? The way we're
+
+00:28:51.715 --> 00:28:54.675
+going to do that is in the header
+
+00:28:55.080 --> 00:28:58.840
+or in the head element. Just add an
+
+00:28:58.840 --> 00:29:05.400
+element linking. This rel thing just tells it
+
+00:29:05.400 --> 00:29:08.015
+to interpret it as a style sheet, and
+
+00:29:08.015 --> 00:29:11.695
+then href tells it what to look at.
+
+00:29:16.495 --> 00:29:18.815
+Again, this link element is also self closing.
+
+00:29:35.255 --> 00:29:37.895
+Alright. I'll let everyone get that linked up.
+
+00:29:40.855 --> 00:29:43.415
+Okay. Next, we're going to try to actually
+
+00:29:43.415 --> 00:29:47.575
+apply some styling onto our elements. So as
+
+00:29:47.575 --> 00:29:49.335
+I said before, I want to have things
+
+00:29:49.335 --> 00:29:58.540
+centered. I'll walk you through this one because
+
+00:29:58.540 --> 00:30:01.340
+I haven't shown you that much about this
+
+00:30:01.340 --> 00:30:04.685
+stuff yet. But what we're going to do
+
+00:30:04.685 --> 00:30:06.765
+is define a class first in our CSS
+
+00:30:06.765 --> 00:30:13.325
+document. And actually, have it split screened. You
+
+00:30:13.325 --> 00:30:19.890
+guys can see both things. But in our
+
+00:30:19.890 --> 00:30:24.130
+CSS document, we're going to define a class
+
+00:30:25.330 --> 00:30:31.455
+or we're going to select a class called
+
+00:30:31.455 --> 00:30:37.775
+view text center, and it's going to have
+
+00:30:37.775 --> 00:30:51.030
+this attributes. Let everyone get that copy down.
+
+00:30:57.845 --> 00:31:00.085
+As a quick aside, whenever we have a
+
+00:31:00.085 --> 00:31:03.205
+class that's only really applying one thing, we
+
+00:31:03.205 --> 00:31:06.405
+call it a utility class, and that's denoted
+
+00:31:06.405 --> 00:31:11.760
+by the u prefix on the thing. And
+
+00:31:11.760 --> 00:31:14.560
+the dot is here because it's a class.
+
+00:31:14.800 --> 00:31:16.880
+So if there were an ID or something,
+
+00:31:16.880 --> 00:31:20.480
+then we'd use a hashtag sign. But because
+
+00:31:20.480 --> 00:31:21.440
+it's a class, we're just going to use
+
+00:31:21.440 --> 00:31:31.215
+dot. And now once we have our class
+
+00:31:31.215 --> 00:31:32.895
+in here, we can apply it to whatever
+
+00:31:32.895 --> 00:31:36.495
+we want. So how about we apply it
+
+00:31:36.495 --> 00:31:39.535
+to the header, the big header, h one?
+
+00:31:41.040 --> 00:31:43.520
+And the way we're gonna do that is
+
+00:31:43.600 --> 00:31:47.200
+by setting the class attributes to the uTextCenter.
+
+00:31:53.355 --> 00:32:08.910
+Then you should see that the text is
+
+00:32:08.910 --> 00:32:25.355
+now centered. I'll give everyone a moment to
+
+00:32:25.355 --> 00:32:38.070
+do that, and I'll move on. Again, all
+
+00:32:38.070 --> 00:32:40.950
+I did was create this class here in
+
+00:32:40.950 --> 00:32:43.270
+the style sheet, in the CSS, or styles
+
+00:32:43.270 --> 00:32:46.310
+dot CSS, and then we apply it to
+
+00:32:46.310 --> 00:32:48.950
+an element by changing the attribute of class
+
+00:32:50.275 --> 00:32:55.395
+to new text center. Okay, cool. I'll move
+
+00:32:55.395 --> 00:33:03.475
+on. Alright. Go ahead and reset dash dash
+
+00:33:03.475 --> 00:33:22.615
+hard and check out step three. Alright. We're
+
+00:33:22.615 --> 00:33:24.215
+going do some more styling in this one.
+
+00:33:25.655 --> 00:33:26.935
+And we're just going to use the class
+
+00:33:26.935 --> 00:33:29.415
+that we created earlier to center other parts
+
+00:33:29.415 --> 00:33:34.500
+of our document. Shows the power of how
+
+00:33:34.500 --> 00:33:37.140
+classes can be used for many different elements,
+
+00:33:37.140 --> 00:33:42.180
+unlike IDs. Our goal is to make our
+
+00:33:42.180 --> 00:33:44.420
+website look like this, and I'll give you
+
+00:33:44.420 --> 00:33:47.460
+guys a minute or so to do that.
+
+00:34:10.490 --> 00:34:12.490
+Alright. Since this one's not too bad, I'll
+
+00:34:12.490 --> 00:34:15.370
+just go ahead and live code it with
+
+00:34:15.370 --> 00:34:18.145
+you guys. So again, we already defined our
+
+00:34:18.145 --> 00:34:19.265
+class, so all we need to do is
+
+00:34:19.265 --> 00:34:27.025
+apply it to these other things. And you'll
+
+00:34:27.025 --> 00:34:29.360
+notice that I put this in the section
+
+00:34:29.360 --> 00:34:32.320
+element, and that means it'll apply to everything
+
+00:34:32.320 --> 00:34:35.520
+within it as well. So everything is going
+
+00:34:35.520 --> 00:34:38.320
+to be centered in the about me. And
+
+00:34:38.320 --> 00:34:39.920
+then if I also want to center this,
+
+00:34:39.920 --> 00:35:06.610
+I'll do the same thing. Okay, cool. And
+
+00:35:06.610 --> 00:35:09.875
+as a review, what I just said, if
+
+00:35:09.875 --> 00:35:11.875
+you apply the class to these section elements,
+
+00:35:11.875 --> 00:35:15.155
+then it'll apply to everything within it. Maybe
+
+00:35:15.155 --> 00:35:16.755
+that gives you an idea of why div
+
+00:35:16.755 --> 00:35:18.915
+or span would be useful. You're just trying
+
+00:35:18.915 --> 00:35:20.995
+to select an entire section. It doesn't make
+
+00:35:20.995 --> 00:35:22.915
+sense to do that for every single element,
+
+00:35:22.995 --> 00:35:24.200
+and it makes more sense to do that
+
+00:35:24.200 --> 00:35:30.520
+for a container on all of it. Step
+
+00:35:30.520 --> 00:35:33.800
+four is going be something pretty common, that's
+
+00:35:33.800 --> 00:35:37.505
+importing fonts. So first, we're going to reset
+
+00:35:37.505 --> 00:35:41.025
+dash dash hard and check out the next
+
+00:35:41.025 --> 00:35:58.600
+step. All right. Let's go find a font
+
+00:35:58.600 --> 00:36:00.360
+that's better than the one that we have
+
+00:36:00.360 --> 00:36:05.045
+on default. Your go to website, in this
+
+00:36:05.045 --> 00:36:08.965
+case, is going to be fonts.google.com. Pretty easy
+
+00:36:08.965 --> 00:36:21.640
+to remember. You can just go to the
+
+00:36:21.640 --> 00:36:23.240
+search bar and search for any font that
+
+00:36:23.240 --> 00:36:26.600
+you like. I'm going use Open Sans today,
+
+00:36:26.600 --> 00:36:28.920
+but feel free to choose a more interesting
+
+00:36:28.920 --> 00:36:33.915
+one. Once you're on fonts.google.com, you can just
+
+00:36:33.915 --> 00:36:36.715
+look it up, and they have it right
+
+00:36:36.715 --> 00:36:48.920
+here. Once you're there, click on the font
+
+00:36:48.920 --> 00:36:52.280
+that you'd like. And then we're going to
+
+00:36:52.280 --> 00:36:56.280
+head to this get font button. It should
+
+00:36:56.280 --> 00:37:03.405
+be in the top right corner. And then
+
+00:37:03.405 --> 00:37:04.525
+you'll get to a page that looks like
+
+00:37:04.525 --> 00:37:13.085
+this. Next, we're going to click get embed
+
+00:37:13.085 --> 00:37:20.450
+code. There are some fancy options here that
+
+00:37:20.450 --> 00:37:24.050
+you can play around with later, but I'm
+
+00:37:24.050 --> 00:37:26.290
+just gonna choose an easy option. I'll just
+
+00:37:26.290 --> 00:37:31.915
+use the defaults. Yeah. Next, once you're on
+
+00:37:31.915 --> 00:37:35.275
+this page here, and I have the directions
+
+00:37:35.275 --> 00:37:38.955
+up on here. Let everyone get to there.
+
+00:37:41.910 --> 00:37:45.190
+Once you're here, the default option is link,
+
+00:37:45.190 --> 00:37:47.030
+but I'm actually going to use import because
+
+00:37:47.030 --> 00:37:48.630
+it'll be nicer to just put in our
+
+00:37:48.630 --> 00:37:52.870
+CSS document. And they actually have it so
+
+00:37:52.870 --> 00:37:55.625
+that it'll go in an HTML here. But
+
+00:37:57.465 --> 00:38:00.105
+for our purposes, I'm just gonna copy this
+
+00:38:00.105 --> 00:38:06.745
+intersection that's within the element tags. So copy
+
+00:38:06.745 --> 00:38:14.080
+that. Then we're going to move back to
+
+00:38:14.080 --> 00:38:20.480
+our CSS stylesheet, and we'll import it up
+
+00:38:20.480 --> 00:38:34.445
+here. So again, we're gonna go to here,
+
+00:38:34.445 --> 00:38:37.950
+click on import instead of link. Go to
+
+00:38:37.950 --> 00:38:40.110
+the first one, embed code in the head,
+
+00:38:40.590 --> 00:38:44.350
+and instead of including these tags, which would
+
+00:38:44.350 --> 00:38:46.190
+work for putting it in the head of
+
+00:38:46.190 --> 00:38:49.150
+our HTML, we'll just copy paste this inner
+
+00:38:49.150 --> 00:38:50.350
+part here so we can put it in
+
+00:38:50.350 --> 00:39:00.215
+the stylesheet directly. Okay. Cool. Once that's done,
+
+00:39:00.215 --> 00:39:08.320
+we can apply it to our elements. In
+
+00:39:08.320 --> 00:39:10.080
+this case, I'd like it to be applied
+
+00:39:10.080 --> 00:39:13.040
+to everything, basically, on the document. So instead
+
+00:39:13.040 --> 00:39:15.760
+of defining or selecting a class or an
+
+00:39:15.760 --> 00:39:18.960
+element and applying it to only those, I'll
+
+00:39:18.960 --> 00:39:30.385
+just select the entire body. So to do
+
+00:39:30.385 --> 00:39:32.545
+that, you can just put body in the
+
+00:39:32.545 --> 00:39:35.425
+selector, and then within it, we're gonna change
+
+00:39:35.425 --> 00:39:44.000
+this attribute font family. Because we imported, it'll
+
+00:39:44.000 --> 00:39:47.040
+let us directly refer to Open Sans or
+
+00:39:47.040 --> 00:39:56.585
+whatever font that you imported. And then if
+
+00:39:56.585 --> 00:40:02.265
+we go back to our website, the font
+
+00:40:02.265 --> 00:40:13.120
+should be updated to whatever you chose. Because
+
+00:40:13.120 --> 00:40:17.120
+we like having fallbacks and safety for safety
+
+00:40:17.120 --> 00:40:20.160
+reasons, if we go back to our code,
+
+00:40:20.160 --> 00:40:23.305
+we can also add a fallback option in
+
+00:40:23.305 --> 00:40:29.065
+case our stylesheet didn't actually import the right
+
+00:40:29.065 --> 00:40:30.745
+font, and it doesn't know what Open Sans
+
+00:40:30.745 --> 00:40:34.425
+is. So we can put Sans Serif. That's
+
+00:40:34.425 --> 00:40:38.790
+a built in. In the case that we
+
+00:40:38.790 --> 00:40:41.350
+don't have Open Sans, then our web page
+
+00:40:41.350 --> 00:40:44.470
+will just default to Sans Serif. And you
+
+00:40:44.470 --> 00:40:45.830
+can do that by just adding it after
+
+00:40:45.830 --> 00:40:57.935
+some commas. Okay. Cool. I'll move on to
+
+00:40:57.935 --> 00:41:08.760
+the nav bar. And as always, we're gonna
+
+00:41:08.760 --> 00:41:14.600
+reset dash dash hard. Check out we're at
+
+00:41:14.600 --> 00:41:29.055
+step five. So if you remember in our
+
+00:41:29.055 --> 00:41:31.455
+end goal, we had a nice bar at
+
+00:41:31.455 --> 00:41:34.015
+the top that said cat book. And we're
+
+00:41:34.015 --> 00:41:35.750
+going to do that using the nav bar
+
+00:41:35.750 --> 00:41:39.750
+element. So what I want you to do
+
+00:41:39.750 --> 00:41:42.870
+is add this nav element to the top
+
+00:41:42.870 --> 00:41:50.155
+of your body. Give everyone a moment to
+
+00:41:50.155 --> 00:42:00.955
+do that. I guess I'll do it with
+
+00:42:00.955 --> 00:42:13.350
+you guys. Also add this header elements for
+
+00:42:13.350 --> 00:42:20.155
+cat book. Once you've done that, we're going
+
+00:42:20.155 --> 00:42:22.075
+to preemptively add these classes because we know
+
+00:42:22.075 --> 00:42:26.955
+we want to style it later. So I'm
+
+00:42:26.955 --> 00:42:28.475
+going to assume that we're going to use
+
+00:42:28.475 --> 00:42:30.795
+this class called nav container, which we'll define
+
+00:42:30.795 --> 00:42:35.590
+later in here. And I guess for the
+
+00:42:35.590 --> 00:42:48.045
+header, we can also define something. And again,
+
+00:42:48.045 --> 00:42:50.205
+haven't done any styling to it yet, but
+
+00:42:50.205 --> 00:42:52.685
+I'm just doing this preemptively because we will
+
+00:42:52.685 --> 00:42:54.125
+do it in the future in our style
+
+00:42:54.125 --> 00:43:04.440
+CSS document. Okay. Yeah. So let's go and
+
+00:43:04.440 --> 00:43:09.960
+do that. Before we do that, I'll touch
+
+00:43:09.960 --> 00:43:13.595
+a little bit on CSS variables. CSS does
+
+00:43:13.595 --> 00:43:16.795
+support a type of variable, and this is
+
+00:43:16.795 --> 00:43:18.475
+helpful if you're going to be using the
+
+00:43:18.475 --> 00:43:21.115
+same thing over and over again. For example,
+
+00:43:21.275 --> 00:43:23.275
+a color that's in hex, you don't want
+
+00:43:23.275 --> 00:43:24.715
+to keep typing out the hex, and maybe
+
+00:43:24.715 --> 00:43:26.235
+it's nice to just know what color it
+
+00:43:26.235 --> 00:43:30.720
+is already. The syntax for that is going
+
+00:43:30.720 --> 00:43:39.680
+to be as follows. So the reason that
+
+00:43:39.680 --> 00:43:43.440
+it uses root, and it'll use colon when
+
+00:43:42.795 --> 00:43:45.115
+referring to root is so that it'll apply
+
+00:43:45.115 --> 00:43:47.275
+to the entire web page. If you remember
+
+00:43:47.275 --> 00:43:49.435
+at the beginning of the first lecture, I
+
+00:43:49.435 --> 00:43:50.875
+told you guys that the HTML tag that
+
+00:43:50.875 --> 00:43:53.835
+contains everything is referred to as the root.
+
+00:43:53.835 --> 00:43:55.355
+So this will just make sure that you
+
+00:43:55.355 --> 00:44:00.130
+can use this variable anywhere at all. And
+
+00:44:00.130 --> 00:44:03.810
+then for variables, we're going to use these
+
+00:44:03.810 --> 00:44:08.130
+two dashes, and then the variable name, and
+
+00:44:08.130 --> 00:44:12.365
+then what it's set to. So if I
+
+00:44:12.365 --> 00:44:15.805
+use exactly what's on there, can I use
+
+00:44:16.205 --> 00:44:39.730
+this color? Another nice feature is that you
+
+00:44:39.730 --> 00:44:41.570
+can click on this and then select another
+
+00:44:41.570 --> 00:44:50.425
+color. Okay. Once we've defined those variables, we
+
+00:44:50.425 --> 00:44:53.465
+can go ahead and use them in other
+
+00:44:53.465 --> 00:44:58.380
+styling. So let's go ahead and style that
+
+00:44:58.380 --> 00:45:01.260
+class that we used over here in the
+
+00:45:01.260 --> 00:45:07.100
+nav element. Or let's use the nav title
+
+00:45:07.100 --> 00:45:13.915
+one, I guess. Here. And then if we
+
+00:45:13.915 --> 00:45:15.595
+actually want to extract the value from a
+
+00:45:15.595 --> 00:45:17.435
+variable, we'll have to wrap it in this
+
+00:45:17.435 --> 00:45:29.280
+var function thing. And then another attribute will
+
+00:45:29.280 --> 00:45:48.215
+change. Spot size. We're also going to undo
+
+00:45:48.215 --> 00:45:51.495
+some of the default formatting that's been applied
+
+00:45:51.495 --> 00:45:55.960
+to h1. So CSS already or HTML already
+
+00:45:55.960 --> 00:45:58.600
+interprets some default formats. You can see the
+
+00:45:58.600 --> 00:46:01.240
+font family is also chosen for you. But
+
+00:46:01.240 --> 00:46:02.280
+if we want to undo that, then we
+
+00:46:02.280 --> 00:46:04.760
+have to explicitly tell it in the style
+
+00:46:04.760 --> 00:46:08.165
+sheet. So we're also going to add the
+
+00:46:08.165 --> 00:46:26.120
+following attributes, like margin and font weight. Okay.
+
+00:46:32.440 --> 00:46:37.655
+And then, yeah, we should see our nav
+
+00:46:37.655 --> 00:46:41.975
+bar up at the top here. And just
+
+00:46:41.975 --> 00:46:44.455
+to make sure that your variables are working,
+
+00:46:45.015 --> 00:46:47.895
+you can go into here, change the color,
+
+00:46:50.910 --> 00:46:55.150
+and reload. And yeah, it looks like it
+
+00:46:55.150 --> 00:47:06.735
+changed. Give everyone a moment to get caught
+
+00:47:06.735 --> 00:47:18.520
+up. Okay. Cool. Alright. Evan will take you
+
+00:47:18.520 --> 00:47:35.325
+guys on to the next steps. Okay. So
+
+00:47:35.325 --> 00:47:39.165
+now we have a nav bar. So let's
+
+00:47:39.165 --> 00:47:40.765
+go ahead and try to style the nav
+
+00:47:40.765 --> 00:47:44.020
+bar to have a different look. So first,
+
+00:47:45.460 --> 00:47:53.140
+let's check out step six. Alright. So right
+
+00:47:53.140 --> 00:47:56.965
+now the nav bar is white and white
+
+00:47:56.965 --> 00:47:58.805
+with blue text, but we want to have
+
+00:47:58.805 --> 00:48:04.725
+it now blue with white text. So using
+
+00:48:04.725 --> 00:48:08.645
+the CSS variables that we defined earlier, try
+
+00:48:08.645 --> 00:48:14.120
+to style the nav bar. And I'll give
+
+00:48:14.120 --> 00:48:16.200
+you guys a couple of minutes to do
+
+00:48:16.200 --> 00:49:27.355
+that. So for sake of time, I'm gonna
+
+00:49:27.355 --> 00:49:29.515
+start going over how you did it for
+
+00:49:29.515 --> 00:49:36.540
+this one. So since we have the we
+
+00:49:36.540 --> 00:49:39.980
+add the NavContainer class that Sanve added earlier,
+
+00:49:42.060 --> 00:49:45.180
+and then just to style it, you can
+
+00:49:45.180 --> 00:49:49.475
+create the NavContainer class within the CSS file.
+
+00:49:49.875 --> 00:49:53.315
+And we want the background color to be
+
+00:49:53.475 --> 00:49:56.115
+the blue. So the blue is our primary
+
+00:49:56.115 --> 00:50:05.890
+variable here. So primary variable. And then we
+
+00:50:05.890 --> 00:50:08.690
+now want the text color to be white.
+
+00:50:08.690 --> 00:50:11.490
+And that's our let's just call it white.
+
+00:50:11.810 --> 00:50:14.675
+We rename that to white. And if we
+
+00:50:14.675 --> 00:50:17.715
+reload, we now have a blue background with
+
+00:50:17.715 --> 00:50:25.955
+white text. Alright. So because sitting and coding
+
+00:50:25.955 --> 00:50:27.635
+HTML for a long time is kind of
+
+00:50:27.635 --> 00:50:30.340
+difficult, we're going to give you guys a
+
+00:50:30.740 --> 00:50:32.420
+five minute break. So if you need to
+
+00:50:32.420 --> 00:50:34.900
+use the restroom, grab some water, feel free.
+
+00:50:34.900 --> 00:50:36.900
+But for the rest of us, I wanna
+
+00:50:36.900 --> 00:50:38.500
+get us up and moving a little bit.
+
+00:50:38.500 --> 00:50:39.780
+So raise your hand if you think you
+
+00:50:39.780 --> 00:50:42.425
+can wall sit longer than me. Okay. We
+
+00:50:42.425 --> 00:50:46.905
+got one, two oh, thank you, Lucas. Anyone?
+
+00:50:46.905 --> 00:50:50.425
+Anyone? Alright. Well, y'all are gonna find out
+
+00:50:50.425 --> 00:50:52.985
+because we're all gonna wall sit. Everyone find
+
+00:50:52.985 --> 00:51:05.910
+a spot on the wall. Come on. Even
+
+00:51:05.910 --> 00:51:07.270
+if you don't think you can out wall
+
+00:51:07.270 --> 00:51:09.590
+sit me, you can still come and do
+
+00:51:09.590 --> 00:51:11.030
+a wall sit for as long as you
+
+00:51:11.030 --> 00:51:26.900
+can. Let's go guys. Come on. Come on.
+
+00:51:26.900 --> 00:51:28.340
+Pick it up. Pick it up. I know.
+
+00:51:28.340 --> 00:51:41.565
+We don't have much time here. Alright. I'm
+
+00:51:41.565 --> 00:51:44.205
+gonna start the wall sit battle in like
+
+00:51:44.205 --> 00:51:48.925
+twenty seconds. Hey, Evan. Could you turn on
+
+00:51:48.925 --> 00:51:53.390
+some music or something? A secret weapon? That
+
+00:51:53.390 --> 00:51:58.430
+doesn't sound good for me. Is that why
+
+00:51:58.430 --> 00:51:59.630
+you chose a spot right next to me
+
+00:51:59.630 --> 00:52:03.470
+so you can pull some weirdness? Heck yeah.
+
+00:52:03.470 --> 00:52:09.255
+That's what I like to see. Alright. Ready?
+
+00:52:09.255 --> 00:52:12.935
+We're gonna start in three, two, one, go.
+
+00:52:16.535 --> 00:52:18.455
+I'm setting a max cap of four minutes
+
+00:52:18.455 --> 00:52:20.215
+so that we'll have time for the actual
+
+00:52:20.215 --> 00:52:24.290
+HTML and CSS programming of our lecture. So
+
+00:52:24.530 --> 00:52:25.810
+if you can make it to four minutes,
+
+00:52:25.810 --> 00:53:34.045
+you've effectively won. Wait. There there's no the
+
+00:53:34.045 --> 00:53:37.005
+the only sound options are these, but these
+
+00:53:37.005 --> 00:53:58.415
+two don't work. I don't think it I
+
+00:53:58.415 --> 00:54:03.535
+don't think it worked. Why are so many
+
+00:54:03.535 --> 00:54:05.295
+of you guys still up? This is scary.
+
+00:54:07.770 --> 00:54:10.890
+Or down, I mean. Okay, fine, fine, fine.
+
+00:54:11.290 --> 00:54:13.690
+Lucas is yelling at me to get 90
+
+00:54:13.850 --> 00:54:23.655
+come on. Okay, I'm 90 degrees now. Hey,
+
+00:54:23.655 --> 00:54:26.055
+Lucas. You're not 90 degrees either. What is
+
+00:54:26.055 --> 00:55:05.880
+this? Ow. I'm regretting my life choices right
+
+00:55:05.880 --> 00:55:15.435
+now, I'm not gonna lie. Alright, we hit
+
+00:55:15.435 --> 00:55:22.075
+three minutes. Oh my god. Lucas, what? Guys,
+
+00:55:22.075 --> 00:55:23.755
+I'm all set for longer than Lucas. Let's
+
+00:55:23.755 --> 00:55:51.275
+go. Thirty seconds left. That's that's the strat.
+
+00:56:04.340 --> 00:56:11.865
+Ten, nine, eight, seven, six, five, four, three,
+
+00:56:12.185 --> 00:56:22.630
+two, one. Everyone down. At those people who
+
+00:56:22.630 --> 00:56:24.710
+went the full four minutes, y'all are amazing.
+
+00:56:24.710 --> 00:56:25.750
+I wish I had a prize for you,
+
+00:56:25.750 --> 00:56:27.670
+but I don't. Alright, back to Evan and
+
+00:56:27.670 --> 00:57:19.180
+Sanvent. Evan, back to your seats. Alright. Okay,
+
+00:57:19.180 --> 00:57:20.780
+we'll move on to step seven which is
+
+00:57:20.780 --> 00:57:26.380
+removing the margin. So as always reset hard
+
+00:57:29.365 --> 00:57:36.245
+and check out step seven. So if we
+
+00:57:36.245 --> 00:57:42.645
+look at our webpage here, we have this
+
+00:57:42.960 --> 00:57:46.400
+slight white space around everything and we can
+
+00:57:46.400 --> 00:57:48.080
+see it here too. We have white space
+
+00:57:48.080 --> 00:57:51.200
+around everything in the document which is not
+
+00:57:51.200 --> 00:57:54.400
+ideal. We want something to, something that's flush
+
+00:57:54.400 --> 00:57:58.975
+with the edges of the browser. So we
+
+00:57:58.975 --> 00:58:01.055
+need to figure out how to fill this
+
+00:58:01.135 --> 00:58:04.255
+space up and to do this, the easiest
+
+00:58:04.255 --> 00:58:06.335
+way to figure out what's going wrong with
+
+00:58:06.335 --> 00:58:08.815
+your website on the front end is to
+
+00:58:08.815 --> 00:58:12.255
+use developer tools. So with developer tools, you
+
+00:58:12.255 --> 00:58:14.815
+can just right click and hit inspect element
+
+00:58:14.480 --> 00:58:17.360
+and you have this sort of mouse tool
+
+00:58:17.360 --> 00:58:19.360
+which lets you hover over elements and it
+
+00:58:19.360 --> 00:58:23.040
+tells you which element you're over. If we
+
+00:58:23.040 --> 00:58:25.760
+hover over the nav bar here, can the
+
+00:58:26.160 --> 00:58:28.195
+nav title class and we can see a
+
+00:58:28.195 --> 00:58:31.475
+couple other attributes on it such as the
+
+00:58:31.475 --> 00:58:35.955
+size, the color and things like that. So
+
+00:58:35.955 --> 00:58:38.515
+as for the white space around the whole
+
+00:58:38.515 --> 00:58:41.270
+website, if we click on body here, then
+
+00:58:41.350 --> 00:58:44.390
+we see that there's this little box down
+
+00:58:44.390 --> 00:58:45.990
+here and this is what's called the box
+
+00:58:45.990 --> 00:58:49.510
+model. And this lets you see what the
+
+00:58:49.510 --> 00:58:52.710
+sort of sizing of your HTML boxes are.
+
+00:58:52.710 --> 00:58:56.015
+So we have what's called a margin, the
+
+00:58:56.015 --> 00:58:58.975
+border, padding, and then the content. So margin
+
+00:58:58.975 --> 00:59:02.975
+is the space around your content. It's just
+
+00:59:03.375 --> 00:59:05.455
+used in the typical form of the word.
+
+00:59:05.455 --> 00:59:07.560
+Padding is spacing that goes into the margin
+
+00:59:07.560 --> 00:59:09.400
+and we'll see that in a sec. And
+
+00:59:09.400 --> 00:59:12.040
+content is the actual size of the content.
+
+00:59:13.560 --> 00:59:15.000
+So we want to get rid of this
+
+00:59:15.000 --> 00:59:18.280
+margin around the outside which makes it so
+
+00:59:18.280 --> 00:59:29.415
+that there's white space. So one thing about
+
+00:59:29.415 --> 00:59:31.255
+the margin CSS attribute that we'll talk about
+
+00:59:31.255 --> 00:59:34.855
+briefly is that it actually has something called
+
+00:59:34.855 --> 00:59:38.190
+ordering. So you can specify one number or
+
+00:59:38.190 --> 00:59:40.350
+you can specify multiple numbers. And depending on
+
+00:59:40.350 --> 00:59:46.350
+what you specify, it changes the look of
+
+00:59:46.350 --> 00:59:51.345
+the margin. So right now if you want
+
+00:59:51.345 --> 00:59:53.105
+to get rid of the margin around the
+
+00:59:53.105 --> 00:59:57.825
+outside on the body, then we can put
+
+00:59:57.825 --> 01:00:01.105
+in a margin zero. And if we reload,
+
+01:00:01.105 --> 01:00:02.785
+we see that it applies a zero margin
+
+01:00:02.785 --> 01:00:05.745
+to everything around the box. So if you
+
+01:00:05.745 --> 01:00:08.100
+look at the box of the body, everything
+
+01:00:08.100 --> 01:00:10.020
+around it is a dash indicating that there's
+
+01:00:10.020 --> 01:00:12.260
+no margin at all. But if we put
+
+01:00:12.260 --> 01:00:14.420
+in two numbers, what it does is it
+
+01:00:14.420 --> 01:00:17.140
+fills it it fills it starting from the
+
+01:00:17.140 --> 01:00:20.980
+top and going clockwise and repeats if necessary.
+
+01:00:20.835 --> 01:00:24.115
+Necessary. So if, for example, we wanted it
+
+01:00:24.115 --> 01:00:26.355
+to be flush with the wall on the
+
+01:00:26.675 --> 01:00:28.675
+top but not on the sides, then we
+
+01:00:28.675 --> 01:00:31.235
+could put in like a zero then zero
+
+01:00:31.235 --> 01:00:34.820
+pixels and then 10 pixels, And this would
+
+01:00:34.820 --> 01:00:36.260
+fill it in starting from the top and
+
+01:00:36.260 --> 01:00:41.380
+going around. And this places a 10 pixel
+
+01:00:41.380 --> 01:00:46.045
+margin on the side. So it has these
+
+01:00:46.045 --> 01:00:47.965
+10 pixel margins on the sides, but zero
+
+01:00:47.965 --> 01:00:51.405
+on the top and bottom. And again, if
+
+01:00:51.405 --> 01:00:55.565
+you do a third one, then it fills
+
+01:00:55.565 --> 01:00:56.685
+it in starting with the top and going
+
+01:00:56.685 --> 01:00:58.890
+clockwise. So actually you wouldn't be able to
+
+01:00:58.890 --> 01:01:00.090
+tell with this one because it'll just be
+
+01:01:00.090 --> 01:01:03.690
+white. But then if we reload and open
+
+01:01:03.690 --> 01:01:10.170
+up Developer Tools again, if we open up
+
+01:01:10.170 --> 01:01:12.385
+Developer Tools, it's bit hard to see but
+
+01:01:12.385 --> 01:01:14.305
+you can see the 10, and 20. And
+
+01:01:14.305 --> 01:01:16.945
+you can play around with this for yourself.
+
+01:01:17.105 --> 01:01:20.385
+Just adjust the numbers on any of your
+
+01:01:20.465 --> 01:01:23.265
+distance attributes, so that's things like margin or
+
+01:01:23.265 --> 01:01:25.265
+pixel, and it'll fill in from the top
+
+01:01:25.265 --> 01:01:28.350
+going around clockwise. So we can set that
+
+01:01:28.350 --> 01:01:30.110
+back to zero because that's what we want.
+
+01:01:32.350 --> 01:01:36.830
+And yeah. So now another piece of styling
+
+01:01:36.830 --> 01:01:38.590
+that we want to do is add padding.
+
+01:01:38.590 --> 01:01:40.430
+So if we look at our, if you
+
+01:01:40.430 --> 01:01:42.115
+look at the top here, this not only
+
+01:01:42.115 --> 01:01:44.275
+is the nav bar flushed with the browser
+
+01:01:44.275 --> 01:01:47.475
+walls but so is the text and that
+
+01:01:47.475 --> 01:01:48.995
+looks kind of bad as well. So you
+
+01:01:48.995 --> 01:01:51.555
+want to add padding and we can do
+
+01:01:51.555 --> 01:01:54.195
+that in a similar manner to our margin
+
+01:01:54.195 --> 01:01:55.970
+and since we want eight on the top
+
+01:01:55.970 --> 01:01:59.330
+and 16 on the side, if we go
+
+01:01:59.330 --> 01:02:02.770
+into the nav container which is the container
+
+01:02:02.770 --> 01:02:05.010
+where we want to have padding. So padding
+
+01:02:05.010 --> 01:02:08.545
+sort of is added to make the elements
+
+01:02:08.545 --> 01:02:11.825
+within a container, so its children spaced off
+
+01:02:11.825 --> 01:02:15.665
+from the edges. So if we add padding
+
+01:02:15.665 --> 01:02:20.400
+to our nav container and we'll want eight
+
+01:02:20.400 --> 01:02:26.880
+pixels and 16 pixels. It'll do something like
+
+01:02:26.880 --> 01:02:29.520
+this and get the padding that we want.
+
+01:02:30.080 --> 01:02:33.440
+But why do we choose eight pixels and
+
+01:02:33.440 --> 01:02:35.805
+16 pixels? Well this is something that's called
+
+01:02:35.805 --> 01:02:38.765
+the eight point grid system and so this
+
+01:02:38.765 --> 01:02:42.045
+is choosing all your distances to be multiples
+
+01:02:42.045 --> 01:02:45.405
+of eight or a half multiple of eight.
+
+01:02:45.725 --> 01:02:49.340
+And this is just a standard to make
+
+01:02:49.340 --> 01:02:51.340
+things visually appealing and just have a very
+
+01:02:51.340 --> 01:02:55.500
+consistent format. So we just hard coded in
+
+01:02:55.500 --> 01:02:59.020
+the padding here but to enforce this eight
+
+01:02:59.020 --> 01:03:00.780
+point grid system, one thing we can do
+
+01:03:00.780 --> 01:03:04.855
+is use the CSS variables again. So instead
+
+01:03:04.855 --> 01:03:06.855
+of only having colors, we can also add
+
+01:03:06.855 --> 01:03:10.375
+in distances. So x small is four pixels
+
+01:03:10.375 --> 01:03:13.015
+and after that we have the multiples of
+
+01:03:13.015 --> 01:03:19.650
+eight. And these sorts of distance metrics are
+
+01:03:19.650 --> 01:03:23.010
+built into CSS libraries and things like that,
+
+01:03:23.090 --> 01:03:25.250
+which we'll talk about more next week in
+
+01:03:25.250 --> 01:03:30.035
+the advanced CSS lecture. Now that if we
+
+01:03:30.035 --> 01:03:33.315
+define these variables, then when we set up,
+
+01:03:33.315 --> 01:03:34.835
+when we want to set up padding like
+
+01:03:34.835 --> 01:03:37.315
+eight pixels and 16 pixels, we can directly
+
+01:03:37.315 --> 01:03:40.115
+call on the variables. So eight pixels corresponds
+
+01:03:40.115 --> 01:03:43.395
+to small and then 16 pixels corresponds to
+
+01:03:43.395 --> 01:03:47.650
+medium. So if we place this in, we
+
+01:03:47.650 --> 01:03:49.810
+should see that there's no change. But now
+
+01:03:49.810 --> 01:03:51.730
+we have a system where we can directly
+
+01:03:51.730 --> 01:03:55.490
+enforce the eight point grid system just by
+
+01:03:55.490 --> 01:04:01.755
+using the CSS variables that we defined. One
+
+01:04:01.755 --> 01:04:04.395
+more distance metric that I'll talk about for
+
+01:04:04.395 --> 01:04:05.915
+a second is just width and height and
+
+01:04:05.915 --> 01:04:09.435
+that's pretty self explanatory. It sets the most
+
+01:04:09.435 --> 01:04:12.235
+innermost box but we don't actually need to
+
+01:04:11.880 --> 01:04:13.800
+set it here because if we don't set
+
+01:04:13.800 --> 01:04:16.040
+it, it implicitly just fills the entire space.
+
+01:04:19.880 --> 01:04:22.920
+And here's a quick exercise which is rounding
+
+01:04:22.920 --> 01:04:26.440
+corners. If we have, on our image here,
+
+01:04:28.545 --> 01:04:30.305
+on our image here we have very sharp
+
+01:04:30.305 --> 01:04:33.105
+corners but if we wanted to style it
+
+01:04:33.105 --> 01:04:36.065
+a bit and add rounded corners, we can
+
+01:04:36.065 --> 01:04:39.345
+use the border radius attribute. So go ahead
+
+01:04:39.345 --> 01:04:41.265
+and take a minute or so just to
+
+01:04:41.265 --> 01:04:45.110
+try to round off the corners of your
+
+01:04:47.030 --> 01:04:53.270
+image. Oh and also I forgot to reset
+
+01:04:53.270 --> 01:06:37.015
+to step eight. So this one is not
+
+01:06:37.015 --> 01:06:39.495
+too complicated. We the main thing we just
+
+01:06:39.495 --> 01:06:41.175
+need to do is we need to add
+
+01:06:41.175 --> 01:06:45.050
+a class to our image which is what
+
+01:06:45.050 --> 01:06:46.890
+actually contains our avatar and we can just
+
+01:06:46.890 --> 01:06:49.770
+call the class avatar. And then we can
+
+01:06:49.770 --> 01:06:51.930
+create an avatar class and we want to
+
+01:06:51.930 --> 01:06:54.250
+adjust the border radius attribute and we can
+
+01:06:54.250 --> 01:06:57.610
+set it to maybe like our medium variable.
+
+01:06:59.305 --> 01:07:03.065
+And that we see we get rounding corners.
+
+01:07:05.145 --> 01:07:15.385
+So one quick exercise you could do after
+
+01:07:12.540 --> 01:07:15.500
+after class sometime later today is creating a
+
+01:07:15.500 --> 01:07:19.260
+perfect circle. So this would be to, this
+
+01:07:19.260 --> 01:07:20.940
+would be using the border radius attribute and
+
+01:07:20.940 --> 01:07:23.260
+maybe some other attributes we've learned about today
+
+01:07:23.260 --> 01:07:24.940
+to try to make the avatar a circle.
+
+01:07:25.325 --> 01:07:27.325
+But for the sake of time today, we'll
+
+01:07:27.325 --> 01:07:30.765
+skip this and yeah. You can just check
+
+01:07:30.765 --> 01:07:32.845
+out to step 10 if you want to
+
+01:07:32.845 --> 01:07:48.170
+see the result. Step 10, you have a
+
+01:07:48.170 --> 01:07:51.625
+circle. Now we're going shift gears a little
+
+01:07:51.625 --> 01:07:53.305
+bit, we've been styling a lot of stuff
+
+01:07:53.545 --> 01:07:55.785
+but now we're going talk about actually arranging
+
+01:07:55.785 --> 01:08:00.825
+things on our page. So our final result,
+
+01:08:00.825 --> 01:08:02.270
+we want something to look like this. We
+
+01:08:02.270 --> 01:08:04.190
+want our about me text and our favorite
+
+01:08:04.190 --> 01:08:05.950
+type of cat text to be next to
+
+01:08:05.950 --> 01:08:07.390
+each other but currently we just have them
+
+01:08:07.390 --> 01:08:10.030
+vertically stacked which is the sort of arrangement
+
+01:08:10.030 --> 01:08:15.485
+that HTML defaults to. So there's a couple
+
+01:08:15.485 --> 01:08:17.965
+of different ways to arrange things on a
+
+01:08:17.965 --> 01:08:20.365
+page in CSS. One is called float and
+
+01:08:20.365 --> 01:08:22.925
+one is called flex. But float is outdated
+
+01:08:22.925 --> 01:08:27.250
+and we use flex now. And you'll be
+
+01:08:27.250 --> 01:08:30.850
+using Flex a lot throughout your project at
+
+01:08:30.850 --> 01:08:33.890
+the end and we'll see it a couple
+
+01:08:33.890 --> 01:08:38.610
+more times this week too. To do Flex
+
+01:08:38.610 --> 01:08:41.615
+you just set up some display flex and
+
+01:08:41.615 --> 01:08:45.855
+then after that there's a number of other
+
+01:08:45.855 --> 01:08:47.615
+things that you can adjust. So flex is
+
+01:08:47.615 --> 01:08:52.415
+actually pretty extensive so there's this CSS Tricks
+
+01:08:52.415 --> 01:08:56.335
+website. You can visit webweb.isflex to get to
+
+01:08:56.335 --> 01:08:58.300
+it and it sort of discusses all the
+
+01:08:58.300 --> 01:09:00.940
+different settings you have for flex. So to
+
+01:09:00.940 --> 01:09:02.540
+get flex started the main thing you put
+
+01:09:02.540 --> 01:09:04.540
+in your CSS is display flex but then
+
+01:09:04.540 --> 01:09:08.540
+after that you have all these attributes that
+
+01:09:08.540 --> 01:09:10.220
+you can adjust. So for example one of
+
+01:09:10.220 --> 01:09:12.825
+them is flex direction and this is sort
+
+01:09:12.825 --> 01:09:14.025
+of one that we want to go for
+
+01:09:14.025 --> 01:09:17.225
+because this adjusts whether the elements within a
+
+01:09:17.225 --> 01:09:20.905
+parent container are arranged horizontally or vertically. There's
+
+01:09:20.905 --> 01:09:25.065
+wrapping, there's justify content and align items. So
+
+01:09:25.065 --> 01:09:29.040
+these two sort of, so justify content is
+
+01:09:29.040 --> 01:09:31.040
+how things are arranged on the main axis,
+
+01:09:31.040 --> 01:09:33.680
+align items is how they're arranged on the
+
+01:09:33.680 --> 01:09:36.480
+orthogonal axis, and these are also very important
+
+01:09:36.480 --> 01:09:38.480
+for styling. And you can read through the
+
+01:09:38.480 --> 01:09:42.525
+rest of the ones in here on your
+
+01:09:42.525 --> 01:09:48.525
+own. If you look at this GIF here,
+
+01:09:48.525 --> 01:09:52.045
+can see adjusting the flex direction will change
+
+01:09:52.045 --> 01:09:58.660
+it from being arranged horizontally to vertically. So
+
+01:09:58.660 --> 01:10:01.460
+now we want our currently vertically stacked About
+
+01:10:01.460 --> 01:10:03.300
+Me and Favorite Type of Cat boxes to
+
+01:10:03.300 --> 01:10:06.260
+be arranged horizontally. So if we look at
+
+01:10:06.260 --> 01:10:09.885
+our HTML code now, we notice we sort
+
+01:10:09.885 --> 01:10:11.885
+of just have these sections for If you're
+
+01:10:11.885 --> 01:10:14.845
+a type of cat and about me, they're
+
+01:10:14.845 --> 01:10:18.125
+just one after the other within the body.
+
+01:10:18.125 --> 01:10:21.725
+So the body is the smallest enclosing container
+
+01:10:21.725 --> 01:10:23.420
+for these two. But if we want to
+
+01:10:23.420 --> 01:10:26.620
+arrange just those two horizontally, then we need
+
+01:10:26.620 --> 01:10:32.780
+to have another div just for these just
+
+01:10:32.780 --> 01:10:38.465
+to contain these two. And once we do
+
+01:10:38.465 --> 01:10:43.265
+this, we can create maybe another utility container
+
+01:10:43.745 --> 01:10:47.745
+called uflex. And then if we want it
+
+01:10:47.745 --> 01:10:50.570
+to be horizontal, we can first set it
+
+01:10:50.570 --> 01:10:54.490
+to display flex and then we can choose
+
+01:10:54.490 --> 01:10:58.650
+the flex direction to be row. And if
+
+01:10:58.650 --> 01:11:01.530
+we do this and reload, we see that
+
+01:11:01.690 --> 01:11:04.895
+they're now arranged in a row. And it
+
+01:11:04.895 --> 01:11:06.335
+turns out that you can actually also just
+
+01:11:06.335 --> 01:11:10.735
+delete this flex direction row attribute because flex
+
+01:11:10.735 --> 01:11:14.175
+defaults to having things in a row. So
+
+01:11:14.335 --> 01:11:16.575
+normally you actually just specify this if it's
+
+01:11:16.575 --> 01:11:19.510
+in a column and you'll get them in
+
+01:11:19.510 --> 01:11:21.110
+a column. And you can also do things
+
+01:11:21.110 --> 01:11:25.590
+like column reverse and we see if we
+
+01:11:26.070 --> 01:11:28.390
+reload about me and favorite type of cat
+
+01:11:28.390 --> 01:11:35.225
+flip. So that's the most basic way to
+
+01:11:35.305 --> 01:11:38.505
+use flex. We just set them up to
+
+01:11:39.625 --> 01:11:43.225
+be in a row and you can see
+
+01:11:43.225 --> 01:11:46.105
+the results if you check out step 11.
+
+01:12:39.075 --> 01:12:42.390
+I guess just to review, the way we
+
+01:12:42.390 --> 01:12:44.870
+got it to be horizontal is we surrounded
+
+01:12:46.070 --> 01:12:49.190
+our two sections within a larger div and
+
+01:12:49.190 --> 01:12:58.285
+applied the flex utility class. Okay. I'll move
+
+01:12:58.285 --> 01:13:00.925
+on to some other, the other side of
+
+01:13:00.925 --> 01:13:03.485
+flex which is within the arrangement you can
+
+01:13:03.485 --> 01:13:07.725
+also control how large your boxes are. So
+
+01:13:07.725 --> 01:13:11.070
+reset hard and check out step 11. So
+
+01:13:11.070 --> 01:13:14.110
+currently we have, our website looks like this.
+
+01:13:14.190 --> 01:13:17.230
+We have the two boxes sort of scrunched
+
+01:13:17.230 --> 01:13:20.510
+up on the side and they're not exactly
+
+01:13:21.070 --> 01:13:22.910
+what we want to have because the final,
+
+01:13:22.910 --> 01:13:24.350
+in the final case we want it both
+
+01:13:24.350 --> 01:13:30.585
+sort of centered on each other sides. Flex
+
+01:13:30.585 --> 01:13:33.465
+is another, you can also control sizing with
+
+01:13:33.465 --> 01:13:36.185
+flex and if we look inside the CSS
+
+01:13:36.185 --> 01:13:40.890
+Tricks website, we have FlexGrow and we also
+
+01:13:40.890 --> 01:13:44.010
+have FlexBasis. So if you read through these,
+
+01:13:44.010 --> 01:13:46.970
+these are both ways to control how large
+
+01:13:46.970 --> 01:13:49.770
+they grow. So FlexGrow sort of changes priority
+
+01:13:49.770 --> 01:13:52.330
+for when things grow. So if you apply,
+
+01:13:55.835 --> 01:13:57.755
+if you set a value of two, then
+
+01:13:57.755 --> 01:13:59.355
+one of the sub containers will take up
+
+01:13:59.355 --> 01:14:01.915
+twice the size compared to the other ones
+
+01:14:01.915 --> 01:14:07.195
+and flex basis is the default size before
+
+01:14:07.435 --> 01:14:15.970
+the things grow through flex grow. So with
+
+01:14:15.970 --> 01:14:18.690
+this in mind, maybe try to play around
+
+01:14:18.690 --> 01:14:21.570
+with FlexBasys and FlexGrow and see if you
+
+01:14:21.570 --> 01:14:24.850
+can get the two columns to be equally
+
+01:14:24.850 --> 01:14:28.445
+sized. And the main thing with flex is
+
+01:14:28.445 --> 01:14:30.365
+there are a ton of settings and the
+
+01:14:30.365 --> 01:14:31.725
+best way to learn it is just playing
+
+01:14:31.725 --> 01:14:33.885
+around with your different boxes and get, trying
+
+01:14:33.885 --> 01:14:35.325
+to get things to look like the way
+
+01:14:35.325 --> 01:14:44.780
+you want them to look. And also as
+
+01:14:44.780 --> 01:14:46.540
+a hint, you're going to want to probably
+
+01:14:46.540 --> 01:14:50.780
+create some new classes because the way the
+
+01:14:50.780 --> 01:14:53.820
+way FlexBasis and FlexGrow work is they're applied
+
+01:14:53.820 --> 01:14:58.205
+to a sub container. So if you have
+
+01:14:58.205 --> 01:15:00.285
+the larger blue container, then you would apply
+
+01:15:00.285 --> 01:15:03.165
+a flex throw in flex basis to the
+
+01:15:03.165 --> 01:17:47.385
+classes of the sub containers within them. So
+
+01:17:49.065 --> 01:17:50.905
+the way we're going to do this is
+
+01:17:50.985 --> 01:17:53.145
+we're going to create a sub container class.
+
+01:17:58.200 --> 01:18:05.800
+And we're going to set the flex grow
+
+01:18:05.800 --> 01:18:08.440
+to one. And we're going to do this
+
+01:18:08.440 --> 01:18:10.440
+so that both the elements and apply this
+
+01:18:10.440 --> 01:18:12.360
+class to both of the elements within the
+
+01:18:12.360 --> 01:18:14.655
+container so that they grow to the same
+
+01:18:14.655 --> 01:18:19.775
+amount. And then no default size for either
+
+01:18:19.775 --> 01:18:25.375
+of them. And so if we apply these
+
+01:18:25.375 --> 01:18:28.810
+classes now to the two sections, then we
+
+01:18:28.810 --> 01:18:30.730
+reload, we see that they grow to the
+
+01:18:30.730 --> 01:18:33.370
+same size because they're given the same priority
+
+01:18:33.370 --> 01:18:36.010
+within the Flexbox since we applied the same
+
+01:18:36.010 --> 01:18:38.650
+class to them and we get close to
+
+01:18:38.650 --> 01:18:42.165
+the desired result. And you can check out
+
+01:18:42.165 --> 01:18:55.820
+step 12 to get that result. Alright. So
+
+01:18:55.820 --> 01:18:58.140
+that was pretty much it for this workshop.
+
+01:18:58.860 --> 01:19:00.380
+I know there's a lot to it. There's
+
+01:19:00.380 --> 01:19:02.140
+a lot of new CSS attributes that we
+
+01:19:02.140 --> 01:19:05.340
+learned and combined with doing HTML for the
+
+01:19:05.340 --> 01:19:10.015
+first time. But I hope you learned a
+
+01:19:10.015 --> 01:19:12.095
+lot of the main ideas from this workshop.
+
+01:19:12.495 --> 01:19:16.095
+Here are a couple of helpful links. Again,
+
+01:19:16.095 --> 01:19:19.615
+the CSS Tricks website is at weblab.isflex and
+
+01:19:19.615 --> 01:19:21.215
+has pretty much everything you need to know
+
+01:19:21.215 --> 01:19:23.295
+about Flex. I still reference it from time
+
+01:19:23.295 --> 01:19:25.830
+to time when I need to. And here's
+
+01:19:25.830 --> 01:19:27.990
+some games. I've I've never played these actually,
+
+01:19:28.150 --> 01:19:29.990
+maybe you could check them out and see
+
+01:19:29.990 --> 01:19:35.110
+if they're good. There's some additional styling that
+
+01:19:35.110 --> 01:19:39.405
+you could do as extra homework afterwards, and
+
+01:19:39.565 --> 01:19:43.085
+it's in w zero step 13. And w
+
+01:19:43.085 --> 01:19:45.725
+zero complete has the full the w zero
+
+01:19:45.725 --> 01:19:49.325
+complete branch has the full Kafka profile page.
+
+01:19:51.030 --> 01:19:54.149
+And we'll also do more CSS next week
+
+01:19:54.390 --> 01:19:59.270
+in advanced CSS with Stanley. And a minute
+
+01:19:59.270 --> 01:20:00.790
+for feedback.
