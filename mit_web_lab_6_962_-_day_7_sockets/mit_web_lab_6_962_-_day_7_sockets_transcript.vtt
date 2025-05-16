@@ -1,0 +1,1088 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: f9ba2d8d-b991-42e4-8e10-92413beeb7bb
+Created: 2025-05-16T02:11:25.583Z
+Duration: 1391.2032
+Channels: 1
+
+00:00:02.400 --> 00:00:06.640
+Cool. Let's get started. This lecture is gonna
+
+00:00:06.640 --> 00:00:09.120
+be about sockets. And if you did your
+
+00:00:09.120 --> 00:00:11.040
+pitches and you were, like, planning to make
+
+00:00:11.040 --> 00:00:12.640
+a game, you probably heard us talking about
+
+00:00:12.640 --> 00:00:16.535
+sockets. Because it's a very important part of
+
+00:00:16.535 --> 00:00:21.415
+live interaction in websites. So whether you're making
+
+00:00:21.415 --> 00:00:24.055
+a chat or you're making a game, live
+
+00:00:24.135 --> 00:00:26.455
+interaction is very important. You want very low
+
+00:00:26.455 --> 00:00:29.780
+latency. And to to support many clients being
+
+00:00:29.780 --> 00:00:31.540
+able to interact at the same time with
+
+00:00:31.540 --> 00:00:35.220
+a common, for example, game state, you pretty
+
+00:00:35.220 --> 00:00:37.220
+much need to use sockets. There's really no
+
+00:00:37.220 --> 00:00:40.500
+other way to do it. So hopefully through
+
+00:00:40.500 --> 00:00:42.635
+this lecture and the next workshop, you will
+
+00:00:42.635 --> 00:00:43.915
+be able to learn the tools that you
+
+00:00:43.915 --> 00:00:49.035
+need to implement sockets in your website. So
+
+00:00:50.715 --> 00:00:53.515
+just a quick review. And since we've already
+
+00:00:53.515 --> 00:00:56.530
+seen traffic before for the past hour, we
+
+00:00:56.530 --> 00:00:59.890
+don't have to go too in-depth. But currently,
+
+00:01:00.290 --> 00:01:02.610
+we have a single chat within our Chatbook
+
+00:01:02.610 --> 00:01:05.170
+that's to all chat. This is to all
+
+00:01:05.170 --> 00:01:11.425
+recipients. And, you might or clearly chat's not
+
+00:01:11.425 --> 00:01:14.065
+solved yet, but it looks like it. And
+
+00:01:14.065 --> 00:01:19.185
+the reason it's not solved is because, you
+
+00:01:19.185 --> 00:01:20.625
+have to refresh the page to see new
+
+00:01:20.625 --> 00:01:26.460
+messages. And this is really inconvenient. So the
+
+00:01:26.460 --> 00:01:28.860
+tool that we'll use for Real Time Chatbook
+
+00:01:28.860 --> 00:01:32.940
+is called socket.io. This is just one, I
+
+00:01:32.940 --> 00:01:36.380
+guess, implementation of web sockets. And this is
+
+00:01:36.380 --> 00:01:38.915
+the most common use, I get, use like
+
+00:01:38.915 --> 00:01:46.115
+socket package in JavaScript. So the way we
+
+00:01:46.115 --> 00:01:48.995
+really want Chatbook to work is if someone
+
+00:01:48.995 --> 00:01:51.315
+like Kenny sends a message using the post
+
+00:01:51.315 --> 00:01:57.380
+request slash API slash message. We want the
+
+00:01:57.380 --> 00:01:58.980
+server to be able to tell all the
+
+00:01:58.980 --> 00:02:00.820
+users or all the clients that are like
+
+00:02:00.820 --> 00:02:03.940
+listening in on this chat that Kenny just
+
+00:02:03.940 --> 00:02:09.405
+sent hi. But you know how API requests
+
+00:02:09.405 --> 00:02:11.325
+work. The way it works is a client
+
+00:02:11.325 --> 00:02:13.005
+sends a request to the server and then
+
+00:02:13.005 --> 00:02:16.045
+the server responds back to the client. But
+
+00:02:16.045 --> 00:02:17.885
+the server can't talk directly to the clients
+
+00:02:17.885 --> 00:02:22.110
+that haven't interacted with it through API requests.
+
+00:02:22.350 --> 00:02:25.630
+So API requests are really one way, at
+
+00:02:25.630 --> 00:02:28.110
+least they're initiated from the client to the
+
+00:02:28.110 --> 00:02:32.510
+server. And servers can't initiate conversations back towards
+
+00:02:32.510 --> 00:02:39.525
+the client, which is the main problem. So
+
+00:02:39.525 --> 00:02:43.205
+again, this is the limitation of HTTP requests.
+
+00:02:44.005 --> 00:02:45.845
+You can't have the server sending data to
+
+00:02:45.845 --> 00:02:47.925
+the client unless a request is made from
+
+00:02:47.925 --> 00:02:50.805
+the client specifically for data from the server.
+
+00:02:52.620 --> 00:02:55.100
+So you might be thinking, well one workaround
+
+00:02:55.100 --> 00:03:00.220
+to having the server send you information using
+
+00:03:00.220 --> 00:03:04.620
+HTTP requests is to constantly pull the server
+
+00:03:04.620 --> 00:03:06.620
+for like new updates. So I can ask
+
+00:03:06.620 --> 00:03:08.755
+the server, like are there any messages in
+
+00:03:08.755 --> 00:03:10.995
+the chat? Has someone sent anything? And I
+
+00:03:10.995 --> 00:03:12.995
+can do this like really often, maybe like
+
+00:03:12.995 --> 00:03:16.915
+every second or even less to mimic the
+
+00:03:16.915 --> 00:03:21.630
+idea of like a live chat. And then
+
+00:03:21.630 --> 00:03:25.310
+eventually, Kenny might send or make a post
+
+00:03:25.310 --> 00:03:28.190
+request and then the server will be updated.
+
+00:03:28.190 --> 00:03:30.910
+And then at some point, Sammy might send
+
+00:03:30.910 --> 00:03:33.070
+a request and then see that the chat
+
+00:03:33.070 --> 00:03:36.595
+has been updated. And then, I guess that's
+
+00:03:36.595 --> 00:03:40.355
+fine, but this is very slow. This requires
+
+00:03:40.355 --> 00:03:43.795
+a lot of requests every second. And in
+
+00:03:43.955 --> 00:03:47.955
+real applications like games or chats, this is
+
+00:03:47.955 --> 00:03:50.360
+really impractical because you're gonna have to be
+
+00:03:50.360 --> 00:03:53.240
+moving at like a much faster pace. So
+
+00:03:53.240 --> 00:03:55.960
+this pulling, you would have to do maybe
+
+00:03:55.960 --> 00:03:58.280
+like every, like 10 times a second or
+
+00:03:58.280 --> 00:04:05.975
+something and that's just really unreasonable. So the
+
+00:04:05.975 --> 00:04:08.215
+solution is to teach the server how to
+
+00:04:08.215 --> 00:04:11.655
+initiate conversations. And this is where sockets comes
+
+00:04:11.655 --> 00:04:19.560
+in. Again, this is socket. Socket. Io is
+
+00:04:19.560 --> 00:04:23.000
+the library we're using and it uses websocket
+
+00:04:23.000 --> 00:04:26.200
+which is solving the problem we just mentioned.
+
+00:04:29.425 --> 00:04:30.865
+And the way you should think about it
+
+00:04:30.865 --> 00:04:33.665
+is we have sort of a connection between
+
+00:04:33.665 --> 00:04:36.385
+a server and a client. We'll call this
+
+00:04:36.385 --> 00:04:41.905
+like the socket connection. And like once a
+
+00:04:42.305 --> 00:04:44.760
+client logs in or opens a web page,
+
+00:04:44.920 --> 00:04:47.160
+we sort of initiate this client or initiate
+
+00:04:47.160 --> 00:04:49.400
+this connection between the client and the server.
+
+00:04:49.400 --> 00:04:52.760
+So this connection persists. We can think of
+
+00:04:52.760 --> 00:04:55.240
+it as like an imaginary string between the
+
+00:04:55.240 --> 00:05:01.405
+two. And we have multiple clients connected to
+
+00:05:01.405 --> 00:05:07.245
+the servers at all times. And what the
+
+00:05:07.245 --> 00:05:09.005
+server can do is they can broadcast a
+
+00:05:09.005 --> 00:05:12.290
+message to the client. Now there's many options
+
+00:05:12.290 --> 00:05:14.930
+for this, as you'll see. The server can
+
+00:05:14.930 --> 00:05:17.250
+broadcast the same message to all the clients
+
+00:05:17.250 --> 00:05:20.290
+or they can broadcast a message to individual
+
+00:05:20.290 --> 00:05:24.690
+clients. There's really those two cases and we'll
+
+00:05:24.690 --> 00:05:30.425
+see how to implement those cases. But at
+
+00:05:30.425 --> 00:05:32.505
+all times as well, the client is listening,
+
+00:05:32.505 --> 00:05:35.305
+so whenever a server does broadcast a message,
+
+00:05:35.465 --> 00:05:38.185
+the client can react immediately to that message,
+
+00:05:38.505 --> 00:05:41.145
+which is why sockets makes it why sockets
+
+00:05:41.145 --> 00:05:49.190
+is really powerful for lifetime like reactions. So
+
+00:05:49.510 --> 00:05:51.670
+in our example of cat book or chat
+
+00:05:51.670 --> 00:05:56.115
+book, if Kenny posts a message using the
+
+00:05:56.115 --> 00:05:59.955
+slash api slash message route, then if we
+
+00:05:59.955 --> 00:06:03.795
+have sockets, sort of like connections between each
+
+00:06:03.795 --> 00:06:11.850
+client client server pair, Then WebSockets allows us
+
+00:06:11.850 --> 00:06:14.570
+to have the server broadcast a message to
+
+00:06:14.570 --> 00:06:16.650
+all the clients that a new message has
+
+00:06:16.650 --> 00:06:25.895
+been posted. So again, what we'll probably be
+
+00:06:25.895 --> 00:06:29.495
+implementing is within this post request, when Kenny
+
+00:06:29.495 --> 00:06:32.375
+makes a post request to slash api slash
+
+00:06:32.375 --> 00:06:37.015
+slash message, this is an event that causes
+
+00:06:38.830 --> 00:06:41.470
+the socket event to emit from the server
+
+00:06:41.470 --> 00:06:48.430
+to the clients. Any questions so far about
+
+00:06:48.830 --> 00:07:01.465
+what a socket is conceptually? Okay. So in
+
+00:07:01.465 --> 00:07:03.145
+terms of code, this is what it's gonna
+
+00:07:03.145 --> 00:07:05.880
+look like. And this is the server code.
+
+00:07:05.880 --> 00:07:08.200
+So everything on the server side is gonna
+
+00:07:08.200 --> 00:07:10.280
+use something called the server manage sorry, the
+
+00:07:10.280 --> 00:07:13.800
+socket manager. Now this is code that we've
+
+00:07:13.800 --> 00:07:17.320
+already coded for you and in fact, I'm
+
+00:07:17.320 --> 00:07:21.855
+gonna go to w seven starter just to
+
+00:07:21.855 --> 00:07:23.455
+look at this code and show you real
+
+00:07:23.455 --> 00:07:26.815
+quick. And you can follow along if you
+
+00:07:26.815 --> 00:07:29.135
+want, but, you can also just look at
+
+00:07:29.135 --> 00:07:53.905
+this screen. Okay, so we have the server
+
+00:07:53.905 --> 00:08:00.545
+socket JS file inside the server. And just
+
+00:08:00.545 --> 00:08:05.720
+opening this up, we see that all this
+
+00:08:05.720 --> 00:08:09.000
+has oh, sorry. Closed it. All this is
+
+00:08:09.000 --> 00:08:12.920
+given to you and essentially all the server
+
+00:08:12.920 --> 00:08:16.715
+socket is is sorry, the socket all the
+
+00:08:16.715 --> 00:08:19.115
+socket manager is is like a collection of
+
+00:08:19.275 --> 00:08:21.835
+a few functions that we've defined for you.
+
+00:08:22.155 --> 00:08:26.555
+So this file, server socket dot j s,
+
+00:08:26.555 --> 00:08:33.350
+is exporting an object containing these eight functions,
+
+00:08:33.350 --> 00:08:38.310
+init, add user, remove user, etcetera, which are
+
+00:08:38.310 --> 00:08:40.630
+all functions that we define in the same
+
+00:08:40.630 --> 00:08:47.445
+file. But essentially the usage is when you
+
+00:08:47.445 --> 00:08:50.645
+import the file, you import it as like
+
+00:08:50.645 --> 00:08:53.845
+socket manager. So you would do like const
+
+00:08:53.845 --> 00:08:56.850
+socket manager equals require server socket dot j
+
+00:08:56.850 --> 00:08:59.010
+s or something. And then you can just
+
+00:08:59.010 --> 00:09:01.650
+use the functions in here by doing like
+
+00:09:01.650 --> 00:09:05.250
+socket manager dot init or socket manager dot
+
+00:09:05.410 --> 00:09:10.255
+add user, etcetera. And in this case, to
+
+00:09:10.255 --> 00:09:12.335
+broadcast a message from the server to everyone
+
+00:09:12.335 --> 00:09:19.695
+connected, we use the dot getio function. So
+
+00:09:19.695 --> 00:09:24.200
+getio is gonna take, or is gonna like
+
+00:09:24.200 --> 00:09:27.480
+pretty much take all the sockets of the
+
+00:09:27.480 --> 00:09:30.520
+clients. So get io is gonna broadcast to
+
+00:09:30.520 --> 00:09:32.440
+every single client who's listening to the server
+
+00:09:32.440 --> 00:09:36.280
+right now. And then dot emit is like
+
+00:09:36.280 --> 00:09:39.525
+what actually emits the message. And there's two
+
+00:09:39.525 --> 00:09:43.525
+parts to an emit. One is the title
+
+00:09:43.525 --> 00:09:47.445
+or the event name. This is gonna be
+
+00:09:47.445 --> 00:09:52.830
+a string. And then the other is data,
+
+00:09:53.150 --> 00:09:55.470
+which is what you're emitting. So this is
+
+00:09:55.470 --> 00:09:59.470
+usually gonna be an object. And I'll go
+
+00:09:59.470 --> 00:10:01.390
+through an example in a bit, but first,
+
+00:10:02.510 --> 00:10:04.590
+this is the server side again. The server
+
+00:10:04.590 --> 00:10:08.425
+emits to the clients and they emit some
+
+00:10:08.425 --> 00:10:11.305
+event name as well as objects tied to
+
+00:10:11.305 --> 00:10:15.785
+that event. And then on the client side,
+
+00:10:16.505 --> 00:10:19.570
+we have socket and then dot on is
+
+00:10:19.570 --> 00:10:23.250
+like pretty much whenever we see some event
+
+00:10:23.250 --> 00:10:28.210
+name, we do some function. So on listens
+
+00:10:28.210 --> 00:10:32.365
+for an event name and then whatever callback
+
+00:10:32.365 --> 00:10:35.325
+function is passed in is run whenever this
+
+00:10:35.325 --> 00:10:41.565
+event happens. So if these two events are
+
+00:10:41.565 --> 00:10:45.085
+the same, then what it would probably look
+
+00:10:45.085 --> 00:10:48.620
+like is, like, for example, if we have
+
+00:10:48.620 --> 00:10:50.780
+two events or the same event called new
+
+00:10:50.780 --> 00:10:53.740
+pset happening, and if we think of the
+
+00:10:53.740 --> 00:10:57.020
+professor as, like, the server, then the professor
+
+00:10:57.020 --> 00:11:00.315
+can omit an event called new pset and
+
+00:11:00.315 --> 00:11:03.035
+then pass in data, which is the pset
+
+00:11:03.035 --> 00:11:08.395
+object, and then submit. And then the students
+
+00:11:08.395 --> 00:11:11.195
+who are all listening to the professor will,
+
+00:11:11.835 --> 00:11:14.555
+have a socket dot on where they listen
+
+00:11:14.555 --> 00:11:16.780
+to this new event or there or sorry,
+
+00:11:16.780 --> 00:11:19.340
+this new pset event. And then whenever this
+
+00:11:19.340 --> 00:11:23.180
+event happens, they do some function, like start
+
+00:11:23.180 --> 00:11:28.380
+working or something. In code, it would look
+
+00:11:28.380 --> 00:11:30.380
+something like this, where we pass in a
+
+00:11:30.380 --> 00:11:32.365
+string to emit, and then we pass in
+
+00:11:32.365 --> 00:11:36.445
+an object to the second argument. And then
+
+00:11:36.925 --> 00:11:39.645
+for the student side, the client side, on
+
+00:11:39.645 --> 00:11:43.165
+some event, we have a callback function where
+
+00:11:43.165 --> 00:11:45.325
+the argument of the callback function is the
+
+00:11:45.325 --> 00:11:49.120
+data that's passed in in the second argument
+
+00:11:49.120 --> 00:11:52.960
+of the server side of it. So this
+
+00:11:52.960 --> 00:11:57.040
+object that was passed in is what the
+
+00:11:57.040 --> 00:12:00.720
+callback function in the client side takes in
+
+00:12:00.720 --> 00:12:05.835
+as an argument. So if we take in
+
+00:12:05.835 --> 00:12:08.555
+the pset as the argument, then we can
+
+00:12:08.555 --> 00:12:10.075
+do stuff with the pset looking at the
+
+00:12:10.075 --> 00:12:13.595
+fields like if or while pset dot do
+
+00:12:13.595 --> 00:12:15.755
+is out tomorrow, then do something, and then
+
+00:12:15.755 --> 00:12:22.620
+we can access the questions as well. And
+
+00:12:22.620 --> 00:12:26.220
+in our chat box setting, if we have
+
+00:12:26.220 --> 00:12:28.780
+our socket manager in the server side emit
+
+00:12:29.085 --> 00:12:31.885
+a message event, which is like when someone
+
+00:12:31.885 --> 00:12:35.405
+sends a message to the chat, we want
+
+00:12:35.405 --> 00:12:37.165
+the server to pass in like what message
+
+00:12:37.165 --> 00:12:39.725
+was sent, so message objects that we saw
+
+00:12:39.725 --> 00:12:44.430
+previously in Chatbook. And now the clients that
+
+00:12:44.430 --> 00:12:48.830
+are all listening can or listen for this
+
+00:12:48.830 --> 00:12:51.390
+message event and whenever that happens, then we
+
+00:12:51.390 --> 00:12:53.630
+have a callback that would take in this
+
+00:12:53.630 --> 00:12:55.630
+message object and then do something with it.
+
+00:12:55.630 --> 00:12:57.870
+For example, render it on the screen, add
+
+00:12:57.525 --> 00:12:59.285
+add it to the database or something like
+
+00:12:59.285 --> 00:13:05.845
+that. Sorry, not add it to the not
+
+00:13:05.845 --> 00:13:07.445
+add it to the database but like render
+
+00:13:07.445 --> 00:13:14.720
+on the screen. Any questions about how this
+
+00:13:14.720 --> 00:13:39.900
+example works? Okay. So I just wanna show
+
+00:13:39.900 --> 00:13:43.900
+you an example of, like, an implementation just
+
+00:13:43.900 --> 00:13:46.940
+so it's less foreign. So if I check
+
+00:13:46.940 --> 00:13:48.620
+out the end of the workshop that we're
+
+00:13:48.620 --> 00:13:55.245
+about to do And then look at, like,
+
+00:13:55.245 --> 00:14:02.925
+the server side. I guess an API dot
+
+00:14:02.925 --> 00:14:07.620
+JS. So within API dot JS, notice that
+
+00:14:07.620 --> 00:14:11.780
+we're eventually gonna be importing the socket manager
+
+00:14:11.780 --> 00:14:16.020
+from the server socket file. And again, socket
+
+00:14:16.020 --> 00:14:21.475
+manager is whatever is exported from this file,
+
+00:14:21.475 --> 00:14:24.355
+which is just a collection of these functions.
+
+00:14:26.115 --> 00:14:34.780
+So init, get io, etcetera. And then whenever
+
+00:14:34.780 --> 00:14:38.140
+we do some something like have a message
+
+00:14:40.940 --> 00:14:45.825
+be posted to the server, This is an
+
+00:14:45.825 --> 00:14:47.505
+example of where we want sockets to happen
+
+00:14:47.505 --> 00:14:49.665
+because, like, if someone posts a message, we
+
+00:14:49.665 --> 00:14:51.665
+want all our clients to know immediately that
+
+00:14:51.665 --> 00:14:57.810
+that happened. And that's why in the declaration
+
+00:14:57.810 --> 00:15:02.290
+for the post route for slash message, we're
+
+00:15:02.290 --> 00:15:05.570
+gonna have our socket manager emit the message
+
+00:15:05.570 --> 00:15:10.130
+event that contains the message that was posted.
+
+00:15:11.415 --> 00:15:14.055
+So in code, it literally literally looks like
+
+00:15:14.055 --> 00:15:16.375
+what it was in the slides. It's just
+
+00:15:16.375 --> 00:15:20.295
+socket manager dot get io dot emit and
+
+00:15:20.295 --> 00:15:23.730
+then the string, that's the event name and
+
+00:15:23.730 --> 00:15:27.650
+the object that we're passing to the client.
+
+00:15:31.330 --> 00:15:34.050
+And then on the client side, if I
+
+00:15:34.050 --> 00:15:36.530
+just, look in the code base for, like,
+
+00:15:36.530 --> 00:15:40.665
+dot on and then message, I can see
+
+00:15:40.665 --> 00:15:43.305
+where a client would be listening to the
+
+00:15:43.305 --> 00:15:48.105
+message event. So, yeah, like, this is in
+
+00:15:48.105 --> 00:15:51.490
+Chatbook, which is expected because I really only
+
+00:15:51.490 --> 00:15:55.090
+care about the message event within Chatbook. So
+
+00:15:55.890 --> 00:15:58.210
+without knowing too much context of the code,
+
+00:15:58.210 --> 00:16:01.730
+it's maybe a bit confusing, but just looking
+
+00:16:01.730 --> 00:16:04.275
+at this one line, the client is essentially
+
+00:16:04.275 --> 00:16:07.955
+listening to the message event. And then when
+
+00:16:07.955 --> 00:16:10.435
+it receives the message event, it adds a
+
+00:16:10.435 --> 00:16:17.040
+message. And addMessage is a callback function. Specifically,
+
+00:16:17.040 --> 00:16:18.880
+message is a callback function that takes in
+
+00:16:18.880 --> 00:16:23.920
+whatever we passed from the server and the
+
+00:16:25.760 --> 00:16:28.160
+emit part, like the second argument of emit,
+
+00:16:29.825 --> 00:16:33.105
+all message sorry, add message takes in an
+
+00:16:33.105 --> 00:16:35.345
+object like that as the argument to the
+
+00:16:35.345 --> 00:16:40.785
+callback. So that's just what it would look
+
+00:16:40.785 --> 00:16:44.670
+like in code. And you'll really only see
+
+00:16:44.670 --> 00:16:48.110
+these two lines of code related to sockets.
+
+00:16:48.590 --> 00:16:51.230
+There's, like, socket dot on for the client
+
+00:16:51.230 --> 00:16:54.990
+side. There's also sorry. On the client side,
+
+00:16:54.990 --> 00:16:56.455
+there's like, socket dot on as well as
+
+00:16:56.455 --> 00:16:58.535
+socket dot off, which we'll go over in
+
+00:16:58.535 --> 00:17:03.735
+a bit in the next workshop. And then
+
+00:17:04.455 --> 00:17:07.655
+for the server side, it's really just we
+
+00:17:07.975 --> 00:17:12.230
+do, like, socket manager dot init or get
+
+00:17:12.230 --> 00:17:15.830
+io or, like, add user, etcetera. And if
+
+00:17:15.830 --> 00:17:19.590
+you control shift f for a socket manager,
+
+00:17:19.990 --> 00:17:21.590
+you can see all the places where we
+
+00:17:21.590 --> 00:17:23.430
+end up using, like, the functions that are
+
+00:17:23.430 --> 00:17:31.935
+defined in socket manager. Okay. But that's enough
+
+00:17:31.935 --> 00:17:34.015
+looking into the code since we'll be looking
+
+00:17:34.015 --> 00:17:39.800
+at it anyways next workshop. Just recapping the
+
+00:17:39.800 --> 00:17:44.760
+chatbook front end design. Eventually, we want the
+
+00:17:44.760 --> 00:17:48.120
+chatbook components to have both the chat list
+
+00:17:48.120 --> 00:17:51.265
+and the chat as children components. Right now
+
+00:17:51.265 --> 00:17:53.025
+it's just the chat. We don't see like
+
+00:17:53.025 --> 00:17:55.905
+a chat list on the left that we've
+
+00:17:55.905 --> 00:17:58.785
+seen in like the diagrams or the images.
+
+00:18:00.465 --> 00:18:06.060
+Like here. And then the chat list is
+
+00:18:06.060 --> 00:18:08.380
+gonna display all the single users or which
+
+00:18:08.380 --> 00:18:10.220
+are those like buttons that you can click
+
+00:18:10.220 --> 00:18:19.385
+to toggle the chats. But, yeah, like looking
+
+00:18:19.385 --> 00:18:21.465
+more into Chatbook, we have the chat list
+
+00:18:21.465 --> 00:18:22.905
+on the left and then chat on the
+
+00:18:22.905 --> 00:18:27.625
+right. And then within chat, we've already implemented
+
+00:18:27.625 --> 00:18:31.710
+this having the single message components up here
+
+00:18:31.710 --> 00:18:33.870
+and then the new message component down here.
+
+00:18:36.510 --> 00:18:38.910
+And then looking at chat list, we have
+
+00:18:39.710 --> 00:18:42.430
+single users being displayed here which are all
+
+00:18:42.430 --> 00:18:45.230
+the active users who are connected to Chatbook.
+
+00:18:49.695 --> 00:18:54.095
+So if you were pulling up weblab. Isexample
+
+00:18:54.095 --> 00:18:56.335
+yesterday, you saw, like, every time a user
+
+00:18:56.335 --> 00:19:00.015
+logged in, or I. Like, whenever a client
+
+00:19:00.015 --> 00:19:02.970
+initiated a connection with the server, you could
+
+00:19:02.970 --> 00:19:04.890
+actually see their name pop up on the
+
+00:19:04.890 --> 00:19:08.970
+left because they were added to, like, the
+
+00:19:08.970 --> 00:19:11.370
+list of total active users who are connected
+
+00:19:11.370 --> 00:19:21.535
+to the server. And yeah, so the main
+
+00:19:21.535 --> 00:19:23.775
+places where we're gonna be using sockets is
+
+00:19:23.775 --> 00:19:26.335
+in the chat so that when a message
+
+00:19:26.575 --> 00:19:29.760
+sorry, like, when a user sends a message,
+
+00:19:30.000 --> 00:19:32.640
+all the recipients of that message will be
+
+00:19:32.640 --> 00:19:36.400
+notified. And then we're also gonna be using
+
+00:19:36.400 --> 00:19:38.160
+it in the chat list. As I just
+
+00:19:38.160 --> 00:19:40.480
+mentioned, whenever a user joins, we're gonna be
+
+00:19:40.480 --> 00:19:41.920
+able to see their name pop up in
+
+00:19:41.920 --> 00:19:49.105
+the left, in this list. And then for
+
+00:19:49.105 --> 00:19:54.625
+the back end, we have two primary routes.
+
+00:19:55.770 --> 00:19:59.210
+One is slash chat, which gets the chat
+
+00:19:59.210 --> 00:20:02.970
+between a user and a recipient. Right now
+
+00:20:02.970 --> 00:20:05.770
+it's just getting the chat for all chat.
+
+00:20:05.770 --> 00:20:07.210
+We're gonna change it so that we can
+
+00:20:07.210 --> 00:20:09.805
+have, like, or get the chats between like
+
+00:20:09.805 --> 00:20:12.765
+you, the user, as well as one individual
+
+00:20:12.765 --> 00:20:19.485
+person, so DMs. And then the post route
+
+00:20:19.485 --> 00:20:23.020
+for slash message is just gonna send a
+
+00:20:23.020 --> 00:20:26.620
+message to not everyone but or it could
+
+00:20:26.620 --> 00:20:28.220
+be everyone but also it could be between
+
+00:20:28.220 --> 00:20:32.540
+you and a specific recipient. So this is
+
+00:20:32.540 --> 00:20:33.980
+pretty much the same as what we had
+
+00:20:33.980 --> 00:20:36.635
+in workshop six. We're just gonna be making
+
+00:20:36.635 --> 00:20:39.835
+the functionality to do stuff only between you
+
+00:20:39.835 --> 00:20:42.475
+and a single recipient instead of all chat.
+
+00:20:46.875 --> 00:20:51.680
+And then for like getting the chat between,
+
+00:20:51.680 --> 00:20:53.760
+like, you and a recipient, we're gonna use,
+
+00:20:53.760 --> 00:20:56.160
+like, the recipient ID fields when we pass
+
+00:20:56.160 --> 00:20:58.800
+it into the get request. So this is
+
+00:20:58.800 --> 00:21:00.640
+gonna be accessed using, like, rec dot query
+
+00:21:00.640 --> 00:21:06.665
+dot recipient underscore ID is 25. And then
+
+00:21:06.665 --> 00:21:09.385
+post, again, is just we take rec dot
+
+00:21:09.385 --> 00:21:12.985
+body dot content is like the value of
+
+00:21:12.985 --> 00:21:22.610
+the message. Okay. Feel free to look at
+
+00:21:22.610 --> 00:21:29.570
+web webweblab.is/chatbookdocs for more information about Chatbook, like
+
+00:21:29.570 --> 00:21:32.525
+the types that we're using as well as
+
+00:21:32.525 --> 00:21:39.165
+the routes that we've created. But, yeah, after
+
+00:21:39.165 --> 00:21:42.205
+lunch, which is gonna be now, we'll be
+
+00:21:42.205 --> 00:21:45.245
+doing Chatbook with sockets to have real time
+
+00:21:45.245 --> 00:21:49.000
+communication. And before that or during that, if
+
+00:21:49.000 --> 00:21:53.960
+you open up weblab. Issocketguide socket docs, you'll
+
+00:21:53.960 --> 00:21:58.200
+find some pretty helpful information or documentation. And
+
+00:21:58.200 --> 00:22:04.275
+I think to start off, weblab.is/socketdocs is probably
+
+00:22:04.275 --> 00:22:12.355
+more useful. This essentially just shows you, like,
+
+00:22:12.355 --> 00:22:15.730
+all of the server side functions that you
+
+00:22:15.730 --> 00:22:18.050
+can do with the socket manager. And then
+
+00:22:18.050 --> 00:22:22.130
+as well as like what you do on
+
+00:22:22.130 --> 00:22:24.130
+the client side for sockets. So socket to
+
+00:22:24.130 --> 00:22:26.130
+on is like the primary thing that you'll
+
+00:22:26.130 --> 00:22:31.865
+look at. Okay. But yeah, that should be
+
+00:22:31.865 --> 00:22:35.545
+it for the lecture. I think Lucas will
+
+00:22:35.545 --> 00:22:40.665
+come up here for food announcements. And if
+
+00:22:40.665 --> 00:22:43.065
+you could, please fill out the feedback form.
+
+00:22:43.065 --> 00:22:46.150
+Thanks. Alright, guys. Today we have Domino's. So
+
+00:22:46.150 --> 00:22:47.510
+you guys already know the drill. Please fill
+
+00:22:47.510 --> 00:22:52.070
+out your registration from weblab.in/portal. Please eat outside.
+
+00:22:52.470 --> 00:22:55.830
+And, yeah, think that's it. There's vegan and
+
+00:22:55.830 --> 00:22:58.310
+vegetarian options on the on the right side.
