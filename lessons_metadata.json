@@ -324,5 +324,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_6_workshop_5_accountsauth_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_workshop_5_accountsauth/mit_web_lab_6_962_-_day_6_workshop_5_accountsauth_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_workshop_5_accountsauth/mit_web_lab_6_962_-_day_6_workshop_5_accountsauth_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 6/7: Workshop 6",
+    "video_name_clean": "mit_web_lab_6_962_-_day_67_workshop_6",
+    "youtube_id": "fduPWZBsHrI",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-16T02:10:07.213744+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 4040,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_67_workshop_6_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_67_workshop_6/mit_web_lab_6_962_-_day_67_workshop_6_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_67_workshop_6/mit_web_lab_6_962_-_day_67_workshop_6_transcript.vtt"
   }
 ]

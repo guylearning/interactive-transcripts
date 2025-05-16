@@ -1,0 +1,2072 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: bc2b0696-dec4-451f-8419-14a5747143f1
+Created: 2025-05-16T02:10:04.423Z
+Duration: 4040.2285
+Channels: 1
+
+00:00:13.445 --> 00:00:20.805
+Okay. Hi. Hello. Hello. We're gonna be moving
+
+00:00:20.805 --> 00:00:23.525
+on to our next workshop which is chat
+
+00:00:23.525 --> 00:00:28.080
+book. I don't know. We already went over
+
+00:00:28.080 --> 00:00:32.800
+these I think so. Okay. If you go
+
+00:00:32.800 --> 00:00:36.560
+to weblab.isexample right now, you should be able
+
+00:00:36.560 --> 00:00:42.745
+to see our example website which has a
+
+00:00:42.745 --> 00:00:50.505
+chat functionality here and I can chat with
+
+00:00:51.065 --> 00:00:54.185
+anybody or I guess I can chat with
+
+00:00:54.185 --> 00:01:02.460
+everybody here. And if I type here, I
+
+00:01:02.460 --> 00:01:07.100
+think in theory Wait, what is Why can't
+
+00:01:07.100 --> 00:01:21.665
+I not scroll here? Okay. In theory, yeah,
+
+00:01:24.170 --> 00:01:30.170
+I'm seeing everybody's chat messages live kind of.
+
+00:01:32.330 --> 00:01:34.490
+So yeah, that's pretty cool. Our goal is
+
+00:01:34.490 --> 00:01:36.170
+basically to set up this live chat feature
+
+00:01:36.170 --> 00:01:40.365
+in the next two workshops. My workshop or
+
+00:01:40.525 --> 00:01:42.125
+yeah, the workshop that we're going be doing
+
+00:01:42.125 --> 00:01:43.565
+right now is kind of more of a
+
+00:01:43.565 --> 00:01:45.645
+review of everything that we've learned so far
+
+00:01:45.645 --> 00:01:48.285
+in React. And then in the next workshop
+
+00:01:48.285 --> 00:01:49.565
+we're going to be covering how to incorporate
+
+00:01:49.565 --> 00:01:53.510
+sockets into the chat so that it actually
+
+00:01:53.510 --> 00:01:56.150
+has a live updating feature like you see
+
+00:01:56.150 --> 00:02:07.905
+here. Cool. The end product of this workshop
+
+00:02:07.905 --> 00:02:09.585
+will look pretty similar to the Catbook feed
+
+00:02:09.585 --> 00:02:11.825
+actually, except we're going to be moving a
+
+00:02:11.825 --> 00:02:13.985
+lot quicker through all the steps and we're
+
+00:02:13.985 --> 00:02:15.025
+going to be building all the front end
+
+00:02:15.025 --> 00:02:16.545
+and the back end in a single workshop.
+
+00:02:16.545 --> 00:02:20.785
+So it'll be a little bit more conceptual
+
+00:02:20.785 --> 00:02:23.880
+and also a little bit just faster moving
+
+00:02:23.880 --> 00:02:30.280
+basically. Yeah, so before we get started, maybe
+
+00:02:30.280 --> 00:02:32.280
+take a few moments to just jot down
+
+00:02:32.280 --> 00:02:35.240
+how might you design a component tree for
+
+00:02:35.240 --> 00:02:40.495
+a chat, a live chat, something like this.
+
+00:02:41.295 --> 00:02:44.015
+Where would you split up the page and
+
+00:02:44.015 --> 00:02:45.695
+then what kind of components might you need
+
+00:02:45.695 --> 00:02:47.295
+to display the chat onto the screen like
+
+00:02:47.295 --> 00:02:52.270
+that? If you want to discuss or write
+
+00:02:52.270 --> 00:02:54.910
+it down or whatever you want, draw it
+
+00:02:54.910 --> 00:02:58.750
+out, do whatever you want. I'll give a
+
+00:02:58.750 --> 00:03:12.325
+bit of time. As you can see, we
+
+00:03:12.965 --> 00:03:15.365
+have an all chat here where you can
+
+00:03:15.365 --> 00:03:16.645
+chat with everybody and then you can also
+
+00:03:16.645 --> 00:03:19.860
+chat with individual users as well. So hopefully
+
+00:03:19.860 --> 00:03:25.540
+we can incorporate that functionality too. So hopefully
+
+00:03:25.540 --> 00:03:26.900
+you spent a little bit of time doing
+
+00:03:26.900 --> 00:03:30.740
+that. This is what our componentry looks like
+
+00:03:30.740 --> 00:03:32.965
+right now with a feed profile and an
+
+00:03:32.965 --> 00:03:34.405
+not found page as well as a nav
+
+00:03:34.405 --> 00:03:39.525
+bar. And this is what the componentry for
+
+00:03:39.525 --> 00:03:41.365
+our chat book is going to look like.
+
+00:03:41.365 --> 00:03:46.850
+We'll have a chat list, chat, and underneath
+
+00:03:47.170 --> 00:03:48.850
+those we'll have single user, single message, and
+
+00:03:48.850 --> 00:03:51.250
+new message, which we'll explain in just a
+
+00:03:51.250 --> 00:03:59.915
+bit. So the front end plan is that
+
+00:03:59.915 --> 00:04:02.075
+chat book will divide into a chat list
+
+00:04:02.075 --> 00:04:03.835
+and the chat list is where you can
+
+00:04:03.835 --> 00:04:07.675
+select which chat you want to be typing
+
+00:04:07.675 --> 00:04:11.195
+to or look at. And then chat will
+
+00:04:11.195 --> 00:04:15.700
+contain the actual chat messages. And then chat
+
+00:04:15.700 --> 00:04:18.660
+list will have single user underneath it where
+
+00:04:18.660 --> 00:04:22.020
+you can select which one you want. Chat
+
+00:04:22.020 --> 00:04:24.580
+itself will have single message components to represent
+
+00:04:24.580 --> 00:04:26.100
+each message and then a new message component
+
+00:04:26.100 --> 00:04:27.140
+for you to be able to type in
+
+00:04:27.140 --> 00:04:32.135
+messages to the chat. And then our back
+
+00:04:32.135 --> 00:04:44.380
+end plan. So far when we've been writing
+
+00:04:44.380 --> 00:04:46.300
+API requests, we've kind of given to you
+
+00:04:46.300 --> 00:04:48.540
+guys what we want to do with all
+
+00:04:48.540 --> 00:04:50.460
+of them. So this time we'll take a
+
+00:04:50.460 --> 00:04:52.060
+little bit of time and think about how
+
+00:04:52.060 --> 00:04:53.500
+you would actually want to design these API
+
+00:04:53.500 --> 00:05:00.975
+requests to serve the correct information or serve
+
+00:05:00.975 --> 00:05:03.935
+all the necessary information to the client and
+
+00:05:03.935 --> 00:05:05.775
+also do what the client wants to do
+
+00:05:05.775 --> 00:05:10.710
+for posting a message. So take a moment
+
+00:05:10.710 --> 00:05:12.310
+and think about what do we need to
+
+00:05:12.310 --> 00:05:14.710
+pass into rec. Query and rec. Body. And
+
+00:05:14.710 --> 00:05:17.510
+then maybe what API requests need to return
+
+00:05:17.510 --> 00:05:28.895
+to the front end, if anything. Zoom audio.
+
+00:05:39.150 --> 00:06:14.840
+What's going on? Bro. Okay. Okay. Okay, wait
+
+00:06:14.840 --> 00:06:17.240
+I can maybe oh, okay actually this works.
+
+00:06:19.015 --> 00:06:24.215
+Oh, okay. Yeah, there we go. No, this
+
+00:06:24.215 --> 00:06:35.830
+is a job. I'm sorry. Is it because
+
+00:06:35.830 --> 00:06:45.695
+the mic is like double red? Wait. It's
+
+00:06:45.695 --> 00:06:49.615
+like I I have my mic on on
+
+00:06:49.615 --> 00:06:51.695
+my iPad and I have my volume off
+
+00:06:51.695 --> 00:06:59.870
+on my computer right now. Yeah, but I
+
+00:06:59.870 --> 00:07:01.070
+can't don't know how to turn my volume
+
+00:07:01.070 --> 00:07:18.445
+off on my iPad. Oh, disconnect from audio.
+
+00:07:19.965 --> 00:07:35.450
+Okay. Okay. Hello? Okay. Cool. All good. Okay.
+
+00:07:36.905 --> 00:07:47.225
+Yeah so going back to this, for slash
+
+00:07:47.225 --> 00:07:51.305
+chat we're just going to need a recipient
+
+00:07:53.250 --> 00:07:56.690
+because if we're communicating with somebody then we're
+
+00:07:56.690 --> 00:07:59.810
+going to need the person that we're communicating
+
+00:07:59.810 --> 00:08:03.090
+with basically. So if we're looking at All
+
+00:08:03.090 --> 00:08:04.850
+Chat we need to be like, oh, I'm
+
+00:08:04.850 --> 00:08:07.330
+asking for the All Chat messages. We won't
+
+00:08:07.330 --> 00:08:08.775
+need this in workshop six because we'll be
+
+00:08:08.775 --> 00:08:11.095
+focusing on the chat component. And so we'll
+
+00:08:11.095 --> 00:08:14.055
+only be doing the all chat feature. But
+
+00:08:14.055 --> 00:08:17.815
+next workshop we will be incorporating this. And
+
+00:08:17.815 --> 00:08:22.055
+then post for post we'll have to pass
+
+00:08:22.055 --> 00:08:23.495
+in the message that we're actually posting in.
+
+00:08:23.700 --> 00:08:26.500
+And this will happen in rec. Body. And
+
+00:08:29.300 --> 00:08:31.060
+what we would like for the post request
+
+00:08:31.060 --> 00:08:33.940
+to do is to update all the users
+
+00:08:34.260 --> 00:08:37.700
+that, hey, a message has been posted. When
+
+00:08:37.700 --> 00:08:39.915
+you post to the all chat, ideally you
+
+00:08:39.915 --> 00:08:42.795
+want all the users to hear from the
+
+00:08:42.795 --> 00:08:46.955
+server somehow. Oh, some message has been posted.
+
+00:08:47.035 --> 00:08:48.875
+We won't be able to incorporate this functionality
+
+00:08:48.875 --> 00:08:50.475
+yet without sockets, but we'll be doing that
+
+00:08:50.475 --> 00:08:52.555
+in Workshop seven. So for now we're not
+
+00:08:52.555 --> 00:08:56.500
+going to be returning anything. And then the
+
+00:08:56.500 --> 00:08:58.420
+last thing that we're going to talk about
+
+00:08:58.420 --> 00:09:04.260
+is the data representation. Generally before you start
+
+00:09:04.660 --> 00:09:10.020
+writing any code, especially for passing in props
+
+00:09:10.020 --> 00:09:11.585
+into any any of your functions, you want
+
+00:09:11.585 --> 00:09:13.745
+to think about how you're representing the data
+
+00:09:13.745 --> 00:09:16.785
+that you're passing in. And there's potentially a
+
+00:09:16.785 --> 00:09:18.625
+lot of different ways of doing this. Even
+
+00:09:18.625 --> 00:09:20.145
+for the website that we're creating right now,
+
+00:09:20.145 --> 00:09:24.385
+there's probably dozens of ways of representing each
+
+00:09:24.385 --> 00:09:28.740
+of these message objects or representing a chat,
+
+00:09:28.740 --> 00:09:34.020
+representing user, messages. But the way that we're
+
+00:09:34.020 --> 00:09:35.220
+going to choose to represent each of these
+
+00:09:35.220 --> 00:09:38.500
+is for chats, we're going to represent them
+
+00:09:38.500 --> 00:09:41.355
+using a list of messages in the form
+
+00:09:41.355 --> 00:09:43.755
+of an array of message objects and then
+
+00:09:43.755 --> 00:09:46.155
+a recipient, which is who we're chatting with.
+
+00:09:46.315 --> 00:09:47.995
+And then for user objects, we're going to
+
+00:09:47.995 --> 00:09:49.195
+need an ID and a name. I think
+
+00:09:49.195 --> 00:09:51.355
+that one is pretty self explanatory. And then
+
+00:09:51.355 --> 00:09:56.075
+message objects is a little bit complicated ish.
+
+00:09:56.430 --> 00:09:58.270
+We have a sender and a content. And
+
+00:09:58.270 --> 00:10:01.390
+the confusing thing about this is maybe that
+
+00:10:01.470 --> 00:10:03.070
+if the sender is us, then that means
+
+00:10:03.070 --> 00:10:05.710
+that we're sending to whoever we're chatting with.
+
+00:10:05.710 --> 00:10:08.030
+And then if the sender is the other
+
+00:10:08.030 --> 00:10:11.255
+person, then that would mean that they're sending
+
+00:10:11.255 --> 00:10:14.135
+whatever message to us or to All Chat,
+
+00:10:14.375 --> 00:10:22.135
+but one of the two. We're just going
+
+00:10:22.135 --> 00:10:24.295
+to, I think, only do step one today.
+
+00:10:25.310 --> 00:10:30.990
+So we're going to start by going to
+
+00:10:30.990 --> 00:10:41.495
+our code and doing git fetch, git reset
+
+00:10:41.495 --> 00:10:45.735
+hard, and then git checkout Workshop six step
+
+00:10:45.735 --> 00:11:11.505
+one. I already have both npm start and
+
+00:11:11.505 --> 00:11:15.425
+npm run dev running in separate terminals. So
+
+00:11:15.425 --> 00:11:19.120
+if I go to 500173, you'll see that
+
+00:11:19.760 --> 00:11:23.760
+at home I can see a lot of
+
+00:11:23.760 --> 00:11:27.760
+different stories. And then chat, I currently see
+
+00:11:27.760 --> 00:11:36.335
+nothing because if we go into chat. Chatbook.
+
+00:11:36.335 --> 00:11:41.455
+Jsx, we're currently returning an empty component. So
+
+00:11:41.455 --> 00:11:46.015
+we wouldn't see anything yet. So currently it's
+
+00:11:46.015 --> 00:11:48.850
+empty But the display that we would like
+
+00:11:48.850 --> 00:11:51.730
+for step one is to display the single
+
+00:11:51.730 --> 00:11:55.650
+messages in here and then the new message
+
+00:11:55.650 --> 00:12:00.755
+at the bottom. So we're just going to
+
+00:12:00.755 --> 00:12:05.315
+focus on the chat window. So what props
+
+00:12:05.315 --> 00:12:08.195
+need to be passed down from app. Js?
+
+00:12:10.035 --> 00:12:12.755
+We're going to need to pass down the
+
+00:12:12.755 --> 00:12:16.820
+user ID into Chatbook so that know Chatbook
+
+00:12:16.820 --> 00:12:20.020
+knows what user to show the messages for.
+
+00:12:21.220 --> 00:12:25.700
+And then passing down into Chat. Chat needs
+
+00:12:25.700 --> 00:12:28.660
+to have something that represents a Chat, which
+
+00:12:28.660 --> 00:12:30.825
+we kind of went over already. We're going
+
+00:12:30.825 --> 00:12:38.505
+to need a chat data object here. Chat's
+
+00:12:38.505 --> 00:12:40.105
+going to need to receive a chat data
+
+00:12:40.105 --> 00:12:42.710
+object from Chatbook. And And then single message
+
+00:12:42.710 --> 00:12:44.230
+will need a message object in order to
+
+00:12:44.230 --> 00:12:49.430
+render its information. And then finally, new message
+
+00:12:49.430 --> 00:12:51.430
+component is going need a user object so
+
+00:12:51.430 --> 00:12:54.950
+that it knows which user it can post
+
+00:12:54.950 --> 00:13:08.015
+the message from. So we've broken it up.
+
+00:13:08.015 --> 00:13:11.135
+We've broken step one up into six different
+
+00:13:11.135 --> 00:13:16.550
+sub steps. Sub steps one, two, and three
+
+00:13:16.550 --> 00:13:20.550
+are in the lowest level, implementing new message
+
+00:13:20.550 --> 00:13:24.150
+in single message. And then four, five, and
+
+00:13:24.150 --> 00:13:29.305
+six are just filling in with the sub
+
+00:13:29.305 --> 00:13:39.865
+components basically. So you can see where everything
+
+00:13:39.865 --> 00:13:41.545
+is if you just search for to dos
+
+00:13:44.050 --> 00:13:46.370
+in the sidebar. So you can see step
+
+00:13:46.370 --> 00:13:51.010
+1.1, one point two, and 1.3. I'm going
+
+00:13:51.010 --> 00:13:55.345
+to take maybe around four minutes for you
+
+00:13:55.345 --> 00:13:57.345
+to kind of do steps one, two and
+
+00:13:57.345 --> 00:14:01.745
+three yourselves. So I'll give you guys a
+
+00:14:01.745 --> 00:14:05.105
+bit of time. Steps one and two are
+
+00:14:05.105 --> 00:14:08.785
+to implement the new message component. And then
+
+00:14:09.660 --> 00:14:12.620
+step three is populating single message given the
+
+00:14:12.620 --> 00:14:21.340
+props that is passed out. And again, can
+
+00:14:21.340 --> 00:14:24.380
+see here that we've outlined the single message
+
+00:14:24.375 --> 00:14:29.975
+props to be a single message object. And
+
+00:14:29.975 --> 00:14:31.335
+you can refer back to the slides for
+
+00:14:31.335 --> 00:14:32.935
+what we defined for a message object or
+
+00:14:32.935 --> 00:14:40.100
+you can look in here where we have
+
+00:14:40.100 --> 00:14:43.140
+this definition here. It has a sender and
+
+00:14:43.140 --> 00:14:44.980
+a content. So I'll give you a few
+
+00:14:44.980 --> 00:14:47.940
+minutes to do that. And feel free to
+
+00:14:47.940 --> 00:14:48.900
+call up on the queue if you have
+
+00:14:48.900 --> 00:16:39.680
+any questions. I think I'll actually just move
+
+00:16:39.680 --> 00:16:41.760
+on because we don't have that much time
+
+00:16:41.760 --> 00:16:49.875
+left. Okay. Yeah, so our first step is
+
+00:16:50.355 --> 00:16:54.435
+to our first few steps is going to
+
+00:16:54.435 --> 00:16:58.320
+be implementing new message. So here, step 1.1
+
+00:16:58.320 --> 00:17:01.600
+is to populate new message. We have the
+
+00:17:01.600 --> 00:17:04.640
+new post input component already, which we've been
+
+00:17:04.640 --> 00:17:06.960
+using for new comment and new story. So
+
+00:17:06.960 --> 00:17:11.040
+the shared component allows us to implement a
+
+00:17:11.925 --> 00:17:15.525
+new message pretty quickly. So we'll use the
+
+00:17:15.525 --> 00:17:25.205
+new post input component. And then we'll pass
+
+00:17:25.205 --> 00:17:32.320
+in default text of new message. And then
+
+00:17:34.400 --> 00:17:37.280
+on our on submit, we need to call
+
+00:17:37.760 --> 00:18:06.340
+our send message function. There we go. And
+
+00:18:06.340 --> 00:18:08.740
+then we need to implement sendMessage. And for
+
+00:18:08.740 --> 00:18:10.340
+now, we'll just log it to the console.
+
+00:18:10.340 --> 00:18:14.725
+So we'll take in a value message, and
+
+00:18:14.725 --> 00:18:25.470
+then we'll just console. Log. So okay. Yeah.
+
+00:18:25.470 --> 00:18:29.230
+So continuing where we left off yesterday, we
+
+00:18:29.230 --> 00:18:33.230
+talked about a few things. First of all,
+
+00:18:34.430 --> 00:18:37.070
+our goal is to replicate what is webleb
+
+00:18:37.070 --> 00:18:40.565
+dot is slash example within this workshop and
+
+00:18:40.565 --> 00:18:44.885
+the next workshop, the chat functionality. So the
+
+00:18:44.885 --> 00:18:47.285
+first step of that that we need to
+
+00:18:47.285 --> 00:18:49.765
+think about is our data representation. So how
+
+00:18:49.765 --> 00:18:53.125
+do we represent users, chats, and messages? And
+
+00:18:53.125 --> 00:18:56.220
+what we came up with is the following
+
+00:18:56.220 --> 00:19:01.500
+representation where we have a user represented by
+
+00:19:01.500 --> 00:19:05.180
+an ID and a name, a message represented
+
+00:19:05.180 --> 00:19:09.305
+by the sent by the person who sent
+
+00:19:09.305 --> 00:19:11.625
+the message and the content of the message.
+
+00:19:11.865 --> 00:19:16.265
+And then finally, chat data represents is what
+
+00:19:16.265 --> 00:19:17.785
+we need to represent a chat. And for
+
+00:19:17.785 --> 00:19:20.345
+this, we need a list of mess or
+
+00:19:20.345 --> 00:19:22.345
+an array of messages. And then we need
+
+00:19:22.345 --> 00:19:25.990
+to know the recipient, which is basically who
+
+00:19:25.990 --> 00:19:32.870
+we're talking to. So the yeah. Actually, I
+
+00:19:32.870 --> 00:19:34.550
+think the next slide might be better to
+
+00:19:34.550 --> 00:19:38.245
+explain this. Yeah. And then the second part
+
+00:19:38.245 --> 00:19:42.405
+we did was to basically split up our
+
+00:19:42.405 --> 00:19:45.685
+front end and look at what the componentry
+
+00:19:45.685 --> 00:19:51.380
+should look like. So underneath the chat, like
+
+00:19:51.380 --> 00:19:54.900
+entire page, we have chat list and chat.
+
+00:19:55.860 --> 00:19:58.980
+Underneath chat, we have the single message component
+
+00:19:58.980 --> 00:20:01.060
+which displays a single message and then the
+
+00:20:01.060 --> 00:20:03.805
+new message component which allows us to post
+
+00:20:03.805 --> 00:20:06.445
+a new message. And that's the side of
+
+00:20:06.445 --> 00:20:08.445
+the part that we're the tree that we're
+
+00:20:08.525 --> 00:20:10.045
+component tree that we're focusing on for this
+
+00:20:10.045 --> 00:20:16.380
+workshop. So to think about the props that
+
+00:20:16.380 --> 00:20:18.380
+we need to pass into each component, we
+
+00:20:18.380 --> 00:20:20.140
+kind of need to think about what each
+
+00:20:20.140 --> 00:20:22.380
+component needs in order to render what's inside
+
+00:20:22.380 --> 00:20:24.940
+of it. So for the new message object,
+
+00:20:27.095 --> 00:20:29.415
+we need to know who am I talking
+
+00:20:29.415 --> 00:20:32.535
+to basically. Once you send a message, you
+
+00:20:32.535 --> 00:20:34.935
+should be able to know the server needs
+
+00:20:34.935 --> 00:20:36.295
+to know who you're actually sending in that
+
+00:20:36.295 --> 00:20:39.175
+message to. So the prop we need to
+
+00:20:39.175 --> 00:20:40.855
+pass in is this user object with an
+
+00:20:40.855 --> 00:20:45.070
+ID and name. In order to render a
+
+00:20:45.070 --> 00:20:46.510
+single message, we need to know the sender
+
+00:20:46.510 --> 00:20:47.710
+of the message as well as the content
+
+00:20:47.710 --> 00:20:49.790
+of the message. So for the single message
+
+00:20:49.790 --> 00:20:52.510
+object, the prop will just be a message
+
+00:20:52.510 --> 00:21:00.575
+object. And then finally, for chat, the chat
+
+00:21:00.575 --> 00:21:03.455
+needs to pass down a lit like chat
+
+00:21:03.455 --> 00:21:04.975
+needs to maintain a list of single messages
+
+00:21:04.975 --> 00:21:06.735
+as well as a new message. So in
+
+00:21:06.735 --> 00:21:10.040
+order to do that, it needs a user
+
+00:21:10.040 --> 00:21:12.920
+object to pass down to the new message
+
+00:21:12.920 --> 00:21:15.240
+as well as a list of message objects
+
+00:21:15.240 --> 00:21:22.215
+to create the single messages basically. Cool. Great.
+
+00:21:22.215 --> 00:21:25.095
+And then finally, we have the back end
+
+00:21:25.255 --> 00:21:30.215
+and we have two API routes that we
+
+00:21:30.215 --> 00:21:33.655
+need to implement for our back end. The
+
+00:21:33.655 --> 00:21:37.840
+first one, GET request for how we get
+
+00:21:37.840 --> 00:21:40.320
+messages and chats from the back end. And
+
+00:21:40.320 --> 00:21:42.560
+then the second one is a post request
+
+00:21:42.560 --> 00:21:43.680
+for us to be able to post a
+
+00:21:43.680 --> 00:21:51.855
+message to the back end. Yeah. So we
+
+00:21:51.855 --> 00:21:55.935
+can reference everything that we just talked about
+
+00:21:55.935 --> 00:22:10.040
+in weblab. Inchatbookdocs. You'll be able to see
+
+00:22:10.040 --> 00:22:15.655
+everything that we talked about here. And this
+
+00:22:15.655 --> 00:22:17.415
+will also be helpful for the next workshop.
+
+00:22:17.415 --> 00:22:18.775
+So you can feel free to just keep
+
+00:22:18.775 --> 00:22:21.575
+this open for the rest of this workshop
+
+00:22:21.575 --> 00:22:27.830
+and next workshop as well. So let's go
+
+00:22:27.830 --> 00:22:32.390
+to workshop six step 2v2 and open up
+
+00:22:32.390 --> 00:23:16.615
+local host 500173. So this is kind of
+
+00:23:16.615 --> 00:23:18.615
+where we left off yesterday. If you go
+
+00:23:18.615 --> 00:23:25.040
+to chat, there's a conditional rendering that we've
+
+00:23:25.040 --> 00:23:26.240
+set up so that it tells you to
+
+00:23:26.240 --> 00:23:29.840
+log in before using Chatbook. Now after signing
+
+00:23:29.840 --> 00:23:52.160
+in, We can see the chat. Hold on.
+
+00:23:52.560 --> 00:23:53.760
+I don't know if I should be seeing
+
+00:23:53.760 --> 00:24:16.265
+all of this right now. Oh, yeah. Sorry.
+
+00:24:17.020 --> 00:24:53.080
+That would make sense. Alright. There we go.
+
+00:24:53.080 --> 00:24:58.375
+Sorry. Okay. Cool. So currently we have some
+
+00:24:58.375 --> 00:25:02.055
+hard coded messages in here courtesy of Abby.
+
+00:25:03.655 --> 00:25:06.775
+And if we open up our console and
+
+00:25:06.775 --> 00:25:09.255
+we type in a message to our console,
+
+00:25:18.270 --> 00:25:19.710
+we can see it printed out to our
+
+00:25:19.710 --> 00:25:30.005
+console. Yeah. There. Cool. So currently our chat
+
+00:25:30.005 --> 00:25:32.725
+feature is missing a few things. First of
+
+00:25:32.725 --> 00:25:37.125
+all, we are missing the ability for the
+
+00:25:37.125 --> 00:25:38.725
+front end to change based on the state,
+
+00:25:39.580 --> 00:25:40.940
+which we'll do in step two of the
+
+00:25:40.940 --> 00:25:46.300
+workshop. We're missing any communication between the front
+
+00:25:46.300 --> 00:25:47.980
+end, the back end, and the database. So
+
+00:25:47.980 --> 00:25:51.020
+we'll do that in step three. And then
+
+00:25:52.905 --> 00:25:55.225
+we're also missing the ability for users to
+
+00:25:55.225 --> 00:25:56.825
+post messages to the database. And that's what
+
+00:25:56.825 --> 00:25:58.985
+we're going do in step four. And then
+
+00:25:58.985 --> 00:26:05.465
+finally, also want live chat updating for users
+
+00:26:05.465 --> 00:26:08.700
+once other users have posted and individual chats.
+
+00:26:08.700 --> 00:26:09.820
+And that's going to be done in the
+
+00:26:09.820 --> 00:26:15.580
+next workshop. So step two, make sure you're
+
+00:26:15.580 --> 00:26:17.340
+on this branch. We're going to be adding
+
+00:26:17.340 --> 00:26:19.420
+a state, which is going be pretty quick.
+
+00:26:22.365 --> 00:26:26.765
+So currently we always feed the same hardcoded
+
+00:26:26.765 --> 00:26:30.365
+messages to the chat component. So let's change
+
+00:26:30.365 --> 00:26:32.445
+it so that the data prop is a
+
+00:26:32.445 --> 00:26:39.960
+state that we pass in. Yeah. So I'll
+
+00:26:39.960 --> 00:26:41.080
+just give you guys like a few minutes
+
+00:26:41.080 --> 00:26:45.240
+to do this. But all we want to
+
+00:26:45.240 --> 00:26:47.080
+do is convert the prop that we're passing
+
+00:26:47.080 --> 00:26:52.715
+into chat right now into a state. And
+
+00:26:53.675 --> 00:26:55.675
+if you don't remember what we're supposed to
+
+00:26:55.675 --> 00:26:57.995
+pass into chat, you can look at either
+
+00:26:57.995 --> 00:27:00.475
+the Chatbook docs to remember what the chat
+
+00:27:00.475 --> 00:27:02.395
+data type looks like, or you can just
+
+00:27:02.395 --> 00:27:05.515
+look at what we're currently passing into chat.
+
+00:27:05.995 --> 00:27:09.130
+Yeah. Cool. I'll give you guys a few
+
+00:27:09.130 --> 00:29:37.680
+minutes to do that. Okay. Do people need
+
+00:29:37.680 --> 00:29:42.375
+more time for this? Maybe fingers up for
+
+00:29:42.375 --> 00:29:43.495
+a number of minutes if you need more
+
+00:29:43.495 --> 00:29:52.055
+time. Cool. I think this one is kind
+
+00:29:52.055 --> 00:29:54.480
+of just like a warm up. So it
+
+00:29:54.480 --> 00:29:56.640
+shouldn't take us too long. What we want
+
+00:29:56.640 --> 00:29:59.280
+to do is just turn this prop into
+
+00:30:00.960 --> 00:30:19.475
+a state. So let's copy this over. We
+
+00:30:19.475 --> 00:30:22.115
+just want to define a state which we'll
+
+00:30:22.115 --> 00:30:32.400
+call Active Chat. And then we use the
+
+00:30:32.400 --> 00:30:37.200
+useState hook and we can just copy paste
+
+00:30:37.935 --> 00:30:42.815
+this in here to initialize our Active Chat
+
+00:30:43.135 --> 00:30:50.095
+to this chat data object. And then we
+
+00:30:50.095 --> 00:30:52.255
+can just pass it in here to Active
+
+00:30:52.255 --> 00:31:09.235
+Chat. And hopefully we're all good. Cool. Great.
+
+00:31:10.915 --> 00:31:12.835
+Yeah. Okay. So now this is going to
+
+00:31:12.835 --> 00:31:16.915
+allow us to basically update whatever is in
+
+00:31:16.915 --> 00:31:19.475
+our chat using data that either comes from
+
+00:31:19.475 --> 00:31:23.150
+the back end or comes from when we
+
+00:31:23.150 --> 00:31:24.830
+post a new message on the front end
+
+00:31:24.830 --> 00:31:30.910
+as well. Yeah, let's get on the same
+
+00:31:30.910 --> 00:31:34.750
+page. Let's check out step three v two.
+
+00:31:36.825 --> 00:31:41.145
+And then our next step is going to
+
+00:31:41.145 --> 00:31:45.785
+be storing and getting messages. So this is
+
+00:31:45.785 --> 00:31:47.145
+going to be an interaction between the front
+
+00:31:47.145 --> 00:31:50.345
+end, the back end, and MongoDB. In step
+
+00:31:50.345 --> 00:31:53.270
+3.1, we'll add a new mongoose schema for
+
+00:31:53.270 --> 00:31:57.990
+messages, which we'll do in message. Js. Step
+
+00:31:57.990 --> 00:32:02.550
+two, we'll implement the apichat endpoint in api.
+
+00:32:02.550 --> 00:32:04.630
+Js. And then steps three and four, we'll
+
+00:32:04.630 --> 00:32:08.445
+call the apichat endpoint from the front end.
+
+00:32:10.365 --> 00:32:13.725
+So our first step is to add a
+
+00:32:13.725 --> 00:32:19.960
+new Mongo schema for messages. So the back
+
+00:32:19.960 --> 00:32:21.400
+end needs a way to store the messages
+
+00:32:21.400 --> 00:32:24.280
+in the database. And this might not look
+
+00:32:24.280 --> 00:32:25.800
+the exact same as the way that the
+
+00:32:25.800 --> 00:32:28.120
+front end stores messages. Why? Because the front
+
+00:32:28.120 --> 00:32:34.645
+end only stored in the documentation we can
+
+00:32:34.645 --> 00:32:36.405
+see that the front end only stored sender
+
+00:32:36.405 --> 00:32:38.965
+and content. And we're going to need more
+
+00:32:38.965 --> 00:32:41.445
+than just sender and content if we want
+
+00:32:41.445 --> 00:32:44.165
+to store a message in the database because
+
+00:32:46.230 --> 00:32:52.390
+if I sent a message to Kenneth, then
+
+00:32:53.270 --> 00:32:55.350
+the database needs to store that I sent
+
+00:32:55.350 --> 00:32:58.790
+it and also that Kenneth received it. So
+
+00:33:00.745 --> 00:33:03.465
+I don't want to display my message to
+
+00:33:03.465 --> 00:33:08.985
+Kenneth to every other user of the chat.
+
+00:33:08.985 --> 00:33:11.225
+So we need both a sender and a
+
+00:33:11.225 --> 00:33:17.880
+recipient. Well, we've kind of done this already
+
+00:33:17.880 --> 00:33:21.160
+in the documentation or decided how we were
+
+00:33:21.160 --> 00:33:22.760
+going to store the data. So if we
+
+00:33:22.760 --> 00:33:24.440
+just look at oh, sorry. If we just
+
+00:33:24.440 --> 00:33:31.855
+look at the documentation here, The way that
+
+00:33:31.855 --> 00:33:34.655
+we're going to store these, the messages in
+
+00:33:34.655 --> 00:33:36.255
+the database, is we're going to need a
+
+00:33:36.255 --> 00:33:39.455
+sender, a recipient, a timestamp, and the content
+
+00:33:39.455 --> 00:33:46.350
+of the message. So again, I'll give you
+
+00:33:46.350 --> 00:33:47.710
+guys a few minutes to do this step
+
+00:33:47.710 --> 00:33:52.830
+two. It's going to be in message. Js.
+
+00:33:53.150 --> 00:33:55.550
+And we just want to define a message
+
+00:33:55.550 --> 00:34:00.485
+schema with the fields that are in the
+
+00:34:00.485 --> 00:34:05.125
+documentation. So reference the documentation and then just
+
+00:34:05.685 --> 00:34:07.845
+make a message schema here that matches up
+
+00:34:07.845 --> 00:34:10.485
+with that. I'll again give you guys a
+
+00:34:10.485 --> 00:36:27.955
+few minutes to do that. Okay. Yeah, how
+
+00:36:27.955 --> 00:36:30.515
+many more minutes do people need? Like maybe
+
+00:36:30.515 --> 00:36:33.075
+if you need more minutes, just raise your
+
+00:36:33.075 --> 00:36:38.810
+fingers. You can also just follow along as
+
+00:36:38.810 --> 00:36:41.130
+I just do it now in case you
+
+00:36:41.130 --> 00:36:46.010
+haven't gotten it already. No worries. Actually, live
+
+00:36:46.010 --> 00:36:52.265
+code it first. Okay, so we're going to
+
+00:36:52.265 --> 00:36:54.425
+need these four fields. We can actually first
+
+00:36:54.425 --> 00:36:56.345
+just start off by copy pasting this in.
+
+00:37:02.505 --> 00:37:04.185
+Content, we don't actually have to change at
+
+00:37:04.185 --> 00:37:06.550
+all. But for sender and recipient, we're going
+
+00:37:06.550 --> 00:37:09.270
+to have to look at the definition for
+
+00:37:09.270 --> 00:37:11.670
+a user object, which is also already done
+
+00:37:11.670 --> 00:37:17.190
+for us here in the object types. So
+
+00:37:17.190 --> 00:37:18.710
+we have the user object needs an ID
+
+00:37:18.710 --> 00:37:30.945
+in the name field. We'll do this here.
+
+00:37:30.945 --> 00:37:41.070
+And then similarly for the recipient, we're going
+
+00:37:41.070 --> 00:37:42.590
+to do the same thing. And then for
+
+00:37:42.590 --> 00:37:50.805
+the timestamp, it'll just be type date, but
+
+00:37:50.805 --> 00:38:06.530
+we'll also set default. Yeah, this will just
+
+00:38:06.530 --> 00:38:09.890
+make sure that we default to the current
+
+00:38:09.890 --> 00:38:23.485
+time if no time is given. Great. Yeah,
+
+00:38:23.485 --> 00:38:33.890
+any questions here before we move on? Cool.
+
+00:38:34.770 --> 00:38:41.170
+Okay. Next step is 3.2, which is implementing
+
+00:38:41.170 --> 00:38:48.595
+the getapichat endpoint in api. Js. This is
+
+00:38:48.595 --> 00:38:49.875
+going to be pretty similar to what we
+
+00:38:49.875 --> 00:38:56.550
+did already in workshops three and four where
+
+00:38:56.550 --> 00:39:01.430
+we had the back end responding to the
+
+00:39:01.430 --> 00:39:06.870
+front end request and also communicating with the
+
+00:39:06.870 --> 00:39:33.070
+database in the process. Okay. Sorry. I'm on
+
+00:39:33.070 --> 00:39:59.200
+the wrong branch again. Okay. So I'll just
+
+00:39:59.200 --> 00:40:02.560
+do this up here. I'll just live code
+
+00:40:02.560 --> 00:40:04.675
+it here. So what what that will look
+
+00:40:04.675 --> 00:40:06.915
+like, we define a GET request using router.
+
+00:40:06.915 --> 00:40:13.795
+Get. And we can omit the slash API
+
+00:40:13.795 --> 00:40:16.835
+part because we're already in API. Js. And
+
+00:40:16.835 --> 00:40:33.595
+then for our callback function, We will be
+
+00:40:33.595 --> 00:40:38.475
+getting a query from the client, which is
+
+00:40:38.475 --> 00:40:42.395
+in the form of Ruck. Query. And this
+
+00:40:42.395 --> 00:40:51.600
+query will just be a recipient ID. So
+
+00:40:51.920 --> 00:41:03.175
+what we'll do is we'll define, We'll pull
+
+00:41:03.175 --> 00:41:11.895
+that parameter using rec dot query dot recipient
+
+00:41:11.895 --> 00:41:24.400
+ID. And then what do we call it
+
+00:41:24.400 --> 00:41:43.050
+again? Message, okay. Yeah, so we'll look in
+
+00:41:43.050 --> 00:41:45.690
+the message database for anything that matches this
+
+00:41:45.690 --> 00:41:57.865
+ID. So here we'll just need to make
+
+00:41:57.865 --> 00:42:23.045
+sure that the recipient's ID matches. This. And
+
+00:42:23.045 --> 00:42:27.285
+then this will give us a response to
+
+00:42:27.285 --> 00:42:28.965
+the database query. And then we just want
+
+00:42:28.965 --> 00:42:31.285
+to send this to the front end using
+
+00:42:37.050 --> 00:42:43.530
+the rest all send. Rest all send messages
+
+00:42:43.530 --> 00:42:54.475
+here. Cool. Yeah, sorry. I forgot that we
+
+00:42:54.475 --> 00:42:56.715
+were only doing all chats for the time
+
+00:42:56.715 --> 00:43:01.915
+being. So yeah, for now we'll just replace
+
+00:43:01.915 --> 00:43:11.490
+this with all chat. Any questions so far?
+
+00:43:13.250 --> 00:43:15.490
+We've kind of done the part where the
+
+00:43:15.490 --> 00:43:17.410
+back end interacts with the database and then
+
+00:43:17.410 --> 00:43:19.745
+responds to the client. So our next step
+
+00:43:19.745 --> 00:43:22.785
+is to do the part where the client
+
+00:43:22.785 --> 00:43:24.305
+actually asks for this data from the back
+
+00:43:24.305 --> 00:43:34.310
+end. Questions? Okay. Yeah. So the next step
+
+00:43:34.310 --> 00:43:36.150
+is to call the slash api slash chat
+
+00:43:36.150 --> 00:43:38.790
+endpoint, which is going be in Chatbook. Jsx.
+
+00:43:42.870 --> 00:43:46.635
+Here we have two to dos. We kind
+
+00:43:46.635 --> 00:43:49.275
+of just want to implement the load message
+
+00:43:49.275 --> 00:43:51.835
+history function and then we'll call the load
+
+00:43:51.835 --> 00:44:03.440
+message history in the use effect. So for
+
+00:44:03.440 --> 00:44:10.880
+now, we just have this endpoint with parameters.
+
+00:44:12.455 --> 00:44:15.095
+And the parameters is just the recipient ID.
+
+00:44:15.575 --> 00:44:30.780
+So We'll retrieve the recipient ID by looking
+
+00:44:30.780 --> 00:44:35.660
+at whatever our state is right now for
+
+00:44:35.660 --> 00:44:39.820
+active chat. So currently our active chat is
+
+00:44:39.820 --> 00:44:43.985
+initialized to this recipient and so we need
+
+00:44:43.985 --> 00:44:49.665
+the ID of this recipient. ID of AllChat
+
+00:44:49.665 --> 00:44:54.225
+is just the string AllChat but ideally we'd
+
+00:44:54.225 --> 00:44:58.730
+want to pull the correct ID of the
+
+00:44:58.730 --> 00:45:01.290
+recipient of ActiveChat. So what we can do
+
+00:45:01.290 --> 00:45:07.610
+is take our ActiveChat state and then take
+
+00:45:07.610 --> 00:45:09.930
+the recipient of it. And then from there,
+
+00:45:09.930 --> 00:45:14.825
+we can grab its ID. And then we
+
+00:45:14.825 --> 00:45:16.985
+need to figure out what we want to
+
+00:45:16.985 --> 00:45:18.905
+do after we get the response from the
+
+00:45:18.905 --> 00:45:26.770
+back end. And because the response is just
+
+00:45:26.770 --> 00:45:31.890
+a list of messages, just want to set
+
+00:45:31.890 --> 00:45:35.490
+our active chat correctly so that the messages
+
+00:45:35.490 --> 00:45:37.090
+reflect the messages that we're getting from the
+
+00:45:37.090 --> 00:45:50.315
+server. So we get this messages response and
+
+00:45:51.915 --> 00:46:00.240
+we can just set Active Chat to recipient.
+
+00:46:00.560 --> 00:46:05.680
+It should stay the same as whatever our
+
+00:46:05.680 --> 00:46:14.825
+current recipient is. And then messages is the
+
+00:46:14.825 --> 00:46:23.960
+messages response that we get. And now in
+
+00:46:23.960 --> 00:46:25.400
+this useEffect, all we have to do is
+
+00:46:25.400 --> 00:46:31.560
+just call loadMessageHistory. Let's check it out on
+
+00:46:31.560 --> 00:46:33.800
+the front end and see if everything's working.
+
+00:46:45.025 --> 00:46:48.625
+Cool. Great. I'll leave the solution up here.
+
+00:46:49.600 --> 00:46:50.880
+Let me know if you have any questions
+
+00:46:50.880 --> 00:46:52.480
+but I'll run through what's going on on
+
+00:46:52.480 --> 00:46:54.480
+the front end just right now in the
+
+00:46:54.480 --> 00:47:00.800
+meantime. So we have like a database set
+
+00:47:00.800 --> 00:47:04.035
+up just by default but if you have
+
+00:47:04.035 --> 00:47:06.835
+your own database correctly set up in the
+
+00:47:07.155 --> 00:47:11.475
+.env then you'll see like your own database
+
+00:47:11.475 --> 00:47:21.580
+reflected here. But here we you can see
+
+00:47:21.580 --> 00:47:24.060
+we're chatting with All Chat. And if we
+
+00:47:24.060 --> 00:47:33.235
+type a message into here, It'll pop up
+
+00:47:33.235 --> 00:47:35.635
+on our console. So far we haven't yet
+
+00:47:35.635 --> 00:47:37.235
+done the part where we're actually posting the
+
+00:47:37.235 --> 00:47:39.795
+request to the database. That's going to be
+
+00:47:39.795 --> 00:47:42.670
+the next step. But at the very least
+
+00:47:42.670 --> 00:47:44.430
+we're able to communicate with the database and
+
+00:47:44.430 --> 00:47:46.190
+grab all the messages from it at this
+
+00:47:46.190 --> 00:47:55.310
+point. Cool. Okay. Yeah, so now we're going
+
+00:47:55.310 --> 00:47:57.230
+to do the same thing for post requests
+
+00:47:57.495 --> 00:48:01.015
+and I'll give you guys probably some time
+
+00:48:01.015 --> 00:48:03.255
+to do this yourselves this time since I
+
+00:48:03.255 --> 00:48:06.215
+walked through the GET request. So make sure
+
+00:48:06.215 --> 00:48:07.735
+you're on the step four v two branch.
+
+00:48:15.410 --> 00:48:18.210
+And I'll walk through the steps really quickly
+
+00:48:18.210 --> 00:48:21.090
+for what we need to do. So step
+
+00:48:21.090 --> 00:48:25.890
+4.1 is going to be implementing the postapismessage
+
+00:48:25.890 --> 00:48:29.215
+endpoint in api. Js. And then step 4.2
+
+00:48:29.215 --> 00:48:32.015
+is going to be calling that endpoint from
+
+00:48:32.895 --> 00:48:38.335
+new post input. Jsx. You can see in
+
+00:48:38.335 --> 00:48:45.490
+here This is to do for 4.1. And
+
+00:48:45.490 --> 00:48:51.490
+then new post input, we have to basically
+
+00:48:51.490 --> 00:48:54.930
+implement the send message function for a step
+
+00:48:54.930 --> 00:48:57.265
+4.2. And it'll look kind of similar to
+
+00:48:57.265 --> 00:49:05.905
+newcommon and newstory. So yeah, now I'll give
+
+00:49:05.905 --> 00:49:06.865
+you guys a bit of time to do
+
+00:49:06.865 --> 00:49:13.350
+this yourselves. A few hints for step 4.1,
+
+00:49:13.510 --> 00:49:16.630
+a rec dot body will be a message
+
+00:49:16.630 --> 00:49:22.085
+object, which is what we're getting from the
+
+00:49:22.085 --> 00:49:24.165
+front end and we're going to need a
+
+00:49:24.165 --> 00:49:26.725
+sender, a recipient and a content to post
+
+00:49:26.725 --> 00:49:29.525
+to the database. If you remember here, our
+
+00:49:29.525 --> 00:49:32.405
+message schema has a sender, recipient and content.
+
+00:49:32.405 --> 00:49:33.605
+The time stamp we don't need to fill
+
+00:49:33.605 --> 00:49:35.045
+in ourselves but we do need to figure
+
+00:49:35.045 --> 00:49:36.680
+out how we're getting the sender, how we're
+
+00:49:36.680 --> 00:49:38.520
+getting the recipient, and how we're getting the
+
+00:49:38.520 --> 00:49:40.920
+content. Some of those will come from the
+
+00:49:40.920 --> 00:49:42.360
+front end but some of them might not.
+
+00:49:42.360 --> 00:49:47.240
+So I'll give you guys a few minutes
+
+00:49:47.240 --> 00:49:49.800
+to think about that and try to implement
+
+00:49:49.800 --> 00:49:53.615
+the API request yourselves. And let us know
+
+00:49:53.615 --> 00:52:38.030
+if you have any questions as well. If
+
+00:52:38.030 --> 00:52:40.350
+you guys are still working on it, no
+
+00:52:40.350 --> 00:52:44.430
+worries. I wanted to pull for to see
+
+00:52:44.430 --> 00:52:46.110
+how you guys were thinking about each of
+
+00:52:46.110 --> 00:52:51.045
+these. So maybe we'll do a quick open
+
+00:52:51.045 --> 00:52:53.685
+hand, close hand. Let's do open hand if
+
+00:52:53.685 --> 00:52:57.765
+you think that sender will be coming from
+
+00:53:00.050 --> 00:53:01.650
+the front end and then close hand if
+
+00:53:01.650 --> 00:53:04.450
+you think that sender is going to be
+
+00:53:05.410 --> 00:53:07.730
+coming from our back end instead. Do you
+
+00:53:07.730 --> 00:53:22.035
+have any ideas? Let's do the same thing
+
+00:53:22.035 --> 00:53:25.155
+for recipient. Do we think that recipient is
+
+00:53:25.155 --> 00:53:26.035
+going to be coming from the front end
+
+00:53:26.035 --> 00:53:29.980
+or from the back end? Open hand for
+
+00:53:30.060 --> 00:53:31.580
+front end and then close hand for back
+
+00:53:31.580 --> 00:53:42.235
+end. Cool. And then lastly for content, do
+
+00:53:42.235 --> 00:53:44.395
+we think content is front end or content
+
+00:53:44.395 --> 00:53:46.795
+is coming to us from the client? Or
+
+00:53:46.795 --> 00:53:48.875
+is content something that the back end fills
+
+00:53:48.875 --> 00:53:55.880
+in itself? Okay. Cool. Yeah. Okay. I think
+
+00:53:56.120 --> 00:53:58.360
+everybody agreed on the first two sorry, the
+
+00:53:58.360 --> 00:54:05.160
+last two for recipient and content. The back
+
+00:54:05.160 --> 00:54:07.815
+end can't really know who you're sending the
+
+00:54:07.815 --> 00:54:10.935
+message to or what content you're putting into
+
+00:54:10.935 --> 00:54:20.470
+the message unless know unless the client tells
+
+00:54:20.470 --> 00:54:22.950
+them exactly what these are. But for the
+
+00:54:22.950 --> 00:54:26.550
+sender, the back end actually of fills this
+
+00:54:26.550 --> 00:54:28.150
+in itself, kind of gets it from the
+
+00:54:28.150 --> 00:54:30.630
+front end. But essentially what's going on is
+
+00:54:30.630 --> 00:54:33.430
+the front end session that it stores with
+
+00:54:33.430 --> 00:54:36.225
+the back end from auth will be used
+
+00:54:36.225 --> 00:54:40.625
+to fill in the sender field. So the
+
+00:54:40.625 --> 00:54:44.545
+back end will be doing this itself. So
+
+00:54:46.225 --> 00:54:48.065
+that means that recipient and content will come
+
+00:54:48.065 --> 00:54:50.670
+from rec. Query, but sender will be a
+
+00:54:50.670 --> 00:54:54.990
+little bit different. I'll do it right here.
+
+00:54:55.310 --> 00:54:57.950
+So we need to do a router. Post
+
+00:54:58.830 --> 00:55:18.760
+slash message. So we just need to post
+
+00:55:19.080 --> 00:55:21.400
+a message to the database. We can kind
+
+00:55:21.400 --> 00:55:26.680
+of copy here what we've done in comment.
+
+00:55:30.035 --> 00:55:34.435
+Instead we'll be creating a new message. So
+
+00:55:34.435 --> 00:55:41.315
+that'll look like this. And then afterwards we
+
+00:55:41.315 --> 00:55:46.490
+want to save the new message. And we
+
+00:55:47.050 --> 00:55:48.410
+don't need to worry about sending it back
+
+00:55:48.410 --> 00:55:50.250
+to the server because we're going be doing
+
+00:55:50.250 --> 00:55:52.410
+that in the next workshop. For now, we
+
+00:55:52.410 --> 00:55:54.090
+can just imagine that the server responds with
+
+00:55:54.090 --> 00:56:00.010
+silence. So to fill in the fields, we
+
+00:56:00.010 --> 00:56:06.075
+need a sender, a recipient, the content. The
+
+00:56:06.075 --> 00:56:07.675
+timestamp we don't need to fill in ourselves.
+
+00:56:14.150 --> 00:56:18.150
+So the content, we can just get from
+
+00:56:19.910 --> 00:56:24.150
+rec. Body. So rec. Body will be a
+
+00:56:24.150 --> 00:56:26.310
+message object. And that will have a recipient
+
+00:56:26.310 --> 00:56:30.205
+and a content. So we can just define
+
+00:56:30.285 --> 00:56:37.325
+const message object equals rec. Body. Now content,
+
+00:56:37.325 --> 00:56:39.565
+we can just fill in with rec. Body
+
+00:56:39.725 --> 00:56:52.440
+dot sorry, message object dot content. Recipient, you
+
+00:56:52.440 --> 00:56:58.600
+can also fill in using message object dot
+
+00:56:57.705 --> 00:57:02.505
+recipient should have the correct formatting as already.
+
+00:57:02.585 --> 00:57:04.505
+And then sender, we'll need to fill in
+
+00:57:04.505 --> 00:57:11.780
+the ID and name separately. So before that
+
+00:57:12.260 --> 00:57:16.580
+oh, sorry. Yeah. We have a middleware implemented
+
+00:57:16.580 --> 00:57:19.700
+which fills in the rec dot user with
+
+00:57:22.020 --> 00:57:43.880
+a user object. In auth. Js, we've set
+
+00:57:43.880 --> 00:57:50.840
+up a way for essentially our rec. User
+
+00:57:50.840 --> 00:57:52.600
+to be populated by whatever is stored in
+
+00:57:52.600 --> 00:57:57.535
+our current session. So here we'll just do
+
+00:57:57.535 --> 00:58:04.495
+rec. Userid. And then our name is going
+
+00:58:04.495 --> 00:58:10.110
+to be the name of the Rectal user
+
+00:58:10.110 --> 00:58:27.835
+as well. Yeah, so just to recap, the
+
+00:58:27.835 --> 00:58:30.235
+recipient and content are coming from rec. Body
+
+00:58:30.235 --> 00:58:33.915
+and then the sender is coming from rec
+
+00:58:33.915 --> 00:58:43.330
+dot user. Moving on, we're going to be
+
+00:58:43.330 --> 00:58:47.890
+doing 4.2. Now we're going be calling the
+
+00:58:47.890 --> 00:58:51.955
+apimessage endpoint from the front end. This will
+
+00:58:51.955 --> 00:58:58.275
+just be a new post input. And here
+
+00:58:58.275 --> 00:59:02.355
+we have a value. And the value is
+
+00:59:05.210 --> 00:59:06.810
+the content of the message that we want
+
+00:59:06.810 --> 00:59:10.810
+to post. And then we want to build
+
+00:59:10.810 --> 00:59:13.530
+a message object. So we should think about
+
+00:59:13.530 --> 00:59:18.410
+what fields this message object has and then
+
+00:59:17.475 --> 00:59:20.755
+we'll call the endpoint using the post function.
+
+00:59:21.875 --> 00:59:24.115
+Again, I'll give you guys a few minutes
+
+00:59:24.115 --> 00:59:26.675
+to do that. Let us know if you
+
+00:59:26.675 --> 01:01:42.265
+have any questions. Okay. I will be doing
+
+01:01:42.265 --> 01:01:45.785
+this step up on the board so everybody
+
+01:01:45.785 --> 01:01:50.665
+can see. We want to just call the
+
+01:01:50.665 --> 01:01:57.380
+post function with this endpoint. And the field
+
+01:01:57.380 --> 01:02:01.860
+that we need to feed in is a
+
+01:02:01.860 --> 01:02:06.740
+message object. Value is essentially like the content
+
+01:02:06.740 --> 01:02:21.735
+of our message. So we can start by
+
+01:02:21.735 --> 01:02:25.090
+filling in the content, which is just value.
+
+01:02:27.810 --> 01:02:30.850
+And then the other thing that a message
+
+01:02:30.850 --> 01:02:49.955
+object needs is this sender. Oh, wait. Sorry.
+
+01:02:50.035 --> 01:02:52.515
+The other thing that the slash api slash
+
+01:02:52.515 --> 01:02:54.540
+message thing needs, I think I might have
+
+01:02:54.540 --> 01:02:55.820
+confused it a little bit, but we do
+
+01:02:55.820 --> 01:02:57.740
+need a content and a recipient here. And
+
+01:02:57.740 --> 01:02:59.580
+the recipient is going to be user object.
+
+01:03:05.900 --> 01:03:08.060
+For now, we'll just fill in the recipient
+
+01:03:08.060 --> 01:03:44.195
+with All Chat. Okay. Yeah. So for now,
+
+01:03:44.195 --> 01:03:47.370
+we'll just send every message that we have
+
+01:03:47.370 --> 01:03:50.090
+to All Chat since we haven't implemented individual
+
+01:03:50.090 --> 01:03:55.530
+chats yet. But hopefully now we should be
+
+01:03:55.530 --> 01:04:00.605
+able to post messages to the server. We
+
+01:04:00.845 --> 01:04:13.500
+probably won't get a response yet. How this
+
+01:04:13.500 --> 01:04:25.980
+will basically work, hopefully. Yeah, I'm seeing peoples
+
+01:04:25.980 --> 01:04:40.185
+already. I'm kind of talking into the void
+
+01:04:40.185 --> 01:04:41.705
+right now because I'm not getting a response
+
+01:04:41.705 --> 01:04:44.170
+back from the server. But if I refresh,
+
+01:04:44.250 --> 01:04:48.410
+then hopefully I do see my message here.
+
+01:04:48.570 --> 01:04:53.770
+Yeah. Cool. Yay. So just to recap, what
+
+01:04:53.770 --> 01:04:59.555
+we did was we implemented this API request
+
+01:04:59.555 --> 01:05:05.075
+in slash message. And then on the left
+
+01:05:05.075 --> 01:05:08.275
+hand side we are posting to sorry, we're
+
+01:05:08.275 --> 01:05:12.195
+calling the post request with the contents of
+
+01:05:12.195 --> 01:05:15.610
+the we're feeding in a content and a
+
+01:05:15.610 --> 01:05:17.690
+recipient. And then on the right hand side,
+
+01:05:17.690 --> 01:05:20.490
+we're receiving this post request from the client.
+
+01:05:25.225 --> 01:05:28.265
+Sorry, the client feeds us in the content
+
+01:05:28.265 --> 01:05:31.385
+and the recipient of the message and we
+
+01:05:31.385 --> 01:05:33.305
+need to fill in from our side the
+
+01:05:33.305 --> 01:05:38.900
+sender using the rec dot user field of
+
+01:05:38.900 --> 01:05:42.740
+the request. And then we save the message
+
+01:05:42.740 --> 01:05:46.980
+to the database so that it persists. Yeah.
+
+01:05:47.060 --> 01:05:59.005
+Okay. So here's the solution here. So you
+
+01:05:59.005 --> 01:06:00.765
+can see the quote unquote final product of
+
+01:06:00.765 --> 01:06:02.525
+the workshop. If you just check out workshop
+
+01:06:02.525 --> 01:06:09.360
+six complete. And coming up we're going to
+
+01:06:09.360 --> 01:06:13.840
+make Chatbook Live Update. So the server will
+
+01:06:13.840 --> 01:06:16.960
+be able to tell all the clients that
+
+01:06:16.960 --> 01:06:20.240
+it just received a message and then all
+
+01:06:20.240 --> 01:06:22.585
+the clients will be able to see the
+
+01:06:22.585 --> 01:06:27.145
+message directly on the client. For now, as
+
+01:06:27.145 --> 01:06:32.025
+you can see, if I just type something
+
+01:06:32.025 --> 01:06:41.530
+in here, I will not get anything back
+
+01:06:41.530 --> 01:06:43.530
+from the server nor will I see my
+
+01:06:43.530 --> 01:06:49.005
+message reposted here. But we will be working
+
+01:06:49.005 --> 01:06:53.405
+on that in the next workshop. It's kind
+
+01:06:53.405 --> 01:06:54.845
+of a hassle to have to refresh every
+
+01:06:54.845 --> 01:06:57.325
+single time you want to see something. Yeah.
+
+01:06:57.885 --> 01:07:07.210
+Any questions before we break and transition? Okay.
+
+01:07:07.290 --> 01:07:11.610
+Yeah. We'll be transitioning then. Everyone can take
+
+01:07:11.610 --> 01:07:13.690
+a two minute stretch break while we transition
+
+01:07:13.690 --> 01:07:15.130
+to our next lecture.
