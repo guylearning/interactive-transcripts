@@ -1,0 +1,4379 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 3ef1db2b-b602-44b3-82c3-70def5949ebc
+Created: 2025-05-16T02:06:13.131Z
+Duration: 6628.467
+Channels: 1
+
+00:00:01.120 --> 00:00:05.680
+Okay. So now we'll start workshop five and
+
+00:00:05.680 --> 00:00:08.080
+we'll implement the whole Google sign in process
+
+00:00:08.080 --> 00:00:11.120
+flow that Annabel just showed. And we'll also
+
+00:00:11.120 --> 00:00:12.960
+add some changes to our front end and
+
+00:00:12.960 --> 00:00:16.375
+back end to support the login flow. Here's
+
+00:00:16.375 --> 00:00:18.455
+all the steps of the workshop. It's very
+
+00:00:18.455 --> 00:00:21.335
+meaty, but we'll slowly go through it together.
+
+00:00:22.535 --> 00:00:27.655
+So open up your code ID and we'll
+
+00:00:27.655 --> 00:00:34.800
+start by git resetting hard. Let's fetch all
+
+00:00:34.800 --> 00:00:37.360
+the new changes made in the remote branch.
+
+00:00:41.360 --> 00:00:44.560
+Let's check out to branch w five dash
+
+00:00:44.560 --> 00:00:53.755
+starter, And we'll do NPM install. And in
+
+00:00:53.755 --> 00:00:59.290
+two separate terminals, let's run NPM start and
+
+00:00:59.290 --> 00:01:13.405
+npm run dev. Okay. And once you've done
+
+00:01:13.405 --> 00:01:15.325
+that, let's open up nav bar dot j
+
+00:01:15.325 --> 00:01:17.805
+s x to look at some changes we've
+
+00:01:17.805 --> 00:01:32.920
+made for this workshop. So the first thing
+
+00:01:32.920 --> 00:01:34.840
+you'll notice is that we have a new
+
+00:01:34.840 --> 00:01:36.520
+sign in button in our nav bar that
+
+00:01:36.520 --> 00:01:39.405
+we didn't have before. And in nav bar
+
+00:01:39.405 --> 00:01:43.965
+dot j s x, you'll see that this
+
+00:01:43.965 --> 00:01:46.845
+is from a Google login component that's provided
+
+00:01:46.845 --> 00:01:50.045
+to us by the React OAuth Google Library.
+
+00:01:50.445 --> 00:01:52.365
+And this is a login component that Google
+
+00:01:52.365 --> 00:01:54.420
+provides for us in their library that will
+
+00:01:54.420 --> 00:01:59.700
+handle the login process for us. So upon
+
+00:01:59.700 --> 00:02:02.580
+a successful login, we'll also call the handle
+
+00:02:02.580 --> 00:02:06.275
+login function, which we have a skeleton for
+
+00:02:06.275 --> 00:02:08.835
+here and we haven't filled it out yet,
+
+00:02:08.835 --> 00:02:10.675
+so all we have is a console log
+
+00:02:10.675 --> 00:02:13.075
+of the response that the Google auth server
+
+00:02:13.075 --> 00:02:19.520
+sends to us. So another change that we've
+
+00:02:19.520 --> 00:02:21.680
+made is an index dot j s x.
+
+00:02:22.240 --> 00:02:25.280
+To be able to send these requests to
+
+00:02:25.280 --> 00:02:28.240
+Google OAuth server, the Google OAuth server has
+
+00:02:28.240 --> 00:02:31.165
+to recognize us as a valid user, and
+
+00:02:31.165 --> 00:02:34.125
+that's done through the Google client ID. So
+
+00:02:34.125 --> 00:02:36.125
+anyone can make a Google client ID for
+
+00:02:36.125 --> 00:02:38.365
+their web application, and this is like a
+
+00:02:38.365 --> 00:02:40.685
+username for our web app, and it allows
+
+00:02:40.685 --> 00:02:43.645
+the Google server to recognize our application as
+
+00:02:43.645 --> 00:02:45.805
+a valid user so that we can make
+
+00:02:45.805 --> 00:02:48.770
+these requests the server and get responses back.
+
+00:02:49.010 --> 00:02:50.610
+So what we've done with the Google client
+
+00:02:50.610 --> 00:02:53.410
+ID is that we've wrapped our entire web
+
+00:02:53.410 --> 00:02:56.370
+application, which is in the router provider, with
+
+00:02:56.370 --> 00:02:58.770
+a Google OAuth provider, and we pass in
+
+00:02:58.770 --> 00:03:00.290
+the client ID so that every time we
+
+00:03:00.290 --> 00:03:02.815
+make a request to the server of the
+
+00:03:02.815 --> 00:03:06.015
+Google sorry, the Google server, it'll pass this
+
+00:03:06.015 --> 00:03:08.975
+Google client ID through. So what does this
+
+00:03:08.975 --> 00:03:13.055
+look like? So before we have our client
+
+00:03:13.055 --> 00:03:15.935
+and server sending requests and responses back to
+
+00:03:15.935 --> 00:03:19.180
+each other, but when we think of this
+
+00:03:19.180 --> 00:03:22.300
+in terms of the Google client oh, sorry,
+
+00:03:22.300 --> 00:03:24.300
+the Google server, we can think of our
+
+00:03:24.300 --> 00:03:26.620
+entire web application of a client as a
+
+00:03:26.620 --> 00:03:30.780
+client, and instead, our entire web application is
+
+00:03:30.780 --> 00:03:33.615
+now sending requests to the Google OAuth server.
+
+00:03:37.615 --> 00:03:40.895
+Okay. So to recap, the Google client ID
+
+00:03:40.895 --> 00:03:43.215
+allows us to access the Google auth API
+
+00:03:43.215 --> 00:03:45.670
+in the Google server. It tells us what
+
+00:03:45.670 --> 00:03:48.150
+our app is called and its URL, and
+
+00:03:48.150 --> 00:03:49.830
+later on, you'll see that both the front
+
+00:03:49.830 --> 00:03:51.270
+end and back end will need the client
+
+00:03:51.270 --> 00:03:53.990
+ID because if you remember, the front end
+
+00:03:53.990 --> 00:03:56.870
+will handle the login process through the Google
+
+00:03:56.870 --> 00:03:59.745
+server endpoint, but in our server back end,
+
+00:03:59.745 --> 00:04:01.905
+we'll also need to verify the token once
+
+00:04:01.905 --> 00:04:03.265
+it gets sent back to us. So we'll
+
+00:04:03.265 --> 00:04:05.025
+need the client ID again in the back
+
+00:04:05.025 --> 00:04:08.065
+end. And this isn't secret information, so it's
+
+00:04:08.065 --> 00:04:10.465
+okay to commit it to git. So for
+
+00:04:10.465 --> 00:04:14.145
+now, an index.jsx will all share the same
+
+00:04:13.590 --> 00:04:16.070
+Google client ID, but later on, you'll have
+
+00:04:16.070 --> 00:04:17.910
+to make your own for your own web
+
+00:04:17.910 --> 00:04:19.750
+lab project and we'll go over how to
+
+00:04:19.750 --> 00:04:27.335
+do that in our deployment lecture. Okay. So
+
+00:04:27.575 --> 00:04:29.735
+let's look at what logging in looks like
+
+00:04:29.735 --> 00:04:32.215
+so far. If I go back to my
+
+00:04:32.215 --> 00:04:35.495
+web sorry, my cat book application, I can
+
+00:04:35.495 --> 00:04:43.580
+sign in with Google. Once I'm signed in,
+
+00:04:43.980 --> 00:04:46.060
+I see the same sign in button, which
+
+00:04:46.060 --> 00:04:48.700
+is not what we want. We want the
+
+00:04:48.700 --> 00:04:50.780
+nav bar to show the login button when
+
+00:04:50.780 --> 00:04:53.020
+we're logged out and the log out button
+
+00:04:53.020 --> 00:04:55.615
+when we're logged in. So take a moment
+
+00:04:55.615 --> 00:04:57.695
+to think about how we can do this.
+
+00:05:01.215 --> 00:05:02.895
+And feel free to talk to your neighbors.
+
+00:05:20.100 --> 00:05:25.315
+Okay. Does anyone wanna try answering the question?
+
+00:05:28.755 --> 00:05:31.315
+No. That's okay too. What we can do
+
+00:05:31.315 --> 00:05:33.475
+is we can keep a react state in
+
+00:05:33.475 --> 00:05:35.155
+our nav bar to keep track of when
+
+00:05:35.155 --> 00:05:37.230
+we're logged in. So what we'll do is
+
+00:05:37.230 --> 00:05:39.550
+we'll create a react state called logged in.
+
+00:05:41.310 --> 00:05:45.470
+So let's implement our handle login function. So
+
+00:05:45.470 --> 00:05:47.630
+first, let's keep track of a login state
+
+00:05:47.630 --> 00:05:51.855
+using called logged in. So navigate back to
+
+00:05:51.855 --> 00:05:58.335
+navbar.jsx, and at the very top, we'll wanna
+
+00:05:58.655 --> 00:06:00.335
+use the use state hook so that we
+
+00:06:00.335 --> 00:06:03.935
+can create a login state. So do const
+
+00:06:04.780 --> 00:06:10.140
+logged in, set logged in. Oh, we'll have
+
+00:06:10.140 --> 00:06:13.180
+this be a use state and we'll wanna
+
+00:06:13.180 --> 00:06:17.455
+start the login state as false because otherwise
+
+00:06:17.455 --> 00:06:21.295
+authenticated, the user should be logged out. So
+
+00:06:21.375 --> 00:06:23.295
+we now have a logged in state that
+
+00:06:23.295 --> 00:06:28.575
+is initialized to false. So now what we'll
+
+00:06:28.575 --> 00:06:31.940
+wanna do is once the Google login component
+
+00:06:31.940 --> 00:06:35.060
+returns on success, then our front end should
+
+00:06:35.060 --> 00:06:37.540
+know, oh, now we're logged in. So it
+
+00:06:37.540 --> 00:06:39.700
+calls the handle login function and what we
+
+00:06:39.700 --> 00:06:41.780
+wanna do now is in the handle login
+
+00:06:41.780 --> 00:06:45.965
+function. We'll wanna call set logged in, And
+
+00:06:45.965 --> 00:06:52.765
+now we wanna set logged into true. So
+
+00:06:52.765 --> 00:07:13.220
+that's what you should have so far. Thumbs
+
+00:07:13.220 --> 00:07:34.220
+up if you need more time. Alright. So
+
+00:07:34.220 --> 00:07:36.540
+now we'll move on to the next step.
+
+00:07:37.660 --> 00:07:39.900
+So now our web our front end knows
+
+00:07:39.900 --> 00:07:42.905
+once we're logged in because once handle login
+
+00:07:42.905 --> 00:07:44.905
+is called, we'll set the login react state
+
+00:07:44.905 --> 00:07:48.825
+to true. Oh, I just gave you the
+
+00:07:48.825 --> 00:07:51.465
+answer. Yeah, just to reiterate, once the Google
+
+00:07:51.465 --> 00:07:55.570
+login component returns in on success, it'll call
+
+00:07:55.570 --> 00:07:58.210
+the handle login function which now sets logged
+
+00:07:58.210 --> 00:08:02.290
+in to true. So we wanna do some
+
+00:08:02.450 --> 00:08:06.610
+something similar for the log out function. Here,
+
+00:08:06.610 --> 00:08:08.450
+for the login, we already have a Google
+
+00:08:08.450 --> 00:08:11.785
+login component that renders a button for us,
+
+00:08:11.945 --> 00:08:15.705
+but unfortunately, Google's library doesn't have a logout
+
+00:08:15.705 --> 00:08:18.745
+function, so we'll just use the button property
+
+00:08:19.385 --> 00:08:22.425
+and instead of having an on success attribute
+
+00:08:22.425 --> 00:08:24.980
+that calls the handle login function, you'll wanna
+
+00:08:24.980 --> 00:08:27.700
+write an on click attribute that calls the
+
+00:08:27.700 --> 00:08:30.740
+handle logout function. So for this part of
+
+00:08:30.740 --> 00:08:34.100
+the workshop, you'll wanna add a logout button
+
+00:08:34.260 --> 00:08:37.460
+using button. On click, it should call a
+
+00:08:37.460 --> 00:08:40.225
+handle logout function, and you want to define
+
+00:08:40.225 --> 00:08:42.305
+a handle log out function that performs an
+
+00:08:42.305 --> 00:08:45.105
+analogous task to handle log in, but instead
+
+00:08:45.105 --> 00:08:48.945
+of setting logged into false, sorry, instead of
+
+00:08:48.945 --> 00:08:51.345
+setting logged into true, it should set it
+
+00:08:51.345 --> 00:08:55.840
+back to false. So give that a try
+
+00:08:55.840 --> 00:08:57.360
+and feel free to hop on the queue
+
+00:08:57.360 --> 00:11:02.920
+if you need any help. Okay. Raise your
+
+00:11:02.920 --> 00:11:04.760
+hand if you need another minute or two.
+
+00:11:23.700 --> 00:11:25.300
+Okay. Let's go over how we can do
+
+00:11:25.300 --> 00:11:28.900
+that. So first, we'll start off by adding
+
+00:11:28.900 --> 00:11:31.860
+a new button for log out. Under the
+
+00:11:31.860 --> 00:11:34.765
+Google login component, I'll just make a button
+
+00:11:34.765 --> 00:11:37.965
+component here. And just call it log out.
+
+00:11:38.765 --> 00:11:41.245
+And on click, let's have it call our
+
+00:11:41.245 --> 00:11:45.325
+handle log out function. Which we need to
+
+00:11:45.325 --> 00:11:52.640
+define, and we'll do that right here. So
+
+00:11:52.640 --> 00:11:57.360
+let's define a handle log out function. And.
+
+00:12:00.160 --> 00:12:04.695
+You can console log logged out. And then
+
+00:12:04.695 --> 00:12:07.095
+we'll wanna set logged in back to false.
+
+00:12:09.415 --> 00:12:11.415
+So now if we go back to our
+
+00:12:11.415 --> 00:12:17.540
+local host. Yeah. If you go back to
+
+00:12:17.540 --> 00:12:19.860
+our local host, we have both a login
+
+00:12:19.860 --> 00:12:26.500
+function and a logout function. So now what
+
+00:12:26.500 --> 00:12:29.380
+we wanna do is we'll want to conditionally
+
+00:12:29.380 --> 00:12:32.695
+render the login and logout buttons. So we
+
+00:12:32.695 --> 00:12:34.535
+wanted to make it show Google login when
+
+00:12:34.535 --> 00:12:36.615
+the user isn't logged in and we wanted
+
+00:12:36.615 --> 00:12:37.815
+to show the log out button when the
+
+00:12:37.815 --> 00:12:41.255
+user's logged in. So here's a hint, here's
+
+00:12:41.255 --> 00:12:43.495
+a template for how you can do conditional
+
+00:12:43.495 --> 00:12:48.350
+rendering in the return. So give that a
+
+00:12:48.350 --> 00:12:51.230
+try and let us know if you have
+
+00:12:51.230 --> 00:13:23.340
+any questions. Just to clarify the notation for
+
+00:13:23.340 --> 00:13:27.340
+the conditional rendering is this first line and
+
+00:13:27.580 --> 00:13:30.380
+what it's doing is saying that if the
+
+00:13:30.380 --> 00:13:33.535
+condition is true, then render x, otherwise render
+
+00:13:33.535 --> 00:14:21.110
+y. But you wanna use this notation. Okay.
+
+00:14:21.110 --> 00:14:22.950
+Now let's go over how we can conditionally
+
+00:14:22.950 --> 00:14:26.470
+render the login and log out buttons. So
+
+00:14:26.470 --> 00:14:29.190
+here, in the return, we have two buttons
+
+00:14:29.190 --> 00:14:31.925
+side by side. But what we'll wanna do
+
+00:14:31.925 --> 00:14:34.725
+is we wanna check if logged in our
+
+00:14:34.725 --> 00:14:39.445
+logged in state is true. So let's wrap
+
+00:14:39.445 --> 00:14:43.605
+these in brackets. You wanna check the condition
+
+00:14:43.605 --> 00:14:45.880
+is logged in true. So we'll do logged
+
+00:14:45.880 --> 00:14:48.840
+in question mark. And then we'll have two
+
+00:14:48.840 --> 00:14:52.120
+two things that can render. So if logged
+
+00:14:52.120 --> 00:14:54.840
+in is true, we're gonna wanna render the
+
+00:14:54.840 --> 00:14:57.480
+log out button. So we can paste that
+
+00:14:57.480 --> 00:15:03.615
+into the first argument. And the second thing
+
+00:15:03.615 --> 00:15:05.935
+renders if logged in is false. So if
+
+00:15:05.935 --> 00:15:08.175
+we're logged out, we'll wanna render the log
+
+00:15:08.175 --> 00:15:12.015
+in component. So that it looks like that.
+
+00:15:12.015 --> 00:15:18.710
+Okay. If you didn't catch that, here's the
+
+00:15:18.710 --> 00:15:22.710
+solution. I'll give you some time to copy
+
+00:15:22.710 --> 00:16:01.045
+that. Okay. Let's take a look at what
+
+00:16:01.045 --> 00:16:05.685
+we have now on local host 5173. So
+
+00:16:05.685 --> 00:16:08.805
+now I have a sign in button, and
+
+00:16:08.805 --> 00:16:13.360
+if I'm signed in, it'll now show up
+
+00:16:13.360 --> 00:16:16.000
+the log out button. So with this step,
+
+00:16:16.000 --> 00:16:17.680
+we now have a working log in and
+
+00:16:17.680 --> 00:16:20.560
+log out button, and they'll conditionally render depending
+
+00:16:20.560 --> 00:16:22.240
+on the new react state that we've added
+
+00:16:22.240 --> 00:16:24.080
+in nav bar dot j s x called
+
+00:16:24.080 --> 00:16:27.360
+logged in. And I think we'll break free
+
+00:16:27.360 --> 00:16:32.735
+lunch. So just to recap, in our starter
+
+00:16:32.735 --> 00:16:36.015
+step, we implemented working login log out buttons
+
+00:16:36.015 --> 00:16:38.015
+and we define a login state so that
+
+00:16:38.015 --> 00:16:40.415
+we can keep track in the front end
+
+00:16:40.415 --> 00:16:44.800
+of whether we're logged in or not. So
+
+00:16:44.800 --> 00:16:46.960
+now, once we're logged in, we should be
+
+00:16:46.960 --> 00:16:48.720
+able to see a log out button, and
+
+00:16:48.720 --> 00:16:50.160
+if we're logged out, we should be able
+
+00:16:50.160 --> 00:16:53.760
+to see a log in button. So now
+
+00:16:53.760 --> 00:16:56.400
+that users can log in, let's store data
+
+00:16:56.400 --> 00:16:59.895
+about the users that use Catbook. Take ten
+
+00:16:59.895 --> 00:17:01.655
+seconds to think about how we can do
+
+00:17:01.655 --> 00:17:10.695
+that. Does anyone wanna take a stab at
+
+00:17:10.695 --> 00:17:20.000
+it? No. And that's okay too. Let's add
+
+00:17:20.000 --> 00:17:22.400
+a user collection into our Mongo database to
+
+00:17:22.400 --> 00:17:24.000
+keep track of all the users that use
+
+00:17:24.000 --> 00:17:28.065
+Catbook. So as we went over in the
+
+00:17:28.065 --> 00:17:30.785
+database lecture, we wanted to find a user
+
+00:17:30.785 --> 00:17:33.185
+model and schema in our back end. So
+
+00:17:33.185 --> 00:17:35.185
+now on if you're checked out to step
+
+00:17:35.185 --> 00:17:37.345
+one, you should see a new file in
+
+00:17:37.345 --> 00:17:40.145
+the models folder in server called user dot
+
+00:17:40.145 --> 00:17:42.860
+j s. You can copy and paste the
+
+00:17:42.860 --> 00:17:45.340
+template from story dot j s, and what
+
+00:17:45.340 --> 00:17:47.740
+you'll wanna modify is the names and collections
+
+00:17:47.740 --> 00:17:50.540
+being passed in. And for this schema, we'll
+
+00:17:50.540 --> 00:17:52.860
+wanna have two fields. Let's keep track of
+
+00:17:52.860 --> 00:17:55.340
+a name field and a Google ID field
+
+00:17:55.340 --> 00:17:58.105
+for each user. So take a few minutes
+
+00:17:58.105 --> 00:18:00.985
+to implement the model in schema and user
+
+00:18:00.985 --> 00:19:01.135
+dot j s. Raise your hand if you
+
+00:19:01.135 --> 00:19:21.915
+need more time. Okay. Let's go through how
+
+00:19:21.915 --> 00:19:23.995
+we can add our user model and schema
+
+00:19:23.995 --> 00:19:26.475
+to the back end. So first, I'll go
+
+00:19:26.475 --> 00:19:28.875
+into story dot j s because we already
+
+00:19:29.355 --> 00:19:32.390
+wrote a story schema and exported it there,
+
+00:19:32.390 --> 00:19:34.470
+so I'll use that as a template. So
+
+00:19:34.470 --> 00:19:36.710
+what I'm doing is I'm copy pasting that
+
+00:19:36.790 --> 00:19:40.310
+into user dot j s. So in our
+
+00:19:40.310 --> 00:19:43.430
+first line, we're requiring Mongoose and instead of
+
+00:19:43.430 --> 00:19:46.255
+a story schema, we you wanna define a
+
+00:19:46.255 --> 00:19:50.815
+user schema and we wanna have two fields.
+
+00:19:50.975 --> 00:19:53.615
+Let's have a name field with type string
+
+00:19:54.335 --> 00:19:56.495
+and a Google ID field with type string.
+
+00:19:59.130 --> 00:20:03.530
+And instead of structuring the story collection, we're
+
+00:20:03.530 --> 00:20:06.090
+using this to structure the user collection. So
+
+00:20:06.090 --> 00:20:08.650
+you should replace this with user, and we
+
+00:20:08.650 --> 00:20:10.890
+want this user collection to have structure user
+
+00:20:10.890 --> 00:20:15.885
+schema. So now we have we should have
+
+00:20:15.885 --> 00:20:19.245
+a structured user collection that follows the schema.
+
+00:20:19.965 --> 00:20:26.050
+So I have the solution right here. Feel
+
+00:20:26.050 --> 00:20:27.890
+free to check out to step two if
+
+00:20:27.890 --> 00:20:53.190
+you missed any of that. Raise your hand
+
+00:20:53.190 --> 00:20:58.550
+if you need more time. No? Okay. Let's
+
+00:20:58.550 --> 00:21:05.315
+move on to step two then. So I'll
+
+00:21:05.315 --> 00:21:07.155
+check out the step two and we'll all
+
+00:21:07.155 --> 00:21:09.795
+wanna do this because from our side, we've
+
+00:21:09.795 --> 00:21:11.315
+made a few changes that you didn't have
+
+00:21:11.315 --> 00:21:13.795
+originally in step one. So go to your
+
+00:21:13.795 --> 00:21:17.955
+terminal. And we wanna check out w five
+
+00:21:18.035 --> 00:21:23.900
+dash step two. If you made any changes,
+
+00:21:23.900 --> 00:21:25.900
+you'll want to reset hard first and we
+
+00:21:25.900 --> 00:21:28.060
+can check out to w five step two.
+
+00:21:28.780 --> 00:21:34.335
+If it says that you're behind by commit,
+
+00:21:34.335 --> 00:21:37.855
+you just wanna git pull. So let's talk
+
+00:21:37.855 --> 00:21:40.415
+about some changes we've made to the workshop.
+
+00:21:41.695 --> 00:21:44.975
+First is to survey dot j s. As
+
+00:21:44.975 --> 00:21:48.050
+in Annabel's lecture, we're now using a session
+
+00:21:48.050 --> 00:21:51.570
+to persist authentication. So once the user's logged
+
+00:21:51.570 --> 00:21:54.370
+in, auth dot js will set up a
+
+00:21:54.370 --> 00:21:57.650
+session for us, which is persisted by express
+
+00:21:57.650 --> 00:21:59.810
+dot js, and this will allow the user
+
+00:21:59.810 --> 00:22:02.130
+to stay logged in even after we've refreshed.
+
+00:22:11.805 --> 00:22:14.285
+Another change we've made is that now we
+
+00:22:14.285 --> 00:22:16.525
+have a file called auth dot j s.
+
+00:22:17.350 --> 00:22:18.870
+And this is a library that the web
+
+00:22:18.870 --> 00:22:20.790
+lab staff have written for you, and we've
+
+00:22:20.790 --> 00:22:22.550
+provided a few functions. So let's go through
+
+00:22:22.550 --> 00:22:27.510
+them. First, we have a login function. The
+
+00:22:27.510 --> 00:22:29.990
+login function is in the back end server,
+
+00:22:30.230 --> 00:22:32.655
+and once the front end gets its token
+
+00:22:32.655 --> 00:22:34.895
+from the Google auth server, it can send
+
+00:22:34.895 --> 00:22:37.135
+this token to the back end. And the
+
+00:22:37.135 --> 00:22:40.975
+back end will take this token, and this
+
+00:22:40.975 --> 00:22:44.095
+login function, it'll take the token from the
+
+00:22:44.095 --> 00:22:47.490
+request body. It'll verify with Google to see
+
+00:22:47.490 --> 00:22:50.290
+if this is a legit token. If it
+
+00:22:50.290 --> 00:22:52.850
+is a good a legit token, it'll create
+
+00:22:52.850 --> 00:22:55.890
+a new user if it's the user's first
+
+00:22:55.890 --> 00:23:00.370
+time logging in. And if it's an invalid
+
+00:23:00.370 --> 00:23:02.935
+token, it'll give us an error and tell
+
+00:23:02.935 --> 00:23:06.215
+us that we failed to log in. We've
+
+00:23:06.215 --> 00:23:08.615
+also written for you a log out function.
+
+00:23:08.935 --> 00:23:12.135
+Oh, sorry. In the log in function, if
+
+00:23:12.135 --> 00:23:14.860
+it's a valid token, we also set the
+
+00:23:14.860 --> 00:23:16.940
+session user to this user so that the
+
+00:23:16.940 --> 00:23:18.940
+user can be persisted in the session and
+
+00:23:18.940 --> 00:23:21.100
+we can stay logged in even after we
+
+00:23:21.100 --> 00:23:24.620
+reload. And what the log out function does
+
+00:23:24.620 --> 00:23:26.700
+is that it'll set this rec dot session
+
+00:23:26.700 --> 00:23:30.065
+user to null, so that if the user
+
+00:23:30.065 --> 00:23:32.305
+clicks the log out button, now the session
+
+00:23:32.305 --> 00:23:35.105
+doesn't have a user field in it, so
+
+00:23:35.105 --> 00:23:37.585
+authentication is no longer persisted and a new
+
+00:23:37.585 --> 00:23:41.000
+user can log in. And you'll also see
+
+00:23:41.000 --> 00:23:43.960
+that we have a new field called rec
+
+00:23:43.960 --> 00:23:46.440
+dot user, and later on, we'll see how
+
+00:23:46.440 --> 00:23:48.600
+we can use this to access the user
+
+00:23:48.600 --> 00:23:52.485
+information from any API route. Let's look at
+
+00:23:52.485 --> 00:23:55.685
+a diagram of what's happening. So remember on
+
+00:23:55.685 --> 00:23:57.845
+our front end, we had our Google login
+
+00:23:57.845 --> 00:24:01.925
+component, which allows you to access the Google
+
+00:24:01.925 --> 00:24:04.485
+auth server, which will return a success token
+
+00:24:04.485 --> 00:24:07.220
+if you've logged in through Google. And in
+
+00:24:07.220 --> 00:24:09.460
+the back end, we've just written a login
+
+00:24:09.460 --> 00:24:12.180
+function that will take a token and check
+
+00:24:12.180 --> 00:24:14.340
+with the Google auth library to verify if
+
+00:24:14.340 --> 00:24:17.060
+this is a current a valid token. So
+
+00:24:17.060 --> 00:24:18.900
+take a few minutes to turn and talk
+
+00:24:19.095 --> 00:24:21.175
+and think about how we can get this
+
+00:24:21.175 --> 00:24:23.015
+token from the front end all the way
+
+00:24:23.015 --> 00:24:24.615
+to the back end, so that we can
+
+00:24:24.615 --> 00:24:57.105
+actually use our auth login function. Okay. Does
+
+00:24:57.105 --> 00:25:02.020
+anyone wanna take a stab at it? Feel
+
+00:25:02.020 --> 00:25:05.460
+free to raise your hand. Feel free to
+
+00:25:05.460 --> 00:25:07.380
+not. What we can do is we can
+
+00:25:07.380 --> 00:25:10.100
+make a post request. So we can define
+
+00:25:10.100 --> 00:25:12.420
+a new endpoint in our server called API
+
+00:25:12.420 --> 00:25:14.500
+login, and what the front end can do
+
+00:25:14.500 --> 00:25:16.165
+is make a post request and send the
+
+00:25:16.165 --> 00:25:17.845
+token all the way to our back end.
+
+00:25:19.285 --> 00:25:22.565
+So similarly for our logout function, on our
+
+00:25:22.565 --> 00:25:24.485
+front end, the user can now click a
+
+00:25:24.485 --> 00:25:28.805
+logout button and it'll change the front end
+
+00:25:28.805 --> 00:25:32.600
+to have a login button now. And what
+
+00:25:32.600 --> 00:25:34.120
+we wanna do is also tell the back
+
+00:25:34.120 --> 00:25:35.800
+end that we wanna log out so in
+
+00:25:35.800 --> 00:25:38.040
+the server, we can get rid of the
+
+00:25:38.040 --> 00:25:42.120
+session user and this is done by calling
+
+00:25:42.120 --> 00:25:45.995
+the auth layout function. So similarly, we can
+
+00:25:45.995 --> 00:25:48.315
+make another post request and tell the back
+
+00:25:48.315 --> 00:25:52.955
+end that we want to log out. So
+
+00:25:52.955 --> 00:25:54.875
+that's what you'll be doing next. We want
+
+00:25:54.875 --> 00:25:56.235
+to connect the front end to the back
+
+00:25:56.235 --> 00:25:58.540
+end using two post routes. We'll make a
+
+00:25:58.540 --> 00:26:00.700
+login post route and a log out post
+
+00:26:00.700 --> 00:26:03.180
+route. So for the first part, we can
+
+00:26:03.180 --> 00:26:07.260
+go to api.js, and you'll wanna add these
+
+00:26:07.260 --> 00:26:09.100
+two routes, which we've already written for you
+
+00:26:09.100 --> 00:26:11.275
+on this slide. And once you've added that
+
+00:26:11.275 --> 00:26:15.355
+to api.js, go to navbar.jsx on the front
+
+00:26:15.355 --> 00:26:17.595
+end, and you'll wanna call you wanna post
+
+00:26:17.595 --> 00:26:20.715
+these routes. And for the login route, you
+
+00:26:20.715 --> 00:26:23.450
+wanna pass a token parameter, which you can
+
+00:26:23.450 --> 00:26:26.490
+get by calling res. Credential. And for the
+
+00:26:26.490 --> 00:26:28.250
+log out function, you'll just need to call
+
+00:26:28.250 --> 00:26:29.610
+the post route and you won't need to
+
+00:26:29.610 --> 00:26:32.170
+pass anything through. So take a few minutes
+
+00:26:32.170 --> 00:26:33.610
+and give that a try and feel free
+
+00:26:33.610 --> 00:26:35.050
+to hop on the queue if you have
+
+00:26:35.050 --> 00:26:43.155
+any questions. Or raise your hand and someone
+
+00:26:43.155 --> 00:28:22.700
+will come. Raise your hand if you need
+
+00:28:22.700 --> 00:28:28.060
+more time. Okay. Let's go through how we
+
+00:28:28.060 --> 00:28:30.940
+can do that. So in API.JS, you should've
+
+00:28:30.940 --> 00:28:34.635
+just added two new post endpoints, router.post, and
+
+00:28:34.635 --> 00:28:37.435
+this is the login endpoint. And what this
+
+00:28:37.435 --> 00:28:39.355
+will do is call the auth login function
+
+00:28:39.355 --> 00:28:42.075
+that we've already written for you, and we'll
+
+00:28:42.075 --> 00:28:47.440
+do something similar for log out. So this
+
+00:28:47.440 --> 00:28:49.920
+is in our back end server, and now
+
+00:28:49.920 --> 00:28:51.760
+we wanna call these endpoints from the front
+
+00:28:51.760 --> 00:28:53.600
+end. And we wanna do that in nap
+
+00:28:53.600 --> 00:28:55.600
+bar dot j s x when handle login
+
+00:28:55.600 --> 00:28:58.640
+and handle log out are called. So first,
+
+00:28:58.640 --> 00:29:01.195
+in handle login, we can call the post
+
+00:29:01.195 --> 00:29:03.355
+end point to log in, and we'll do
+
+00:29:03.355 --> 00:29:05.995
+that by calling post to slash API slash
+
+00:29:05.995 --> 00:29:10.715
+log in. And wait wait. First, let me
+
+00:29:10.715 --> 00:29:14.360
+define a variable called user token, and we
+
+00:29:14.360 --> 00:29:16.360
+get this by getting the response of the
+
+00:29:16.360 --> 00:29:20.040
+Google server and getting the credential parameter of
+
+00:29:20.040 --> 00:29:23.000
+that response. So after we have our user
+
+00:29:23.000 --> 00:29:25.320
+token, we can pass it to our back
+
+00:29:25.320 --> 00:29:36.035
+end. Through a token parameter, and remember that
+
+00:29:36.035 --> 00:29:39.075
+a post request is a promise, so we
+
+00:29:39.075 --> 00:29:42.650
+wanna just or we were trying to send
+
+00:29:42.650 --> 00:29:44.250
+the user back to the front end, so
+
+00:29:44.250 --> 00:30:07.345
+let's console log. I'll post the solutions up
+
+00:30:07.345 --> 00:30:10.200
+so you can also follow along there. And
+
+00:30:10.200 --> 00:30:12.120
+for handle log out, we don't have to
+
+00:30:12.120 --> 00:30:13.720
+pass anything to the back end because we
+
+00:30:13.720 --> 00:30:15.160
+just wanna call the end point and tell
+
+00:30:15.160 --> 00:30:16.840
+the back end that we're logged out now.
+
+00:30:16.840 --> 00:30:18.280
+So all we have to do is call
+
+00:30:18.280 --> 00:30:21.560
+post and call that to our log out
+
+00:30:22.245 --> 00:30:26.485
+endpoint. So take a second to copy that
+
+00:30:26.485 --> 00:30:32.485
+if you miss anything. Otherwise, our sign in
+
+00:30:32.485 --> 00:30:35.480
+flow should now be complete. Because now, in
+
+00:30:35.480 --> 00:30:37.320
+our front end, we have this Google login
+
+00:30:37.320 --> 00:30:39.320
+component, which will allow us to log in
+
+00:30:39.320 --> 00:30:42.680
+through Google's interface. Google should send us a
+
+00:30:42.680 --> 00:30:44.680
+token back to the front end, and now
+
+00:30:44.680 --> 00:30:46.360
+that we have a post end point slash
+
+00:30:46.360 --> 00:30:49.160
+API slash login, we can pass this token
+
+00:30:49.160 --> 00:30:51.055
+to the back end, which will call auth
+
+00:30:51.055 --> 00:30:52.735
+dot login and do some stuff in the
+
+00:30:52.735 --> 00:30:56.095
+server to help us persist the authentication in
+
+00:30:56.095 --> 00:30:58.655
+a session. And once we click the logout
+
+00:30:58.655 --> 00:31:07.230
+function, we'll call the API logout endpoint, API
+
+00:31:02.190 --> 00:31:04.350
+which we'll call auth logout so that we
+
+00:31:04.350 --> 00:31:08.990
+can remove the user from the session. And
+
+00:31:08.990 --> 00:31:14.110
+now we'll move on to step three. Oh,
+
+00:31:14.775 --> 00:31:17.815
+take a second to breathe. This workshop is
+
+00:31:17.815 --> 00:31:20.855
+very long and we'll take another break in
+
+00:31:20.855 --> 00:31:25.415
+the middle at some point. Okay. So if
+
+00:31:25.415 --> 00:31:30.120
+we go back to our cat book, let's
+
+00:31:30.120 --> 00:31:34.120
+sign in. I mean, go ahead and make
+
+00:31:34.120 --> 00:31:38.360
+a story. Hello. You make a comment as
+
+00:31:38.360 --> 00:31:43.145
+well. Here is a comment. Now you'll see
+
+00:31:43.145 --> 00:31:45.385
+that we're logged in, but it still says
+
+00:31:45.385 --> 00:31:49.705
+that we're anonymous user. That's because in our
+
+00:31:49.705 --> 00:31:54.025
+API J s, we set a variable called
+
+00:31:54.025 --> 00:31:56.470
+my name to anonymous user, so every time
+
+00:31:56.470 --> 00:31:58.790
+we're posting a story, we're just passing the
+
+00:31:58.790 --> 00:32:01.830
+string anonymous user to the database. But now
+
+00:32:01.830 --> 00:32:03.510
+that we're logged in, it'd be great if
+
+00:32:03.510 --> 00:32:05.350
+we could log the actual user's name that's
+
+00:32:05.350 --> 00:32:07.270
+logging in so that we can see who's
+
+00:32:07.270 --> 00:32:12.845
+posting these stories and comments. So let's keep
+
+00:32:12.845 --> 00:32:14.605
+track of the creators of all our stories
+
+00:32:14.605 --> 00:32:17.485
+and comments. Turn and talk or take some
+
+00:32:17.725 --> 00:32:19.405
+take a minute to think about how you
+
+00:32:19.405 --> 00:32:27.700
+might wanna implement this. For reference, before in
+
+00:32:27.700 --> 00:32:30.660
+our story field, we have creator name and
+
+00:32:30.660 --> 00:32:33.220
+content, and now we're keeping track of the
+
+00:32:33.220 --> 00:32:35.460
+users that use our website through a user
+
+00:32:35.460 --> 00:33:02.240
+ID. Okay. So what we can do is
+
+00:33:02.240 --> 00:33:04.240
+we can add a creator ID field to
+
+00:33:04.240 --> 00:33:07.005
+all our stories and common schemas so that
+
+00:33:07.005 --> 00:33:09.005
+in our database, we can keep track of
+
+00:33:09.005 --> 00:33:14.365
+this user information. So your turn. Now we
+
+00:33:14.365 --> 00:33:16.845
+wanna know the user ID associated with every
+
+00:33:16.845 --> 00:33:19.645
+story and comment. So you'll first wanna start
+
+00:33:19.645 --> 00:33:22.510
+by modifying the story schema and comment schema
+
+00:33:22.510 --> 00:33:25.230
+by adding a creator ID string. And then
+
+00:33:25.230 --> 00:33:27.230
+you'll also wanna update the post route in
+
+00:33:27.230 --> 00:33:30.750
+api.j s so that for when we're making
+
+00:33:30.750 --> 00:33:33.070
+a new story or comment, we're also specifying
+
+00:33:33.070 --> 00:33:34.590
+the ID of the user that made that
+
+00:33:34.590 --> 00:33:38.555
+story in comment. And remember that right now,
+
+00:33:38.555 --> 00:33:40.715
+we're just passing anonymous user to all the
+
+00:33:40.715 --> 00:33:43.435
+creator names, so instead of that, you wanna
+
+00:33:43.435 --> 00:33:45.995
+pass the actual user's name. And you can
+
+00:33:45.995 --> 00:35:07.245
+get this by calling rec.user. Raise your hand
+
+00:35:07.245 --> 00:35:14.445
+if you need more time for this. Okay.
+
+00:35:17.750 --> 00:35:20.310
+Let's go through how we can implement these
+
+00:35:20.310 --> 00:35:23.670
+two steps then. So first, we're gonna modify
+
+00:35:23.670 --> 00:35:27.110
+the story schema and comment schema. Let's add
+
+00:35:27.110 --> 00:35:30.150
+a creator ID field and this will be
+
+00:35:30.150 --> 00:35:34.005
+a type string And in comment dot j
+
+00:35:34.005 --> 00:35:43.285
+s, we'll do the same thing. And now,
+
+00:35:43.285 --> 00:35:46.660
+an API dot j s, When we make
+
+00:35:46.660 --> 00:35:49.940
+a post request for a story, we're gonna
+
+00:35:49.940 --> 00:35:53.700
+wanna update creator ID and we can get
+
+00:35:53.700 --> 00:35:57.860
+that from rec dot user rec dot user
+
+00:35:57.860 --> 00:36:02.345
+dot underscore ID And we'll replace creator name
+
+00:36:02.345 --> 00:36:10.425
+with rec dot user dot name. And we'll
+
+00:36:10.425 --> 00:36:14.360
+do something similar for comment or replace creator
+
+00:36:14.360 --> 00:36:18.680
+name with rack dot user dot name. And
+
+00:36:18.680 --> 00:36:21.720
+now we wanna insert a new field corresponding
+
+00:36:21.720 --> 00:36:24.360
+to the unique user that posted that comment.
+
+00:36:24.680 --> 00:36:27.185
+And we'll get that via rec dot user
+
+00:36:27.185 --> 00:36:34.545
+dot underscore ID. And here's the solution up
+
+00:36:34.545 --> 00:36:53.530
+on the slide. Let's revisit cat book. Now
+
+00:36:53.530 --> 00:36:56.205
+if I post a story, be able to
+
+00:36:56.205 --> 00:36:58.845
+see my name. Oh, we didn't wanna reload
+
+00:36:58.845 --> 00:37:06.045
+it. You log in. Okay. Hi. This is
+
+00:37:06.045 --> 00:37:11.120
+Sophie. Yep. And now, you should be able
+
+00:37:11.120 --> 00:37:13.120
+to see a name field whenever you make
+
+00:37:13.120 --> 00:37:15.840
+a story and also if you make a
+
+00:37:15.840 --> 00:37:17.680
+comment. So give that a try on your
+
+00:37:17.680 --> 00:37:20.720
+cat book interface and feel free to raise
+
+00:37:20.720 --> 00:37:43.270
+your hand if you don't see this. Yeah.
+
+00:37:47.990 --> 00:38:04.995
+Let me do that. Is that better? Okay.
+
+00:38:11.440 --> 00:38:14.000
+Okay. So now let's check out the step
+
+00:38:14.000 --> 00:38:24.615
+four if in case you missed anything. So
+
+00:38:24.615 --> 00:38:26.535
+just to reiterate, what we just did was
+
+00:38:26.535 --> 00:38:28.775
+we added a creator ID field for both
+
+00:38:28.775 --> 00:38:31.415
+the story and comment. We also replaced creator
+
+00:38:31.415 --> 00:38:34.615
+name with the name of the user that's
+
+00:38:34.775 --> 00:38:37.015
+that made the comment and story. And that
+
+00:38:37.015 --> 00:38:40.320
+should be reflected in your cat book interface.
+
+00:38:41.120 --> 00:38:42.480
+And if you wanna learn a bit more
+
+00:38:42.480 --> 00:38:44.800
+about rec where rec. User came from, you
+
+00:38:44.800 --> 00:38:46.480
+can check out the hidden slides in the
+
+00:38:46.480 --> 00:38:52.080
+slideshow. So we just saw that now we
+
+00:38:52.080 --> 00:38:54.480
+can see a name corresponding to every news
+
+00:38:54.480 --> 00:38:57.145
+story or a comment that's posted. It'd be
+
+00:38:57.145 --> 00:38:58.745
+great if we could click these names and
+
+00:38:58.745 --> 00:39:00.825
+it would take us to a profile corresponding
+
+00:39:00.825 --> 00:39:03.385
+to that user. So what we wanna do
+
+00:39:03.385 --> 00:39:05.625
+now is let's add a link so that
+
+00:39:05.625 --> 00:39:07.225
+we can click on a poster's name and
+
+00:39:07.225 --> 00:39:12.030
+view their profile. So right now, if we
+
+00:39:12.030 --> 00:39:16.030
+go to slash profile, we only have one
+
+00:39:16.030 --> 00:39:17.950
+link for this and you can get it
+
+00:39:17.950 --> 00:39:21.630
+by going to your nav bar. But what
+
+00:39:21.630 --> 00:39:23.265
+we wanna do is we we wanna create
+
+00:39:23.265 --> 00:39:26.625
+a unique URL for every user of Catbook,
+
+00:39:26.705 --> 00:39:28.785
+and we want this to have the URL
+
+00:39:28.785 --> 00:39:31.505
+slash profile slash user ID, which we just
+
+00:39:31.505 --> 00:39:35.265
+went over in Daniel's lecture. So remember that
+
+00:39:35.345 --> 00:39:37.185
+we can do this by passing in a
+
+00:39:37.185 --> 00:39:42.330
+user ID parameter into the react router path
+
+00:39:42.330 --> 00:39:46.170
+for profile. So let's do just that. Go
+
+00:39:46.170 --> 00:39:48.090
+back to v s code, and you'll wanna
+
+00:39:48.090 --> 00:39:50.250
+go to index.j s x where our react
+
+00:39:50.250 --> 00:39:54.235
+router is defined. So here we have the
+
+00:39:54.235 --> 00:39:57.035
+route for a path profile, and right now,
+
+00:39:57.035 --> 00:39:58.875
+it's a static route that only takes us
+
+00:39:58.875 --> 00:40:01.275
+to slash profile. So what we wanna do
+
+00:40:01.275 --> 00:40:04.555
+is we wanna add slash colon user ID,
+
+00:40:05.210 --> 00:40:07.850
+this becomes a dynamic route so that the
+
+00:40:07.850 --> 00:40:10.970
+profile component now accepts a user ID after
+
+00:40:10.970 --> 00:40:14.570
+the slash profile in the URL. So go
+
+00:40:14.570 --> 00:40:28.225
+ahead and do that. Okay. So just to
+
+00:40:28.225 --> 00:40:32.600
+recap, before we had the static route that
+
+00:40:32.600 --> 00:40:35.800
+slash profile, and now we no longer have
+
+00:40:35.800 --> 00:40:38.440
+a path at slash profile. So if you
+
+00:40:38.440 --> 00:40:40.760
+try to go to local host five one
+
+00:40:40.760 --> 00:40:42.840
+seven three slash profile, you should get an
+
+00:40:42.840 --> 00:40:46.280
+error. And instead, we'll now have profile pages
+
+00:40:46.280 --> 00:40:48.585
+that will generate for a slash profile slash
+
+00:40:48.585 --> 00:40:53.865
+user ID. So now that we have that
+
+00:40:53.865 --> 00:40:56.505
+link, let's make it so when clicking a
+
+00:40:56.505 --> 00:40:59.145
+name for each story, it'll take us to
+
+00:40:59.145 --> 00:41:04.140
+slash profile slash creator ID. Okay. Turn and
+
+00:41:04.140 --> 00:41:07.580
+talk. Where does creator ID come from and
+
+00:41:07.580 --> 00:41:09.740
+how can we get it in single story
+
+00:41:09.740 --> 00:41:11.980
+so that clicking on a name will take
+
+00:41:11.980 --> 00:41:15.100
+us to this link and we're able to
+
+00:41:15.100 --> 00:41:17.180
+pass creator ID into that link in single
+
+00:41:17.180 --> 00:41:59.100
+story. Okay. Did anyone figure out where we
+
+00:41:59.100 --> 00:42:02.060
+get creator ID from? Or where we can
+
+00:42:02.060 --> 00:42:10.825
+get it from? It's not yet defined. Okay.
+
+00:42:11.545 --> 00:42:15.065
+Well, so how the creator information is passed
+
+00:42:15.065 --> 00:42:18.585
+is in feed. Remember that we make a
+
+00:42:18.585 --> 00:42:21.770
+get request to slash API slash stories. And
+
+00:42:21.770 --> 00:42:24.170
+what this API endpoint does is that it
+
+00:42:24.170 --> 00:42:27.130
+sends all the stories to from the back
+
+00:42:27.130 --> 00:42:29.210
+end in the database all the way to
+
+00:42:29.210 --> 00:42:31.290
+our front end. And remember that in the
+
+00:42:31.290 --> 00:42:33.770
+previous step, we just added a new field
+
+00:42:33.770 --> 00:42:36.410
+to each story, and that's the creator ID
+
+00:42:36.410 --> 00:42:39.135
+field. So once we get all these stories,
+
+00:42:39.215 --> 00:42:42.815
+we're setting the stories array object and feed
+
+00:42:42.895 --> 00:42:44.815
+to all the story objects that get returned
+
+00:42:44.815 --> 00:42:47.375
+from the database. And now, all of these
+
+00:42:47.375 --> 00:42:49.535
+story objects now have a new field called
+
+00:42:49.535 --> 00:42:53.390
+creator ID. So when we're actually rendering the
+
+00:42:53.390 --> 00:42:56.190
+components on feed, we're passing in all of
+
+00:42:56.190 --> 00:42:58.750
+the fields of the story object into a
+
+00:42:58.750 --> 00:43:01.710
+card component. And now we also have a
+
+00:43:01.710 --> 00:43:04.985
+creator ID component. So we what we wanna
+
+00:43:04.985 --> 00:43:08.105
+do is we wanna pass creator ID from
+
+00:43:08.105 --> 00:43:11.545
+feel sorry, from feed into card so that
+
+00:43:11.545 --> 00:43:14.425
+card can pass the creator ID down a
+
+00:43:14.425 --> 00:43:23.810
+single story. Yeah. So creator ID lives in
+
+00:43:23.810 --> 00:43:25.890
+field and we got this for by making
+
+00:43:25.890 --> 00:43:29.330
+a post request to the stories. And we
+
+00:43:29.330 --> 00:43:31.490
+can pass this as a prop to card
+
+00:43:31.490 --> 00:43:33.410
+and pass that as a prop to single
+
+00:43:33.410 --> 00:43:37.165
+story. So give that a try. First, you'll
+
+00:43:37.165 --> 00:43:39.325
+wanna grab the creator ID and pass it
+
+00:43:39.325 --> 00:43:41.325
+in as a field to card, and then
+
+00:43:41.325 --> 00:43:43.485
+you'll wanna pass it to single story. And
+
+00:43:43.485 --> 00:43:45.325
+once you've passed that all the way down,
+
+00:43:45.565 --> 00:43:48.045
+in single story, you can change the link
+
+00:43:48.045 --> 00:43:50.430
+so that you can change the user's name
+
+00:43:50.430 --> 00:43:54.030
+from text to link so that clicking it
+
+00:43:54.030 --> 00:43:56.350
+takes us to slash profile slash creator ID.
+
+00:45:40.930 --> 00:45:42.370
+Raise your hand if you need a bit
+
+00:45:42.370 --> 00:46:50.455
+more time to finish this. Okay. Are we
+
+00:46:50.455 --> 00:46:58.510
+all good now? Okay. I'll go through how
+
+00:46:58.510 --> 00:47:01.550
+we can implement these two steps now. So
+
+00:47:01.550 --> 00:47:03.630
+if you recall, we just went over that
+
+00:47:03.630 --> 00:47:05.630
+in feed dot j s x, we made
+
+00:47:05.630 --> 00:47:07.310
+a get request to the back end so
+
+00:47:07.310 --> 00:47:09.310
+that it sends all the story objects back
+
+00:47:09.310 --> 00:47:12.185
+to our front end. And when we're rendering,
+
+00:47:12.185 --> 00:47:14.585
+we're taking this entire stories list and passing
+
+00:47:14.585 --> 00:47:17.065
+in the fields of the stories into the
+
+00:47:17.065 --> 00:47:20.825
+card component. So now now that we've added
+
+00:47:20.825 --> 00:47:23.545
+a creator ID field in our story schema,
+
+00:47:24.030 --> 00:47:27.470
+let's put that in the creator ID field
+
+00:47:27.470 --> 00:47:29.630
+in the card. So we can get that
+
+00:47:29.630 --> 00:47:34.750
+by grabbing story object dot creator ID. So
+
+00:47:34.750 --> 00:47:37.150
+now the creator ID should be passed into
+
+00:47:37.150 --> 00:47:41.095
+card. We just added that line here in
+
+00:47:41.095 --> 00:47:47.655
+free dot jsx. So after we pass that
+
+00:47:47.655 --> 00:47:51.415
+into card, we'll end up needing creator ID
+
+00:47:51.415 --> 00:47:53.470
+in single story. So we need to go
+
+00:47:53.470 --> 00:47:56.190
+to card dot j s x and pass
+
+00:47:56.190 --> 00:47:58.030
+the creator ID all the way down a
+
+00:47:58.030 --> 00:48:01.950
+single story. So now that creator ID prop
+
+00:48:01.950 --> 00:48:03.710
+lives here and we can go to single
+
+00:48:03.710 --> 00:48:06.465
+story, We can add a new prop called
+
+00:48:06.465 --> 00:48:09.585
+creator ID and set it equal to props.
+
+00:48:09.585 --> 00:48:15.025
+Creator ID. So we just added this line
+
+00:48:15.025 --> 00:48:17.185
+into card dot j s x so that
+
+00:48:17.185 --> 00:48:19.770
+we can pass the creator ID from feed
+
+00:48:19.770 --> 00:48:25.370
+to card to single story. So now that
+
+00:48:25.370 --> 00:48:27.290
+we have the creator ID prop in single
+
+00:48:27.290 --> 00:48:32.010
+story, we can replace this props. Creator name
+
+00:48:32.010 --> 00:48:34.965
+span component with a link component that takes
+
+00:48:34.965 --> 00:48:38.885
+us to slash profile slash creator ID. So
+
+00:48:38.885 --> 00:48:41.765
+let's replace this with a link component. So
+
+00:48:41.765 --> 00:48:44.805
+instead of span, we'll replace this with a
+
+00:48:44.805 --> 00:48:49.930
+link. And with link, we have a two
+
+00:48:49.930 --> 00:48:53.370
+parameter, which will pass in a link to.
+
+00:48:53.770 --> 00:49:01.130
+So let's have this take us to /profile/props.
+
+00:49:01.130 --> 00:49:08.385
+Creator ID. And this should make the creator
+
+00:49:08.385 --> 00:49:11.265
+name now a link in our front end
+
+00:49:11.265 --> 00:49:15.105
+interface. So to reiterate, we just pass the
+
+00:49:15.105 --> 00:49:17.690
+props down to single story and we modify
+
+00:49:17.690 --> 00:49:19.930
+this line to be a link so that
+
+00:49:19.930 --> 00:49:22.170
+clicking it should take us to slash profile
+
+00:49:22.170 --> 00:49:25.210
+slash props dot creator ID, which is a
+
+00:49:25.210 --> 00:49:27.450
+dynamic route that we just defined in the
+
+00:49:27.450 --> 00:49:29.610
+previous step in index dot j s x.
+
+00:49:33.465 --> 00:49:35.145
+So I'll put the solution up on the
+
+00:49:35.145 --> 00:49:37.385
+slide, and let's take a look at cat
+
+00:49:37.385 --> 00:49:40.585
+look now. So remember that slash profile is
+
+00:49:40.585 --> 00:49:42.265
+now four zero four not found because we
+
+00:49:42.265 --> 00:49:44.025
+no longer have a path for it in
+
+00:49:44.025 --> 00:49:46.650
+our react router, but instead we have dynamic
+
+00:49:46.650 --> 00:49:49.370
+paths taking us to slash profile slash user
+
+00:49:49.370 --> 00:49:51.370
+ID. So if you go back to local
+
+00:49:51.370 --> 00:49:53.770
+host, you'll see that all the names are
+
+00:49:53.770 --> 00:49:55.930
+now links. So if I click my name,
+
+00:49:55.930 --> 00:49:58.305
+it takes me to a profile. While it's
+
+00:49:58.305 --> 00:50:00.545
+not my profile, it's still a profile page.
+
+00:50:00.785 --> 00:50:02.385
+And in the next step, we'll go over
+
+00:50:02.385 --> 00:50:08.705
+how we can modify this page. So if
+
+00:50:08.705 --> 00:50:11.025
+everyone's ready, you can reset hard in case
+
+00:50:11.025 --> 00:50:12.705
+you miss any steps and we can check
+
+00:50:12.705 --> 00:50:15.960
+out to workshop five step five. So I'll
+
+00:50:15.960 --> 00:50:19.480
+do git reset dash dash hard, and I'll
+
+00:50:19.480 --> 00:50:35.575
+check out to workshop five step five. Here's
+
+00:50:35.575 --> 00:50:38.055
+some hints for testing in case you're getting
+
+00:50:38.055 --> 00:50:40.375
+any bugs. First, you wanna make sure that
+
+00:50:40.375 --> 00:50:42.440
+you're logged in before posting because you remember
+
+00:50:42.440 --> 00:50:45.080
+when we post, we're passing in user information
+
+00:50:45.080 --> 00:50:47.080
+and if you're not logged in, that user
+
+00:50:47.080 --> 00:50:49.560
+information is null and it'll get mad at
+
+00:50:49.560 --> 00:50:53.000
+you. And you If you're trying to test
+
+00:50:53.000 --> 00:50:55.240
+the features for the links and the usernames,
+
+00:50:55.240 --> 00:50:57.160
+make sure that you're making new posts with
+
+00:50:57.160 --> 00:50:59.595
+the new changes to test this feature because
+
+00:50:59.595 --> 00:51:02.155
+previously, we didn't have usernames for the stories
+
+00:51:02.155 --> 00:51:04.955
+and comments. And if your code works, clicking
+
+00:51:04.955 --> 00:51:06.395
+on a username should take you to a
+
+00:51:06.395 --> 00:51:09.435
+link that goes to slash profile slash some
+
+00:51:09.435 --> 00:51:14.070
+user ID. And the name on the profile
+
+00:51:14.070 --> 00:51:16.070
+page should currently be wrong, but that's okay
+
+00:51:16.070 --> 00:51:18.310
+because we'll tackle that in the next step.
+
+00:51:21.910 --> 00:51:23.910
+So feel free to test that out and
+
+00:51:23.910 --> 00:51:29.465
+now we'll move on to step five. Okay.
+
+00:51:29.705 --> 00:51:32.185
+So remember that we just clicked the link
+
+00:51:32.185 --> 00:51:34.185
+and it took us to Shannon Wu's profile
+
+00:51:34.185 --> 00:51:36.185
+page. But we don't know who Shannon Wu
+
+00:51:36.185 --> 00:51:38.025
+is and we want that to take us
+
+00:51:38.025 --> 00:51:40.185
+to the profile page for the user we
+
+00:51:40.185 --> 00:51:44.560
+clicked. So that means that we need to
+
+00:51:44.560 --> 00:51:48.080
+access user dot name from the profile.js x
+
+00:51:48.080 --> 00:51:52.720
+component, but how do we do that? So
+
+00:51:52.720 --> 00:51:56.905
+remember, on profile.js x, we have access to
+
+00:51:56.905 --> 00:51:59.705
+the user ID parameter that was passed in
+
+00:51:59.705 --> 00:52:02.985
+through the URL in the React router. So
+
+00:52:02.985 --> 00:52:05.385
+with this user ID, how can we get
+
+00:52:05.385 --> 00:52:09.160
+the name of the user from profile.jsx? Take
+
+00:52:09.160 --> 00:52:10.600
+a few minutes to turn and talk with
+
+00:52:10.600 --> 00:52:12.280
+a neighbor and think about how we can
+
+00:52:12.280 --> 00:52:14.280
+use the user ID in the profile page
+
+00:52:14.280 --> 00:52:39.640
+to grab the name of the user. Okay.
+
+00:52:39.640 --> 00:52:41.480
+Does anyone wanna raise their hand and take
+
+00:52:41.480 --> 00:53:12.750
+a stab at this question? Yeah. Yeah. Exactly.
+
+00:53:12.750 --> 00:53:15.230
+Good job. So what we can do is
+
+00:53:15.230 --> 00:53:17.550
+we can make a get request by passing
+
+00:53:17.550 --> 00:53:19.630
+in the user ID as a parameter to
+
+00:53:19.630 --> 00:53:21.845
+our back end server. And if you remember
+
+00:53:21.845 --> 00:53:25.285
+from the databases lecture, we're using a library
+
+00:53:25.285 --> 00:53:27.925
+in our back end called Mongoose, and Mongoose
+
+00:53:27.925 --> 00:53:30.485
+has query functions that allow us to search
+
+00:53:30.485 --> 00:53:33.125
+in the user database by ID or by
+
+00:53:33.125 --> 00:53:35.860
+certain queries. So what we're gonna do now
+
+00:53:35.860 --> 00:53:38.740
+is we'll pass the user ID into a
+
+00:53:38.740 --> 00:53:41.060
+get request to the back end server, and
+
+00:53:41.060 --> 00:53:44.420
+we'll have this user endpoint that will find
+
+00:53:44.420 --> 00:53:46.980
+the user by ID from the database, and
+
+00:53:46.980 --> 00:53:49.220
+it'll pass all of this user information along
+
+00:53:49.220 --> 00:53:51.985
+to the front end after the get request
+
+00:53:51.985 --> 00:53:58.545
+returns. Okay. So what we wanna do is
+
+00:53:58.545 --> 00:54:01.025
+write an API route that gives us information
+
+00:54:01.025 --> 00:54:04.145
+about a user. We kinda already talked about
+
+00:54:04.145 --> 00:54:08.520
+this but just to reiterate, we're now working
+
+00:54:08.520 --> 00:54:11.880
+on or yeah, turn and talk. Which part
+
+00:54:11.880 --> 00:54:13.480
+of the diagram are we gonna work on
+
+00:54:13.480 --> 00:54:15.640
+to give us information about a user and
+
+00:54:15.640 --> 00:54:17.240
+what does this a p riot route have
+
+00:54:17.240 --> 00:54:21.615
+to do? Kinda already gave away the answer,
+
+00:54:21.615 --> 00:54:22.735
+but I think it's just good to think
+
+00:54:22.735 --> 00:54:25.055
+about and talk through again with a partner.
+
+00:54:43.570 --> 00:54:47.065
+Okay, yeah. So just to recap, we're now
+
+00:54:47.065 --> 00:54:49.305
+gonna be working we're gonna first be working
+
+00:54:49.305 --> 00:54:52.025
+on this part of the diagram because we
+
+00:54:52.025 --> 00:54:54.825
+wanna grab information about the user from our
+
+00:54:54.825 --> 00:54:58.265
+MongoDB database. So what's gonna happen is the
+
+00:54:58.265 --> 00:55:01.770
+API route defined in API.js is gonna use
+
+00:55:01.770 --> 00:55:04.010
+a Mongoose query to find the user by
+
+00:55:04.010 --> 00:55:09.050
+the user ID. So let's start by implementing
+
+00:55:09.050 --> 00:55:13.105
+the API route in API.js. And this is
+
+00:55:13.105 --> 00:55:15.745
+gonna be a get endpoint that's gonna use
+
+00:55:15.745 --> 00:55:18.385
+a mongoose query to find the user document
+
+00:55:18.385 --> 00:55:21.025
+of the user given the user ID. And
+
+00:55:21.025 --> 00:55:23.105
+as a hint, you can use the user
+
+00:55:23.105 --> 00:55:27.090
+dot find by ID function and pass in
+
+00:55:27.090 --> 00:56:22.930
+the user ID there. As a hint, where
+
+00:56:22.930 --> 00:56:25.730
+it says insert ID here, we wanna be
+
+00:56:25.730 --> 00:56:28.290
+passing in the user ID as a parameter.
+
+00:56:28.450 --> 00:56:30.290
+And how we can get that parameter is
+
+00:56:30.290 --> 00:56:33.410
+by getting by entering rec dot query dot
+
+00:56:33.410 --> 00:56:52.140
+user ID. Another hint is that a mongoose
+
+00:56:52.140 --> 00:56:55.180
+query is a promise, so after, you should
+
+00:56:55.180 --> 00:56:57.900
+use a dot den and send the user
+
+00:56:58.140 --> 00:57:00.540
+back to the front end by using res
+
+00:57:00.540 --> 00:57:03.615
+dot send. So those are two hints I
+
+00:57:03.615 --> 00:57:05.455
+have for you and now take another minute
+
+00:57:05.455 --> 00:57:29.550
+or two to finish writing your code. Raise
+
+00:57:29.550 --> 00:58:23.380
+your hand if you need another minute. Okay.
+
+00:58:23.700 --> 00:58:26.260
+Let's go through how we can implement this
+
+00:58:26.260 --> 00:58:28.820
+API route to grab information about the user
+
+00:58:28.820 --> 00:58:30.965
+by passing in the user ID through a
+
+00:58:30.965 --> 00:58:34.165
+parameter. So this is a get endpoint that
+
+00:58:34.165 --> 00:58:36.405
+we're calling in our front end. So we'll
+
+00:58:36.405 --> 00:58:39.205
+wanna start by using router dot get, and
+
+00:58:39.205 --> 00:58:41.205
+we want this endpoint to live in slash
+
+00:58:41.205 --> 00:58:44.470
+user. So in the first argument, pass in
+
+00:58:44.470 --> 00:58:48.630
+a string called slash user. You wanna take
+
+00:58:48.630 --> 00:58:53.590
+the rack and res objects and now in
+
+00:58:53.590 --> 00:58:54.885
+the body of the function or you function
+
+00:58:54.885 --> 00:58:58.805
+or You should use the find by ID
+
+00:58:58.805 --> 00:59:02.645
+mongoose function. So we'll take a user object
+
+00:59:02.885 --> 00:59:05.205
+which connects to the user collection in the
+
+00:59:05.205 --> 00:59:10.170
+database. So user dot find by ID and
+
+00:59:10.170 --> 00:59:12.490
+in the argument of this function, we wanna
+
+00:59:12.490 --> 00:59:14.890
+pass in the user ID. And remember that
+
+00:59:14.890 --> 00:59:16.650
+this is a get request, so we can
+
+00:59:16.650 --> 00:59:18.810
+get it from the front end by entering
+
+00:59:18.810 --> 00:59:24.105
+rec dot query dot user ID. So now,
+
+00:59:24.105 --> 00:59:26.905
+this function will go through your Mongo database,
+
+00:59:26.905 --> 00:59:29.705
+look through the users collection, and find the
+
+00:59:29.705 --> 00:59:33.065
+user that has this user ID. Remember that
+
+00:59:33.065 --> 00:59:36.585
+Mongoose queries are promises, so we're gonna wanna
+
+00:59:36.585 --> 00:59:39.850
+make this a dot then. And we're also
+
+00:59:39.850 --> 00:59:41.850
+gonna wanna send this user back to the
+
+00:59:41.850 --> 00:59:44.090
+front end. So we'll take the user as
+
+00:59:44.090 --> 00:59:48.250
+the parameter, and we'll send this in the
+
+00:59:48.250 --> 00:59:50.650
+response back to the front end by doing
+
+00:59:50.650 --> 00:59:55.055
+res dot send. And in the send, we'll
+
+00:59:55.055 --> 00:59:57.695
+wanna pass in the user. So this is
+
+00:59:57.695 --> 00:59:59.455
+a user object with all of the user
+
+00:59:59.455 --> 01:00:01.615
+fields that we define in our user schema
+
+01:00:01.615 --> 01:00:04.495
+in an earlier step. And now we have
+
+01:00:04.495 --> 01:00:08.020
+a get endpoint to slash user. Here's the
+
+01:00:08.020 --> 01:00:11.380
+solution by the way, to slash user and
+
+01:00:12.260 --> 01:00:15.140
+it'll go through the database, find the user
+
+01:00:15.140 --> 01:00:17.140
+that has this ID and send the entire
+
+01:00:17.140 --> 01:00:21.835
+user object back to your front end. So
+
+01:00:21.835 --> 01:00:26.875
+take a minute to copy that down. And
+
+01:00:26.875 --> 01:00:30.955
+now that we have this user endpoint, as
+
+01:00:31.035 --> 01:00:33.435
+our friend mentioned earlier here, we're gonna wanna
+
+01:00:33.435 --> 01:00:36.395
+call this get endpoint from nav sorry, from
+
+01:00:36.750 --> 01:00:39.230
+the profile page so that we can pass
+
+01:00:39.230 --> 01:00:43.150
+the username into that and render it on
+
+01:00:43.150 --> 01:00:58.685
+the front interface. Okay. So hopefully, you guys
+
+01:00:58.685 --> 01:01:02.910
+have this get endpoint copied down now. If
+
+01:01:02.910 --> 01:01:04.430
+you don't, you can refer back to the
+
+01:01:04.430 --> 01:01:07.550
+slides. And now that we have this endpoint,
+
+01:01:07.870 --> 01:01:12.990
+our next step is to update profile.jsx. What
+
+01:01:12.990 --> 01:01:16.255
+we wanna do is we wanna update the
+
+01:01:16.255 --> 01:01:19.535
+name to show user dot name instead of
+
+01:01:19.535 --> 01:01:24.095
+Shannon Wu. So remember that as we covered
+
+01:01:24.095 --> 01:01:26.975
+in Daniel's lecture earlier, the React router will
+
+01:01:26.975 --> 01:01:29.350
+pass in the user ID parameter of the
+
+01:01:29.350 --> 01:01:34.070
+URL into use params dot user ID. So
+
+01:01:34.070 --> 01:01:35.510
+you can use that when you're making an
+
+01:01:35.510 --> 01:01:38.790
+API call to API slash user by passing
+
+01:01:38.790 --> 01:01:42.975
+that as your argument to the endpoint. So
+
+01:01:42.975 --> 01:01:44.815
+what we wanna do now is we wanna
+
+01:01:44.815 --> 01:01:47.535
+make an API call and profile dot j
+
+01:01:47.535 --> 01:01:50.015
+s x to slash API slash user, and
+
+01:01:50.015 --> 01:01:51.855
+you wanna pass the user ID to the
+
+01:01:51.855 --> 01:01:53.615
+back end, and you can get the user
+
+01:01:53.615 --> 01:01:56.735
+ID by using use params dot user ID.
+
+01:02:03.840 --> 01:02:05.760
+Don't worry about the loading step for now,
+
+01:02:05.760 --> 01:02:07.440
+we can go over that together after you
+
+01:02:07.440 --> 01:02:10.000
+implement the first check mark step, which is
+
+01:02:10.000 --> 01:02:12.925
+to make an API call and pass that
+
+01:02:12.925 --> 01:03:08.905
+back to the front end. As a hint,
+
+01:03:08.905 --> 01:03:10.985
+you wanna make this API call in a
+
+01:03:10.985 --> 01:03:15.065
+use effect, and you want this use effect
+
+01:03:15.065 --> 01:03:18.665
+to be called upon the render of profile.jsx.
+
+01:04:00.140 --> 01:04:01.660
+Raise your hand if you need a bit
+
+01:04:01.660 --> 01:04:03.660
+more time to complete the first step of
+
+01:04:03.660 --> 01:04:40.515
+this slide. Okay. So let's go through how
+
+01:04:40.515 --> 01:04:44.195
+we can call the, user get endpoint in
+
+01:04:44.195 --> 01:04:48.340
+the back end from profile.jsx. So if we
+
+01:04:48.340 --> 01:04:50.100
+call this endpoint, we're gonna need to save
+
+01:04:50.100 --> 01:04:52.260
+this information somewhere. So what we can do
+
+01:04:52.260 --> 01:04:55.300
+is start by defining a user state. So
+
+01:04:55.300 --> 01:04:58.900
+let's do const user set user, and let's
+
+01:04:58.900 --> 01:05:02.185
+use the u state hook. And initially, we
+
+01:05:02.185 --> 01:05:03.785
+won't know what the user is, so we'll
+
+01:05:03.785 --> 01:05:08.345
+just initialize the user state to null. Now
+
+01:05:08.345 --> 01:05:10.265
+that we have this user state, we can
+
+01:05:10.265 --> 01:05:12.585
+make a get request, and this should happen
+
+01:05:12.585 --> 01:05:15.070
+in a use effect hook. And the use
+
+01:05:15.070 --> 01:05:17.550
+effect hook should have a dependency of an
+
+01:05:17.550 --> 01:05:19.550
+empty array, because we want this use effect
+
+01:05:19.550 --> 01:05:22.750
+to be called at the initial rendering of
+
+01:05:22.750 --> 01:05:25.870
+profile dot j s x. So let's start
+
+01:05:26.350 --> 01:05:35.415
+by making a use effect. And what we
+
+01:05:35.415 --> 01:05:37.175
+want to happen in this use effect is
+
+01:05:37.175 --> 01:05:39.895
+we want to make a get request to
+
+01:05:39.975 --> 01:05:44.270
+slash API slash user. And we wanna pass
+
+01:05:44.270 --> 01:05:49.630
+in a user ID. So let's define the
+
+01:05:49.630 --> 01:05:52.110
+user ID really quickly above the use effect,
+
+01:05:52.350 --> 01:05:54.910
+and remember that we're gonna use use params.
+
+01:05:54.910 --> 01:05:59.995
+User ID. So let's do let user ID
+
+01:06:00.155 --> 01:06:05.595
+equal use params. User ID. But this ID
+
+01:06:05.595 --> 01:06:07.995
+is capitalized because that's just how we defined
+
+01:06:07.995 --> 01:06:11.010
+it as a parameter in the URL. So
+
+01:06:11.010 --> 01:06:14.370
+be aware of how the capitalization is here.
+
+01:06:15.970 --> 01:06:20.450
+It's just a notation we're using. So we
+
+01:06:20.450 --> 01:06:23.330
+just defined a user ID variable on line
+
+01:06:23.330 --> 01:06:25.905
+18. And now on line 20, let's pass
+
+01:06:25.905 --> 01:06:28.145
+that in when we're making a get request.
+
+01:06:30.785 --> 01:06:35.665
+So we're making a get request, and this
+
+01:06:35.665 --> 01:06:37.665
+is a promise. So we want to send
+
+01:06:38.560 --> 01:06:41.200
+and remember that our get request returns the
+
+01:06:41.200 --> 01:06:43.520
+user object. So once we have that user
+
+01:06:43.520 --> 01:06:46.640
+object, let's set our user state and profile
+
+01:06:46.640 --> 01:06:52.295
+to user. So what just happened here was
+
+01:06:52.295 --> 01:06:54.855
+we define a user state that can be
+
+01:06:54.855 --> 01:06:57.575
+stored on the profile page. We're making a
+
+01:06:57.575 --> 01:06:59.975
+get request and this use effect that's called
+
+01:06:59.975 --> 01:07:02.215
+at the rendering of profile of the profile
+
+01:07:02.215 --> 01:07:05.060
+page. We're passing the user ID from the
+
+01:07:05.060 --> 01:07:07.940
+URL parameter to the back end. The back
+
+01:07:07.940 --> 01:07:10.420
+end is taking this user ID and querying
+
+01:07:10.420 --> 01:07:12.740
+the database for the user corresponding to this
+
+01:07:12.740 --> 01:07:14.900
+ID, and it's being sent back so that
+
+01:07:14.900 --> 01:07:16.580
+we can set our variable now to user.
+
+01:07:17.945 --> 01:07:19.785
+So one thing we wanna do now is
+
+01:07:19.785 --> 01:07:22.745
+we wanna show a loading component or page
+
+01:07:22.745 --> 01:07:25.305
+if the user hasn't load yet, or else
+
+01:07:25.305 --> 01:07:27.545
+this error might occur that like you the
+
+01:07:27.545 --> 01:07:29.545
+name doesn't yet exist, so you'll get a
+
+01:07:29.545 --> 01:07:31.305
+type error that you can't read this name
+
+01:07:31.305 --> 01:07:35.030
+property. So we can use a conditional operator
+
+01:07:35.030 --> 01:07:37.510
+again. So my next step for you is
+
+01:07:37.510 --> 01:07:40.710
+to check if you should check if the
+
+01:07:40.710 --> 01:07:43.830
+user object is null. If the user object
+
+01:07:43.990 --> 01:07:45.990
+is null, you should just show like a
+
+01:07:45.990 --> 01:07:49.235
+text element that says loading. Otherwise, you should
+
+01:07:49.235 --> 01:07:52.035
+render everything else on this page. So give
+
+01:07:52.035 --> 01:07:59.475
+that a try. In case you missed it,
+
+01:07:59.475 --> 01:09:16.255
+this is what I just wrote. Let's go
+
+01:09:16.255 --> 01:09:20.655
+through the conditional rendering now. Similar to the
+
+01:09:20.655 --> 01:09:26.335
+earlier step, we can wrap everything in brackets.
+
+01:09:29.280 --> 01:09:33.520
+We'll check if user is no or not.
+
+01:09:33.760 --> 01:09:38.720
+So if it's if not user, we're gonna
+
+01:09:38.720 --> 01:09:41.365
+want to have a loading component. So let's
+
+01:09:41.365 --> 01:09:44.565
+just put it between dev dev brackets and
+
+01:09:44.565 --> 01:09:48.405
+say like, oh, loading. Otherwise, we wanna render
+
+01:09:48.405 --> 01:09:51.685
+everything else. So we can copy paste everything
+
+01:09:51.685 --> 01:10:25.250
+else and wrap it in these parentheses. Notation
+
+01:10:25.250 --> 01:11:47.070
+wrong. Okay. I think I just have a
+
+01:11:47.070 --> 01:12:10.440
+typo somewhere. Hold on. Okay. I just pasted
+
+01:12:10.440 --> 01:12:13.640
+everything into the second argument of the conditional
+
+01:12:13.640 --> 01:12:16.840
+rendering and I wrapped everything in a parent
+
+01:12:16.840 --> 01:12:21.080
+element. So you can do that by using
+
+01:12:21.080 --> 01:12:28.915
+these empty angular brackets. Once you have that,
+
+01:12:28.915 --> 01:12:31.315
+it should conditionally render loading if user is
+
+01:12:31.315 --> 01:12:33.795
+undefined and if you're getting any problems with
+
+01:12:33.795 --> 01:12:35.395
+this, just don't worry about it and you
+
+01:12:35.395 --> 01:12:38.350
+can get checkout on the next step. And
+
+01:12:38.350 --> 01:12:40.510
+one thing we didn't do is, right now
+
+01:12:40.510 --> 01:12:42.670
+it still says Shannon Wu. So we're gonna
+
+01:12:42.670 --> 01:12:47.310
+wanna pass our new user element and we
+
+01:12:47.310 --> 01:12:49.150
+wanna grab the name parameter of the user
+
+01:12:49.150 --> 01:12:53.205
+object. Remember that user was defined earlier as
+
+01:12:53.205 --> 01:12:56.245
+a react state above here. So what we
+
+01:12:56.245 --> 01:12:59.765
+should have now is in local host. If
+
+01:12:59.765 --> 01:13:18.620
+you click on a profile, oh, awkward. Oh.
+
+01:13:33.620 --> 01:13:40.980
+What did you say? Okay. Use params is
+
+01:13:40.980 --> 01:13:43.300
+not defined. Oh, oops. We have to import
+
+01:13:43.300 --> 01:13:46.820
+it. So we wanna import use params from
+
+01:13:46.820 --> 01:13:53.115
+react here. That should work now, maybe. Typo?
+
+01:13:53.435 --> 01:14:00.875
+Wait, I don't remember where use params is
+
+01:14:00.875 --> 01:14:06.340
+imported from. Oh, okay. Sorry you guys. You
+
+01:14:06.340 --> 01:14:12.660
+wanna import re use params from react router
+
+01:14:12.660 --> 01:14:25.435
+dom. And we also wanna import get from
+
+01:14:30.760 --> 01:14:36.200
+Utilities. Alright. So don't worry about importing all
+
+01:14:36.200 --> 01:14:38.280
+of this. You guys can just watch and
+
+01:14:38.280 --> 01:14:40.360
+check out to the next step after this.
+
+01:14:41.160 --> 01:14:43.240
+If you import the get so that we
+
+01:14:43.240 --> 01:14:45.465
+can make the request and import the use
+
+01:14:45.465 --> 01:14:48.425
+params, you should be able to see your
+
+01:14:48.425 --> 01:14:52.905
+name if you click on a story and
+
+01:14:53.625 --> 01:14:55.945
+the user of that story. So let's just
+
+01:14:55.945 --> 01:15:00.780
+get check out to the next step. If
+
+01:15:00.780 --> 01:15:03.180
+you made any changes, wanna reset dash dash
+
+01:15:03.180 --> 01:15:06.060
+hard first and then check out to step
+
+01:15:06.060 --> 01:15:12.215
+six. So now on step six, you should
+
+01:15:12.215 --> 01:15:14.535
+check by going to your feed and clicking
+
+01:15:14.535 --> 01:15:17.255
+on one of the usernames and see that
+
+01:15:17.255 --> 01:15:19.175
+it takes you to a profile page with
+
+01:15:19.175 --> 01:15:23.734
+that user's name. So just a recap of
+
+01:15:23.895 --> 01:15:25.655
+all the changes that were made in step
+
+01:15:25.655 --> 01:15:30.010
+five. We now have a u r a
+
+01:15:30.010 --> 01:15:34.010
+dynamic URL at slash profile slash user ID
+
+01:15:34.010 --> 01:15:36.730
+that takes in this user ID parameter. And
+
+01:15:36.730 --> 01:15:38.650
+now we make a get request to our
+
+01:15:38.650 --> 01:15:39.850
+back end so that we can get the
+
+01:15:39.850 --> 01:15:44.165
+user object corresponding to this user ID. And
+
+01:15:44.165 --> 01:15:46.485
+if we get that user object onto the
+
+01:15:46.725 --> 01:15:49.285
+profile page, we can grab the name parameter
+
+01:15:49.285 --> 01:15:51.925
+of this user object and pass it in
+
+01:15:51.925 --> 01:15:59.900
+and render that instead of Shannon Wu. Okay.
+
+01:16:02.940 --> 01:16:05.820
+So now let's move on with step six.
+
+01:16:06.940 --> 01:16:08.620
+So you might notice that if you click
+
+01:16:08.620 --> 01:16:11.340
+the profile page of your nav bar, you'll
+
+01:16:11.340 --> 01:16:14.025
+see that the profile link is broken. And
+
+01:16:14.025 --> 01:16:16.985
+this is because earlier, in index dot j
+
+01:16:16.985 --> 01:16:19.705
+s x, we changed our profile route so
+
+01:16:19.705 --> 01:16:22.345
+that we have a dynamic route that renders
+
+01:16:22.345 --> 01:16:25.705
+at slash profile slash user ID. And we
+
+01:16:25.705 --> 01:16:27.225
+no longer have a route in our router
+
+01:16:27.225 --> 01:16:30.960
+that goes to slash profile. So what we
+
+01:16:30.960 --> 01:16:32.640
+want to do is we want this profile
+
+01:16:32.640 --> 01:16:34.880
+page to take us to the profile corresponding
+
+01:16:34.880 --> 01:16:38.320
+to the logged in user. Oh. Oh yeah.
+
+01:16:38.320 --> 01:16:40.320
+Just as I explained, we now have a
+
+01:16:40.320 --> 01:16:43.200
+dynamic route at slash profile slash user ID,
+
+01:16:43.200 --> 01:16:45.200
+so slash profile should be not found out.
+
+01:16:46.925 --> 01:16:49.005
+So we wanna go to slash profile slash
+
+01:16:49.005 --> 01:16:51.085
+user ID if we click on the profile
+
+01:16:51.085 --> 01:16:53.965
+once we're logged in. But what is your
+
+01:16:53.965 --> 01:17:02.550
+user ID? So now we also wanna maintain
+
+01:17:02.550 --> 01:17:04.550
+a user ID react state in our nav
+
+01:17:04.550 --> 01:17:11.590
+bar. So the next step is in nav
+
+01:17:11.590 --> 01:17:13.670
+bar dot j s x, we'll wanna set
+
+01:17:13.670 --> 01:17:15.585
+a user ID state once we call a
+
+01:17:15.585 --> 01:17:19.745
+post request to log in. And we wanna
+
+01:17:19.745 --> 01:17:21.585
+remove this user ID from the state once
+
+01:17:21.585 --> 01:17:23.905
+we call post slash log out, and this
+
+01:17:23.905 --> 01:17:27.665
+will be replacing our earlier React state of
+
+01:17:27.665 --> 01:17:42.520
+logged in. So let's go through how we
+
+01:17:42.520 --> 01:17:46.835
+can do that together. Let's go to navbar.jsx,
+
+01:17:49.155 --> 01:17:51.475
+and we wanna replace this logged in state
+
+01:17:51.475 --> 01:17:54.915
+now with a user ID state. We can
+
+01:17:54.915 --> 01:17:56.515
+also use the user ID state to keep
+
+01:17:56.515 --> 01:17:58.195
+track of whether we're logged in or not,
+
+01:17:58.195 --> 01:17:59.850
+because the user ID state should be null
+
+01:17:59.850 --> 01:18:02.330
+if we're logged out. So let's replace this
+
+01:18:02.330 --> 01:18:06.250
+with user ID, set user ID, and we
+
+01:18:06.250 --> 01:18:09.210
+wanna initialize the user ID to null because
+
+01:18:09.210 --> 01:18:11.615
+initially, we won't know if we're logged in
+
+01:18:11.615 --> 01:18:13.135
+or not and we should be logged out,
+
+01:18:13.135 --> 01:18:15.375
+there should be no user corresponding to the
+
+01:18:15.375 --> 01:18:25.220
+user ID. So once we have that react
+
+01:18:25.220 --> 01:18:28.900
+state and handle login, we should now update
+
+01:18:28.900 --> 01:18:31.380
+the user ID state. So let's get rid
+
+01:18:31.380 --> 01:18:32.820
+of the line that says logged in a
+
+01:18:32.820 --> 01:18:34.660
+true because we no longer have that state.
+
+01:18:37.615 --> 01:18:40.335
+And now let's update the user ID state.
+
+01:18:41.855 --> 01:18:47.855
+So let's set user set user set user
+
+01:18:47.855 --> 01:18:52.130
+ID to user dot slash ID, and remember
+
+01:18:52.130 --> 01:18:54.370
+that user is an object that the login
+
+01:18:54.370 --> 01:18:56.690
+endpoint is sending back to us that contains
+
+01:18:56.690 --> 01:18:59.570
+information about the user, and we can grab
+
+01:18:59.570 --> 01:19:08.025
+the ID parameter from that. So similarly, in
+
+01:19:08.025 --> 01:19:11.945
+handle logout, let's get rid of the set
+
+01:19:11.945 --> 01:19:15.130
+logged in, because as you remember, we just
+
+01:19:15.130 --> 01:19:16.570
+got rid of that state and we now
+
+01:19:16.570 --> 01:19:19.290
+have a user ID state replacing that. And
+
+01:19:19.290 --> 01:19:21.930
+now we'll wanna set user ID to null.
+
+01:19:25.735 --> 01:19:28.135
+So what we just did was we updated
+
+01:19:28.135 --> 01:19:30.615
+the logic and handle login and handle logout
+
+01:19:30.615 --> 01:19:33.175
+so that we're setting user ID accordingly based
+
+01:19:33.175 --> 01:19:37.255
+on whether we're logged in or not. And
+
+01:19:37.255 --> 01:19:40.375
+now that we have the user ID, we
+
+01:19:39.630 --> 01:19:42.190
+want to link to slash profile slash user
+
+01:19:42.190 --> 01:19:46.270
+ID instead of slash profile. So let's go
+
+01:19:46.270 --> 01:19:49.310
+to line this line where our profile link
+
+01:19:49.310 --> 01:19:53.885
+is defined. Right now, links to slash profile,
+
+01:19:54.445 --> 01:19:56.605
+but instead of slash profile, let's have it
+
+01:19:56.605 --> 01:20:03.245
+linked to slash profile slash user ID. So
+
+01:20:03.245 --> 01:20:05.645
+I'll paste the solution up on the slides
+
+01:20:05.645 --> 01:20:15.670
+and you can copy that. Oh, wait, I
+
+01:20:15.670 --> 01:20:37.720
+explained to the step after that. So So
+
+01:20:37.720 --> 01:20:39.400
+once you have the logic for setting the
+
+01:20:39.400 --> 01:20:45.080
+user ID, we wanna move on to the
+
+01:20:45.080 --> 01:20:47.000
+next step which is linking it to slash
+
+01:20:47.000 --> 01:20:49.720
+profile slash user ID which I accidentally just
+
+01:20:49.720 --> 01:20:53.105
+showed. But in case you missed it, I'll
+
+01:20:53.105 --> 01:20:54.225
+give you a few minutes to give it
+
+01:20:54.225 --> 01:20:55.905
+a try on your own and we can
+
+01:20:55.905 --> 01:21:23.965
+go over it again. Yeah? Okay. So to
+
+01:21:23.965 --> 01:21:27.405
+do this, we just modified this slash profile
+
+01:21:27.405 --> 01:21:31.805
+link to slash profile slash user ID. And
+
+01:21:31.805 --> 01:21:34.700
+the solutions are up on the slides. So
+
+01:21:34.700 --> 01:21:37.900
+now our profiling should take us so if
+
+01:21:37.900 --> 01:22:05.870
+you go back to our home page. So
+
+01:22:05.870 --> 01:22:10.910
+instead of when we're conditionally rendering sign out,
+
+01:22:10.910 --> 01:22:13.150
+instead of checking whether logged in is null,
+
+01:22:13.150 --> 01:22:17.375
+we should be checking whether user ID is
+
+01:22:17.375 --> 01:22:24.655
+null. Okay. So now, what should happen is
+
+01:22:24.655 --> 01:22:30.830
+if you're logged in, and if you click
+
+01:22:30.830 --> 01:22:32.670
+the profile page, it should take you to
+
+01:22:32.670 --> 01:22:36.430
+your own profile. So give that a try.
+
+01:22:50.235 --> 01:23:00.000
+And we'll move on to step seven. Let's
+
+01:23:00.000 --> 01:23:02.720
+do git reset dash dash hard and go
+
+01:23:02.720 --> 01:23:06.960
+to git checkout w five step seven. And
+
+01:23:06.095 --> 01:23:08.495
+once you're on step seven, you should be
+
+01:23:08.495 --> 01:23:10.815
+able to do what we just shown and
+
+01:23:10.815 --> 01:23:12.495
+if you're logged in and click the profile
+
+01:23:12.495 --> 01:23:13.855
+page on that bar, it should take you
+
+01:23:13.855 --> 01:23:15.375
+to your own profile page. So make sure
+
+01:23:15.375 --> 01:23:18.175
+that works while you're on step seven. And
+
+01:23:18.175 --> 01:23:24.920
+note that if I'm logged in, if I
+
+01:23:24.920 --> 01:23:29.320
+refresh the page, it takes me back to
+
+01:23:29.320 --> 01:23:32.200
+a signed out state. So that means once
+
+01:23:32.200 --> 01:23:35.000
+you refresh, user ID is reset because it's
+
+01:23:35.000 --> 01:23:37.545
+stored in a state. But remember in the
+
+01:23:37.545 --> 01:23:40.665
+back end, we already stored the user information
+
+01:23:40.665 --> 01:23:42.825
+into a session. This means that the back
+
+01:23:42.825 --> 01:23:44.745
+end remembers if you're logged in or not,
+
+01:23:44.745 --> 01:23:46.585
+because it keeps rec dot user filled with
+
+01:23:46.585 --> 01:23:49.150
+the user's information in your session, but the
+
+01:23:49.150 --> 01:23:51.470
+front end forgot because user ID is now
+
+01:23:51.470 --> 01:23:55.710
+stored as a state. So every time that
+
+01:23:55.710 --> 01:23:59.230
+navbar.jsx renders, we need to ask the server,
+
+01:23:59.230 --> 01:24:01.230
+are we still logged in and if so,
+
+01:24:01.230 --> 01:24:05.285
+what's my user ID? So take twenty seconds
+
+01:24:05.285 --> 01:24:08.005
+to think about how we can check if
+
+01:24:08.005 --> 01:24:37.505
+we're still logged in or not. Yeah. Okay.
+
+01:24:37.505 --> 01:24:40.705
+So remember that our user information is persisted
+
+01:24:40.705 --> 01:24:43.185
+in the back end in your session, so
+
+01:24:43.185 --> 01:24:45.425
+we wanna make another get request to the
+
+01:24:45.425 --> 01:24:45.430
+back end. And we wanna request to the
+
+01:24:45.430 --> 01:24:47.350
+back end. And we wanna check if rec
+
+01:24:47.350 --> 01:24:49.510
+dot user is still filled in, because that
+
+01:24:49.510 --> 01:24:51.510
+means that the user information is still in
+
+01:24:51.510 --> 01:24:53.830
+our session and we should be good to
+
+01:24:53.830 --> 01:24:56.310
+stay logged in. So we're gonna implement a
+
+01:24:56.310 --> 01:25:00.895
+new get endpoint called whoami. And you're gonna
+
+01:25:00.895 --> 01:25:05.135
+implement this new route in api.js. It looks
+
+01:25:05.135 --> 01:25:07.375
+like no parameters, and all it'll do is
+
+01:25:07.375 --> 01:25:10.575
+return if it'll return rec dot user if
+
+01:25:10.575 --> 01:25:13.135
+it exists, and if it doesn't, it'll return
+
+01:25:13.455 --> 01:25:18.440
+empty brackets. So we can start with the
+
+01:25:18.440 --> 01:25:20.600
+first step and implement this route in api
+
+01:25:20.600 --> 01:25:27.560
+dot j s. And let's go ahead and
+
+01:25:27.560 --> 01:25:31.755
+write that together. So open up api dot
+
+01:25:31.755 --> 01:25:33.515
+j s, and let's set up the get
+
+01:25:33.515 --> 01:25:36.875
+route to who am I. So we'll do
+
+01:25:36.875 --> 01:25:39.355
+router dot get, and we want this endpoint
+
+01:25:39.355 --> 01:25:43.180
+to live in slash who am I. We'll
+
+01:25:43.180 --> 01:25:48.460
+take the rec and res objects. And if
+
+01:25:48.460 --> 01:25:51.420
+this get endpoint is called, we wanna check
+
+01:25:51.420 --> 01:25:53.980
+if rec dot user exists. So what we
+
+01:25:53.980 --> 01:25:56.395
+can do is use an if statement. If
+
+01:25:56.395 --> 01:26:01.915
+rec dot user If it exists, then we'll
+
+01:26:01.915 --> 01:26:04.475
+wanna send this rec dot user back to
+
+01:26:04.475 --> 01:26:07.035
+our front end. So we wanna do res
+
+01:26:07.035 --> 01:26:11.390
+dot send rec dot user. This will send
+
+01:26:11.390 --> 01:26:15.470
+the user at in the response. Otherwise, we'll
+
+01:26:15.470 --> 01:26:19.870
+have else, and we wanna send empty brackets.
+
+01:26:21.230 --> 01:26:23.630
+So this is a get endpoint at whoami,
+
+01:26:23.630 --> 01:26:25.710
+which will send rec dot user if it
+
+01:26:25.710 --> 01:26:31.365
+exists, and otherwise, it'll send nothing. So copy
+
+01:26:31.365 --> 01:26:34.725
+that down in api.js, and once you have
+
+01:26:34.725 --> 01:26:37.365
+this API endpoint, we wanna call this route
+
+01:26:37.365 --> 01:26:39.525
+in nav bar, so that every time nav
+
+01:26:39.525 --> 01:26:41.845
+bar loads, it's gonna ask the back end,
+
+01:26:42.090 --> 01:26:44.250
+oh, are we still logged in? And if
+
+01:26:44.250 --> 01:26:46.170
+so, it's gonna fill in the user ID
+
+01:26:46.170 --> 01:26:49.130
+state that we defined in navbar, fill it
+
+01:26:49.130 --> 01:26:52.170
+in so that every time you reload, your
+
+01:26:52.170 --> 01:26:56.995
+authentication should be persisted. Let's go to navbar.jsx,
+
+01:26:57.315 --> 01:27:00.755
+and let's make a get request. So in
+
+01:27:00.755 --> 01:27:04.035
+the top of the navbar component, we'll call
+
+01:27:04.035 --> 01:27:07.315
+who am I inside a use effect. So
+
+01:27:07.315 --> 01:27:16.010
+let's do use effect. And we want the
+
+01:27:16.010 --> 01:27:18.090
+dependency array to be empty because we want
+
+01:27:18.090 --> 01:27:22.170
+this to be called every time that your
+
+01:27:22.330 --> 01:27:27.055
+nav bar page loads. So here's the skeleton
+
+01:27:27.055 --> 01:27:30.015
+for these effect. Inside the use effect, let's
+
+01:27:30.015 --> 01:27:32.975
+make our get request. So we'll make a
+
+01:27:32.975 --> 01:27:36.095
+get request to slash api slash who am
+
+01:27:36.095 --> 01:27:38.735
+I, and this is a promise that's gonna
+
+01:27:38.735 --> 01:27:40.735
+return with the user object from the back
+
+01:27:40.735 --> 01:27:44.480
+end. So we'll wanna do that then. We'll
+
+01:27:44.480 --> 01:27:51.120
+take the user and just to be robust,
+
+01:27:51.120 --> 01:27:55.015
+we'll check again if user ID exists. Or
+
+01:27:55.015 --> 01:27:57.495
+sorry, we'll check if user ID exists, and
+
+01:27:57.495 --> 01:28:00.695
+if so, we'll set our user ID state
+
+01:28:00.695 --> 01:28:42.910
+to user dot slash ID. Isn't it right
+
+01:28:42.910 --> 01:28:56.475
+here? Oh, okay. Wait. What? Okay. So just
+
+01:28:56.475 --> 01:28:59.835
+to reiterate, now we're using the use effect
+
+01:28:59.835 --> 01:29:02.875
+hook to call the get endpoint at who
+
+01:29:02.875 --> 01:29:05.520
+am I to get the user ID if
+
+01:29:05.520 --> 01:29:07.600
+it's still in the session, and this should
+
+01:29:07.600 --> 01:29:10.080
+set our user ID state to user dot
+
+01:29:10.080 --> 01:29:17.095
+slash ID. So that's the second step, and
+
+01:29:17.095 --> 01:29:18.855
+what we wanna do now is that if
+
+01:29:18.855 --> 01:29:21.015
+the user is logged out, we'll wanna hide
+
+01:29:21.015 --> 01:29:23.575
+the profile button because there will not be
+
+01:29:23.575 --> 01:29:26.135
+a user using the application, so we don't
+
+01:29:26.135 --> 01:29:29.095
+want a profile button. So let's go down
+
+01:29:29.095 --> 01:29:32.480
+to where profile is being rendered, and we'll
+
+01:29:32.480 --> 01:29:35.600
+wanna do conditional rendering again. And we can
+
+01:29:35.600 --> 01:29:39.040
+wrap this all in brackets, and we'll check
+
+01:29:39.040 --> 01:29:41.840
+if user id is null. So we can
+
+01:29:41.840 --> 01:29:44.800
+do this by saying if both user id
+
+01:29:45.280 --> 01:29:47.905
+sorry, if user id is true, we'll render
+
+01:29:47.905 --> 01:29:52.785
+this profile link. So you can write that
+
+01:29:52.785 --> 01:30:04.610
+here. You wanna put this in parentheses. So
+
+01:30:04.610 --> 01:30:26.355
+I'll post the solution on the slides. You
+
+01:30:26.355 --> 01:31:11.205
+see that? Think it's here. Okay. And if
+
+01:31:11.205 --> 01:31:13.125
+it's not working, you wanna make sure import
+
+01:31:13.125 --> 01:31:22.725
+use effect in the top line. Okay. So
+
+01:31:22.725 --> 01:31:26.510
+after all those changes are made, what should
+
+01:31:26.510 --> 01:31:33.070
+happen now is if you sign in and
+
+01:31:33.070 --> 01:31:49.925
+if you refresh. Let me reiterate all the
+
+01:31:49.925 --> 01:31:52.310
+changes we just made to nav bar. So
+
+01:31:52.310 --> 01:31:54.470
+first, we imported use effect on the first
+
+01:31:54.470 --> 01:31:56.070
+line so that we can call this hook
+
+01:31:56.070 --> 01:31:59.670
+when we're making our get request. Upon loading,
+
+01:31:59.670 --> 01:32:01.350
+we'll use this use effect to call the
+
+01:32:01.350 --> 01:32:04.470
+get request, and if the user ID exists,
+
+01:32:04.470 --> 01:32:06.945
+we're gonna set user ID to the user
+
+01:32:06.945 --> 01:32:08.625
+dot slash ID, which we get from our
+
+01:32:08.625 --> 01:32:13.185
+back end. And then, we'll conditionally render the
+
+01:32:13.185 --> 01:32:15.665
+profile button to only show if user ID
+
+01:32:15.665 --> 01:32:18.410
+is not null. So after all those changes
+
+01:32:18.410 --> 01:32:20.330
+are made and you're logged in, you should
+
+01:32:20.330 --> 01:32:22.250
+be able to refresh and it'll persist your
+
+01:32:22.250 --> 01:32:26.490
+authentication. If you miss any of the steps,
+
+01:32:26.490 --> 01:32:28.490
+feel free to git reset dash dash hard
+
+01:32:28.490 --> 01:32:30.570
+and check out to w five step eight.
+
+01:32:31.415 --> 01:32:33.415
+So we'll do that, git reset dash dash
+
+01:32:33.415 --> 01:32:44.050
+hard, git checkout, workshop five step eight. Okay.
+
+01:32:44.050 --> 01:32:46.930
+So now what happens upon refresh? Every time
+
+01:32:46.930 --> 01:32:49.490
+that we reload navbar dot j s x,
+
+01:32:49.490 --> 01:32:52.850
+the use effect will call the API endpoint.
+
+01:32:53.810 --> 01:32:55.650
+So who am I? Who am I will
+
+01:32:55.650 --> 01:32:57.570
+check if the user still exists in the
+
+01:32:57.570 --> 01:33:00.205
+session, and it'll send the user object if
+
+01:33:00.205 --> 01:33:04.365
+it does, empty brackets if it doesn't. We
+
+01:33:04.365 --> 01:33:07.885
+have one last problem. If we go back
+
+01:33:07.885 --> 01:33:10.845
+to cat book, and if we're signed out,
+
+01:33:11.165 --> 01:33:13.030
+you you'll notice that we're able to make
+
+01:33:13.030 --> 01:33:15.910
+new stories and new comments even if we're
+
+01:33:15.910 --> 01:33:18.790
+not logged in. And this is bad because
+
+01:33:18.870 --> 01:33:21.270
+when we're making these stories and comments, we
+
+01:33:21.270 --> 01:33:23.430
+have a field called user dot name. But
+
+01:33:23.430 --> 01:33:26.150
+because there's no user logged in, it'll be
+
+01:33:25.635 --> 01:33:28.195
+null and you'll have a you'll have a
+
+01:33:28.835 --> 01:33:33.235
+failure in making these post requests. So what
+
+01:33:33.235 --> 01:33:35.475
+we wanna do is, if we're not logged
+
+01:33:35.475 --> 01:33:37.875
+in, we'll wanna hide the input fields for
+
+01:33:37.875 --> 01:33:43.770
+both the new story and new comment. Let's
+
+01:33:43.770 --> 01:33:45.450
+hide the input fields if the user is
+
+01:33:45.450 --> 01:33:50.090
+not logged in. So let's revisit the React
+
+01:33:50.090 --> 01:33:57.065
+hierarchy of feed. So here's what how the
+
+01:33:57.065 --> 01:33:59.625
+React components are nested within each other, and
+
+01:33:59.625 --> 01:34:01.385
+what we wanna do is we wanna hide
+
+01:34:01.385 --> 01:34:03.865
+the new story and new common components if
+
+01:34:03.865 --> 01:34:06.900
+we're not logged in. And remember that the
+
+01:34:06.900 --> 01:34:10.820
+new story and new common components are called
+
+01:34:11.620 --> 01:34:15.380
+in the parent component, so both feed and
+
+01:34:15.380 --> 01:34:17.620
+comments block will need to know whether we're
+
+01:34:17.620 --> 01:34:19.705
+logged in or not, so that they can
+
+01:34:19.705 --> 01:34:22.505
+conditionally render their child component depending on that
+
+01:34:22.505 --> 01:34:26.585
+state. So one solution is to call the
+
+01:34:26.585 --> 01:34:28.825
+who am I get endpoint in both feed
+
+01:34:28.825 --> 01:34:31.145
+and comments block to check whether we're logged
+
+01:34:31.145 --> 01:34:34.870
+in or not. That's bad, because remember that
+
+01:34:34.870 --> 01:34:37.990
+these who am I get endpoints will be
+
+01:34:37.990 --> 01:34:40.870
+called at each time we render the app.
+
+01:34:40.870 --> 01:34:43.270
+So every time we reload the app, we're
+
+01:34:43.270 --> 01:34:47.350
+gonna get not just two, but three get
+
+01:34:47.350 --> 01:34:50.605
+requests made, and that is really unnecessary, and
+
+01:34:50.605 --> 01:34:53.005
+it calls api slash whoami way too many
+
+01:34:53.005 --> 01:34:56.125
+times. So one solution we can do is
+
+01:34:56.125 --> 01:34:58.925
+we can call this whoami endpoint once at
+
+01:34:58.925 --> 01:35:02.660
+the rendering of app, which encapsulates everything, and
+
+01:35:02.660 --> 01:35:05.220
+we can take the user ID returned by
+
+01:35:05.220 --> 01:35:07.460
+whoami and pass it all the way down
+
+01:35:07.460 --> 01:35:12.260
+to all these components using props. This is
+
+01:35:12.260 --> 01:35:15.635
+a better solution than what we just offered
+
+01:35:15.635 --> 01:35:19.155
+with making three calls to whoami, because this
+
+01:35:19.155 --> 01:35:22.275
+only calls whoami once, and it'll pass everything
+
+01:35:22.275 --> 01:35:26.355
+down as props. But this is bad because
+
+01:35:26.355 --> 01:35:28.355
+we're prop drilling, and that means that we're
+
+01:35:28.355 --> 01:35:31.430
+passing props unnecessarily through many components to get
+
+01:35:31.430 --> 01:35:33.990
+to a child component. And as mentioned in
+
+01:35:33.990 --> 01:35:37.670
+Daniel's lecture, this can get really complicated and
+
+01:35:37.750 --> 01:35:40.870
+we don't want that. So what's another way
+
+01:35:40.870 --> 01:35:43.110
+to maintain just one API call in app
+
+01:35:43.110 --> 01:35:46.255
+dot jsx? Think back to what we covered
+
+01:35:46.255 --> 01:35:50.655
+in the lecture this morning, yeah. Yeah, exactly.
+
+01:35:52.015 --> 01:35:53.375
+So what we can do is we can
+
+01:35:53.375 --> 01:35:56.735
+wrap everything in context, and what we'll do
+
+01:35:56.735 --> 01:35:58.575
+is we'll make a get request in the
+
+01:35:58.575 --> 01:36:01.530
+app. This will give us a user ID,
+
+01:36:01.610 --> 01:36:03.370
+and this user ID will live in a
+
+01:36:03.370 --> 01:36:09.450
+context that wraps everything. And because all of
+
+01:36:09.450 --> 01:36:11.690
+these child components are wrapped in the context,
+
+01:36:11.690 --> 01:36:13.850
+they'll also be able to access user ID.
+
+01:36:16.625 --> 01:36:19.185
+Remember that state changes in your context re
+
+01:36:19.185 --> 01:36:22.145
+renders the components consuming the context. So this
+
+01:36:22.145 --> 01:36:25.505
+means we have we're storing one object in
+
+01:36:25.505 --> 01:36:28.065
+our context, and that's user ID. If user
+
+01:36:28.065 --> 01:36:30.870
+ID was to change at all, everything would
+
+01:36:30.870 --> 01:36:34.230
+get re rendered. So is this a good
+
+01:36:34.230 --> 01:36:37.190
+scenario to use context? Thumbs up if yes
+
+01:36:37.190 --> 01:36:42.390
+and thumbs down if no. Yeah, I'm seeing
+
+01:36:42.390 --> 01:36:45.505
+some thumbs up and yeah, does someone wanna
+
+01:36:45.505 --> 01:37:01.840
+tell me why? Yeah. Yeah, exactly. So we're
+
+01:37:01.840 --> 01:37:04.480
+only changing user ID if we log in
+
+01:37:04.480 --> 01:37:06.480
+and log out, which you don't expect to
+
+01:37:06.480 --> 01:37:08.320
+happen that many times over the course of
+
+01:37:08.320 --> 01:37:10.720
+the user using the application. There might be
+
+01:37:10.720 --> 01:37:13.755
+like other scenarios where you have an variable
+
+01:37:13.755 --> 01:37:15.355
+in your context that might change a lot
+
+01:37:15.355 --> 01:37:18.395
+throughout the course of the app existing and
+
+01:37:18.395 --> 01:37:20.635
+that's bad. But yeah, this would be a
+
+01:37:20.635 --> 01:37:25.995
+good use case of context because user ID
+
+01:37:25.995 --> 01:37:28.155
+will only change upon login and log out.
+
+01:37:31.350 --> 01:37:34.310
+So we don't have repeated unnecessary rerendering, so
+
+01:37:34.310 --> 01:37:35.990
+this is a great use case for context.
+
+01:37:35.990 --> 01:37:40.870
+So let's do just that. First, let's if
+
+01:37:40.870 --> 01:37:42.470
+you're not on step eight already, make sure
+
+01:37:42.470 --> 01:37:44.550
+to reset dash dash hard and check out
+
+01:37:44.550 --> 01:37:53.955
+the w w five step eight. We have
+
+01:37:53.955 --> 01:37:56.755
+a new file called context, which now lives
+
+01:37:56.755 --> 01:38:01.160
+in the components folder. Sorry, in the context
+
+01:38:01.160 --> 01:38:04.680
+folder, in components, this is called user context.
+
+01:38:05.080 --> 01:38:07.320
+So let's go through the process of creating
+
+01:38:07.320 --> 01:38:10.200
+a context. We want this context to live
+
+01:38:10.200 --> 01:38:11.880
+in a file outside of all of our
+
+01:38:11.880 --> 01:38:15.515
+components, and we wanna import the create context
+
+01:38:15.675 --> 01:38:21.755
+from react. And we wanna export a user
+
+01:38:21.755 --> 01:38:28.170
+context element. Export const user context, and we
+
+01:38:28.170 --> 01:38:30.970
+wanna use create context and initialize our user
+
+01:38:30.970 --> 01:38:33.610
+context. And we'll initialize it to null because
+
+01:38:33.610 --> 01:38:35.530
+we don't know what our user value is
+
+01:38:35.530 --> 01:38:38.585
+gonna be at. So this should be in
+
+01:38:38.585 --> 01:38:40.345
+user context dot j s x, and all
+
+01:38:40.345 --> 01:38:42.585
+we've done is added these two lines to
+
+01:38:42.665 --> 01:38:49.545
+define a user context element. So remember that
+
+01:38:49.545 --> 01:38:51.545
+we said we would make one API call
+
+01:38:51.545 --> 01:38:54.820
+now in app.jsx, and we'll store this user
+
+01:38:54.820 --> 01:38:57.780
+ID information in app and pass it into
+
+01:38:57.780 --> 01:39:00.740
+the user context in app. But because handle
+
+01:39:00.740 --> 01:39:04.100
+login and handle logout will modify user ID,
+
+01:39:04.420 --> 01:39:06.499
+and user ID is now handled in app,
+
+01:39:06.580 --> 01:39:08.655
+we'll wanna move not only the who am
+
+01:39:08.655 --> 01:39:10.815
+I call up from nav bar to app,
+
+01:39:10.815 --> 01:39:13.695
+we'll also wanna move handle login and handle
+
+01:39:13.695 --> 01:39:18.255
+log out up to app.jsx. So let's go
+
+01:39:18.255 --> 01:39:21.320
+through how we can do that together. So
+
+01:39:21.320 --> 01:39:26.520
+first, let's go to navbar dot jsx. Here
+
+01:39:26.520 --> 01:39:29.560
+we have the get request of who am
+
+01:39:29.560 --> 01:39:32.040
+I, a handle login function and a handle
+
+01:39:32.040 --> 01:39:34.840
+log out function. So let's copy paste all
+
+01:39:34.840 --> 01:39:40.755
+three of these. Oh, copy paste everything including
+
+01:39:40.755 --> 01:39:43.235
+the user ID definition because we'll wanna move
+
+01:39:43.235 --> 01:39:44.915
+these up to app dot j s x.
+
+01:39:44.995 --> 01:39:49.795
+So everything between these slash dividers, copy it,
+
+01:39:51.150 --> 01:39:52.910
+and let's go to app dot j s
+
+01:39:52.910 --> 01:39:58.110
+x, and let's paste it above the return.
+
+01:40:01.790 --> 01:40:05.505
+Now, we've moved the user ID state, the
+
+01:40:05.665 --> 01:40:08.145
+get request to who am I, handle login
+
+01:40:08.145 --> 01:40:10.465
+function, and handle logout function all to app
+
+01:40:10.465 --> 01:40:13.425
+dot j s x. But remember that nav
+
+01:40:13.425 --> 01:40:15.505
+bar dot j s x directly calls handle
+
+01:40:15.505 --> 01:40:17.505
+login and handle logout if we click the
+
+01:40:17.505 --> 01:40:20.220
+buttons. So I wanna pass handle login and
+
+01:40:20.220 --> 01:40:25.340
+handle logout down as props. So what we
+
+01:40:25.340 --> 01:40:27.660
+can do is let's go to where nav
+
+01:40:27.660 --> 01:40:30.700
+bar is defined. Let's pass in handle login
+
+01:40:30.700 --> 01:40:34.485
+as a prop, And this passes the whole
+
+01:40:34.485 --> 01:40:37.525
+function down, and we'll also wanna pass handle
+
+01:40:37.525 --> 01:40:51.010
+logout as a prop. So just to reiterate,
+
+01:40:51.010 --> 01:40:53.250
+we passed we moved the who am I
+
+01:40:53.250 --> 01:40:55.730
+handle login, handle logout, and user ID up
+
+01:40:55.730 --> 01:40:57.970
+to app, and now we've passed handle login
+
+01:40:57.970 --> 01:41:00.395
+and handle logout down to nav bar. But
+
+01:41:00.395 --> 01:41:01.835
+what we need to do in nav bar
+
+01:41:01.835 --> 01:41:05.195
+is, now we wanna reference handle login as
+
+01:41:05.195 --> 01:41:07.435
+a prop, because it no longer is defined
+
+01:41:07.435 --> 01:41:12.715
+in nav bar. So here, where we have
+
+01:41:12.715 --> 01:41:15.600
+the log out button, on click, we should
+
+01:41:15.600 --> 01:41:19.280
+call props. Handle log out. Similarly for the
+
+01:41:19.280 --> 01:41:22.800
+Google login component, on success should call props.handle
+
+01:41:22.800 --> 01:41:25.200
+log in, remember because handle log in and
+
+01:41:25.200 --> 01:41:27.440
+handle log out are no longer defined in
+
+01:41:27.440 --> 01:41:31.305
+nav bar. What I just changed was modifying
+
+01:41:31.305 --> 01:41:35.065
+these as fields of the prop sorry, parameters
+
+01:41:35.065 --> 01:41:42.345
+of the prop. Here's the code if you
+
+01:41:42.345 --> 01:41:52.970
+missed that. Okay. So now that we have
+
+01:41:52.970 --> 01:41:56.225
+our user ID now defined in app, we
+
+01:41:56.225 --> 01:41:59.265
+wanna wrap all the components inside our app
+
+01:41:59.265 --> 01:42:02.785
+inside a context provider. And this context provider
+
+01:42:02.785 --> 01:42:04.865
+will have one value, and that value will
+
+01:42:04.865 --> 01:42:07.825
+be our user ID. We're wrapping everything inside
+
+01:42:07.825 --> 01:42:09.985
+our app inside the context provider because we
+
+01:42:09.985 --> 01:42:11.760
+want anything inside our app to be able
+
+01:42:11.760 --> 01:42:13.680
+to access this value, which is the user
+
+01:42:13.680 --> 01:42:17.280
+ID. So let's go to the return statement
+
+01:42:17.280 --> 01:42:23.520
+of app dot j s x. So we
+
+01:42:23.520 --> 01:42:26.975
+wanna wrap these four lines in the context
+
+01:42:26.975 --> 01:42:30.655
+provider. So above nav bar, let's go ahead
+
+01:42:30.655 --> 01:42:34.015
+and take user context dot provider and set
+
+01:42:34.015 --> 01:42:40.910
+its value to user ID. And we wanna
+
+01:42:40.910 --> 01:42:46.190
+take the closing tag and place it under
+
+01:42:46.190 --> 01:42:49.950
+those four lines. So now we've wrapped the
+
+01:42:49.950 --> 01:42:52.430
+nav bar and the outlet inside the context
+
+01:42:52.430 --> 01:42:54.785
+provider, and it'll pass in the value of
+
+01:42:54.785 --> 01:42:57.665
+user ID, which is set in the rendering
+
+01:42:57.665 --> 01:43:10.550
+of app. Oh. And remember that we defined
+
+01:43:10.550 --> 01:43:12.950
+user context in a different file, so what
+
+01:43:12.950 --> 01:43:15.030
+we wanna do is import that and you
+
+01:43:15.030 --> 01:43:18.905
+can do that by uncommenting up here. You
+
+01:43:18.905 --> 01:43:21.385
+wanna uncomment that line so we have we're
+
+01:43:21.385 --> 01:43:23.865
+able to access this user context in the
+
+01:43:23.865 --> 01:43:28.585
+other file. And do the same thing in
+
+01:43:28.585 --> 01:43:33.350
+nav bar. So once we've wrapped everything in
+
+01:43:33.350 --> 01:43:35.830
+the provider, we still have to access the
+
+01:43:35.830 --> 01:43:38.950
+user ID in nav bar in some way.
+
+01:43:39.430 --> 01:43:42.950
+And just now in nav bar, we uncommented
+
+01:43:42.950 --> 01:43:45.535
+the import of user context, and we can
+
+01:43:45.535 --> 01:43:49.375
+consume user ID from the context. So let's
+
+01:43:49.375 --> 01:43:52.255
+go through how we can do that. We
+
+01:43:52.255 --> 01:43:54.735
+can use this simple line, we'll set a
+
+01:43:54.735 --> 01:43:58.660
+variable const user ID, we'll use context and
+
+01:43:58.660 --> 01:44:01.940
+pass in user context. And right now, user
+
+01:44:01.940 --> 01:44:03.940
+context has a singular value, so it'll take
+
+01:44:03.940 --> 01:44:06.420
+the singular value of user context and put
+
+01:44:06.420 --> 01:44:08.820
+it in our user ID variables that lives
+
+01:44:08.820 --> 01:44:15.095
+in nav bar. We'll also want to import
+
+01:44:15.095 --> 01:44:18.295
+use context on the first line of navbar
+
+01:44:18.295 --> 01:44:25.940
+dot jsx. Oh no, sorry. We wanna import
+
+01:44:25.940 --> 01:44:35.220
+that in React Router DOM. I think. Let
+
+01:44:35.220 --> 01:44:39.715
+me check. I guess we'll see if it
+
+01:44:39.715 --> 01:44:53.790
+works or not. Okay. Sorry. Oh, okay. So
+
+01:44:53.790 --> 01:44:56.350
+now far you want to import use context.
+
+01:44:56.990 --> 01:45:13.825
+Also, I think. This is wrong. Oh. Okay.
+
+01:45:13.825 --> 01:45:15.425
+In app dot j s x, I also
+
+01:45:15.425 --> 01:45:18.070
+imported user context wrong. It should be slash
+
+01:45:18.070 --> 01:45:28.870
+components slash context. Or And we'll also wanna
+
+01:45:28.870 --> 01:45:31.830
+import get, so copy the get and post
+
+01:45:31.830 --> 01:45:33.895
+import line from nav bar and paste it
+
+01:45:33.895 --> 01:45:52.820
+into app dot j s x. Okay. Alright.
+
+01:45:52.820 --> 01:45:55.540
+Just to reiterate, we imported get and so
+
+01:45:55.540 --> 01:45:57.940
+this is app dot j s x, and
+
+01:45:57.940 --> 01:46:00.660
+we're now making the get request in app,
+
+01:46:00.660 --> 01:46:03.300
+so we need to import get into app,
+
+01:46:03.555 --> 01:46:08.755
+and this is done via line three. And
+
+01:46:08.755 --> 01:46:13.235
+we are also using the user context object,
+
+01:46:13.395 --> 01:46:16.210
+which we define in user context dot x,
+
+01:46:16.210 --> 01:46:18.370
+so we have to import that into apps
+
+01:46:18.450 --> 01:46:22.530
+as in line five. So we have two
+
+01:46:22.530 --> 01:46:27.090
+new import statements. After we import those, remember
+
+01:46:27.090 --> 01:46:29.255
+that we copy paste the user ID, the
+
+01:46:29.255 --> 01:46:31.495
+get request, handle login, and handle log out
+
+01:46:31.495 --> 01:46:34.775
+from nav bar. And we're passing the handle
+
+01:46:34.775 --> 01:46:36.695
+login and handle log out functions down to
+
+01:46:36.695 --> 01:46:39.255
+nav bar. And what we've changed in nav
+
+01:46:39.255 --> 01:46:42.135
+bar is instead of getting user ID via
+
+01:46:42.135 --> 01:46:44.800
+the who am I endpoint, we're just taking
+
+01:46:44.800 --> 01:46:47.760
+it from our context by importing user context
+
+01:46:47.760 --> 01:46:50.640
+from the user context file we defined earlier,
+
+01:46:51.360 --> 01:46:53.200
+and then we're setting that to the value
+
+01:46:53.200 --> 01:46:57.680
+inside the user context. So hopefully everything still
+
+01:46:57.680 --> 01:47:03.305
+works. Hopefully, you can log in. And everything
+
+01:47:03.305 --> 01:47:08.505
+should still persist. And remember, our motivation for
+
+01:47:08.745 --> 01:47:11.460
+using context is so that we can hide
+
+01:47:11.460 --> 01:47:15.700
+the input fields for story and comments by
+
+01:47:15.700 --> 01:47:18.660
+looking at the value of user ID. And
+
+01:47:18.660 --> 01:47:20.740
+instead of making the who am I get
+
+01:47:20.740 --> 01:47:23.940
+request everywhere, we're gonna store that information in
+
+01:47:23.940 --> 01:47:26.935
+the context. So we'll also need to access
+
+01:47:26.935 --> 01:47:30.615
+the context from some other components. So we'll
+
+01:47:30.615 --> 01:47:34.615
+go over that in the final step. Okay,
+
+01:47:34.615 --> 01:47:36.935
+so that was a lot. Just to reiterate,
+
+01:47:36.935 --> 01:47:39.175
+we rearranged our code so that we now
+
+01:47:39.175 --> 01:47:42.370
+store user ID in a global context, and
+
+01:47:42.370 --> 01:47:44.050
+that's so that we can now access user
+
+01:47:44.050 --> 01:47:49.570
+ID from any component in app.js x. So
+
+01:47:49.570 --> 01:47:53.010
+now feel free to git reset hard dash
+
+01:47:53.010 --> 01:47:58.595
+dash hard, git checkout step nine. And our
+
+01:47:58.595 --> 01:48:02.835
+last step will be hiding the input boxes
+
+01:48:02.835 --> 01:48:05.875
+if we're logged out. So remember that in
+
+01:48:05.875 --> 01:48:07.555
+nav bar dot j s x, we just
+
+01:48:07.555 --> 01:48:10.195
+went over how we can consume the context
+
+01:48:10.170 --> 01:48:12.090
+and set user id to the value of
+
+01:48:12.090 --> 01:48:14.810
+user context. So you wanna do something very
+
+01:48:14.810 --> 01:48:17.690
+similar in feed dot jsx in comments block.
+
+01:48:18.570 --> 01:48:20.330
+So what you'll wanna do is you'll wanna
+
+01:48:20.330 --> 01:48:22.825
+import the user context and you'll just wanna
+
+01:48:22.825 --> 01:48:24.585
+set user ID to the value of that
+
+01:48:24.585 --> 01:48:28.585
+context, and you'll wanna conditionally render new story
+
+01:48:28.585 --> 01:48:47.285
+and new comment if user ID exists. Okay.
+
+01:48:48.405 --> 01:48:50.245
+Okay. So let's go over how we can
+
+01:48:50.245 --> 01:48:54.245
+do that together. Let's start by going to
+
+01:48:54.245 --> 01:49:02.820
+feed. I we've already imported user context for
+
+01:49:02.820 --> 01:49:04.740
+you, so all we need to do is
+
+01:49:04.740 --> 01:49:07.540
+consume it. So let's do const user ID
+
+01:49:07.540 --> 01:49:10.660
+and set this equal to use context user
+
+01:49:10.660 --> 01:49:17.805
+context. Now you wanna conditionally render new story.
+
+01:49:18.445 --> 01:49:21.645
+So let's put this in brackets, and if
+
+01:49:21.645 --> 01:49:24.525
+user ID exists, we'll render new story as
+
+01:49:24.525 --> 01:49:28.800
+well. Let's just check and you'll see that
+
+01:49:28.800 --> 01:49:32.000
+if we go back to the input fields,
+
+01:49:32.400 --> 01:49:34.080
+you no longer see the input field for
+
+01:49:34.080 --> 01:49:38.845
+story. I'll post the solution up for that.
+
+01:49:39.405 --> 01:49:41.805
+And you can do the same thing in
+
+01:49:41.885 --> 01:49:44.365
+oh, what was the other one? You can
+
+01:49:44.365 --> 01:49:48.925
+do the same thing in comments block. We
+
+01:49:48.925 --> 01:49:52.030
+already imported user context, you just need to
+
+01:49:52.030 --> 01:49:54.670
+consume the context and place into user ID
+
+01:49:54.670 --> 01:50:01.710
+variable. And then we'll wanna conditionally render the
+
+01:50:01.710 --> 01:50:08.635
+new comment component. Okay. And now, you should
+
+01:50:08.635 --> 01:50:10.715
+see that the input field should disappear for
+
+01:50:10.715 --> 01:50:18.650
+both comments and stories. And that's the end
+
+01:50:18.650 --> 01:50:24.810
+of cat book. Yay. Good job guys, that
+
+01:50:24.810 --> 01:50:27.530
+was a lot. And now we'll hand it
+
+01:50:27.530 --> 01:50:28.410
+over to Daniel.

@@ -310,5 +310,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_6_auth_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_auth/mit_web_lab_6_962_-_day_6_auth_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_auth/mit_web_lab_6_962_-_day_6_auth_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 6: Workshop 5 (Accounts/Auth)",
+    "video_name_clean": "mit_web_lab_6_962_-_day_6_workshop_5_accountsauth",
+    "youtube_id": "jpjUyVCzsdM",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-16T02:06:19.591138+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 6628,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_6_workshop_5_accountsauth_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_workshop_5_accountsauth/mit_web_lab_6_962_-_day_6_workshop_5_accountsauth_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_workshop_5_accountsauth/mit_web_lab_6_962_-_day_6_workshop_5_accountsauth_transcript.vtt"
   }
 ]
