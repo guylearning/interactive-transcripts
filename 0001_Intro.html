@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0001 Intro - Interactive Lesson</title>
-    <!-- Dữ liệu transcript được nhúng ở đây -->
+    <title>0001 Intro - Interactive Lesson (Drive)</title>
+    <!-- Dữ liệu transcript được nhúng -->
     <script id="allTranscriptData" type="application/json">
       {
         "metadata": {
@@ -21,16 +21,6 @@
               "version": "2024-01-06.5664",
               "arch": "nova-2"
             }
-          },
-          "summary_info": {
-            "model_uuid": "67875a7f-c9c4-48a0-aa55-5bdb8a91c34a",
-            "input_tokens": 178,
-            "output_tokens": 67
-          },
-          "topics_info": {
-            "model_uuid": "80ab3179-d113-4254-bd6b-4a2f96498695",
-            "input_tokens": 196,
-            "output_tokens": 7
           }
         },
         "results": {
@@ -231,419 +221,393 @@
                 }
               ]
             }
-          ],
-          "utterances": null, /* Bỏ qua utterances nếu không cần thiết cho cấu trúc HTML này */
-          "summary": {
-            "result": "success",
-            "short": "The speaker is discussing the course on coding and how to turn ideas into reality quickly to build profitable businesses. The goal is to provide the entire mindset necessary to achieve this goal, including building a personal business and finding motivation. The lessons will focus on marketing principles and turning ideas into reality to show up every day and do the work."
-          },
-          "topics": {
-            "segments": [
-              {
-                "text": "You're learning how to code because maybe you want to build an app for you and your friends, or even you might want to build an entire business and replace your nine to five. Whatever this is you're trying to achieve, my goal with these following lessons of this chapter is to give you the entire mindset that I've acquired in the past six years in order for you to achieve your goals.",
-                "start_word": 21, "end_word": 93,
-                "topics": [{ "topic": "Mindsets", "confidence_score": 0.5139376 }]
-              },
-              {
-                "text": "And we are going to talk about how to become self driven, how to easily find motivation so you want to show up every day and do the work.",
-                "start_word": 132, "end_word": 160,
-                "topics": [{ "topic": "Motivation", "confidence_score": 0.6713615 }]
-              }
-            ]
-          }
+          ]
         }
       }
     </script>
     <script>
         // Thông tin video (sẽ được cập nhật)
-        window.VIDEO_SRC = "https://drive.google.com/uc?id=1xPXRoj1tcKV9n_61sDq9bcXhvAxpJkXK"; // URL Google Drive
+        window.GOOGLE_DRIVE_VIDEO_ID = "1xPXRoj1tcKV9n_61sDq9bcXhvAxpJkXK"; // Chỉ ID
         window.ORIGINAL_UPLOADER = "Google Drive Video";
-        window.ORIGINAL_DURATION = 0; // Sẽ được cập nhật khi video tải
+        window.ORIGINAL_DURATION = 45.418686; // Lấy từ JSON metadata, hoặc để JS tự lấy
         window.VIDEO_TITLE = "0001 Intro";
     </script>
-    <style>
-        /* CSS từ file video_to_html_lesson.py (có thể cần file style.css đầy đủ hơn) */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            margin: 0;
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            padding-top: 20px;
-        }
-        .page-container {
-            display: flex;
-            flex-direction: column;
-            width: 90%;
-            max-width: 1200px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .video-section {
-            width: 100%;
-            background-color: #000;
-            position: relative;
-        }
-        #lessonVideoPlayer {
-            width: 100%;
-            display: block;
-            max-height: 60vh; /* Giới hạn chiều cao video */
-        }
-
-        .page-header {
-            padding: 15px 25px;
-            background-color: #f9f9f9;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .video-info h1 {
-            margin: 0 0 5px 0;
-            font-size: 1.8em;
-            color: #2c3e50;
-        }
-        .video-info p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #7f8c8d;
-        }
-        .settings-bar {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        .settings-bar label {
-            margin-right: 15px;
-            cursor: pointer;
-        }
-
-        .content-section {
-            padding: 20px;
-            flex-grow: 1;
-            overflow-y: auto; /* Cho phép cuộn nếu nội dung dài */
-            max-height: calc(100vh - 300px); /* Điều chỉnh chiều cao tối đa của khu vực transcript */
-        }
-
-        .transcript-container {
-            display: flex;
-            width: 100%;
-            position: relative;
-        }
-        .timeline-column {
-            width: 70px; /* Tăng nhẹ chiều rộng */
-            position: relative;
-            flex-shrink: 0;
-            padding-top: 10px; /* Căn chỉnh với text */
-        }
-        .transcript-column {
-            flex: 1;
-            /* overflow-y: auto; /* Bỏ overflow ở đây, đã có ở content-section */
-            /* max-height: calc(100vh - 250px); /* Bỏ max-height ở đây */
-            padding-right: 10px;
-        }
-        .timeline-connecting-line {
-            position: absolute;
-            left: 35px; /* Điều chỉnh vị trí */
-            top: 20px; /* Điều chỉnh vị trí bắt đầu */
-            bottom: 20px; /* Điều chỉnh vị trí kết thúc */
-            width: 2px;
-            background-color: #ddd; /* Nhạt hơn */
-            transform: translateX(-50%);
-            z-index: 0;
-        }
-        .paragraph-container {
-            display: flex;
-            margin-bottom: 25px; /* Tăng khoảng cách */
-            position: relative;
-            cursor: pointer;
-            z-index: 1;
-        }
-        .timeline-dot-wrapper {
-            width: 70px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            margin-top: 0px; /* Chỉnh lại cho khớp với dòng text đầu tiên */
-            flex-shrink: 0;
-        }
-        .timeline-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #ccc;
-            border: 2px solid #fff; /* Thêm viền để nổi bật */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            z-index: 2; /* Đảm bảo dot nổi lên trên line */
-        }
-        .timeline-timestamp {
-            font-size: 11px; /* Nhỏ hơn 1 chút */
-            color: #777;
-            margin-top: 5px;
-            background-color: rgba(255,255,255,0.8); /* Nền mờ để dễ đọc hơn nếu có line phía sau */
-            padding: 1px 3px;
-            border-radius: 2px;
-        }
-        .paragraph-text {
-            flex: 1;
-            padding: 8px 12px; /* Tăng padding */
-            border-radius: 6px;
-            transition: background-color 0.3s ease;
-            line-height: 1.6;
-            background-color: #fdfdfd; /* Nền rất nhạt cho khối text */
-            border: 1px solid #eee;
-        }
-        .paragraph-active .paragraph-text {
-            background-color: rgba(144, 202, 249, 0.15); /* Nhạt hơn chút */
-            border-color: rgba(33, 150, 243, 0.3);
-        }
-        .paragraph-active .timeline-dot {
-            background-color: #2196F3;
-            width: 16px; /* Lớn hơn khi active */
-            height: 16px;
-            border-color: #2196F3;
-            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
-        }
-        .transcript-sentence {
-            transition: background-color 0.2s ease, color 0.2s ease;
-            padding: 1px 2px; /* Padding nhỏ cho sentence */
-            border-radius: 3px;
-            margin-right: 3px; /* Khoảng cách giữa các câu */
-        }
-        .sentence-active {
-            background-color: rgba(33, 150, 243, 0.25); /* Nhạt hơn chút */
-            /* color: #1976D2; */ /* Có thể thêm màu chữ nếu muốn */
-        }
-        .no-transcript-message {
-            text-align: center;
-            padding: 20px;
-            color: #888;
-        }
-
-        /* Styles cho thanh cuộn */
-        .transcript-column::-webkit-scrollbar, .content-section::-webkit-scrollbar {
-            width: 8px;
-        }
-        .transcript-column::-webkit-scrollbar-track, .content-section::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        .transcript-column::-webkit-scrollbar-thumb, .content-section::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 10px;
-        }
-        .transcript-column::-webkit-scrollbar-thumb:hover, .content-section::-webkit-scrollbar-thumb:hover {
-            background: #aaa;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Liên kết đến style.css -->
 </head>
 <body>
     <div class="page-container">
         <div class="video-section">
-            <video id="lessonVideoPlayer" controls>
+            <!-- Sử dụng thẻ video HTML5 thay vì div cho YouTube -->
+            <video id="lessonVideoPlayer" controls playsinline>
                 <source src="" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <header class="page-header">
              <div class="video-info">
-                <h1 id="videoTitle"></h1>
-                <p>Channel: <span id="videoUploader"></span> | Duration: <span id="videoDuration">Loading...</span></p>
+                <h1 id="videoTitleElement"></h1> <!-- ID khác để tránh xung đột với window.VIDEO_TITLE -->
+                <p>Channel: <span id="videoUploaderElement"></span> | Duration: <span id="videoDurationElement"></span></p>
             </div>
             <div class="settings-bar">
                 <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
             </div>
         </header>
         <div class="content-section" id="mainContentArea">
-            <!-- Transcript sẽ được chèn vào đây bởi JavaScript -->
+            <div id="timeline-container">
+                <ul class="timeline-list" id="timelineListElement">
+                    <!-- Timeline items sẽ được tạo bởi JS -->
+                </ul>
+            </div>
+            <div id="transcript-content-container">
+                <!-- Transcript paragraphs sẽ được tạo bởi JS -->
+            </div>
         </div>
     </div>
 
+    <!-- Sử dụng một file JS riêng đã được điều chỉnh cho HTML5 video -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const video = document.getElementById('lessonVideoPlayer');
-            const transcriptDataElement = document.getElementById('allTranscriptData');
-            const mainContentArea = document.getElementById('mainContentArea');
-            const autoScrollCheckbox = document.getElementById('autoScrollTranscriptCheckbox');
+        // lesson_player_html5.js (Nội dung JS đã được điều chỉnh)
+
+        var player; // Sẽ là HTMLVideoElement
+        var allParagraphsData = [];
+        var autoScrollTranscriptEnabled = true;
+
+        var currentActiveTimelineItem = null;
+        var currentActiveParagraphText = null;
+        var currentActiveSentence = null;
+
+        var mainContentAreaEl, transcriptContentEl, timelineContainerEl, timelineListEl;
+        var paragraphObserver, videoTimeUpdaterInterval;
+
+        // Hàm định dạng thời gian (giữ nguyên từ file python)
+        function formatDisplayTimestamp(seconds) {
+            if (seconds == null || isNaN(seconds)) return "00:00";
+            const totalSeconds = Math.floor(seconds);
+            const hrs = Math.floor(totalSeconds / 3600);
+            const mins = Math.floor((totalSeconds % 3600) / 60);
+            const secs = totalSeconds % 60;
+            if (hrs > 0) return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            player = document.getElementById('lessonVideoPlayer');
+            mainContentAreaEl = document.getElementById('mainContentArea');
+            transcriptContentEl = document.getElementById('transcript-content-container');
+            timelineContainerEl = document.getElementById('timeline-container');
+            timelineListEl = document.getElementById('timelineListElement');
 
             // Cập nhật thông tin video từ biến window
-            document.getElementById('videoTitle').textContent = window.VIDEO_TITLE || "Interactive Lesson";
-            document.getElementById('videoUploader').textContent = window.ORIGINAL_UPLOADER || "N/A";
-            video.src = window.VIDEO_SRC;
-
-
-            let deepgramJsonData = null;
-            try {
-                deepgramJsonData = JSON.parse(transcriptDataElement.textContent);
-            } catch (e) {
-                console.error("Error parsing transcript data:", e);
-                mainContentArea.innerHTML = '<p class="no-transcript-message">Error loading transcript data.</p>';
+            document.getElementById('videoTitleElement').textContent = window.VIDEO_TITLE || "Interactive Lesson";
+            document.getElementById('videoUploaderElement').textContent = window.ORIGINAL_UPLOADER || "N/A";
+            document.getElementById('videoDurationElement').textContent = formatDisplayTimestamp(window.ORIGINAL_DURATION);
+            
+            // Thiết lập nguồn video Google Drive
+            if (window.GOOGLE_DRIVE_VIDEO_ID) {
+                player.querySelector('source').src = `https://drive.google.com/uc?id=${window.GOOGLE_DRIVE_VIDEO_ID}`;
+                player.load(); // Tải lại video với nguồn mới
+            } else {
+                console.error("GOOGLE_DRIVE_VIDEO_ID not found on window object.");
+                transcriptContentEl.innerHTML = "<p class='no-transcript-message'>Error: Video ID missing.</p>";
                 return;
             }
 
-            function formatDisplayTimestamp(seconds) {
-                if (seconds == null || isNaN(seconds)) return "00:00";
-                const totalSeconds = Math.floor(seconds);
-                const hrs = Math.floor(totalSeconds / 3600);
-                const mins = Math.floor((totalSeconds % 3600) / 60);
-                const secs = totalSeconds % 60;
-                if (hrs > 0) return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-                return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-            }
-
-            video.onloadedmetadata = function() {
-                window.ORIGINAL_DURATION = video.duration;
-                document.getElementById('videoDuration').textContent = formatDisplayTimestamp(video.duration);
-            };
-
-            let paragraphsForHtmlStructure = [];
-            try {
-                const rawParagraphs = deepgramJsonData.results.channels[0].alternatives[0].paragraphs.paragraphs;
-                rawParagraphs.forEach((para_info, p_idx) => {
-                    let sentences_for_html_structure = [];
-                    para_info.sentences.forEach((sentence_info, s_idx) => {
-                        const sentence_text = sentence_info.text.replace(/\n/g, " ").trim();
-                        if (sentence_text) {
-                            sentences_for_html_structure.push({
-                                id: `sent_${p_idx}_${s_idx}`,
-                                text: sentence_text,
-                                start: sentence_info.start,
-                                end: sentence_info.end
+            const transcriptDataElem = document.getElementById('allTranscriptData');
+            if (transcriptDataElem && transcriptDataElem.textContent) {
+                try {
+                    const fullJson = JSON.parse(transcriptDataElem.textContent);
+                    // Trích xuất cấu trúc paragraphs mong muốn (tương tự logic Python)
+                    const rawParagraphs = fullJson.results.channels[0].alternatives[0].paragraphs.paragraphs;
+                    rawParagraphs.forEach((para_info, p_idx) => {
+                        let sentences_for_html_structure = [];
+                        para_info.sentences.forEach((sentence_info, s_idx) => {
+                            const sentence_text = sentence_info.text.replace(/\n/g, " ").trim();
+                            if (sentence_text) {
+                                sentences_for_html_structure.push({
+                                    id: `sent_${p_idx}_${s_idx}`,
+                                    text: sentence_text,
+                                    start: sentence_info.start,
+                                    end: sentence_info.end
+                                });
+                            }
+                        });
+                        if (sentences_for_html_structure.length > 0) {
+                            allParagraphsData.push({
+                                id: `para_${p_idx}`, // ID cho thẻ div chứa paragraph
+                                paragraph_idx: p_idx, // Index của paragraph
+                                start: para_info.start,
+                                end: para_info.end,
+                                sentences: sentences_for_html_structure
                             });
                         }
                     });
-                    if (sentences_for_html_structure.length > 0) {
-                        paragraphsForHtmlStructure.push({
-                            id: `para_${p_idx}`,
-                            paragraph_idx: p_idx,
-                            start: para_info.start,
-                            end: para_info.end,
-                            sentences: sentences_for_html_structure
-                        });
+
+                } catch (e) {
+                    console.error("Parse allTranscriptData failed:", e);
+                    if (transcriptContentEl) transcriptContentEl.innerHTML = "<p class='no-transcript-message'>Error loading transcript data.</p>";
+                    return;
+                }
+            }
+
+            if (allParagraphsData.length === 0) {
+                if (transcriptContentEl && !transcriptContentEl.querySelector('.no-transcript-message')) {
+                     transcriptContentEl.innerHTML = "<p class='no-transcript-message'>No transcript available for this video.</p>";
+                }
+            } else {
+                generateTimelineAndTranscriptDOM();
+            }
+
+            setupClickHandlers(); // Phải gọi sau khi DOM được tạo
+            setupScrollAndVideoSync();
+
+            const autoScrollCheckbox = document.getElementById('autoScrollTranscriptCheckbox');
+            if (autoScrollCheckbox) {
+                autoScrollTranscriptEnabled = autoScrollCheckbox.checked;
+                autoScrollCheckbox.addEventListener('change', function() { autoScrollTranscriptEnabled = this.checked; });
+            }
+
+            const minimalVideoToggle = document.getElementById('minimalVideoToggle');
+            if (minimalVideoToggle) {
+                if (localStorage.getItem('videoMinimalMode') === 'true') {
+                    document.body.classList.add('video-minimal-mode');
+                    minimalVideoToggle.checked = true;
+                }
+                minimalVideoToggle.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.body.classList.add('video-minimal-mode');
+                        localStorage.setItem('videoMinimalMode', 'true');
+                    } else {
+                        document.body.classList.remove('video-minimal-mode');
+                        localStorage.setItem('videoMinimalMode', 'false');
                     }
                 });
-            } catch (e) {
-                console.error("Error processing Deepgram JSON for lesson HTML:", e);
             }
 
-            let contentHtml = '';
-            if (!paragraphsForHtmlStructure || paragraphsForHtmlStructure.length === 0) {
-                contentHtml = '<p class="no-transcript-message">No transcript available for this video.</p>';
-            } else {
-                contentHtml = `
-                <div class="transcript-container">
-                    <div class="timeline-column">
-                        <div class="timeline-connecting-line"></div>
-                    </div>
-                    <div class="transcript-column" id="transcriptColumn">`;
+            // Cập nhật duration khi video đã tải metadata
+            player.onloadedmetadata = function() {
+                window.ORIGINAL_DURATION = player.duration; // Cập nhật duration chính xác
+                document.getElementById('videoDurationElement').textContent = formatDisplayTimestamp(player.duration);
+            };
+        });
 
-                paragraphsForHtmlStructure.forEach(para_struct => {
-                    contentHtml += `
-                        <div class="paragraph-container" id="${para_struct.id}" data-paragraph-idx="${para_struct.paragraph_idx}" data-start-time="${para_struct.start}" data-end-time="${para_struct.end}">
-                            <div class="timeline-dot-wrapper">
-                                <div class="timeline-dot" data-timestamp="${para_struct.start}"></div>
-                                <div class="timeline-timestamp">${formatDisplayTimestamp(para_struct.start)}</div>
-                            </div>
-                            <div class="paragraph-text" id="text-${para_struct.id}">`;
+        function generateTimelineAndTranscriptDOM() {
+            let timelineHtml = '';
+            let transcriptHtml = '';
 
-                    para_struct.sentences.forEach(sent_struct => {
-                        contentHtml += `<span class="transcript-sentence" id="${sent_struct.id}" data-start-time="${sent_struct.start}" data-end-time="${sent_struct.end}">${sent_struct.text}</span> `;
-                    });
-                    contentHtml += `</div></div>`;
+            allParagraphsData.forEach(para_struct => {
+                // Tạo Timeline Item
+                timelineHtml += `
+                    <li class="timeline-item" data-paragraph-idx="${para_struct.paragraph_idx}" data-start-time="${para_struct.start}" data-target-transcript-id="text-${para_struct.id}">
+                        <div class="timeline-timestamp">${formatDisplayTimestamp(para_struct.start)}</div>
+                        <div class="timeline-dot-container">
+                            <div class="timeline-dot"></div>
+                        </div>
+                    </li>`;
+
+                // Tạo Transcript Paragraph
+                transcriptHtml += `<div class="transcript-paragraph-text" id="text-${para_struct.id}" data-paragraph-idx="${para_struct.paragraph_idx}" data-start-time="${para_struct.start}" data-end-time="${para_struct.end}">`;
+                para_struct.sentences.forEach(sent_struct => {
+                    transcriptHtml += `<span class="transcript-sentence" id="${sent_struct.id}" data-start-time="${sent_struct.start}" data-end-time="${sent_struct.end}">${sent_struct.text}</span> `;
                 });
-                contentHtml += `</div></div>`;
-            }
-            mainContentArea.innerHTML = contentHtml;
+                transcriptHtml += `</div>`;
+            });
 
-            // Event listeners for interaction
-            const sentenceElements = document.querySelectorAll('.transcript-sentence');
-            const paragraphElements = document.querySelectorAll('.paragraph-container');
-            const transcriptColumn = document.getElementById('transcriptColumn');
+            if (timelineListEl) timelineListEl.innerHTML = timelineHtml;
+            if (transcriptContentEl) transcriptContentEl.innerHTML = transcriptHtml;
+        }
 
-            sentenceElements.forEach(el => {
-                el.addEventListener('click', function() {
-                    const startTime = parseFloat(this.dataset.startTime);
-                    if (!isNaN(startTime)) {
-                        video.currentTime = startTime;
-                        if (video.paused) video.play();
+
+        function setupClickHandlers() {
+            // Click vào timeline item
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const startTime = parseFloat(item.dataset.startTime);
+                    const targetTranscriptId = item.dataset.targetTranscriptId;
+                    const targetTranscriptElement = document.getElementById(targetTranscriptId);
+                    
+                    if (targetTranscriptElement && mainContentAreaEl) {
+                        // Scroll main content area để transcript paragraph tương ứng lên đầu
+                        let scrollTargetY = targetTranscriptElement.offsetTop - mainContentAreaEl.offsetTop - (mainContentAreaEl.clientHeight * 0.1);
+                        mainContentAreaEl.scrollTo({ top: Math.max(0, scrollTargetY), behavior: "smooth" });
+                    }
+                    if (player) {
+                        player.currentTime = startTime;
+                        if (player.paused) player.play();
                     }
                 });
             });
-             paragraphElements.forEach(el => {
-                el.addEventListener('click', function(event) {
-                    // Chỉ tua video nếu click vào vùng text hoặc dot, không phải khi click vào từng câu (đã có handler riêng)
-                    if (event.target.classList.contains('paragraph-text') || 
-                        event.target.classList.contains('timeline-dot-wrapper') ||
-                        event.target.classList.contains('timeline-dot') ||
-                        event.target.classList.contains('timeline-timestamp')) {
+
+            // Click vào câu trong transcript
+            document.querySelectorAll('.transcript-sentence').forEach(sentEl => {
+                sentEl.addEventListener('click', () => {
+                    const startTime = parseFloat(sentEl.dataset.startTime);
+                    if (player) {
+                        player.currentTime = startTime;
+                        if (player.paused) player.play();
+                    }
+                });
+            });
+        }
+
+        function setupScrollAndVideoSync() {
+            if (mainContentAreaEl && typeof IntersectionObserver !== 'undefined') {
+                const observerOptions = {
+                    root: mainContentAreaEl,
+                    rootMargin: "-20% 0px -70% 0px", // Ưu tiên phần tử ở gần đầu viewport
+                    threshold: 0.01
+                };
+                paragraphObserver = new IntersectionObserver((entries) => {
+                    if (player && !player.paused && autoScrollTranscriptEnabled) return; // Không can thiệp nếu video đang phát và auto-scroll bật
+
+                    let topmostEntry = null;
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (!topmostEntry || entry.boundingClientRect.top < topmostEntry.boundingClientRect.top) {
+                                topmostEntry = entry;
+                            }
+                        }
+                    });
+                    if (topmostEntry) {
+                        const paragraphIdx = parseInt(topmostEntry.target.dataset.paragraphIdx);
+                         // Khi người dùng scroll, không tự động scroll transcript, chỉ cập nhật highlight
+                        updateActiveStates(paragraphIdx, null, false);
+                    }
+                }, observerOptions);
+                document.querySelectorAll('.transcript-paragraph-text').forEach(p => {
+                    if(p) paragraphObserver.observe(p);
+                });
+            }
+            startVideoTimeUpdater();
+        }
+                
+        // Event listener cho HTML5 video
+        if (player) {
+            player.addEventListener('play', startVideoTimeUpdater);
+            player.addEventListener('pause', stopVideoTimeUpdater);
+            player.addEventListener('ended', stopVideoTimeUpdater);
+            player.addEventListener('timeupdate', updateHighlightsAndScrollsBasedOnVideoTime); // Sử dụng timeupdate trực tiếp
+        }
+
+        function startVideoTimeUpdater() {
+            // Không cần interval nếu dùng 'timeupdate' nhưng giữ lại để tương thích nếu JS gốc cần
+            if (videoTimeUpdaterInterval) clearInterval(videoTimeUpdaterInterval);
+            videoTimeUpdaterInterval = setInterval(updateHighlightsAndScrollsBasedOnVideoTime, 250); // Tăng interval lên một chút
+        }
+        function stopVideoTimeUpdater() {
+            clearInterval(videoTimeUpdaterInterval);
+        }
+
+        function updateActiveStates(activeParagraphIndex, activeSentenceId, scrollMainContentIfNeeded) {
+            // Update Timeline Item
+            const targetTimelineItem = document.querySelector(`.timeline-item[data-paragraph-idx='${activeParagraphIndex}']`);
+            if (currentActiveTimelineItem !== targetTimelineItem) {
+                if (currentActiveTimelineItem) currentActiveTimelineItem.classList.remove('active');
+                if (targetTimelineItem) targetTimelineItem.classList.add('active');
+                currentActiveTimelineItem = targetTimelineItem;
+            }
+
+            // Update Paragraph Text
+            const targetParagraphText = document.querySelector(`.transcript-paragraph-text[data-paragraph-idx='${activeParagraphIndex}']`);
+            if (currentActiveParagraphText !== targetParagraphText) {
+                if (currentActiveParagraphText) currentActiveParagraphText.classList.remove('highlighted-paragraph');
+                if (targetParagraphText) {
+                    targetParagraphText.classList.add('highlighted-paragraph');
+                    if (scrollMainContentIfNeeded && autoScrollTranscriptEnabled && mainContentAreaEl) {
+                        let scrollTargetY = targetParagraphText.offsetTop - mainContentAreaEl.offsetTop - (mainContentAreaEl.clientHeight * 0.1);
+                        mainContentAreaEl.scrollTo({ top: Math.max(0, scrollTargetY), behavior: "smooth" });
+                    }
+                }
+                currentActiveParagraphText = targetParagraphText;
+            }
+
+            // Update Sentence
+            const sentenceEl = activeSentenceId ? document.getElementById(activeSentenceId) : null;
+            if (currentActiveSentence !== sentenceEl) {
+                if (currentActiveSentence) currentActiveSentence.classList.remove('highlighted-sentence');
+                if (sentenceEl) {
+                    sentenceEl.classList.add('highlighted-sentence');
+                    // Tinh chỉnh logic scroll cho câu, đảm bảo nó nằm trong đoạn văn đang active
+                    if (scrollMainContentIfNeeded && autoScrollTranscriptEnabled && mainContentAreaEl && targetParagraphText && targetParagraphText.classList.contains('highlighted-paragraph')) {
+                        const sR = sentenceEl.getBoundingClientRect();
+                        const cR_main = mainContentAreaEl.getBoundingClientRect(); // mainContentAreaEl là vùng cuộn chính
                         
-                        const startTime = parseFloat(this.dataset.startTime);
-                        if (!isNaN(startTime)) {
-                            video.currentTime = startTime;
-                            if (video.paused) video.play();
+                        // Kiểm tra xem câu có nằm ngoài vùng hiển thị của mainContentAreaEl không
+                        if(sR.top < cR_main.top + 20 || sR.bottom > cR_main.bottom - 20 ) {
+                            // Tính toán vị trí để cuộn câu vào giữa vùng hiển thị của mainContentAreaEl
+                            let sentScrollOffsetInParent = sentenceEl.offsetTop - targetParagraphText.offsetTop; // Vị trí tương đối của câu trong đoạn văn
+                            let paragraphScrollOffset = targetParagraphText.offsetTop - mainContentAreaEl.offsetTop;
+                            
+                            // Cuộn sao cho câu ở khoảng giữa màn hình
+                            let finalScrollPos = paragraphScrollOffset + sentScrollOffsetInParent - (mainContentAreaEl.clientHeight / 2) + (sentenceEl.offsetHeight / 2);
+
+                            mainContentAreaEl.scrollTo({ top: Math.max(0, finalScrollPos), behavior: "smooth" });
                         }
                     }
-                });
-            });
+                }
+                currentActiveSentence = sentenceEl;
+            }
+        }
+
+        function updateHighlightsAndScrollsBasedOnVideoTime() {
+            if (!player || allParagraphsData.length === 0) return;
+            const currentTime = player.currentTime;
+            let activeParagraphData = null, activeSentenceData = null;
+            let paragraphChanged = false;
+
+            // Tìm đoạn văn bản active
+            for (const para of allParagraphsData) {
+                if (currentTime >= para.start && currentTime < para.end) {
+                    activeParagraphData = para;
+                    break;
+                }
+            }
+            // Nếu không tìm thấy (ví dụ, ở giữa các đoạn), hoặc ở cuối video
+            if (!activeParagraphData && allParagraphsData.length > 0) {
+                 // Mặc định là đoạn cuối cùng nếu thời gian video vượt qua thời gian bắt đầu của nó
+                if (currentTime >= allParagraphsData[allParagraphsData.length -1].start) {
+                     activeParagraphData = allParagraphsData[allParagraphsData.length -1];
+                }
+                // Hoặc nếu ở trước đoạn đầu tiên, không có gì active
+            }
 
 
-            let currentActiveSentence = null;
-            let currentActiveParagraph = null;
+            if (activeParagraphData) {
+                // Kiểm tra xem paragraph có thay đổi không
+                if (!currentActiveParagraphText || currentActiveParagraphText.id !== `text-${activeParagraphData.id}`) {
+                    paragraphChanged = true;
+                }
+                // Cập nhật trạng thái paragraph. Nếu paragraph thay đổi, cho phép scroll.
+                updateActiveStates(activeParagraphData.paragraph_idx, null, paragraphChanged && autoScrollTranscriptEnabled);
 
-            video.addEventListener('timeupdate', function() {
-                const currentTime = video.currentTime;
-                let newActiveSentence = null;
-                let newActiveParagraph = null;
-
-                // Highlight sentence
-                for (const sentenceEl of sentenceElements) {
-                    const start = parseFloat(sentenceEl.dataset.startTime);
-                    const end = parseFloat(sentenceEl.dataset.endTime);
-                    if (currentTime >= start && currentTime < end) {
-                        newActiveSentence = sentenceEl;
+                // Tìm câu active trong đoạn văn bản active
+                for (const sent of activeParagraphData.sentences) {
+                    if (currentTime >= sent.start && currentTime < sent.end) {
+                        activeSentenceData = sent;
                         break;
                     }
                 }
-                if (newActiveSentence !== currentActiveSentence) {
-                    if (currentActiveSentence) currentActiveSentence.classList.remove('sentence-active');
-                    if (newActiveSentence) newActiveSentence.classList.add('sentence-active');
-                    currentActiveSentence = newActiveSentence;
-                }
-
-                // Highlight paragraph
-                if (newActiveSentence) {
-                     newActiveParagraph = newActiveSentence.closest('.paragraph-container');
-                } else { // If no sentence active (e.g. between sentences), find paragraph by time
-                    for (const paraEl of paragraphElements) {
-                        const start = parseFloat(paraEl.dataset.startTime);
-                        const end = parseFloat(paraEl.dataset.endTime);
-                        if (currentTime >= start && currentTime < end) {
-                            newActiveParagraph = paraEl;
-                            break;
-                        }
+                 if (!activeSentenceData && activeParagraphData.sentences.length > 0) {
+                    // Mặc định là câu cuối cùng trong đoạn nếu thời gian video vượt qua thời gian bắt đầu của nó
+                    const lastSentenceInPara = activeParagraphData.sentences[activeParagraphData.sentences.length -1];
+                    if (currentTime >= lastSentenceInPara.start) {
+                        activeSentenceData = lastSentenceInPara;
                     }
                 }
+                
+                // Cập nhật trạng thái câu. Không scroll chính ở đây, scroll cho câu đã xử lý trong updateActiveStates.
+                updateActiveStates(activeParagraphData.paragraph_idx, activeSentenceData ? activeSentenceData.id : null, false);
 
-
-                if (newActiveParagraph !== currentActiveParagraph) {
-                    if (currentActiveParagraph) currentActiveParagraph.classList.remove('paragraph-active');
-                    if (newActiveParagraph) newActiveParagraph.classList.add('paragraph-active');
-                    currentActiveParagraph = newActiveParagraph;
-
-                    // Auto-scroll
-                    if (autoScrollCheckbox.checked && newActiveParagraph && transcriptColumn) {
-                        const containerRect = transcriptColumn.getBoundingClientRect();
-                        const elementRect = newActiveParagraph.getBoundingClientRect();
-                        // Scroll if element is not fully visible or near the edges
-                        if (elementRect.top < containerRect.top + 20 || elementRect.bottom > containerRect.bottom - 20) {
-                             newActiveParagraph.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }
-                    }
-                }
-            });
-        });
+            } else { // Không có paragraph nào active
+                if (currentActiveTimelineItem) currentActiveTimelineItem.classList.remove('active');
+                if (currentActiveParagraphText) currentActiveParagraphText.classList.remove('highlighted-paragraph');
+                if (currentActiveSentence) currentActiveSentence.classList.remove('highlighted-sentence');
+                currentActiveTimelineItem = null;
+                currentActiveParagraphText = null;
+                currentActiveSentence = null;
+            }
+        }
     </script>
 </body>
 </html>
