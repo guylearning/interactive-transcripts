@@ -1,0 +1,1406 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: d9562c1e-f05e-4fae-a079-a1fa2c961919
+Created: 2025-05-16T02:01:09.327Z
+Duration: 1575.1053
+Channels: 1
+
+00:00:00.000 --> 00:00:09.040
+Cool. Hi everybody. I'm Daniel again and I'm
+
+00:00:09.040 --> 00:00:12.815
+gonna be talking in this lecture about React
+
+00:00:13.055 --> 00:00:16.175
+more about React State Management and about React
+
+00:00:16.175 --> 00:00:20.015
+Router. So basically React has like a bunch
+
+00:00:20.015 --> 00:00:24.895
+of helpful packages for you and helpful like
+
+00:00:24.975 --> 00:00:27.690
+functions for you that we haven't talked about
+
+00:00:27.690 --> 00:00:29.850
+yet in this class that will help you
+
+00:00:29.850 --> 00:00:33.210
+make, potentially make your projects a lot easier
+
+00:00:33.210 --> 00:00:36.410
+to code on the front end. So today
+
+00:00:36.410 --> 00:00:37.930
+we're gonna be talking about some of just
+
+00:00:37.930 --> 00:00:41.525
+a few of those functionalities. Specifically we'll talk
+
+00:00:41.525 --> 00:00:44.965
+about use context in React and we'll learn
+
+00:00:44.965 --> 00:00:46.965
+more about React Router and the React Router
+
+00:00:46.965 --> 00:00:51.605
+tree. And our goal is to kind of
+
+00:00:52.350 --> 00:00:54.670
+expose like a few of these concepts to
+
+00:00:54.670 --> 00:00:57.710
+you and maybe then you can try to
+
+00:00:58.750 --> 00:01:02.270
+look towards React documentation or whatever that may
+
+00:01:02.270 --> 00:01:04.430
+be to help aid you even further in
+
+00:01:04.430 --> 00:01:08.585
+your projects essentially. Yeah, so first we'll do
+
+00:01:08.585 --> 00:01:10.665
+a quick recap of what we've learned so
+
+00:01:10.665 --> 00:01:14.905
+far about React State Management. So the main
+
+00:01:14.905 --> 00:01:17.145
+tool that we have for React State Management
+
+00:01:17.145 --> 00:01:19.625
+so far is uState. And the way that
+
+00:01:19.625 --> 00:01:22.640
+this is generally set up is that first
+
+00:01:22.960 --> 00:01:25.600
+we like at the top of our document
+
+00:01:25.600 --> 00:01:28.320
+we need to import useState. Inside every single
+
+00:01:28.320 --> 00:01:32.560
+document we create a state and a setState
+
+00:01:32.560 --> 00:01:37.305
+function using the useState hook. If we want
+
+00:01:37.305 --> 00:01:39.705
+to we can call the set state function
+
+00:01:39.785 --> 00:01:42.585
+in order to change our state at any
+
+00:01:42.585 --> 00:01:45.145
+point. And then in general, if we want
+
+00:01:45.145 --> 00:01:48.140
+to pass this state into a child component,
+
+00:01:48.140 --> 00:01:49.340
+then what we need to do is pass
+
+00:01:49.340 --> 00:01:50.460
+it in as a prop to our child
+
+00:01:50.460 --> 00:01:52.940
+component and then our child component will be
+
+00:01:52.940 --> 00:01:57.340
+able to access it using the props that
+
+00:01:57.340 --> 00:02:00.300
+is passed into it. Here we pass in
+
+00:02:00.300 --> 00:02:03.415
+the name as a prop to child component
+
+00:02:03.415 --> 00:02:06.295
+and then it's able to use name as
+
+00:02:07.095 --> 00:02:17.510
+a prop. Cool. Okay. So let's imagine that
+
+00:02:17.510 --> 00:02:21.270
+we have this following React component tree where
+
+00:02:22.710 --> 00:02:28.790
+we have our state called name in our
+
+00:02:28.790 --> 00:02:32.375
+top level component called app but then we
+
+00:02:32.375 --> 00:02:34.775
+use the same state all the way over
+
+00:02:34.775 --> 00:02:39.575
+here in our like, in the component g.
+
+00:02:39.975 --> 00:02:42.695
+Then what happens is we have to pass
+
+00:02:42.695 --> 00:02:44.775
+this name prop all the way down from
+
+00:02:44.775 --> 00:02:48.930
+app to f here to potentially another component
+
+00:02:48.930 --> 00:02:51.010
+all the way down to g. So then
+
+00:02:51.170 --> 00:02:53.170
+we're kind of every single like step of
+
+00:02:53.170 --> 00:02:55.250
+the way we're passing this name state as
+
+00:02:55.250 --> 00:02:59.635
+a prop through. This can get a little
+
+00:02:59.635 --> 00:03:01.555
+messy and just to go through how it
+
+00:03:01.555 --> 00:03:03.075
+can get messy, we'll go through a little
+
+00:03:03.075 --> 00:03:05.475
+bit of an example of what we like
+
+00:03:05.475 --> 00:03:10.890
+don't like, what maybe we wouldn't like. So
+
+00:03:11.370 --> 00:03:14.250
+this is my Google homepage. So we'll just
+
+00:03:14.250 --> 00:03:15.690
+look a little bit. I like the Google
+
+00:03:15.690 --> 00:03:18.650
+website since it's like a pretty simple example
+
+00:03:18.650 --> 00:03:29.885
+of a website. Okay, yeah. So the top
+
+00:03:29.885 --> 00:03:33.005
+layer of any website usually is generally the
+
+00:03:33.005 --> 00:03:36.480
+web page. But if we were to like
+
+00:03:36.480 --> 00:03:38.000
+code this in React then we want to
+
+00:03:38.000 --> 00:03:39.840
+like look at what the next level layers
+
+00:03:39.840 --> 00:03:42.800
+are beneath the web page. So maybe the
+
+00:03:42.800 --> 00:03:44.720
+next level layers, maybe a few of the
+
+00:03:44.720 --> 00:03:46.640
+things in the next level layer, this is
+
+00:03:46.640 --> 00:03:48.425
+probably not all of them, wasn't really looking
+
+00:03:48.425 --> 00:03:50.185
+at the search bar. But just a few
+
+00:03:50.185 --> 00:03:52.025
+of the examples are maybe the nav bar
+
+00:03:52.025 --> 00:03:54.025
+at the top or the modal that pops
+
+00:03:54.025 --> 00:03:55.625
+up when you click on your profile icon.
+
+00:03:55.625 --> 00:03:57.545
+That might be another thing that is managed
+
+00:03:57.545 --> 00:04:03.800
+by the top level thing. Okay. Yeah, so
+
+00:04:03.800 --> 00:04:06.120
+a few of the third layer things beneath
+
+00:04:06.120 --> 00:04:09.560
+that, all the icons on the top. But
+
+00:04:09.560 --> 00:04:13.175
+just an example, we might need the nav
+
+00:04:13.175 --> 00:04:16.455
+bar icon with our profile picture. We might
+
+00:04:16.455 --> 00:04:19.655
+need our main icon area that says, hi
+
+00:04:19.655 --> 00:04:23.975
+Daniel here. And we also might need like
+
+00:04:23.975 --> 00:04:26.960
+the other account section, that might be its
+
+00:04:26.960 --> 00:04:29.680
+own component within the modal where we show
+
+00:04:29.680 --> 00:04:34.480
+all of our other accounts and allow ourselves
+
+00:04:34.480 --> 00:04:36.160
+to click on the other accounts and log
+
+00:04:36.160 --> 00:04:40.535
+in to them basically. But the problem here
+
+00:04:40.535 --> 00:04:41.975
+is that all of these components might need
+
+00:04:41.975 --> 00:04:44.215
+to access our current user or change our
+
+00:04:44.215 --> 00:04:48.375
+current user. So if we're passing in our
+
+00:04:48.775 --> 00:04:51.175
+if we have a user's state and a
+
+00:04:51.175 --> 00:04:54.135
+set user setter function, then we kind of
+
+00:04:54.135 --> 00:04:55.790
+need to pass in this user and the
+
+00:04:55.790 --> 00:04:58.670
+setUser function as props into a bunch of
+
+00:04:58.670 --> 00:05:03.150
+different components. So we're passing in props. User
+
+00:05:03.150 --> 00:05:06.270
+equals this username and then props dot setUser
+
+00:05:06.510 --> 00:05:08.510
+as another function. And then it just becomes
+
+00:05:08.510 --> 00:05:10.350
+really messy really quickly because you can imagine
+
+00:05:10.425 --> 00:05:12.185
+if every single one of our components had
+
+00:05:12.185 --> 00:05:14.345
+like seven props passed down into it, then
+
+00:05:14.345 --> 00:05:16.905
+your code would just look like this for
+
+00:05:16.905 --> 00:05:23.750
+every single time you wanted to write like
+
+00:05:23.750 --> 00:05:28.230
+any component within your JSX basically. And generally
+
+00:05:28.230 --> 00:05:30.070
+we try to keep our code shorter when
+
+00:05:30.070 --> 00:05:35.910
+possible. So yeah, we don't want our code
+
+00:05:35.910 --> 00:05:39.485
+to just get messy like that. And basically,
+
+00:05:40.125 --> 00:05:41.805
+React has kind of a solution for this
+
+00:05:41.805 --> 00:05:45.725
+which is called context. So context basically provide
+
+00:05:45.725 --> 00:05:47.405
+a way for the higher level components in
+
+00:05:47.405 --> 00:05:50.685
+our tree to communicate one state or potentially
+
+00:05:50.685 --> 00:05:53.340
+multiple states that it keeps track of to
+
+00:05:53.340 --> 00:05:56.780
+all of its subcomponents. So you can think
+
+00:05:56.780 --> 00:05:59.740
+of it as basically the subcomponents getting some
+
+00:05:59.740 --> 00:06:02.620
+context as to what the higher level states
+
+00:06:02.620 --> 00:06:07.725
+are without the higher level components having to
+
+00:06:07.725 --> 00:06:09.965
+pass down everything all the way through props.
+
+00:06:11.085 --> 00:06:15.405
+Yeah. So of course, we would probably have
+
+00:06:15.405 --> 00:06:16.685
+to see it in code to understand what
+
+00:06:16.685 --> 00:06:19.485
+was actually going on. So here's an example
+
+00:06:19.485 --> 00:06:25.090
+of code without use context. So as you
+
+00:06:25.090 --> 00:06:28.210
+can see in this code, we're making a
+
+00:06:28.210 --> 00:06:32.450
+user state and we're initializing it as my
+
+00:06:32.450 --> 00:06:34.210
+name. And then we're passing the user state
+
+00:06:34.210 --> 00:06:38.205
+all the way down and through a component
+
+00:06:38.525 --> 00:06:40.205
+starting from component one all the way into
+
+00:06:40.205 --> 00:06:42.925
+component two, and then into component three, and
+
+00:06:42.925 --> 00:06:44.125
+then all the way into component four. And
+
+00:06:44.125 --> 00:06:46.925
+we're passing it down through every single layer.
+
+00:06:47.245 --> 00:06:48.845
+And then finally in component four, we use
+
+00:06:48.845 --> 00:06:56.300
+the state. So if we wanted to save
+
+00:06:56.300 --> 00:06:57.900
+ourselves the hassle of having to pass it
+
+00:06:57.900 --> 00:06:59.660
+all the way down, what we could instead
+
+00:06:59.660 --> 00:07:01.820
+do is outside of our component, we create
+
+00:07:01.820 --> 00:07:06.495
+a context called user context. Well, can call
+
+00:07:06.495 --> 00:07:07.615
+it whatever we want. This is a helpful
+
+00:07:07.615 --> 00:07:09.055
+name to tell us that this is keeping
+
+00:07:09.055 --> 00:07:13.455
+track of the user. Then inside component one,
+
+00:07:13.695 --> 00:07:17.935
+we wrap the content of component one in
+
+00:07:17.935 --> 00:07:20.930
+what we call a provider. And every single
+
+00:07:20.930 --> 00:07:23.490
+context that we use using create context has
+
+00:07:23.490 --> 00:07:27.330
+this provider element. And this allows us to
+
+00:07:27.330 --> 00:07:31.890
+wrap everything. It's essentially just an element that
+
+00:07:32.690 --> 00:07:39.675
+does nothing visually but it allows everything inside
+
+00:07:39.675 --> 00:07:42.635
+of it to see whatever it's providing. And
+
+00:07:42.635 --> 00:07:48.155
+here we're providing the value of user. Providers
+
+00:07:48.155 --> 00:07:50.555
+have a special keyword called value and here
+
+00:07:50.810 --> 00:07:57.290
+we give it a JSON object where the
+
+00:07:57.290 --> 00:08:02.890
+user is our user state. So yeah, one
+
+00:08:02.890 --> 00:08:04.515
+thing that you'll notice here immediately is that
+
+00:08:04.515 --> 00:08:05.955
+component two, we don't need to pass a
+
+00:08:05.955 --> 00:08:07.795
+user prop down into it. So in the
+
+00:08:07.795 --> 00:08:11.395
+previous code, we saw that we needed to
+
+00:08:11.395 --> 00:08:16.515
+pass a user prop into component two. Here,
+
+00:08:16.970 --> 00:08:18.650
+we don't need to pass anything down into
+
+00:08:18.650 --> 00:08:21.290
+component two. It'll already be able to know
+
+00:08:21.290 --> 00:08:24.410
+what user is as long as we use
+
+00:08:24.410 --> 00:08:26.970
+the context that it's wrapped around. And in
+
+00:08:26.970 --> 00:08:29.130
+order to use the context, what we'll do
+
+00:08:30.635 --> 00:08:35.995
+is we call the useContextTook using user context.
+
+00:08:35.995 --> 00:08:38.635
+And then this will give us whatever's in
+
+00:08:38.635 --> 00:08:40.955
+the value thing. So this value thing is
+
+00:08:40.955 --> 00:08:43.515
+a JSON object with one parameter. We pull
+
+00:08:43.515 --> 00:08:45.195
+out that parameter using dot user and then
+
+00:08:45.195 --> 00:08:51.730
+now we can use it. Yeah, so an
+
+00:08:51.730 --> 00:08:55.890
+analogy that you can think of is that
+
+00:08:55.890 --> 00:08:58.050
+useState might be like a piece of information,
+
+00:08:59.250 --> 00:09:02.095
+which which is our user and our set
+
+00:09:02.095 --> 00:09:04.015
+user. We can change that piece of information
+
+00:09:04.015 --> 00:09:06.495
+if we want to. But our useContext is
+
+00:09:06.495 --> 00:09:07.615
+kind of like an empty book that you
+
+00:09:07.615 --> 00:09:08.735
+can write in that a lot of people
+
+00:09:08.735 --> 00:09:11.535
+have access to. In particular, everybody below you
+
+00:09:11.535 --> 00:09:17.510
+in your subtree can access that piece of
+
+00:09:17.510 --> 00:09:19.670
+information that you write into that book. Then
+
+00:09:19.670 --> 00:09:21.750
+the provider is kind of just like the
+
+00:09:21.750 --> 00:09:23.110
+library that you can check out the book
+
+00:09:23.110 --> 00:09:25.110
+from. And so if you wrap everything around
+
+00:09:25.110 --> 00:09:30.715
+like this provider, then everything that can access
+
+00:09:30.715 --> 00:09:32.235
+your library can now check out this book
+
+00:09:32.235 --> 00:09:36.155
+and read what's inside of it. Yeah. Cool.
+
+00:09:37.835 --> 00:09:41.930
+I think yeah, I'll stop for like thirty
+
+00:09:41.930 --> 00:09:44.170
+seconds maybe, and you can take a look
+
+00:09:44.170 --> 00:09:47.290
+at this code. Make sure everything makes sense.
+
+00:09:47.290 --> 00:09:49.050
+If you have any questions, feel free to
+
+00:09:49.050 --> 00:09:50.730
+ask them right now or in the questions
+
+00:09:50.730 --> 00:10:17.920
+doc. Oh, yeah. Go ahead. Yeah, they can
+
+00:10:17.920 --> 00:10:21.520
+be in completely different files. So the only
+
+00:10:21.520 --> 00:10:24.640
+thing that matters here is that component four
+
+00:10:24.720 --> 00:10:28.585
+is within the tree of component one. So
+
+00:10:28.585 --> 00:10:31.305
+everything that's a sub component of component one
+
+00:10:31.305 --> 00:10:33.785
+or sub component of that or so on
+
+00:10:33.785 --> 00:10:35.385
+and so forth should be able to access
+
+00:10:35.385 --> 00:10:38.265
+anything that component one wraps in a provider.
+
+00:10:52.600 --> 00:10:54.120
+This is kind of like a dummy example.
+
+00:10:54.255 --> 00:10:56.495
+We'll see in the workshop that you can
+
+00:10:56.495 --> 00:10:58.095
+even define the user context in a separate
+
+00:10:58.095 --> 00:11:07.620
+file from your component as well. Okay, cool.
+
+00:11:08.500 --> 00:11:10.340
+Moving on, we'll do a little bit of
+
+00:11:10.340 --> 00:11:14.180
+a review of how the componentry works and
+
+00:11:14.180 --> 00:11:18.500
+how to use context specific layer. Yeah, so
+
+00:11:18.500 --> 00:11:20.580
+here's an example componentry with app as our
+
+00:11:20.580 --> 00:11:24.385
+top level. Let's say we define a context
+
+00:11:24.385 --> 00:11:26.225
+around a where we set our happiness to
+
+00:11:26.225 --> 00:11:30.385
+six. Okay, so how many components will know
+
+00:11:30.385 --> 00:11:35.665
+what our happiness is? Maybe give a number
+
+00:11:35.665 --> 00:11:37.820
+of fingers on your hand, like one to
+
+00:11:37.820 --> 00:11:42.380
+five. What do we think? For how many
+
+00:11:42.380 --> 00:11:49.505
+components in this component tree? Cool. Yeah, I
+
+00:11:49.505 --> 00:11:52.945
+see like mostly fours and fives. Yeah, so
+
+00:11:52.945 --> 00:11:54.705
+if we include a, then the answer is
+
+00:11:54.705 --> 00:11:56.625
+five. If we don't include a, then the
+
+00:11:56.625 --> 00:11:57.825
+answer is four. But it's gonna just be
+
+00:11:57.825 --> 00:12:00.145
+everything but like a and below. The other
+
+00:12:00.145 --> 00:12:01.905
+side of the tree won't know what like
+
+00:12:01.905 --> 00:12:04.600
+our context is or what's inside of our
+
+00:12:04.600 --> 00:12:06.520
+context. But it'll be A, C, D, G,
+
+00:12:06.520 --> 00:12:12.200
+and H. Yeah. Cool. And then maybe you
+
+00:12:12.200 --> 00:12:13.800
+have the question, if we can have multiple
+
+00:12:13.800 --> 00:12:16.440
+contexts, maybe something like this where we have
+
+00:12:16.440 --> 00:12:19.625
+one use context that's wrapping everything underneath A
+
+00:12:19.625 --> 00:12:21.625
+and then another one that's wrapping everything underneath
+
+00:12:21.625 --> 00:12:24.665
+C. Yeah, so we can definitely do something
+
+00:12:24.665 --> 00:12:26.825
+like this. This thing that really prevents us
+
+00:12:26.825 --> 00:12:28.025
+from doing this, we just have to define
+
+00:12:28.025 --> 00:12:30.425
+two separate contexts and two separate providers basically.
+
+00:12:33.380 --> 00:12:35.940
+Okay. Any questions before moving on? We're going
+
+00:12:35.940 --> 00:12:37.380
+to move on to a different topic entirely
+
+00:12:37.380 --> 00:12:45.540
+basically. Okay. So we're going to talk about
+
+00:12:45.540 --> 00:12:50.115
+React Router now. You've already seen React Router,
+
+00:12:50.115 --> 00:12:51.075
+we kind of talked about it a little
+
+00:12:51.075 --> 00:12:53.635
+bit in workshop two. But we're going to
+
+00:12:53.635 --> 00:12:54.995
+dive a little bit deeper into how React
+
+00:12:54.995 --> 00:12:59.155
+Router works basically. And what like maybe you
+
+00:12:59.155 --> 00:13:03.030
+saw like a router or a router provider
+
+00:13:03.030 --> 00:13:04.310
+or something like that and you were like
+
+00:13:04.310 --> 00:13:05.670
+I don't know exactly what that is but
+
+00:13:05.670 --> 00:13:06.870
+we'll kind of talk about what all of
+
+00:13:06.870 --> 00:13:09.990
+those are right now a little bit. So
+
+00:13:09.990 --> 00:13:12.310
+this is our code from workshop two and
+
+00:13:12.630 --> 00:13:16.475
+we created this router kind of thing and
+
+00:13:16.475 --> 00:13:22.475
+then we've rendered it into the element. Anytime
+
+00:13:22.475 --> 00:13:26.075
+you want to use any package basically but
+
+00:13:26.555 --> 00:13:28.795
+here we're using the React Router DOM package,
+
+00:13:28.795 --> 00:13:30.075
+you need to import what you want to
+
+00:13:30.075 --> 00:13:33.430
+use from it. Here we're just importing these
+
+00:13:33.430 --> 00:13:36.230
+packages or importing these functions that you don't
+
+00:13:36.230 --> 00:13:40.630
+really have to worry too much about. The
+
+00:13:40.630 --> 00:13:43.845
+router setup is in line 17 through 24.
+
+00:13:43.925 --> 00:13:46.085
+And the first two lines generally won't ever
+
+00:13:46.085 --> 00:13:47.605
+change, so you don't have to really worry
+
+00:13:47.605 --> 00:13:53.125
+about them. And then we create the router
+
+00:13:53.125 --> 00:13:58.180
+based on what's inside of this component, tree
+
+00:13:58.180 --> 00:14:03.060
+almost. And then finally, we render the route
+
+00:14:03.060 --> 00:14:09.695
+into the document by using this getting element
+
+00:14:09.695 --> 00:14:11.775
+by ID of the root and then rendering
+
+00:14:11.775 --> 00:14:13.935
+the router provider into it. Yeah, so the
+
+00:14:13.935 --> 00:14:17.455
+funny thing here is this router provider is
+
+00:14:17.455 --> 00:14:21.570
+actually a context provider and it basically allows
+
+00:14:21.570 --> 00:14:24.850
+everything inside of our router provider to see
+
+00:14:24.850 --> 00:14:27.010
+anything about the URL that we want to.
+
+00:14:27.010 --> 00:14:29.650
+So the URL is kind of what is
+
+00:14:29.650 --> 00:14:31.410
+being provided in the context right now. So
+
+00:14:31.410 --> 00:14:33.970
+everything inside of our router provider can see
+
+00:14:33.970 --> 00:14:36.785
+the URL. So that's a fun link to
+
+00:14:36.785 --> 00:14:38.785
+what we just talked about with use context.
+
+00:14:38.785 --> 00:14:41.825
+So router provider is using some kind of
+
+00:14:41.985 --> 00:14:45.665
+use context in the background to provide this
+
+00:14:45.665 --> 00:14:50.740
+information to all the subcomponents. So let's zoom
+
+00:14:50.740 --> 00:14:52.740
+in a little closer on the router declaration.
+
+00:14:52.740 --> 00:14:55.140
+So this is the React route tree. And
+
+00:14:55.140 --> 00:15:00.500
+all our pages exist here. And if we
+
+00:15:00.500 --> 00:15:02.740
+take this route tree, we can transform it
+
+00:15:02.740 --> 00:15:07.305
+into this tree as follows, where we represent
+
+00:15:07.465 --> 00:15:11.225
+green elements using green and then error elements
+
+00:15:11.225 --> 00:15:12.985
+using red. So here we have the app
+
+00:15:12.985 --> 00:15:14.425
+and not found at the top. And then
+
+00:15:14.425 --> 00:15:16.825
+below it, we have two components, feed and
+
+00:15:16.825 --> 00:15:20.150
+profile, that exist at the paths just slash
+
+00:15:20.150 --> 00:15:26.950
+and slash profile. So if we continue with
+
+00:15:26.950 --> 00:15:30.550
+this example tree, router elements are always going
+
+00:15:30.550 --> 00:15:33.430
+to be rendered starting from the root. So
+
+00:15:33.615 --> 00:15:35.535
+even at localhost five thousand one seventy three
+
+00:15:35.535 --> 00:15:37.375
+slash profile we try to render profile but
+
+00:15:37.375 --> 00:15:38.575
+in order to do that we have to
+
+00:15:38.575 --> 00:15:41.135
+render app first. So what does that mean
+
+00:15:41.135 --> 00:15:43.455
+exactly? If you go into the app code,
+
+00:15:45.295 --> 00:15:47.455
+we see like this outlet thing in app.
+
+00:15:47.455 --> 00:15:52.390
+Jsx when we return And you might wonder
+
+00:15:52.390 --> 00:15:54.070
+what the outlet is doing. You can essentially
+
+00:15:54.070 --> 00:15:57.270
+think of the outlet as a placeholder component.
+
+00:15:57.750 --> 00:16:00.550
+So when we render at profile, this outlet
+
+00:16:00.550 --> 00:16:03.805
+will be replaced with the profile component. So
+
+00:16:03.805 --> 00:16:05.965
+here, if we navigate to localhost five thousand
+
+00:16:05.965 --> 00:16:07.805
+one and seventy three slash profile, we'll see
+
+00:16:07.805 --> 00:16:10.205
+that the outlet that was previously here is
+
+00:16:10.205 --> 00:16:13.645
+just going to basically just essentially be replaced
+
+00:16:13.645 --> 00:16:15.965
+with the profile component. And then if we
+
+00:16:15.630 --> 00:16:17.790
+instead navigate to localhost five thousand one seventy
+
+00:16:17.790 --> 00:16:20.110
+three, then we'll be rendering at the slash
+
+00:16:20.110 --> 00:16:22.590
+thing. So we'll be rendering feed. So this
+
+00:16:22.590 --> 00:16:24.510
+outlet component is going be replaced by feed
+
+00:16:24.510 --> 00:16:27.710
+instead. And so you'll just see two different
+
+00:16:27.710 --> 00:16:29.790
+component trees at these two different routes essentially
+
+00:16:30.175 --> 00:16:33.215
+because the outlet is acting as a placeholder.
+
+00:16:33.695 --> 00:16:35.615
+And the nice thing about this is that
+
+00:16:35.615 --> 00:16:37.295
+no matter where we navigate to, we always
+
+00:16:37.295 --> 00:16:38.495
+see the nav bar at the top. So
+
+00:16:38.495 --> 00:16:41.055
+that's the important part here, which is what
+
+00:16:41.055 --> 00:16:43.215
+makes the outlet thing kind of nice is
+
+00:16:43.215 --> 00:16:45.610
+that whether you're at profile or feed, always
+
+00:16:45.610 --> 00:16:46.890
+see the same nav bar at the top
+
+00:16:46.890 --> 00:16:51.850
+of your page. Cool. If you want to
+
+00:16:51.850 --> 00:16:55.290
+pass props into outlets, it kind of works
+
+00:16:55.290 --> 00:16:57.050
+as you might expect from the parent side.
+
+00:16:57.050 --> 00:17:00.615
+So you pass in this my test prop
+
+00:17:00.615 --> 00:17:03.095
+maybe and then you feed it some parameter
+
+00:17:03.095 --> 00:17:09.655
+and then from your feed. Before, you weren't
+
+00:17:09.655 --> 00:17:12.100
+in some router sort of tree, you would
+
+00:17:12.100 --> 00:17:16.180
+just access this prop using props. Mytestprop. But
+
+00:17:16.340 --> 00:17:18.740
+it'll look a little bit different in React
+
+00:17:18.740 --> 00:17:23.220
+Router when you're passing through this route component
+
+00:17:23.220 --> 00:17:25.445
+instead. So here, if you try to console
+
+00:17:25.445 --> 00:17:27.285
+log this, it won't work. Instead what we
+
+00:17:27.285 --> 00:17:30.885
+do is we use the use outlet context
+
+00:17:30.885 --> 00:17:33.365
+hook. We haven't seen this yet, but it
+
+00:17:33.365 --> 00:17:34.645
+might be useful in your project if you
+
+00:17:34.645 --> 00:17:36.805
+ever want to pass in the same prop
+
+00:17:36.805 --> 00:17:40.460
+into all of the subcomponents of your route
+
+00:17:40.460 --> 00:17:45.420
+tree. Essentially, we just replace props with the
+
+00:17:45.420 --> 00:17:48.460
+useOutletContext hook and we're able to access the
+
+00:17:48.460 --> 00:17:53.085
+myTest prop parameter. Any questions here? I'll go
+
+00:17:53.085 --> 00:17:55.005
+back to the slide and pause for like
+
+00:17:55.725 --> 00:18:02.285
+thirty seconds. Yeah. Yeah. So whenever you want
+
+00:18:02.285 --> 00:18:04.605
+to use React Hook, you generally want to
+
+00:18:04.605 --> 00:18:05.725
+import it in the file that you're using
+
+00:18:05.725 --> 00:18:08.290
+it in. Here, this is in Feed. Jsx,
+
+00:18:08.290 --> 00:18:12.450
+so we'd probably have to import UseOutletContext at
+
+00:18:12.450 --> 00:18:14.930
+the top of Feed. Jsx in order to
+
+00:18:14.930 --> 00:18:29.095
+use the hook. Any other questions? Cool? Okay,
+
+00:18:29.095 --> 00:18:33.815
+moving on. Yeah, so now we'll talk about
+
+00:18:33.815 --> 00:18:35.495
+how the route tree kind of gets transformed
+
+00:18:35.495 --> 00:18:39.150
+into routes. A path to the route is
+
+00:18:39.150 --> 00:18:42.350
+essentially like the concatenation of all the relative
+
+00:18:42.350 --> 00:18:46.590
+routes along the route. So just as an
+
+00:18:46.590 --> 00:18:48.510
+example here, we have this like slightly more
+
+00:18:48.510 --> 00:18:53.815
+complex tree. If we navigate to local host
+
+00:18:53.815 --> 00:18:55.655
+five thousand one seventy three slash profile slash
+
+00:18:55.655 --> 00:18:58.855
+alice, we'll be rendering profile a because we'll
+
+00:18:58.855 --> 00:19:01.895
+travel down from the root to slash profile
+
+00:19:01.895 --> 00:19:06.540
+and then to slash alice. So we'll be
+
+00:19:07.500 --> 00:19:09.900
+happens when we try to we'll be rendering
+
+00:19:09.900 --> 00:19:14.620
+whatever the tree is with just starting from
+
+00:19:14.620 --> 00:19:18.795
+profile a essentially. And then we didn't talk
+
+00:19:18.795 --> 00:19:21.835
+about error elements yet, but error elements essentially
+
+00:19:21.915 --> 00:19:24.875
+catch when the paths don't match valid router
+
+00:19:24.875 --> 00:19:28.955
+paths. So here as an example, localhost five
+
+00:19:28.955 --> 00:19:31.820
+thousand one seventy threegame. We'll be building a
+
+00:19:31.820 --> 00:19:33.420
+game in a later workshop, but so far
+
+00:19:33.420 --> 00:19:35.820
+we don't have one yet. So right now
+
+00:19:35.820 --> 00:19:37.740
+if we try to navigate here, it'll just
+
+00:19:37.740 --> 00:19:40.780
+render the not found element. Because starting from
+
+00:19:40.780 --> 00:19:43.260
+the root, it doesn't see anything. That's slash
+
+00:19:43.260 --> 00:19:48.185
+game. Okay. So yeah, I have another question
+
+00:19:48.185 --> 00:19:49.945
+for all of you guys. So what would
+
+00:19:49.945 --> 00:19:52.825
+be rendered? Which one of the components would
+
+00:19:52.825 --> 00:19:55.065
+be the one that is rendered at localhost
+
+00:19:55.305 --> 00:19:57.465
+five thousand one 70 three slash profile slash
+
+00:19:57.465 --> 00:20:01.450
+Charlie? Would we see feed, not found, profile,
+
+00:20:01.450 --> 00:20:04.330
+or user not found? Maybe like, again, finger,
+
+00:20:04.330 --> 00:20:06.810
+like one for feed, two for not found,
+
+00:20:06.970 --> 00:20:08.810
+three for profile, and four for user not
+
+00:20:08.810 --> 00:20:15.345
+found. What do we think? Yeah, I saw
+
+00:20:15.345 --> 00:20:19.345
+basically all fours. Yeah, that's correct. We'll start
+
+00:20:19.905 --> 00:20:23.185
+from the root. We'll go to profile. And
+
+00:20:23.185 --> 00:20:27.830
+then in profile we'll try to go to
+
+00:20:27.830 --> 00:20:29.510
+Charlie, but it won't exist, so we'll see
+
+00:20:29.510 --> 00:20:35.110
+user not found. If we were to write
+
+00:20:35.110 --> 00:20:36.550
+this tree out in code, would look something
+
+00:20:36.550 --> 00:20:40.065
+like this, where we have this inner profile
+
+00:20:40.065 --> 00:20:44.625
+like tree where there's a slash profile here
+
+00:20:44.625 --> 00:20:47.025
+and it has an error element of user
+
+00:20:47.025 --> 00:20:53.250
+not found. And then beneath that there's two
+
+00:20:53.250 --> 00:20:59.090
+sub routes essentially. Yeah, this is the first
+
+00:20:59.090 --> 00:21:01.810
+example that we've seen of a router tree
+
+00:21:01.810 --> 00:21:06.345
+of depth more than one. But I'll kind
+
+00:21:06.345 --> 00:21:08.825
+of skip past this. And if you want
+
+00:21:08.825 --> 00:21:10.265
+to look more at it, you can come
+
+00:21:10.265 --> 00:21:16.985
+back to it later. But yeah, this code
+
+00:21:16.985 --> 00:21:18.745
+is just going to map out into this
+
+00:21:18.745 --> 00:21:26.520
+tree, basically. Okay. Let's say I wanted a
+
+00:21:26.520 --> 00:21:27.880
+lot of profiles and I didn't want to
+
+00:21:27.880 --> 00:21:29.400
+hard code every single one as a React
+
+00:21:29.400 --> 00:21:32.200
+component. If a user creates a profile on
+
+00:21:32.200 --> 00:21:33.560
+my website, I'm not trying to go into
+
+00:21:33.560 --> 00:21:35.160
+my source code and then add another file
+
+00:21:35.160 --> 00:21:38.995
+with another component saying profile c or something.
+
+00:21:39.315 --> 00:21:43.875
+So the dream scenario is that profileabby reads
+
+00:21:43.875 --> 00:21:46.755
+Abby from the URL and then passes it
+
+00:21:46.755 --> 00:21:50.990
+in as a parameter to the profile component.
+
+00:21:50.990 --> 00:21:52.670
+And I only have one profile component that
+
+00:21:52.670 --> 00:21:59.230
+can manage whatever's inside of it using the
+
+00:21:59.230 --> 00:22:02.590
+props that's passed into it. So the nice
+
+00:22:02.590 --> 00:22:04.505
+thing is that React Router has a functionality
+
+00:22:04.505 --> 00:22:09.625
+for this too. Of course it would. Here
+
+00:22:09.625 --> 00:22:19.390
+we have slightly different React Router tree where
+
+00:22:19.390 --> 00:22:22.590
+the second route that we define has a
+
+00:22:22.590 --> 00:22:25.710
+colon name tag at the end of it.
+
+00:22:25.870 --> 00:22:28.910
+So this colon name part is a dynamic
+
+00:22:29.070 --> 00:22:31.390
+part of the path. And so what that
+
+00:22:31.390 --> 00:22:35.815
+means is this will be passed down as
+
+00:22:35.815 --> 00:22:40.055
+a parameter for the profile element to be
+
+00:22:40.055 --> 00:22:43.335
+able to access. So how do we get
+
+00:22:43.335 --> 00:22:49.280
+the name in profile. Jsx? We just add
+
+00:22:49.280 --> 00:22:52.640
+it at the top. Here, let's say this
+
+00:22:52.720 --> 00:22:54.880
+was our code before in profile. Jsx where
+
+00:22:54.880 --> 00:22:58.640
+we didn't feed a name down. Now if
+
+00:23:00.405 --> 00:23:03.525
+use this useParams hook in order to retrieve
+
+00:23:03.525 --> 00:23:08.485
+whatever is in the URL. So we just
+
+00:23:08.485 --> 00:23:11.925
+write const name equals useParams. Name and this
+
+00:23:11.925 --> 00:23:13.845
+dot name part will just look for any
+
+00:23:13.845 --> 00:23:18.630
+colon name part of our URL and then
+
+00:23:18.630 --> 00:23:24.150
+it'll replace that with whatever is passed in.
+
+00:23:24.230 --> 00:23:28.105
+And then here maybe we just set the
+
+00:23:28.105 --> 00:23:31.385
+document title to names profile page instead. So
+
+00:23:31.385 --> 00:23:33.305
+what would happen here is basically if we
+
+00:23:33.305 --> 00:23:38.585
+went to profileabby, then when we access use
+
+00:23:38.585 --> 00:23:41.465
+params, it'll have the name parameter as Abby
+
+00:23:41.465 --> 00:23:45.090
+because we've replaced our colon name area with
+
+00:23:45.090 --> 00:23:47.170
+Abby and it acts as a dynamic part
+
+00:23:47.170 --> 00:23:49.650
+of our route. Now when we navigate to
+
+00:23:49.650 --> 00:23:52.290
+slash profile slash Abby, we'll see Abby's profile
+
+00:23:52.290 --> 00:23:55.250
+page as the title of our document instead.
+
+00:23:55.650 --> 00:24:00.495
+Yeah. Cool. Yeah, that's kind of the last
+
+00:24:00.495 --> 00:24:02.895
+part of it, of my lecture. So are
+
+00:24:02.895 --> 00:24:06.495
+there any questions about this? I'll leave it
+
+00:24:06.495 --> 00:24:25.750
+up for a bit as well. Oh, yeah.
+
+00:24:30.155 --> 00:24:34.395
+Yeah, so let's say you wanted to pass
+
+00:24:34.395 --> 00:24:36.155
+in more than one parameter. You could literally
+
+00:24:36.155 --> 00:24:39.915
+just do something like slash colon name and
+
+00:24:39.915 --> 00:24:45.780
+then slash colon ID or something. And then
+
+00:24:45.780 --> 00:24:48.900
+you can just access it using useParams. Name
+
+00:24:48.900 --> 00:24:51.300
+and useParams. ID. You can just retrieve the
+
+00:24:51.300 --> 00:24:54.555
+two parameters from there, essentially. Anything in your
+
+00:24:54.555 --> 00:24:56.315
+URL with a colon in front of it,
+
+00:24:56.315 --> 00:25:02.955
+you can retrieve just using useParams and then
+
+00:25:02.955 --> 00:25:05.355
+retrieving the same thing that you put into
+
+00:25:05.355 --> 00:25:07.680
+the URL basically. Here we put colon name,
+
+00:25:07.680 --> 00:25:13.680
+so we retrieve it using dot name. Any
+
+00:25:13.680 --> 00:25:18.975
+other questions? So the last comment I wanted
+
+00:25:18.975 --> 00:25:20.815
+to make, I'm going to skip the wrap
+
+00:25:20.815 --> 00:25:23.775
+up, is that there's a bunch of resources
+
+00:25:23.775 --> 00:25:24.815
+out there for you to be able to
+
+00:25:24.815 --> 00:25:28.655
+learn these things yourself. And React has a
+
+00:25:28.655 --> 00:25:30.415
+bunch of other useful hooks for you to
+
+00:25:30.415 --> 00:25:34.720
+use in your project. And you will probably
+
+00:25:34.720 --> 00:25:37.520
+find reading documentation pretty helpful for you to
+
+00:25:37.520 --> 00:25:40.160
+be able to incorporate interesting functionalities into your
+
+00:25:40.160 --> 00:25:43.280
+front end. So here are just a few
+
+00:25:43.280 --> 00:25:44.880
+links for you to maybe learn a little
+
+00:25:44.880 --> 00:25:46.560
+bit more about these things if you want.
+
+00:25:46.560 --> 00:25:50.005
+But yeah, if you ever are wondering anything,
+
+00:25:50.885 --> 00:25:54.405
+you can always look towards documentation, ask people
+
+00:25:54.405 --> 00:25:56.965
+on Stack Overflow, things like that. Yeah, there's
+
+00:25:56.965 --> 00:26:01.950
+a bunch of resources out there. We'll be
+
+00:26:01.950 --> 00:26:04.910
+moving on but before that, if you want
+
+00:26:04.910 --> 00:26:08.030
+to go to weblab.afeedback and give me some
+
+00:26:08.030 --> 00:26:12.190
+feedback on lecture. Yeah. But yeah, thank you
+
+00:26:12.190 --> 00:26:12.510
+guys.
