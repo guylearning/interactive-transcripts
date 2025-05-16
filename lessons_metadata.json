@@ -296,5 +296,19 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_6_advanced_react_context_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_advanced_react_context/mit_web_lab_6_962_-_day_6_advanced_react_context_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_advanced_react_context/mit_web_lab_6_962_-_day_6_advanced_react_context_transcript.vtt"
+  },
+  {
+    "title_original": "MIT web.lab (6.962) - Day 6: Auth.",
+    "video_name_clean": "mit_web_lab_6_962_-_day_6_auth",
+    "youtube_id": "TaEAslUARaA",
+    "tags": [
+      "IAP2025"
+    ],
+    "created_timestamp_iso": "2025-05-16T01:59:59.294632+00:00",
+    "uploader": "MIT Web Lab (6.962)",
+    "duration_seconds": 2005,
+    "lesson_html_filename": "mit_web_lab_6_962_-_day_6_auth_interactive_lesson.html",
+    "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_auth/mit_web_lab_6_962_-_day_6_auth_transcript.json",
+    "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_6_auth/mit_web_lab_6_962_-_day_6_auth_transcript.vtt"
   }
 ]
