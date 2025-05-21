@@ -352,5 +352,17 @@
     "lesson_html_filename": "mit_web_lab_6_962_-_day_7_sockets_interactive_lesson.html",
     "json_transcript_path_on_repo": "mit_web_lab_6_962_-_day_7_sockets/mit_web_lab_6_962_-_day_7_sockets_transcript.json",
     "vtt_transcript_path_on_repo": "mit_web_lab_6_962_-_day_7_sockets/mit_web_lab_6_962_-_day_7_sockets_transcript.vtt"
+  },
+  {
+    "title_original": "Lecture 6: Version Control (git) (2020)",
+    "video_name_clean": "lecture_6_version_control_git_2020",
+    "youtube_id": "2sjqTHE0zok",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-21T17:31:48.402822+00:00",
+    "uploader": "Missing Semester",
+    "duration_seconds": 5099,
+    "lesson_html_filename": "lecture_6_version_control_git_2020_interactive_lesson.html",
+    "json_transcript_path_on_repo": "lecture_6_version_control_git_2020/lecture_6_version_control_git_2020_transcript.json",
+    "vtt_transcript_path_on_repo": "lecture_6_version_control_git_2020/lecture_6_version_control_git_2020_transcript.vtt"
   }
 ]

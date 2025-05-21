@@ -1,0 +1,5831 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 29409ddc-085d-4962-a62b-adb5029fb24f
+Created: 2025-05-21T17:31:40.325Z
+Duration: 5099.102
+Channels: 1
+
+00:00:01.600 --> 00:00:05.920
+Alright. Let's get started with today's lecture. So,
+
+00:00:05.920 --> 00:00:07.680
+actually, before we get started, one quick note
+
+00:00:07.680 --> 00:00:10.000
+about office hours. It seemed from the poll
+
+00:00:10.000 --> 00:00:11.520
+that some people were under the impression that
+
+00:00:11.520 --> 00:00:14.080
+the office hours that follows each lecture is
+
+00:00:14.080 --> 00:00:17.185
+just about that day's lectures topics, and this
+
+00:00:17.185 --> 00:00:18.705
+is not the case. Like, can come to
+
+00:00:18.705 --> 00:00:20.305
+office hours and ask us questions about any
+
+00:00:20.305 --> 00:00:21.985
+lecture, whether it's the previous day or from
+
+00:00:21.985 --> 00:00:24.225
+the previous week or even things not exactly
+
+00:00:24.225 --> 00:00:25.665
+covered in this class that you're just curious
+
+00:00:25.665 --> 00:00:28.720
+about. So, yeah, come to office hours with
+
+00:00:28.720 --> 00:00:31.360
+questions about anything. One more time where is
+
+00:00:31.360 --> 00:00:34.720
+it? Office hours are in the 30 2
+
+00:00:34.720 --> 00:00:37.200
+G 9 Lounge, so Building 32 also known
+
+00:00:37.200 --> 00:00:39.200
+as the Status Center has two towers, the
+
+00:00:39.200 --> 00:00:41.085
+G Tower and the D Tower, so we're
+
+00:00:41.085 --> 00:00:42.605
+in the Gates Tower on the Ninth Floor
+
+00:00:42.605 --> 00:00:43.805
+so if you take the elevator all the
+
+00:00:43.805 --> 00:00:45.165
+way up there's the lounge right in front
+
+00:00:45.165 --> 00:00:50.445
+of you okay cool so today we're going
+
+00:00:50.445 --> 00:00:53.405
+to be talking about version control systems so
+
+00:00:52.850 --> 00:00:54.210
+I just want to get a sense of
+
+00:00:54.210 --> 00:00:56.930
+whether you guys have used version control systems
+
+00:00:56.930 --> 00:00:59.410
+before. So could you raise your hand if
+
+00:00:59.410 --> 00:01:01.250
+you have any experience with git or any
+
+00:01:01.250 --> 00:01:03.730
+other version control system like Subversion or Mercurial
+
+00:01:03.730 --> 00:01:06.210
+or anything else? Oh, great. So that's a
+
+00:01:06.210 --> 00:01:09.035
+good number of you. So I won't talk
+
+00:01:09.035 --> 00:01:11.515
+about version control systems in general way too
+
+00:01:11.515 --> 00:01:13.995
+much then. We'll pretty quickly get into the
+
+00:01:13.995 --> 00:01:16.715
+details of git and, like, its data model
+
+00:01:16.715 --> 00:01:18.635
+and its internals. But just as a quick
+
+00:01:18.635 --> 00:01:21.280
+summary, version control systems are tools that are
+
+00:01:21.280 --> 00:01:23.360
+used to keep track of changes to source
+
+00:01:23.360 --> 00:01:26.000
+code or other collections of files or folders.
+
+00:01:26.320 --> 00:01:28.880
+And as the name implies, these tools help
+
+00:01:28.880 --> 00:01:32.080
+track the history of changes to some set
+
+00:01:32.080 --> 00:01:34.495
+of documents. And, in addition to doing that,
+
+00:01:34.495 --> 00:01:37.775
+they facilitate collaboration. So, they're really useful for
+
+00:01:37.775 --> 00:01:39.775
+working with a group of people on a
+
+00:01:39.775 --> 00:01:44.015
+software project. Version control systems track changes to
+
+00:01:44.015 --> 00:01:46.415
+a folder and its contents in a series
+
+00:01:46.415 --> 00:01:48.950
+of snapshots. So, you capture the entire state
+
+00:01:48.950 --> 00:01:50.630
+of a folder and everything inside, like a
+
+00:01:50.630 --> 00:01:53.110
+software project, and you have multiple of these
+
+00:01:53.110 --> 00:01:56.310
+in a series of snapshots. Each snapshot encapsulates
+
+00:01:56.310 --> 00:01:58.310
+the entire set of files and folders contained
+
+00:01:58.310 --> 00:02:00.950
+within some top level directory. And then, version
+
+00:02:00.950 --> 00:02:03.270
+control systems also maintain a bunch of metadata
+
+00:02:03.505 --> 00:02:05.665
+along with the actual changes to the content,
+
+00:02:05.665 --> 00:02:07.905
+and this is to make it possible to
+
+00:02:07.905 --> 00:02:10.145
+figure things out like who authored a particular
+
+00:02:10.145 --> 00:02:12.225
+change to a particular file or when was
+
+00:02:12.225 --> 00:02:14.625
+a particular change made. And so, version control
+
+00:02:14.625 --> 00:02:18.465
+systems maintain metadata like authors and commit timestamps,
+
+00:02:18.630 --> 00:02:20.870
+and you can also attach extra messages to
+
+00:02:20.870 --> 00:02:23.990
+these snapshots and things like that. And so,
+
+00:02:23.990 --> 00:02:25.990
+why is version control useful? Well, it's useful
+
+00:02:25.990 --> 00:02:28.150
+even when you're working on projects by yourself.
+
+00:02:28.470 --> 00:02:30.390
+So, you can use it to look at
+
+00:02:30.390 --> 00:02:32.525
+old versions of code you've written, figure out
+
+00:02:32.525 --> 00:02:34.445
+like why something was changed by looking at
+
+00:02:34.445 --> 00:02:37.485
+commit messages, work on different things in parallel
+
+00:02:37.485 --> 00:02:40.685
+without conflicts by using different branches of development,
+
+00:02:40.765 --> 00:02:42.285
+or be able to work on bug fixes
+
+00:02:42.285 --> 00:02:45.165
+while keeping work on different features independent, things
+
+00:02:45.165 --> 00:02:47.290
+like that. And so, it's an invaluable tool
+
+00:02:47.290 --> 00:02:49.130
+even if you're working just by yourself even
+
+00:02:49.130 --> 00:02:53.370
+on a small scale project. Like, think, instructions
+
+00:02:53.370 --> 00:02:56.330
+of this course use git even on things
+
+00:02:56.330 --> 00:02:58.730
+like homework assignments or class projects, even small
+
+00:02:58.730 --> 00:03:00.885
+scale things in addition to our research or
+
+00:03:00.885 --> 00:03:04.405
+larger software projects. And then, of course, version
+
+00:03:04.405 --> 00:03:06.885
+control is a really powerful tool for working
+
+00:03:06.885 --> 00:03:09.045
+with other people. So, it's useful for sending
+
+00:03:09.045 --> 00:03:13.440
+patches of code around, resolving conflicts when different
+
+00:03:13.440 --> 00:03:14.800
+people are working on the same piece of
+
+00:03:14.800 --> 00:03:16.880
+code at the same time, things like that.
+
+00:03:17.120 --> 00:03:19.920
+And so, it's a really powerful tool for
+
+00:03:19.920 --> 00:03:22.160
+working by yourself or with others. And it
+
+00:03:22.160 --> 00:03:25.360
+also has neat functionality to let you answer
+
+00:03:25.360 --> 00:03:26.960
+questions that would otherwise be kind of hard
+
+00:03:26.960 --> 00:03:29.635
+to answer, like who wrote a particular module
+
+00:03:29.635 --> 00:03:32.035
+in a software project, or who edited a
+
+00:03:32.035 --> 00:03:34.515
+particular line in a particular software project, why
+
+00:03:34.515 --> 00:03:36.915
+was this particular line changed, when was it
+
+00:03:36.915 --> 00:03:39.955
+changed, by whom, things like that. And, version
+
+00:03:39.955 --> 00:03:42.595
+control systems also have some really powerful functionality
+
+00:03:42.595 --> 00:03:43.910
+that we might cover at the end of
+
+00:03:43.910 --> 00:03:45.510
+today's lecture, or you can find in the
+
+00:03:45.510 --> 00:03:47.270
+lecture notes if we don't have time, to
+
+00:03:47.270 --> 00:03:48.950
+do things like suppose you have some project
+
+00:03:48.950 --> 00:03:50.870
+you've been working on for a couple years
+
+00:03:50.870 --> 00:03:52.310
+and then you notice that some funny thing
+
+00:03:52.310 --> 00:03:53.750
+about the project is broken, like you have
+
+00:03:53.750 --> 00:03:56.305
+some unit test that doesn't pass anymore, and
+
+00:03:56.305 --> 00:03:57.985
+it wasn't broken just now, it was broken
+
+00:03:57.985 --> 00:03:59.505
+some time ago and you don't know exactly
+
+00:03:59.505 --> 00:04:03.425
+when this, regression was introduced. Well, version control
+
+00:04:03.425 --> 00:04:06.225
+systems have a way of automatically identifying this.
+
+00:04:06.225 --> 00:04:07.825
+Like you can take git and give it
+
+00:04:07.825 --> 00:04:09.985
+a unit test that's currently failing but you
+
+00:04:09.985 --> 00:04:11.740
+know is passing at some point in the
+
+00:04:11.740 --> 00:04:13.900
+past and it can binary search your history
+
+00:04:13.900 --> 00:04:16.220
+and figure out exactly what changed your code
+
+00:04:16.220 --> 00:04:19.260
+made it break. So lots of really powerful
+
+00:04:19.260 --> 00:04:21.100
+fancy features if you know how to use
+
+00:04:21.100 --> 00:04:27.365
+these tools properly. There are a number of
+
+00:04:27.365 --> 00:04:29.845
+version control systems out there and git has
+
+00:04:29.845 --> 00:04:31.845
+become kind of the de facto standard for
+
+00:04:31.845 --> 00:04:33.605
+version control. So that's what we're going to
+
+00:04:33.605 --> 00:04:38.180
+be covering in today's lecture. One comic I
+
+00:04:38.180 --> 00:04:39.780
+want to show you, which was on the
+
+00:04:39.780 --> 00:04:42.820
+screen beforehand. Let me bring it back up.
+
+00:04:45.700 --> 00:04:48.820
+So, this is an XKCD comic that, illustrates
+
+00:04:48.820 --> 00:04:51.085
+Git's reputation. Let me read it out loud
+
+00:04:51.085 --> 00:04:54.925
+for you. This is Git. It tries collaborative
+
+00:04:54.925 --> 00:04:57.485
+work on projects through a beautiful distributed graph
+
+00:04:57.485 --> 00:04:59.965
+theory tree model. Cool. How do we use
+
+00:04:59.965 --> 00:05:02.525
+it? No idea. Just memorize these shell commands
+
+00:05:02.525 --> 00:05:04.110
+and type them to sync up. If you
+
+00:05:04.110 --> 00:05:06.350
+get errors, save your work elsewhere, delete the
+
+00:05:06.350 --> 00:05:11.790
+project and download a fresh copy. So, maybe
+
+00:05:11.790 --> 00:05:12.910
+some people may not want to raise their
+
+00:05:12.910 --> 00:05:14.350
+hands for this, but raise your hand if
+
+00:05:14.350 --> 00:05:16.590
+you've ever done this before. I certainly have
+
+00:05:16.590 --> 00:05:19.065
+when I was learning this tool. So good
+
+00:05:19.065 --> 00:05:21.465
+number of you, here have done this before.
+
+00:05:21.705 --> 00:05:23.385
+So the goal of this lecture is to
+
+00:05:23.385 --> 00:05:24.425
+make it so you don't have to do
+
+00:05:24.425 --> 00:05:31.370
+this anymore. Unfortunately, as this comic, illustrates, git's
+
+00:05:31.370 --> 00:05:34.570
+interface is a pretty terribly designed interface. It's
+
+00:05:34.570 --> 00:05:36.810
+a leaky abstraction, and so for this reason
+
+00:05:36.810 --> 00:05:39.290
+we believe that learning git top down starting
+
+00:05:39.290 --> 00:05:41.370
+with the interface is maybe not the best
+
+00:05:41.370 --> 00:05:42.730
+way to go, and it can lead to
+
+00:05:42.730 --> 00:05:46.255
+some confusion. It's possible, like this comic shows,
+
+00:05:46.255 --> 00:05:48.095
+to memorize a handful of commands and think
+
+00:05:48.095 --> 00:05:50.495
+of them as magic incantations and when everything
+
+00:05:50.495 --> 00:05:52.655
+is working alright it kind of works out
+
+00:05:52.655 --> 00:05:54.575
+alright. But then you have to follow the
+
+00:05:54.575 --> 00:05:56.495
+approach of this comic whenever things go wrong.
+
+00:05:58.030 --> 00:06:01.550
+So, while git has an ugly interface, its
+
+00:06:01.550 --> 00:06:04.670
+underlying design and ideas are actually pretty beautiful.
+
+00:06:05.390 --> 00:06:07.790
+An ugly interface has to be memorized, but
+
+00:06:07.790 --> 00:06:10.110
+the beautiful ideas underlying git can actually be
+
+00:06:10.110 --> 00:06:13.825
+understood. Once you understand gits internals, its data
+
+00:06:13.825 --> 00:06:16.945
+model, which is actually not that complicated, then
+
+00:06:16.945 --> 00:06:19.265
+you can learn the interface to get you
+
+00:06:19.265 --> 00:06:21.105
+you'll have to memorize some things, but you
+
+00:06:21.105 --> 00:06:24.560
+can understand what exactly certain commands do by
+
+00:06:24.560 --> 00:06:27.280
+understanding how they manipulate the underlying data model.
+
+00:06:27.920 --> 00:06:29.360
+And so, way we're going to teach git
+
+00:06:29.360 --> 00:06:31.840
+today is first talk about the data model,
+
+00:06:31.920 --> 00:06:33.920
+almost in abstract talk about how we might
+
+00:06:33.920 --> 00:06:37.120
+model files and folders snapshots of history and
+
+00:06:37.120 --> 00:06:38.845
+how they relate to each other, and then
+
+00:06:38.845 --> 00:06:40.525
+after that we'll walk you through some git
+
+00:06:40.525 --> 00:06:42.925
+commands and then finally in the resources and
+
+00:06:42.925 --> 00:06:45.485
+exercises we'll link you to tutorials that'll teach
+
+00:06:45.485 --> 00:06:47.085
+you all the specifics because there are lots
+
+00:06:47.085 --> 00:06:48.365
+of different commands that you will need to
+
+00:06:48.365 --> 00:06:51.965
+learn eventually. Any questions so far about our
+
+00:06:51.965 --> 00:06:56.790
+teaching approach for today? Cool. Great. So, let's
+
+00:06:56.790 --> 00:07:00.550
+get started. There are probably many ad hoc
+
+00:07:00.550 --> 00:07:03.750
+approaches you could take to version control and
+
+00:07:03.750 --> 00:07:05.190
+I'm guessing some of you may have done
+
+00:07:05.190 --> 00:07:07.055
+this before. Like say you have some file
+
+00:07:07.055 --> 00:07:08.415
+or folder where you have a bunch of
+
+00:07:08.415 --> 00:07:10.975
+different files corresponding to some software project and
+
+00:07:10.975 --> 00:07:12.815
+you want to track changes. You could just
+
+00:07:12.815 --> 00:07:14.575
+say every day make a copy of that
+
+00:07:14.575 --> 00:07:16.895
+entire folder and give that folder a timestamp.
+
+00:07:16.895 --> 00:07:18.415
+When you want to do things like collaborate
+
+00:07:18.415 --> 00:07:20.255
+with other people you could take the entire
+
+00:07:20.255 --> 00:07:22.200
+folder turn it into a zip archive and
+
+00:07:22.200 --> 00:07:24.360
+email it to somebody. And then whenever you
+
+00:07:24.360 --> 00:07:25.960
+and your buddy are working on two different
+
+00:07:25.960 --> 00:07:27.880
+features of a software project you can work
+
+00:07:27.880 --> 00:07:29.400
+on them in parallel, then one of you
+
+00:07:29.400 --> 00:07:30.920
+emails the zip file to the other person
+
+00:07:30.920 --> 00:07:32.680
+and then you manually copy and paste the
+
+00:07:32.680 --> 00:07:35.080
+appropriate segments from their code into your code
+
+00:07:35.080 --> 00:07:37.365
+so that eventually you end up with one
+
+00:07:37.365 --> 00:07:39.045
+piece of code that has both of your
+
+00:07:39.045 --> 00:07:41.765
+features in it. This kind of sort of
+
+00:07:41.765 --> 00:07:44.405
+works. Raise your hand if you've done this
+
+00:07:44.405 --> 00:07:47.605
+before. I certainly have. Still a decent number
+
+00:07:47.605 --> 00:07:52.090
+of you. Git lets us not do this
+
+00:07:52.090 --> 00:07:53.610
+sort of thing. It has a well thought
+
+00:07:53.610 --> 00:07:56.490
+out model that kind of facilitates these sorts
+
+00:07:56.490 --> 00:07:58.570
+of interactions. Things that you might want to
+
+00:07:58.570 --> 00:08:00.570
+do, like tracking your own history on your
+
+00:08:00.570 --> 00:08:02.330
+own project or collaboration or things like that.
+
+00:08:03.855 --> 00:08:05.375
+So git has a well thought out model
+
+00:08:05.375 --> 00:08:08.175
+that enables things like branches and collaboration and
+
+00:08:08.175 --> 00:08:10.415
+merging changes from other people. All sorts of
+
+00:08:10.415 --> 00:08:13.775
+neat stuff. Git models history is a collection
+
+00:08:13.775 --> 00:08:15.695
+of files and folders within some top level
+
+00:08:15.695 --> 00:08:18.830
+directory. So you're probably familiar with this abstraction
+
+00:08:18.830 --> 00:08:20.350
+just from files and folders on your own
+
+00:08:20.350 --> 00:08:22.590
+computer and so here's one example like you
+
+00:08:22.590 --> 00:08:24.510
+might have some top level directory. I'll just
+
+00:08:24.510 --> 00:08:28.030
+call this like root in parentheses and this
+
+00:08:28.030 --> 00:08:30.110
+directory might have say a folder in it
+
+00:08:30.110 --> 00:08:32.425
+called foo and this folder inside of it
+
+00:08:32.425 --> 00:08:34.665
+might have a file called bar dot txt
+
+00:08:34.665 --> 00:08:38.025
+and this might have some content in it
+
+00:08:38.025 --> 00:08:43.145
+like say this says hello world. And then
+
+00:08:43.145 --> 00:08:45.180
+maybe this top level directory, it has one
+
+00:08:45.180 --> 00:08:46.540
+folder in it. It could also have another
+
+00:08:46.540 --> 00:08:48.620
+file in it. So say there's some other
+
+00:08:48.620 --> 00:08:52.220
+file and this file also has some contents
+
+00:08:52.220 --> 00:09:01.525
+in it. Alright. Simple enough. The terminology git
+
+00:09:01.525 --> 00:09:03.125
+uses for these different things, for files and
+
+00:09:03.125 --> 00:09:08.725
+folders, is this and the top level thing
+
+00:09:08.725 --> 00:09:13.685
+are called trees. So this is a folder,
+
+00:09:16.380 --> 00:09:19.260
+and then these things, what we normally call
+
+00:09:19.260 --> 00:09:27.340
+files, are called blobs. Alright. Okay. So now
+
+00:09:27.340 --> 00:09:29.100
+we have a model of files and folders,
+
+00:09:30.405 --> 00:09:33.685
+and this is a recursive data structure. Trees
+
+00:09:33.685 --> 00:09:35.925
+can contain other trees, and then trees can
+
+00:09:35.925 --> 00:09:39.045
+contain both trees and files. Obviously files can't
+
+00:09:39.045 --> 00:09:42.725
+contain trees. Alright. So now we have a
+
+00:09:42.725 --> 00:09:47.060
+model of files and folders, and the kind
+
+00:09:47.060 --> 00:09:48.500
+of top level of this thing, the thing
+
+00:09:48.500 --> 00:09:52.020
+I've just labeled root, is the directory being
+
+00:09:52.020 --> 00:09:53.460
+tracked. Like you might have some folder on
+
+00:09:53.460 --> 00:09:57.995
+your computer corresponding to a software project. Now,
+
+00:09:57.995 --> 00:09:59.435
+how do you model history once you have
+
+00:09:59.435 --> 00:10:01.515
+a model of files and folders? Well, you
+
+00:10:01.515 --> 00:10:02.795
+can imagine one way of doing it which
+
+00:10:02.795 --> 00:10:04.555
+is you take a snapshot of this entire
+
+00:10:04.555 --> 00:10:06.475
+thing and then history is just a linear
+
+00:10:06.475 --> 00:10:09.115
+sequence of snapshots. Like, you might imagine that
+
+00:10:09.115 --> 00:10:10.955
+it's You can almost think of it like
+
+00:10:10.955 --> 00:10:13.515
+you have copies of the folder which are
+
+00:10:13.080 --> 00:10:16.520
+dated and time stamped. Well, git doesn't use
+
+00:10:16.520 --> 00:10:18.600
+a simple linear model like that. It uses
+
+00:10:18.600 --> 00:10:20.680
+something a little bit fancier. You might have
+
+00:10:20.680 --> 00:10:22.760
+heard this terminology before, but git uses a
+
+00:10:22.760 --> 00:10:25.535
+directed acyclic graph to model history. And this
+
+00:10:25.535 --> 00:10:26.895
+might sound like a bunch of fancy math
+
+00:10:26.895 --> 00:10:29.535
+words, but it's actually not all that complicated.
+
+00:10:30.415 --> 00:10:33.295
+So in git each snapshot has some number
+
+00:10:33.295 --> 00:10:35.615
+of parents and basically want to know like
+
+00:10:35.615 --> 00:10:38.410
+what change preceded what other change. So suppose
+
+00:10:38.410 --> 00:10:40.730
+here I'm going to use circles to refer
+
+00:10:40.730 --> 00:10:43.610
+to individual snapshots. This is the entire contents,
+
+00:10:43.930 --> 00:10:46.890
+within this tree. So all the files and
+
+00:10:46.890 --> 00:10:49.770
+folders in my project. My entire project may
+
+00:10:49.770 --> 00:10:52.265
+be in some state and then I edit
+
+00:10:52.265 --> 00:10:53.705
+some files and now it's in some other
+
+00:10:53.705 --> 00:10:55.625
+state and then I add some more files
+
+00:10:55.625 --> 00:10:57.705
+and that's in some other state and every
+
+00:10:57.705 --> 00:11:00.425
+state points back to which state preceded it.
+
+00:11:01.545 --> 00:11:03.865
+This so far is a linear history but
+
+00:11:03.865 --> 00:11:05.385
+git lets us do something a little bit
+
+00:11:05.385 --> 00:11:08.790
+fancier than this. You can also from a
+
+00:11:08.790 --> 00:11:12.630
+certain snapshot fork your history and say I
+
+00:11:12.630 --> 00:11:15.350
+want to base changes off of this version
+
+00:11:16.310 --> 00:11:20.835
+and create a new snapshot like this. So
+
+00:11:21.395 --> 00:11:23.315
+this way of modeling history allows you to
+
+00:11:23.315 --> 00:11:25.155
+do things like, okay, I'm working on my
+
+00:11:25.155 --> 00:11:26.995
+project. This is my main line of development.
+
+00:11:26.995 --> 00:11:28.515
+I go up to here, and now I
+
+00:11:28.515 --> 00:11:30.115
+have two different tasks I want to work
+
+00:11:30.115 --> 00:11:32.115
+on. Suppose on one hand I have some
+
+00:11:32.115 --> 00:11:33.555
+fancy new feature I want to add to
+
+00:11:33.555 --> 00:11:35.040
+my project, and so I'm gonna be working
+
+00:11:35.040 --> 00:11:36.960
+on that for a couple days. But separately
+
+00:11:36.960 --> 00:11:38.560
+from that somebody's reported a bug to me
+
+00:11:38.560 --> 00:11:39.680
+and I need to go chase down that
+
+00:11:39.680 --> 00:11:41.920
+bug and fix it. Well, instead of working
+
+00:11:41.920 --> 00:11:43.760
+on all that stuff kind of concurrently at
+
+00:11:43.760 --> 00:11:45.440
+the same time in the same line of
+
+00:11:45.440 --> 00:11:48.795
+development, git has its way of branching the
+
+00:11:48.795 --> 00:11:50.955
+history into two separate forks and working on
+
+00:11:50.955 --> 00:11:53.755
+different things in parallel temporarily in a way
+
+00:11:53.755 --> 00:11:55.435
+that are unrelated to each other. So I
+
+00:11:55.435 --> 00:11:58.075
+could take this base snapshot, like my project
+
+00:11:58.075 --> 00:11:59.810
+is in some state where it works, and
+
+00:11:59.810 --> 00:12:02.370
+then from here I could implement a new
+
+00:12:02.370 --> 00:12:04.770
+feature that creates a new snapshot. So this
+
+00:12:04.770 --> 00:12:06.930
+has the base project plus a new feature.
+
+00:12:07.010 --> 00:12:11.890
+So I'll do like plus feature. And then
+
+00:12:11.890 --> 00:12:13.730
+similarly, like separately from this I could go
+
+00:12:13.730 --> 00:12:15.435
+back to this original snapshot because I don't
+
+00:12:15.435 --> 00:12:17.195
+want to do bug fixing while implementing my
+
+00:12:17.195 --> 00:12:19.675
+new feature. Go here, and then work on
+
+00:12:19.675 --> 00:12:21.835
+my bug fix and create a different snapshot.
+
+00:12:21.835 --> 00:12:27.115
+So this has only the bug fix. But
+
+00:12:27.115 --> 00:12:29.430
+not the feature. And then finally, once I've
+
+00:12:29.430 --> 00:12:31.990
+done these two separate things in parallel eventually
+
+00:12:31.990 --> 00:12:33.830
+I want to incorporate them all into my
+
+00:12:33.830 --> 00:12:35.430
+common source code that has both the feature
+
+00:12:35.430 --> 00:12:37.430
+and the bug fix. So eventually I might
+
+00:12:37.430 --> 00:12:40.470
+author a new snapshot by merging the changes
+
+00:12:40.470 --> 00:12:42.925
+present in these two different snapshots. And so
+
+00:12:42.925 --> 00:12:45.005
+this one will have both of these snapshots
+
+00:12:45.005 --> 00:12:48.925
+as parents. And this version here will have
+
+00:12:54.525 --> 00:12:57.180
+both the feature and my bug fix. So
+
+00:12:57.180 --> 00:12:59.740
+does it make sense why get models history
+
+00:12:59.740 --> 00:13:01.260
+in a way that's a little bit fancier
+
+00:13:01.260 --> 00:13:03.580
+than just a sequence of snapshots of my
+
+00:13:03.580 --> 00:13:05.260
+files and folders? Why I want to be
+
+00:13:05.260 --> 00:13:07.020
+able to support branching to work on things
+
+00:13:07.020 --> 00:13:09.660
+in parallel and then also merging to combine
+
+00:13:09.660 --> 00:13:12.755
+changes from different parallel branches of development. Question?
+
+00:13:12.995 --> 00:13:14.595
+When you merge things, it seems like you
+
+00:13:14.595 --> 00:13:19.075
+could create errors that weren't anticipated. Yeah. So
+
+00:13:19.075 --> 00:13:21.235
+that's an excellent point. It seems that when
+
+00:13:21.235 --> 00:13:23.235
+you merge things, you could create errors that
+
+00:13:23.235 --> 00:13:26.190
+weren't anticipated. You could imagine here that this
+
+00:13:26.190 --> 00:13:28.910
+feature actually changes something that makes this bug
+
+00:13:28.910 --> 00:13:30.590
+fix redundant or you could imagine this bug
+
+00:13:30.590 --> 00:13:32.590
+fix breaking this feature or something like that.
+
+00:13:32.670 --> 00:13:35.070
+That's a really good point that's something known
+
+00:13:35.070 --> 00:13:37.630
+as merge conflicts and this is something that
+
+00:13:37.855 --> 00:13:39.615
+Git will try to do, like when you
+
+00:13:39.615 --> 00:13:41.855
+merge two parallel branches of development, it will
+
+00:13:41.855 --> 00:13:43.935
+try to automatically combine the changes in a
+
+00:13:43.935 --> 00:13:45.615
+way such that it retains all the important
+
+00:13:45.615 --> 00:13:48.335
+changes. But, if it gets confused, it will
+
+00:13:48.335 --> 00:13:50.175
+report a merge conflict and then leave it
+
+00:13:50.175 --> 00:13:52.130
+up to you, the programmer, to figure out
+
+00:13:52.130 --> 00:13:54.690
+how to combine, kind of concurrent changes to
+
+00:13:54.690 --> 00:13:56.290
+the same files or things like that. And
+
+00:13:56.290 --> 00:14:00.290
+git has some tools for facilitating this. Any
+
+00:14:00.290 --> 00:14:06.655
+other questions? Great. Okay. So now we have
+
+00:14:06.655 --> 00:14:08.255
+a model of files and folders, and then
+
+00:14:08.255 --> 00:14:10.095
+we have a model of history. How different
+
+00:14:10.095 --> 00:14:12.095
+snapshots of our code relate to each other.
+
+00:14:12.255 --> 00:14:15.615
+One little detail here is that each of
+
+00:14:15.615 --> 00:14:18.255
+these circles So they kind of correspond to
+
+00:14:18.255 --> 00:14:20.415
+a snapshot like a tree with files and
+
+00:14:20.415 --> 00:14:22.550
+folders, but they also have a little bit
+
+00:14:22.550 --> 00:14:24.790
+of metadata. So like inside here we might
+
+00:14:24.790 --> 00:14:29.670
+have like the author of this commit is
+
+00:14:29.670 --> 00:14:34.550
+niche and we might have other metadata like
+
+00:14:34.550 --> 00:14:37.635
+some message associated with this commit. And I
+
+00:14:37.635 --> 00:14:40.035
+might describe what kinds of changes I've made
+
+00:14:40.035 --> 00:14:41.715
+that are present in this snapshot but not
+
+00:14:41.715 --> 00:14:50.195
+the previous one. That is not related to
+
+00:14:50.195 --> 00:15:00.510
+our class. So next we're going to talk
+
+00:15:00.510 --> 00:15:03.070
+about kind of one level lower than this,
+
+00:15:03.070 --> 00:15:07.615
+like how exactly is this represented as a
+
+00:15:07.615 --> 00:15:09.615
+as a data structure inside git? And so
+
+00:15:09.615 --> 00:15:11.535
+I'm actually gonna write down pseudocode because I
+
+00:15:11.535 --> 00:15:13.535
+think it's actually easiest to understand this way.
+
+00:15:14.335 --> 00:15:18.735
+So first we have files. So a blob
+
+00:15:19.620 --> 00:15:21.300
+is just a bunch of bytes. So I'll
+
+00:15:21.300 --> 00:15:27.220
+say this is an array of bytes. Okay.
+
+00:15:27.220 --> 00:15:32.355
+Then what is a tree? Remember that this
+
+00:15:32.355 --> 00:15:35.075
+is just a folder. What are folders? They're
+
+00:15:35.075 --> 00:15:40.995
+mappings from the file name or directory name
+
+00:15:41.075 --> 00:15:44.515
+to the actual contents. And the contents are
+
+00:15:44.515 --> 00:15:49.500
+either another tree, like a subtree, or the
+
+00:15:49.500 --> 00:15:56.060
+file. And then finally, we have the last
+
+00:15:56.060 --> 00:15:57.660
+thing there, what I've been calling snapshots so
+
+00:15:57.660 --> 00:16:00.300
+far. In git terminology, those are called commits.
+
+00:16:00.935 --> 00:16:07.815
+And so what is a commit? It's a
+
+00:16:07.815 --> 00:16:13.335
+bunch of stuff. Commits have parents that describe
+
+00:16:13.335 --> 00:16:16.040
+what precede them. So in the case of
+
+00:16:16.040 --> 00:16:17.960
+most normal commits, they have one parent like
+
+00:16:17.960 --> 00:16:19.800
+what they came from, but merge commits can
+
+00:16:19.800 --> 00:16:25.080
+have multiple parents. So parents are an array
+
+00:16:25.080 --> 00:16:31.255
+of commits. And then I have some metadata
+
+00:16:31.255 --> 00:16:43.255
+like the author and maybe a message. And
+
+00:16:43.255 --> 00:16:49.580
+then finally, the actual contents, the snapshot, which
+
+00:16:49.580 --> 00:16:52.060
+is a tree, that's the top level tree
+
+00:16:53.100 --> 00:16:55.900
+corresponding to a particular commit. So this is
+
+00:16:55.900 --> 00:16:58.765
+a really clean, simple model of history. And
+
+00:16:58.765 --> 00:17:00.925
+this is basically all there is to how
+
+00:17:00.925 --> 00:17:08.765
+git models history. Any questions about that? Alright.
+
+00:17:08.765 --> 00:17:11.165
+So now we have that. Going a little
+
+00:17:11.165 --> 00:17:13.640
+bit deeper, let's talk about how git actually
+
+00:17:13.640 --> 00:17:16.520
+stores and addresses this actual data. Like, at
+
+00:17:16.520 --> 00:17:18.280
+some point, this actually has to turn to
+
+00:17:18.280 --> 00:17:23.480
+data on disk. Right? So git defines an
+
+00:17:23.480 --> 00:17:27.595
+object, kind of a vague sounding term, but
+
+00:17:27.595 --> 00:17:29.115
+an object is any one of those three
+
+00:17:29.115 --> 00:17:32.715
+things. So it's a blob or a tree
+
+00:17:34.235 --> 00:17:40.890
+tree or a commit. And then in git,
+
+00:17:41.050 --> 00:17:44.330
+all objects are content addressed. So what git
+
+00:17:44.330 --> 00:17:46.410
+maintains on disk and you can actually we
+
+00:17:46.410 --> 00:17:51.050
+can look at this later, is a set
+
+00:17:51.050 --> 00:18:02.205
+of objects maintained as this content address store.
+
+00:18:02.445 --> 00:18:04.445
+So if you have any one of these
+
+00:18:04.445 --> 00:18:07.965
+objects, way you put it into the store
+
+00:18:07.700 --> 00:18:10.100
+is its key is the hash of the
+
+00:18:10.100 --> 00:18:14.100
+object. So like in pseudocode, I might say
+
+00:18:14.100 --> 00:18:18.100
+that to store a particular object o, what
+
+00:18:18.100 --> 00:18:20.580
+I do is I compute its ID by
+
+00:18:20.580 --> 00:18:23.635
+taking the SHA one hash of o, and
+
+00:18:23.635 --> 00:18:30.355
+then I put it into my objects map,
+
+00:18:30.355 --> 00:18:35.795
+store it to disk. Quick show of hands,
+
+00:18:35.970 --> 00:18:37.970
+Who here knows what a hash function is?
+
+00:18:39.410 --> 00:18:42.530
+Alright. So I'll quickly summarize. Basically a hash
+
+00:18:42.530 --> 00:18:44.370
+function is you can think of it as
+
+00:18:44.370 --> 00:18:46.050
+like this magical function that takes a big
+
+00:18:46.050 --> 00:18:47.810
+piece of data and turns it into a
+
+00:18:47.810 --> 00:18:51.355
+short string. At a high level, these are
+
+00:18:51.355 --> 00:18:55.515
+used to or maybe that's like a sufficient
+
+00:18:55.515 --> 00:18:57.195
+explanation. I won't go into too much more
+
+00:18:57.195 --> 00:18:58.715
+detail here, but you can ask me afterwards
+
+00:18:58.715 --> 00:19:01.275
+if you're if you're curious. So basically, they
+
+00:19:01.275 --> 00:19:04.075
+give you a way to name a thing
+
+00:19:03.570 --> 00:19:05.570
+in a way that's kind of deterministic based
+
+00:19:05.570 --> 00:19:07.170
+on the contents of the thing. It takes
+
+00:19:07.170 --> 00:19:08.530
+in the thing as input and gives you
+
+00:19:08.530 --> 00:19:11.890
+a short name for it. And then the
+
+00:19:11.890 --> 00:19:13.810
+opposite of store is load, the way we
+
+00:19:13.810 --> 00:19:16.675
+can load things from the store you might
+
+00:19:16.675 --> 00:19:18.755
+have just guessed, you can look them up
+
+00:19:18.755 --> 00:19:28.595
+by their ID and this is just we
+
+00:19:28.595 --> 00:19:31.075
+retrieve it from the object store by ID
+
+00:19:30.690 --> 00:19:36.450
+and it gives us back the contents. Any
+
+00:19:36.450 --> 00:19:39.570
+questions about this so far? Question? What language
+
+00:19:39.570 --> 00:19:41.410
+is this all written in? That's a good
+
+00:19:41.410 --> 00:19:43.010
+question. What language is this all written in?
+
+00:19:43.010 --> 00:19:44.370
+It's written in the language I just made
+
+00:19:44.370 --> 00:19:48.535
+up. So it's pseudocode. The git implementation itself
+
+00:19:48.535 --> 00:19:50.855
+is a mix of C. It's mostly C
+
+00:19:50.855 --> 00:19:52.535
+and then some bash and Perl scripts I
+
+00:19:52.535 --> 00:19:57.255
+think. Any other questions? Is this made up
+
+00:19:57.255 --> 00:19:58.855
+language clear enough or do I need to
+
+00:19:58.855 --> 00:20:05.360
+explain any aspects of it? Great. Okay. So
+
+00:20:05.680 --> 00:20:09.120
+blobs, trees and commits in git are unified
+
+00:20:09.120 --> 00:20:13.840
+in this way. They're all objects. And also
+
+00:20:14.475 --> 00:20:16.715
+as you might think given my description here
+
+00:20:16.715 --> 00:20:19.675
+like it looks like commits contain a whole
+
+00:20:19.675 --> 00:20:22.075
+bunch of other commits and contain a snapshot
+
+00:20:22.075 --> 00:20:24.955
+and things like that. In practice it doesn't
+
+00:20:24.955 --> 00:20:27.195
+actually work that way. Instead all these are
+
+00:20:27.195 --> 00:20:31.060
+pointers so a commit will be able to
+
+00:20:31.060 --> 00:20:33.700
+reference a bunch of parents by their IDs.
+
+00:20:33.700 --> 00:20:35.300
+So this is actually not an array of
+
+00:20:35.300 --> 00:20:39.220
+commits themselves, but IDs. And similarly, the snapshot
+
+00:20:39.220 --> 00:20:41.700
+inside a commit is not the actual tree
+
+00:20:41.700 --> 00:20:44.005
+object, it's the ID of the tree. So
+
+00:20:44.005 --> 00:20:45.765
+all these objects are kind of stored on
+
+00:20:45.765 --> 00:20:47.685
+their own in this object store and then
+
+00:20:47.685 --> 00:20:50.165
+all the references to different objects are just
+
+00:20:50.165 --> 00:20:53.365
+by their ID, by their SHA-one hash. Does
+
+00:20:53.365 --> 00:20:55.125
+that make sense? You can almost in your
+
+00:20:55.125 --> 00:20:57.605
+head map it to like, these are objects
+
+00:20:57.605 --> 00:20:59.860
+in a programming language like Java and then
+
+00:20:59.860 --> 00:21:02.020
+this is a reference to a tree, it's
+
+00:21:02.020 --> 00:21:03.860
+like a pointer and then that is your
+
+00:21:03.860 --> 00:21:06.660
+RAM. Maybe this analogy helps, maybe it doesn't.
+
+00:21:06.740 --> 00:21:09.220
+There's a memory model for storing all this
+
+00:21:09.220 --> 00:21:11.300
+stuff that Yeah. You're not telling it about,
+
+00:21:11.300 --> 00:21:19.925
+but Yeah. Exactly. So I'll just repeat that
+
+00:21:19.925 --> 00:21:22.245
+for everybody to hear on the microphone. This
+
+00:21:22.245 --> 00:21:24.805
+is gits on disk data store. It's a
+
+00:21:24.805 --> 00:21:27.285
+content address store where objects are addressed by
+
+00:21:27.285 --> 00:21:38.030
+their hash. Alright. Any questions about that so
+
+00:21:38.030 --> 00:21:41.070
+far? Okay. So now we have a way
+
+00:21:41.070 --> 00:21:46.775
+of identifying we've we've unified all the different
+
+00:21:46.775 --> 00:21:48.535
+types of objects into one type of thing
+
+00:21:48.535 --> 00:21:50.535
+we call object, and we have a way
+
+00:21:50.535 --> 00:21:53.575
+of identifying objects by their SHA-one hash. What
+
+00:21:53.575 --> 00:21:56.300
+do these actual SHA-one hashes look like? Well,
+
+00:21:56.300 --> 00:21:59.260
+they're hexadecimal strings that are 40 characters long,
+
+00:21:59.260 --> 00:22:01.580
+like SHA-one is a 160 bit hash. And
+
+00:22:01.580 --> 00:22:05.100
+so, one of the actual IDs returned by
+
+00:22:05.100 --> 00:22:07.580
+that SHA-one function is gonna be a really
+
+00:22:07.580 --> 00:22:12.035
+long string. And, so, given that, we'll have
+
+00:22:12.035 --> 00:22:13.955
+ways of identifying these different things. Like, this
+
+00:22:13.955 --> 00:22:17.155
+will have corresponding to it an ID like
+
+00:22:17.155 --> 00:22:27.200
+4AF32CBSomething something. So now we have a way
+
+00:22:27.200 --> 00:22:29.600
+of naming everything in this commit graph. But
+
+00:22:29.600 --> 00:22:32.480
+these names are really inconvenient because they're super
+
+00:22:32.480 --> 00:22:35.120
+long and they're like hex strings, they're not
+
+00:22:35.120 --> 00:22:38.595
+meaningful to humans in any way. So git's
+
+00:22:38.595 --> 00:22:40.995
+solution to this problem is one other thing.
+
+00:22:40.995 --> 00:22:42.995
+So git maintains a set of objects and
+
+00:22:42.995 --> 00:22:45.715
+then it maintains a set of references. What
+
+00:22:45.715 --> 00:22:48.675
+are references? Here. I'll erase this bit on
+
+00:22:48.675 --> 00:22:55.570
+the left since this part's pretty logical. Let's
+
+00:22:55.570 --> 00:22:58.690
+see how we're doing on time. So references
+
+00:22:59.890 --> 00:23:05.745
+are here. So this is another piece of
+
+00:23:05.745 --> 00:23:09.505
+data that Git maintains internally. References is a
+
+00:23:09.505 --> 00:23:16.785
+map from string to string. And you can
+
+00:23:16.785 --> 00:23:19.425
+think of this as mapping human readable names.
+
+00:23:19.810 --> 00:23:23.330
+Like I might have a name like fix
+
+00:23:23.330 --> 00:23:28.530
+encoding bug. Fix dash encoding dash bug is
+
+00:23:28.530 --> 00:23:30.610
+a human readable name. And this would be
+
+00:23:30.610 --> 00:23:33.890
+mapped to like that long hexadecimal string there.
+
+00:23:35.435 --> 00:23:37.595
+And so with these references, and you can
+
+00:23:37.595 --> 00:23:41.115
+imagine how we might have ways of creating
+
+00:23:41.115 --> 00:23:44.395
+new references and updating references and things like
+
+00:23:44.395 --> 00:23:47.115
+that. With this I can now refer to
+
+00:23:47.720 --> 00:23:50.680
+things in my commit graph by name. So
+
+00:23:50.680 --> 00:23:52.920
+I might have this thing be called like
+
+00:23:53.560 --> 00:23:56.600
+fix bug or I might have a name
+
+00:23:56.600 --> 00:23:59.975
+for something over here, things like that. And
+
+00:23:59.975 --> 00:24:01.495
+so, yeah, with this, Git can use human
+
+00:24:01.495 --> 00:24:04.455
+readable names to refer to particular snapshots in
+
+00:24:04.455 --> 00:24:07.415
+the history instead of these long hexadecimal strings.
+
+00:24:08.215 --> 00:24:11.335
+One other thing to be aware of here
+
+00:24:11.335 --> 00:24:16.280
+is given Git's design for history, this entire
+
+00:24:16.280 --> 00:24:18.680
+graph is actually immutable. You can add new
+
+00:24:18.680 --> 00:24:20.760
+stuff to it, but you can't actually manipulate
+
+00:24:20.760 --> 00:24:23.400
+anything in here. I won't go into the
+
+00:24:23.400 --> 00:24:25.720
+details of exactly how or why, but just
+
+00:24:25.720 --> 00:24:28.520
+assume that that's the case. However, references are
+
+00:24:28.520 --> 00:24:31.385
+immutable. So, as you're updating the history, like,
+
+00:24:31.385 --> 00:24:32.745
+suppose you keep working on this piece of
+
+00:24:32.745 --> 00:24:34.985
+software, you create a new commit. So, I'm
+
+00:24:34.985 --> 00:24:37.225
+representing that by the circle. This points to
+
+00:24:37.225 --> 00:24:40.025
+the previous commit. I can actually have say,
+
+00:24:40.025 --> 00:24:42.105
+my fixed bug reference was pointing here, I
+
+00:24:42.105 --> 00:24:44.105
+can update this reference to now point over
+
+00:24:44.105 --> 00:24:50.700
+here. However, I can't, for example, make this
+
+00:24:50.700 --> 00:24:52.460
+point over here, that's not even a meaningful
+
+00:24:52.460 --> 00:24:54.540
+thing to say, because this is just the
+
+00:24:54.540 --> 00:24:56.940
+hash of this object. To change this hash,
+
+00:24:56.940 --> 00:24:58.220
+I'd need to change the contents of the
+
+00:24:58.220 --> 00:25:04.035
+object, which doesn't really make sense. Alright. Any
+
+00:25:04.035 --> 00:25:05.795
+questions about that so far? That's basically it
+
+00:25:05.795 --> 00:25:07.955
+for git's data model. And then we'll go
+
+00:25:07.955 --> 00:25:10.195
+into actually interacting with git via the command
+
+00:25:10.195 --> 00:25:12.915
+line, and we'll see how git commands correspond
+
+00:25:12.915 --> 00:25:16.430
+with manipulations of a graph data structure. So
+
+00:25:16.430 --> 00:25:21.070
+any questions about modeling history as trees of
+
+00:25:21.070 --> 00:25:23.550
+trees and blobs, and then snapshots of these
+
+00:25:23.550 --> 00:25:26.110
+things called commits being chained together? And you
+
+00:25:26.110 --> 00:25:28.110
+have references that can point to particular nodes
+
+00:25:28.110 --> 00:25:37.665
+in this graph. Cool. No questions. So basically
+
+00:25:37.665 --> 00:25:42.080
+once we have objects and references Like that's
+
+00:25:42.080 --> 00:25:44.880
+basically all there is to a git repository.
+
+00:25:44.880 --> 00:25:46.640
+Those are just the the two pieces of
+
+00:25:46.640 --> 00:25:51.040
+data that it stores. And at a high
+
+00:25:51.040 --> 00:25:57.315
+level, all git command line commands are just
+
+00:25:57.315 --> 00:26:00.435
+manipulations of either the references data or the
+
+00:26:00.435 --> 00:26:11.870
+objects data. Okay. So for the rest of
+
+00:26:11.870 --> 00:26:13.230
+this lecture, I'm going to go through some
+
+00:26:13.230 --> 00:26:15.870
+git commands. It's basically going to be an
+
+00:26:15.870 --> 00:26:18.030
+interactive demo similar to the Vim lecture, and
+
+00:26:18.030 --> 00:26:19.390
+then you can refer to the notes for
+
+00:26:19.390 --> 00:26:21.550
+full information on these commands. Like, of course,
+
+00:26:21.550 --> 00:26:23.070
+this is a really powerful tool. We can't
+
+00:26:23.070 --> 00:26:28.005
+cover everything in, what, twenty minutes. Alright. So,
+
+00:26:28.005 --> 00:26:29.605
+I'm going to go over to this folder
+
+00:26:29.605 --> 00:26:31.845
+called playground, and I'm going to make a
+
+00:26:31.845 --> 00:26:34.565
+new directory called demo, cd into demo. And,
+
+00:26:34.565 --> 00:26:36.325
+this directory is going to represent the top
+
+00:26:36.325 --> 00:26:39.620
+level of my project. It's currently empty because
+
+00:26:39.620 --> 00:26:43.380
+I just created it. If I want to
+
+00:26:43.380 --> 00:26:45.700
+turn this into a git repository I use
+
+00:26:45.700 --> 00:26:48.420
+the git init command. Git init stands for
+
+00:26:48.420 --> 00:26:50.820
+git initialize and we see that it says
+
+00:26:50.820 --> 00:26:54.420
+initialized empty git repository in blah blah blah
+
+00:26:53.525 --> 00:26:56.645
+slash dot git. If I do ls I
+
+00:26:56.645 --> 00:26:58.405
+still see nothing but if I do ls
+
+00:26:58.405 --> 00:27:01.605
+dash a there's a hidden file in this
+
+00:27:01.605 --> 00:27:03.685
+directory called dot git. If I do ls
+
+00:27:03.685 --> 00:27:05.365
+dot git there's a bunch of stuff in
+
+00:27:05.365 --> 00:27:07.765
+here. This is the directory on disk where
+
+00:27:07.765 --> 00:27:09.285
+it get stores all of its internal data,
+
+00:27:09.470 --> 00:27:11.710
+namely the objects and the references. And you
+
+00:27:11.710 --> 00:27:13.870
+actually see here objects and refs as two
+
+00:27:13.870 --> 00:27:17.070
+directories in here, and all the repository data
+
+00:27:17.070 --> 00:27:22.125
+will be stored underneath those two directories. One
+
+00:27:22.125 --> 00:27:23.725
+other command to keep in mind as we're
+
+00:27:23.725 --> 00:27:25.565
+going through these is something called git help.
+
+00:27:25.565 --> 00:27:27.645
+Git help takes a sub command as an
+
+00:27:27.645 --> 00:27:29.005
+argument and gives you some help on it.
+
+00:27:29.005 --> 00:27:30.365
+So if I do git help init for
+
+00:27:30.365 --> 00:27:32.525
+example, it'll tell me about the git init
+
+00:27:32.525 --> 00:27:37.980
+command. So now, there are some commands for
+
+00:27:37.980 --> 00:27:39.260
+figuring out what's going on with the git
+
+00:27:39.260 --> 00:27:41.500
+repository like git status at a high level
+
+00:27:41.500 --> 00:27:44.620
+says, what is going on right now? And
+
+00:27:44.620 --> 00:27:46.300
+we see here Let's ignore the first line
+
+00:27:46.300 --> 00:27:48.540
+for now. The second line says no commits
+
+00:27:52.515 --> 00:27:57.795
+history yet. I'm actually going to Does anybody
+
+00:27:57.795 --> 00:27:58.995
+still want this or can I clear this
+
+00:27:58.995 --> 00:28:01.395
+part of the board? I'm going to, as
+
+00:28:01.395 --> 00:28:04.435
+we go along, draw how the underlying objects
+
+00:28:04.435 --> 00:28:07.075
+and references data is changing when I type
+
+00:28:07.075 --> 00:28:09.990
+in certain git commands. So right now this
+
+00:28:09.990 --> 00:28:11.910
+picture or lack of picture represents the current
+
+00:28:11.910 --> 00:28:13.990
+state of our repository. It's empty. There are
+
+00:28:13.990 --> 00:28:17.990
+no snapshots. So let's fix that. Let's add
+
+00:28:17.990 --> 00:28:20.150
+something to our history. Here we have no
+
+00:28:20.150 --> 00:28:23.515
+files, so let me just go ahead and
+
+00:28:23.515 --> 00:28:25.595
+create a file hello. Txt with the content
+
+00:28:25.595 --> 00:28:28.155
+hello world. Normally you'd have your source code
+
+00:28:28.155 --> 00:28:31.995
+with actually useful stuff in it. Now, what
+
+00:28:31.995 --> 00:28:32.955
+I want to do is I want to
+
+00:28:32.955 --> 00:28:34.955
+take the current contents of this directory and
+
+00:28:34.955 --> 00:28:37.195
+turn it into a new snapshot to represent
+
+00:28:37.110 --> 00:28:39.430
+say the first state my project was in.
+
+00:28:40.950 --> 00:28:42.790
+You might imagine an interface for doing this
+
+00:28:42.790 --> 00:28:44.950
+where there's like a git snapshot command or
+
+00:28:44.950 --> 00:28:47.510
+git something else command which takes a snapshot
+
+00:28:47.510 --> 00:28:49.110
+of the entire state of the current directory.
+
+00:28:49.765 --> 00:28:51.525
+For a number of reasons, git doesn't have
+
+00:28:51.525 --> 00:28:53.765
+a command that works exactly like that because
+
+00:28:53.765 --> 00:28:54.885
+git wants to give you a little bit
+
+00:28:54.885 --> 00:28:57.925
+of flexibility as to what changes to include
+
+00:28:57.925 --> 00:29:00.005
+in the next snapshot you take. This is
+
+00:29:00.005 --> 00:29:02.005
+something that's kind of confusing to beginners sometimes,
+
+00:29:02.005 --> 00:29:03.685
+so I'll try to explain it right now.
+
+00:29:04.030 --> 00:29:05.950
+Git has a concept of something called a
+
+00:29:05.950 --> 00:29:08.590
+staging area, and at a high level it's
+
+00:29:09.550 --> 00:29:11.790
+a way you tell git what changes should
+
+00:29:11.790 --> 00:29:14.270
+be included in the next snapshot you take.
+
+00:29:15.150 --> 00:29:17.070
+If we do git status here, we'll see
+
+00:29:17.070 --> 00:29:19.235
+that git says no commits yet like it
+
+00:29:19.235 --> 00:29:22.115
+said before and it says untracked files hello
+
+00:29:22.115 --> 00:29:24.515
+dot txt. So this is saying that git
+
+00:29:24.515 --> 00:29:26.115
+notices that there's a new file in the
+
+00:29:26.115 --> 00:29:28.275
+current directory but it is not going to
+
+00:29:28.275 --> 00:29:30.195
+be included in the next snapshot git's kind
+
+00:29:30.195 --> 00:29:31.980
+of ignoring it for now. But if I
+
+00:29:31.980 --> 00:29:34.860
+do git add hello. Txt and if I
+
+00:29:34.860 --> 00:29:37.980
+do git status again, it says now changes
+
+00:29:37.980 --> 00:29:41.340
+to be committed new file hello. Txt. And
+
+00:29:41.340 --> 00:29:43.100
+so now if I do the git snapshot
+
+00:29:43.100 --> 00:29:45.885
+command which is actually git commit, which creates
+
+00:29:45.885 --> 00:29:47.245
+a new one of those circles I drew
+
+00:29:47.245 --> 00:29:49.565
+on the board over there. This file will
+
+00:29:49.565 --> 00:29:52.525
+be included in that snapshot I take. So
+
+00:29:52.525 --> 00:29:54.445
+let me go ahead and run git commit.
+
+00:29:54.845 --> 00:29:56.525
+What this does is it pops up my
+
+00:29:56.525 --> 00:29:58.285
+text editor and it lets me type in
+
+00:29:58.285 --> 00:30:00.125
+a message that will be associated with this
+
+00:30:00.125 --> 00:30:02.360
+commit. And it's really good to write high
+
+00:30:02.360 --> 00:30:04.280
+quality commit messages because then later when you're
+
+00:30:04.280 --> 00:30:06.280
+looking back at your products version history you'll
+
+00:30:06.280 --> 00:30:10.680
+know why you made certain changes. I'm going
+
+00:30:10.680 --> 00:30:13.480
+to add this relatively useless commit message but
+
+00:30:13.480 --> 00:30:15.640
+we have a link in the lecture notes
+
+00:30:15.555 --> 00:30:17.155
+for a guide on how to write high
+
+00:30:17.155 --> 00:30:20.355
+quality commit messages. So now that I've done
+
+00:30:20.355 --> 00:30:24.195
+that, git prints out some output. Master ignore
+
+00:30:24.195 --> 00:30:26.915
+that bit for now. This thing is the
+
+00:30:26.915 --> 00:30:28.915
+hash of the commit I just created. So
+
+00:30:28.915 --> 00:30:31.370
+now I have in my history a single
+
+00:30:31.370 --> 00:30:34.570
+node. This has in it a tree that
+
+00:30:34.570 --> 00:30:36.570
+has a single blob, a single file hello
+
+00:30:36.570 --> 00:30:39.290
+dot txt with the contents hello world. And
+
+00:30:39.290 --> 00:30:43.850
+then, this has the SHA one hash four
+
+00:30:43.850 --> 00:30:48.405
+two f b something something something. It's actually
+
+00:30:48.405 --> 00:30:51.925
+truncated in the git interface as well. This
+
+00:30:51.925 --> 00:30:54.165
+is just printing out my commit message again,
+
+00:30:54.165 --> 00:30:56.005
+and it says, as a reminder, I just
+
+00:30:56.005 --> 00:30:58.885
+added hello dot txt. And so now if
+
+00:30:58.885 --> 00:31:00.860
+I use the git log command, so the
+
+00:31:00.860 --> 00:31:02.700
+git log command is really useful in that
+
+00:31:02.700 --> 00:31:05.180
+it helps you visualize the history, the the
+
+00:31:05.180 --> 00:31:08.700
+commit graph. If I do Question? The hash
+
+00:31:08.700 --> 00:31:11.980
+of the 42 f number, is that for
+
+00:31:11.980 --> 00:31:15.740
+the entire tree or just for the function
+
+00:31:15.740 --> 00:31:18.315
+alone? Hello? That's a great question. So the
+
+00:31:18.315 --> 00:31:20.875
+question is what exactly does this hash correspond
+
+00:31:20.875 --> 00:31:23.195
+to? So this is the hash of the
+
+00:31:23.195 --> 00:31:27.195
+commit. The commit contains inside of it the
+
+00:31:27.195 --> 00:31:29.675
+hash of the tree along with whatever other
+
+00:31:29.675 --> 00:31:32.940
+information. So I can actually use, git cat
+
+00:31:32.940 --> 00:31:36.460
+file dash p this number. This is kind
+
+00:31:36.460 --> 00:31:39.260
+of like a git internals command that will
+
+00:31:39.260 --> 00:31:41.340
+print out the contents of this commit. So
+
+00:31:41.340 --> 00:31:42.380
+you can see this kind of maps to
+
+00:31:42.380 --> 00:31:43.740
+that data structure I drew on the board
+
+00:31:43.740 --> 00:31:46.005
+over there. So this commit has inside of
+
+00:31:46.005 --> 00:31:48.005
+it this tree, and then I'm the author,
+
+00:31:48.005 --> 00:31:49.205
+and this is the commit message, and so
+
+00:31:49.205 --> 00:31:50.965
+on. And I can continue digging down here,
+
+00:31:50.965 --> 00:31:52.165
+so I can take this hash of this
+
+00:31:52.165 --> 00:31:54.565
+tree and do git cat file dash p
+
+00:31:54.565 --> 00:31:56.885
+this hash. Here it says that this tree
+
+00:31:56.885 --> 00:32:00.370
+has inside of it a single entry hello.
+
+00:32:00.370 --> 00:32:03.330
+Txt, and that file has it's a blob
+
+00:32:03.330 --> 00:32:05.890
+and it has this hash. I can do
+
+00:32:05.890 --> 00:32:08.850
+git cat file -p this thing, and it
+
+00:32:08.850 --> 00:32:10.770
+will show me the actual contents of that
+
+00:32:10.770 --> 00:32:13.435
+file. So these are like internal git commands
+
+00:32:13.435 --> 00:32:16.715
+to explore objects in the object store. Question?
+
+00:32:16.955 --> 00:32:19.275
+Why do you have to add files explicitly
+
+00:32:19.275 --> 00:32:22.315
+to commit? Why can't you commit That's a
+
+00:32:22.315 --> 00:32:24.155
+great question. So the question is why do
+
+00:32:24.155 --> 00:32:25.915
+I have to use git add? Why can't
+
+00:32:25.915 --> 00:32:28.250
+you just commit all changes? And the answer
+
+00:32:28.250 --> 00:32:29.610
+is well there kind of is a way
+
+00:32:29.610 --> 00:32:31.450
+to commit all changes. If you do git
+
+00:32:31.450 --> 00:32:35.610
+commit -a this commits all the changes that
+
+00:32:35.610 --> 00:32:37.290
+were made to files that are already being
+
+00:32:37.290 --> 00:32:39.290
+tracked by git. So anything that was included
+
+00:32:39.290 --> 00:32:41.425
+in the previous snapshot but has been modified
+
+00:32:41.425 --> 00:32:44.625
+since then. It doesn't include new things. There's
+
+00:32:44.625 --> 00:32:46.705
+also variants of git add, like if you
+
+00:32:46.705 --> 00:32:49.025
+do git add colon slash, this will add
+
+00:32:49.025 --> 00:32:50.705
+everything in the top from the top level
+
+00:32:50.705 --> 00:32:53.120
+down of your repository. But at a higher
+
+00:32:53.120 --> 00:32:55.600
+level, the reason we have the separation between
+
+00:32:55.600 --> 00:32:57.600
+git add and git commit and why git
+
+00:32:57.600 --> 00:33:00.320
+commit doesn't just snapshot the entire directory is
+
+00:33:00.320 --> 00:33:02.160
+that there are often situations where you don't
+
+00:33:02.160 --> 00:33:04.560
+want to include everything in the current snapshot.
+
+00:33:04.800 --> 00:33:06.925
+Like, here's a couple examples. One is that
+
+00:33:06.925 --> 00:33:08.845
+I might be hacking on my project and
+
+00:33:08.845 --> 00:33:11.085
+I go ahead and implement two features. Maybe
+
+00:33:11.085 --> 00:33:13.005
+I don't want to have a single snapshot
+
+00:33:13.005 --> 00:33:14.845
+that comes after this one that's like I
+
+00:33:14.845 --> 00:33:17.085
+implemented feature A and feature B. Maybe I
+
+00:33:17.085 --> 00:33:18.605
+want to create two separate nodes in the
+
+00:33:18.605 --> 00:33:20.360
+history so that it looks like first I
+
+00:33:20.360 --> 00:33:22.520
+implemented feature a and then after that I
+
+00:33:22.520 --> 00:33:24.280
+implemented feature b. So I have one snapshot
+
+00:33:24.280 --> 00:33:25.800
+that only includes a and then the next
+
+00:33:25.800 --> 00:33:28.520
+one includes both a and b. Git add
+
+00:33:28.520 --> 00:33:30.040
+is a tool and like the staging area
+
+00:33:30.040 --> 00:33:31.800
+in general is a tool that will allow
+
+00:33:31.800 --> 00:33:34.305
+me to do that sort of thing. Another
+
+00:33:34.305 --> 00:33:36.305
+example is suppose I'm working on a bug
+
+00:33:36.305 --> 00:33:38.545
+fix and I have printf statements I've put
+
+00:33:38.545 --> 00:33:40.305
+all over my code, then finally I find
+
+00:33:40.305 --> 00:33:41.665
+the bug and there's a plus one somewhere
+
+00:33:41.665 --> 00:33:42.945
+where there shouldn't be a plus one, so
+
+00:33:42.945 --> 00:33:44.465
+I go fix that. And then I want
+
+00:33:44.465 --> 00:33:46.065
+to take a new snapshot, right, with my
+
+00:33:46.065 --> 00:33:48.470
+fix. But the snapshot probably shouldn't include all
+
+00:33:48.470 --> 00:33:50.630
+of my print statements, just needs to include
+
+00:33:50.630 --> 00:33:52.790
+the fix of removing that plus one. So
+
+00:33:52.790 --> 00:33:54.310
+one way I could solve that issue is
+
+00:33:54.310 --> 00:33:55.990
+I can go and manually remove all the
+
+00:33:55.990 --> 00:33:58.230
+print statements, but git has a much better
+
+00:33:58.230 --> 00:34:00.065
+way of doing that. There's actually a way
+
+00:34:00.065 --> 00:34:02.305
+to specify that I only want to add
+
+00:34:02.305 --> 00:34:04.865
+the change of removing that plus one, then
+
+00:34:04.865 --> 00:34:07.185
+I can commit that, take the new snapshot,
+
+00:34:07.265 --> 00:34:08.785
+and then I can throw away all the
+
+00:34:08.785 --> 00:34:10.625
+other changes. There are commands for doing that
+
+00:34:10.625 --> 00:34:11.665
+and some of them are linked in the
+
+00:34:11.665 --> 00:34:14.020
+lecture notes. So those are two ways in
+
+00:34:14.020 --> 00:34:15.460
+which you can use the staging area to
+
+00:34:15.460 --> 00:34:17.300
+help you and why there isn't just like
+
+00:34:17.300 --> 00:34:20.980
+a snapshot everything command. Log files. Is another
+
+00:34:20.980 --> 00:34:25.380
+example. Files in your directory. Yeah. John points
+
+00:34:25.380 --> 00:34:27.445
+out that yet another example is you might
+
+00:34:27.445 --> 00:34:29.045
+have log files in your current directory that
+
+00:34:29.045 --> 00:34:31.525
+your program runs when you run it, and
+
+00:34:31.525 --> 00:34:32.965
+you probably don't want to include those when
+
+00:34:32.965 --> 00:34:35.685
+you take a snapshot. There's probably other things
+
+00:34:35.685 --> 00:34:37.685
+like if you compile your project, end up
+
+00:34:37.685 --> 00:34:39.205
+with a bunch of .o and like .f
+
+00:34:39.205 --> 00:34:40.645
+files. You probably don't want those to be
+
+00:34:40.645 --> 00:34:47.190
+part of your history. So, going back to
+
+00:34:47.190 --> 00:34:49.910
+what I was showing you before, I'm gonna
+
+00:34:49.910 --> 00:34:51.430
+clear the terminal screen and then show you
+
+00:34:51.430 --> 00:34:53.750
+the git log command. So git log lets
+
+00:34:53.750 --> 00:34:55.750
+you visualize the version history, and this is
+
+00:34:55.750 --> 00:34:59.275
+an incredibly helpful command. By default git log
+
+00:34:59.275 --> 00:35:01.915
+shows you a flattened version of the version
+
+00:35:01.915 --> 00:35:03.755
+history. So even though the version history is
+
+00:35:03.755 --> 00:35:05.355
+a graph this will linearize it and just
+
+00:35:05.355 --> 00:35:07.275
+show things in order. I personally find that
+
+00:35:07.275 --> 00:35:09.275
+confusing so I almost never use git log
+
+00:35:09.275 --> 00:35:11.835
+and instead git log takes some arguments that
+
+00:35:11.835 --> 00:35:14.590
+actually show the history as a graph. So,
+
+00:35:15.070 --> 00:35:19.390
+you can treat this as a magic incantation
+
+00:35:19.390 --> 00:35:20.990
+for now, and you can read the documentation
+
+00:35:20.990 --> 00:35:22.270
+if you want to figure out exactly what
+
+00:35:22.270 --> 00:35:24.750
+each of those flags does. But, for now
+
+00:35:24.750 --> 00:35:26.190
+this doesn't look all that different because we
+
+00:35:26.190 --> 00:35:28.505
+only have one node in our graph. So
+
+00:35:28.505 --> 00:35:30.585
+visualizing it as a flattened thing versus a
+
+00:35:30.585 --> 00:35:33.865
+graph doesn't look all that different. Let me
+
+00:35:33.865 --> 00:35:36.585
+go ahead and create a new snapshot and
+
+00:35:36.585 --> 00:35:38.345
+then we can run this command again and
+
+00:35:38.345 --> 00:35:40.825
+then see exactly what it does. So, I
+
+00:35:40.825 --> 00:35:47.850
+will put another line into hello dot text.
+
+00:35:47.930 --> 00:35:49.610
+And so, if I cat hello dot text
+
+00:35:49.610 --> 00:35:51.290
+it has the thing it had before plus
+
+00:35:51.290 --> 00:35:54.810
+this, I can do git commit and notice
+
+00:35:54.810 --> 00:35:56.810
+this doesn't do anything. It just says no
+
+00:35:56.810 --> 00:36:00.405
+state No changes staged for commit. Why is
+
+00:36:00.405 --> 00:36:02.085
+that? It's because I didn't add this to
+
+00:36:02.085 --> 00:36:03.605
+the staging area. I didn't tell git that
+
+00:36:03.605 --> 00:36:05.045
+like this is something that should be included
+
+00:36:05.045 --> 00:36:07.205
+in the next snapshot. So if I do
+
+00:36:07.205 --> 00:36:11.320
+git add hello dot txt, git status, it
+
+00:36:11.320 --> 00:36:13.240
+says, okay, this change is ready to be
+
+00:36:13.240 --> 00:36:16.600
+committed, this modification to this file. And now
+
+00:36:16.600 --> 00:36:20.520
+I can do git commit. I'm gonna put
+
+00:36:20.520 --> 00:36:23.835
+in a useless commit message, and the new
+
+00:36:23.835 --> 00:36:27.595
+change has been made. And so now, my
+
+00:36:27.595 --> 00:36:29.435
+history has another node in it, and then
+
+00:36:29.435 --> 00:36:31.435
+this node has some hash that's shown on
+
+00:36:31.435 --> 00:36:35.435
+the screen. And now if I rerun that
+
+00:36:35.435 --> 00:36:37.755
+command from earlier, the git log with all
+
+00:36:37.755 --> 00:36:40.230
+these arguments, it actually starts looking more like
+
+00:36:40.230 --> 00:36:42.790
+a graph here. Notice that this is like
+
+00:36:42.790 --> 00:36:46.710
+that graph turned this way. The more recent
+
+00:36:46.790 --> 00:36:49.270
+so it's shown vertically not horizontally, and the
+
+00:36:49.270 --> 00:36:51.350
+more recent commits are shown at the top.
+
+00:36:54.115 --> 00:36:55.955
+This is showing one commit. It shows this
+
+00:36:55.955 --> 00:36:58.195
+commit hash shows a bunch of metadata including
+
+00:36:58.195 --> 00:37:00.995
+the commit message. And then, this is the
+
+00:37:00.995 --> 00:37:02.835
+part I want to talk about next. So
+
+00:37:02.835 --> 00:37:05.075
+remember we talked about objects, like the actual
+
+00:37:05.075 --> 00:37:07.020
+contents of your repository. And then we talked
+
+00:37:07.020 --> 00:37:09.660
+about references ways of naming things in the
+
+00:37:09.660 --> 00:37:14.700
+repository with human readable names. So master is
+
+00:37:14.700 --> 00:37:16.700
+one reference that's created by default when you
+
+00:37:16.700 --> 00:37:19.500
+initialize a git repository and by convention it
+
+00:37:19.500 --> 00:37:22.085
+generally refers to the main branch of development
+
+00:37:22.085 --> 00:37:24.885
+in your code. So master will represent the
+
+00:37:24.885 --> 00:37:26.885
+most up to date version of your project.
+
+00:37:27.845 --> 00:37:30.005
+So here, you can think of master as
+
+00:37:30.005 --> 00:37:32.245
+a pointer to this commit. And as we
+
+00:37:32.245 --> 00:37:34.565
+add more commits, this pointer will be mutated
+
+00:37:34.565 --> 00:37:37.420
+to point to later commits. Then we also
+
+00:37:37.420 --> 00:37:39.900
+see here head, this is a special reference
+
+00:37:39.900 --> 00:37:41.740
+in git. It's a reference like master but
+
+00:37:41.740 --> 00:37:44.300
+it's special in some way and head basically
+
+00:37:44.300 --> 00:37:46.460
+is used to refer to where you are
+
+00:37:46.460 --> 00:37:50.460
+currently looking right now. Any questions so far?
+
+00:37:52.795 --> 00:38:06.395
+Yeah, question? That's an excellent question. So the
+
+00:38:06.395 --> 00:38:09.250
+question is, worked with GitHub before and you
+
+00:38:09.250 --> 00:38:10.610
+have to create an account to do that.
+
+00:38:10.610 --> 00:38:13.650
+How does GitHub relate to Git? And the
+
+00:38:13.650 --> 00:38:16.130
+answer to that question is GitHub is a
+
+00:38:16.130 --> 00:38:21.345
+repository host for Git. So you can create
+
+00:38:21.345 --> 00:38:22.705
+an account on git hub and store a
+
+00:38:22.705 --> 00:38:24.545
+git repository there and use that to collaborate
+
+00:38:24.545 --> 00:38:26.545
+with other people. But, git as a command
+
+00:38:26.545 --> 00:38:28.945
+line tool is independent from git hub. So,
+
+00:38:28.945 --> 00:38:30.225
+you don't have to use git hub to
+
+00:38:30.225 --> 00:38:31.745
+use git. You don't have to use git
+
+00:38:31.745 --> 00:38:33.345
+hub to collaborate with git either, like there
+
+00:38:33.345 --> 00:38:36.150
+are other providers of git repositories like Bitbucket
+
+00:38:36.150 --> 00:38:38.390
+or GitLab or things like that. And so,
+
+00:38:38.550 --> 00:38:42.550
+GitHub is a host for GitHub repositories. Any
+
+00:38:42.550 --> 00:38:51.385
+other questions? GitHub, not GitHub. We make this
+
+00:38:51.385 --> 00:38:53.385
+Git, right? The head and the master, and
+
+00:38:53.385 --> 00:38:54.825
+we have two things in it, shown in
+
+00:38:54.825 --> 00:38:57.785
+the graph. If we want to put it
+
+00:38:57.785 --> 00:38:59.945
+up on GitHub, that's a separate set of
+
+00:38:59.945 --> 00:39:03.065
+commands and need for log in and stuff
+
+00:39:03.065 --> 00:39:05.050
+like that. Yeah. So the the question is
+
+00:39:05.050 --> 00:39:07.370
+if you want this repository to end up
+
+00:39:07.370 --> 00:39:09.050
+on GitHub, how do you do that? Yeah.
+
+00:39:09.050 --> 00:39:10.490
+There's a separate set of commands for doing
+
+00:39:10.490 --> 00:39:13.130
+that. There's a so that concept of having
+
+00:39:13.130 --> 00:39:16.170
+your local copy of version history interact with
+
+00:39:16.170 --> 00:39:18.095
+another copy, so the other copy is called
+
+00:39:18.095 --> 00:39:19.535
+a remote, and then there's set of commands
+
+00:39:19.535 --> 00:39:21.935
+for interacting with git remotes and sending data
+
+00:39:21.935 --> 00:39:24.015
+from your remote or from your copy to
+
+00:39:24.015 --> 00:39:26.495
+git remotes and getting data from git remotes
+
+00:39:26.495 --> 00:39:29.135
+into your local copy. And we'll cover that
+
+00:39:29.135 --> 00:39:30.820
+later in this lecture, or maybe in the
+
+00:39:30.820 --> 00:39:32.820
+lecture notes, Ron might make a supplemental video
+
+00:39:32.820 --> 00:39:35.700
+to go along with this lecture. Any other
+
+00:39:35.700 --> 00:39:42.660
+questions? Okay. A couple other basic commands to
+
+00:39:42.660 --> 00:39:44.525
+show you. So, so far, I've shown you
+
+00:39:44.525 --> 00:39:46.365
+a version history and we've taken a file
+
+00:39:46.365 --> 00:39:49.485
+and modified it. But we haven't really made
+
+00:39:49.485 --> 00:39:51.005
+use of the history in any way besides
+
+00:39:51.005 --> 00:39:53.565
+reading the messages. So one useful git command
+
+00:39:53.565 --> 00:39:55.725
+is something called git checkout. And this is
+
+00:39:55.725 --> 00:39:56.925
+a kind of wacky command, it lets you
+
+00:39:56.925 --> 00:39:58.550
+do a bunch of different things. One thing
+
+00:39:58.550 --> 00:39:59.990
+it lets you do is move around in
+
+00:39:59.990 --> 00:40:01.910
+your version history. So one thing I can
+
+00:40:01.910 --> 00:40:04.070
+do is give git checkout the commit hash
+
+00:40:04.070 --> 00:40:05.750
+of a previous commit, and I don't need
+
+00:40:05.750 --> 00:40:06.870
+to type the whole thing I can give
+
+00:40:06.870 --> 00:40:08.390
+it a prefix and it's smart enough to
+
+00:40:08.390 --> 00:40:10.390
+figure out what I'm talking about. And what
+
+00:40:10.390 --> 00:40:12.550
+this will do is it will change the
+
+00:40:12.550 --> 00:40:14.925
+state of my working directory to how it
+
+00:40:14.925 --> 00:40:18.605
+was at that commit. So here if I
+
+00:40:18.605 --> 00:40:20.605
+do cat hello dot text recall that I
+
+00:40:20.605 --> 00:40:22.125
+had only one line in here before at
+
+00:40:22.125 --> 00:40:23.965
+the first commit and later I added that
+
+00:40:23.965 --> 00:40:27.165
+second line. Now if I do that git
+
+00:40:27.165 --> 00:40:29.270
+log command, this command is super helpful, like
+
+00:40:29.270 --> 00:40:31.670
+it shows you all the things. If I
+
+00:40:31.670 --> 00:40:33.830
+do this command, notice that this output looks
+
+00:40:33.830 --> 00:40:35.830
+a little bit different than before. Like, my
+
+00:40:35.830 --> 00:40:39.030
+actual history contents, the commits themselves and the
+
+00:40:39.030 --> 00:40:40.150
+way they relate to each other and all
+
+00:40:40.150 --> 00:40:43.735
+that, have not changed, but the references have.
+
+00:40:43.735 --> 00:40:46.135
+So notice that head is down here even
+
+00:40:46.135 --> 00:40:47.815
+the master is still up here. So at
+
+00:40:47.815 --> 00:40:49.495
+high level what this is telling me is
+
+00:40:49.495 --> 00:40:51.575
+this is what I'm looking at right now.
+
+00:40:52.055 --> 00:40:54.010
+If I want to go back here I
+
+00:40:54.010 --> 00:40:56.970
+could type git checkout and this commit hash.
+
+00:40:57.690 --> 00:40:59.210
+Does anybody know a different thing I could
+
+00:40:59.210 --> 00:41:01.130
+type here instead of this long hash in
+
+00:41:01.130 --> 00:41:03.850
+order to go back to this commit? Yeah.
+
+00:41:05.050 --> 00:41:06.410
+You can give it the name of this
+
+00:41:06.410 --> 00:41:08.665
+is a branch colored in green here, and
+
+00:41:08.665 --> 00:41:10.265
+it refers to this commit, I can give
+
+00:41:10.265 --> 00:41:11.705
+it the short name or the human readable
+
+00:41:11.705 --> 00:41:13.785
+name instead. And now if I do cat
+
+00:41:13.785 --> 00:41:15.785
+hello dot text, notice that it has that
+
+00:41:15.785 --> 00:41:20.985
+second line. So, when you do checkout, it
+
+00:41:20.985 --> 00:41:24.170
+is actually replacing the file in your current
+
+00:41:24.170 --> 00:41:31.050
+directory with the files of lots that has
+
+00:41:31.050 --> 00:41:34.170
+stored. Yeah. So all your files so it's
+
+00:41:34.170 --> 00:41:35.775
+like you can change a whole bunch of
+
+00:41:35.775 --> 00:41:38.575
+files without even realizing it. Yeah. So to
+
+00:41:38.575 --> 00:41:42.975
+to repeat that, git checkout actually changes the
+
+00:41:42.975 --> 00:41:45.455
+contents of your working directory. And so in
+
+00:41:45.455 --> 00:41:47.135
+that way, it can be a somewhat dangerous
+
+00:41:47.135 --> 00:41:49.430
+command if you misuse it. For example, you
+
+00:41:49.430 --> 00:41:53.110
+can see if I modify hello. Txt and
+
+00:41:54.230 --> 00:41:56.630
+then try that git checkout command from earlier
+
+00:41:56.710 --> 00:41:59.430
+Actually, notice here that it says error. It
+
+00:41:59.430 --> 00:42:01.670
+says there's a file that's been modified and
+
+00:42:01.670 --> 00:42:04.550
+the git checkout would destroy your modification. You
+
+00:42:04.135 --> 00:42:05.895
+probably want to do something about that. But
+
+00:42:05.895 --> 00:42:07.655
+there are flags like for example git checkout
+
+00:42:07.655 --> 00:42:09.735
+dash f does this forcibly and now it's
+
+00:42:09.735 --> 00:42:12.055
+thrown away my changes. So, yeah, git checkout
+
+00:42:12.055 --> 00:42:14.215
+has the potential to well, certainly does modify
+
+00:42:14.215 --> 00:42:15.815
+things in your working directory and it can
+
+00:42:15.815 --> 00:42:19.830
+actually destroy changes if you're not careful. Question?
+
+00:42:19.830 --> 00:42:22.390
+So then, in the in the lingo here,
+
+00:42:22.390 --> 00:42:26.470
+checkout moves where head is. Exactly. Okay. Yeah.
+
+00:42:26.470 --> 00:42:27.510
+This is exactly what I want you to
+
+00:42:27.510 --> 00:42:30.230
+be thinking about. How these, like, the crazy
+
+00:42:30.230 --> 00:42:33.895
+git interface commands correspond to mutations to this
+
+00:42:33.895 --> 00:42:35.655
+graph and mutations to the reference or like
+
+00:42:35.655 --> 00:42:37.335
+additions to the graph and mutations to the
+
+00:42:37.335 --> 00:42:42.935
+references map. So yeah exactly. Git checkout moves
+
+00:42:42.935 --> 00:42:45.030
+the head pointer and then also mutates the
+
+00:42:45.030 --> 00:42:47.590
+contents of your working directory with the contents
+
+00:42:47.590 --> 00:42:49.830
+that the head pointer now points to, corresponding
+
+00:42:49.990 --> 00:43:00.625
+to that commit. Any other questions? Alright. So,
+
+00:43:00.625 --> 00:43:02.305
+one other basic command I want to show
+
+00:43:02.305 --> 00:43:05.025
+you is the git diff command. So, I'm
+
+00:43:05.025 --> 00:43:07.345
+going to modify this file and put some
+
+00:43:07.345 --> 00:43:10.625
+changes in it. The git diff command can
+
+00:43:10.625 --> 00:43:13.105
+show you what's changed since the last snapshot.
+
+00:43:13.170 --> 00:43:14.850
+It's just helpful for like knowing what's going
+
+00:43:14.850 --> 00:43:17.970
+on with your project. Git diff can also
+
+00:43:17.970 --> 00:43:23.170
+take extra arguments like, you can do git
+
+00:43:23.170 --> 00:43:25.490
+diff and say compute a diff not with
+
+00:43:25.490 --> 00:43:27.925
+respect to the last snapshot, the last commit
+
+00:43:27.925 --> 00:43:30.005
+but with respect to this and say okay
+
+00:43:30.005 --> 00:43:32.085
+two lines have been added since this point
+
+00:43:32.085 --> 00:43:43.570
+to hello dot text Question? So, you don't
+
+00:43:43.570 --> 00:43:47.650
+supply like a hash, what it compares to?
+
+00:43:48.210 --> 00:43:51.490
+Ah, so your The question is, what does
+
+00:43:51.490 --> 00:43:53.970
+this command do without this extra argument here?
+
+00:43:54.955 --> 00:43:57.835
+That's a good question. So, what this does
+
+00:43:57.835 --> 00:44:00.555
+is it computes a diff with respect to
+
+00:44:00.555 --> 00:44:06.075
+head. And, looking at my git log, head
+
+00:44:06.075 --> 00:44:07.870
+is pointing to here, so it's doing a
+
+00:44:07.870 --> 00:44:09.790
+git diff with respect to this commit and
+
+00:44:09.790 --> 00:44:11.630
+you can actually specify that explicitly you can
+
+00:44:11.630 --> 00:44:13.870
+do git diff head hello dot text and
+
+00:44:13.870 --> 00:44:15.710
+it will do the same thing. Isn't head
+
+00:44:15.870 --> 00:44:17.710
+wherever head is isn't it going to like
+
+00:44:17.710 --> 00:44:20.805
+modify hello to I guess I don't understand
+
+00:44:20.805 --> 00:44:23.925
+how head can be somewhere and hello can
+
+00:44:23.925 --> 00:44:26.165
+be different from like where head is on
+
+00:44:26.165 --> 00:44:30.085
+the ground. Does that make I am confused.
+
+00:44:30.085 --> 00:44:33.765
+Okay. Yes. So that's a good question. It's
+
+00:44:33.765 --> 00:44:36.460
+like how can hello dot text be different
+
+00:44:36.460 --> 00:44:38.380
+than head because head refers to where you
+
+00:44:38.380 --> 00:44:41.500
+currently are. So to clarify, head refers to
+
+00:44:41.500 --> 00:44:45.020
+the last snapshot. So like in my picture
+
+00:44:45.020 --> 00:44:52.685
+here, head and master are both here. And
+
+00:44:52.925 --> 00:44:55.405
+the current working directory is kind of independent
+
+00:44:55.405 --> 00:44:56.765
+of this. Like, could go and delete all
+
+00:44:56.765 --> 00:44:58.365
+the files in here. It doesn't change the
+
+00:44:58.365 --> 00:45:00.445
+history graph or the references. And so, yeah,
+
+00:45:00.445 --> 00:45:01.965
+you can have differences between here and here.
+
+00:45:01.965 --> 00:45:03.245
+And at a high level, this is how
+
+00:45:03.245 --> 00:45:04.525
+you work on a project. Like, you make
+
+00:45:04.525 --> 00:45:06.590
+some changes here, you git add them to
+
+00:45:06.590 --> 00:45:08.350
+stage them, and then you git commit, and
+
+00:45:08.350 --> 00:45:12.750
+that creates a new snapshot here. Good question.
+
+00:45:12.910 --> 00:45:17.470
+Any other questions? Yeah? So is git actually
+
+00:45:17.470 --> 00:45:19.870
+saving all of these different versions, like, the
+
+00:45:19.870 --> 00:45:22.085
+way I would if I saved version one
+
+00:45:22.085 --> 00:45:24.165
+version two etcetera or is it somehow just
+
+00:45:24.165 --> 00:45:27.125
+keeping track of certain differences? So the question
+
+00:45:27.125 --> 00:45:29.365
+is does git actually save all this stuff
+
+00:45:29.365 --> 00:45:30.965
+kind of in the obvious way or is
+
+00:45:30.965 --> 00:45:32.965
+it doing something fancier? The answer is is
+
+00:45:32.965 --> 00:45:34.725
+it is doing something a little bit fancier,
+
+00:45:35.450 --> 00:45:37.690
+but you can it has an interface that
+
+00:45:37.690 --> 00:45:39.610
+lets you think of it like it's stored
+
+00:45:39.610 --> 00:45:42.090
+that way. In practice git uses delta compression,
+
+00:45:42.090 --> 00:45:44.570
+it also does some other stuff. But yeah,
+
+00:45:44.570 --> 00:45:47.130
+the on disk representation is actually reasonably efficient.
+
+00:45:47.690 --> 00:45:52.445
+Question? Say I want to compare to the
+
+00:45:52.445 --> 00:45:54.685
+difference between two different things that are somewhere
+
+00:45:54.685 --> 00:45:56.525
+back up my history. Can I pick just
+
+00:45:56.525 --> 00:45:58.685
+too many arbitrary points of difference? Yeah, that's
+
+00:45:58.685 --> 00:46:01.245
+a good question. So the question is, here
+
+00:46:01.245 --> 00:46:04.125
+we were comparing the current working directory with
+
+00:46:04.500 --> 00:46:06.580
+a particular snapshot in the past. Can we
+
+00:46:06.580 --> 00:46:09.300
+compare two snapshots with each other? Like two
+
+00:46:09.300 --> 00:46:11.140
+different points in the history and yeah git
+
+00:46:11.140 --> 00:46:13.140
+diff can take yet another argument here. So
+
+00:46:13.140 --> 00:46:16.100
+I can for example compare head with I
+
+00:46:16.100 --> 00:46:18.435
+did it in the wrong order. I can
+
+00:46:18.435 --> 00:46:21.635
+compare what changed from here to head in
+
+00:46:21.635 --> 00:46:23.555
+hello dot text and it shows me that
+
+00:46:23.555 --> 00:46:27.155
+I added the second line in there. Any
+
+00:46:27.155 --> 00:46:42.730
+other questions? Yeah. So the question is, if
+
+00:46:42.730 --> 00:46:44.090
+you're working on a shared project in a
+
+00:46:44.090 --> 00:46:45.610
+Dropbox folder and I want to migrate to
+
+00:46:45.610 --> 00:46:47.130
+git, does it make sense to turn the
+
+00:46:47.555 --> 00:46:50.195
+Dropbox folder into a git repo? Do not
+
+00:46:50.195 --> 00:46:52.675
+use git inside Dropbox. Dropbox will corrupt your
+
+00:46:52.675 --> 00:46:54.755
+git repo. There are good solutions to doing
+
+00:46:54.755 --> 00:46:57.235
+that. One is just use GitHub, otherwise talk
+
+00:46:57.235 --> 00:46:58.435
+to me after class and there are ways
+
+00:46:58.435 --> 00:47:00.755
+of using Dropbox as a git remote safely.
+
+00:47:03.590 --> 00:47:08.710
+Any other questions? Next, we're going to talk
+
+00:47:08.710 --> 00:47:11.670
+about branching and merging, which is another powerful
+
+00:47:11.670 --> 00:47:13.910
+feature of git that you almost certainly use
+
+00:47:14.070 --> 00:47:15.750
+both when working on your own projects and
+
+00:47:15.750 --> 00:47:18.995
+when collaborating with others. For this series of
+
+00:47:18.995 --> 00:47:21.955
+demos we're going to, rather than work with
+
+00:47:21.955 --> 00:47:25.075
+a simple text file actually write a simple
+
+00:47:25.075 --> 00:47:27.635
+computer program because it'll better illustrate the concepts
+
+00:47:27.635 --> 00:47:29.795
+of branching and merging. As we go through
+
+00:47:29.795 --> 00:47:32.740
+this demonstration we'll keep in mind how the
+
+00:47:32.740 --> 00:47:35.540
+git interface commands connect to the underlying data
+
+00:47:35.540 --> 00:47:39.220
+model connect to objects and references and how
+
+00:47:39.220 --> 00:47:44.085
+these commands modify those two data structures. Let
+
+00:47:44.085 --> 00:47:45.765
+me do a git status to see the
+
+00:47:45.765 --> 00:47:48.085
+current state of my repository. Here I've modified
+
+00:47:48.085 --> 00:47:50.485
+hello. Txt. I actually don't really care about
+
+00:47:50.485 --> 00:47:53.365
+this modification anymore. This is some random file.
+
+00:47:53.525 --> 00:47:56.960
+If I do git checkout hello. Txt, this
+
+00:47:56.960 --> 00:47:59.360
+is another different use of the checkout command
+
+00:47:59.520 --> 00:48:02.400
+which basically throws away the changes that I've
+
+00:48:02.400 --> 00:48:04.880
+made in the working directory and sets the
+
+00:48:04.880 --> 00:48:07.360
+contents of hello. Txt back to the way
+
+00:48:07.360 --> 00:48:09.760
+it was in the snapshot that head points
+
+00:48:09.760 --> 00:48:11.795
+to. If I look at git log dash
+
+00:48:11.795 --> 00:48:14.435
+dash all dash dash graph dash dash decorate,
+
+00:48:14.435 --> 00:48:17.315
+it'll show me that here I added the
+
+00:48:17.315 --> 00:48:19.075
+initial holo dot text and I'd added that
+
+00:48:19.075 --> 00:48:22.035
+single line here, and so now holo dot
+
+00:48:22.035 --> 00:48:24.035
+text doesn't have that third line I'd added,
+
+00:48:24.035 --> 00:48:27.640
+it just has the original two. Next, I'm
+
+00:48:27.640 --> 00:48:29.240
+going to write a very simple program. I'll
+
+00:48:29.240 --> 00:48:33.800
+call this program animal. Py. And, let me
+
+00:48:33.800 --> 00:48:35.720
+just go ahead and write a program that,
+
+00:48:35.720 --> 00:48:37.320
+say, prints a little bit of output when
+
+00:48:37.320 --> 00:48:49.125
+I run it. Let's see. So when I
+
+00:48:49.125 --> 00:48:50.725
+run this program it runs main, main calls
+
+00:48:50.725 --> 00:48:52.805
+default and then let me go right ahead,
+
+00:48:52.950 --> 00:48:56.550
+Go ahead and define default and default is
+
+00:48:56.550 --> 00:48:58.230
+going to just going to print hello. So,
+
+00:48:58.230 --> 00:49:00.150
+this is a program that greets its user.
+
+00:49:00.310 --> 00:49:02.630
+And so, if I run animal. Py I'll
+
+00:49:02.630 --> 00:49:04.310
+see that it just prints hello. So, that'll
+
+00:49:04.310 --> 00:49:06.070
+be our starting point. If I do a
+
+00:49:06.070 --> 00:49:09.275
+git status it shows me that animal. Py
+
+00:49:09.275 --> 00:49:12.875
+is an untracked file. To begin with I
+
+00:49:12.875 --> 00:49:15.195
+want this to be part of my part
+
+00:49:15.195 --> 00:49:17.355
+of the snapshot. So, I'm going to git
+
+00:49:17.355 --> 00:49:19.355
+add animal. Py to add it to the
+
+00:49:19.355 --> 00:49:21.835
+staging area and do then do a git
+
+00:49:21.835 --> 00:49:27.400
+commit. Here I'm gonna write yet another useless
+
+00:49:27.400 --> 00:49:29.800
+commit message. Don't actually write commit messages like
+
+00:49:29.800 --> 00:49:31.240
+this in real projects, but for now this
+
+00:49:31.240 --> 00:49:33.880
+is fine. So, now I have this basic
+
+00:49:33.880 --> 00:49:35.800
+animal dot py and if I look at
+
+00:49:35.800 --> 00:49:38.965
+my git history, now I have this latest
+
+00:49:38.965 --> 00:49:42.325
+snapshot. This is the commit hash and this
+
+00:49:42.325 --> 00:49:45.125
+is where the master branch is pointing. Now
+
+00:49:45.125 --> 00:49:47.445
+we're actually going to demonstrate how to use
+
+00:49:47.445 --> 00:49:50.565
+git branches to have parallel lines of development.
+
+00:49:51.450 --> 00:49:53.930
+The git branch command or the branch sub
+
+00:49:53.930 --> 00:49:56.410
+command is used to access functionality related to
+
+00:49:56.410 --> 00:49:59.370
+branching. Just running git branch by itself lists
+
+00:49:59.370 --> 00:50:00.970
+all the branches that are present in the
+
+00:50:00.970 --> 00:50:03.370
+local repository. It can also take an extra
+
+00:50:03.370 --> 00:50:05.610
+argument dash v v to be extra verbose
+
+00:50:05.610 --> 00:50:09.085
+and print some extra information. If we do
+
+00:50:09.085 --> 00:50:11.565
+git branch and then specify the name for
+
+00:50:11.565 --> 00:50:13.565
+a new branch, git will create a new
+
+00:50:13.565 --> 00:50:15.805
+branch which is just a reference that points
+
+00:50:15.805 --> 00:50:18.045
+the same place where we're currently looking. So,
+
+00:50:18.045 --> 00:50:21.590
+there's a new reference called cat Reference in
+
+00:50:21.590 --> 00:50:22.870
+this case is the same as branch. There's
+
+00:50:22.870 --> 00:50:24.790
+a new branch called cat which points to
+
+00:50:24.790 --> 00:50:26.710
+wherever head was pointing. If I look at
+
+00:50:26.710 --> 00:50:29.510
+the git log again, I'll see that here
+
+00:50:29.590 --> 00:50:32.070
+head points to master, master is over here,
+
+00:50:32.070 --> 00:50:33.670
+and this is also where the cat branch
+
+00:50:33.670 --> 00:50:35.350
+is. So, now I have two branches, two
+
+00:50:35.350 --> 00:50:39.505
+references that resolve to the same commit. Git
+
+00:50:39.505 --> 00:50:41.665
+is actually aware of not only which snapshot
+
+00:50:41.665 --> 00:50:43.425
+in the history you're currently looking at, so
+
+00:50:43.425 --> 00:50:45.585
+head points to this commit, but it's also
+
+00:50:45.585 --> 00:50:47.425
+aware of head kind of being associated with
+
+00:50:47.425 --> 00:50:49.820
+a with a branch. So, here head is
+
+00:50:49.820 --> 00:50:51.740
+associated with master and it's the case that
+
+00:50:51.740 --> 00:50:53.180
+if I create a new snapshot if I
+
+00:50:53.180 --> 00:50:55.180
+type git commit at this point the next
+
+00:50:55.180 --> 00:50:58.140
+snapshot will be created and then master will
+
+00:50:58.140 --> 00:50:59.900
+point to that new snapshot. Master will be
+
+00:50:59.900 --> 00:51:02.620
+updated along with head. If I do git
+
+00:51:02.620 --> 00:51:06.125
+checkout cat, what this does is it switches
+
+00:51:06.125 --> 00:51:08.365
+to the branch cat. It replaces the contents
+
+00:51:08.365 --> 00:51:10.925
+of the working directory with whatever cat's pointing
+
+00:51:10.925 --> 00:51:12.445
+to, which in this case is the same
+
+00:51:12.445 --> 00:51:14.605
+as the contents before. But now if I
+
+00:51:14.605 --> 00:51:16.550
+look at the git log again, now I
+
+00:51:16.550 --> 00:51:19.430
+have head point to cat instead of master
+
+00:51:19.430 --> 00:51:21.270
+and then master also points to the same
+
+00:51:21.270 --> 00:51:24.630
+place the same underlying commit. And now at
+
+00:51:24.630 --> 00:51:26.710
+this point if I make changes to my
+
+00:51:26.710 --> 00:51:28.470
+current working directory and make a new commit
+
+00:51:28.785 --> 00:51:31.265
+the cat branch the cat pointer will be
+
+00:51:31.265 --> 00:51:32.865
+updated to point to the new commit whereas
+
+00:51:32.865 --> 00:51:35.425
+master will continue pointing wherever it pointed before.
+
+00:51:35.745 --> 00:51:37.905
+So let me go ahead and modify animal.
+
+00:51:37.905 --> 00:51:41.425
+Py to add some cat related functionality. So
+
+00:51:40.860 --> 00:51:43.980
+I'm going to say that if sys. Argv1
+
+00:51:43.980 --> 00:51:46.860
+is cat, then run the cat function otherwise
+
+00:51:46.860 --> 00:51:49.020
+run the default function. And then let me
+
+00:51:49.020 --> 00:51:51.580
+go ahead and import, define the cat function.
+
+00:51:51.980 --> 00:51:54.860
+So, cats don't say hello, they meow. So,
+
+00:51:55.225 --> 00:51:59.065
+cat prints meow. Straightforward enough. So, now if
+
+00:51:59.065 --> 00:52:01.465
+I run animal. Py and give it the
+
+00:52:01.465 --> 00:52:03.545
+cat argument, it says meow. If I give
+
+00:52:03.545 --> 00:52:05.625
+it some other argument, it defaults back to
+
+00:52:05.625 --> 00:52:08.025
+the hello. Alright. So, a simple change I
+
+00:52:08.025 --> 00:52:09.590
+made. If I do a git status it
+
+00:52:09.590 --> 00:52:11.910
+says that animal. Py has been modified. If
+
+00:52:11.910 --> 00:52:14.150
+I run git diff, it'll show me what's
+
+00:52:14.150 --> 00:52:16.310
+changed since the last commit. So, here I've
+
+00:52:16.310 --> 00:52:18.710
+added this cat function highlighted in green and
+
+00:52:18.710 --> 00:52:20.470
+also change the main function a little bit.
+
+00:52:21.605 --> 00:52:24.245
+Now, here if I do git add animal.
+
+00:52:24.245 --> 00:52:29.765
+Py git commit, I'm gonna actually write a
+
+00:52:29.765 --> 00:52:31.765
+slightly more useful commit message this time. I'm
+
+00:52:31.765 --> 00:52:35.050
+gonna add cat functionality. And now if I
+
+00:52:35.050 --> 00:52:38.330
+look at the git log, I see a
+
+00:52:38.330 --> 00:52:39.850
+little more stuff. I'm gonna show you one
+
+00:52:39.850 --> 00:52:42.170
+more argument to this git log command. There's
+
+00:52:42.170 --> 00:52:46.010
+an argument dash dash one line one line
+
+00:52:46.010 --> 00:52:48.970
+spelled correctly, which shows a more compact representation
+
+00:52:48.970 --> 00:52:50.705
+of the graph. So, this will be a
+
+00:52:50.705 --> 00:52:52.625
+more useful thing to use because we're super
+
+00:52:52.625 --> 00:52:54.385
+zoomed into the screen and there isn't that
+
+00:52:54.385 --> 00:52:56.545
+much space to show a long commit history.
+
+00:52:57.585 --> 00:52:59.185
+So, here we see the sequence of commits
+
+00:52:59.185 --> 00:53:02.145
+is still linear and we have master still
+
+00:53:02.145 --> 00:53:04.350
+pointing wherever pointed before where we just had
+
+00:53:04.350 --> 00:53:07.630
+the basic underlying animal. Py functionality. But, now
+
+00:53:07.630 --> 00:53:09.470
+we have this cat branch which adds the
+
+00:53:09.470 --> 00:53:13.790
+cat functionality. We could for example git checkout
+
+00:53:13.790 --> 00:53:16.270
+master to go back to the master branch
+
+00:53:16.510 --> 00:53:18.665
+and then here if we look at animal.
+
+00:53:18.665 --> 00:53:21.465
+Py it doesn't have the cat functionality anymore.
+
+00:53:21.465 --> 00:53:22.665
+If we look at the git log we'll
+
+00:53:22.665 --> 00:53:24.665
+see that head is pointing to master. So,
+
+00:53:24.665 --> 00:53:26.185
+so we can jump back and forth between
+
+00:53:26.185 --> 00:53:29.225
+parallel lines of development. So, now that we
+
+00:53:29.225 --> 00:53:31.065
+have the cat functionality suppose that we want
+
+00:53:31.065 --> 00:53:33.385
+to work on adding dog functionality in parallel
+
+00:53:33.650 --> 00:53:35.570
+and suppose that in this case like the
+
+00:53:35.570 --> 00:53:37.650
+cat functionality is under development or maybe somebody
+
+00:53:37.650 --> 00:53:39.090
+else is working on it. So, we just
+
+00:53:39.090 --> 00:53:41.490
+want to start from the base master commit
+
+00:53:41.490 --> 00:53:43.890
+and build the dog functionality starting from there.
+
+00:53:44.530 --> 00:53:45.570
+So, now what do I want to do?
+
+00:53:45.570 --> 00:53:47.170
+I want to create a new branch dog
+
+00:53:47.205 --> 00:53:49.605
+for adding the dog related functionality and I'll
+
+00:53:49.605 --> 00:53:51.605
+eventually merge it in later. So I can
+
+00:53:51.605 --> 00:53:53.845
+use the git branch dog command followed by
+
+00:53:53.845 --> 00:53:57.285
+the git checkout dog command to create a
+
+00:53:57.285 --> 00:53:59.365
+new dog branch and then check it out.
+
+00:53:59.365 --> 00:54:01.570
+There's actually a short form for this git
+
+00:54:01.570 --> 00:54:04.690
+checkout dash b dog. So, this does git
+
+00:54:04.690 --> 00:54:07.010
+branch dog, git checkout dog. And now, if
+
+00:54:07.010 --> 00:54:09.570
+I look at my graph, I have cat
+
+00:54:09.570 --> 00:54:11.170
+where it was before, master where it was
+
+00:54:11.170 --> 00:54:13.330
+before, but now head, instead of pointing to
+
+00:54:13.330 --> 00:54:15.985
+master as it did before, now head points
+
+00:54:15.985 --> 00:54:18.545
+to this newly created dog reference which is
+
+00:54:18.545 --> 00:54:20.385
+also at the same commit. So, at this
+
+00:54:20.385 --> 00:54:23.105
+base commit. And now I'll go ahead and
+
+00:54:23.105 --> 00:54:26.065
+add my dog functionality. So, me go and
+
+00:54:26.065 --> 00:54:29.505
+define my dog function. Dogs don't say hello,
+
+00:54:29.505 --> 00:54:32.120
+they say woof and then I'll add some
+
+00:54:32.120 --> 00:54:34.600
+similar functionality here to decide whether to run
+
+00:54:34.600 --> 00:54:37.720
+default or dog. So if the first argument
+
+00:54:37.720 --> 00:54:39.880
+is dog, then I want to run the
+
+00:54:39.880 --> 00:54:44.655
+dog function otherwise otherwise I want to run
+
+00:54:44.655 --> 00:54:49.535
+the default function. So, here's what I've changed
+
+00:54:49.535 --> 00:54:51.615
+with respect to the base commit wherever master
+
+00:54:51.615 --> 00:54:53.855
+is pointing. So, I've added the dog function
+
+00:54:53.855 --> 00:54:55.615
+and I've changed main a little bit. So,
+
+00:54:55.615 --> 00:54:57.375
+a kind of parallel modification to what I
+
+00:54:57.375 --> 00:55:00.040
+did in the branch. Let me go ahead
+
+00:55:00.040 --> 00:55:02.920
+and get add animal.pyatus, add it to the
+
+00:55:02.920 --> 00:55:05.320
+staging area. If I do get status I'll
+
+00:55:05.320 --> 00:55:06.840
+see that this change will be committed when
+
+00:55:06.840 --> 00:55:09.880
+I make the next commit. And, I do
+
+00:55:09.880 --> 00:55:15.785
+get commit add dog functionality. Now, when I
+
+00:55:15.785 --> 00:55:18.345
+look at the git graph it actually looks
+
+00:55:18.345 --> 00:55:19.865
+kind of interesting compared to the ones we've
+
+00:55:19.865 --> 00:55:23.385
+looked at before. This shows that these three
+
+00:55:23.385 --> 00:55:25.545
+commits are in common with the ones that
+
+00:55:25.545 --> 00:55:27.145
+come after it, but then the history is
+
+00:55:27.145 --> 00:55:29.270
+actually forked after this point and I have
+
+00:55:29.270 --> 00:55:31.750
+this one commit that adds cat functionality in
+
+00:55:31.750 --> 00:55:33.750
+one line of development, and then I have
+
+00:55:33.750 --> 00:55:36.230
+this other commit that adds dog functionality in
+
+00:55:36.230 --> 00:55:38.390
+this other line of development. And then using
+
+00:55:38.390 --> 00:55:40.070
+the git checkout command I can switch back
+
+00:55:40.070 --> 00:55:42.550
+and forth between dog and cat and master.
+
+00:55:43.945 --> 00:55:46.025
+So, is great. I can do development in
+
+00:55:46.025 --> 00:55:47.945
+parallel on different features but this is only
+
+00:55:47.945 --> 00:55:50.265
+really useful if I can eventually combine those
+
+00:55:50.265 --> 00:55:52.505
+things back into my original line of development
+
+00:55:52.505 --> 00:55:54.745
+to have both features in a single version
+
+00:55:54.745 --> 00:55:57.560
+of my source code. So, the command that's
+
+00:55:57.560 --> 00:56:00.120
+used to do that is git merge. So,
+
+00:56:00.120 --> 00:56:01.640
+like git branch and git merge can kind
+
+00:56:01.640 --> 00:56:05.880
+of be thought of as opposites. Let me
+
+00:56:05.880 --> 00:56:09.515
+check out git checkout master. Let me check
+
+00:56:09.515 --> 00:56:11.275
+out my master branch. So now I see
+
+00:56:11.275 --> 00:56:13.035
+head points to master and then I want
+
+00:56:13.035 --> 00:56:15.035
+to merge the cat functionality and the dog
+
+00:56:15.035 --> 00:56:17.275
+functionality into master. And to do that I
+
+00:56:17.275 --> 00:56:19.675
+can use the git merge command. And git
+
+00:56:19.675 --> 00:56:21.275
+merge is actually pretty fancy and I can
+
+00:56:21.275 --> 00:56:22.890
+actually merge cat and dog at the same
+
+00:56:22.890 --> 00:56:24.970
+time. But for this demonstration we're going to
+
+00:56:24.970 --> 00:56:26.890
+only merge one thing at a time. So
+
+00:56:26.890 --> 00:56:29.850
+first I'll type git merge cat and git
+
+00:56:29.850 --> 00:56:32.810
+says some stuff. Here it says fast forward.
+
+00:56:32.810 --> 00:56:34.650
+So what is going on here? Well this
+
+00:56:34.650 --> 00:56:36.650
+is one interesting thing that git can do
+
+00:56:36.745 --> 00:56:39.145
+when you're at a particular commit and you
+
+00:56:39.145 --> 00:56:42.105
+merge some other branch in where that other
+
+00:56:42.105 --> 00:56:44.905
+branch has the current commit as a predecessor.
+
+00:56:46.025 --> 00:56:48.025
+It's not necessary to create any new snapshots
+
+00:56:48.025 --> 00:56:50.665
+or do any other fancy stuff. Basically this
+
+00:56:50.910 --> 00:56:53.070
+this master branch here, this pointer to this
+
+00:56:53.070 --> 00:56:55.070
+commit, can just be moved to point here
+
+00:56:55.070 --> 00:56:58.830
+instead to incorporate that cat functionality. And, so
+
+00:56:58.830 --> 00:57:00.350
+if we look at the git log again,
+
+00:57:00.750 --> 00:57:03.310
+we see that master is basically pointing to
+
+00:57:03.310 --> 00:57:06.595
+the same places wherever cat was pointing. Alright.
+
+00:57:06.595 --> 00:57:07.955
+So, now we're on the master branch and
+
+00:57:07.955 --> 00:57:10.275
+it has the cat functionality. Great. We're halfway
+
+00:57:10.275 --> 00:57:15.075
+there. If we look at animal. Py, has
+
+00:57:15.075 --> 00:57:16.995
+the cat functionality, but it's missing the dog
+
+00:57:16.995 --> 00:57:21.180
+stuff. So, let's try git merge dog next.
+
+00:57:21.260 --> 00:57:23.420
+Something a little bit more interesting happens this
+
+00:57:23.420 --> 00:57:26.780
+time. So, this time the branch can't be
+
+00:57:26.780 --> 00:57:29.020
+fast forwarded like it was before. It's not
+
+00:57:29.020 --> 00:57:31.340
+that one thing which is strictly older than
+
+00:57:31.340 --> 00:57:33.535
+the other thing. There's been parallel development that
+
+00:57:33.535 --> 00:57:35.295
+may be kind of incompatible with the current
+
+00:57:35.295 --> 00:57:37.535
+set of changes. And so git does its
+
+00:57:37.535 --> 00:57:40.655
+best job at automatically merging the changes from
+
+00:57:40.655 --> 00:57:42.735
+this other branch. So it says auto merging
+
+00:57:42.735 --> 00:57:45.535
+animal. Py, but in this particular case there's
+
+00:57:45.535 --> 00:57:48.030
+what was what's called a merge conflict. So,
+
+00:57:48.030 --> 00:57:50.270
+it wasn't able to automatically resolve on the
+
+00:57:50.270 --> 00:57:52.270
+all the conflicts between these two parallel branches
+
+00:57:52.270 --> 00:57:54.270
+of development. And, this is something you'll see
+
+00:57:54.270 --> 00:57:56.190
+in practice when you're working on real software
+
+00:57:56.190 --> 00:57:59.630
+projects, and they're complicated slightly incompatible changes happening
+
+00:57:59.630 --> 00:58:02.565
+in parallel. So, at this point it's left
+
+00:58:02.565 --> 00:58:04.965
+up to the developer to fix this issue
+
+00:58:05.045 --> 00:58:08.165
+and git offers, some functionality in order to
+
+00:58:08.165 --> 00:58:10.965
+help resolve merge conflicts. There's a program called
+
+00:58:10.965 --> 00:58:14.580
+git merge tool and in my particular setup
+
+00:58:14.580 --> 00:58:17.220
+this will launch Vimdiff. Well actually this is
+
+00:58:17.220 --> 00:58:22.100
+not configured. Vimdiff, I think, will start the
+
+00:58:22.100 --> 00:58:31.845
+right program. Let me set up my git
+
+00:58:31.845 --> 00:58:38.165
+to launch the correct tool. Actually, let's skip
+
+00:58:38.165 --> 00:58:39.605
+that part and let's just manually look at
+
+00:58:39.605 --> 00:58:42.670
+this. Vimdiff, there's a program called Vimdiff which
+
+00:58:42.670 --> 00:58:44.030
+can be set up to be launched when
+
+00:58:44.030 --> 00:58:45.950
+you type in git merge tool which is
+
+00:58:45.950 --> 00:58:47.230
+a tool that you use when you try
+
+00:58:47.230 --> 00:58:50.030
+git merge and there are merge conflicts. But,
+
+00:58:50.030 --> 00:58:52.110
+in this particular case we'll just manually resolve
+
+00:58:52.110 --> 00:58:55.035
+them. So, me I did git merge dash
+
+00:58:55.035 --> 00:58:56.315
+dash abort, so it put me back in
+
+00:58:56.315 --> 00:58:57.755
+the state I was before I tried that
+
+00:58:57.755 --> 00:58:59.515
+git merge. So, this is the current state
+
+00:58:59.515 --> 00:59:00.955
+of my repository and back to the case
+
+00:59:00.955 --> 00:59:03.035
+where master is at the same place as
+
+00:59:03.035 --> 00:59:05.195
+cat and I'm about to merge in dog.
+
+00:59:05.500 --> 00:59:07.900
+So, do get merge dog and it says
+
+00:59:07.900 --> 00:59:11.260
+conflict merge conflict in animal.py. So, let's just
+
+00:59:11.260 --> 00:59:15.260
+look at animal.py directly. So, it looks like
+
+00:59:15.340 --> 00:59:18.545
+this top part looks pretty reasonable. It has
+
+00:59:18.545 --> 00:59:20.705
+both the cat function and the dog function,
+
+00:59:20.705 --> 00:59:22.625
+which is exactly what I want. But, now
+
+00:59:22.625 --> 00:59:23.985
+I see some weird stuff in main and
+
+00:59:23.985 --> 00:59:26.305
+this is where I had slightly incompatible changes.
+
+00:59:26.545 --> 00:59:29.905
+So, here it says that in one thing
+
+00:59:29.905 --> 00:59:32.465
+like basically the branch you were on you
+
+00:59:32.465 --> 00:59:35.230
+had this content and then the branch you're
+
+00:59:35.230 --> 00:59:37.790
+trying to merge had this content and then
+
+00:59:37.790 --> 00:59:40.510
+these things here the angle brackets and the
+
+00:59:40.510 --> 00:59:43.070
+equals are conflict markers. So, is where you
+
+00:59:43.070 --> 00:59:44.190
+were and this is the thing you're trying
+
+00:59:44.190 --> 00:59:46.445
+to merge in And, it's basically saying that
+
+00:59:46.445 --> 00:59:48.125
+it was this on one case, this in
+
+00:59:48.125 --> 00:59:49.565
+the other case, and git doesn't really know
+
+00:59:49.565 --> 00:59:51.325
+how to resolve these two. And, it's left
+
+00:59:51.325 --> 00:59:53.165
+up to the programmer to fix this problem.
+
+00:59:54.125 --> 00:59:55.565
+So, in this particular case, we can go
+
+00:59:55.565 --> 00:59:58.285
+ahead and delete the conflict markers, and then
+
+00:59:58.650 --> 01:00:01.210
+turns out that we can actually concatenate this
+
+01:00:01.210 --> 01:00:03.130
+code together and does the right thing. Maybe
+
+01:00:03.130 --> 01:00:04.890
+we want to make a small change like
+
+01:00:05.050 --> 01:00:06.410
+this should be an if, this should be
+
+01:00:06.410 --> 01:00:08.170
+an else if, and this should be an
+
+01:00:08.170 --> 01:00:10.170
+else. That might make a little bit more
+
+01:00:10.170 --> 01:00:14.025
+sense. Actually, I think it's necessary for correctness
+
+01:00:14.025 --> 01:00:16.825
+here. So, the programmer needed to modify the
+
+01:00:16.825 --> 01:00:18.105
+code a little bit in order to make
+
+01:00:18.105 --> 01:00:20.505
+it sensible when it's merged together. But, once
+
+01:00:20.505 --> 01:00:23.785
+the programmer has fixed the merge conflicts, fixed
+
+01:00:23.785 --> 01:00:26.760
+the stuff between the conflict markers, you can
+
+01:00:26.760 --> 01:00:28.600
+save this file and we can do git
+
+01:00:28.600 --> 01:00:31.240
+merge dash dash continue to tell git that
+
+01:00:31.240 --> 01:00:36.360
+we fixed the issues. It's necessary to re
+
+01:00:36.360 --> 01:00:38.705
+add animal. Py to tell git that we've
+
+01:00:38.705 --> 01:00:40.545
+actually fixed these issues and then we need
+
+01:00:40.545 --> 01:00:42.705
+to git merge dash dash continue it pops
+
+01:00:42.705 --> 01:00:43.825
+up an editor and we can give a
+
+01:00:43.825 --> 01:00:45.425
+commit message for this new commit that we're
+
+01:00:45.425 --> 01:00:47.345
+about to create. And now if you look
+
+01:00:47.345 --> 01:00:51.265
+at the git history we have the single
+
+01:00:51.265 --> 01:00:54.570
+commit that represents our merge commit that we
+
+01:00:54.570 --> 01:00:57.130
+just made which merges in the dog functionality
+
+01:00:57.530 --> 01:01:01.450
+and here this has as parents both the
+
+01:01:01.450 --> 01:01:04.570
+dog commit and the cat commit. So, both
+
+01:01:04.570 --> 01:01:06.410
+these branches appear in our history from this
+
+01:01:06.410 --> 01:01:09.165
+point backwards And, this current commit that we're
+
+01:01:09.165 --> 01:01:11.405
+on incorporates the functionality from both of these
+
+01:01:11.405 --> 01:01:15.885
+branches. So, if we run animal. Py with
+
+01:01:15.885 --> 01:01:17.325
+cat, it does the cat thing. If we
+
+01:01:17.325 --> 01:01:18.525
+run it with dog, it does the dog
+
+01:01:18.525 --> 01:01:20.045
+thing. And, if we run it with anything
+
+01:01:20.045 --> 01:01:22.285
+else, it falls back to the default implementation.
+
+01:01:23.310 --> 01:01:26.510
+So, is a demonstration of how you branch
+
+01:01:26.510 --> 01:01:28.510
+in git to do development on different things
+
+01:01:28.510 --> 01:01:30.270
+in parallel and then how you can use
+
+01:01:30.270 --> 01:01:32.830
+the merge command in git to resolve those
+
+01:01:32.830 --> 01:01:34.990
+different branches and combine them together into a
+
+01:01:34.990 --> 01:01:37.550
+single snapshot that includes all the functionality that
+
+01:01:37.550 --> 01:01:42.215
+was developed in parallel with each other. Then
+
+01:01:42.215 --> 01:01:44.375
+one thing that can happen when you're doing
+
+01:01:44.375 --> 01:01:46.455
+git branching and merging is you run into
+
+01:01:46.455 --> 01:01:49.735
+merge conflicts and these conflicts show up as
+
+01:01:49.735 --> 01:01:51.895
+conflict markers and text files you can manually
+
+01:01:51.895 --> 01:01:54.130
+resolve them and git also has some tools
+
+01:01:54.130 --> 01:01:55.650
+that can help with this though these tools
+
+01:01:55.650 --> 01:01:57.490
+are kind of advanced and we'll only refer
+
+01:01:57.490 --> 01:01:58.690
+to them in the lecture notes and not
+
+01:01:58.690 --> 01:02:02.210
+actually demonstrate them for you. So that's git
+
+01:02:02.210 --> 01:02:08.015
+branching and merging. Any questions? No? Great. So,
+
+01:02:08.015 --> 01:02:10.975
+moving on to the next topic of this
+
+01:02:10.975 --> 01:02:14.095
+lecture, we will talk about git remotes. So,
+
+01:02:14.095 --> 01:02:15.935
+this is basically how you collaborate with other
+
+01:02:15.935 --> 01:02:20.340
+people using git. A git repository, the stuff
+
+01:02:20.340 --> 01:02:23.140
+contained in this dot git folder, represents kind
+
+01:02:23.140 --> 01:02:25.300
+of an entire copy of the history. It
+
+01:02:25.300 --> 01:02:27.300
+has the objects and the references and contains
+
+01:02:27.300 --> 01:02:30.100
+all the previous snapshots. And, the way you
+
+01:02:30.100 --> 01:02:33.300
+collaborate with other people using git is that
+
+01:02:32.885 --> 01:02:34.645
+other people can also have copies of the
+
+01:02:34.645 --> 01:02:39.285
+entire Git repository and then your Git copy,
+
+01:02:39.285 --> 01:02:43.045
+your local, instantiation of the repository can be
+
+01:02:43.045 --> 01:02:46.100
+aware of the existence of other clones of
+
+01:02:46.100 --> 01:02:48.180
+the same repository and this is a concept
+
+01:02:48.180 --> 01:02:51.140
+known as remotes. So, the git remote command
+
+01:02:51.140 --> 01:02:53.780
+will list all the remotes that git is
+
+01:02:53.780 --> 01:02:56.580
+aware of for the current repository and in
+
+01:02:56.580 --> 01:02:59.005
+our case with this repository right here this
+
+01:02:59.005 --> 01:03:01.885
+command git remote just doesn't print anything because
+
+01:03:01.885 --> 01:03:04.285
+we haven't configured any remotes. Git is only
+
+01:03:04.285 --> 01:03:06.605
+aware of the single local copy of the
+
+01:03:06.605 --> 01:03:09.485
+repository that we're working with here. But, in
+
+01:03:09.485 --> 01:03:11.760
+practice, if you're collaborating with other people, your
+
+01:03:11.760 --> 01:03:13.520
+git might be aware of the copy of
+
+01:03:13.520 --> 01:03:15.680
+the code that is on GitHub. And then,
+
+01:03:15.680 --> 01:03:17.840
+there's a set of commands to send changes
+
+01:03:17.840 --> 01:03:20.080
+from your local copy of the repository to
+
+01:03:20.080 --> 01:03:22.080
+a remote that your git is aware of.
+
+01:03:22.080 --> 01:03:24.320
+So, sending stuff from your computer to GitHub,
+
+01:03:24.320 --> 01:03:26.585
+for example. And there's another set of commands
+
+01:03:26.585 --> 01:03:29.785
+for fetching changes made in a local repository
+
+01:03:29.785 --> 01:03:31.945
+to get changes from GitHub into your own
+
+01:03:31.945 --> 01:03:36.345
+local copy. In this demonstration here, we actually
+
+01:03:36.345 --> 01:03:38.745
+won't go and configure a GitHub account and
+
+01:03:38.745 --> 01:03:40.345
+log in and create a new repository on
+
+01:03:40.345 --> 01:03:42.160
+there. You can find other tutorials for doing
+
+01:03:42.160 --> 01:03:44.560
+that we'll actually just use a separate folder
+
+01:03:44.560 --> 01:03:47.040
+on the same computer and treat it like
+
+01:03:47.040 --> 01:03:49.360
+a git remote so let me I'm in
+
+01:03:49.360 --> 01:03:52.400
+the demo folder here let me go up
+
+01:03:52.400 --> 01:03:54.800
+one directory I have a directory called playground
+
+01:03:54.800 --> 01:03:57.765
+that has this demo folder and I'll go
+
+01:03:57.765 --> 01:04:00.325
+ahead and create a new directory in here
+
+01:04:00.325 --> 01:04:05.445
+and I'll call it remote and then do
+
+01:04:05.445 --> 01:04:07.285
+git init dash dash bear in here. This
+
+01:04:07.285 --> 01:04:08.645
+is a command that you'll probably never need
+
+01:04:08.645 --> 01:04:11.780
+to use in regular usage but now what
+
+01:04:11.780 --> 01:04:14.180
+I've done is made remote into a folder
+
+01:04:14.180 --> 01:04:16.660
+that's appropriate to use as a git remote.
+
+01:04:16.660 --> 01:04:19.700
+So, going back into my demo folder here,
+
+01:04:19.700 --> 01:04:22.660
+my main repository, I can do git remote
+
+01:04:22.660 --> 01:04:26.025
+to list the remotes. There's nothing yet But
+
+01:04:26.025 --> 01:04:28.425
+I can use the git remote add functionality
+
+01:04:28.425 --> 01:04:31.385
+to make my local repository aware of the
+
+01:04:31.385 --> 01:04:34.665
+existence of, of a remote. So I can
+
+01:04:34.665 --> 01:04:36.665
+do git remote add and then the format
+
+01:04:36.665 --> 01:04:39.050
+for this is that remotes have names and
+
+01:04:39.050 --> 01:04:41.930
+then they have a URL. So, this case
+
+01:04:42.010 --> 01:04:44.250
+I'll use the name origin that's often used
+
+01:04:44.250 --> 01:04:46.490
+by convention as the name of the remote
+
+01:04:46.490 --> 01:04:48.730
+if you're only using one and then for
+
+01:04:48.730 --> 01:04:50.570
+the URL normally this will be like a
+
+01:04:50.570 --> 01:04:52.570
+github URL or something like that or bit
+
+01:04:52.570 --> 01:04:54.825
+bucket URL or git lab URL if you're
+
+01:04:54.825 --> 01:04:57.785
+using an online repository hosting service but in
+
+01:04:57.785 --> 01:04:59.705
+this case it's just a path to a
+
+01:04:59.705 --> 01:05:01.945
+folder on my local machine there's a folder
+
+01:05:01.945 --> 01:05:04.105
+in the parent directory called remote that will
+
+01:05:04.105 --> 01:05:06.665
+act as the git remote for this repository.
+
+01:05:07.785 --> 01:05:10.260
+So, now once I've done that there's a
+
+01:05:10.260 --> 01:05:12.500
+set of commands for interacting with this remote.
+
+01:05:12.980 --> 01:05:15.140
+One command that's useful is the git push
+
+01:05:15.140 --> 01:05:18.660
+command. This command can send the changes from
+
+01:05:18.660 --> 01:05:21.220
+your computer to the remote and the format
+
+01:05:21.220 --> 01:05:23.140
+for this command is that git push takes
+
+01:05:23.140 --> 01:05:25.315
+in the name of remote and then it
+
+01:05:25.315 --> 01:05:27.795
+takes in a local branch name colon a
+
+01:05:27.795 --> 01:05:29.955
+remote branch name and what it does is
+
+01:05:29.955 --> 01:05:31.635
+it creates a new branch or updates a
+
+01:05:31.635 --> 01:05:34.355
+branch on the remote with the name specified
+
+01:05:34.355 --> 01:05:38.020
+here and sets it to the contents of
+
+01:05:38.020 --> 01:05:41.380
+the branch specified here. So, a concrete use
+
+01:05:41.380 --> 01:05:43.940
+of this might look like git push. I
+
+01:05:43.940 --> 01:05:46.820
+have only one remote called origin. And then,
+
+01:05:47.220 --> 01:05:49.620
+what should I push? Let me look at
+
+01:05:49.620 --> 01:05:52.405
+my history graph. I have a bunch of
+
+01:05:52.405 --> 01:05:54.165
+things I could push let me get push
+
+01:05:54.165 --> 01:05:57.445
+to origin the master branch from my local
+
+01:05:57.445 --> 01:06:00.565
+machine colon master. So, I want to create
+
+01:06:00.565 --> 01:06:03.285
+a branch on the remote machine with the
+
+01:06:03.285 --> 01:06:06.010
+name master that is going to be the
+
+01:06:06.010 --> 01:06:07.610
+same as the master branch on my local
+
+01:06:07.610 --> 01:06:09.610
+machine. So, let me go ahead and run
+
+01:06:09.610 --> 01:06:11.370
+that command. It prints out some stuff and
+
+01:06:11.370 --> 01:06:13.370
+it says on the remote I created a
+
+01:06:13.370 --> 01:06:16.170
+new branch, remote master points to the same
+
+01:06:16.170 --> 01:06:18.890
+branch as master on my local machine. And,
+
+01:06:18.890 --> 01:06:20.885
+now if I do a git log it
+
+01:06:20.885 --> 01:06:24.165
+shows me So, in blue is head where
+
+01:06:24.165 --> 01:06:26.245
+I currently am, in green are all the
+
+01:06:26.245 --> 01:06:28.805
+branches in my local git repository and now
+
+01:06:28.805 --> 01:06:30.165
+we see one new color here that we
+
+01:06:30.165 --> 01:06:33.125
+hadn't seen before. So, in red git shows
+
+01:06:33.125 --> 01:06:35.610
+references that are present on the remotes that
+
+01:06:35.610 --> 01:06:37.770
+my local copy is aware of. So on
+
+01:06:37.770 --> 01:06:40.570
+the remote origin there's also a branch that
+
+01:06:40.570 --> 01:06:42.810
+happens to have the name master that points
+
+01:06:42.810 --> 01:06:44.730
+to the same place as my local branch
+
+01:06:44.730 --> 01:06:48.490
+master points. And so now if I make
+
+01:06:48.490 --> 01:06:50.895
+updates to my local copy like suppose here
+
+01:06:50.895 --> 01:06:53.615
+I go in and change the capitalization of
+
+01:06:53.615 --> 01:06:58.255
+these things and then git add animal. Py
+
+01:06:58.255 --> 01:07:00.735
+git commit. Here's a short form for commit
+
+01:07:00.735 --> 01:07:02.255
+with a message so it doesn't pop up
+
+01:07:02.255 --> 01:07:03.935
+the editor. I'll give it a lame commit
+
+01:07:03.935 --> 01:07:05.615
+message and now if I look at the
+
+01:07:05.615 --> 01:07:09.160
+git graph Now, I see that I've created
+
+01:07:09.160 --> 01:07:11.000
+this new snapshot here that has this lower
+
+01:07:11.000 --> 01:07:13.400
+casing stuff in it, but origin master is
+
+01:07:13.400 --> 01:07:17.560
+still back here. So, if somebody else looks
+
+01:07:17.560 --> 01:07:19.640
+at the remote they will only see the
+
+01:07:19.640 --> 01:07:21.485
+changes up to here and we can actually
+
+01:07:21.485 --> 01:07:23.645
+demonstrate this functionality. So, let me go ahead
+
+01:07:23.645 --> 01:07:26.525
+and open up a new tab here, and
+
+01:07:26.525 --> 01:07:30.205
+go into my playground directory. The git clone
+
+01:07:30.205 --> 01:07:32.605
+command is a command that somebody can use
+
+01:07:32.685 --> 01:07:35.970
+to start from some copy of repository somewhere
+
+01:07:35.970 --> 01:07:38.290
+and make their own local copy. So, is
+
+01:07:38.290 --> 01:07:39.650
+often a command you use when starting out
+
+01:07:39.650 --> 01:07:40.930
+with a git repo like there might be
+
+01:07:40.930 --> 01:07:42.770
+something available on github and you want to
+
+01:07:42.770 --> 01:07:44.370
+copy it all in your machine in order
+
+01:07:44.370 --> 01:07:46.050
+to look at it or start doing development.
+
+01:07:46.505 --> 01:07:48.505
+And so the format for git clone is
+
+01:07:48.505 --> 01:07:50.265
+that it takes in a URL and then
+
+01:07:50.265 --> 01:07:51.945
+it takes in a name for a folder
+
+01:07:52.825 --> 01:07:55.625
+for where to clone it. So in our
+
+01:07:55.625 --> 01:07:57.705
+case here we're just going to clone from
+
+01:07:57.705 --> 01:08:00.345
+this remote directory. We're pretending that this remote
+
+01:08:00.345 --> 01:08:03.120
+folder is actually a remote machine. And then
+
+01:08:03.120 --> 01:08:05.280
+we'll clone it into the folder called demo
+
+01:08:05.280 --> 01:08:10.240
+two. So, cloning into demo two done. And,
+
+01:08:10.240 --> 01:08:12.800
+I'm going to cd into that directory. And
+
+01:08:12.800 --> 01:08:14.480
+then, now here I'm going to rename these
+
+01:08:14.480 --> 01:08:19.415
+tabs at the bottom. We'll say this one's
+
+01:08:19.415 --> 01:08:21.495
+machine one and this one's machine two. So
+
+01:08:21.495 --> 01:08:23.335
+you can think of these as two different
+
+01:08:23.335 --> 01:08:26.055
+people on different machines with their own copy
+
+01:08:26.055 --> 01:08:28.935
+of the repository and they're both interacting with
+
+01:08:28.935 --> 01:08:30.990
+the single remote. So if I do my
+
+01:08:30.990 --> 01:08:32.590
+git log command that I've been doing on
+
+01:08:32.590 --> 01:08:35.150
+machine one, I see on machine two, I
+
+01:08:35.150 --> 01:08:39.070
+see this portion of the history. So, master
+
+01:08:39.390 --> 01:08:42.430
+on machine two is pointing to the same
+
+01:08:42.430 --> 01:08:45.985
+place as origin master and it says merge
+
+01:08:45.985 --> 01:08:48.865
+branch dog. So if I look at animal.
+
+01:08:48.865 --> 01:08:51.105
+Py here, it doesn't have the changes that
+
+01:08:51.105 --> 01:08:53.105
+I made on machine two. Even though they're
+
+01:08:53.265 --> 01:08:56.145
+Or, sorry, on machine one, where I have
+
+01:08:56.145 --> 01:08:58.305
+this new commit that is only present on
+
+01:08:58.305 --> 01:09:00.170
+this machine, but not on the remote and
+
+01:09:00.170 --> 01:09:03.050
+not on machine two. So, I want to
+
+01:09:03.050 --> 01:09:04.170
+fix that, if I want to send these
+
+01:09:04.170 --> 01:09:06.330
+changes up to the remote, like think of
+
+01:09:06.330 --> 01:09:07.610
+it as sending it up to GitHub or
+
+01:09:07.610 --> 01:09:10.730
+up to the, machine that's holding, or maintaining
+
+01:09:10.730 --> 01:09:12.575
+the source code, I can use the git
+
+01:09:12.575 --> 01:09:16.815
+push command again. Git push origin master colon
+
+01:09:16.815 --> 01:09:20.175
+master. And, this will work. But, this is
+
+01:09:20.175 --> 01:09:21.535
+kind of annoying to type every time you
+
+01:09:21.535 --> 01:09:22.655
+want to do this. Like, this is a
+
+01:09:22.655 --> 01:09:25.695
+really common operation. So, git has a way
+
+01:09:25.695 --> 01:09:27.890
+of making this a little bit simpler. It
+
+01:09:27.890 --> 01:09:31.250
+has a way of maintaining relationships between branches
+
+01:09:31.250 --> 01:09:34.130
+on your own local machine and branches on
+
+01:09:34.130 --> 01:09:36.450
+remote machines. It is a way of knowing
+
+01:09:36.450 --> 01:09:39.090
+what branch on a remote machine a local
+
+01:09:39.090 --> 01:09:41.695
+branch corresponds to. So that you can type
+
+01:09:41.695 --> 01:09:43.695
+in a shortened version of git push and
+
+01:09:43.695 --> 01:09:45.535
+it'll know what all the arguments to the
+
+01:09:45.535 --> 01:09:48.335
+expanded form would have been. And, there are
+
+01:09:48.335 --> 01:09:50.655
+a couple different syntaxes for doing this. One
+
+01:09:50.655 --> 01:09:52.735
+way is to use the git branch dash
+
+01:09:52.735 --> 01:09:56.040
+dash set upstream to command. And what this
+
+01:09:56.040 --> 01:09:58.200
+does is for the branch that's currently checked
+
+01:09:58.200 --> 01:10:00.040
+out which is master it will set the
+
+01:10:00.040 --> 01:10:02.919
+upstream to and I'll type in origin master
+
+01:10:03.560 --> 01:10:05.800
+and see now it says branch master set
+
+01:10:05.800 --> 01:10:07.720
+up to track remote branch master from origin.
+
+01:10:08.075 --> 01:10:09.915
+Now if I type in git branch dash
+
+01:10:09.915 --> 01:10:12.475
+v v remember this is tell me about
+
+01:10:12.475 --> 01:10:13.915
+all the branches that I know about in
+
+01:10:13.915 --> 01:10:15.515
+a very verbose way that's what the dash
+
+01:10:15.515 --> 01:10:17.755
+v v means. I have three branches on
+
+01:10:17.755 --> 01:10:19.995
+my local machine on machine one. I have
+
+01:10:19.995 --> 01:10:23.380
+cat, dog and master and master on my
+
+01:10:23.380 --> 01:10:27.540
+local machine corresponds to origin master. So now
+
+01:10:27.540 --> 01:10:30.180
+I can type in just git push without
+
+01:10:30.180 --> 01:10:32.100
+all the extra arguments. I could have done
+
+01:10:32.100 --> 01:10:34.420
+this as git push origin master colon master
+
+01:10:34.420 --> 01:10:37.085
+but it wasn't necessary. It'll know that I
+
+01:10:37.085 --> 01:10:39.085
+want to push to origin master and it
+
+01:10:39.085 --> 01:10:42.365
+will make that change. So now these changes
+
+01:10:42.365 --> 01:10:44.045
+are present on the remote we can go
+
+01:10:44.045 --> 01:10:45.565
+over to machine to pretend we're the other
+
+01:10:45.565 --> 01:10:48.045
+guy interacting with this repository and if I
+
+01:10:48.045 --> 01:10:51.240
+do my git log command I still don't
+
+01:10:51.240 --> 01:10:53.560
+see the changes. So what's going on here?
+
+01:10:53.800 --> 01:10:56.120
+Well it's necessary in order to run a
+
+01:10:56.120 --> 01:10:58.360
+separate command or it's necessary to run a
+
+01:10:58.360 --> 01:11:00.440
+separate command in order to have these changes
+
+01:11:00.440 --> 01:11:03.795
+present here. By default all the git commands
+
+01:11:03.795 --> 01:11:05.555
+don't talk to the internet. It all works
+
+01:11:05.555 --> 01:11:07.555
+locally which means it works very fast but
+
+01:11:07.555 --> 01:11:09.635
+then there are special commands for saying that
+
+01:11:09.635 --> 01:11:11.315
+you want to retrieve changes that have been
+
+01:11:11.315 --> 01:11:14.035
+made somewhere else. And, the command that's used
+
+01:11:14.035 --> 01:11:15.715
+for doing that is a command called git
+
+01:11:15.715 --> 01:11:19.290
+fetch. Git fetch takes the, as an argument,
+
+01:11:19.290 --> 01:11:20.890
+the name of the remote but if there's
+
+01:11:20.890 --> 01:11:23.050
+only one it'll just use that. So, you
+
+01:11:23.050 --> 01:11:26.250
+can type in git fetch and then it
+
+01:11:26.250 --> 01:11:30.330
+talks to this remote repository and it says
+
+01:11:30.330 --> 01:11:33.555
+that there's some update on the remote and
+
+01:11:33.555 --> 01:11:36.115
+we can visualize it by running git log
+
+01:11:36.115 --> 01:11:37.955
+and now we see here another situation that
+
+01:11:37.955 --> 01:11:41.075
+we hadn't seen before. We have master on
+
+01:11:41.075 --> 01:11:43.315
+our local machine the master branch doesn't change.
+
+01:11:43.315 --> 01:11:45.700
+The git fetch command doesn't change any of
+
+01:11:45.700 --> 01:11:48.100
+our local history or local references like our
+
+01:11:48.100 --> 01:11:51.300
+branches but now it's aware that origin master
+
+01:11:51.300 --> 01:11:53.300
+has been updated to point to this new
+
+01:11:53.300 --> 01:11:56.260
+commit. And, there's a separate command we can
+
+01:11:56.260 --> 01:12:00.205
+do git merge in order to move master
+
+01:12:00.205 --> 01:12:03.325
+up to here or there's another command called
+
+01:12:03.325 --> 01:12:05.325
+git pull which is the same as doing
+
+01:12:05.325 --> 01:12:08.925
+git fetch and then git merge. So if
+
+01:12:08.925 --> 01:12:10.605
+we just do git pull here for example
+
+01:12:11.400 --> 01:12:13.400
+it will say it's fast forwarding. It's merging
+
+01:12:13.400 --> 01:12:16.920
+in origin master into our master. And, now
+
+01:12:16.920 --> 01:12:18.760
+if we look at the git history graph,
+
+01:12:20.440 --> 01:12:22.840
+we've currently checked out master. Master points to
+
+01:12:22.840 --> 01:12:24.600
+the same place as the origin master that
+
+01:12:24.600 --> 01:12:26.575
+we're aware of. And all the changes between
+
+01:12:26.575 --> 01:12:28.815
+machine two and machine one are in sync.
+
+01:12:29.935 --> 01:12:31.775
+So those are the basic commands for interacting
+
+01:12:31.775 --> 01:12:33.775
+with git remotes. So there's the git remote
+
+01:12:33.775 --> 01:12:36.255
+command for listing remotes and adding and removing
+
+01:12:36.255 --> 01:12:38.800
+them and things like that And then there's
+
+01:12:38.800 --> 01:12:41.760
+the git push command for sending changes from
+
+01:12:41.760 --> 01:12:44.160
+your local copy of the repository to the
+
+01:12:44.160 --> 01:12:46.800
+remote. And then there's the git fetch command
+
+01:12:46.800 --> 01:12:49.760
+which is for retrieving changes for repository that
+
+01:12:49.760 --> 01:12:51.760
+are present on a remote and getting the
+
+01:12:51.760 --> 01:12:55.475
+changes on your local machine. And, once you
+
+01:12:55.475 --> 01:12:57.635
+retrieve those changes, you can use git merge
+
+01:12:57.635 --> 01:12:59.955
+to update your local branch to point to
+
+01:12:59.955 --> 01:13:02.115
+the same place where the remote branch does.
+
+01:13:02.355 --> 01:13:04.595
+Or, you can use the git pull command,
+
+01:13:04.595 --> 01:13:06.275
+which does basically the same thing as git
+
+01:13:06.275 --> 01:13:09.410
+fetch plus git merge. And then, of course,
+
+01:13:09.410 --> 01:13:11.810
+separate from all these commands is the git
+
+01:13:11.810 --> 01:13:13.250
+clone command that we talked about a little
+
+01:13:13.250 --> 01:13:15.570
+while ago, which is for taking a copy
+
+01:13:15.570 --> 01:13:19.570
+of remote repository and initializing a local repository
+
+01:13:19.570 --> 01:13:23.995
+from that copy. So, that's a quick overview
+
+01:13:23.995 --> 01:13:26.155
+of the different commands used to interact with
+
+01:13:26.155 --> 01:13:28.155
+git remotes. And now, these are kind of
+
+01:13:28.155 --> 01:13:30.235
+complicated and it takes a while to master
+
+01:13:30.235 --> 01:13:32.155
+all the different variations of this and understand
+
+01:13:32.155 --> 01:13:34.155
+how they're actually used in practice. But, hopefully
+
+01:13:34.155 --> 01:13:36.235
+this acts as a quick introduction and you
+
+01:13:36.235 --> 01:13:38.400
+can see how the different commands relate to
+
+01:13:38.400 --> 01:13:40.880
+the underlying data model. All these commands, all
+
+01:13:40.880 --> 01:13:43.040
+they do is fetch new objects from other
+
+01:13:43.040 --> 01:13:44.960
+places or send objects from the local machine
+
+01:13:44.960 --> 01:13:48.480
+to other places and these commands mutate references.
+
+01:13:50.400 --> 01:13:54.355
+So, relating these relating the interface of git
+
+01:13:54.355 --> 01:13:56.515
+and some of these kind of badly designed
+
+01:13:56.515 --> 01:13:59.315
+commands to the underlying data model can help
+
+01:13:59.315 --> 01:14:04.355
+it make a lot more sense. The final
+
+01:14:04.355 --> 01:14:07.750
+topic we're going to cover today is it's
+
+01:14:07.750 --> 01:14:10.150
+a kind of overview of other things that
+
+01:14:10.150 --> 01:14:11.350
+git can do that we're not going to
+
+01:14:11.350 --> 01:14:12.950
+go into detail in teaching you how to
+
+01:14:12.950 --> 01:14:14.790
+do but we just want to tell you
+
+01:14:14.790 --> 01:14:17.110
+that these functionalities exist in case you need
+
+01:14:17.110 --> 01:14:18.390
+to do these things yourself you can look
+
+01:14:18.390 --> 01:14:20.150
+up the documentation find out exactly how to
+
+01:14:20.150 --> 01:14:22.815
+do it. One thing is the git config
+
+01:14:22.815 --> 01:14:25.455
+command. Like a lot of tools we've looked
+
+01:14:25.455 --> 01:14:27.535
+at like the shell and tmux and things
+
+01:14:27.535 --> 01:14:30.255
+like that, git is highly configurable and it's
+
+01:14:30.255 --> 01:14:32.655
+configured using a plain text file which can
+
+01:14:32.655 --> 01:14:34.655
+be edited either through the command line interface
+
+01:14:34.740 --> 01:14:36.740
+so git config can take in flags that
+
+01:14:36.740 --> 01:14:39.300
+will modify this text file or you can
+
+01:14:39.300 --> 01:14:42.020
+edit the .git config file in the home
+
+01:14:42.020 --> 01:14:46.340
+folder with plain text configuration. And so for
+
+01:14:46.340 --> 01:14:49.075
+this lecture I've actually cut out most of
+
+01:14:49.075 --> 01:14:51.555
+my git config and only left in my
+
+01:14:51.955 --> 01:14:54.995
+username and email for what will go into
+
+01:14:54.995 --> 01:14:56.515
+git commits. But, there's a lot of stuff
+
+01:14:56.515 --> 01:14:57.955
+you can put in here which will make
+
+01:14:57.955 --> 01:15:00.440
+git behave nicer or behave the way you
+
+01:15:00.440 --> 01:15:02.200
+want it to. And, you can look online
+
+01:15:02.200 --> 01:15:04.360
+for different ways people have configured their git
+
+01:15:04.360 --> 01:15:07.000
+configs. Oftentimes people have documentation in their git
+
+01:15:07.000 --> 01:15:13.355
+configs which can be found on GitHub. There's
+
+01:15:13.355 --> 01:15:14.955
+a couple other random commands that could be
+
+01:15:14.955 --> 01:15:16.475
+useful. One is for when you want to
+
+01:15:16.475 --> 01:15:19.195
+clone a repository with git clone that's really
+
+01:15:19.195 --> 01:15:23.275
+gigantic. Git clone by default copies the entire
+
+01:15:23.275 --> 01:15:25.995
+version history from the remote it's downloading the
+
+01:15:25.995 --> 01:15:28.500
+repository from. But, there's an argument you can
+
+01:15:28.500 --> 01:15:31.780
+pass it which is shallow which will avoid
+
+01:15:31.780 --> 01:15:33.380
+doing that. So, if there's some copy of
+
+01:15:33.380 --> 01:15:34.820
+some code on GitHub say that you want
+
+01:15:34.820 --> 01:15:36.500
+to get a copy of on your local
+
+01:15:36.500 --> 01:15:38.820
+machine, but that repository is really gigantic and
+
+01:15:38.820 --> 01:15:40.660
+has a billion commits, if use git clone
+
+01:15:40.980 --> 01:15:43.055
+shallow this will be much faster. But then
+
+01:15:43.055 --> 01:15:44.575
+of course you won't have the version history
+
+01:15:44.575 --> 01:15:46.495
+on your local machine. You'll just have the
+
+01:15:46.495 --> 01:15:51.135
+latest snapshot. Another command that we find really
+
+01:15:51.135 --> 01:15:54.095
+useful when doing development on real software projects
+
+01:15:54.095 --> 01:15:56.760
+is an interactive version of the git add
+
+01:15:56.760 --> 01:15:59.000
+command. So to demonstrate this I'm going to
+
+01:15:59.000 --> 01:16:00.440
+go ahead and make a couple different changes
+
+01:16:00.440 --> 01:16:03.960
+to my animal. Py. One change I'll make
+
+01:16:04.200 --> 01:16:06.920
+here I'll change some text here and then
+
+01:16:06.920 --> 01:16:09.945
+I'll put a new print statement here. So
+
+01:16:09.945 --> 01:16:11.705
+let's pretend that this first change was some
+
+01:16:11.705 --> 01:16:13.305
+real change I wanted to make, say it's
+
+01:16:13.305 --> 01:16:15.545
+a bug fix, and this other change here
+
+01:16:15.545 --> 01:16:17.945
+was a printf that I added for debugging
+
+01:16:17.945 --> 01:16:19.465
+but I don't actually want to commit in
+
+01:16:19.465 --> 01:16:21.385
+the next snapshot. If I do a git
+
+01:16:21.385 --> 01:16:23.065
+diff it'll show me that yes I've made
+
+01:16:23.065 --> 01:16:24.790
+these two changes and if I do git
+
+01:16:24.790 --> 01:16:28.630
+add animal. Py it will stage both of
+
+01:16:28.630 --> 01:16:30.790
+those changes for commit. And that's not what
+
+01:16:30.790 --> 01:16:32.710
+I want. I could go manually remove this
+
+01:16:32.710 --> 01:16:34.950
+debug print and then do this git animal.
+
+01:16:34.950 --> 01:16:38.155
+Py. But there's an easier way to do
+
+01:16:38.155 --> 01:16:40.315
+it. There's this git add dash p command
+
+01:16:40.315 --> 01:16:43.435
+which lets me interactively stage pieces of files
+
+01:16:43.435 --> 01:16:45.435
+for a commit and so there's some interface
+
+01:16:45.435 --> 01:16:47.115
+for working with this. So here it's saying
+
+01:16:47.115 --> 01:16:48.235
+do I want to stage both of these
+
+01:16:48.235 --> 01:16:49.915
+changes and no I don't but I wanna
+
+01:16:49.680 --> 01:16:52.000
+split it into two smaller changes. This one
+
+01:16:52.000 --> 01:16:53.680
+I do want to keep, so I say
+
+01:16:53.680 --> 01:16:55.360
+'y' for 'yes' and this one I don't
+
+01:16:55.360 --> 01:16:56.640
+want to keep, so I say 'n' for
+
+01:16:56.640 --> 01:16:58.640
+'no'. And then if I do git diff
+
+01:16:58.640 --> 01:17:02.320
+dash dash cached this will show me what
+
+01:17:02.320 --> 01:17:04.765
+changes are staged for commit. So now it
+
+01:17:04.765 --> 01:17:06.525
+shows only the actual change I wanted to
+
+01:17:06.525 --> 01:17:08.285
+keep. If I do git diff it'll still
+
+01:17:08.285 --> 01:17:10.285
+show me the other change that is not
+
+01:17:10.285 --> 01:17:12.925
+going to be part of the next next
+
+01:17:12.925 --> 01:17:14.605
+commit which is the change I didn't want
+
+01:17:14.605 --> 01:17:16.045
+to keep. And then with this I can
+
+01:17:16.045 --> 01:17:19.830
+do git commit specify some commit message. Now
+
+01:17:19.830 --> 01:17:21.350
+I only have this change left, and then
+
+01:17:21.350 --> 01:17:23.110
+I can do git checkout animal. Py to
+
+01:17:23.110 --> 01:17:26.870
+throw away this change. So, git add -p
+
+01:17:26.870 --> 01:17:31.025
+for interactive staging is a useful thing. A
+
+01:17:31.025 --> 01:17:32.465
+couple other commands that you can look up
+
+01:17:32.465 --> 01:17:35.105
+on your own are the git blame command.
+
+01:17:35.505 --> 01:17:37.585
+So, this command sounds kind of ominous, but
+
+01:17:37.585 --> 01:17:38.865
+it can be used to figure out who
+
+01:17:38.865 --> 01:17:40.705
+edited what line of a file. And, you
+
+01:17:40.705 --> 01:17:42.900
+can also find the corresponding commit that was
+
+01:17:42.900 --> 01:17:45.060
+responsible for modifying that particular line of that
+
+01:17:45.060 --> 01:17:46.580
+file and then you can look up commit
+
+01:17:46.580 --> 01:17:49.060
+messages associated with that and whatnot. So, is
+
+01:17:49.060 --> 01:17:50.500
+not that interesting to do in our current
+
+01:17:50.500 --> 01:17:52.580
+toy repository but I'll go over to the
+
+01:17:52.580 --> 01:17:55.460
+repository for the class website and we can
+
+01:17:55.460 --> 01:17:58.435
+look at some particular file here and let
+
+01:17:58.435 --> 01:18:00.515
+me go to some particular line here and
+
+01:18:00.515 --> 01:18:01.555
+I can be looking at this and be
+
+01:18:01.555 --> 01:18:03.715
+like oh why was this particular line added
+
+01:18:03.715 --> 01:18:05.155
+what does it mean and I can look
+
+01:18:05.155 --> 01:18:07.155
+at the git blame for this so if
+
+01:18:07.155 --> 01:18:11.440
+I do git blame config. Yml it'll print
+
+01:18:11.440 --> 01:18:13.040
+out all the lines kind of in the
+
+01:18:13.040 --> 01:18:14.960
+right column and then in the left side
+
+01:18:14.960 --> 01:18:16.800
+it'll show me what commit that change was
+
+01:18:16.800 --> 01:18:19.520
+made in and by whom and then looking
+
+01:18:19.520 --> 01:18:21.360
+at this like I can go down to
+
+01:18:21.360 --> 01:18:26.265
+this collections line. It was made in this
+
+01:18:26.265 --> 01:18:28.745
+commit, that's the last commit that modified that
+
+01:18:28.745 --> 01:18:30.265
+line and now I can use the git
+
+01:18:30.265 --> 01:18:33.785
+show command to get information for that particular
+
+01:18:33.785 --> 01:18:36.025
+commit. Oh, and this is kind of useful,
+
+01:18:36.025 --> 01:18:39.305
+redo lectures as a collection. That's probably what
+
+01:18:38.370 --> 01:18:41.730
+was related to that collections line. And then
+
+01:18:41.970 --> 01:18:44.610
+beyond just showing the commit and the commit
+
+01:18:44.610 --> 01:18:47.170
+message, it also shows me the actual changes
+
+01:18:47.170 --> 01:18:48.930
+introduced in that particular commit and I can
+
+01:18:48.930 --> 01:18:50.370
+go look through them and understand what's going
+
+01:18:50.370 --> 01:18:53.955
+on. Another kind of cool command is a
+
+01:18:53.955 --> 01:18:55.715
+command called git stash. So, let's go back
+
+01:18:55.715 --> 01:18:58.275
+to our demo repository and demonstrate that here.
+
+01:18:58.275 --> 01:19:04.195
+So, say if some changes here and I
+
+01:19:04.195 --> 01:19:06.195
+temporarily want to put them away, if I
+
+01:19:06.195 --> 01:19:08.560
+do git stash it will revert my working
+
+01:19:08.560 --> 01:19:10.800
+directory to the state it was in at
+
+01:19:10.800 --> 01:19:12.880
+the last commit. So if I do cat
+
+01:19:12.880 --> 01:19:15.680
+hello dot txt that change is gone. But
+
+01:19:15.680 --> 01:19:18.160
+it's not just deleted, it's saved somewhere. And
+
+01:19:18.160 --> 01:19:20.335
+if I do git stash pop it will
+
+01:19:20.335 --> 01:19:22.335
+undo the stash. So now if I look
+
+01:19:22.335 --> 01:19:25.135
+at hello dot txt it has the changes
+
+01:19:25.135 --> 01:19:28.895
+I made. So yet another useful command. Another
+
+01:19:28.895 --> 01:19:31.055
+really neat command is something called git bisect
+
+01:19:31.055 --> 01:19:33.295
+and this has a complicated interface that we're
+
+01:19:33.295 --> 01:19:35.535
+not going to demonstrate in detail. But basically
+
+01:19:35.535 --> 01:19:36.870
+this is a tool that can be used
+
+01:19:36.870 --> 01:19:38.150
+to solve a bunch of problems where you
+
+01:19:38.150 --> 01:19:41.270
+need to manually search history for something. Suppose
+
+01:19:41.270 --> 01:19:43.270
+you're in a scenario where you've been working
+
+01:19:43.270 --> 01:19:44.390
+on a project for a long time, you
+
+01:19:44.390 --> 01:19:46.230
+have like lots and lots of snapshots, you're
+
+01:19:46.230 --> 01:19:48.070
+a thousand commits in, and then you notice
+
+01:19:48.070 --> 01:19:50.455
+that some unit test doesn't pass anymore. But
+
+01:19:50.455 --> 01:19:52.455
+you know that this was passing like one
+
+01:19:52.455 --> 01:19:54.295
+year ago and you're trying to figure out
+
+01:19:54.295 --> 01:19:56.375
+at what point did it break like at
+
+01:19:56.375 --> 01:19:57.975
+what point was this regression in your code
+
+01:19:57.975 --> 01:19:59.735
+introduced. So one thing you could do is
+
+01:19:59.735 --> 01:20:01.815
+manually check out like go back one commit
+
+01:20:01.815 --> 01:20:02.935
+and see if the unit test is still
+
+01:20:02.935 --> 01:20:04.375
+failing, go back one commit see if it's
+
+01:20:04.375 --> 01:20:06.790
+still failing, and eventually you'll find the first
+
+01:20:06.790 --> 01:20:09.430
+commit where the test stopped working and it'll
+
+01:20:09.430 --> 01:20:12.870
+probably tell you like what broke. But, that's
+
+01:20:12.870 --> 01:20:14.790
+kind of annoying to do manually. Git bisect
+
+01:20:14.790 --> 01:20:18.070
+automates that process and it actually binary searches
+
+01:20:18.070 --> 01:20:19.430
+your history. So it does this in the
+
+01:20:19.430 --> 01:20:22.445
+most efficient way possible. And not only that,
+
+01:20:22.445 --> 01:20:24.365
+git bisect can take in a script that
+
+01:20:24.365 --> 01:20:25.965
+it uses to try to figure out whether
+
+01:20:25.965 --> 01:20:27.405
+a commit it's looking at is good or
+
+01:20:27.405 --> 01:20:29.485
+bad. So it can be a fully automated
+
+01:20:29.485 --> 01:20:32.045
+process. Like you can give git bisect a
+
+01:20:32.045 --> 01:20:34.045
+unit test and say find the first commit
+
+01:20:34.045 --> 01:20:37.250
+where this unit test stopped passing. So, a
+
+01:20:37.250 --> 01:20:42.290
+really powerful tool. Another random thing that's kind
+
+01:20:42.290 --> 01:20:44.690
+of useful is something called a gitignore file.
+
+01:20:44.930 --> 01:20:48.050
+So, by default if you have random files
+
+01:20:48.050 --> 01:20:52.850
+in a directory like let me create the
+
+01:20:51.035 --> 01:20:56.555
+dot ds underscore store file. Whoops. Create the
+
+01:20:56.555 --> 01:20:59.675
+dot ds underscore store file and then do
+
+01:20:59.675 --> 01:21:02.555
+git status. So ds store is like some
+
+01:21:02.555 --> 01:21:04.315
+nuisance file that mac os creates. I don't
+
+01:21:04.315 --> 01:21:06.050
+know exactly what goes in here But basically
+
+01:21:06.050 --> 01:21:08.850
+once this file is in this directory now
+
+01:21:08.850 --> 01:21:10.370
+whenever I do git status it says oh
+
+01:21:10.370 --> 01:21:12.370
+there's this new file that I've never heard
+
+01:21:12.370 --> 01:21:14.130
+of it before but it's apparently here like
+
+01:21:14.130 --> 01:21:15.970
+do you want to add it? And this
+
+01:21:15.970 --> 01:21:17.995
+sort of stuff stuff gets annoying and there's
+
+01:21:17.995 --> 01:21:20.075
+a lot of other stuff beyond OS specific
+
+01:21:20.155 --> 01:21:22.155
+garbage that might be in a directory. Like,
+
+01:21:22.155 --> 01:21:23.915
+for example, if you're working with C code
+
+01:21:23.915 --> 01:21:25.755
+you might compile it and produce dot o
+
+01:21:25.755 --> 01:21:28.075
+files or executable files or things like that.
+
+01:21:28.075 --> 01:21:29.755
+And, you probably don't want binaries to be
+
+01:21:29.755 --> 01:21:31.675
+part of your commit history. You only want
+
+01:21:31.675 --> 01:21:34.280
+the source code. And so git has a
+
+01:21:34.280 --> 01:21:37.080
+way of you being able to tell the
+
+01:21:37.080 --> 01:21:38.840
+tool that you don't care about a particular
+
+01:21:38.840 --> 01:21:40.760
+set of files and to ignore them. And
+
+01:21:40.760 --> 01:21:43.720
+that's something called a gitignore file. So if
+
+01:21:43.720 --> 01:21:46.360
+I go and modify the file called .gitignore
+
+01:21:46.360 --> 01:21:49.135
+in the current directory I can specify particular
+
+01:21:49.135 --> 01:21:51.935
+file names or patterns of file names. Like
+
+01:21:51.935 --> 01:21:53.615
+say I can specify star dot o, so
+
+01:21:53.615 --> 01:21:55.615
+any file ending in dot o along with
+
+01:21:55.615 --> 01:21:58.335
+dot ds store. And now if I touch
+
+01:21:58.335 --> 01:22:00.015
+foo dot o and now do a git
+
+01:22:00.015 --> 01:22:03.410
+status, I'll see that git says okay I
+
+01:22:03.410 --> 01:22:05.650
+have hello. Txt which I modified sure and
+
+01:22:05.650 --> 01:22:07.490
+then I have git ignore so you should
+
+01:22:07.490 --> 01:22:09.970
+track your git ignore file using git but
+
+01:22:09.970 --> 01:22:13.250
+notice that it doesn't mention my .ds store
+
+01:22:13.250 --> 01:22:16.105
+file or my foo. O file that's present
+
+01:22:16.105 --> 01:22:18.105
+in the current directory because that has been
+
+01:22:18.105 --> 01:22:22.185
+git ignored. So that's a quick overview of
+
+01:22:22.185 --> 01:22:24.185
+a little bit of advanced git functionality just
+
+01:22:24.185 --> 01:22:25.785
+to give you a flavor of what sorts
+
+01:22:25.785 --> 01:22:29.550
+of cool things this tool can do. And
+
+01:22:29.550 --> 01:22:32.510
+then, finally, we have a couple other topics
+
+01:22:32.510 --> 01:22:34.270
+that are covered in the lecture notes in
+
+01:22:34.270 --> 01:22:36.830
+more detail. I'll just quickly list them here
+
+01:22:36.830 --> 01:22:38.430
+so you know what to look for. One
+
+01:22:38.430 --> 01:22:40.670
+is that there are many graphical clients for
+
+01:22:40.670 --> 01:22:43.765
+git. We don't personally use them. We like
+
+01:22:43.765 --> 01:22:45.925
+the git command line tool but some of
+
+01:22:45.925 --> 01:22:47.045
+them are kind of okay and you might
+
+01:22:47.045 --> 01:22:48.245
+want to check them out just to see
+
+01:22:48.245 --> 01:22:51.845
+if you prefer using those. Another thing is
+
+01:22:52.485 --> 01:22:54.980
+shell integration. So you've noticed that in this
+
+01:22:54.980 --> 01:22:57.140
+tutorial I've done git status a whole bunch
+
+01:22:57.140 --> 01:22:58.500
+to see kind of what's going on with
+
+01:22:58.500 --> 01:23:01.220
+my repository. Well that's kind of annoying to
+
+01:23:01.220 --> 01:23:02.660
+do and a lot of people have their
+
+01:23:02.660 --> 01:23:04.820
+shell prompt set up so that just within
+
+01:23:04.820 --> 01:23:06.980
+this shell prompt itself like on every line
+
+01:23:06.980 --> 01:23:09.285
+it will show me a very succinct summary
+
+01:23:09.285 --> 01:23:11.445
+of what's going on with my repository. So
+
+01:23:11.445 --> 01:23:13.045
+it might show me a summary of what
+
+01:23:13.045 --> 01:23:15.205
+branch I have currently checked out along with
+
+01:23:15.205 --> 01:23:17.605
+maybe if I've modified files or untracked files
+
+01:23:17.605 --> 01:23:18.565
+and so we have a link in the
+
+01:23:18.565 --> 01:23:20.485
+lecture notes on how to get some nice
+
+01:23:20.485 --> 01:23:24.690
+shell integration for displaying kind of git related
+
+01:23:24.690 --> 01:23:28.290
+information in your shell prompt. Similar to that,
+
+01:23:28.290 --> 01:23:30.450
+you can get integrations with your text editor.
+
+01:23:30.450 --> 01:23:33.810
+So, example, I use Vim and I have
+
+01:23:33.810 --> 01:23:35.970
+a plugin for Vim that does all sorts
+
+01:23:35.970 --> 01:23:38.105
+of interesting git related stuff. One thing I
+
+01:23:38.105 --> 01:23:39.465
+can do within this plugin is look at
+
+01:23:39.465 --> 01:23:41.705
+git blame information. So remember we just looked
+
+01:23:41.705 --> 01:23:43.305
+at this through the command line, instead I
+
+01:23:43.305 --> 01:23:44.825
+can look at it with this plugin and
+
+01:23:44.825 --> 01:23:46.425
+it lets me work with it a lot
+
+01:23:46.425 --> 01:23:48.425
+faster. I can look at git blame, press
+
+01:23:48.425 --> 01:23:50.505
+enter when hovering over a specific commit, and
+
+01:23:50.505 --> 01:23:52.825
+it shows me that particular commit in my
+
+01:23:52.825 --> 01:23:55.280
+text editor. It even hides all the other
+
+01:23:55.280 --> 01:23:56.720
+files and shows me just the one file
+
+01:23:56.720 --> 01:23:58.240
+I was looking at which is presumably what
+
+01:23:58.240 --> 01:24:00.080
+I care about. So we have links to
+
+01:24:00.080 --> 01:24:04.560
+that in the lecture notes as well. And,
+
+01:24:04.560 --> 01:24:06.000
+there are a couple other interesting things you
+
+01:24:06.000 --> 01:24:09.015
+could look at there if you're interested. Finally,
+
+01:24:09.655 --> 01:24:12.055
+this lecture by itself is probably not enough
+
+01:24:12.055 --> 01:24:13.415
+to teach you everything you need to know
+
+01:24:13.415 --> 01:24:16.055
+about git. It's a good start. We think
+
+01:24:16.055 --> 01:24:17.335
+that the right way of learning git was
+
+01:24:17.335 --> 01:24:19.495
+to learn about the underlying data model, the
+
+01:24:19.495 --> 01:24:21.495
+whole objects and references and how git models
+
+01:24:21.495 --> 01:24:23.950
+history, and then we gave you an introduction
+
+01:24:23.950 --> 01:24:26.590
+to using the git commands and if you
+
+01:24:26.590 --> 01:24:28.510
+want to become really proficient at this tool
+
+01:24:28.510 --> 01:24:30.990
+in the resources section in the lecture notes
+
+01:24:30.990 --> 01:24:32.590
+for today we have a link to a
+
+01:24:32.590 --> 01:24:34.430
+book called pro git so this is a
+
+01:24:34.430 --> 01:24:37.135
+free book it's nicely written, it's pretty short
+
+01:24:37.135 --> 01:24:38.895
+and I think going through the first couple
+
+01:24:38.895 --> 01:24:41.135
+chapters of that book should teach you basically
+
+01:24:41.135 --> 01:24:42.495
+everything you need to know in order to
+
+01:24:42.495 --> 01:24:45.055
+use git proficiently for real software projects and
+
+01:24:45.055 --> 01:24:47.695
+for contributing to projects on GitHub and things
+
+01:24:47.695 --> 01:24:50.920
+like that. And then finally, just like all
+
+01:24:50.920 --> 01:24:52.120
+the other lectures, we have a number of
+
+01:24:52.120 --> 01:24:54.360
+exercises you can go to go through if
+
+01:24:54.360 --> 01:24:57.400
+you want some interesting and challenging problems that
+
+01:24:57.400 --> 01:24:58.360
+you can figure out how to do.
