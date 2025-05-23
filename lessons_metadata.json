@@ -364,5 +364,17 @@
     "lesson_html_filename": "lecture_6_version_control_git_2020_interactive_lesson.html",
     "json_transcript_path_on_repo": "lecture_6_version_control_git_2020/lecture_6_version_control_git_2020_transcript.json",
     "vtt_transcript_path_on_repo": "lecture_6_version_control_git_2020/lecture_6_version_control_git_2020_transcript.vtt"
+  },
+  {
+    "title_original": "The Modern Trivium: A Guide to Self- Education",
+    "video_name_clean": "the_modern_trivium_a_guide_to_self-_education",
+    "youtube_id": "mAiJfwiRSgM",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-23T02:41:33.926557+00:00",
+    "uploader": "Wes Cecil",
+    "duration_seconds": 2565,
+    "lesson_html_filename": "the_modern_trivium_a_guide_to_self-_education_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_modern_trivium_a_guide_to_self-_education/the_modern_trivium_a_guide_to_self-_education_transcript.json",
+    "vtt_transcript_path_on_repo": "the_modern_trivium_a_guide_to_self-_education/the_modern_trivium_a_guide_to_self-_education_transcript.vtt"
   }
 ]
