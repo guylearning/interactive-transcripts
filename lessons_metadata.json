@@ -376,5 +376,17 @@
     "lesson_html_filename": "the_modern_trivium_a_guide_to_self-_education_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_modern_trivium_a_guide_to_self-_education/the_modern_trivium_a_guide_to_self-_education_transcript.json",
     "vtt_transcript_path_on_repo": "the_modern_trivium_a_guide_to_self-_education/the_modern_trivium_a_guide_to_self-_education_transcript.vtt"
+  },
+  {
+    "title_original": "The Modern Trivium II: Grammar",
+    "video_name_clean": "the_modern_trivium_ii_grammar",
+    "youtube_id": "PxeLmrBkWGk",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-23T02:44:25.732279+00:00",
+    "uploader": "Wes Cecil",
+    "duration_seconds": 2673,
+    "lesson_html_filename": "the_modern_trivium_ii_grammar_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_modern_trivium_ii_grammar/the_modern_trivium_ii_grammar_transcript.json",
+    "vtt_transcript_path_on_repo": "the_modern_trivium_ii_grammar/the_modern_trivium_ii_grammar_transcript.vtt"
   }
 ]
