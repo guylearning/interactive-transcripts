@@ -1,0 +1,161 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 74c21be0-3d7a-4fe2-bebc-f081a9b3b58e
+Created: 2025-05-30T04:43:17.924Z
+Duration: 160.39182
+Channels: 1
+
+00:00:01.600 --> 00:00:04.400
+Hi there. In this video, we are going
+
+00:00:04.400 --> 00:00:07.520
+to look at symbolic links, otherwise known as
+
+00:00:07.520 --> 00:00:10.560
+symlinks, which is a way to create a
+
+00:00:11.440 --> 00:00:16.395
+file listing in a directory that is actually
+
+00:00:16.715 --> 00:00:19.275
+a file or folder from a different directory.
+
+00:00:19.275 --> 00:00:21.115
+We'll use this a lot in CS one
+
+00:00:21.115 --> 00:00:23.755
+zero seven when we want to create one
+
+00:00:23.755 --> 00:00:26.795
+directory of files that everyone has access to
+
+00:00:26.795 --> 00:00:30.130
+or one particular file that everyone has access
+
+00:00:30.130 --> 00:00:33.010
+to. Many times the actual files or folders
+
+00:00:33.010 --> 00:00:35.170
+themselves will be read only, so you can't
+
+00:00:35.170 --> 00:00:38.610
+go changing them. But they will be located
+
+00:00:38.770 --> 00:00:43.705
+and accessible from your particular directory on your
+
+00:00:43.705 --> 00:00:48.505
+folder. Maybe a directory where a program lives
+
+00:00:49.065 --> 00:00:52.505
+and it needs access to a particular set
+
+00:00:52.505 --> 00:00:54.730
+of files that we provide. You can have
+
+00:00:54.730 --> 00:00:58.170
+it located in your folder as a SIM
+
+00:00:58.170 --> 00:01:01.850
+link and therefore your program can find it
+
+00:01:01.850 --> 00:01:05.130
+using a relative path instead of trying to
+
+00:01:05.130 --> 00:01:07.475
+find it using an absolute path. So it's
+
+00:01:07.475 --> 00:01:09.475
+a nice way to do it, and you
+
+00:01:09.475 --> 00:01:10.995
+probably won't have to create too many sim
+
+00:01:10.995 --> 00:01:13.395
+links, but, I wanted to show you how
+
+00:01:13.395 --> 00:01:16.675
+that actually how it actually works. So, if
+
+00:01:16.675 --> 00:01:18.435
+I look at the files here, let's do
+
+00:01:18.435 --> 00:01:21.075
+a long listing of the files in the
+
+00:01:21.530 --> 00:01:23.930
+in my CS one hundred seven assignments folder.
+
+00:01:23.930 --> 00:01:28.250
+Let's say for instance that in assignment zero
+
+00:01:29.450 --> 00:01:32.570
+we want to link you to some samples
+
+00:01:32.570 --> 00:01:34.810
+directory. In fact we'll use the samples directory
+
+00:01:34.810 --> 00:01:37.005
+fairly often in here. Here's how you could
+
+00:01:37.005 --> 00:01:39.245
+actually do it. You would actually say ln
+
+00:01:39.245 --> 00:01:44.445
+s for symbolic link and then you actually
+
+00:01:44.445 --> 00:01:48.365
+type the full path, in this case it's
+
+00:01:48.365 --> 00:01:57.330
+AFS IR class CS107 samples and dot meaning
+
+00:01:57.330 --> 00:01:59.570
+put it in the current directory and then
+
+00:01:59.570 --> 00:02:01.010
+if we do an ls dash l you'll
+
+00:02:01.010 --> 00:02:03.650
+notice that you've got a samples directory here,
+
+00:02:04.245 --> 00:02:05.925
+Okay, and it's a link, it's the l
+
+00:02:05.925 --> 00:02:09.285
+fruit link and it points to where it
+
+00:02:09.285 --> 00:02:11.365
+actually is. So if we actually look in
+
+00:02:11.365 --> 00:02:13.365
+that samples, I don't think there's much in
+
+00:02:13.365 --> 00:02:17.205
+there. There's only one thing called Unix Hunt
+
+00:02:17.205 --> 00:02:21.220
+in there, but that's actually on the CS
+
+00:02:21.220 --> 00:02:24.100
+one zero seven part of the file system,
+
+00:02:24.180 --> 00:02:25.940
+but you've now linked to it. And so
+
+00:02:25.940 --> 00:02:27.220
+if you ever see a file like this
+
+00:02:27.220 --> 00:02:30.257
+with a little arrow notation there, it means
+
+00:02:30.257 --> 00:02:32.577
+that it's a symbolic link. And if you
+
+00:02:32.577 --> 00:02:34.097
+wanted a great one, you use the l
+
+00:02:34.097 --> 00:02:38.017
+n dash s command to do it. Thanks.

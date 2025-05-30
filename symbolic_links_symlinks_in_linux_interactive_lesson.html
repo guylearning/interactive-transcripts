@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbolic links (symlinks) in linux</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 1.5999999, "end": 44.345, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 1.5999999, "end": 2.4799998}, {"id": "sent_0_1", "text": "In this video, we are going to look at symbolic links, otherwise known as symlinks, which is a way to create a file listing in a directory that is actually a file or folder from a different directory.", "start": 2.48, "end": 19.275}, {"id": "sent_0_2", "text": "We'll use this a lot in CS one zero seven when we want to create one directory of files that everyone has access to or one particular file that everyone has access to.", "start": 19.275, "end": 30.61}, {"id": "sent_0_3", "text": "Many times the actual files or folders themselves will be read only, so you can't go changing them.", "start": 31.17, "end": 36.77}, {"id": "sent_0_4", "text": "But they will be located and accessible from your particular directory on your folder.", "start": 36.77, "end": 44.345}]}, {"id": "para_1", "paragraph_idx": 1, "start": 44.345, "end": 93.369995, "sentences": [{"id": "sent_1_0", "text": "Maybe a directory where a program lives and it needs access to a particular set of files that we provide.", "start": 44.345, "end": 53.545}, {"id": "sent_1_1", "text": "You can have it located in your folder as a SIM link and therefore your program can find it using a relative path instead of trying to find it using an absolute path.", "start": 54.17, "end": 66.81}, {"id": "sent_1_2", "text": "So it's a nice way to do it, and you probably won't have to create too many sim links, but, I wanted to show you how that actually how it actually works.", "start": 66.915, "end": 75.395}, {"id": "sent_1_3", "text": "So, if I look at the files here, let's do a long listing of the files in the in my CS one hundred seven assignments folder.", "start": 75.555, "end": 83.93}, {"id": "sent_1_4", "text": "Let's say for instance that in assignment zero we want to link you to some samples directory.", "start": 83.93, "end": 93.369995}]}, {"id": "para_2", "paragraph_idx": 2, "start": 93.369995, "end": 145.62, "sentences": [{"id": "sent_2_0", "text": "In fact we'll use the samples directory fairly often in here.", "start": 93.369995, "end": 95.77}, {"id": "sent_2_1", "text": "Here's how you could actually do it.", "start": 96.284996, "end": 97.564995}, {"id": "sent_2_2", "text": "You would actually say ln s for symbolic link and then you actually type the full path, in this case it's AFS IR class CS107 samples and dot meaning put it in the current directory and then if we do an ls dash l you'll notice that you've got a samples directory here, Okay, and it's a link, it's the l fruit link and it points to where it actually is.", "start": 97.564995, "end": 130.325}, {"id": "sent_2_3", "text": "So if we actually look in that samples, I don't think there's much in there.", "start": 130.325, "end": 133.845}, {"id": "sent_2_4", "text": "There's only one thing called Unix Hunt in there, but that's actually on the CS one zero seven part of the file system, but you've now linked to it.", "start": 135.285, "end": 145.62}]}, {"id": "para_3", "paragraph_idx": 3, "start": 145.62, "end": 158.01682, "sentences": [{"id": "sent_3_0", "text": "And so if you ever see a file like this with a little arrow notation there, it means that it's a symbolic link.", "start": 145.62, "end": 152.09682}, {"id": "sent_3_1", "text": "And if you wanted a great one, you use the l n dash s command to do it.", "start": 152.09682, "end": 157.21681}, {"id": "sent_3_2", "text": "Thanks.", "start": 157.6168, "end": 158.01682}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "BjkugFw49MU";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 160;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>Symbolic links (symlinks) in linux</h1>
+                <p>Channel: Chris Gregg | Duration: 02:40</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="1.5999999" data-end-time="44.345">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="1.5999999"></div>
+                        <div class="timeline-timestamp">00:01</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="1.5999999" data-end-time="2.4799998">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="2.48" data-end-time="19.275">In this video, we are going to look at symbolic links, otherwise known as symlinks, which is a way to create a file listing in a directory that is actually a file or folder from a different directory.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="19.275" data-end-time="30.61">We'll use this a lot in CS one zero seven when we want to create one directory of files that everyone has access to or one particular file that everyone has access to.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="31.17" data-end-time="36.77">Many times the actual files or folders themselves will be read only, so you can't go changing them.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="36.77" data-end-time="44.345">But they will be located and accessible from your particular directory on your folder.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="44.345" data-end-time="93.369995">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="44.345"></div>
+                        <div class="timeline-timestamp">00:44</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="44.345" data-end-time="53.545">Maybe a directory where a program lives and it needs access to a particular set of files that we provide.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="54.17" data-end-time="66.81">You can have it located in your folder as a SIM link and therefore your program can find it using a relative path instead of trying to find it using an absolute path.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="66.915" data-end-time="75.395">So it's a nice way to do it, and you probably won't have to create too many sim links, but, I wanted to show you how that actually how it actually works.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="75.555" data-end-time="83.93">So, if I look at the files here, let's do a long listing of the files in the in my CS one hundred seven assignments folder.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="83.93" data-end-time="93.369995">Let's say for instance that in assignment zero we want to link you to some samples directory.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="93.369995" data-end-time="145.62">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="93.369995"></div>
+                        <div class="timeline-timestamp">01:33</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="93.369995" data-end-time="95.77">In fact we'll use the samples directory fairly often in here.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="96.284996" data-end-time="97.564995">Here's how you could actually do it.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="97.564995" data-end-time="130.325">You would actually say ln s for symbolic link and then you actually type the full path, in this case it's AFS IR class CS107 samples and dot meaning put it in the current directory and then if we do an ls dash l you'll notice that you've got a samples directory here, Okay, and it's a link, it's the l fruit link and it points to where it actually is.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="130.325" data-end-time="133.845">So if we actually look in that samples, I don't think there's much in there.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="135.285" data-end-time="145.62">There's only one thing called Unix Hunt in there, but that's actually on the CS one zero seven part of the file system, but you've now linked to it.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="145.62" data-end-time="158.01682">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="145.62"></div>
+                        <div class="timeline-timestamp">02:25</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="145.62" data-end-time="152.09682">And so if you ever see a file like this with a little arrow notation there, it means that it's a symbolic link.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="152.09682" data-end-time="157.21681">And if you wanted a great one, you use the l n dash s command to do it.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="157.6168" data-end-time="158.01682">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

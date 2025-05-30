@@ -532,5 +532,17 @@
     "lesson_html_filename": "the_pushd_and_popd_commands_on_linux_and_the_cd_-_command_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_pushd_and_popd_commands_on_linux_and_the_cd_-_command/the_pushd_and_popd_commands_on_linux_and_the_cd_-_command_transcript.json",
     "vtt_transcript_path_on_repo": "the_pushd_and_popd_commands_on_linux_and_the_cd_-_command/the_pushd_and_popd_commands_on_linux_and_the_cd_-_command_transcript.vtt"
+  },
+  {
+    "title_original": "Symbolic links (symlinks) in linux",
+    "video_name_clean": "symbolic_links_symlinks_in_linux",
+    "youtube_id": "BjkugFw49MU",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:43:18.272080+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 160,
+    "lesson_html_filename": "symbolic_links_symlinks_in_linux_interactive_lesson.html",
+    "json_transcript_path_on_repo": "symbolic_links_symlinks_in_linux/symbolic_links_symlinks_in_linux_transcript.json",
+    "vtt_transcript_path_on_repo": "symbolic_links_symlinks_in_linux/symbolic_links_symlinks_in_linux_transcript.vtt"
   }
 ]
