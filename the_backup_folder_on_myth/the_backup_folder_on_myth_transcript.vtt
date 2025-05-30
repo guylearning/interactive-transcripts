@@ -1,0 +1,191 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 4def1855-0b16-4140-8e6e-26115c5fb69d
+Created: 2025-05-30T04:40:53.741Z
+Duration: 173.871
+Channels: 1
+
+00:00:00.960 --> 00:00:03.040
+Hi there. This is a quick little video
+
+00:00:03.040 --> 00:00:07.520
+on the backup directory that is provided with
+
+00:00:07.520 --> 00:00:12.160
+the MIF system. This is not something that's
+
+00:00:12.160 --> 00:00:14.800
+on normal Ubuntu systems, although you can install
+
+00:00:14.800 --> 00:00:17.255
+things like this, But this is something that
+
+00:00:17.255 --> 00:00:20.375
+the CS department provides to or I guess
+
+00:00:20.375 --> 00:00:24.855
+the the university provides that gives you a
+
+00:00:24.855 --> 00:00:28.630
+backup of the files in your folders. Now
+
+00:00:28.630 --> 00:00:29.990
+this isn't the back this is not the
+
+00:00:29.990 --> 00:00:31.910
+kind of backup like Dropbox where it saves
+
+00:00:31.910 --> 00:00:34.230
+all revisions of your files for many, many
+
+00:00:34.230 --> 00:00:38.310
+days. No, it saves one revision which is
+
+00:00:38.310 --> 00:00:41.895
+backed up nightly. So if you come in
+
+00:00:41.895 --> 00:00:44.535
+to do your work and you're working along
+
+00:00:44.535 --> 00:00:47.015
+and you accidentally delete a file, if the
+
+00:00:47.015 --> 00:00:49.735
+file was present in the system yesterday, it
+
+00:00:49.735 --> 00:00:53.800
+is probably in your backup folder. But you
+
+00:00:53.800 --> 00:00:55.160
+can't go and say, oh, well, two days
+
+00:00:55.160 --> 00:00:58.600
+ago I had something that was that I
+
+00:00:58.600 --> 00:01:00.040
+changed yesterday, but I wanna go back to
+
+00:01:00.040 --> 00:01:01.640
+the two days ago version. That's not gonna
+
+00:01:01.640 --> 00:01:05.160
+happen. If the backup runs and the file
+
+00:01:05.160 --> 00:01:07.240
+has changed when the backup runs, then that's
+
+00:01:07.240 --> 00:01:09.775
+the one copy you get until the file
+
+00:01:09.775 --> 00:01:13.055
+changes again and another backup is run. But
+
+00:01:13.055 --> 00:01:14.975
+anyway, it's easy to get to your backup
+
+00:01:14.975 --> 00:01:18.095
+folder from your home directory. So if we
+
+00:01:18.095 --> 00:01:19.455
+c d into our home directory, I'm on
+
+00:01:19.455 --> 00:01:21.055
+the Myth computer here, and then we c
+
+00:01:21.055 --> 00:01:22.815
+d into backup or I could have just
+
+00:01:22.815 --> 00:01:26.810
+typed c d tilde dot backup. Okay. Notice
+
+00:01:26.810 --> 00:01:28.730
+I'm in the backup directory and it happens
+
+00:01:28.730 --> 00:01:31.610
+to look very similar to all of the
+
+00:01:31.610 --> 00:01:33.450
+files that are in my regular directory. If
+
+00:01:33.450 --> 00:01:35.770
+I go back to my home directory, type
+
+00:01:35.770 --> 00:01:38.250
+l s, it's basically basically the same files.
+
+00:01:38.605 --> 00:01:42.685
+But, the backup directory is a directory that
+
+00:01:42.685 --> 00:01:46.845
+is, as I said, basically one day old.
+
+00:01:47.005 --> 00:01:50.445
+So actually yesterday I think I had my
+
+00:01:50.445 --> 00:01:52.205
+c s one zero seven folder called one
+
+00:01:52.205 --> 00:01:55.210
+zero seven, so it's not hasn't updated today.
+
+00:01:55.770 --> 00:01:57.770
+So that's that. But if we look in
+
+00:01:57.770 --> 00:02:00.650
+it, actually, if you look at the files,
+
+00:02:01.930 --> 00:02:04.250
+I don't believe you're actually able to remove
+
+00:02:04.250 --> 00:02:07.050
+them. Test dot c. Yep. It says a
+
+00:02:07.050 --> 00:02:08.915
+read only file system. In other words, you
+
+00:02:08.915 --> 00:02:11.555
+can look but you can't modify anything in
+
+00:02:11.555 --> 00:02:14.035
+your backup. But again, is just simply for
+
+00:02:14.275 --> 00:02:16.915
+backup purposes. If I happen to want my
+
+00:02:17.395 --> 00:02:20.595
+test dot c program to be, to go
+
+00:02:20.595 --> 00:02:22.540
+back into my home folder, I could copy
+
+00:02:22.540 --> 00:02:24.380
+it back in c d c p test
+
+00:02:24.380 --> 00:02:29.100
+dot c into my previous folder and then
+
+00:02:29.100 --> 00:02:31.900
+I've got my backup. So anyway, it's just
+
+00:02:31.900 --> 00:02:35.420
+a way to, say, okay, there's some backup
+
+00:02:35.420 --> 00:02:38.605
+capability in case the system crashes or in
+
+00:02:38.605 --> 00:02:40.925
+case your computer dies or you accidentally remove
+
+00:02:40.925 --> 00:02:42.605
+a file. That's probably the biggest reason. If
+
+00:02:42.605 --> 00:02:47.405
+you accidentally remove files from your folder or
+
+00:02:47.405 --> 00:02:49.405
+from your directory that were there yesterday, you
+
+00:02:49.405 --> 00:02:51.645
+can get them back. Alright. Thanks.

@@ -448,5 +448,17 @@
     "lesson_html_filename": "the_file_system_is_a_tree_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_file_system_is_a_tree/the_file_system_is_a_tree_transcript.json",
     "vtt_transcript_path_on_repo": "the_file_system_is_a_tree/the_file_system_is_a_tree_transcript.vtt"
+  },
+  {
+    "title_original": "The .backup folder on myth",
+    "video_name_clean": "the_backup_folder_on_myth",
+    "youtube_id": "ceRbYS5dqBU",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:40:54.116467+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 174,
+    "lesson_html_filename": "the_backup_folder_on_myth_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_backup_folder_on_myth/the_backup_folder_on_myth_transcript.json",
+    "vtt_transcript_path_on_repo": "the_backup_folder_on_myth/the_backup_folder_on_myth_transcript.vtt"
   }
 ]
