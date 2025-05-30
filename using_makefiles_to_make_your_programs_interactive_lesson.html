@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Makefiles to make your programs</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 1.68, "end": 31.33, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 1.68, "end": 2.4799998}, {"id": "sent_0_1", "text": "This video is about how to use the make file to make your programs.", "start": 2.8, "end": 11.599999}, {"id": "sent_0_2", "text": "It's actually very simple.", "start": 11.84, "end": 13.599999}, {"id": "sent_0_3", "text": "There's only a few things you really need to know, but we're gonna dig into, what Make does, a little bit, just to kind of familiarize yourself with it.", "start": 14.125, "end": 23.165}, {"id": "sent_0_4", "text": "If you have a folder, and most of our assignments are going to come with Makefiles built into the starter code.", "start": 23.645, "end": 31.33}]}, {"id": "para_1", "paragraph_idx": 1, "start": 31.49, "end": 78.795, "sentences": [{"id": "sent_1_0", "text": "If you have a make file and you type make, well, it runs a bunch of commands that are built into that make file to actually compile your program using g c c.", "start": 31.49, "end": 40.61}, {"id": "sent_1_1", "text": "So for instance, when I type make, it ended up typing g c c dash g dash o zero dash blah blah blah, and it compiled our program.", "start": 40.61, "end": 49.545}, {"id": "sent_1_2", "text": "And in this case, can say hello, and it actually prints out hello world in three different languages.", "start": 49.545, "end": 55.785}, {"id": "sent_1_3", "text": "So what is a make file and why do we use make?", "start": 56.265, "end": 60.82}, {"id": "sent_1_4", "text": "Well, make files are nice if you have programs that have multiple different program code files like multiple different c files, like you'll notice up here I have helloworld.c and hello language dot c and we also have a hello h file like that.", "start": 60.82, "end": 78.795}]}, {"id": "para_2", "paragraph_idx": 2, "start": 79.675, "end": 121.35, "sentences": [{"id": "sent_2_0", "text": "And make files make it so that you can compile your code and what it does is it only compiles what it needs to based on whether or not you've made changes to the file, since the last time you made, the program.", "start": 79.675, "end": 94.1}, {"id": "sent_2_1", "text": "So, so that's the the basically what you need to know is type make.", "start": 94.340004, "end": 99.380005}, {"id": "sent_2_2", "text": "You can also type generally make clean which will clean up any of the temporary files that may have been stored as you when you've been compiling.", "start": 99.405, "end": 110.924995}, {"id": "sent_2_3", "text": "And it basically cleans the program and makes it so that it does have to recompile everything.", "start": 110.924995, "end": 115.91}, {"id": "sent_2_4", "text": "So for instance, if we type make, it will make our program and then hello will exist.", "start": 116.950005, "end": 121.35}]}, {"id": "para_3", "paragraph_idx": 3, "start": 121.83, "end": 170.88, "sentences": [{"id": "sent_3_0", "text": "And then if we type make again, it will say hello is up to date, meaning that we don't actually need to compile again.", "start": 121.83, "end": 129.855}, {"id": "sent_3_1", "text": "The one thing you do need to remember is when you're using make files, after you make any changes to a program file, text file, a dot c file or header file, you always need to rerun make so that it recompiles your programs.", "start": 129.855, "end": 144.94}, {"id": "sent_3_2", "text": "I don't know how many times I've seen students make some changes to their hello world program And, so watch this.", "start": 144.94, "end": 151.735}, {"id": "sent_3_3", "text": "If we type hello and then hello dot c, oops, that's not it.", "start": 151.735, "end": 156.69499}, {"id": "sent_3_4", "text": "If we look at, hello languages dot c and we go and we say, oh, maybe we wanna put an exclamation point after world like this and we make the change and we save it and whatever and then we try to write hello again and we say, wait, there's no exclamation point.", "start": 156.69499, "end": 170.88}]}, {"id": "para_4", "paragraph_idx": 4, "start": 170.95999, "end": 192.57, "sentences": [{"id": "sent_4_0", "text": "Well, the reason is because we never made the program again.", "start": 170.95999, "end": 173.76}, {"id": "sent_4_1", "text": "So you have to make and it recompiles it for you and then if you type hello, then the exclamation point will be there.", "start": 173.76, "end": 179.535}, {"id": "sent_4_2", "text": "So you have to remember to do that.", "start": 179.775, "end": 181.375}, {"id": "sent_4_3", "text": "Now, very quickly, if we wanna look at the actual make file itself, this one's a very, simple one.", "start": 181.375, "end": 187.135}, {"id": "sent_4_4", "text": "The ones we use for CS one zero seven are generally more advanced, but this gives the basic idea here.", "start": 187.135, "end": 192.57}]}, {"id": "para_5", "paragraph_idx": 5, "start": 192.81, "end": 222.88, "sentences": [{"id": "sent_5_0", "text": "Comments start with a hash and, then we define a couple variables in here.", "start": 192.81, "end": 197.93001}, {"id": "sent_5_1", "text": "In this case, the variable is the compiler we're using, which is GCC, and then some flags, which are just the options we're gonna pass to to the compiler.", "start": 197.93001, "end": 207.095}, {"id": "sent_5_2", "text": "Okay?", "start": 207.255, "end": 207.815}, {"id": "sent_5_3", "text": "And then the next line here is the actual, it says if you're going to do hello, then it says these three files are the ones that can't change.", "start": 207.815, "end": 219.495}, {"id": "sent_5_4", "text": "And if they're not changed, don't need to rerun it.", "start": 220.72, "end": 222.88}]}, {"id": "para_6", "paragraph_idx": 6, "start": 222.88, "end": 237.215, "sentences": [{"id": "sent_6_0", "text": "But if any one of them changes, you need to rerun the following command down here.", "start": 222.88, "end": 227.12001}, {"id": "sent_6_1", "text": "Okay?", "start": 227.44, "end": 227.92}, {"id": "sent_6_2", "text": "And it's just a bunch of dependencies that set it up.", "start": 227.92, "end": 230.64}, {"id": "sent_6_3", "text": "The one interesting thing to note is that this has to be a tab.", "start": 230.64, "end": 235.615}, {"id": "sent_6_4", "text": "It can't be a bunch of spaces.", "start": 235.695, "end": 237.215}]}, {"id": "para_7", "paragraph_idx": 7, "start": 237.215, "end": 267.565, "sentences": [{"id": "sent_7_0", "text": "So if you're ever writing your own make file and it gives you these syntax errors in there, think about, oh, did I make all my tabs correctly?", "start": 237.215, "end": 244.975}, {"id": "sent_7_1", "text": "It's just a weird part of, Nick.", "start": 244.975, "end": 247.34}, {"id": "sent_7_2", "text": "But it basically says, okay, if all these, if something's changed in any of these files, run this command.", "start": 247.34, "end": 253.42}, {"id": "sent_7_3", "text": "Well, it's dollar sign parenthesis c c means just replace this with what c c is, so it says g c c and then then this is replaced with the flag, so dash g dash o zero etcetera.", "start": 253.42, "end": 265.08502}, {"id": "sent_7_4", "text": "And then the rest of this gets compiled.", "start": 265.325, "end": 267.565}]}, {"id": "para_8", "paragraph_idx": 8, "start": 267.965, "end": 291.46503, "sentences": [{"id": "sent_8_0", "text": "And, that's that in the clean command set.", "start": 267.965, "end": 270.285}, {"id": "sent_8_1", "text": "Now by the way, could also type make hello, it'll say hello is up to date.", "start": 270.285, "end": 274.06}, {"id": "sent_8_2", "text": "Make clean removes hello and removes any object files which we'll talk about when we get to that in class.", "start": 274.06, "end": 281.34}, {"id": "sent_8_3", "text": "And then if I type make hello again, it will make it.", "start": 281.5, "end": 284.53998}, {"id": "sent_8_4", "text": "I believe that the first thing that gets, run when you type make is the first one that's that's here.", "start": 285.86502, "end": 291.46503}]}, {"id": "para_9", "paragraph_idx": 9, "start": 291.785, "end": 304.28412, "sentences": [{"id": "sent_9_0", "text": "So that's that's that.", "start": 291.785, "end": 293.465}, {"id": "sent_9_1", "text": "So anyway, using make fairly straightforward.", "start": 293.465, "end": 296.105}, {"id": "sent_9_2", "text": "If you wanna dig into how to actually modify your make files, there are lots of examples online on how to do that.", "start": 296.42502, "end": 303.88412}, {"id": "sent_9_3", "text": "Thanks.", "start": 303.88412, "end": 304.28412}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "CrwBHSeA05Y";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 305;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>Using Makefiles to make your programs</h1>
+                <p>Channel: Chris Gregg | Duration: 05:05</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="1.68" data-end-time="31.33">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="1.68"></div>
+                        <div class="timeline-timestamp">00:01</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="1.68" data-end-time="2.4799998">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="2.8" data-end-time="11.599999">This video is about how to use the make file to make your programs.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="11.84" data-end-time="13.599999">It's actually very simple.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="14.125" data-end-time="23.165">There's only a few things you really need to know, but we're gonna dig into, what Make does, a little bit, just to kind of familiarize yourself with it.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="23.645" data-end-time="31.33">If you have a folder, and most of our assignments are going to come with Makefiles built into the starter code.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="31.49" data-end-time="78.795">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="31.49"></div>
+                        <div class="timeline-timestamp">00:31</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="31.49" data-end-time="40.61">If you have a make file and you type make, well, it runs a bunch of commands that are built into that make file to actually compile your program using g c c.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="40.61" data-end-time="49.545">So for instance, when I type make, it ended up typing g c c dash g dash o zero dash blah blah blah, and it compiled our program.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="49.545" data-end-time="55.785">And in this case, can say hello, and it actually prints out hello world in three different languages.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="56.265" data-end-time="60.82">So what is a make file and why do we use make?</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="60.82" data-end-time="78.795">Well, make files are nice if you have programs that have multiple different program code files like multiple different c files, like you'll notice up here I have helloworld.c and hello language dot c and we also have a hello h file like that.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="79.675" data-end-time="121.35">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="79.675"></div>
+                        <div class="timeline-timestamp">01:19</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="79.675" data-end-time="94.1">And make files make it so that you can compile your code and what it does is it only compiles what it needs to based on whether or not you've made changes to the file, since the last time you made, the program.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="94.340004" data-end-time="99.380005">So, so that's the the basically what you need to know is type make.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="99.405" data-end-time="110.924995">You can also type generally make clean which will clean up any of the temporary files that may have been stored as you when you've been compiling.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="110.924995" data-end-time="115.91">And it basically cleans the program and makes it so that it does have to recompile everything.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="116.950005" data-end-time="121.35">So for instance, if we type make, it will make our program and then hello will exist.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="121.83" data-end-time="170.88">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="121.83"></div>
+                        <div class="timeline-timestamp">02:01</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="121.83" data-end-time="129.855">And then if we type make again, it will say hello is up to date, meaning that we don't actually need to compile again.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="129.855" data-end-time="144.94">The one thing you do need to remember is when you're using make files, after you make any changes to a program file, text file, a dot c file or header file, you always need to rerun make so that it recompiles your programs.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="144.94" data-end-time="151.735">I don't know how many times I've seen students make some changes to their hello world program And, so watch this.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="151.735" data-end-time="156.69499">If we type hello and then hello dot c, oops, that's not it.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="156.69499" data-end-time="170.88">If we look at, hello languages dot c and we go and we say, oh, maybe we wanna put an exclamation point after world like this and we make the change and we save it and whatever and then we try to write hello again and we say, wait, there's no exclamation point.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="170.95999" data-end-time="192.57">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="170.95999"></div>
+                        <div class="timeline-timestamp">02:50</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="170.95999" data-end-time="173.76">Well, the reason is because we never made the program again.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="173.76" data-end-time="179.535">So you have to make and it recompiles it for you and then if you type hello, then the exclamation point will be there.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="179.775" data-end-time="181.375">So you have to remember to do that.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="181.375" data-end-time="187.135">Now, very quickly, if we wanna look at the actual make file itself, this one's a very, simple one.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="187.135" data-end-time="192.57">The ones we use for CS one zero seven are generally more advanced, but this gives the basic idea here.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="192.81" data-end-time="222.88">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="192.81"></div>
+                        <div class="timeline-timestamp">03:12</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="192.81" data-end-time="197.93001">Comments start with a hash and, then we define a couple variables in here.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="197.93001" data-end-time="207.095">In this case, the variable is the compiler we're using, which is GCC, and then some flags, which are just the options we're gonna pass to to the compiler.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="207.255" data-end-time="207.815">Okay?</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="207.815" data-end-time="219.495">And then the next line here is the actual, it says if you're going to do hello, then it says these three files are the ones that can't change.</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="220.72" data-end-time="222.88">And if they're not changed, don't need to rerun it.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="222.88" data-end-time="237.215">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="222.88"></div>
+                        <div class="timeline-timestamp">03:42</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="222.88" data-end-time="227.12001">But if any one of them changes, you need to rerun the following command down here.</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="227.44" data-end-time="227.92">Okay?</span> <span class="transcript-sentence" id="sent_6_2" data-start-time="227.92" data-end-time="230.64">And it's just a bunch of dependencies that set it up.</span> <span class="transcript-sentence" id="sent_6_3" data-start-time="230.64" data-end-time="235.615">The one interesting thing to note is that this has to be a tab.</span> <span class="transcript-sentence" id="sent_6_4" data-start-time="235.695" data-end-time="237.215">It can't be a bunch of spaces.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_7" data-paragraph-idx="7" data-start-time="237.215" data-end-time="267.565">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="237.215"></div>
+                        <div class="timeline-timestamp">03:57</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_7"><span class="transcript-sentence" id="sent_7_0" data-start-time="237.215" data-end-time="244.975">So if you're ever writing your own make file and it gives you these syntax errors in there, think about, oh, did I make all my tabs correctly?</span> <span class="transcript-sentence" id="sent_7_1" data-start-time="244.975" data-end-time="247.34">It's just a weird part of, Nick.</span> <span class="transcript-sentence" id="sent_7_2" data-start-time="247.34" data-end-time="253.42">But it basically says, okay, if all these, if something's changed in any of these files, run this command.</span> <span class="transcript-sentence" id="sent_7_3" data-start-time="253.42" data-end-time="265.08502">Well, it's dollar sign parenthesis c c means just replace this with what c c is, so it says g c c and then then this is replaced with the flag, so dash g dash o zero etcetera.</span> <span class="transcript-sentence" id="sent_7_4" data-start-time="265.325" data-end-time="267.565">And then the rest of this gets compiled.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_8" data-paragraph-idx="8" data-start-time="267.965" data-end-time="291.46503">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="267.965"></div>
+                        <div class="timeline-timestamp">04:27</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_8"><span class="transcript-sentence" id="sent_8_0" data-start-time="267.965" data-end-time="270.285">And, that's that in the clean command set.</span> <span class="transcript-sentence" id="sent_8_1" data-start-time="270.285" data-end-time="274.06">Now by the way, could also type make hello, it'll say hello is up to date.</span> <span class="transcript-sentence" id="sent_8_2" data-start-time="274.06" data-end-time="281.34">Make clean removes hello and removes any object files which we'll talk about when we get to that in class.</span> <span class="transcript-sentence" id="sent_8_3" data-start-time="281.5" data-end-time="284.53998">And then if I type make hello again, it will make it.</span> <span class="transcript-sentence" id="sent_8_4" data-start-time="285.86502" data-end-time="291.46503">I believe that the first thing that gets, run when you type make is the first one that's that's here.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_9" data-paragraph-idx="9" data-start-time="291.785" data-end-time="304.28412">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="291.785"></div>
+                        <div class="timeline-timestamp">04:51</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_9"><span class="transcript-sentence" id="sent_9_0" data-start-time="291.785" data-end-time="293.465">So that's that's that.</span> <span class="transcript-sentence" id="sent_9_1" data-start-time="293.465" data-end-time="296.105">So anyway, using make fairly straightforward.</span> <span class="transcript-sentence" id="sent_9_2" data-start-time="296.42502" data-end-time="303.88412">If you wanna dig into how to actually modify your make files, there are lots of examples online on how to do that.</span> <span class="transcript-sentence" id="sent_9_3" data-start-time="303.88412" data-end-time="304.28412">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

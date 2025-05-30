@@ -1,0 +1,347 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: e16f72d5-d8c7-466d-9b14-8f61e6e7539e
+Created: 2025-05-30T04:49:36.726Z
+Duration: 305.31918
+Channels: 1
+
+00:00:01.680 --> 00:00:05.760
+Hi there. This video is about how to
+
+00:00:05.760 --> 00:00:11.600
+use the make file to make your programs.
+
+00:00:11.840 --> 00:00:15.245
+It's actually very simple. There's only a few
+
+00:00:15.245 --> 00:00:16.685
+things you really need to know, but we're
+
+00:00:16.685 --> 00:00:20.205
+gonna dig into, what Make does, a little
+
+00:00:20.205 --> 00:00:22.765
+bit, just to kind of familiarize yourself with
+
+00:00:22.765 --> 00:00:26.205
+it. If you have a folder, and most
+
+00:00:26.205 --> 00:00:27.725
+of our assignments are going to come with
+
+00:00:27.725 --> 00:00:32.370
+Makefiles built into the starter code. If you
+
+00:00:32.370 --> 00:00:34.610
+have a make file and you type make,
+
+00:00:34.770 --> 00:00:36.610
+well, it runs a bunch of commands that
+
+00:00:36.610 --> 00:00:38.450
+are built into that make file to actually
+
+00:00:38.450 --> 00:00:40.770
+compile your program using g c c. So
+
+00:00:40.770 --> 00:00:43.305
+for instance, when I type make, it ended
+
+00:00:43.305 --> 00:00:45.305
+up typing g c c dash g dash
+
+00:00:45.305 --> 00:00:48.105
+o zero dash blah blah blah, and it
+
+00:00:48.105 --> 00:00:50.585
+compiled our program. And in this case, can
+
+00:00:50.585 --> 00:00:54.185
+say hello, and it actually prints out hello
+
+00:00:54.185 --> 00:00:58.740
+world in three different languages. So what is
+
+00:00:58.740 --> 00:01:00.420
+a make file and why do we use
+
+00:01:00.420 --> 00:01:02.980
+make? Well, make files are nice if you
+
+00:01:02.980 --> 00:01:07.940
+have programs that have multiple different program code
+
+00:01:07.940 --> 00:01:10.660
+files like multiple different c files, like you'll
+
+00:01:10.660 --> 00:01:13.355
+notice up here I have helloworld.c and hello
+
+00:01:13.355 --> 00:01:16.235
+language dot c and we also have a
+
+00:01:16.235 --> 00:01:20.235
+hello h file like that. And make files
+
+00:01:20.235 --> 00:01:23.035
+make it so that you can compile your
+
+00:01:23.035 --> 00:01:25.195
+code and what it does is it only
+
+00:01:25.195 --> 00:01:27.700
+compiles what it needs to based on whether
+
+00:01:27.700 --> 00:01:29.860
+or not you've made changes to the file,
+
+00:01:30.420 --> 00:01:34.100
+since the last time you made, the program.
+
+00:01:34.340 --> 00:01:37.780
+So, so that's the the basically what you
+
+00:01:37.780 --> 00:01:39.885
+need to know is type make. You can
+
+00:01:39.885 --> 00:01:43.005
+also type generally make clean which will clean
+
+00:01:43.005 --> 00:01:46.605
+up any of the temporary files that may
+
+00:01:46.605 --> 00:01:50.205
+have been stored as you when you've been
+
+00:01:50.365 --> 00:01:53.565
+compiling. And it basically cleans the program and
+
+00:01:53.190 --> 00:01:54.630
+makes it so that it does have to
+
+00:01:54.630 --> 00:01:58.310
+recompile everything. So for instance, if we type
+
+00:01:58.310 --> 00:02:00.230
+make, it will make our program and then
+
+00:02:00.230 --> 00:02:03.510
+hello will exist. And then if we type
+
+00:02:03.510 --> 00:02:06.095
+make again, it will say hello is up
+
+00:02:06.095 --> 00:02:08.815
+to date, meaning that we don't actually need
+
+00:02:08.815 --> 00:02:10.655
+to compile again. The one thing you do
+
+00:02:10.655 --> 00:02:12.895
+need to remember is when you're using make
+
+00:02:12.895 --> 00:02:15.695
+files, after you make any changes to a
+
+00:02:15.695 --> 00:02:19.340
+program file, text file, a dot c file
+
+00:02:19.340 --> 00:02:22.620
+or header file, you always need to rerun
+
+00:02:22.620 --> 00:02:25.180
+make so that it recompiles your programs. I
+
+00:02:25.180 --> 00:02:27.100
+don't know how many times I've seen students
+
+00:02:27.100 --> 00:02:30.060
+make some changes to their hello world program
+
+00:02:30.375 --> 00:02:32.615
+And, so watch this. If we type hello
+
+00:02:32.615 --> 00:02:36.455
+and then hello dot c, oops, that's not
+
+00:02:36.455 --> 00:02:40.615
+it. If we look at, hello languages dot
+
+00:02:40.615 --> 00:02:41.895
+c and we go and we say, oh,
+
+00:02:41.895 --> 00:02:43.895
+maybe we wanna put an exclamation point after
+
+00:02:43.895 --> 00:02:46.160
+world like this and we make the change
+
+00:02:46.160 --> 00:02:47.440
+and we save it and whatever and then
+
+00:02:47.440 --> 00:02:48.720
+we try to write hello again and we
+
+00:02:48.720 --> 00:02:51.360
+say, wait, there's no exclamation point. Well, the
+
+00:02:51.360 --> 00:02:53.440
+reason is because we never made the program
+
+00:02:53.440 --> 00:02:54.960
+again. So you have to make and it
+
+00:02:54.960 --> 00:02:56.720
+recompiles it for you and then if you
+
+00:02:56.720 --> 00:02:59.055
+type hello, then the exclamation point will be
+
+00:02:59.055 --> 00:03:00.895
+there. So you have to remember to do
+
+00:03:00.895 --> 00:03:03.695
+that. Now, very quickly, if we wanna look
+
+00:03:03.695 --> 00:03:06.175
+at the actual make file itself, this one's
+
+00:03:06.175 --> 00:03:07.695
+a very, simple one. The ones we use
+
+00:03:07.695 --> 00:03:09.935
+for CS one zero seven are generally more
+
+00:03:09.935 --> 00:03:12.570
+advanced, but this gives the basic idea here.
+
+00:03:12.810 --> 00:03:16.250
+Comments start with a hash and, then we
+
+00:03:16.250 --> 00:03:18.170
+define a couple variables in here. In this
+
+00:03:18.170 --> 00:03:20.250
+case, the variable is the compiler we're using,
+
+00:03:20.250 --> 00:03:22.970
+which is GCC, and then some flags, which
+
+00:03:22.970 --> 00:03:24.890
+are just the options we're gonna pass to
+
+00:03:25.815 --> 00:03:28.935
+to the compiler. Okay? And then the next
+
+00:03:28.935 --> 00:03:32.375
+line here is the actual, it says if
+
+00:03:32.375 --> 00:03:37.095
+you're going to do hello, then it says
+
+00:03:37.095 --> 00:03:39.175
+these three files are the ones that can't
+
+00:03:39.175 --> 00:03:42.320
+change. And if they're not changed, don't need
+
+00:03:42.320 --> 00:03:43.600
+to rerun it. But if any one of
+
+00:03:43.600 --> 00:03:45.920
+them changes, you need to rerun the following
+
+00:03:45.920 --> 00:03:48.800
+command down here. Okay? And it's just a
+
+00:03:48.800 --> 00:03:50.960
+bunch of dependencies that set it up. The
+
+00:03:50.960 --> 00:03:53.040
+one interesting thing to note is that this
+
+00:03:54.175 --> 00:03:56.335
+has to be a tab. It can't be
+
+00:03:56.335 --> 00:03:57.695
+a bunch of spaces. So if you're ever
+
+00:03:57.695 --> 00:03:59.055
+writing your own make file and it gives
+
+00:03:59.055 --> 00:04:01.375
+you these syntax errors in there, think about,
+
+00:04:01.375 --> 00:04:04.975
+oh, did I make all my tabs correctly?
+
+00:04:04.975 --> 00:04:07.500
+It's just a weird part of, Nick. But
+
+00:04:07.500 --> 00:04:10.540
+it basically says, okay, if all these, if
+
+00:04:10.540 --> 00:04:12.860
+something's changed in any of these files, run
+
+00:04:12.860 --> 00:04:15.500
+this command. Well, it's dollar sign parenthesis c
+
+00:04:15.500 --> 00:04:18.300
+c means just replace this with what c
+
+00:04:18.300 --> 00:04:19.580
+c is, so it says g c c
+
+00:04:19.580 --> 00:04:21.965
+and then then this is replaced with the
+
+00:04:21.965 --> 00:04:25.085
+flag, so dash g dash o zero etcetera.
+
+00:04:25.325 --> 00:04:27.565
+And then the rest of this gets compiled.
+
+00:04:27.965 --> 00:04:30.285
+And, that's that in the clean command set.
+
+00:04:30.285 --> 00:04:31.725
+Now by the way, could also type make
+
+00:04:31.725 --> 00:04:34.060
+hello, it'll say hello is up to date.
+
+00:04:34.060 --> 00:04:38.540
+Make clean removes hello and removes any object
+
+00:04:38.540 --> 00:04:40.300
+files which we'll talk about when we get
+
+00:04:40.300 --> 00:04:42.140
+to that in class. And then if I
+
+00:04:42.140 --> 00:04:44.540
+type make hello again, it will make it.
+
+00:04:45.865 --> 00:04:48.265
+I believe that the first thing that gets,
+
+00:04:48.505 --> 00:04:49.945
+run when you type make is the first
+
+00:04:49.945 --> 00:04:53.465
+one that's that's here. So that's that's that.
+
+00:04:53.465 --> 00:04:56.745
+So anyway, using make fairly straightforward. If you
+
+00:04:56.745 --> 00:05:00.444
+wanna dig into how to actually modify your
+
+00:05:00.444 --> 00:05:02.684
+make files, there are lots of examples online
+
+00:05:02.684 --> 00:05:04.284
+on how to do that. Thanks.
