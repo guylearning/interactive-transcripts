@@ -640,5 +640,17 @@
     "lesson_html_filename": "the_tar_command_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_tar_command/the_tar_command_transcript.json",
     "vtt_transcript_path_on_repo": "the_tar_command/the_tar_command_transcript.vtt"
+  },
+  {
+    "title_original": "The linux history command",
+    "video_name_clean": "the_linux_history_command",
+    "youtube_id": "BSBGbHYXo8I",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:47:09.113751+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 218,
+    "lesson_html_filename": "the_linux_history_command_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_linux_history_command/the_linux_history_command_transcript.json",
+    "vtt_transcript_path_on_repo": "the_linux_history_command/the_linux_history_command_transcript.vtt"
   }
 ]
