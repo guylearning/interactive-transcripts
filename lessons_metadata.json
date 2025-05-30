@@ -724,5 +724,17 @@
     "lesson_html_filename": "a_very_brief_guide_to_gdb_interactive_lesson.html",
     "json_transcript_path_on_repo": "a_very_brief_guide_to_gdb/a_very_brief_guide_to_gdb_transcript.json",
     "vtt_transcript_path_on_repo": "a_very_brief_guide_to_gdb/a_very_brief_guide_to_gdb_transcript.vtt"
+  },
+  {
+    "title_original": "The vim editor",
+    "video_name_clean": "the_vim_editor",
+    "youtube_id": "xsI-pmMpfBo",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:51:42.800144+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 400,
+    "lesson_html_filename": "the_vim_editor_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_vim_editor/the_vim_editor_transcript.json",
+    "vtt_transcript_path_on_repo": "the_vim_editor/the_vim_editor_transcript.vtt"
   }
 ]

@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The vim editor</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 0.64, "end": 26.525, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 0.64, "end": 1.44}, {"id": "sent_0_1", "text": "This is going to be a very quick tutorial on how to get up to speed in the VIM editor, which is one of the common editors available on Unix systems, the other being Emacs.", "start": 1.8399999, "end": 13.5199995}, {"id": "sent_0_2", "text": "I happen to like them a lot, I think it's a great editor and I use it extensively.", "start": 13.965, "end": 18.685}, {"id": "sent_0_3", "text": "But some people don't love it.", "start": 19.005001, "end": 21.085}, {"id": "sent_0_4", "text": "So I will show you how to exit it if you accidentally ever end up in VIM, which is a common question.", "start": 21.085, "end": 26.525}]}, {"id": "para_1", "paragraph_idx": 1, "start": 27.9, "end": 59.33, "sentences": [{"id": "sent_1_0", "text": "So one thing that, well first things first, if you open, if you type VIM and then open a file, it will read the file, if the file doesn't exist, it will create one for you.", "start": 27.9, "end": 38.54}, {"id": "sent_1_1", "text": "And in VAM you start in what we call command mode.", "start": 39.115, "end": 43.115}, {"id": "sent_1_2", "text": "And command mode means that you can move around the file.", "start": 43.355003, "end": 46.715}, {"id": "sent_1_3", "text": "I can either move with the arrow keys or with the special keys on the home row, namely H, J, K, and L on the home row.", "start": 47.675003, "end": 58.37}, {"id": "sent_1_4", "text": "Here's how it works.", "start": 58.53, "end": 59.33}]}, {"id": "para_2", "paragraph_idx": 2, "start": 59.489998, "end": 99.135, "sentences": [{"id": "sent_2_0", "text": "J goes down, K goes up, H goes to the left, and L goes to the right.", "start": 59.489998, "end": 64.05}, {"id": "sent_2_1", "text": "And the nice thing about that is that you don't need to move your hand from the home row, so it's very, fast to actually go left, right, etcetera.", "start": 64.725, "end": 70.965004}, {"id": "sent_2_2", "text": "Some of the other keys that are, interesting and also very accessible are, to go to the next word, just type w and it will go word by word and it defines words sometimes a little strangely but it will go word to word by word.", "start": 71.285, "end": 83.64}, {"id": "sent_2_3", "text": "If you wanna go backwards through words, just b, we'll go back through words.", "start": 83.64, "end": 87.32}, {"id": "sent_2_4", "text": "You can also do things like control f to go page down and control up, control b to go page up.", "start": 88.03999, "end": 99.135}]}, {"id": "para_3", "paragraph_idx": 3, "start": 100.255, "end": 118.06, "sentences": [{"id": "sent_3_0", "text": "If you wanna go to a particular line, you can just type colon and then the line number.", "start": 100.255, "end": 106.095}, {"id": "sent_3_1", "text": "So colon seven will go to line seven.", "start": 106.095, "end": 108.495}, {"id": "sent_3_2", "text": "You could also type seven and then uppercase g.", "start": 109.34, "end": 112.299995}, {"id": "sent_3_3", "text": "Let's try a different one.", "start": 112.299995, "end": 113.18}, {"id": "sent_3_4", "text": "Let's say, let's from here let's go five uppercase g and it goes right there.", "start": 113.18, "end": 118.06}]}, {"id": "para_4", "paragraph_idx": 4, "start": 118.299995, "end": 135.81, "sentences": [{"id": "sent_4_0", "text": "We could have also typed the colon key to do that.", "start": 118.299995, "end": 121.659996}, {"id": "sent_4_1", "text": "If you wanna go to the top of the file, g g, lowercase g, lowercase g gets right to the top.", "start": 121.925, "end": 126.565}, {"id": "sent_4_2", "text": "Uppercase g on its own goes right to the bottom of the file.", "start": 126.565, "end": 129.605}, {"id": "sent_4_3", "text": "So lots of quick ways to get around the file when you're in command mode.", "start": 129.605, "end": 135.045}, {"id": "sent_4_4", "text": "Okay?", "start": 135.17, "end": 135.81}]}, {"id": "para_5", "paragraph_idx": 5, "start": 136.29, "end": 161.465, "sentences": [{"id": "sent_5_0", "text": "If you actually do wanna type text and an editor, you generally do, you can go into what we call insert mode.", "start": 136.29, "end": 142.13}, {"id": "sent_5_1", "text": "And in insert mode, you can, you just type the I key and notice down here it actually says that you are in insert mode and that means that you can now type things.", "start": 142.61, "end": 154.505}, {"id": "sent_5_2", "text": "Okay, like that.", "start": 154.745, "end": 155.785}, {"id": "sent_5_3", "text": "Alright.", "start": 156.105, "end": 156.745}, {"id": "sent_5_4", "text": "And you can use the backspace key and so forth and the arrow keys do work in command mode.", "start": 156.745, "end": 161.465}]}, {"id": "para_6", "paragraph_idx": 6, "start": 161.99, "end": 185.25499, "sentences": [{"id": "sent_6_0", "text": "In the original VI editor they did not as it turns out but in here they do.", "start": 161.99, "end": 166.71}, {"id": "sent_6_1", "text": "And so there's lots of other ones if you wanna delete a line you hit d twice, d d deletes the line, etcetera.", "start": 167.03, "end": 172.79001}, {"id": "sent_6_2", "text": "But lots of people ask how do I exit VIM because I'm not a VIM person.", "start": 173.67, "end": 178.055}, {"id": "sent_6_3", "text": "Well, first things first to go out of insert mode.", "start": 178.055, "end": 181.495}, {"id": "sent_6_4", "text": "If I was in insert mode, I wanna go out of insert mode, I type the escape key.", "start": 181.495, "end": 185.25499}]}, {"id": "para_7", "paragraph_idx": 7, "start": 185.25499, "end": 202.70001, "sentences": [{"id": "sent_7_0", "text": "And I just hit the escape key and that takes us back to command mode.", "start": 185.25499, "end": 187.575}, {"id": "sent_7_1", "text": "And then to quit, you type colon q and that will quit.", "start": 187.98001, "end": 191.66}, {"id": "sent_7_2", "text": "Now, if there are no changes that will quit.", "start": 191.66, "end": 193.66}, {"id": "sent_7_3", "text": "If I hit enter, it says no right since last change, add exclamation point to override.", "start": 193.66, "end": 198.3}, {"id": "sent_7_4", "text": "So if I did colon q exclamation point, it would save without my changes.", "start": 198.3, "end": 202.70001}]}, {"id": "para_8", "paragraph_idx": 8, "start": 203.225, "end": 229.76001, "sentences": [{"id": "sent_8_0", "text": "Let's say I actually wanna save the changes, you can do colon w, that will write the file and save the changes like that.", "start": 203.225, "end": 210.345}, {"id": "sent_8_1", "text": "You can also do colon w q, which will quit the, program after writing the changes.", "start": 210.505, "end": 217.385}, {"id": "sent_8_2", "text": "I like to abbreviate that with whatever reason this is the abbreviation, it's colon x means basically exit with saving your changes.", "start": 217.385, "end": 224.40001}, {"id": "sent_8_3", "text": "Okay, and that will exit you out of VIM.", "start": 224.56, "end": 227.12001}, {"id": "sent_8_4", "text": "Okay, what else can we do with VIM that's kinda cool?", "start": 227.36, "end": 229.76001}]}, {"id": "para_9", "paragraph_idx": 9, "start": 229.76001, "end": 253.32, "sentences": [{"id": "sent_9_0", "text": "We can search for things.", "start": 229.76001, "end": 230.96}, {"id": "sent_9_1", "text": "If you type slash and then start typing something like for instance, print and then enter, it will jump to the first line that has print on it.", "start": 230.96, "end": 240.685}, {"id": "sent_9_2", "text": "If I was back up at the top and I just typed slash o, it will find the first instance of o, which is kind of nice.", "start": 240.845, "end": 246.44499}, {"id": "sent_9_3", "text": "But what if that wasn't the one I wanted to do?", "start": 246.44499, "end": 247.965}, {"id": "sent_9_4", "text": "Well, all I need to do is hit lowercase n and it will find the next one and lowercase m will find the next one.", "start": 248.04, "end": 253.32}]}, {"id": "para_10", "paragraph_idx": 10, "start": 253.56, "end": 278.84, "sentences": [{"id": "sent_10_0", "text": "If I keep hitting lowercase n, it'll just kind of cycle through the whole file.", "start": 253.56, "end": 257.24}, {"id": "sent_10_1", "text": "If I wanna go back to a previous o for instance, I would type shift n and that's how it works.", "start": 257.24, "end": 266.085}, {"id": "sent_10_2", "text": "Okay.", "start": 266.32498, "end": 266.725}, {"id": "sent_10_3", "text": "So very easy to find things, very easy to do that.", "start": 266.725, "end": 269.365}, {"id": "sent_10_4", "text": "Other interesting things, if I wanna start editing text at the end of this line, I can type the a, uppercase a and I go into insert mode at the end of the line.", "start": 269.525, "end": 278.84}]}, {"id": "para_11", "paragraph_idx": 11, "start": 278.84, "end": 303.52, "sentences": [{"id": "sent_11_0", "text": "Sometimes that's important.", "start": 278.84, "end": 280.12}, {"id": "sent_11_1", "text": "Right?", "start": 280.28, "end": 280.75998}, {"id": "sent_11_2", "text": "If I wanna go to the beginning of the line in command mode, I just type zero.", "start": 281.0, "end": 284.19998}, {"id": "sent_11_3", "text": "If I wanna go to the end, I type dollar sign and you might be saying to yourself, these are weird things to remember and I agree.", "start": 284.19998, "end": 289.915}, {"id": "sent_11_4", "text": "Some of the things are a little bit hard to remember the first few times you do them but the more you get used to it the faster and faster you will be as you go through learning VIM.", "start": 289.915, "end": 303.52}]}, {"id": "para_12", "paragraph_idx": 12, "start": 304.16, "end": 362.23, "sentences": [{"id": "sent_12_0", "text": "So there's lots and lots to learn, you can check out a zillion different tutorials online, in fact there's a tutorial built into the Unix system called VIMTutor which will bring up VimTutor and it says here's how you actually do it and if you scroll down it will say lesson one, moving the cursor and it tells you how to move the cursor, etcetera, etcetera.", "start": 304.16, "end": 326.08502}, {"id": "sent_12_1", "text": "And you should maybe practice that if you want.", "start": 327.765, "end": 330.405}, {"id": "sent_12_2", "text": "There is another very cool VIM tutor if you want to go to the internet and type VIM adventures.", "start": 330.48502, "end": 341.26}, {"id": "sent_12_3", "text": "Type VIM adventures it will bring up a VIM adventures there and it is a little game to show you how to do this.", "start": 342.3, "end": 353.555}, {"id": "sent_12_4", "text": "So you use the use the little keys, hooray, etcetera and you go and you you can look at lots of different, fun things.", "start": 353.555, "end": 362.23}]}, {"id": "para_13", "paragraph_idx": 13, "start": 362.23, "end": 374.595, "sentences": [{"id": "sent_13_0", "text": "And, there's sound on here.", "start": 362.23, "end": 363.43002}, {"id": "sent_13_1", "text": "I don't know if you can hear the sound, you probably can't, but there's sound coming through my headphones.", "start": 363.43002, "end": 367.19}, {"id": "sent_13_2", "text": "So it's a it's a fun game to learn how to use VIM.", "start": 367.19, "end": 369.75003}, {"id": "sent_13_3", "text": "So anyway, that's VIM.", "start": 370.07, "end": 372.39}, {"id": "sent_13_4", "text": "I think it is a great editor.", "start": 372.435, "end": 374.595}]}, {"id": "para_14", "paragraph_idx": 14, "start": 374.595, "end": 398.03, "sentences": [{"id": "sent_14_0", "text": "It does have a bit of a steep learning curve.", "start": 374.595, "end": 376.995}, {"id": "sent_14_1", "text": "You don't learn VIM in one day, but if you keep learning, over time, you will become very, very fast.", "start": 377.315, "end": 383.875}, {"id": "sent_14_2", "text": "And the other nice thing about VIM is it's available on virtually every Linux system, kinda straight out of the box.", "start": 384.115, "end": 390.27}, {"id": "sent_14_3", "text": "If VIM isn't there, then VI is and VI is, what VIM is based on.", "start": 390.27, "end": 395.71}, {"id": "sent_14_4", "text": "So that is VIM.", "start": 395.71, "end": 398.03}]}, {"id": "para_15", "paragraph_idx": 15, "start": 398.03, "end": 398.35, "sentences": [{"id": "sent_15_0", "text": "Thanks.", "start": 398.03, "end": 398.35}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "xsI-pmMpfBo";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 400;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>The vim editor</h1>
+                <p>Channel: Chris Gregg | Duration: 06:40</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="0.64" data-end-time="26.525">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="0.64"></div>
+                        <div class="timeline-timestamp">00:00</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="0.64" data-end-time="1.44">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="1.8399999" data-end-time="13.5199995">This is going to be a very quick tutorial on how to get up to speed in the VIM editor, which is one of the common editors available on Unix systems, the other being Emacs.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="13.965" data-end-time="18.685">I happen to like them a lot, I think it's a great editor and I use it extensively.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="19.005001" data-end-time="21.085">But some people don't love it.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="21.085" data-end-time="26.525">So I will show you how to exit it if you accidentally ever end up in VIM, which is a common question.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="27.9" data-end-time="59.33">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="27.9"></div>
+                        <div class="timeline-timestamp">00:27</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="27.9" data-end-time="38.54">So one thing that, well first things first, if you open, if you type VIM and then open a file, it will read the file, if the file doesn't exist, it will create one for you.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="39.115" data-end-time="43.115">And in VAM you start in what we call command mode.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="43.355003" data-end-time="46.715">And command mode means that you can move around the file.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="47.675003" data-end-time="58.37">I can either move with the arrow keys or with the special keys on the home row, namely H, J, K, and L on the home row.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="58.53" data-end-time="59.33">Here's how it works.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="59.489998" data-end-time="99.135">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="59.489998"></div>
+                        <div class="timeline-timestamp">00:59</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="59.489998" data-end-time="64.05">J goes down, K goes up, H goes to the left, and L goes to the right.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="64.725" data-end-time="70.965004">And the nice thing about that is that you don't need to move your hand from the home row, so it's very, fast to actually go left, right, etcetera.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="71.285" data-end-time="83.64">Some of the other keys that are, interesting and also very accessible are, to go to the next word, just type w and it will go word by word and it defines words sometimes a little strangely but it will go word to word by word.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="83.64" data-end-time="87.32">If you wanna go backwards through words, just b, we'll go back through words.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="88.03999" data-end-time="99.135">You can also do things like control f to go page down and control up, control b to go page up.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="100.255" data-end-time="118.06">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="100.255"></div>
+                        <div class="timeline-timestamp">01:40</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="100.255" data-end-time="106.095">If you wanna go to a particular line, you can just type colon and then the line number.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="106.095" data-end-time="108.495">So colon seven will go to line seven.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="109.34" data-end-time="112.299995">You could also type seven and then uppercase g.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="112.299995" data-end-time="113.18">Let's try a different one.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="113.18" data-end-time="118.06">Let's say, let's from here let's go five uppercase g and it goes right there.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="118.299995" data-end-time="135.81">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="118.299995"></div>
+                        <div class="timeline-timestamp">01:58</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="118.299995" data-end-time="121.659996">We could have also typed the colon key to do that.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="121.925" data-end-time="126.565">If you wanna go to the top of the file, g g, lowercase g, lowercase g gets right to the top.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="126.565" data-end-time="129.605">Uppercase g on its own goes right to the bottom of the file.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="129.605" data-end-time="135.045">So lots of quick ways to get around the file when you're in command mode.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="135.17" data-end-time="135.81">Okay?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="136.29" data-end-time="161.465">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="136.29"></div>
+                        <div class="timeline-timestamp">02:16</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="136.29" data-end-time="142.13">If you actually do wanna type text and an editor, you generally do, you can go into what we call insert mode.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="142.61" data-end-time="154.505">And in insert mode, you can, you just type the I key and notice down here it actually says that you are in insert mode and that means that you can now type things.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="154.745" data-end-time="155.785">Okay, like that.</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="156.105" data-end-time="156.745">Alright.</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="156.745" data-end-time="161.465">And you can use the backspace key and so forth and the arrow keys do work in command mode.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="161.99" data-end-time="185.25499">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="161.99"></div>
+                        <div class="timeline-timestamp">02:41</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="161.99" data-end-time="166.71">In the original VI editor they did not as it turns out but in here they do.</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="167.03" data-end-time="172.79001">And so there's lots of other ones if you wanna delete a line you hit d twice, d d deletes the line, etcetera.</span> <span class="transcript-sentence" id="sent_6_2" data-start-time="173.67" data-end-time="178.055">But lots of people ask how do I exit VIM because I'm not a VIM person.</span> <span class="transcript-sentence" id="sent_6_3" data-start-time="178.055" data-end-time="181.495">Well, first things first to go out of insert mode.</span> <span class="transcript-sentence" id="sent_6_4" data-start-time="181.495" data-end-time="185.25499">If I was in insert mode, I wanna go out of insert mode, I type the escape key.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_7" data-paragraph-idx="7" data-start-time="185.25499" data-end-time="202.70001">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="185.25499"></div>
+                        <div class="timeline-timestamp">03:05</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_7"><span class="transcript-sentence" id="sent_7_0" data-start-time="185.25499" data-end-time="187.575">And I just hit the escape key and that takes us back to command mode.</span> <span class="transcript-sentence" id="sent_7_1" data-start-time="187.98001" data-end-time="191.66">And then to quit, you type colon q and that will quit.</span> <span class="transcript-sentence" id="sent_7_2" data-start-time="191.66" data-end-time="193.66">Now, if there are no changes that will quit.</span> <span class="transcript-sentence" id="sent_7_3" data-start-time="193.66" data-end-time="198.3">If I hit enter, it says no right since last change, add exclamation point to override.</span> <span class="transcript-sentence" id="sent_7_4" data-start-time="198.3" data-end-time="202.70001">So if I did colon q exclamation point, it would save without my changes.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_8" data-paragraph-idx="8" data-start-time="203.225" data-end-time="229.76001">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="203.225"></div>
+                        <div class="timeline-timestamp">03:23</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_8"><span class="transcript-sentence" id="sent_8_0" data-start-time="203.225" data-end-time="210.345">Let's say I actually wanna save the changes, you can do colon w, that will write the file and save the changes like that.</span> <span class="transcript-sentence" id="sent_8_1" data-start-time="210.505" data-end-time="217.385">You can also do colon w q, which will quit the, program after writing the changes.</span> <span class="transcript-sentence" id="sent_8_2" data-start-time="217.385" data-end-time="224.40001">I like to abbreviate that with whatever reason this is the abbreviation, it's colon x means basically exit with saving your changes.</span> <span class="transcript-sentence" id="sent_8_3" data-start-time="224.56" data-end-time="227.12001">Okay, and that will exit you out of VIM.</span> <span class="transcript-sentence" id="sent_8_4" data-start-time="227.36" data-end-time="229.76001">Okay, what else can we do with VIM that's kinda cool?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_9" data-paragraph-idx="9" data-start-time="229.76001" data-end-time="253.32">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="229.76001"></div>
+                        <div class="timeline-timestamp">03:49</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_9"><span class="transcript-sentence" id="sent_9_0" data-start-time="229.76001" data-end-time="230.96">We can search for things.</span> <span class="transcript-sentence" id="sent_9_1" data-start-time="230.96" data-end-time="240.685">If you type slash and then start typing something like for instance, print and then enter, it will jump to the first line that has print on it.</span> <span class="transcript-sentence" id="sent_9_2" data-start-time="240.845" data-end-time="246.44499">If I was back up at the top and I just typed slash o, it will find the first instance of o, which is kind of nice.</span> <span class="transcript-sentence" id="sent_9_3" data-start-time="246.44499" data-end-time="247.965">But what if that wasn't the one I wanted to do?</span> <span class="transcript-sentence" id="sent_9_4" data-start-time="248.04" data-end-time="253.32">Well, all I need to do is hit lowercase n and it will find the next one and lowercase m will find the next one.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_10" data-paragraph-idx="10" data-start-time="253.56" data-end-time="278.84">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="253.56"></div>
+                        <div class="timeline-timestamp">04:13</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_10"><span class="transcript-sentence" id="sent_10_0" data-start-time="253.56" data-end-time="257.24">If I keep hitting lowercase n, it'll just kind of cycle through the whole file.</span> <span class="transcript-sentence" id="sent_10_1" data-start-time="257.24" data-end-time="266.085">If I wanna go back to a previous o for instance, I would type shift n and that's how it works.</span> <span class="transcript-sentence" id="sent_10_2" data-start-time="266.32498" data-end-time="266.725">Okay.</span> <span class="transcript-sentence" id="sent_10_3" data-start-time="266.725" data-end-time="269.365">So very easy to find things, very easy to do that.</span> <span class="transcript-sentence" id="sent_10_4" data-start-time="269.525" data-end-time="278.84">Other interesting things, if I wanna start editing text at the end of this line, I can type the a, uppercase a and I go into insert mode at the end of the line.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_11" data-paragraph-idx="11" data-start-time="278.84" data-end-time="303.52">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="278.84"></div>
+                        <div class="timeline-timestamp">04:38</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_11"><span class="transcript-sentence" id="sent_11_0" data-start-time="278.84" data-end-time="280.12">Sometimes that's important.</span> <span class="transcript-sentence" id="sent_11_1" data-start-time="280.28" data-end-time="280.75998">Right?</span> <span class="transcript-sentence" id="sent_11_2" data-start-time="281.0" data-end-time="284.19998">If I wanna go to the beginning of the line in command mode, I just type zero.</span> <span class="transcript-sentence" id="sent_11_3" data-start-time="284.19998" data-end-time="289.915">If I wanna go to the end, I type dollar sign and you might be saying to yourself, these are weird things to remember and I agree.</span> <span class="transcript-sentence" id="sent_11_4" data-start-time="289.915" data-end-time="303.52">Some of the things are a little bit hard to remember the first few times you do them but the more you get used to it the faster and faster you will be as you go through learning VIM.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_12" data-paragraph-idx="12" data-start-time="304.16" data-end-time="362.23">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="304.16"></div>
+                        <div class="timeline-timestamp">05:04</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_12"><span class="transcript-sentence" id="sent_12_0" data-start-time="304.16" data-end-time="326.08502">So there's lots and lots to learn, you can check out a zillion different tutorials online, in fact there's a tutorial built into the Unix system called VIMTutor which will bring up VimTutor and it says here's how you actually do it and if you scroll down it will say lesson one, moving the cursor and it tells you how to move the cursor, etcetera, etcetera.</span> <span class="transcript-sentence" id="sent_12_1" data-start-time="327.765" data-end-time="330.405">And you should maybe practice that if you want.</span> <span class="transcript-sentence" id="sent_12_2" data-start-time="330.48502" data-end-time="341.26">There is another very cool VIM tutor if you want to go to the internet and type VIM adventures.</span> <span class="transcript-sentence" id="sent_12_3" data-start-time="342.3" data-end-time="353.555">Type VIM adventures it will bring up a VIM adventures there and it is a little game to show you how to do this.</span> <span class="transcript-sentence" id="sent_12_4" data-start-time="353.555" data-end-time="362.23">So you use the use the little keys, hooray, etcetera and you go and you you can look at lots of different, fun things.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_13" data-paragraph-idx="13" data-start-time="362.23" data-end-time="374.595">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="362.23"></div>
+                        <div class="timeline-timestamp">06:02</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_13"><span class="transcript-sentence" id="sent_13_0" data-start-time="362.23" data-end-time="363.43002">And, there's sound on here.</span> <span class="transcript-sentence" id="sent_13_1" data-start-time="363.43002" data-end-time="367.19">I don't know if you can hear the sound, you probably can't, but there's sound coming through my headphones.</span> <span class="transcript-sentence" id="sent_13_2" data-start-time="367.19" data-end-time="369.75003">So it's a it's a fun game to learn how to use VIM.</span> <span class="transcript-sentence" id="sent_13_3" data-start-time="370.07" data-end-time="372.39">So anyway, that's VIM.</span> <span class="transcript-sentence" id="sent_13_4" data-start-time="372.435" data-end-time="374.595">I think it is a great editor.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_14" data-paragraph-idx="14" data-start-time="374.595" data-end-time="398.03">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="374.595"></div>
+                        <div class="timeline-timestamp">06:14</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_14"><span class="transcript-sentence" id="sent_14_0" data-start-time="374.595" data-end-time="376.995">It does have a bit of a steep learning curve.</span> <span class="transcript-sentence" id="sent_14_1" data-start-time="377.315" data-end-time="383.875">You don't learn VIM in one day, but if you keep learning, over time, you will become very, very fast.</span> <span class="transcript-sentence" id="sent_14_2" data-start-time="384.115" data-end-time="390.27">And the other nice thing about VIM is it's available on virtually every Linux system, kinda straight out of the box.</span> <span class="transcript-sentence" id="sent_14_3" data-start-time="390.27" data-end-time="395.71">If VIM isn't there, then VI is and VI is, what VIM is based on.</span> <span class="transcript-sentence" id="sent_14_4" data-start-time="395.71" data-end-time="398.03">So that is VIM.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_15" data-paragraph-idx="15" data-start-time="398.03" data-end-time="398.35">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="398.03"></div>
+                        <div class="timeline-timestamp">06:38</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_15"><span class="transcript-sentence" id="sent_15_0" data-start-time="398.03" data-end-time="398.35">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

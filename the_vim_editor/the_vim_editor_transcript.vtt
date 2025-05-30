@@ -1,0 +1,479 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: e3982982-a34f-4f07-b8b8-447dd8332aff
+Created: 2025-05-30T04:51:42.037Z
+Duration: 399.88245
+Channels: 1
+
+00:00:00.640 --> 00:00:02.800
+Hi there. This is going to be a
+
+00:00:02.800 --> 00:00:05.520
+very quick tutorial on how to get up
+
+00:00:05.520 --> 00:00:08.160
+to speed in the VIM editor, which is
+
+00:00:08.160 --> 00:00:11.920
+one of the common editors available on Unix
+
+00:00:11.920 --> 00:00:14.605
+systems, the other being Emacs. I happen to
+
+00:00:14.605 --> 00:00:15.965
+like them a lot, I think it's a
+
+00:00:15.965 --> 00:00:19.565
+great editor and I use it extensively. But
+
+00:00:19.725 --> 00:00:22.445
+some people don't love it. So I will
+
+00:00:22.445 --> 00:00:23.565
+show you how to exit it if you
+
+00:00:23.565 --> 00:00:25.805
+accidentally ever end up in VIM, which is
+
+00:00:25.805 --> 00:00:30.140
+a common question. So one thing that, well
+
+00:00:30.140 --> 00:00:32.460
+first things first, if you open, if you
+
+00:00:32.460 --> 00:00:35.180
+type VIM and then open a file, it
+
+00:00:35.180 --> 00:00:37.420
+will read the file, if the file doesn't
+
+00:00:37.420 --> 00:00:39.675
+exist, it will create one for you. And
+
+00:00:39.675 --> 00:00:41.915
+in VAM you start in what we call
+
+00:00:41.915 --> 00:00:45.115
+command mode. And command mode means that you
+
+00:00:45.115 --> 00:00:48.475
+can move around the file. I can either
+
+00:00:48.475 --> 00:00:52.290
+move with the arrow keys or with the
+
+00:00:52.290 --> 00:00:55.570
+special keys on the home row, namely H,
+
+00:00:55.570 --> 00:00:58.370
+J, K, and L on the home row.
+
+00:00:58.530 --> 00:01:00.930
+Here's how it works. J goes down, K
+
+00:01:00.930 --> 00:01:03.090
+goes up, H goes to the left, and
+
+00:01:03.090 --> 00:01:05.525
+L goes to the right. And the nice
+
+00:01:05.525 --> 00:01:06.645
+thing about that is that you don't need
+
+00:01:06.645 --> 00:01:07.925
+to move your hand from the home row,
+
+00:01:07.925 --> 00:01:10.165
+so it's very, fast to actually go left,
+
+00:01:10.165 --> 00:01:12.405
+right, etcetera. Some of the other keys that
+
+00:01:12.405 --> 00:01:15.605
+are, interesting and also very accessible are, to
+
+00:01:15.605 --> 00:01:17.765
+go to the next word, just type w
+
+00:01:17.765 --> 00:01:20.040
+and it will go word by word and
+
+00:01:20.040 --> 00:01:22.200
+it defines words sometimes a little strangely but
+
+00:01:22.200 --> 00:01:23.640
+it will go word to word by word.
+
+00:01:23.640 --> 00:01:25.480
+If you wanna go backwards through words, just
+
+00:01:25.480 --> 00:01:28.600
+b, we'll go back through words. You can
+
+00:01:28.600 --> 00:01:32.440
+also do things like control f to go
+
+00:01:32.440 --> 00:01:36.655
+page down and control up, control b to
+
+00:01:36.655 --> 00:01:41.135
+go page up. If you wanna go to
+
+00:01:41.135 --> 00:01:44.255
+a particular line, you can just type colon
+
+00:01:44.255 --> 00:01:47.295
+and then the line number. So colon seven
+
+00:01:47.295 --> 00:01:50.060
+will go to line seven. You could also
+
+00:01:50.060 --> 00:01:52.620
+type seven and then uppercase g. Let's try
+
+00:01:52.620 --> 00:01:55.260
+a different one. Let's say, let's from here
+
+00:01:55.260 --> 00:01:57.420
+let's go five uppercase g and it goes
+
+00:01:57.420 --> 00:02:00.620
+right there. We could have also typed the
+
+00:02:00.620 --> 00:02:02.405
+colon key to do that. If you wanna
+
+00:02:02.405 --> 00:02:03.845
+go to the top of the file, g
+
+00:02:03.845 --> 00:02:05.925
+g, lowercase g, lowercase g gets right to
+
+00:02:05.925 --> 00:02:08.245
+the top. Uppercase g on its own goes
+
+00:02:08.245 --> 00:02:09.925
+right to the bottom of the file. So
+
+00:02:09.925 --> 00:02:13.045
+lots of quick ways to get around the
+
+00:02:13.445 --> 00:02:16.450
+file when you're in command mode. Okay? If
+
+00:02:16.450 --> 00:02:18.370
+you actually do wanna type text and an
+
+00:02:18.370 --> 00:02:20.530
+editor, you generally do, you can go into
+
+00:02:20.530 --> 00:02:23.330
+what we call insert mode. And in insert
+
+00:02:23.330 --> 00:02:26.050
+mode, you can, you just type the I
+
+00:02:26.050 --> 00:02:29.465
+key and notice down here it actually says
+
+00:02:29.465 --> 00:02:32.185
+that you are in insert mode and that
+
+00:02:32.185 --> 00:02:35.065
+means that you can now type things. Okay,
+
+00:02:35.065 --> 00:02:37.865
+like that. Alright. And you can use the
+
+00:02:37.865 --> 00:02:39.705
+backspace key and so forth and the arrow
+
+00:02:39.705 --> 00:02:42.390
+keys do work in command mode. In the
+
+00:02:42.390 --> 00:02:44.230
+original VI editor they did not as it
+
+00:02:44.230 --> 00:02:47.270
+turns out but in here they do. And
+
+00:02:47.270 --> 00:02:48.470
+so there's lots of other ones if you
+
+00:02:48.470 --> 00:02:50.390
+wanna delete a line you hit d twice,
+
+00:02:50.390 --> 00:02:54.310
+d d deletes the line, etcetera. But lots
+
+00:02:54.310 --> 00:02:56.535
+of people ask how do I exit VIM
+
+00:02:56.535 --> 00:02:59.415
+because I'm not a VIM person. Well, first
+
+00:02:59.415 --> 00:03:01.495
+things first to go out of insert mode.
+
+00:03:01.495 --> 00:03:02.615
+If I was in insert mode, I wanna
+
+00:03:02.615 --> 00:03:04.295
+go out of insert mode, I type the
+
+00:03:04.295 --> 00:03:06.055
+escape key. And I just hit the escape
+
+00:03:06.055 --> 00:03:07.415
+key and that takes us back to command
+
+00:03:07.415 --> 00:03:10.060
+mode. And then to quit, you type colon
+
+00:03:10.060 --> 00:03:12.300
+q and that will quit. Now, if there
+
+00:03:12.300 --> 00:03:13.900
+are no changes that will quit. If I
+
+00:03:13.900 --> 00:03:16.060
+hit enter, it says no right since last
+
+00:03:16.060 --> 00:03:18.540
+change, add exclamation point to override. So if
+
+00:03:18.540 --> 00:03:21.580
+I did colon q exclamation point, it would
+
+00:03:21.580 --> 00:03:24.025
+save without my changes. Let's say I actually
+
+00:03:24.025 --> 00:03:26.745
+wanna save the changes, you can do colon
+
+00:03:26.745 --> 00:03:28.825
+w, that will write the file and save
+
+00:03:28.825 --> 00:03:31.625
+the changes like that. You can also do
+
+00:03:31.705 --> 00:03:36.025
+colon w q, which will quit the, program
+
+00:03:36.025 --> 00:03:38.345
+after writing the changes. I like to abbreviate
+
+00:03:38.345 --> 00:03:40.560
+that with whatever reason this is the abbreviation,
+
+00:03:40.560 --> 00:03:43.520
+it's colon x means basically exit with saving
+
+00:03:43.520 --> 00:03:46.240
+your changes. Okay, and that will exit you
+
+00:03:46.240 --> 00:03:48.080
+out of VIM. Okay, what else can we
+
+00:03:48.080 --> 00:03:50.160
+do with VIM that's kinda cool? We can
+
+00:03:50.160 --> 00:03:52.240
+search for things. If you type slash and
+
+00:03:52.240 --> 00:03:56.125
+then start typing something like for instance, print
+
+00:03:56.125 --> 00:03:58.525
+and then enter, it will jump to the
+
+00:03:58.525 --> 00:04:01.085
+first line that has print on it. If
+
+00:04:01.085 --> 00:04:02.285
+I was back up at the top and
+
+00:04:02.285 --> 00:04:04.525
+I just typed slash o, it will find
+
+00:04:04.525 --> 00:04:06.125
+the first instance of o, which is kind
+
+00:04:06.125 --> 00:04:07.245
+of nice. But what if that wasn't the
+
+00:04:07.245 --> 00:04:08.600
+one I wanted to do? Well, all I
+
+00:04:08.600 --> 00:04:10.680
+need to do is hit lowercase n and
+
+00:04:10.680 --> 00:04:12.040
+it will find the next one and lowercase
+
+00:04:12.040 --> 00:04:13.800
+m will find the next one. If I
+
+00:04:13.800 --> 00:04:15.480
+keep hitting lowercase n, it'll just kind of
+
+00:04:15.480 --> 00:04:17.720
+cycle through the whole file. If I wanna
+
+00:04:17.720 --> 00:04:21.000
+go back to a previous o for instance,
+
+00:04:21.080 --> 00:04:25.445
+I would type shift n and that's how
+
+00:04:25.445 --> 00:04:28.005
+it works. Okay. So very easy to find
+
+00:04:28.005 --> 00:04:30.165
+things, very easy to do that. Other interesting
+
+00:04:30.165 --> 00:04:32.085
+things, if I wanna start editing text at
+
+00:04:32.085 --> 00:04:34.565
+the end of this line, I can type
+
+00:04:34.840 --> 00:04:37.480
+the a, uppercase a and I go into
+
+00:04:37.480 --> 00:04:38.840
+insert mode at the end of the line.
+
+00:04:38.840 --> 00:04:41.560
+Sometimes that's important. Right? If I wanna go
+
+00:04:41.560 --> 00:04:42.840
+to the beginning of the line in command
+
+00:04:42.840 --> 00:04:44.600
+mode, I just type zero. If I wanna
+
+00:04:44.600 --> 00:04:46.120
+go to the end, I type dollar sign
+
+00:04:46.120 --> 00:04:47.675
+and you might be saying to yourself, these
+
+00:04:47.675 --> 00:04:49.915
+are weird things to remember and I agree.
+
+00:04:49.915 --> 00:04:51.355
+Some of the things are a little bit
+
+00:04:51.355 --> 00:04:53.675
+hard to remember the first few times you
+
+00:04:53.675 --> 00:04:55.355
+do them but the more you get used
+
+00:04:55.355 --> 00:04:57.915
+to it the faster and faster you will
+
+00:04:57.915 --> 00:05:04.560
+be as you go through learning VIM. So
+
+00:05:04.560 --> 00:05:06.880
+there's lots and lots to learn, you can
+
+00:05:07.200 --> 00:05:09.280
+check out a zillion different tutorials online, in
+
+00:05:09.280 --> 00:05:14.000
+fact there's a tutorial built into the Unix
+
+00:05:14.000 --> 00:05:17.525
+system called VIMTutor which will bring up VimTutor
+
+00:05:17.525 --> 00:05:19.925
+and it says here's how you actually do
+
+00:05:19.925 --> 00:05:21.605
+it and if you scroll down it will
+
+00:05:21.605 --> 00:05:23.365
+say lesson one, moving the cursor and it
+
+00:05:23.365 --> 00:05:25.445
+tells you how to move the cursor, etcetera,
+
+00:05:25.445 --> 00:05:29.765
+etcetera. And you should maybe practice that if
+
+00:05:29.765 --> 00:05:34.380
+you want. There is another very cool VIM
+
+00:05:34.380 --> 00:05:37.020
+tutor if you want to go to the
+
+00:05:37.020 --> 00:05:43.500
+internet and type VIM adventures. Type VIM adventures
+
+00:05:43.500 --> 00:05:48.035
+it will bring up a VIM adventures there
+
+00:05:48.035 --> 00:05:52.755
+and it is a little game to show
+
+00:05:52.755 --> 00:05:54.195
+you how to do this. So you use
+
+00:05:54.195 --> 00:05:57.555
+the use the little keys, hooray, etcetera and
+
+00:05:57.555 --> 00:06:00.310
+you go and you you can look at
+
+00:06:00.310 --> 00:06:03.110
+lots of different, fun things. And, there's sound
+
+00:06:03.110 --> 00:06:03.990
+on here. I don't know if you can
+
+00:06:03.990 --> 00:06:05.430
+hear the sound, you probably can't, but there's
+
+00:06:05.430 --> 00:06:07.590
+sound coming through my headphones. So it's a
+
+00:06:07.590 --> 00:06:09.030
+it's a fun game to learn how to
+
+00:06:09.030 --> 00:06:12.835
+use VIM. So anyway, that's VIM. I think
+
+00:06:12.835 --> 00:06:15.315
+it is a great editor. It does have
+
+00:06:15.315 --> 00:06:17.475
+a bit of a steep learning curve. You
+
+00:06:17.475 --> 00:06:19.555
+don't learn VIM in one day, but if
+
+00:06:19.555 --> 00:06:22.675
+you keep learning, over time, you will become
+
+00:06:22.675 --> 00:06:25.075
+very, very fast. And the other nice thing
+
+00:06:25.075 --> 00:06:28.110
+about VIM is it's available on virtually every
+
+00:06:28.110 --> 00:06:30.270
+Linux system, kinda straight out of the box.
+
+00:06:30.270 --> 00:06:32.350
+If VIM isn't there, then VI is and
+
+00:06:32.350 --> 00:06:36.190
+VI is, what VIM is based on. So
+
+00:06:36.350 --> 00:06:38.350
+that is VIM. Thanks.
