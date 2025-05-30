@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The working directory on linux computers</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 1.04, "end": 30.64, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 1.04, "end": 1.68}, {"id": "sent_0_1", "text": "This video is going to be about the idea of a working directory, which you will find useful when you are running your programs in CS one zero seven.", "start": 1.68, "end": 12.16}, {"id": "sent_0_2", "text": "The working directory is representation of where your program starts looking for files.", "start": 12.634999, "end": 19.275}, {"id": "sent_0_3", "text": "So when you're running a program, it actually has a certain location that it looks for the files in.", "start": 19.435, "end": 26.395}, {"id": "sent_0_4", "text": "Often, this is actually where you launch the application from.", "start": 27.119999, "end": 30.64}]}, {"id": "para_1", "paragraph_idx": 1, "start": 30.64, "end": 60.219997, "sentences": [{"id": "sent_1_0", "text": "So you're in a particular directory, you run your program, and that directory is where the working directory is.", "start": 30.64, "end": 39.92}, {"id": "sent_1_1", "text": "This is not necessarily where the program itself lives.", "start": 40.305, "end": 44.065}, {"id": "sent_1_2", "text": "So, for instance, if I, run the command l s, well the l s program lives in some other folder.", "start": 44.305, "end": 53.105}, {"id": "sent_1_3", "text": "In fact, can figure out where it lives.", "start": 53.105, "end": 54.625}, {"id": "sent_1_4", "text": "Which l s tells us that l it the l s command lives in slash bin slash l s.", "start": 54.625, "end": 60.219997}]}, {"id": "para_2", "paragraph_idx": 2, "start": 60.379997, "end": 86.19, "sentences": [{"id": "sent_2_0", "text": "But in this case, the working directory is my home folder here.", "start": 60.379997, "end": 64.299995}, {"id": "sent_2_1", "text": "So if I type l s, well, it's gonna do an l s of the files in my home folder.", "start": 64.299995, "end": 69.34}, {"id": "sent_2_2", "text": "Okay.", "start": 70.165, "end": 70.725}, {"id": "sent_2_3", "text": "So, if you wanna figure out what your working directory is, you can actually type p w d, which says print working directory and that will actually tell you that this is the directory that that things will start looking for files in.", "start": 71.045, "end": 85.445}, {"id": "sent_2_4", "text": "Okay.", "start": 85.87, "end": 86.19}]}, {"id": "para_3", "paragraph_idx": 3, "start": 86.19, "end": 118.170006, "sentences": [{"id": "sent_3_0", "text": "If you change to another directory, so let's say we change to c s one zero seven slash assignments slash assign zero.", "start": 86.19, "end": 93.229996}, {"id": "sent_3_1", "text": "Okay.", "start": 94.19, "end": 94.59}, {"id": "sent_3_2", "text": "P w d says oh good look now we're in the working directory is now the entire directory out to assign zero.", "start": 94.59, "end": 100.909996}, {"id": "sent_3_3", "text": "Okay?", "start": 101.455, "end": 101.935}, {"id": "sent_3_4", "text": "I happen to have the hello program here and remember, from a different video on the file system, you can, you run a program by saying what folder it's in and dot slash hello means the current directory hello program.", "start": 101.935, "end": 118.170006}]}, {"id": "para_4", "paragraph_idx": 4, "start": 118.170006, "end": 161.345, "sentences": [{"id": "sent_4_0", "text": "So it will run hello world like that and it didn't happen to read anything in but the working directory is the assigned zero directory.", "start": 118.170006, "end": 127.450005}, {"id": "sent_4_1", "text": "Now, I can actually go back to two directories back if I want and I can actually run hello from here if I want to.", "start": 127.450005, "end": 136.845}, {"id": "sent_4_2", "text": "Have to type the path from here.", "start": 136.845, "end": 139.32501}, {"id": "sent_4_3", "text": "So let's see, if I type assignments slash assign zero slash hello then the working directory is the current directory I'm in but hello is located in a different place.", "start": 139.645, "end": 155.13}, {"id": "sent_4_4", "text": "Now it's still gonna print hello world because it doesn't have to actually read any information in, but, but that's that.", "start": 155.13, "end": 161.345}]}, {"id": "para_5", "paragraph_idx": 5, "start": 161.345, "end": 173.105, "sentences": [{"id": "sent_5_0", "text": "So you will find that sometimes you your programs can't find the right files.", "start": 161.345, "end": 166.465}, {"id": "sent_5_1", "text": "Just make sure that you understand where they're looking and often that is the working directory.", "start": 166.465, "end": 172.46501}, {"id": "sent_5_2", "text": "Thanks.", "start": 172.705, "end": 173.105}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "mni_P0cVqFE";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 175;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>The working directory on linux computers</h1>
+                <p>Channel: Chris Gregg | Duration: 02:55</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="1.04" data-end-time="30.64">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="1.04"></div>
+                        <div class="timeline-timestamp">00:01</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="1.04" data-end-time="1.68">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="1.68" data-end-time="12.16">This video is going to be about the idea of a working directory, which you will find useful when you are running your programs in CS one zero seven.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="12.634999" data-end-time="19.275">The working directory is representation of where your program starts looking for files.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="19.435" data-end-time="26.395">So when you're running a program, it actually has a certain location that it looks for the files in.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="27.119999" data-end-time="30.64">Often, this is actually where you launch the application from.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="30.64" data-end-time="60.219997">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="30.64"></div>
+                        <div class="timeline-timestamp">00:30</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="30.64" data-end-time="39.92">So you're in a particular directory, you run your program, and that directory is where the working directory is.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="40.305" data-end-time="44.065">This is not necessarily where the program itself lives.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="44.305" data-end-time="53.105">So, for instance, if I, run the command l s, well the l s program lives in some other folder.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="53.105" data-end-time="54.625">In fact, can figure out where it lives.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="54.625" data-end-time="60.219997">Which l s tells us that l it the l s command lives in slash bin slash l s.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="60.379997" data-end-time="86.19">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="60.379997"></div>
+                        <div class="timeline-timestamp">01:00</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="60.379997" data-end-time="64.299995">But in this case, the working directory is my home folder here.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="64.299995" data-end-time="69.34">So if I type l s, well, it's gonna do an l s of the files in my home folder.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="70.165" data-end-time="70.725">Okay.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="71.045" data-end-time="85.445">So, if you wanna figure out what your working directory is, you can actually type p w d, which says print working directory and that will actually tell you that this is the directory that that things will start looking for files in.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="85.87" data-end-time="86.19">Okay.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="86.19" data-end-time="118.170006">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="86.19"></div>
+                        <div class="timeline-timestamp">01:26</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="86.19" data-end-time="93.229996">If you change to another directory, so let's say we change to c s one zero seven slash assignments slash assign zero.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="94.19" data-end-time="94.59">Okay.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="94.59" data-end-time="100.909996">P w d says oh good look now we're in the working directory is now the entire directory out to assign zero.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="101.455" data-end-time="101.935">Okay?</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="101.935" data-end-time="118.170006">I happen to have the hello program here and remember, from a different video on the file system, you can, you run a program by saying what folder it's in and dot slash hello means the current directory hello program.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="118.170006" data-end-time="161.345">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="118.170006"></div>
+                        <div class="timeline-timestamp">01:58</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="118.170006" data-end-time="127.450005">So it will run hello world like that and it didn't happen to read anything in but the working directory is the assigned zero directory.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="127.450005" data-end-time="136.845">Now, I can actually go back to two directories back if I want and I can actually run hello from here if I want to.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="136.845" data-end-time="139.32501">Have to type the path from here.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="139.645" data-end-time="155.13">So let's see, if I type assignments slash assign zero slash hello then the working directory is the current directory I'm in but hello is located in a different place.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="155.13" data-end-time="161.345">Now it's still gonna print hello world because it doesn't have to actually read any information in, but, but that's that.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="161.345" data-end-time="173.105">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="161.345"></div>
+                        <div class="timeline-timestamp">02:41</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="161.345" data-end-time="166.465">So you will find that sometimes you your programs can't find the right files.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="166.465" data-end-time="172.46501">Just make sure that you understand where they're looking and often that is the working directory.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="172.705" data-end-time="173.105">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

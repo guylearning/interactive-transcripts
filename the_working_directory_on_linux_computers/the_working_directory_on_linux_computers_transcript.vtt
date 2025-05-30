@@ -1,0 +1,179 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: bbe2e0c4-8a9a-4442-9277-ed6faf85ceee
+Created: 2025-05-30T04:41:15.803Z
+Duration: 175.07263
+Channels: 1
+
+00:00:01.040 --> 00:00:03.680
+Hi there. This video is going to be
+
+00:00:03.680 --> 00:00:07.680
+about the idea of a working directory, which
+
+00:00:07.680 --> 00:00:10.560
+you will find useful when you are running
+
+00:00:10.560 --> 00:00:12.955
+your programs in CS one zero seven. The
+
+00:00:12.955 --> 00:00:17.035
+working directory is representation of where your program
+
+00:00:17.035 --> 00:00:20.475
+starts looking for files. So when you're running
+
+00:00:20.475 --> 00:00:24.795
+a program, it actually has a certain location
+
+00:00:24.795 --> 00:00:27.760
+that it looks for the files in. Often,
+
+00:00:27.760 --> 00:00:30.160
+this is actually where you launch the application
+
+00:00:30.160 --> 00:00:32.320
+from. So you're in a particular directory, you
+
+00:00:32.320 --> 00:00:38.160
+run your program, and that directory is where
+
+00:00:38.720 --> 00:00:41.665
+the working directory is. This is not necessarily
+
+00:00:41.665 --> 00:00:46.785
+where the program itself lives. So, for instance,
+
+00:00:46.785 --> 00:00:50.305
+if I, run the command l s, well
+
+00:00:50.305 --> 00:00:52.705
+the l s program lives in some other
+
+00:00:52.705 --> 00:00:54.145
+folder. In fact, can figure out where it
+
+00:00:54.145 --> 00:00:56.140
+lives. Which l s tells us that l
+
+00:00:56.220 --> 00:00:58.620
+it the l s command lives in slash
+
+00:00:58.620 --> 00:01:01.100
+bin slash l s. But in this case,
+
+00:01:01.100 --> 00:01:04.300
+the working directory is my home folder here.
+
+00:01:04.300 --> 00:01:06.220
+So if I type l s, well, it's
+
+00:01:06.220 --> 00:01:08.140
+gonna do an l s of the files
+
+00:01:08.140 --> 00:01:12.805
+in my home folder. Okay. So, if you
+
+00:01:12.805 --> 00:01:15.205
+wanna figure out what your working directory is,
+
+00:01:15.205 --> 00:01:17.685
+you can actually type p w d, which
+
+00:01:17.685 --> 00:01:20.725
+says print working directory and that will actually
+
+00:01:20.725 --> 00:01:22.885
+tell you that this is the directory that
+
+00:01:22.885 --> 00:01:25.445
+that things will start looking for files in.
+
+00:01:25.870 --> 00:01:27.630
+Okay. If you change to another directory, so
+
+00:01:27.630 --> 00:01:28.990
+let's say we change to c s one
+
+00:01:28.990 --> 00:01:34.590
+zero seven slash assignments slash assign zero. Okay.
+
+00:01:34.590 --> 00:01:36.430
+P w d says oh good look now
+
+00:01:36.430 --> 00:01:38.670
+we're in the working directory is now the
+
+00:01:38.670 --> 00:01:42.095
+entire directory out to assign zero. Okay? I
+
+00:01:42.095 --> 00:01:44.655
+happen to have the hello program here and
+
+00:01:44.655 --> 00:01:47.935
+remember, from a different video on the file
+
+00:01:47.935 --> 00:01:50.575
+system, you can, you run a program by
+
+00:01:50.575 --> 00:01:53.935
+saying what folder it's in and dot slash
+
+00:01:53.935 --> 00:01:58.410
+hello means the current directory hello program. So
+
+00:01:58.410 --> 00:02:01.050
+it will run hello world like that and
+
+00:02:01.050 --> 00:02:03.610
+it didn't happen to read anything in but
+
+00:02:03.610 --> 00:02:07.450
+the working directory is the assigned zero directory.
+
+00:02:07.450 --> 00:02:10.970
+Now, I can actually go back to two
+
+00:02:10.970 --> 00:02:13.645
+directories back if I want and I can
+
+00:02:13.645 --> 00:02:16.525
+actually run hello from here if I want
+
+00:02:16.525 --> 00:02:19.325
+to. Have to type the path from here.
+
+00:02:19.645 --> 00:02:26.330
+So let's see, if I type assignments slash
+
+00:02:26.330 --> 00:02:31.770
+assign zero slash hello then the working directory
+
+00:02:31.770 --> 00:02:33.770
+is the current directory I'm in but hello
+
+00:02:33.770 --> 00:02:35.530
+is located in a different place. Now it's
+
+00:02:35.530 --> 00:02:37.050
+still gonna print hello world because it doesn't
+
+00:02:37.050 --> 00:02:40.305
+have to actually read any information in, but,
+
+00:02:40.465 --> 00:02:42.945
+but that's that. So you will find that
+
+00:02:43.265 --> 00:02:45.985
+sometimes you your programs can't find the right
+
+00:02:45.985 --> 00:02:48.785
+files. Just make sure that you understand where
+
+00:02:48.785 --> 00:02:51.665
+they're looking and often that is the working
+
+00:02:51.665 --> 00:02:53.105
+directory. Thanks.

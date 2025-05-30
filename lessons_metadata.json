@@ -460,5 +460,17 @@
     "lesson_html_filename": "the_backup_folder_on_myth_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_backup_folder_on_myth/the_backup_folder_on_myth_transcript.json",
     "vtt_transcript_path_on_repo": "the_backup_folder_on_myth/the_backup_folder_on_myth_transcript.vtt"
+  },
+  {
+    "title_original": "The working directory on linux computers",
+    "video_name_clean": "the_working_directory_on_linux_computers",
+    "youtube_id": "mni_P0cVqFE",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:41:16.642123+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 175,
+    "lesson_html_filename": "the_working_directory_on_linux_computers_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_working_directory_on_linux_computers/the_working_directory_on_linux_computers_transcript.json",
+    "vtt_transcript_path_on_repo": "the_working_directory_on_linux_computers/the_working_directory_on_linux_computers_transcript.vtt"
   }
 ]
