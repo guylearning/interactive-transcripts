@@ -748,5 +748,17 @@
     "lesson_html_filename": "the_emacs_editor_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_emacs_editor/the_emacs_editor_transcript.json",
     "vtt_transcript_path_on_repo": "the_emacs_editor/the_emacs_editor_transcript.vtt"
+  },
+  {
+    "title_original": "cs107: clone sanitycheck submit",
+    "video_name_clean": "cs107_clone_sanitycheck_submit",
+    "youtube_id": "oKXbXc7baZ8",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:52:44.698062+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 431,
+    "lesson_html_filename": "cs107_clone_sanitycheck_submit_interactive_lesson.html",
+    "json_transcript_path_on_repo": "cs107_clone_sanitycheck_submit/cs107_clone_sanitycheck_submit_transcript.json",
+    "vtt_transcript_path_on_repo": "cs107_clone_sanitycheck_submit/cs107_clone_sanitycheck_submit_transcript.vtt"
   }
 ]

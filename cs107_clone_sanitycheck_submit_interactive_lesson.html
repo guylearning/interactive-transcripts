@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cs107: clone sanitycheck submit</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 1.28, "end": 40.27, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 1.28, "end": 2.1599998}, {"id": "sent_0_1", "text": "In this video, I'm gonna show you how to use the git clone command to copy the files from our master repositories in CS one zero seven into your own directories so that you are able to do your assignments.", "start": 2.1599998, "end": 18.095}, {"id": "sent_0_2", "text": "What we're actually using is a program called Git, and it is a version control system that you may or may not have heard of before or used before.", "start": 18.415, "end": 28.814999}, {"id": "sent_0_3", "text": "But what it allows you to do is keep a set of files in one place and then copy them to another computer and work on them.", "start": 28.974998, "end": 37.07}, {"id": "sent_0_4", "text": "It's actually a very important tool in software engineering.", "start": 37.07, "end": 40.27}]}, {"id": "para_1", "paragraph_idx": 1, "start": 40.43, "end": 77.905, "sentences": [{"id": "sent_1_0", "text": "And you'll use git for other classes here at Stanford and in the real world.", "start": 40.43, "end": 44.59}, {"id": "sent_1_1", "text": "Or you'll use some other kind of version control system.", "start": 45.685, "end": 48.405}, {"id": "sent_1_2", "text": "And it actually allows you to keep copies of your files in progress as well, which is somewhat nice too.", "start": 48.565, "end": 55.285}, {"id": "sent_1_3", "text": "But what you can think of this as doing is kind of the same as the starter files for CS one zero six a or CS one zero six b, except instead of downloading a starter file, zip file onto your own computer, you're gonna be working on the Myth computer and you're going to be copying the files into a directory that you can use.", "start": 55.445, "end": 76.145}, {"id": "sent_1_4", "text": "So let me show you how it works.", "start": 76.385, "end": 77.905}]}, {"id": "para_2", "paragraph_idx": 2, "start": 78.065, "end": 105.305, "sentences": [{"id": "sent_2_0", "text": "We are going to first things first, I'm logged on to Myth and what what we're gonna do is we're going to first create a c s make dir CS one zero seven directory like that.", "start": 78.065, "end": 93.159996}, {"id": "sent_2_1", "text": "And then I'm gonna change into it, one zero seven.", "start": 93.32, "end": 95.96}, {"id": "sent_2_2", "text": "And, you only have to do that once at the beginning of the quarter.", "start": 96.44, "end": 99.4}, {"id": "sent_2_3", "text": "You'll never have to create this file again, you'll always just change into it.", "start": 99.4, "end": 102.04}, {"id": "sent_2_4", "text": "And then what we're gonna do is we're gonna call this clone command.", "start": 102.585, "end": 105.305}]}, {"id": "para_3", "paragraph_idx": 3, "start": 105.305, "end": 158.21, "sentences": [{"id": "sent_3_0", "text": "And what you do is you say git clone and then this big long path, a f s slash slash a f s slash I r slash class slash c s one zero seven slash repos as in repositories slash assign zero slash dollar sign uppercase U S E R and then assign zero which is the folder that it's going to create.", "start": 105.305, "end": 132.42}, {"id": "sent_3_1", "text": "So when I do this, if all works well, it will say cloning into assign zero and then done.", "start": 132.42, "end": 137.515}, {"id": "sent_3_2", "text": "And now if we look, we've got an assign zero and we can change into it like that.", "start": 137.75499, "end": 144.39499}, {"id": "sent_3_3", "text": "By the way, if you wanna see what that dollar sign user actually stands for, you can do echo dollar sign user like that and it will say your username.", "start": 145.25, "end": 155.01}, {"id": "sent_3_4", "text": "So kind of a command that you can take a look at.", "start": 155.01, "end": 158.21}]}, {"id": "para_4", "paragraph_idx": 4, "start": 158.69, "end": 186.42001, "sentences": [{"id": "sent_4_0", "text": "Alright.", "start": 158.69, "end": 159.17}, {"id": "sent_4_1", "text": "So now you have the files there, this is basically all your starter code.", "start": 159.17, "end": 163.80501}, {"id": "sent_4_2", "text": "There's not much starter code for assignment zero.", "start": 163.80501, "end": 166.125}, {"id": "sent_4_3", "text": "But the first thing you might wanna do is just look at the readme dot t x t file, which I'll open up in VIM, and it's got some details in there that you can take a look at.", "start": 166.125, "end": 175.245}, {"id": "sent_4_4", "text": "And, you're gonna be able to use the, go to assignment, the assignment zero web page, and you'll find all the details about what you have to add to this file and so forth.", "start": 176.42001, "end": 186.42001}]}, {"id": "para_5", "paragraph_idx": 5, "start": 186.98001, "end": 227.295, "sentences": [{"id": "sent_5_0", "text": "And you'll also notice there's a samples directory in here.", "start": 186.98001, "end": 190.83499}, {"id": "sent_5_1", "text": "And if we do l s dash a l, you'll notice that the samples directory is a symbolic link, which is handled in a different video.", "start": 190.83499, "end": 198.435}, {"id": "sent_5_2", "text": "You don't need to worry too much about that except to say that if you do c d samples, you're now inside this folder as it turns out it's the same exact folder and you won't be able to access those files, because they're read only to you.", "start": 198.755, "end": 212.71}, {"id": "sent_5_3", "text": "But those are the files that you're gonna use for assignment zero.", "start": 212.71, "end": 216.31001}, {"id": "sent_5_4", "text": "So sometimes we'll give you a samples folder that will have extra information that the entire class will share and so that you can we don't have to make multiple copies of those individual files.", "start": 216.31001, "end": 227.295}]}, {"id": "para_6", "paragraph_idx": 6, "start": 227.775, "end": 251.165, "sentences": [{"id": "sent_6_0", "text": "Okay.", "start": 227.775, "end": 228.415}, {"id": "sent_6_1", "text": "So those that's how you do the git clone to actually to get the assignment into your own, directory.", "start": 228.415, "end": 237.98001}, {"id": "sent_6_2", "text": "Then you can write the assignment and then at the end when you're gonna wanna when you're gonna wanna submit it, there's gonna be two other commands that you're gonna want to run.", "start": 237.98001, "end": 244.78001}, {"id": "sent_6_3", "text": "The first is something that you don't have to wait until you're ready to submit.", "start": 244.78001, "end": 248.14001}, {"id": "sent_6_4", "text": "You can run this at any time and it's called sanity check.", "start": 248.14001, "end": 251.165}]}, {"id": "para_7", "paragraph_idx": 7, "start": 251.165, "end": 289.785, "sentences": [{"id": "sent_7_0", "text": "And if you'll notice, there's also a tools directory in here, which is where sanity check lives.", "start": 251.165, "end": 255.96501}, {"id": "sent_7_1", "text": "And if you are in your assignment directory, you can just type tools slash sanity check.", "start": 256.045, "end": 263.9}, {"id": "sent_7_2", "text": "And what that does is it will run a program that checks your program or your submission for, whether or not it's correct enough to actually be graded.", "start": 264.22, "end": 275.82}, {"id": "sent_7_3", "text": "Not doing the grading, but sometimes it will run tests that you can see if it if it's actually gonna pass some of those tests.", "start": 276.105, "end": 282.265}, {"id": "sent_7_4", "text": "But some but it's the big deal the big idea is it's running a program that will say, hey, we will accept your submission.", "start": 282.42502, "end": 289.785}]}, {"id": "para_8", "paragraph_idx": 8, "start": 289.785, "end": 312.375, "sentences": [{"id": "sent_8_0", "text": "In other words, if your program doesn't compile, sanity check will fail and you won't be able to submit, or you will be able to submit, but it's not, recommended.", "start": 289.785, "end": 297.01}, {"id": "sent_8_1", "text": "Okay.", "start": 298.13, "end": 298.37}, {"id": "sent_8_2", "text": "So if I run sanity check right now and I haven't done anything in this assignment yet, what it says is it's running some test here and then it says, that the file verify the file is not has changed.", "start": 298.37, "end": 309.655}, {"id": "sent_8_3", "text": "Well, I didn't change anything yet.", "start": 309.655, "end": 311.335}, {"id": "sent_8_4", "text": "So it's gonna say, nope.", "start": 311.335, "end": 312.375}]}, {"id": "para_9", "paragraph_idx": 9, "start": 312.375, "end": 322.22998, "sentences": [{"id": "sent_9_0", "text": "Not okay.", "start": 312.375, "end": 313.17502}, {"id": "sent_9_1", "text": "Okay.", "start": 313.255, "end": 313.655}, {"id": "sent_9_2", "text": "So it actually didn't change that.", "start": 313.655, "end": 314.935}, {"id": "sent_9_3", "text": "Now all I need to do as it turns out is change something.", "start": 314.935, "end": 318.78998}, {"id": "sent_9_4", "text": "So I can say Chris Gregg and then, write that to the file.", "start": 318.78998, "end": 322.22998}]}, {"id": "para_10", "paragraph_idx": 10, "start": 322.22998, "end": 332.575, "sentences": [{"id": "sent_10_0", "text": "And then if I run sanity check again, watch this.", "start": 322.22998, "end": 324.47}, {"id": "sent_10_1", "text": "It says, oh, let's see.", "start": 324.47, "end": 326.71}, {"id": "sent_10_2", "text": "Oh, I didn't change enough.", "start": 326.87, "end": 328.07}, {"id": "sent_10_3", "text": "I probably didn't change enough.", "start": 328.07, "end": 329.59}, {"id": "sent_10_4", "text": "So let me let me just do this.", "start": 330.15, "end": 332.575}]}, {"id": "para_11", "paragraph_idx": 11, "start": 332.975, "end": 346.03, "sentences": [{"id": "sent_11_0", "text": "Let's paste my name a hundred times in here.", "start": 332.975, "end": 336.335}, {"id": "sent_11_1", "text": "Not not that you wanna do that for your assignment, but let's see if sanity check works now.", "start": 336.57498, "end": 340.255}, {"id": "sent_11_2", "text": "Nope.", "start": 340.975, "end": 341.375}, {"id": "sent_11_3", "text": "Still might not be enough changes.", "start": 341.375, "end": 343.135}, {"id": "sent_11_4", "text": "So we'll look into that and make sure it's working.", "start": 343.29498, "end": 346.03}]}, {"id": "para_12", "paragraph_idx": 12, "start": 346.03, "end": 384.2, "sentences": [{"id": "sent_12_0", "text": "But anyway, the point is that you can run sanity check and it will tell you how you're prior progressing on an assignment and whether or not it's ready to be submitted, as far as we're concerned.", "start": 346.03, "end": 356.91}, {"id": "sent_12_1", "text": "Again, it doesn't doesn't do the grading for you, but it can give you a lot of information about how you're progressing as you're going along.", "start": 356.91, "end": 364.465}, {"id": "sent_12_2", "text": "Okay.", "start": 364.625, "end": 365.10498}, {"id": "sent_12_3", "text": "So once you run sanity check and you've decided that, yep, I want to submit this assignment, you can actually type tools slash submit and from again, you have to be in the assignment folder to run this.", "start": 365.10498, "end": 378.68002}, {"id": "sent_12_4", "text": "And it will say this tool submits the repo in the current directory, and it says would you like to run sanity check?", "start": 378.92, "end": 384.2}]}, {"id": "para_13", "paragraph_idx": 13, "start": 384.2, "end": 393.08502, "sentences": [{"id": "sent_13_0", "text": "You might as well.", "start": 384.2, "end": 384.84}, {"id": "sent_13_1", "text": "Right?", "start": 385.245, "end": 385.805}, {"id": "sent_13_2", "text": "And then it's going to say, in my case, hey, it didn't pass.", "start": 385.805, "end": 388.765}, {"id": "sent_13_3", "text": "Do you really wanna continue?", "start": 388.765, "end": 390.765}, {"id": "sent_13_4", "text": "And if I say yes, it will try to continue.", "start": 390.845, "end": 393.08502}]}, {"id": "para_14", "paragraph_idx": 14, "start": 393.325, "end": 419.875, "sentences": [{"id": "sent_14_0", "text": "And then in this case, we haven't set the actual deadline, so it didn't submit anything.", "start": 393.325, "end": 397.005}, {"id": "sent_14_1", "text": "But it's pretty easy to follow the instructions for the submit.", "start": 397.005, "end": 400.5}, {"id": "sent_14_2", "text": "But that's how you actually submit the assignment and you should make sure that you get confirmation that your assignment has been submitted, before you are done with the assignment.", "start": 400.5, "end": 411.635}, {"id": "sent_14_3", "text": "And you definitely wanna do it before the deadline because we generally don't accept assignments after the deadline.", "start": 411.875, "end": 417.15503}, {"id": "sent_14_4", "text": "So unless you talk to us specifically about some exception.", "start": 417.23502, "end": 419.875}]}, {"id": "para_15", "paragraph_idx": 15, "start": 420.2908, "end": 429.0908, "sentences": [{"id": "sent_15_0", "text": "So anyway, those are the three commands you're gonna need to know, the git clone command and the sanity check and the submit command.", "start": 420.2908, "end": 428.6908}, {"id": "sent_15_1", "text": "Thanks.", "start": 428.7708, "end": 429.0908}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "oKXbXc7baZ8";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 431;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>cs107: clone sanitycheck submit</h1>
+                <p>Channel: Chris Gregg | Duration: 07:11</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="1.28" data-end-time="40.27">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="1.28"></div>
+                        <div class="timeline-timestamp">00:01</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="1.28" data-end-time="2.1599998">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="2.1599998" data-end-time="18.095">In this video, I'm gonna show you how to use the git clone command to copy the files from our master repositories in CS one zero seven into your own directories so that you are able to do your assignments.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="18.415" data-end-time="28.814999">What we're actually using is a program called Git, and it is a version control system that you may or may not have heard of before or used before.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="28.974998" data-end-time="37.07">But what it allows you to do is keep a set of files in one place and then copy them to another computer and work on them.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="37.07" data-end-time="40.27">It's actually a very important tool in software engineering.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="40.43" data-end-time="77.905">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="40.43"></div>
+                        <div class="timeline-timestamp">00:40</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="40.43" data-end-time="44.59">And you'll use git for other classes here at Stanford and in the real world.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="45.685" data-end-time="48.405">Or you'll use some other kind of version control system.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="48.565" data-end-time="55.285">And it actually allows you to keep copies of your files in progress as well, which is somewhat nice too.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="55.445" data-end-time="76.145">But what you can think of this as doing is kind of the same as the starter files for CS one zero six a or CS one zero six b, except instead of downloading a starter file, zip file onto your own computer, you're gonna be working on the Myth computer and you're going to be copying the files into a directory that you can use.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="76.385" data-end-time="77.905">So let me show you how it works.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="78.065" data-end-time="105.305">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="78.065"></div>
+                        <div class="timeline-timestamp">01:18</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="78.065" data-end-time="93.159996">We are going to first things first, I'm logged on to Myth and what what we're gonna do is we're going to first create a c s make dir CS one zero seven directory like that.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="93.32" data-end-time="95.96">And then I'm gonna change into it, one zero seven.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="96.44" data-end-time="99.4">And, you only have to do that once at the beginning of the quarter.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="99.4" data-end-time="102.04">You'll never have to create this file again, you'll always just change into it.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="102.585" data-end-time="105.305">And then what we're gonna do is we're gonna call this clone command.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="105.305" data-end-time="158.21">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="105.305"></div>
+                        <div class="timeline-timestamp">01:45</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="105.305" data-end-time="132.42">And what you do is you say git clone and then this big long path, a f s slash slash a f s slash I r slash class slash c s one zero seven slash repos as in repositories slash assign zero slash dollar sign uppercase U S E R and then assign zero which is the folder that it's going to create.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="132.42" data-end-time="137.515">So when I do this, if all works well, it will say cloning into assign zero and then done.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="137.75499" data-end-time="144.39499">And now if we look, we've got an assign zero and we can change into it like that.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="145.25" data-end-time="155.01">By the way, if you wanna see what that dollar sign user actually stands for, you can do echo dollar sign user like that and it will say your username.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="155.01" data-end-time="158.21">So kind of a command that you can take a look at.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="158.69" data-end-time="186.42001">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="158.69"></div>
+                        <div class="timeline-timestamp">02:38</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="158.69" data-end-time="159.17">Alright.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="159.17" data-end-time="163.80501">So now you have the files there, this is basically all your starter code.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="163.80501" data-end-time="166.125">There's not much starter code for assignment zero.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="166.125" data-end-time="175.245">But the first thing you might wanna do is just look at the readme dot t x t file, which I'll open up in VIM, and it's got some details in there that you can take a look at.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="176.42001" data-end-time="186.42001">And, you're gonna be able to use the, go to assignment, the assignment zero web page, and you'll find all the details about what you have to add to this file and so forth.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="186.98001" data-end-time="227.295">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="186.98001"></div>
+                        <div class="timeline-timestamp">03:06</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="186.98001" data-end-time="190.83499">And you'll also notice there's a samples directory in here.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="190.83499" data-end-time="198.435">And if we do l s dash a l, you'll notice that the samples directory is a symbolic link, which is handled in a different video.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="198.755" data-end-time="212.71">You don't need to worry too much about that except to say that if you do c d samples, you're now inside this folder as it turns out it's the same exact folder and you won't be able to access those files, because they're read only to you.</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="212.71" data-end-time="216.31001">But those are the files that you're gonna use for assignment zero.</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="216.31001" data-end-time="227.295">So sometimes we'll give you a samples folder that will have extra information that the entire class will share and so that you can we don't have to make multiple copies of those individual files.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="227.775" data-end-time="251.165">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="227.775"></div>
+                        <div class="timeline-timestamp">03:47</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="227.775" data-end-time="228.415">Okay.</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="228.415" data-end-time="237.98001">So those that's how you do the git clone to actually to get the assignment into your own, directory.</span> <span class="transcript-sentence" id="sent_6_2" data-start-time="237.98001" data-end-time="244.78001">Then you can write the assignment and then at the end when you're gonna wanna when you're gonna wanna submit it, there's gonna be two other commands that you're gonna want to run.</span> <span class="transcript-sentence" id="sent_6_3" data-start-time="244.78001" data-end-time="248.14001">The first is something that you don't have to wait until you're ready to submit.</span> <span class="transcript-sentence" id="sent_6_4" data-start-time="248.14001" data-end-time="251.165">You can run this at any time and it's called sanity check.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_7" data-paragraph-idx="7" data-start-time="251.165" data-end-time="289.785">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="251.165"></div>
+                        <div class="timeline-timestamp">04:11</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_7"><span class="transcript-sentence" id="sent_7_0" data-start-time="251.165" data-end-time="255.96501">And if you'll notice, there's also a tools directory in here, which is where sanity check lives.</span> <span class="transcript-sentence" id="sent_7_1" data-start-time="256.045" data-end-time="263.9">And if you are in your assignment directory, you can just type tools slash sanity check.</span> <span class="transcript-sentence" id="sent_7_2" data-start-time="264.22" data-end-time="275.82">And what that does is it will run a program that checks your program or your submission for, whether or not it's correct enough to actually be graded.</span> <span class="transcript-sentence" id="sent_7_3" data-start-time="276.105" data-end-time="282.265">Not doing the grading, but sometimes it will run tests that you can see if it if it's actually gonna pass some of those tests.</span> <span class="transcript-sentence" id="sent_7_4" data-start-time="282.42502" data-end-time="289.785">But some but it's the big deal the big idea is it's running a program that will say, hey, we will accept your submission.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_8" data-paragraph-idx="8" data-start-time="289.785" data-end-time="312.375">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="289.785"></div>
+                        <div class="timeline-timestamp">04:49</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_8"><span class="transcript-sentence" id="sent_8_0" data-start-time="289.785" data-end-time="297.01">In other words, if your program doesn't compile, sanity check will fail and you won't be able to submit, or you will be able to submit, but it's not, recommended.</span> <span class="transcript-sentence" id="sent_8_1" data-start-time="298.13" data-end-time="298.37">Okay.</span> <span class="transcript-sentence" id="sent_8_2" data-start-time="298.37" data-end-time="309.655">So if I run sanity check right now and I haven't done anything in this assignment yet, what it says is it's running some test here and then it says, that the file verify the file is not has changed.</span> <span class="transcript-sentence" id="sent_8_3" data-start-time="309.655" data-end-time="311.335">Well, I didn't change anything yet.</span> <span class="transcript-sentence" id="sent_8_4" data-start-time="311.335" data-end-time="312.375">So it's gonna say, nope.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_9" data-paragraph-idx="9" data-start-time="312.375" data-end-time="322.22998">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="312.375"></div>
+                        <div class="timeline-timestamp">05:12</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_9"><span class="transcript-sentence" id="sent_9_0" data-start-time="312.375" data-end-time="313.17502">Not okay.</span> <span class="transcript-sentence" id="sent_9_1" data-start-time="313.255" data-end-time="313.655">Okay.</span> <span class="transcript-sentence" id="sent_9_2" data-start-time="313.655" data-end-time="314.935">So it actually didn't change that.</span> <span class="transcript-sentence" id="sent_9_3" data-start-time="314.935" data-end-time="318.78998">Now all I need to do as it turns out is change something.</span> <span class="transcript-sentence" id="sent_9_4" data-start-time="318.78998" data-end-time="322.22998">So I can say Chris Gregg and then, write that to the file.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_10" data-paragraph-idx="10" data-start-time="322.22998" data-end-time="332.575">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="322.22998"></div>
+                        <div class="timeline-timestamp">05:22</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_10"><span class="transcript-sentence" id="sent_10_0" data-start-time="322.22998" data-end-time="324.47">And then if I run sanity check again, watch this.</span> <span class="transcript-sentence" id="sent_10_1" data-start-time="324.47" data-end-time="326.71">It says, oh, let's see.</span> <span class="transcript-sentence" id="sent_10_2" data-start-time="326.87" data-end-time="328.07">Oh, I didn't change enough.</span> <span class="transcript-sentence" id="sent_10_3" data-start-time="328.07" data-end-time="329.59">I probably didn't change enough.</span> <span class="transcript-sentence" id="sent_10_4" data-start-time="330.15" data-end-time="332.575">So let me let me just do this.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_11" data-paragraph-idx="11" data-start-time="332.975" data-end-time="346.03">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="332.975"></div>
+                        <div class="timeline-timestamp">05:32</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_11"><span class="transcript-sentence" id="sent_11_0" data-start-time="332.975" data-end-time="336.335">Let's paste my name a hundred times in here.</span> <span class="transcript-sentence" id="sent_11_1" data-start-time="336.57498" data-end-time="340.255">Not not that you wanna do that for your assignment, but let's see if sanity check works now.</span> <span class="transcript-sentence" id="sent_11_2" data-start-time="340.975" data-end-time="341.375">Nope.</span> <span class="transcript-sentence" id="sent_11_3" data-start-time="341.375" data-end-time="343.135">Still might not be enough changes.</span> <span class="transcript-sentence" id="sent_11_4" data-start-time="343.29498" data-end-time="346.03">So we'll look into that and make sure it's working.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_12" data-paragraph-idx="12" data-start-time="346.03" data-end-time="384.2">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="346.03"></div>
+                        <div class="timeline-timestamp">05:46</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_12"><span class="transcript-sentence" id="sent_12_0" data-start-time="346.03" data-end-time="356.91">But anyway, the point is that you can run sanity check and it will tell you how you're prior progressing on an assignment and whether or not it's ready to be submitted, as far as we're concerned.</span> <span class="transcript-sentence" id="sent_12_1" data-start-time="356.91" data-end-time="364.465">Again, it doesn't doesn't do the grading for you, but it can give you a lot of information about how you're progressing as you're going along.</span> <span class="transcript-sentence" id="sent_12_2" data-start-time="364.625" data-end-time="365.10498">Okay.</span> <span class="transcript-sentence" id="sent_12_3" data-start-time="365.10498" data-end-time="378.68002">So once you run sanity check and you've decided that, yep, I want to submit this assignment, you can actually type tools slash submit and from again, you have to be in the assignment folder to run this.</span> <span class="transcript-sentence" id="sent_12_4" data-start-time="378.92" data-end-time="384.2">And it will say this tool submits the repo in the current directory, and it says would you like to run sanity check?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_13" data-paragraph-idx="13" data-start-time="384.2" data-end-time="393.08502">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="384.2"></div>
+                        <div class="timeline-timestamp">06:24</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_13"><span class="transcript-sentence" id="sent_13_0" data-start-time="384.2" data-end-time="384.84">You might as well.</span> <span class="transcript-sentence" id="sent_13_1" data-start-time="385.245" data-end-time="385.805">Right?</span> <span class="transcript-sentence" id="sent_13_2" data-start-time="385.805" data-end-time="388.765">And then it's going to say, in my case, hey, it didn't pass.</span> <span class="transcript-sentence" id="sent_13_3" data-start-time="388.765" data-end-time="390.765">Do you really wanna continue?</span> <span class="transcript-sentence" id="sent_13_4" data-start-time="390.845" data-end-time="393.08502">And if I say yes, it will try to continue.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_14" data-paragraph-idx="14" data-start-time="393.325" data-end-time="419.875">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="393.325"></div>
+                        <div class="timeline-timestamp">06:33</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_14"><span class="transcript-sentence" id="sent_14_0" data-start-time="393.325" data-end-time="397.005">And then in this case, we haven't set the actual deadline, so it didn't submit anything.</span> <span class="transcript-sentence" id="sent_14_1" data-start-time="397.005" data-end-time="400.5">But it's pretty easy to follow the instructions for the submit.</span> <span class="transcript-sentence" id="sent_14_2" data-start-time="400.5" data-end-time="411.635">But that's how you actually submit the assignment and you should make sure that you get confirmation that your assignment has been submitted, before you are done with the assignment.</span> <span class="transcript-sentence" id="sent_14_3" data-start-time="411.875" data-end-time="417.15503">And you definitely wanna do it before the deadline because we generally don't accept assignments after the deadline.</span> <span class="transcript-sentence" id="sent_14_4" data-start-time="417.23502" data-end-time="419.875">So unless you talk to us specifically about some exception.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_15" data-paragraph-idx="15" data-start-time="420.2908" data-end-time="429.0908">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="420.2908"></div>
+                        <div class="timeline-timestamp">07:00</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_15"><span class="transcript-sentence" id="sent_15_0" data-start-time="420.2908" data-end-time="428.6908">So anyway, those are the three commands you're gonna need to know, the git clone command and the sanity check and the submit command.</span> <span class="transcript-sentence" id="sent_15_1" data-start-time="428.7708" data-end-time="429.0908">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

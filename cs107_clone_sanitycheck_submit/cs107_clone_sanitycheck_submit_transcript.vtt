@@ -1,0 +1,509 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 00a99023-c9e0-47c1-81e8-b83459c6545c
+Created: 2025-05-30T04:52:43.769Z
+Duration: 430.91586
+Channels: 1
+
+00:00:01.280 --> 00:00:04.000
+Hi there. In this video, I'm gonna show
+
+00:00:04.000 --> 00:00:07.040
+you how to use the git clone command
+
+00:00:07.120 --> 00:00:12.480
+to copy the files from our master repositories
+
+00:00:12.480 --> 00:00:14.560
+in CS one zero seven into your own
+
+00:00:14.560 --> 00:00:17.215
+directories so that you are able to do
+
+00:00:17.215 --> 00:00:20.815
+your assignments. What we're actually using is a
+
+00:00:20.815 --> 00:00:24.415
+program called Git, and it is a version
+
+00:00:24.415 --> 00:00:26.255
+control system that you may or may not
+
+00:00:26.255 --> 00:00:29.215
+have heard of before or used before. But
+
+00:00:29.215 --> 00:00:31.790
+what it allows you to do is keep
+
+00:00:31.790 --> 00:00:33.950
+a set of files in one place and
+
+00:00:33.950 --> 00:00:36.430
+then copy them to another computer and work
+
+00:00:36.430 --> 00:00:38.750
+on them. It's actually a very important tool
+
+00:00:38.750 --> 00:00:41.950
+in software engineering. And you'll use git for
+
+00:00:41.950 --> 00:00:44.110
+other classes here at Stanford and in the
+
+00:00:44.110 --> 00:00:46.885
+real world. Or you'll use some other kind
+
+00:00:46.885 --> 00:00:49.445
+of version control system. And it actually allows
+
+00:00:49.445 --> 00:00:51.605
+you to keep copies of your files in
+
+00:00:51.605 --> 00:00:55.285
+progress as well, which is somewhat nice too.
+
+00:00:55.445 --> 00:00:57.045
+But what you can think of this as
+
+00:00:57.045 --> 00:01:01.070
+doing is kind of the same as the
+
+00:01:01.070 --> 00:01:03.070
+starter files for CS one zero six a
+
+00:01:03.070 --> 00:01:05.390
+or CS one zero six b, except instead
+
+00:01:05.390 --> 00:01:08.190
+of downloading a starter file, zip file onto
+
+00:01:08.190 --> 00:01:09.870
+your own computer, you're gonna be working on
+
+00:01:09.870 --> 00:01:12.830
+the Myth computer and you're going to be
+
+00:01:13.345 --> 00:01:15.505
+copying the files into a directory that you
+
+00:01:15.505 --> 00:01:17.265
+can use. So let me show you how
+
+00:01:17.265 --> 00:01:19.825
+it works. We are going to first things
+
+00:01:19.825 --> 00:01:23.985
+first, I'm logged on to Myth and what
+
+00:01:24.385 --> 00:01:26.225
+what we're gonna do is we're going to
+
+00:01:26.705 --> 00:01:30.680
+first create a c s make dir CS
+
+00:01:30.680 --> 00:01:33.640
+one zero seven directory like that. And then
+
+00:01:33.640 --> 00:01:35.960
+I'm gonna change into it, one zero seven.
+
+00:01:36.440 --> 00:01:38.360
+And, you only have to do that once
+
+00:01:38.360 --> 00:01:39.800
+at the beginning of the quarter. You'll never
+
+00:01:39.800 --> 00:01:41.160
+have to create this file again, you'll always
+
+00:01:41.160 --> 00:01:43.465
+just change into it. And then what we're
+
+00:01:43.465 --> 00:01:44.825
+gonna do is we're gonna call this clone
+
+00:01:44.825 --> 00:01:46.345
+command. And what you do is you say
+
+00:01:46.345 --> 00:01:49.545
+git clone and then this big long path,
+
+00:01:49.545 --> 00:01:51.705
+a f s slash slash a f s
+
+00:01:51.705 --> 00:01:55.545
+slash I r slash class slash c s
+
+00:01:55.545 --> 00:02:00.100
+one zero seven slash repos as in repositories
+
+00:02:00.100 --> 00:02:06.420
+slash assign zero slash dollar sign uppercase U
+
+00:02:06.420 --> 00:02:10.420
+S E R and then assign zero which
+
+00:02:10.420 --> 00:02:12.420
+is the folder that it's going to create.
+
+00:02:12.420 --> 00:02:13.995
+So when I do this, if all works
+
+00:02:13.995 --> 00:02:16.395
+well, it will say cloning into assign zero
+
+00:02:16.395 --> 00:02:19.835
+and then done. And now if we look,
+
+00:02:19.835 --> 00:02:22.795
+we've got an assign zero and we can
+
+00:02:23.035 --> 00:02:26.050
+change into it like that. By the way,
+
+00:02:26.050 --> 00:02:27.570
+if you wanna see what that dollar sign
+
+00:02:27.570 --> 00:02:31.330
+user actually stands for, you can do echo
+
+00:02:31.330 --> 00:02:33.650
+dollar sign user like that and it will
+
+00:02:33.650 --> 00:02:36.610
+say your username. So kind of a command
+
+00:02:36.610 --> 00:02:39.170
+that you can take a look at. Alright.
+
+00:02:39.170 --> 00:02:42.285
+So now you have the files there, this
+
+00:02:42.285 --> 00:02:44.285
+is basically all your starter code. There's not
+
+00:02:44.285 --> 00:02:46.765
+much starter code for assignment zero. But the
+
+00:02:46.765 --> 00:02:47.965
+first thing you might wanna do is just
+
+00:02:47.965 --> 00:02:49.805
+look at the readme dot t x t
+
+00:02:49.805 --> 00:02:52.045
+file, which I'll open up in VIM, and
+
+00:02:52.045 --> 00:02:53.725
+it's got some details in there that you
+
+00:02:53.725 --> 00:02:57.860
+can take a look at. And, you're gonna
+
+00:02:57.860 --> 00:03:00.420
+be able to use the, go to assignment,
+
+00:03:00.420 --> 00:03:02.900
+the assignment zero web page, and you'll find
+
+00:03:02.900 --> 00:03:04.660
+all the details about what you have to
+
+00:03:04.660 --> 00:03:07.300
+add to this file and so forth. And
+
+00:03:07.300 --> 00:03:10.275
+you'll also notice there's a samples directory in
+
+00:03:10.275 --> 00:03:12.035
+here. And if we do l s dash
+
+00:03:12.035 --> 00:03:14.435
+a l, you'll notice that the samples directory
+
+00:03:14.515 --> 00:03:17.395
+is a symbolic link, which is handled in
+
+00:03:17.395 --> 00:03:19.395
+a different video. You don't need to worry
+
+00:03:19.395 --> 00:03:20.915
+too much about that except to say that
+
+00:03:20.915 --> 00:03:23.590
+if you do c d samples, you're now
+
+00:03:23.590 --> 00:03:26.150
+inside this folder as it turns out it's
+
+00:03:26.150 --> 00:03:28.870
+the same exact folder and you won't be
+
+00:03:28.870 --> 00:03:31.990
+able to access those files, because they're read
+
+00:03:31.990 --> 00:03:34.150
+only to you. But those are the files
+
+00:03:34.150 --> 00:03:36.470
+that you're gonna use for assignment zero. So
+
+00:03:36.470 --> 00:03:38.655
+sometimes we'll give you a samples folder that
+
+00:03:38.655 --> 00:03:41.615
+will have extra information that the entire class
+
+00:03:41.615 --> 00:03:44.255
+will share and so that you can we
+
+00:03:44.255 --> 00:03:46.095
+don't have to make multiple copies of those
+
+00:03:46.095 --> 00:03:50.415
+individual files. Okay. So those that's how you
+
+00:03:50.415 --> 00:03:54.700
+do the git clone to actually to get
+
+00:03:54.700 --> 00:03:58.380
+the assignment into your own, directory. Then you
+
+00:03:58.380 --> 00:03:59.820
+can write the assignment and then at the
+
+00:03:59.820 --> 00:04:01.420
+end when you're gonna wanna when you're gonna
+
+00:04:01.420 --> 00:04:03.100
+wanna submit it, there's gonna be two other
+
+00:04:03.100 --> 00:04:05.020
+commands that you're gonna want to run. The
+
+00:04:05.020 --> 00:04:06.940
+first is something that you don't have to
+
+00:04:06.940 --> 00:04:08.300
+wait until you're ready to submit. You can
+
+00:04:08.300 --> 00:04:10.125
+run this at any time and it's called
+
+00:04:10.125 --> 00:04:12.285
+sanity check. And if you'll notice, there's also
+
+00:04:12.285 --> 00:04:14.685
+a tools directory in here, which is where
+
+00:04:14.685 --> 00:04:18.045
+sanity check lives. And if you are in
+
+00:04:18.045 --> 00:04:21.725
+your assignment directory, you can just type tools
+
+00:04:21.725 --> 00:04:25.660
+slash sanity check. And what that does is
+
+00:04:25.660 --> 00:04:28.700
+it will run a program that checks your
+
+00:04:28.700 --> 00:04:33.420
+program or your submission for, whether or not
+
+00:04:33.420 --> 00:04:36.505
+it's correct enough to actually be graded. Not
+
+00:04:36.505 --> 00:04:38.665
+doing the grading, but sometimes it will run
+
+00:04:38.665 --> 00:04:40.345
+tests that you can see if it if
+
+00:04:40.345 --> 00:04:42.265
+it's actually gonna pass some of those tests.
+
+00:04:42.425 --> 00:04:44.185
+But some but it's the big deal the
+
+00:04:44.185 --> 00:04:46.905
+big idea is it's running a program that
+
+00:04:46.905 --> 00:04:49.785
+will say, hey, we will accept your submission.
+
+00:04:49.785 --> 00:04:51.545
+In other words, if your program doesn't compile,
+
+00:04:51.890 --> 00:04:53.490
+sanity check will fail and you won't be
+
+00:04:53.490 --> 00:04:55.010
+able to submit, or you will be able
+
+00:04:55.010 --> 00:04:58.450
+to submit, but it's not, recommended. Okay. So
+
+00:04:58.450 --> 00:04:59.810
+if I run sanity check right now and
+
+00:04:59.810 --> 00:05:01.810
+I haven't done anything in this assignment yet,
+
+00:05:01.970 --> 00:05:03.890
+what it says is it's running some test
+
+00:05:03.890 --> 00:05:07.655
+here and then it says, that the file
+
+00:05:07.895 --> 00:05:09.975
+verify the file is not has changed. Well,
+
+00:05:09.975 --> 00:05:11.895
+I didn't change anything yet. So it's gonna
+
+00:05:11.895 --> 00:05:14.135
+say, nope. Not okay. Okay. So it actually
+
+00:05:14.135 --> 00:05:16.055
+didn't change that. Now all I need to
+
+00:05:16.055 --> 00:05:18.790
+do as it turns out is change something.
+
+00:05:18.790 --> 00:05:20.790
+So I can say Chris Gregg and then,
+
+00:05:21.030 --> 00:05:22.710
+write that to the file. And then if
+
+00:05:22.710 --> 00:05:24.550
+I run sanity check again, watch this. It
+
+00:05:24.550 --> 00:05:27.590
+says, oh, let's see. Oh, I didn't change
+
+00:05:27.590 --> 00:05:30.790
+enough. I probably didn't change enough. So let
+
+00:05:30.790 --> 00:05:33.615
+me let me just do this. Let's paste
+
+00:05:33.615 --> 00:05:36.815
+my name a hundred times in here. Not
+
+00:05:36.815 --> 00:05:38.015
+not that you wanna do that for your
+
+00:05:38.015 --> 00:05:39.775
+assignment, but let's see if sanity check works
+
+00:05:39.775 --> 00:05:43.135
+now. Nope. Still might not be enough changes.
+
+00:05:43.295 --> 00:05:45.470
+So we'll look into that and make sure
+
+00:05:45.470 --> 00:05:47.150
+it's working. But anyway, the point is that
+
+00:05:47.150 --> 00:05:49.870
+you can run sanity check and it will
+
+00:05:49.870 --> 00:05:52.990
+tell you how you're prior progressing on an
+
+00:05:52.990 --> 00:05:54.670
+assignment and whether or not it's ready to
+
+00:05:54.670 --> 00:05:57.230
+be submitted, as far as we're concerned. Again,
+
+00:05:57.230 --> 00:05:59.265
+it doesn't doesn't do the grading for you,
+
+00:05:59.265 --> 00:06:00.385
+but it can give you a lot of
+
+00:06:00.385 --> 00:06:03.905
+information about how you're progressing as you're going
+
+00:06:03.905 --> 00:06:07.425
+along. Okay. So once you run sanity check
+
+00:06:07.425 --> 00:06:09.105
+and you've decided that, yep, I want to
+
+00:06:09.105 --> 00:06:12.440
+submit this assignment, you can actually type tools
+
+00:06:12.440 --> 00:06:15.960
+slash submit and from again, you have to
+
+00:06:15.960 --> 00:06:18.680
+be in the assignment folder to run this.
+
+00:06:18.920 --> 00:06:20.680
+And it will say this tool submits the
+
+00:06:20.680 --> 00:06:22.680
+repo in the current directory, and it says
+
+00:06:22.680 --> 00:06:24.280
+would you like to run sanity check? You
+
+00:06:24.280 --> 00:06:26.605
+might as well. Right? And then it's going
+
+00:06:26.605 --> 00:06:28.445
+to say, in my case, hey, it didn't
+
+00:06:28.445 --> 00:06:31.165
+pass. Do you really wanna continue? And if
+
+00:06:31.165 --> 00:06:33.085
+I say yes, it will try to continue.
+
+00:06:33.325 --> 00:06:34.765
+And then in this case, we haven't set
+
+00:06:34.765 --> 00:06:37.005
+the actual deadline, so it didn't submit anything.
+
+00:06:37.005 --> 00:06:39.380
+But it's pretty easy to follow the instructions
+
+00:06:39.380 --> 00:06:41.700
+for the submit. But that's how you actually
+
+00:06:41.700 --> 00:06:43.940
+submit the assignment and you should make sure
+
+00:06:43.940 --> 00:06:47.140
+that you get confirmation that your assignment has
+
+00:06:47.140 --> 00:06:51.075
+been submitted, before you are done with the
+
+00:06:51.075 --> 00:06:53.155
+assignment. And you definitely wanna do it before
+
+00:06:53.155 --> 00:06:55.955
+the deadline because we generally don't accept assignments
+
+00:06:55.955 --> 00:06:58.195
+after the deadline. So unless you talk to
+
+00:06:58.195 --> 00:07:01.411
+us specifically about some exception. So anyway, those
+
+00:07:01.411 --> 00:07:02.691
+are the three commands you're gonna need to
+
+00:07:02.691 --> 00:07:06.531
+know, the git clone command and the sanity
+
+00:07:06.531 --> 00:07:09.091
+check and the submit command. Thanks.
