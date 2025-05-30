@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The grep command</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 2.0, "end": 52.075, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 2.0, "end": 2.8799999}, {"id": "sent_0_1", "text": "In this video we are going to look at the grep command which is a Unix command that uses what we call regular expressions to look through files and search through them for a particular keyword or wild card based keyword.", "start": 3.1999998, "end": 21.465}, {"id": "sent_0_2", "text": "We're not gonna go into details about what regular expressions are, although I'll I'll show you a couple of a couple of different things about them.", "start": 21.865, "end": 29.76}, {"id": "sent_0_3", "text": "There are many many resources online to find out more about regular expressions and searching with grep, etcetera.", "start": 30.080002, "end": 36.24}, {"id": "sent_0_4", "text": "The basic idea is that you, you say grep and then some pattern which is generally in either single quotes or double quotes depending on, how you're doing the search and then some, files that you wanna search.", "start": 36.72, "end": 52.075}]}, {"id": "para_1", "paragraph_idx": 1, "start": 52.795, "end": 95.43, "sentences": [{"id": "sent_1_0", "text": "Okay.", "start": 52.795, "end": 53.195}, {"id": "sent_1_1", "text": "So for instance, let's look in here.", "start": 53.480003, "end": 57.32}, {"id": "sent_1_2", "text": "I have a file called unit testing dot txt and this is available at this this path on the website, a f s slash AFS slash IR slash CLASS slash CS107 slash samples slash assign zero and it is a file, basically if we look at it, it is a file that is from the Wikipedia article on unit testing, which, is not a bad thing to learn anyway.", "start": 57.480003, "end": 86.71}, {"id": "sent_1_3", "text": "But if we wanna find something, so in here I noticed that, often it says unit.", "start": 87.19, "end": 92.07}, {"id": "sent_1_4", "text": "So let's actually search for unit in this file.", "start": 92.07, "end": 95.43}]}, {"id": "para_2", "paragraph_idx": 2, "start": 95.685, "end": 125.005, "sentences": [{"id": "sent_2_0", "text": "We type grep and then unit and then the name unit testing dot txt.", "start": 95.685, "end": 100.884995}, {"id": "sent_2_1", "text": "What it does, it lists all the lines that unit falls on.", "start": 101.045, "end": 106.645}, {"id": "sent_2_2", "text": "Okay?", "start": 106.805, "end": 107.125}, {"id": "sent_2_3", "text": "And so it, it's just looking for unit itself, it doesn't really, it doesn't have to have spaces around it, it doesn't have to be a single word, it can be part of a word, etcetera.", "start": 108.840004, "end": 116.44}, {"id": "sent_2_4", "text": "But if the u n I t is in there and by the way it's lowercase in this case, then, you will have it will find it.", "start": 117.08, "end": 125.005}]}, {"id": "para_3", "paragraph_idx": 3, "start": 125.005, "end": 149.2, "sentences": [{"id": "sent_3_0", "text": "Okay.", "start": 125.005, "end": 125.405}, {"id": "sent_3_1", "text": "So let's find something that it grep for something that it won't find.", "start": 125.405, "end": 128.52501}, {"id": "sent_3_2", "text": "Grep for, let's say obtain with a an uppercase o on here.", "start": 129.165, "end": 136.64}, {"id": "sent_3_3", "text": "Now I see an obtain right here but, because I'm doing uppercase o, it will, not find anything.", "start": 136.64, "end": 143.6}, {"id": "sent_3_4", "text": "Just it happens to be no other places in the file that have an uppercase o obtain as well.", "start": 143.68, "end": 149.2}]}, {"id": "para_4", "paragraph_idx": 4, "start": 149.785, "end": 164.29001, "sentences": [{"id": "sent_4_0", "text": "So you can do searches with various wild cards.", "start": 149.785, "end": 154.665}, {"id": "sent_4_1", "text": "The two wild cards that we care about are the period and the asterisk.", "start": 154.665, "end": 158.26501}, {"id": "sent_4_2", "text": "Okay, and here's here's how they work.", "start": 158.345, "end": 160.585}, {"id": "sent_4_3", "text": "Okay, period matches any character.", "start": 160.825, "end": 163.145}, {"id": "sent_4_4", "text": "Right?", "start": 163.73001, "end": 164.29001}]}, {"id": "para_5", "paragraph_idx": 5, "start": 164.29001, "end": 218.29001, "sentences": [{"id": "sent_5_0", "text": "So if I wanted to find, let's say, let's say all words that start with t h e.", "start": 164.29001, "end": 172.05002}, {"id": "sent_5_1", "text": "Okay, all words that start with t h, well, let's say all words that have t h e and then some character after that.", "start": 172.53, "end": 182.60501}, {"id": "sent_5_2", "text": "Okay, then what we can do is we can say grep t h e period and then unit testing and it will find everywhere where it says The with something after it.", "start": 183.645, "end": 195.05}, {"id": "sent_5_3", "text": "Okay?", "start": 195.53, "end": 196.17}, {"id": "sent_5_4", "text": "Let's see if I can find an example of where this might, not necessarily the best example, but, if we type grep and then a dot dot, right, and then unit testing, right, it will find anything where we have a followed by any two things, any two letters, characters, whatever.", "start": 198.25, "end": 218.29001}]}, {"id": "para_6", "paragraph_idx": 6, "start": 218.53, "end": 239.885, "sentences": [{"id": "sent_6_0", "text": "Okay?", "start": 218.53, "end": 219.09001}, {"id": "sent_6_1", "text": "So, a and n is right there.", "start": 219.17, "end": 222.69002}, {"id": "sent_6_2", "text": "Let's look for, let's look for something that is a little bit more interesting, maybe something like, oh I don't know, OF period.", "start": 223.25, "end": 233.32501}, {"id": "sent_6_3", "text": "Right?", "start": 233.725, "end": 234.205}, {"id": "sent_6_4", "text": "So grep OF period, blue OF period period, okay and then unit testing.", "start": 234.205, "end": 239.885}]}, {"id": "para_7", "paragraph_idx": 7, "start": 239.885, "end": 267.125, "sentences": [{"id": "sent_7_0", "text": "That will do OF and then two characters of anything else.", "start": 239.885, "end": 243.325}, {"id": "sent_7_1", "text": "So we'll find all the of's in here but we'll also find often, it will also find anywhere else where it starts with or it has two anythings after the OF.", "start": 243.325, "end": 255.34001}, {"id": "sent_7_2", "text": "Okay?", "start": 255.5, "end": 256.14}, {"id": "sent_7_3", "text": "If we have an asterisk, it will find zero or more repeats of the character that follows it.", "start": 256.22, "end": 266.245}, {"id": "sent_7_4", "text": "Okay?", "start": 266.48502, "end": 267.125}]}, {"id": "para_8", "paragraph_idx": 8, "start": 267.125, "end": 293.465, "sentences": [{"id": "sent_8_0", "text": "So for instance, grep and then a b star will match anything that has a b and then any number of b's after that.", "start": 267.125, "end": 277.87003}, {"id": "sent_8_1", "text": "Okay?", "start": 278.43, "end": 279.07}, {"id": "sent_8_2", "text": "So it will match, a actually, will say any number, so zero or more.", "start": 279.63, "end": 285.39}, {"id": "sent_8_3", "text": "So it will match anything anything with an a, but then anything with any number of b's after it.", "start": 285.39, "end": 292.98502}, {"id": "sent_8_4", "text": "Okay.", "start": 293.065, "end": 293.465}]}, {"id": "para_9", "paragraph_idx": 9, "start": 293.465, "end": 313.67, "sentences": [{"id": "sent_9_0", "text": "So let's actually try something a little more interesting here.", "start": 293.465, "end": 296.345}, {"id": "sent_9_1", "text": "Let's try something like EV star.", "start": 297.38498, "end": 305.145}, {"id": "sent_9_2", "text": "Probably not gonna find too many multiple v's.", "start": 306.07, "end": 308.63004}, {"id": "sent_9_3", "text": "Let me see something.", "start": 309.19, "end": 310.23}, {"id": "sent_9_4", "text": "How about DIF star?", "start": 310.23, "end": 313.67}]}, {"id": "para_10", "paragraph_idx": 10, "start": 313.67, "end": 331.795, "sentences": [{"id": "sent_10_0", "text": "You'll find anything with oops.", "start": 313.67, "end": 315.75}, {"id": "sent_10_1", "text": "By the way, I did this right now.", "start": 315.75, "end": 317.35}, {"id": "sent_10_2", "text": "I forgot to type the filename and now I'm in here like, what's going on?", "start": 317.35, "end": 320.95}, {"id": "sent_10_3", "text": "If you ever get stuck in a program like this, hit the control hold down control and type c and it will break out of the file.", "start": 323.075, "end": 331.39502}, {"id": "sent_10_4", "text": "Okay.", "start": 331.475, "end": 331.795}]}, {"id": "para_11", "paragraph_idx": 11, "start": 331.795, "end": 363.24, "sentences": [{"id": "sent_11_0", "text": "So let's do this with the correct unit testing file there and what did I do?", "start": 331.795, "end": 336.37}, {"id": "sent_11_1", "text": "I said DIF and not any number of F's after that.", "start": 336.37, "end": 340.29}, {"id": "sent_11_2", "text": "Right?", "start": 340.53, "end": 341.01}, {"id": "sent_11_3", "text": "So here's DIFF, okay, and this line, let's see where's the DIF here, or sorry, DI and any number of Fs.", "start": 341.01, "end": 354.67502}, {"id": "sent_11_4", "text": "So like in this one, do we have any D, there's the DIF here, how about this one, D, there we go, DI and then any number of f's after that.", "start": 354.755, "end": 363.24}]}, {"id": "para_12", "paragraph_idx": 12, "start": 363.24, "end": 387.72498, "sentences": [{"id": "sent_12_0", "text": "Well, is any number so d I any number of f's after that.", "start": 363.24, "end": 367.32}, {"id": "sent_12_1", "text": "Okay?", "start": 367.56, "end": 368.12}, {"id": "sent_12_2", "text": "So you can use, often we see it, used with a we see them used together the period and the asterisk like something like this.", "start": 368.12, "end": 375.4}, {"id": "sent_12_3", "text": "Grep for, let's say, oh, don't know, c o n and then dot star and then s.", "start": 375.48, "end": 387.325}, {"id": "sent_12_4", "text": "Right?", "start": 387.405, "end": 387.72498}]}, {"id": "para_13", "paragraph_idx": 13, "start": 387.72498, "end": 407.935, "sentences": [{"id": "sent_13_0", "text": "So what this means is it will match c o n and then any number of any characters zero or more and then an s.", "start": 387.72498, "end": 396.15}, {"id": "sent_13_1", "text": "Right?", "start": 396.38998, "end": 396.78998}, {"id": "sent_13_2", "text": "So if I do that and do that in unit testing, right, it will find that.", "start": 396.78998, "end": 400.15}, {"id": "sent_13_3", "text": "So let's see.", "start": 400.15, "end": 400.71}, {"id": "sent_13_4", "text": "C o n c o n and then any number of characters until there's an s right there.", "start": 400.71, "end": 407.935}]}, {"id": "para_14", "paragraph_idx": 14, "start": 407.935, "end": 441.635, "sentences": [{"id": "sent_14_0", "text": "So it's matching that for instance.", "start": 407.935, "end": 409.535}, {"id": "sent_14_1", "text": "In fact it's actually matching that because it's what we call a greedy match and it matches all the way to the last possible thing that it can on a particular line.", "start": 409.535, "end": 419.95}, {"id": "sent_14_2", "text": "Okay?", "start": 420.43002, "end": 421.07}, {"id": "sent_14_3", "text": "So you can test all the things you want using unit testing or any other file and, you should practice using grep, in, to find various, things.", "start": 421.23, "end": 436.11502}, {"id": "sent_14_4", "text": "Now, man file on grep is pretty large, it shows lots of different ways to do things.", "start": 436.11502, "end": 441.635}]}, {"id": "para_15", "paragraph_idx": 15, "start": 441.95502, "end": 469.215, "sentences": [{"id": "sent_15_0", "text": "Okay?", "start": 441.95502, "end": 442.515}, {"id": "sent_15_1", "text": "But for instance there's other ones like grep and then if I put things in brackets and I say a b and then, I don't know, e like that, it will match and it will match anything that goes a e or anything that goes b e like that.", "start": 443.23502, "end": 460.335}, {"id": "sent_15_2", "text": "Forgot to do the unit testing again and there we go.", "start": 460.335, "end": 463.775}, {"id": "sent_15_3", "text": "So we said a so there's a BE right there.", "start": 463.775, "end": 468.495}, {"id": "sent_15_4", "text": "Right?", "start": 468.895, "end": 469.215}]}, {"id": "para_16", "paragraph_idx": 16, "start": 469.215, "end": 498.73, "sentences": [{"id": "sent_16_0", "text": "There's another BE right there.", "start": 469.215, "end": 470.975}, {"id": "sent_16_1", "text": "Let's see we said it was going to be AE so see if we can find some AEs in here.", "start": 471.855, "end": 477.37003}, {"id": "sent_16_2", "text": "There's probably more, let's see what does this one have?", "start": 478.41, "end": 481.21002}, {"id": "sent_16_3", "text": "I don't see any Bs in this one so is there an AE anywhere here?", "start": 481.45, "end": 487.315}, {"id": "sent_16_4", "text": "I might be missing it.", "start": 497.61002, "end": 498.73}]}, {"id": "para_17", "paragraph_idx": 17, "start": 498.73, "end": 527.59, "sentences": [{"id": "sent_17_0", "text": "Is there a B in that one?", "start": 498.73, "end": 500.17}, {"id": "sent_17_1", "text": "Yes, there's a B in that line.", "start": 501.69, "end": 503.37003}, {"id": "sent_17_2", "text": "So that's that one.", "start": 503.37003, "end": 504.57}, {"id": "sent_17_3", "text": "There's a B there, think B is more likely than other things but let's see more BE's, maybe I didn't pick the best example here, lots of BE's but it would also search for find anything that has an AE in it as well.", "start": 504.97, "end": 524.025}, {"id": "sent_17_4", "text": "So that's how we do that.", "start": 525.67, "end": 527.59}]}, {"id": "para_18", "paragraph_idx": 18, "start": 527.59, "end": 543.365, "sentences": [{"id": "sent_18_0", "text": "In fact, let's let's just see which one just if we do just AE then we'll find anywhere.", "start": 527.59, "end": 534.63}, {"id": "sent_18_1", "text": "Well, there are no just AEs in that file.", "start": 534.63, "end": 536.87}, {"id": "sent_18_2", "text": "Guess that was a bad example.", "start": 536.87, "end": 537.83}, {"id": "sent_18_3", "text": "Let's try another one.", "start": 538.085, "end": 539.205}, {"id": "sent_18_4", "text": "AE or DE or sorry, DE or BE.", "start": 539.445, "end": 543.365}]}, {"id": "para_19", "paragraph_idx": 19, "start": 543.605, "end": 555.10004, "sentences": [{"id": "sent_19_0", "text": "There we go.", "start": 543.605, "end": 544.325}, {"id": "sent_19_1", "text": "It'll find lots of ones with, with both of those and there's probably some DE's in there too.", "start": 544.325, "end": 548.965}, {"id": "sent_19_2", "text": "Let's find out where the the DE's are.", "start": 549.125, "end": 551.205}, {"id": "sent_19_3", "text": "There we go.", "start": 551.74, "end": 552.3}, {"id": "sent_19_4", "text": "There's lots of ones right there, deployment environment, etcetera.", "start": 552.3, "end": 555.10004}]}, {"id": "para_20", "paragraph_idx": 20, "start": 555.66003, "end": 590.2, "sentences": [{"id": "sent_20_0", "text": "So that's how grep works.", "start": 555.66003, "end": 557.26}, {"id": "sent_20_1", "text": "Grep is really important if you look up regular expressions, you'll find out all the different ways to do searches using things like for instance, what if I wanted to say grep and then start the line.", "start": 557.58, "end": 572.625}, {"id": "sent_20_2", "text": "If you use uppercase caret like that or caret symbol like that and then u will find all word all, it will find all places in the file that start with u, uppercase u like that.", "start": 572.625, "end": 587.24}, {"id": "sent_20_3", "text": "Right?", "start": 587.24, "end": 587.48}, {"id": "sent_20_4", "text": "If I did the same thing with uppercase t it would do that.", "start": 587.48, "end": 590.2}]}, {"id": "para_21", "paragraph_idx": 21, "start": 590.2, "end": 614.04004, "sentences": [{"id": "sent_21_0", "text": "You can also say find something at the end of the file which is the dollar sign character so let's find all lines that end with H.", "start": 590.2, "end": 598.68506}, {"id": "sent_21_1", "text": "Right, none, end with H.", "start": 599.16504, "end": 601.405}, {"id": "sent_21_2", "text": "Let's see, it looks like this file may actually have extra characters in there.", "start": 601.965, "end": 605.565}, {"id": "sent_21_3", "text": "Yeah, it looks like the file may have spaces at the end of it too.", "start": 605.565, "end": 609.4}, {"id": "sent_21_4", "text": "So that's a little harder to find but let's find out what lines end with space.", "start": 609.4, "end": 614.04004}]}, {"id": "para_22", "paragraph_idx": 22, "start": 615.08, "end": 628.2483, "sentences": [{"id": "sent_22_0", "text": "There we go, whole bunch of them.", "start": 615.08, "end": 616.68005}, {"id": "sent_22_1", "text": "A whole bunch of lines end with space.", "start": 617.0, "end": 618.60004}, {"id": "sent_22_2", "text": "So, so that's how how grep works and you can, use it to do search through files and it is, a great little tool for that.", "start": 618.96826, "end": 628.0083}, {"id": "sent_22_3", "text": "Thanks.", "start": 628.0083, "end": 628.2483}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "BGAue9GyJ9g";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 630;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>The grep command</h1>
+                <p>Channel: Chris Gregg | Duration: 10:30</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="2.0" data-end-time="52.075">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="2.0"></div>
+                        <div class="timeline-timestamp">00:02</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="2.0" data-end-time="2.8799999">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="3.1999998" data-end-time="21.465">In this video we are going to look at the grep command which is a Unix command that uses what we call regular expressions to look through files and search through them for a particular keyword or wild card based keyword.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="21.865" data-end-time="29.76">We're not gonna go into details about what regular expressions are, although I'll I'll show you a couple of a couple of different things about them.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="30.080002" data-end-time="36.24">There are many many resources online to find out more about regular expressions and searching with grep, etcetera.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="36.72" data-end-time="52.075">The basic idea is that you, you say grep and then some pattern which is generally in either single quotes or double quotes depending on, how you're doing the search and then some, files that you wanna search.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="52.795" data-end-time="95.43">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="52.795"></div>
+                        <div class="timeline-timestamp">00:52</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="52.795" data-end-time="53.195">Okay.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="53.480003" data-end-time="57.32">So for instance, let's look in here.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="57.480003" data-end-time="86.71">I have a file called unit testing dot txt and this is available at this this path on the website, a f s slash AFS slash IR slash CLASS slash CS107 slash samples slash assign zero and it is a file, basically if we look at it, it is a file that is from the Wikipedia article on unit testing, which, is not a bad thing to learn anyway.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="87.19" data-end-time="92.07">But if we wanna find something, so in here I noticed that, often it says unit.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="92.07" data-end-time="95.43">So let's actually search for unit in this file.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="95.685" data-end-time="125.005">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="95.685"></div>
+                        <div class="timeline-timestamp">01:35</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="95.685" data-end-time="100.884995">We type grep and then unit and then the name unit testing dot txt.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="101.045" data-end-time="106.645">What it does, it lists all the lines that unit falls on.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="106.805" data-end-time="107.125">Okay?</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="108.840004" data-end-time="116.44">And so it, it's just looking for unit itself, it doesn't really, it doesn't have to have spaces around it, it doesn't have to be a single word, it can be part of a word, etcetera.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="117.08" data-end-time="125.005">But if the u n I t is in there and by the way it's lowercase in this case, then, you will have it will find it.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="125.005" data-end-time="149.2">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="125.005"></div>
+                        <div class="timeline-timestamp">02:05</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="125.005" data-end-time="125.405">Okay.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="125.405" data-end-time="128.52501">So let's find something that it grep for something that it won't find.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="129.165" data-end-time="136.64">Grep for, let's say obtain with a an uppercase o on here.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="136.64" data-end-time="143.6">Now I see an obtain right here but, because I'm doing uppercase o, it will, not find anything.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="143.68" data-end-time="149.2">Just it happens to be no other places in the file that have an uppercase o obtain as well.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="149.785" data-end-time="164.29001">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="149.785"></div>
+                        <div class="timeline-timestamp">02:29</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="149.785" data-end-time="154.665">So you can do searches with various wild cards.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="154.665" data-end-time="158.26501">The two wild cards that we care about are the period and the asterisk.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="158.345" data-end-time="160.585">Okay, and here's here's how they work.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="160.825" data-end-time="163.145">Okay, period matches any character.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="163.73001" data-end-time="164.29001">Right?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="164.29001" data-end-time="218.29001">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="164.29001"></div>
+                        <div class="timeline-timestamp">02:44</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="164.29001" data-end-time="172.05002">So if I wanted to find, let's say, let's say all words that start with t h e.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="172.53" data-end-time="182.60501">Okay, all words that start with t h, well, let's say all words that have t h e and then some character after that.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="183.645" data-end-time="195.05">Okay, then what we can do is we can say grep t h e period and then unit testing and it will find everywhere where it says The with something after it.</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="195.53" data-end-time="196.17">Okay?</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="198.25" data-end-time="218.29001">Let's see if I can find an example of where this might, not necessarily the best example, but, if we type grep and then a dot dot, right, and then unit testing, right, it will find anything where we have a followed by any two things, any two letters, characters, whatever.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="218.53" data-end-time="239.885">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="218.53"></div>
+                        <div class="timeline-timestamp">03:38</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="218.53" data-end-time="219.09001">Okay?</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="219.17" data-end-time="222.69002">So, a and n is right there.</span> <span class="transcript-sentence" id="sent_6_2" data-start-time="223.25" data-end-time="233.32501">Let's look for, let's look for something that is a little bit more interesting, maybe something like, oh I don't know, OF period.</span> <span class="transcript-sentence" id="sent_6_3" data-start-time="233.725" data-end-time="234.205">Right?</span> <span class="transcript-sentence" id="sent_6_4" data-start-time="234.205" data-end-time="239.885">So grep OF period, blue OF period period, okay and then unit testing.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_7" data-paragraph-idx="7" data-start-time="239.885" data-end-time="267.125">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="239.885"></div>
+                        <div class="timeline-timestamp">03:59</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_7"><span class="transcript-sentence" id="sent_7_0" data-start-time="239.885" data-end-time="243.325">That will do OF and then two characters of anything else.</span> <span class="transcript-sentence" id="sent_7_1" data-start-time="243.325" data-end-time="255.34001">So we'll find all the of's in here but we'll also find often, it will also find anywhere else where it starts with or it has two anythings after the OF.</span> <span class="transcript-sentence" id="sent_7_2" data-start-time="255.5" data-end-time="256.14">Okay?</span> <span class="transcript-sentence" id="sent_7_3" data-start-time="256.22" data-end-time="266.245">If we have an asterisk, it will find zero or more repeats of the character that follows it.</span> <span class="transcript-sentence" id="sent_7_4" data-start-time="266.48502" data-end-time="267.125">Okay?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_8" data-paragraph-idx="8" data-start-time="267.125" data-end-time="293.465">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="267.125"></div>
+                        <div class="timeline-timestamp">04:27</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_8"><span class="transcript-sentence" id="sent_8_0" data-start-time="267.125" data-end-time="277.87003">So for instance, grep and then a b star will match anything that has a b and then any number of b's after that.</span> <span class="transcript-sentence" id="sent_8_1" data-start-time="278.43" data-end-time="279.07">Okay?</span> <span class="transcript-sentence" id="sent_8_2" data-start-time="279.63" data-end-time="285.39">So it will match, a actually, will say any number, so zero or more.</span> <span class="transcript-sentence" id="sent_8_3" data-start-time="285.39" data-end-time="292.98502">So it will match anything anything with an a, but then anything with any number of b's after it.</span> <span class="transcript-sentence" id="sent_8_4" data-start-time="293.065" data-end-time="293.465">Okay.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_9" data-paragraph-idx="9" data-start-time="293.465" data-end-time="313.67">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="293.465"></div>
+                        <div class="timeline-timestamp">04:53</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_9"><span class="transcript-sentence" id="sent_9_0" data-start-time="293.465" data-end-time="296.345">So let's actually try something a little more interesting here.</span> <span class="transcript-sentence" id="sent_9_1" data-start-time="297.38498" data-end-time="305.145">Let's try something like EV star.</span> <span class="transcript-sentence" id="sent_9_2" data-start-time="306.07" data-end-time="308.63004">Probably not gonna find too many multiple v's.</span> <span class="transcript-sentence" id="sent_9_3" data-start-time="309.19" data-end-time="310.23">Let me see something.</span> <span class="transcript-sentence" id="sent_9_4" data-start-time="310.23" data-end-time="313.67">How about DIF star?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_10" data-paragraph-idx="10" data-start-time="313.67" data-end-time="331.795">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="313.67"></div>
+                        <div class="timeline-timestamp">05:13</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_10"><span class="transcript-sentence" id="sent_10_0" data-start-time="313.67" data-end-time="315.75">You'll find anything with oops.</span> <span class="transcript-sentence" id="sent_10_1" data-start-time="315.75" data-end-time="317.35">By the way, I did this right now.</span> <span class="transcript-sentence" id="sent_10_2" data-start-time="317.35" data-end-time="320.95">I forgot to type the filename and now I'm in here like, what's going on?</span> <span class="transcript-sentence" id="sent_10_3" data-start-time="323.075" data-end-time="331.39502">If you ever get stuck in a program like this, hit the control hold down control and type c and it will break out of the file.</span> <span class="transcript-sentence" id="sent_10_4" data-start-time="331.475" data-end-time="331.795">Okay.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_11" data-paragraph-idx="11" data-start-time="331.795" data-end-time="363.24">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="331.795"></div>
+                        <div class="timeline-timestamp">05:31</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_11"><span class="transcript-sentence" id="sent_11_0" data-start-time="331.795" data-end-time="336.37">So let's do this with the correct unit testing file there and what did I do?</span> <span class="transcript-sentence" id="sent_11_1" data-start-time="336.37" data-end-time="340.29">I said DIF and not any number of F's after that.</span> <span class="transcript-sentence" id="sent_11_2" data-start-time="340.53" data-end-time="341.01">Right?</span> <span class="transcript-sentence" id="sent_11_3" data-start-time="341.01" data-end-time="354.67502">So here's DIFF, okay, and this line, let's see where's the DIF here, or sorry, DI and any number of Fs.</span> <span class="transcript-sentence" id="sent_11_4" data-start-time="354.755" data-end-time="363.24">So like in this one, do we have any D, there's the DIF here, how about this one, D, there we go, DI and then any number of f's after that.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_12" data-paragraph-idx="12" data-start-time="363.24" data-end-time="387.72498">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="363.24"></div>
+                        <div class="timeline-timestamp">06:03</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_12"><span class="transcript-sentence" id="sent_12_0" data-start-time="363.24" data-end-time="367.32">Well, is any number so d I any number of f's after that.</span> <span class="transcript-sentence" id="sent_12_1" data-start-time="367.56" data-end-time="368.12">Okay?</span> <span class="transcript-sentence" id="sent_12_2" data-start-time="368.12" data-end-time="375.4">So you can use, often we see it, used with a we see them used together the period and the asterisk like something like this.</span> <span class="transcript-sentence" id="sent_12_3" data-start-time="375.48" data-end-time="387.325">Grep for, let's say, oh, don't know, c o n and then dot star and then s.</span> <span class="transcript-sentence" id="sent_12_4" data-start-time="387.405" data-end-time="387.72498">Right?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_13" data-paragraph-idx="13" data-start-time="387.72498" data-end-time="407.935">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="387.72498"></div>
+                        <div class="timeline-timestamp">06:27</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_13"><span class="transcript-sentence" id="sent_13_0" data-start-time="387.72498" data-end-time="396.15">So what this means is it will match c o n and then any number of any characters zero or more and then an s.</span> <span class="transcript-sentence" id="sent_13_1" data-start-time="396.38998" data-end-time="396.78998">Right?</span> <span class="transcript-sentence" id="sent_13_2" data-start-time="396.78998" data-end-time="400.15">So if I do that and do that in unit testing, right, it will find that.</span> <span class="transcript-sentence" id="sent_13_3" data-start-time="400.15" data-end-time="400.71">So let's see.</span> <span class="transcript-sentence" id="sent_13_4" data-start-time="400.71" data-end-time="407.935">C o n c o n and then any number of characters until there's an s right there.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_14" data-paragraph-idx="14" data-start-time="407.935" data-end-time="441.635">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="407.935"></div>
+                        <div class="timeline-timestamp">06:47</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_14"><span class="transcript-sentence" id="sent_14_0" data-start-time="407.935" data-end-time="409.535">So it's matching that for instance.</span> <span class="transcript-sentence" id="sent_14_1" data-start-time="409.535" data-end-time="419.95">In fact it's actually matching that because it's what we call a greedy match and it matches all the way to the last possible thing that it can on a particular line.</span> <span class="transcript-sentence" id="sent_14_2" data-start-time="420.43002" data-end-time="421.07">Okay?</span> <span class="transcript-sentence" id="sent_14_3" data-start-time="421.23" data-end-time="436.11502">So you can test all the things you want using unit testing or any other file and, you should practice using grep, in, to find various, things.</span> <span class="transcript-sentence" id="sent_14_4" data-start-time="436.11502" data-end-time="441.635">Now, man file on grep is pretty large, it shows lots of different ways to do things.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_15" data-paragraph-idx="15" data-start-time="441.95502" data-end-time="469.215">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="441.95502"></div>
+                        <div class="timeline-timestamp">07:21</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_15"><span class="transcript-sentence" id="sent_15_0" data-start-time="441.95502" data-end-time="442.515">Okay?</span> <span class="transcript-sentence" id="sent_15_1" data-start-time="443.23502" data-end-time="460.335">But for instance there's other ones like grep and then if I put things in brackets and I say a b and then, I don't know, e like that, it will match and it will match anything that goes a e or anything that goes b e like that.</span> <span class="transcript-sentence" id="sent_15_2" data-start-time="460.335" data-end-time="463.775">Forgot to do the unit testing again and there we go.</span> <span class="transcript-sentence" id="sent_15_3" data-start-time="463.775" data-end-time="468.495">So we said a so there's a BE right there.</span> <span class="transcript-sentence" id="sent_15_4" data-start-time="468.895" data-end-time="469.215">Right?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_16" data-paragraph-idx="16" data-start-time="469.215" data-end-time="498.73">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="469.215"></div>
+                        <div class="timeline-timestamp">07:49</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_16"><span class="transcript-sentence" id="sent_16_0" data-start-time="469.215" data-end-time="470.975">There's another BE right there.</span> <span class="transcript-sentence" id="sent_16_1" data-start-time="471.855" data-end-time="477.37003">Let's see we said it was going to be AE so see if we can find some AEs in here.</span> <span class="transcript-sentence" id="sent_16_2" data-start-time="478.41" data-end-time="481.21002">There's probably more, let's see what does this one have?</span> <span class="transcript-sentence" id="sent_16_3" data-start-time="481.45" data-end-time="487.315">I don't see any Bs in this one so is there an AE anywhere here?</span> <span class="transcript-sentence" id="sent_16_4" data-start-time="497.61002" data-end-time="498.73">I might be missing it.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_17" data-paragraph-idx="17" data-start-time="498.73" data-end-time="527.59">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="498.73"></div>
+                        <div class="timeline-timestamp">08:18</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_17"><span class="transcript-sentence" id="sent_17_0" data-start-time="498.73" data-end-time="500.17">Is there a B in that one?</span> <span class="transcript-sentence" id="sent_17_1" data-start-time="501.69" data-end-time="503.37003">Yes, there's a B in that line.</span> <span class="transcript-sentence" id="sent_17_2" data-start-time="503.37003" data-end-time="504.57">So that's that one.</span> <span class="transcript-sentence" id="sent_17_3" data-start-time="504.97" data-end-time="524.025">There's a B there, think B is more likely than other things but let's see more BE's, maybe I didn't pick the best example here, lots of BE's but it would also search for find anything that has an AE in it as well.</span> <span class="transcript-sentence" id="sent_17_4" data-start-time="525.67" data-end-time="527.59">So that's how we do that.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_18" data-paragraph-idx="18" data-start-time="527.59" data-end-time="543.365">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="527.59"></div>
+                        <div class="timeline-timestamp">08:47</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_18"><span class="transcript-sentence" id="sent_18_0" data-start-time="527.59" data-end-time="534.63">In fact, let's let's just see which one just if we do just AE then we'll find anywhere.</span> <span class="transcript-sentence" id="sent_18_1" data-start-time="534.63" data-end-time="536.87">Well, there are no just AEs in that file.</span> <span class="transcript-sentence" id="sent_18_2" data-start-time="536.87" data-end-time="537.83">Guess that was a bad example.</span> <span class="transcript-sentence" id="sent_18_3" data-start-time="538.085" data-end-time="539.205">Let's try another one.</span> <span class="transcript-sentence" id="sent_18_4" data-start-time="539.445" data-end-time="543.365">AE or DE or sorry, DE or BE.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_19" data-paragraph-idx="19" data-start-time="543.605" data-end-time="555.10004">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="543.605"></div>
+                        <div class="timeline-timestamp">09:03</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_19"><span class="transcript-sentence" id="sent_19_0" data-start-time="543.605" data-end-time="544.325">There we go.</span> <span class="transcript-sentence" id="sent_19_1" data-start-time="544.325" data-end-time="548.965">It'll find lots of ones with, with both of those and there's probably some DE's in there too.</span> <span class="transcript-sentence" id="sent_19_2" data-start-time="549.125" data-end-time="551.205">Let's find out where the the DE's are.</span> <span class="transcript-sentence" id="sent_19_3" data-start-time="551.74" data-end-time="552.3">There we go.</span> <span class="transcript-sentence" id="sent_19_4" data-start-time="552.3" data-end-time="555.10004">There's lots of ones right there, deployment environment, etcetera.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_20" data-paragraph-idx="20" data-start-time="555.66003" data-end-time="590.2">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="555.66003"></div>
+                        <div class="timeline-timestamp">09:15</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_20"><span class="transcript-sentence" id="sent_20_0" data-start-time="555.66003" data-end-time="557.26">So that's how grep works.</span> <span class="transcript-sentence" id="sent_20_1" data-start-time="557.58" data-end-time="572.625">Grep is really important if you look up regular expressions, you'll find out all the different ways to do searches using things like for instance, what if I wanted to say grep and then start the line.</span> <span class="transcript-sentence" id="sent_20_2" data-start-time="572.625" data-end-time="587.24">If you use uppercase caret like that or caret symbol like that and then u will find all word all, it will find all places in the file that start with u, uppercase u like that.</span> <span class="transcript-sentence" id="sent_20_3" data-start-time="587.24" data-end-time="587.48">Right?</span> <span class="transcript-sentence" id="sent_20_4" data-start-time="587.48" data-end-time="590.2">If I did the same thing with uppercase t it would do that.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_21" data-paragraph-idx="21" data-start-time="590.2" data-end-time="614.04004">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="590.2"></div>
+                        <div class="timeline-timestamp">09:50</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_21"><span class="transcript-sentence" id="sent_21_0" data-start-time="590.2" data-end-time="598.68506">You can also say find something at the end of the file which is the dollar sign character so let's find all lines that end with H.</span> <span class="transcript-sentence" id="sent_21_1" data-start-time="599.16504" data-end-time="601.405">Right, none, end with H.</span> <span class="transcript-sentence" id="sent_21_2" data-start-time="601.965" data-end-time="605.565">Let's see, it looks like this file may actually have extra characters in there.</span> <span class="transcript-sentence" id="sent_21_3" data-start-time="605.565" data-end-time="609.4">Yeah, it looks like the file may have spaces at the end of it too.</span> <span class="transcript-sentence" id="sent_21_4" data-start-time="609.4" data-end-time="614.04004">So that's a little harder to find but let's find out what lines end with space.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_22" data-paragraph-idx="22" data-start-time="615.08" data-end-time="628.2483">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="615.08"></div>
+                        <div class="timeline-timestamp">10:15</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_22"><span class="transcript-sentence" id="sent_22_0" data-start-time="615.08" data-end-time="616.68005">There we go, whole bunch of them.</span> <span class="transcript-sentence" id="sent_22_1" data-start-time="617.0" data-end-time="618.60004">A whole bunch of lines end with space.</span> <span class="transcript-sentence" id="sent_22_2" data-start-time="618.96826" data-end-time="628.0083">So, so that's how how grep works and you can, use it to do search through files and it is, a great little tool for that.</span> <span class="transcript-sentence" id="sent_22_3" data-start-time="628.0083" data-end-time="628.2483">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

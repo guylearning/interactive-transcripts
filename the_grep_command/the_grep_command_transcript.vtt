@@ -1,0 +1,599 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: ae6df5da-e4f6-4aa3-9e36-e2c04e260ac6
+Created: 2025-05-30T04:45:27.787Z
+Duration: 629.6033
+Channels: 1
+
+00:00:02.000 --> 00:00:04.720
+Hi there. In this video we are going
+
+00:00:04.720 --> 00:00:07.520
+to look at the grep command which is
+
+00:00:07.760 --> 00:00:09.920
+a Unix command that uses what we call
+
+00:00:09.920 --> 00:00:15.305
+regular expressions to look through files and search
+
+00:00:15.305 --> 00:00:19.945
+through them for a particular keyword or wild
+
+00:00:19.945 --> 00:00:22.745
+card based keyword. We're not gonna go into
+
+00:00:22.745 --> 00:00:25.785
+details about what regular expressions are, although I'll
+
+00:00:25.785 --> 00:00:28.240
+I'll show you a couple of a couple
+
+00:00:28.240 --> 00:00:30.720
+of different things about them. There are many
+
+00:00:30.720 --> 00:00:33.120
+many resources online to find out more about
+
+00:00:33.120 --> 00:00:36.800
+regular expressions and searching with grep, etcetera. The
+
+00:00:36.800 --> 00:00:40.720
+basic idea is that you, you say grep
+
+00:00:40.955 --> 00:00:44.315
+and then some pattern which is generally in
+
+00:00:44.315 --> 00:00:46.795
+either single quotes or double quotes depending on,
+
+00:00:47.115 --> 00:00:49.675
+how you're doing the search and then some,
+
+00:00:49.915 --> 00:00:54.360
+files that you wanna search. Okay. So for
+
+00:00:54.360 --> 00:00:58.120
+instance, let's look in here. I have a
+
+00:00:58.120 --> 00:01:00.680
+file called unit testing dot txt and this
+
+00:01:00.680 --> 00:01:05.320
+is available at this this path on the
+
+00:01:05.320 --> 00:01:08.605
+website, a f s slash AFS slash IR
+
+00:01:08.605 --> 00:01:13.325
+slash CLASS slash CS107 slash samples slash assign
+
+00:01:13.325 --> 00:01:17.325
+zero and it is a file, basically if
+
+00:01:17.325 --> 00:01:19.485
+we look at it, it is a file
+
+00:01:19.485 --> 00:01:22.550
+that is from the Wikipedia article on unit
+
+00:01:22.550 --> 00:01:25.750
+testing, which, is not a bad thing to
+
+00:01:25.750 --> 00:01:28.390
+learn anyway. But if we wanna find something,
+
+00:01:28.390 --> 00:01:30.870
+so in here I noticed that, often it
+
+00:01:30.870 --> 00:01:34.390
+says unit. So let's actually search for unit
+
+00:01:34.390 --> 00:01:37.525
+in this file. We type grep and then
+
+00:01:37.605 --> 00:01:40.165
+unit and then the name unit testing dot
+
+00:01:40.165 --> 00:01:42.885
+txt. What it does, it lists all the
+
+00:01:42.885 --> 00:01:49.400
+lines that unit falls on. Okay? And so
+
+00:01:49.400 --> 00:01:51.640
+it, it's just looking for unit itself, it
+
+00:01:51.640 --> 00:01:53.240
+doesn't really, it doesn't have to have spaces
+
+00:01:53.240 --> 00:01:54.280
+around it, it doesn't have to be a
+
+00:01:54.280 --> 00:01:55.400
+single word, it can be part of a
+
+00:01:55.400 --> 00:01:58.760
+word, etcetera. But if the u n I
+
+00:01:58.760 --> 00:02:00.040
+t is in there and by the way
+
+00:02:00.040 --> 00:02:03.325
+it's lowercase in this case, then, you will
+
+00:02:03.325 --> 00:02:05.725
+have it will find it. Okay. So let's
+
+00:02:05.725 --> 00:02:07.565
+find something that it grep for something that
+
+00:02:07.565 --> 00:02:13.165
+it won't find. Grep for, let's say obtain
+
+00:02:13.725 --> 00:02:16.800
+with a an uppercase o on here. Now
+
+00:02:16.800 --> 00:02:19.520
+I see an obtain right here but, because
+
+00:02:19.520 --> 00:02:22.960
+I'm doing uppercase o, it will, not find
+
+00:02:22.960 --> 00:02:25.680
+anything. Just it happens to be no other
+
+00:02:25.680 --> 00:02:27.520
+places in the file that have an uppercase
+
+00:02:27.520 --> 00:02:32.345
+o obtain as well. So you can do
+
+00:02:32.345 --> 00:02:35.305
+searches with various wild cards. The two wild
+
+00:02:35.305 --> 00:02:36.825
+cards that we care about are the period
+
+00:02:36.825 --> 00:02:39.865
+and the asterisk. Okay, and here's here's how
+
+00:02:39.865 --> 00:02:44.290
+they work. Okay, period matches any character. Right?
+
+00:02:44.290 --> 00:02:47.730
+So if I wanted to find, let's say,
+
+00:02:48.530 --> 00:02:51.090
+let's say all words that start with t
+
+00:02:51.090 --> 00:02:54.290
+h e. Okay, all words that start with
+
+00:02:54.290 --> 00:02:56.845
+t h, well, let's say all words that
+
+00:02:56.845 --> 00:03:01.405
+have t h e and then some character
+
+00:03:01.405 --> 00:03:05.965
+after that. Okay, then what we can do
+
+00:03:05.965 --> 00:03:07.965
+is we can say grep t h e
+
+00:03:07.965 --> 00:03:10.490
+period and then unit testing and it will
+
+00:03:10.490 --> 00:03:13.850
+find everywhere where it says The with something
+
+00:03:14.170 --> 00:03:19.210
+after it. Okay? Let's see if I can
+
+00:03:19.210 --> 00:03:21.605
+find an example of where this might, not
+
+00:03:21.605 --> 00:03:25.205
+necessarily the best example, but, if we type
+
+00:03:25.205 --> 00:03:29.685
+grep and then a dot dot, right, and
+
+00:03:29.685 --> 00:03:31.925
+then unit testing, right, it will find anything
+
+00:03:31.925 --> 00:03:36.005
+where we have a followed by any two
+
+00:03:35.490 --> 00:03:39.730
+things, any two letters, characters, whatever. Okay? So,
+
+00:03:40.290 --> 00:03:43.810
+a and n is right there. Let's look
+
+00:03:43.810 --> 00:03:48.050
+for, let's look for something that is a
+
+00:03:48.050 --> 00:03:51.725
+little bit more interesting, maybe something like, oh
+
+00:03:51.725 --> 00:03:55.005
+I don't know, OF period. Right? So grep
+
+00:03:55.005 --> 00:03:59.005
+OF period, blue OF period period, okay and
+
+00:03:59.005 --> 00:04:00.925
+then unit testing. That will do OF and
+
+00:04:00.925 --> 00:04:03.565
+then two characters of anything else. So we'll
+
+00:04:03.565 --> 00:04:05.165
+find all the of's in here but we'll
+
+00:04:05.165 --> 00:04:09.260
+also find often, it will also find anywhere
+
+00:04:09.500 --> 00:04:11.740
+else where it starts with or it has
+
+00:04:11.740 --> 00:04:16.620
+two anythings after the OF. Okay? If we
+
+00:04:16.620 --> 00:04:22.005
+have an asterisk, it will find zero or
+
+00:04:22.005 --> 00:04:26.245
+more repeats of the character that follows it.
+
+00:04:26.485 --> 00:04:29.845
+Okay? So for instance, grep and then a
+
+00:04:29.845 --> 00:04:33.765
+b star will match anything that has a
+
+00:04:33.765 --> 00:04:37.310
+b and then any number of b's after
+
+00:04:37.310 --> 00:04:42.670
+that. Okay? So it will match, a actually,
+
+00:04:42.670 --> 00:04:45.390
+will say any number, so zero or more.
+
+00:04:45.390 --> 00:04:47.070
+So it will match anything anything with an
+
+00:04:47.070 --> 00:04:51.545
+a, but then anything with any number of
+
+00:04:51.545 --> 00:04:54.345
+b's after it. Okay. So let's actually try
+
+00:04:54.345 --> 00:04:58.745
+something a little more interesting here. Let's try
+
+00:04:59.385 --> 00:05:06.790
+something like EV star. Probably not gonna find
+
+00:05:06.790 --> 00:05:10.230
+too many multiple v's. Let me see something.
+
+00:05:10.230 --> 00:05:15.190
+How about DIF star? You'll find anything with
+
+00:05:15.350 --> 00:05:17.110
+oops. By the way, I did this right
+
+00:05:17.110 --> 00:05:18.870
+now. I forgot to type the filename and
+
+00:05:18.870 --> 00:05:20.950
+now I'm in here like, what's going on?
+
+00:05:23.075 --> 00:05:24.835
+If you ever get stuck in a program
+
+00:05:24.835 --> 00:05:27.715
+like this, hit the control hold down control
+
+00:05:27.715 --> 00:05:29.875
+and type c and it will break out
+
+00:05:29.875 --> 00:05:32.435
+of the file. Okay. So let's do this
+
+00:05:32.435 --> 00:05:35.650
+with the correct unit testing file there and
+
+00:05:35.650 --> 00:05:37.970
+what did I do? I said DIF and
+
+00:05:37.970 --> 00:05:41.010
+not any number of F's after that. Right?
+
+00:05:41.010 --> 00:05:46.450
+So here's DIFF, okay, and this line, let's
+
+00:05:46.450 --> 00:05:52.835
+see where's the DIF here, or sorry, DI
+
+00:05:52.835 --> 00:05:55.955
+and any number of Fs. So like in
+
+00:05:55.955 --> 00:05:57.555
+this one, do we have any D, there's
+
+00:05:57.555 --> 00:05:59.155
+the DIF here, how about this one, D,
+
+00:05:59.155 --> 00:06:02.280
+there we go, DI and then any number
+
+00:06:02.280 --> 00:06:04.680
+of f's after that. Well, is any number
+
+00:06:04.680 --> 00:06:06.760
+so d I any number of f's after
+
+00:06:06.760 --> 00:06:10.280
+that. Okay? So you can use, often we
+
+00:06:10.280 --> 00:06:12.360
+see it, used with a we see them
+
+00:06:12.360 --> 00:06:14.440
+used together the period and the asterisk like
+
+00:06:14.440 --> 00:06:21.005
+something like this. Grep for, let's say, oh,
+
+00:06:21.005 --> 00:06:24.525
+don't know, c o n and then dot
+
+00:06:24.525 --> 00:06:28.285
+star and then s. Right? So what this
+
+00:06:28.285 --> 00:06:30.630
+means is it will match c o n
+
+00:06:30.630 --> 00:06:33.510
+and then any number of any characters zero
+
+00:06:33.510 --> 00:06:36.950
+or more and then an s. Right? So
+
+00:06:36.950 --> 00:06:38.790
+if I do that and do that in
+
+00:06:38.790 --> 00:06:40.310
+unit testing, right, it will find that. So
+
+00:06:40.310 --> 00:06:43.375
+let's see. C o n c o n
+
+00:06:43.375 --> 00:06:46.175
+and then any number of characters until there's
+
+00:06:46.175 --> 00:06:48.975
+an s right there. So it's matching that
+
+00:06:48.975 --> 00:06:51.055
+for instance. In fact it's actually matching that
+
+00:06:51.055 --> 00:06:52.895
+because it's what we call a greedy match
+
+00:06:52.895 --> 00:06:55.135
+and it matches all the way to the
+
+00:06:55.135 --> 00:06:58.830
+last possible thing that it can on a
+
+00:06:58.830 --> 00:07:04.990
+particular line. Okay? So you can test all
+
+00:07:04.990 --> 00:07:09.630
+the things you want using unit testing or
+
+00:07:09.630 --> 00:07:12.595
+any other file and, you should practice using
+
+00:07:12.595 --> 00:07:16.915
+grep, in, to find various, things. Now, man
+
+00:07:16.915 --> 00:07:19.715
+file on grep is pretty large, it shows
+
+00:07:19.715 --> 00:07:22.515
+lots of different ways to do things. Okay?
+
+00:07:23.235 --> 00:07:25.715
+But for instance there's other ones like grep
+
+00:07:25.880 --> 00:07:28.360
+and then if I put things in brackets
+
+00:07:28.360 --> 00:07:32.040
+and I say a b and then, I
+
+00:07:32.040 --> 00:07:34.200
+don't know, e like that, it will match
+
+00:07:34.200 --> 00:07:37.160
+and it will match anything that goes a
+
+00:07:37.160 --> 00:07:39.775
+e or anything that goes b e like
+
+00:07:39.775 --> 00:07:42.255
+that. Forgot to do the unit testing again
+
+00:07:42.415 --> 00:07:45.935
+and there we go. So we said a
+
+00:07:45.935 --> 00:07:49.455
+so there's a BE right there. Right? There's
+
+00:07:49.455 --> 00:07:52.890
+another BE right there. Let's see we said
+
+00:07:52.890 --> 00:07:55.210
+it was going to be AE so see
+
+00:07:55.210 --> 00:07:57.370
+if we can find some AEs in here.
+
+00:07:58.410 --> 00:08:00.490
+There's probably more, let's see what does this
+
+00:08:00.490 --> 00:08:02.890
+one have? I don't see any Bs in
+
+00:08:02.890 --> 00:08:06.995
+this one so is there an AE anywhere
+
+00:08:06.995 --> 00:08:18.970
+here? I might be missing it. Is there
+
+00:08:18.970 --> 00:08:22.330
+a B in that one? Yes, there's a
+
+00:08:22.330 --> 00:08:24.570
+B in that line. So that's that one.
+
+00:08:24.970 --> 00:08:27.530
+There's a B there, think B is more
+
+00:08:27.690 --> 00:08:32.745
+likely than other things but let's see more
+
+00:08:32.745 --> 00:08:36.265
+BE's, maybe I didn't pick the best example
+
+00:08:36.265 --> 00:08:39.945
+here, lots of BE's but it would also
+
+00:08:39.945 --> 00:08:43.225
+search for find anything that has an AE
+
+00:08:43.225 --> 00:08:47.030
+in it as well. So that's how we
+
+00:08:47.110 --> 00:08:49.590
+do that. In fact, let's let's just see
+
+00:08:49.590 --> 00:08:52.470
+which one just if we do just AE
+
+00:08:53.190 --> 00:08:55.430
+then we'll find anywhere. Well, there are no
+
+00:08:55.430 --> 00:08:57.350
+just AEs in that file. Guess that was
+
+00:08:57.350 --> 00:09:00.165
+a bad example. Let's try another one. AE
+
+00:09:00.165 --> 00:09:03.845
+or DE or sorry, DE or BE. There
+
+00:09:03.845 --> 00:09:05.685
+we go. It'll find lots of ones with,
+
+00:09:05.845 --> 00:09:07.525
+with both of those and there's probably some
+
+00:09:07.525 --> 00:09:10.005
+DE's in there too. Let's find out where
+
+00:09:10.005 --> 00:09:12.540
+the the DE's are. There we go. There's
+
+00:09:12.540 --> 00:09:15.100
+lots of ones right there, deployment environment, etcetera.
+
+00:09:15.660 --> 00:09:18.540
+So that's how grep works. Grep is really
+
+00:09:18.540 --> 00:09:22.700
+important if you look up regular expressions, you'll
+
+00:09:22.700 --> 00:09:25.425
+find out all the different ways to do
+
+00:09:25.425 --> 00:09:28.545
+searches using things like for instance, what if
+
+00:09:28.545 --> 00:09:32.145
+I wanted to say grep and then start
+
+00:09:32.145 --> 00:09:34.545
+the line. If you use uppercase caret like
+
+00:09:34.545 --> 00:09:37.825
+that or caret symbol like that and then
+
+00:09:38.465 --> 00:09:41.080
+u will find all word all, it will
+
+00:09:41.080 --> 00:09:44.280
+find all places in the file that start
+
+00:09:44.280 --> 00:09:47.560
+with u, uppercase u like that. Right? If
+
+00:09:47.560 --> 00:09:49.480
+I did the same thing with uppercase t
+
+00:09:49.480 --> 00:09:51.000
+it would do that. You can also say
+
+00:09:51.000 --> 00:09:52.600
+find something at the end of the file
+
+00:09:52.600 --> 00:09:55.080
+which is the dollar sign character so let's
+
+00:09:55.080 --> 00:09:59.565
+find all lines that end with H. Right,
+
+00:09:59.565 --> 00:10:02.845
+none, end with H. Let's see, it looks
+
+00:10:02.845 --> 00:10:05.245
+like this file may actually have extra characters
+
+00:10:05.245 --> 00:10:06.445
+in there. Yeah, it looks like the file
+
+00:10:06.445 --> 00:10:08.125
+may have spaces at the end of it
+
+00:10:08.840 --> 00:10:11.400
+too. So that's a little harder to find
+
+00:10:11.400 --> 00:10:13.320
+but let's find out what lines end with
+
+00:10:13.320 --> 00:10:16.680
+space. There we go, whole bunch of them.
+
+00:10:17.000 --> 00:10:18.600
+A whole bunch of lines end with space.
+
+00:10:18.968 --> 00:10:21.608
+So, so that's how how grep works and
+
+00:10:21.608 --> 00:10:23.848
+you can, use it to do search through
+
+00:10:23.848 --> 00:10:27.368
+files and it is, a great little tool
+
+00:10:27.368 --> 00:10:28.248
+for that. Thanks.

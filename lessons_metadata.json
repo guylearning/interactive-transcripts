@@ -580,5 +580,17 @@
     "lesson_html_filename": "the_rm_command_on_linux_to_permanently_remove_files_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_rm_command_on_linux_to_permanently_remove_files/the_rm_command_on_linux_to_permanently_remove_files_transcript.json",
     "vtt_transcript_path_on_repo": "the_rm_command_on_linux_to_permanently_remove_files/the_rm_command_on_linux_to_permanently_remove_files_transcript.vtt"
+  },
+  {
+    "title_original": "The grep command",
+    "video_name_clean": "the_grep_command",
+    "youtube_id": "BGAue9GyJ9g",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:45:28.687727+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 630,
+    "lesson_html_filename": "the_grep_command_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_grep_command/the_grep_command_transcript.json",
+    "vtt_transcript_path_on_repo": "the_grep_command/the_grep_command_transcript.vtt"
   }
 ]
