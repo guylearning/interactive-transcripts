@@ -556,5 +556,17 @@
     "lesson_html_filename": "man_command_interactive_lesson.html",
     "json_transcript_path_on_repo": "man_command/man_command_transcript.json",
     "vtt_transcript_path_on_repo": "man_command/man_command_transcript.vtt"
+  },
+  {
+    "title_original": "The cp and mv commands on linux",
+    "video_name_clean": "the_cp_and_mv_commands_on_linux",
+    "youtube_id": "fFH6yx-mFt8",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:44:13.827339+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 383,
+    "lesson_html_filename": "the_cp_and_mv_commands_on_linux_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_cp_and_mv_commands_on_linux/the_cp_and_mv_commands_on_linux_transcript.json",
+    "vtt_transcript_path_on_repo": "the_cp_and_mv_commands_on_linux/the_cp_and_mv_commands_on_linux_transcript.vtt"
   }
 ]

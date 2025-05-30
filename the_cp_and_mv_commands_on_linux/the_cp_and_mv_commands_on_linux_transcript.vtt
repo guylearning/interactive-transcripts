@@ -1,0 +1,407 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 61166cbc-b42a-4be4-82d8-609fda0f23f1
+Created: 2025-05-30T04:44:13.158Z
+Duration: 383.0857
+Channels: 1
+
+00:00:01.120 --> 00:00:03.760
+Hi there. In this video we are going
+
+00:00:03.760 --> 00:00:06.000
+to look at two commands you will use
+
+00:00:06.000 --> 00:00:09.200
+fairly frequently. One is the cp command for
+
+00:00:09.200 --> 00:00:11.440
+copy and one is the mv command for
+
+00:00:11.440 --> 00:00:16.455
+move or also for renaming files. So the
+
+00:00:16.455 --> 00:00:18.535
+easiest thing to do is to copy some
+
+00:00:18.535 --> 00:00:20.375
+files just to say cp and then the
+
+00:00:20.375 --> 00:00:24.455
+source file to the destination file and that
+
+00:00:24.455 --> 00:00:26.615
+will move the file with the same name
+
+00:00:26.615 --> 00:00:28.935
+from the source to the destination. So for
+
+00:00:28.935 --> 00:00:31.960
+instance, I happen to have a few folders
+
+00:00:31.960 --> 00:00:36.520
+here and assign zero, let's do this. Let's
+
+00:00:36.520 --> 00:00:41.240
+do this, let's say cp assign zero slash
+
+00:00:41.720 --> 00:00:44.040
+I think there's a hello. C file there
+
+00:00:44.040 --> 00:00:47.275
+and let me move it to assign five.
+
+00:00:47.675 --> 00:00:48.875
+Right, so what I've done is I've said
+
+00:00:48.875 --> 00:00:51.275
+here's the source assign zero hello c and
+
+00:00:51.275 --> 00:00:53.195
+I wanna move it to the assign five
+
+00:00:53.195 --> 00:00:56.315
+directory like that. Right, and it just did
+
+00:00:56.315 --> 00:00:58.555
+it without prompting because in the assign five
+
+00:00:58.555 --> 00:01:02.150
+directory there was no was no c p
+
+00:01:02.150 --> 00:01:04.070
+or there was no hello dot c file
+
+00:01:04.070 --> 00:01:06.470
+already. If I try that again though, watch
+
+00:01:06.470 --> 00:01:09.270
+what happens. It says c p overwrite this
+
+00:01:09.270 --> 00:01:11.270
+and you say a yes or no. So
+
+00:01:11.270 --> 00:01:12.390
+let's say oh I don't want to overwrite
+
+00:01:12.390 --> 00:01:14.205
+that. That's a nice little check that we
+
+00:01:14.205 --> 00:01:17.325
+have set up on the, myth system for
+
+00:01:17.325 --> 00:01:20.685
+you. Just keep in mind that many Unix
+
+00:01:20.685 --> 00:01:24.125
+systems don't have that check built in automatically.
+
+00:01:24.125 --> 00:01:25.805
+So you go to a different Unix system
+
+00:01:25.805 --> 00:01:28.610
+and you try to copy files and you
+
+00:01:28.610 --> 00:01:30.290
+think oh well if it already exists I'll
+
+00:01:30.290 --> 00:01:32.050
+get a I'll get a nice little alert,
+
+00:01:32.050 --> 00:01:34.290
+that's not necessarily going to be the case.
+
+00:01:34.290 --> 00:01:35.330
+So you have to be a little bit
+
+00:01:35.330 --> 00:01:38.050
+little bit careful with with that. I could
+
+00:01:38.050 --> 00:01:39.490
+also I could do say oh well I
+
+00:01:39.490 --> 00:01:40.610
+don't want to call it hello c, I
+
+00:01:40.610 --> 00:01:44.285
+want to call it hello2.c and, that just
+
+00:01:44.285 --> 00:01:46.445
+says look, just rename it to make the
+
+00:01:46.445 --> 00:01:51.245
+copy and call it hello2.c. So, that's how
+
+00:01:51.245 --> 00:01:57.110
+you do, copies like that. And you can
+
+00:01:57.110 --> 00:02:00.230
+also copy entire folders so let's say I
+
+00:02:00.230 --> 00:02:04.550
+have cp r which will recursively copy an
+
+00:02:04.550 --> 00:02:07.510
+entire folder so let's say assign zero to
+
+00:02:07.510 --> 00:02:10.725
+assign twenty two I just wanna copy the
+
+00:02:10.725 --> 00:02:13.365
+entire assign zero to some folder called assign
+
+00:02:13.365 --> 00:02:16.645
+twenty two, which doesn't exist yet, let's say.
+
+00:02:16.965 --> 00:02:18.565
+And it will copy the whole thing. So
+
+00:02:18.565 --> 00:02:21.445
+if I do assign 22, all my files
+
+00:02:21.445 --> 00:02:23.125
+will be in there. So you can recursively
+
+00:02:23.125 --> 00:02:27.500
+copy and, so forth. Now if I, tried
+
+00:02:27.500 --> 00:02:30.140
+it again, which does exist, believe it or
+
+00:02:30.140 --> 00:02:33.020
+not it doesn't actually, give us a prompt
+
+00:02:33.020 --> 00:02:35.900
+in this case. If I did all the
+
+00:02:35.900 --> 00:02:37.820
+files in there, let's say I do a
+
+00:02:37.820 --> 00:02:40.415
+sign zero slash star, star being the wild
+
+00:02:40.415 --> 00:02:42.335
+card, if I do a sign zero slash
+
+00:02:42.335 --> 00:02:46.015
+star to assign 22 it will probably ask
+
+00:02:46.015 --> 00:02:47.135
+me yes, it will ask me. I'm not
+
+00:02:47.135 --> 00:02:49.215
+sure why the recursive one doesn't automatically do
+
+00:02:49.215 --> 00:02:52.175
+that. Now here's something that's a bit painful.
+
+00:02:52.175 --> 00:02:55.540
+To actually make the copy of the entire
+
+00:02:55.540 --> 00:02:59.220
+thing if it already exists, you will have
+
+00:02:59.220 --> 00:03:01.300
+to answer yes for all those little prompts.
+
+00:03:01.460 --> 00:03:03.860
+And there's a couple ways around this. Because
+
+00:03:03.860 --> 00:03:06.900
+the cp command is aliased, in fact if
+
+00:03:06.900 --> 00:03:08.725
+you just type alias, it will tell you
+
+00:03:08.725 --> 00:03:10.965
+what the CP command is. CP command is
+
+00:03:10.965 --> 00:03:14.325
+actually alias to CP dash I and if
+
+00:03:14.325 --> 00:03:17.605
+you do man CP and search for dash
+
+00:03:17.605 --> 00:03:20.085
+I we will see it's the interactive so
+
+00:03:20.085 --> 00:03:21.925
+it's prompting for the overwrite which is kind
+
+00:03:21.925 --> 00:03:24.580
+of nice. Right. But what you can do
+
+00:03:24.580 --> 00:03:27.300
+is you can actually say okay fine I
+
+00:03:27.300 --> 00:03:30.980
+just want to do backslash cp and then
+
+00:03:32.420 --> 00:03:41.165
+-r -r assign zero to assign 22 and
+
+00:03:41.165 --> 00:03:43.325
+it will actually run the original cp command
+
+00:03:43.325 --> 00:03:45.485
+for you and you don't have to do
+
+00:03:45.485 --> 00:03:49.965
+that. So that's how the cp command actually
+
+00:03:50.525 --> 00:03:54.100
+works so it's pretty straightforward. Again, it will,
+
+00:03:54.340 --> 00:03:56.500
+have the same filename unless you actually put
+
+00:03:56.500 --> 00:03:59.620
+a filename itself in the destination folder that
+
+00:03:59.620 --> 00:04:02.980
+you're trying to copy it to. Now, another,
+
+00:04:03.140 --> 00:04:05.700
+command, the m v command is used to
+
+00:04:06.215 --> 00:04:09.335
+move one file from one place to another.
+
+00:04:09.335 --> 00:04:12.215
+So let's do assign zero again and see
+
+00:04:12.215 --> 00:04:14.455
+what's in there. Let's say we wanna move
+
+00:04:14.455 --> 00:04:18.935
+the readme. Txt file to assign 22. Move,
+
+00:04:18.935 --> 00:04:21.015
+oh, it's actually let's actually just do this.
+
+00:04:21.015 --> 00:04:26.280
+Move assign zero readme. Txt to the current
+
+00:04:26.280 --> 00:04:28.840
+directory. Alright, so what we did was we
+
+00:04:28.840 --> 00:04:31.000
+moved the readme file there and if we
+
+00:04:31.000 --> 00:04:34.280
+look at assign zero again, readme is gone.
+
+00:04:34.280 --> 00:04:36.115
+So it actually did copy it and then
+
+00:04:36.115 --> 00:04:38.995
+removed it from the original folder. So that's
+
+00:04:38.995 --> 00:04:39.955
+nice. If I want to move it back
+
+00:04:39.955 --> 00:04:43.315
+I can just type move readme. Txt to
+
+00:04:43.315 --> 00:04:45.395
+assign zero and it will move it right
+
+00:04:45.395 --> 00:04:48.675
+back. Now what if you try to move
+
+00:04:48.675 --> 00:04:56.330
+assign zero slash readme to assign 22 like
+
+00:04:56.330 --> 00:04:57.690
+that it will ask you if you want
+
+00:04:57.690 --> 00:05:00.170
+to overwrite it. So same thing as before.
+
+00:05:00.570 --> 00:05:02.730
+Now this is an easy way to rename
+
+00:05:02.730 --> 00:05:07.215
+something move assign zero readme oops moved it
+
+00:05:07.215 --> 00:05:10.575
+already. Let's move it back move assign twenty
+
+00:05:10.575 --> 00:05:14.015
+two read me to assign zero and let's
+
+00:05:14.015 --> 00:05:19.455
+move assign zero read me dot txt to
+
+00:05:18.180 --> 00:05:20.100
+just call it something else, assign zero slash
+
+00:05:20.100 --> 00:05:23.460
+just maybe we wanna make it uppercase, readme
+
+00:05:23.460 --> 00:05:25.940
+dot txt something like that, it will actually
+
+00:05:25.940 --> 00:05:29.300
+rename it. So that actually does the move,
+
+00:05:29.300 --> 00:05:30.900
+makes copy and then removes the original which
+
+00:05:30.900 --> 00:05:34.545
+is the same thing as renaming it. So
+
+00:05:34.545 --> 00:05:37.505
+that's how you, use the move command. You
+
+00:05:37.505 --> 00:05:39.425
+do not have to worry about the dash
+
+00:05:39.425 --> 00:05:40.945
+r if you want to move an entire
+
+00:05:40.945 --> 00:05:44.305
+folder. So let's move assign 22 to assign
+
+00:05:44.305 --> 00:05:46.705
+23. You just type move assign 22 to
+
+00:05:46.705 --> 00:05:48.980
+assign 23. They're both folders so it will
+
+00:05:48.980 --> 00:05:50.980
+just move the entire thing. All it's really
+
+00:05:50.980 --> 00:05:54.180
+doing is renaming the upper directory, the first
+
+00:05:54.180 --> 00:05:56.020
+directory to the second directory name so it
+
+00:05:56.020 --> 00:05:58.020
+doesn't actually have to do any copying of
+
+00:05:58.020 --> 00:06:02.580
+files. So that's, that is the move command.
+
+00:06:02.580 --> 00:06:04.305
+Now as I said, you have to be
+
+00:06:04.305 --> 00:06:07.985
+a little bit careful with other Unix systems
+
+00:06:07.985 --> 00:06:12.705
+that don't necessarily have the alias for, the
+
+00:06:12.705 --> 00:06:15.481
+check for overwriting. So, just make sure that
+
+00:06:15.481 --> 00:06:17.721
+when you're on other Unix systems, you be
+
+00:06:17.721 --> 00:06:20.921
+careful when you are doing the MV command.
+
+00:06:21.161 --> 00:06:21.561
+Thanks.

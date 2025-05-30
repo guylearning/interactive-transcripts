@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The cp and mv commands on linux</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 1.12, "end": 35.32, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 1.12, "end": 2.0}, {"id": "sent_0_1", "text": "In this video we are going to look at two commands you will use fairly frequently.", "start": 2.32, "end": 7.44}, {"id": "sent_0_2", "text": "One is the cp command for copy and one is the mv command for move or also for renaming files.", "start": 7.6, "end": 14.88}, {"id": "sent_0_3", "text": "So the easiest thing to do is to copy some files just to say cp and then the source file to the destination file and that will move the file with the same name from the source to the destination.", "start": 15.415, "end": 28.055}, {"id": "sent_0_4", "text": "So for instance, I happen to have a few folders here and assign zero, let's do this.", "start": 28.375, "end": 35.32}]}, {"id": "para_1", "paragraph_idx": 1, "start": 36.12, "end": 67.19, "sentences": [{"id": "sent_1_0", "text": "Let's do this, let's say cp assign zero slash I think there's a hello.", "start": 36.12, "end": 43.08}, {"id": "sent_1_1", "text": "C file there and let me move it to assign five.", "start": 43.08, "end": 47.275}, {"id": "sent_1_2", "text": "Right, so what I've done is I've said here's the source assign zero hello c and I wanna move it to the assign five directory like that.", "start": 47.675, "end": 55.035}, {"id": "sent_1_3", "text": "Right, and it just did it without prompting because in the assign five directory there was no was no c p or there was no hello dot c file already.", "start": 55.355, "end": 64.63}, {"id": "sent_1_4", "text": "If I try that again though, watch what happens.", "start": 65.03, "end": 67.19}]}, {"id": "para_2", "paragraph_idx": 2, "start": 67.270004, "end": 94.28999, "sentences": [{"id": "sent_2_0", "text": "It says c p overwrite this and you say a yes or no.", "start": 67.270004, "end": 71.11}, {"id": "sent_2_1", "text": "So let's say oh I don't want to overwrite that.", "start": 71.11, "end": 72.630005}, {"id": "sent_2_2", "text": "That's a nice little check that we have set up on the, myth system for you.", "start": 72.765, "end": 77.565}, {"id": "sent_2_3", "text": "Just keep in mind that many Unix systems don't have that check built in automatically.", "start": 77.805, "end": 84.125}, {"id": "sent_2_4", "text": "So you go to a different Unix system and you try to copy files and you think oh well if it already exists I'll get a I'll get a nice little alert, that's not necessarily going to be the case.", "start": 84.125, "end": 94.28999}]}, {"id": "para_3", "paragraph_idx": 3, "start": 94.28999, "end": 138.485, "sentences": [{"id": "sent_3_0", "text": "So you have to be a little bit little bit careful with with that.", "start": 94.28999, "end": 97.409996}, {"id": "sent_3_1", "text": "I could also I could do say oh well I don't want to call it hello c, I want to call it hello2.c and, that just says look, just rename it to make the copy and call it hello2.c.", "start": 97.729996, "end": 108.76501}, {"id": "sent_3_2", "text": "So, that's how you do, copies like that.", "start": 109.245, "end": 113.565}, {"id": "sent_3_3", "text": "And you can also copy entire folders so let's say I have cp r which will recursively copy an entire folder so let's say assign zero to assign twenty two I just wanna copy the entire assign zero to some folder called assign twenty two, which doesn't exist yet, let's say.", "start": 114.71, "end": 136.645}, {"id": "sent_3_4", "text": "And it will copy the whole thing.", "start": 136.965, "end": 138.485}]}, {"id": "para_4", "paragraph_idx": 4, "start": 138.485, "end": 169.455, "sentences": [{"id": "sent_4_0", "text": "So if I do assign 22, all my files will be in there.", "start": 138.485, "end": 142.24501}, {"id": "sent_4_1", "text": "So you can recursively copy and, so forth.", "start": 142.24501, "end": 145.74}, {"id": "sent_4_2", "text": "Now if I, tried it again, which does exist, believe it or not it doesn't actually, give us a prompt in this case.", "start": 145.74, "end": 153.82}, {"id": "sent_4_3", "text": "If I did all the files in there, let's say I do a sign zero slash star, star being the wild card, if I do a sign zero slash star to assign 22 it will probably ask me yes, it will ask me.", "start": 154.78, "end": 166.895}, {"id": "sent_4_4", "text": "I'm not sure why the recursive one doesn't automatically do that.", "start": 166.895, "end": 169.455}]}, {"id": "para_5", "paragraph_idx": 5, "start": 169.455, "end": 202.24501, "sentences": [{"id": "sent_5_0", "text": "Now here's something that's a bit painful.", "start": 169.455, "end": 172.175}, {"id": "sent_5_1", "text": "To actually make the copy of the entire thing if it already exists, you will have to answer yes for all those little prompts.", "start": 172.175, "end": 181.3}, {"id": "sent_5_2", "text": "And there's a couple ways around this.", "start": 181.45999, "end": 183.06}, {"id": "sent_5_3", "text": "Because the cp command is aliased, in fact if you just type alias, it will tell you what the CP command is.", "start": 183.14, "end": 190.16501}, {"id": "sent_5_4", "text": "CP command is actually alias to CP dash I and if you do man CP and search for dash I we will see it's the interactive so it's prompting for the overwrite which is kind of nice.", "start": 190.16501, "end": 202.24501}]}, {"id": "para_6", "paragraph_idx": 6, "start": 202.65999, "end": 249.33499, "sentences": [{"id": "sent_6_0", "text": "Right.", "start": 202.65999, "end": 203.22}, {"id": "sent_6_1", "text": "But what you can do is you can actually say okay fine I just want to do backslash cp and then -r -r assign zero to assign 22 and it will actually run the original cp command for you and you don't have to do that.", "start": 203.7, "end": 225.96501}, {"id": "sent_6_2", "text": "So that's how the cp command actually works so it's pretty straightforward.", "start": 226.205, "end": 232.50002}, {"id": "sent_6_3", "text": "Again, it will, have the same filename unless you actually put a filename itself in the destination folder that you're trying to copy it to.", "start": 232.98, "end": 241.46}, {"id": "sent_6_4", "text": "Now, another, command, the m v command is used to move one file from one place to another.", "start": 241.86, "end": 249.33499}]}, {"id": "para_7", "paragraph_idx": 7, "start": 249.33499, "end": 264.92, "sentences": [{"id": "sent_7_0", "text": "So let's do assign zero again and see what's in there.", "start": 249.33499, "end": 253.015}, {"id": "sent_7_1", "text": "Let's say we wanna move the readme.", "start": 253.575, "end": 255.17499}, {"id": "sent_7_2", "text": "Txt file to assign 22.", "start": 255.17499, "end": 257.975}, {"id": "sent_7_3", "text": "Move, oh, it's actually let's actually just do this.", "start": 258.29498, "end": 261.01498}, {"id": "sent_7_4", "text": "Move assign zero readme.", "start": 261.01498, "end": 264.92}]}, {"id": "para_8", "paragraph_idx": 8, "start": 264.92, "end": 282.435, "sentences": [{"id": "sent_8_0", "text": "Txt to the current directory.", "start": 264.92, "end": 266.92}, {"id": "sent_8_1", "text": "Alright, so what we did was we moved the readme file there and if we look at assign zero again, readme is gone.", "start": 267.32, "end": 274.28}, {"id": "sent_8_2", "text": "So it actually did copy it and then removed it from the original folder.", "start": 274.28, "end": 278.675}, {"id": "sent_8_3", "text": "So that's nice.", "start": 278.675, "end": 279.235}, {"id": "sent_8_4", "text": "If I want to move it back I can just type move readme.", "start": 279.235, "end": 282.435}]}, {"id": "para_9", "paragraph_idx": 9, "start": 282.435, "end": 326.98, "sentences": [{"id": "sent_9_0", "text": "Txt to assign zero and it will move it right back.", "start": 282.435, "end": 285.875}, {"id": "sent_9_1", "text": "Now what if you try to move assign zero slash readme to assign 22 like that it will ask you if you want to overwrite it.", "start": 286.03497, "end": 298.65}, {"id": "sent_9_2", "text": "So same thing as before.", "start": 298.72998, "end": 300.16998}, {"id": "sent_9_3", "text": "Now this is an easy way to rename something move assign zero readme oops moved it already.", "start": 300.56998, "end": 307.695}, {"id": "sent_9_4", "text": "Let's move it back move assign twenty two read me to assign zero and let's move assign zero read me dot txt to just call it something else, assign zero slash just maybe we wanna make it uppercase, readme dot txt something like that, it will actually rename it.", "start": 307.695, "end": 326.98}]}, {"id": "para_10", "paragraph_idx": 10, "start": 327.46, "end": 347.505, "sentences": [{"id": "sent_10_0", "text": "So that actually does the move, makes copy and then removes the original which is the same thing as renaming it.", "start": 327.46, "end": 333.62}, {"id": "sent_10_1", "text": "So that's how you, use the move command.", "start": 334.065, "end": 337.185}, {"id": "sent_10_2", "text": "You do not have to worry about the dash r if you want to move an entire folder.", "start": 337.185, "end": 341.345}, {"id": "sent_10_3", "text": "So let's move assign 22 to assign 23.", "start": 341.345, "end": 345.265}, {"id": "sent_10_4", "text": "You just type move assign 22 to assign 23.", "start": 345.265, "end": 347.505}]}, {"id": "para_11", "paragraph_idx": 11, "start": 347.505, "end": 380.9207, "sentences": [{"id": "sent_11_0", "text": "They're both folders so it will just move the entire thing.", "start": 347.505, "end": 350.34003}, {"id": "sent_11_1", "text": "All it's really doing is renaming the upper directory, the first directory to the second directory name so it doesn't actually have to do any copying of files.", "start": 350.34003, "end": 358.82}, {"id": "sent_11_2", "text": "So that's, that is the move command.", "start": 359.54, "end": 362.58002}, {"id": "sent_11_3", "text": "Now as I said, you have to be a little bit careful with other Unix systems that don't necessarily have the alias for, the check for overwriting.", "start": 362.58002, "end": 373.665}, {"id": "sent_11_4", "text": "So, just make sure that when you're on other Unix systems, you be careful when you are doing the MV command.", "start": 373.9607, "end": 380.9207}]}, {"id": "para_12", "paragraph_idx": 12, "start": 381.16068, "end": 381.5607, "sentences": [{"id": "sent_12_0", "text": "Thanks.", "start": 381.16068, "end": 381.5607}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "fFH6yx-mFt8";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 383;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>The cp and mv commands on linux</h1>
+                <p>Channel: Chris Gregg | Duration: 06:23</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="1.12" data-end-time="35.32">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="1.12"></div>
+                        <div class="timeline-timestamp">00:01</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="1.12" data-end-time="2.0">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="2.32" data-end-time="7.44">In this video we are going to look at two commands you will use fairly frequently.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="7.6" data-end-time="14.88">One is the cp command for copy and one is the mv command for move or also for renaming files.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="15.415" data-end-time="28.055">So the easiest thing to do is to copy some files just to say cp and then the source file to the destination file and that will move the file with the same name from the source to the destination.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="28.375" data-end-time="35.32">So for instance, I happen to have a few folders here and assign zero, let's do this.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="36.12" data-end-time="67.19">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="36.12"></div>
+                        <div class="timeline-timestamp">00:36</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="36.12" data-end-time="43.08">Let's do this, let's say cp assign zero slash I think there's a hello.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="43.08" data-end-time="47.275">C file there and let me move it to assign five.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="47.675" data-end-time="55.035">Right, so what I've done is I've said here's the source assign zero hello c and I wanna move it to the assign five directory like that.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="55.355" data-end-time="64.63">Right, and it just did it without prompting because in the assign five directory there was no was no c p or there was no hello dot c file already.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="65.03" data-end-time="67.19">If I try that again though, watch what happens.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="67.270004" data-end-time="94.28999">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="67.270004"></div>
+                        <div class="timeline-timestamp">01:07</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="67.270004" data-end-time="71.11">It says c p overwrite this and you say a yes or no.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="71.11" data-end-time="72.630005">So let's say oh I don't want to overwrite that.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="72.765" data-end-time="77.565">That's a nice little check that we have set up on the, myth system for you.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="77.805" data-end-time="84.125">Just keep in mind that many Unix systems don't have that check built in automatically.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="84.125" data-end-time="94.28999">So you go to a different Unix system and you try to copy files and you think oh well if it already exists I'll get a I'll get a nice little alert, that's not necessarily going to be the case.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="94.28999" data-end-time="138.485">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="94.28999"></div>
+                        <div class="timeline-timestamp">01:34</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="94.28999" data-end-time="97.409996">So you have to be a little bit little bit careful with with that.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="97.729996" data-end-time="108.76501">I could also I could do say oh well I don't want to call it hello c, I want to call it hello2.c and, that just says look, just rename it to make the copy and call it hello2.c.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="109.245" data-end-time="113.565">So, that's how you do, copies like that.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="114.71" data-end-time="136.645">And you can also copy entire folders so let's say I have cp r which will recursively copy an entire folder so let's say assign zero to assign twenty two I just wanna copy the entire assign zero to some folder called assign twenty two, which doesn't exist yet, let's say.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="136.965" data-end-time="138.485">And it will copy the whole thing.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="138.485" data-end-time="169.455">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="138.485"></div>
+                        <div class="timeline-timestamp">02:18</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="138.485" data-end-time="142.24501">So if I do assign 22, all my files will be in there.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="142.24501" data-end-time="145.74">So you can recursively copy and, so forth.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="145.74" data-end-time="153.82">Now if I, tried it again, which does exist, believe it or not it doesn't actually, give us a prompt in this case.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="154.78" data-end-time="166.895">If I did all the files in there, let's say I do a sign zero slash star, star being the wild card, if I do a sign zero slash star to assign 22 it will probably ask me yes, it will ask me.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="166.895" data-end-time="169.455">I'm not sure why the recursive one doesn't automatically do that.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="169.455" data-end-time="202.24501">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="169.455"></div>
+                        <div class="timeline-timestamp">02:49</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="169.455" data-end-time="172.175">Now here's something that's a bit painful.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="172.175" data-end-time="181.3">To actually make the copy of the entire thing if it already exists, you will have to answer yes for all those little prompts.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="181.45999" data-end-time="183.06">And there's a couple ways around this.</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="183.14" data-end-time="190.16501">Because the cp command is aliased, in fact if you just type alias, it will tell you what the CP command is.</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="190.16501" data-end-time="202.24501">CP command is actually alias to CP dash I and if you do man CP and search for dash I we will see it's the interactive so it's prompting for the overwrite which is kind of nice.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="202.65999" data-end-time="249.33499">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="202.65999"></div>
+                        <div class="timeline-timestamp">03:22</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="202.65999" data-end-time="203.22">Right.</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="203.7" data-end-time="225.96501">But what you can do is you can actually say okay fine I just want to do backslash cp and then -r -r assign zero to assign 22 and it will actually run the original cp command for you and you don't have to do that.</span> <span class="transcript-sentence" id="sent_6_2" data-start-time="226.205" data-end-time="232.50002">So that's how the cp command actually works so it's pretty straightforward.</span> <span class="transcript-sentence" id="sent_6_3" data-start-time="232.98" data-end-time="241.46">Again, it will, have the same filename unless you actually put a filename itself in the destination folder that you're trying to copy it to.</span> <span class="transcript-sentence" id="sent_6_4" data-start-time="241.86" data-end-time="249.33499">Now, another, command, the m v command is used to move one file from one place to another.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_7" data-paragraph-idx="7" data-start-time="249.33499" data-end-time="264.92">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="249.33499"></div>
+                        <div class="timeline-timestamp">04:09</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_7"><span class="transcript-sentence" id="sent_7_0" data-start-time="249.33499" data-end-time="253.015">So let's do assign zero again and see what's in there.</span> <span class="transcript-sentence" id="sent_7_1" data-start-time="253.575" data-end-time="255.17499">Let's say we wanna move the readme.</span> <span class="transcript-sentence" id="sent_7_2" data-start-time="255.17499" data-end-time="257.975">Txt file to assign 22.</span> <span class="transcript-sentence" id="sent_7_3" data-start-time="258.29498" data-end-time="261.01498">Move, oh, it's actually let's actually just do this.</span> <span class="transcript-sentence" id="sent_7_4" data-start-time="261.01498" data-end-time="264.92">Move assign zero readme.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_8" data-paragraph-idx="8" data-start-time="264.92" data-end-time="282.435">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="264.92"></div>
+                        <div class="timeline-timestamp">04:24</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_8"><span class="transcript-sentence" id="sent_8_0" data-start-time="264.92" data-end-time="266.92">Txt to the current directory.</span> <span class="transcript-sentence" id="sent_8_1" data-start-time="267.32" data-end-time="274.28">Alright, so what we did was we moved the readme file there and if we look at assign zero again, readme is gone.</span> <span class="transcript-sentence" id="sent_8_2" data-start-time="274.28" data-end-time="278.675">So it actually did copy it and then removed it from the original folder.</span> <span class="transcript-sentence" id="sent_8_3" data-start-time="278.675" data-end-time="279.235">So that's nice.</span> <span class="transcript-sentence" id="sent_8_4" data-start-time="279.235" data-end-time="282.435">If I want to move it back I can just type move readme.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_9" data-paragraph-idx="9" data-start-time="282.435" data-end-time="326.98">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="282.435"></div>
+                        <div class="timeline-timestamp">04:42</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_9"><span class="transcript-sentence" id="sent_9_0" data-start-time="282.435" data-end-time="285.875">Txt to assign zero and it will move it right back.</span> <span class="transcript-sentence" id="sent_9_1" data-start-time="286.03497" data-end-time="298.65">Now what if you try to move assign zero slash readme to assign 22 like that it will ask you if you want to overwrite it.</span> <span class="transcript-sentence" id="sent_9_2" data-start-time="298.72998" data-end-time="300.16998">So same thing as before.</span> <span class="transcript-sentence" id="sent_9_3" data-start-time="300.56998" data-end-time="307.695">Now this is an easy way to rename something move assign zero readme oops moved it already.</span> <span class="transcript-sentence" id="sent_9_4" data-start-time="307.695" data-end-time="326.98">Let's move it back move assign twenty two read me to assign zero and let's move assign zero read me dot txt to just call it something else, assign zero slash just maybe we wanna make it uppercase, readme dot txt something like that, it will actually rename it.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_10" data-paragraph-idx="10" data-start-time="327.46" data-end-time="347.505">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="327.46"></div>
+                        <div class="timeline-timestamp">05:27</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_10"><span class="transcript-sentence" id="sent_10_0" data-start-time="327.46" data-end-time="333.62">So that actually does the move, makes copy and then removes the original which is the same thing as renaming it.</span> <span class="transcript-sentence" id="sent_10_1" data-start-time="334.065" data-end-time="337.185">So that's how you, use the move command.</span> <span class="transcript-sentence" id="sent_10_2" data-start-time="337.185" data-end-time="341.345">You do not have to worry about the dash r if you want to move an entire folder.</span> <span class="transcript-sentence" id="sent_10_3" data-start-time="341.345" data-end-time="345.265">So let's move assign 22 to assign 23.</span> <span class="transcript-sentence" id="sent_10_4" data-start-time="345.265" data-end-time="347.505">You just type move assign 22 to assign 23.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_11" data-paragraph-idx="11" data-start-time="347.505" data-end-time="380.9207">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="347.505"></div>
+                        <div class="timeline-timestamp">05:47</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_11"><span class="transcript-sentence" id="sent_11_0" data-start-time="347.505" data-end-time="350.34003">They're both folders so it will just move the entire thing.</span> <span class="transcript-sentence" id="sent_11_1" data-start-time="350.34003" data-end-time="358.82">All it's really doing is renaming the upper directory, the first directory to the second directory name so it doesn't actually have to do any copying of files.</span> <span class="transcript-sentence" id="sent_11_2" data-start-time="359.54" data-end-time="362.58002">So that's, that is the move command.</span> <span class="transcript-sentence" id="sent_11_3" data-start-time="362.58002" data-end-time="373.665">Now as I said, you have to be a little bit careful with other Unix systems that don't necessarily have the alias for, the check for overwriting.</span> <span class="transcript-sentence" id="sent_11_4" data-start-time="373.9607" data-end-time="380.9207">So, just make sure that when you're on other Unix systems, you be careful when you are doing the MV command.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_12" data-paragraph-idx="12" data-start-time="381.16068" data-end-time="381.5607">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="381.16068"></div>
+                        <div class="timeline-timestamp">06:21</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_12"><span class="transcript-sentence" id="sent_12_0" data-start-time="381.16068" data-end-time="381.5607">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>
