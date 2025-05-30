@@ -616,5 +616,17 @@
     "lesson_html_filename": "the_diff_command_in_linux_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_diff_command_in_linux/the_diff_command_in_linux_transcript.json",
     "vtt_transcript_path_on_repo": "the_diff_command_in_linux/the_diff_command_in_linux_transcript.vtt"
+  },
+  {
+    "title_original": "The wc (word count) command",
+    "video_name_clean": "the_wc_word_count_command",
+    "youtube_id": "CLH4eHJnwbU",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:46:30.601385+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 33,
+    "lesson_html_filename": "the_wc_word_count_command_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_wc_word_count_command/the_wc_word_count_command_transcript.json",
+    "vtt_transcript_path_on_repo": "the_wc_word_count_command/the_wc_word_count_command_transcript.vtt"
   }
 ]

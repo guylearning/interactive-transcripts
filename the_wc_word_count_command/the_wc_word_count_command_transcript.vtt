@@ -1,0 +1,47 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: b68baaed-9c3f-4978-9846-e196efa868fc
+Created: 2025-05-30T04:46:30.323Z
+Duration: 32.91425
+Channels: 1
+
+00:00:00.080 --> 00:00:01.840
+Hi there. In this video we're gonna look
+
+00:00:01.840 --> 00:00:05.280
+at a small command called wc which stands
+
+00:00:05.280 --> 00:00:08.400
+for word count and it's pretty straightforward. Word
+
+00:00:08.400 --> 00:00:10.800
+count and then a file name gives you
+
+00:00:10.800 --> 00:00:13.825
+the number of lines in the file, the
+
+00:00:13.825 --> 00:00:15.425
+number of words in the file, and the
+
+00:00:15.425 --> 00:00:17.425
+number of characters in the file. And if
+
+00:00:17.425 --> 00:00:19.505
+you just want one or the other, you
+
+00:00:19.505 --> 00:00:23.105
+can do w c say dash l hello
+
+00:00:23.105 --> 00:00:26.305
+dot c will give you seven as the
+
+00:00:26.305 --> 00:00:29.829
+number of lines in the file. So that's
+
+00:00:29.829 --> 00:00:31.429
+about it. Not too much more to it.
+
+00:00:31.429 --> 00:00:31.749
+Thanks.
