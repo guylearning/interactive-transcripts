@@ -496,5 +496,17 @@
     "lesson_html_filename": "the_cd_change_directory_command_in_linux_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_cd_change_directory_command_in_linux/the_cd_change_directory_command_in_linux_transcript.json",
     "vtt_transcript_path_on_repo": "the_cd_change_directory_command_in_linux/the_cd_change_directory_command_in_linux_transcript.vtt"
+  },
+  {
+    "title_original": "The cat command on linux",
+    "video_name_clean": "the_cat_command_on_linux",
+    "youtube_id": "EKWGioJTMkM",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:42:19.281538+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 160,
+    "lesson_html_filename": "the_cat_command_on_linux_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_cat_command_on_linux/the_cat_command_on_linux_transcript.json",
+    "vtt_transcript_path_on_repo": "the_cat_command_on_linux/the_cat_command_on_linux_transcript.vtt"
   }
 ]
