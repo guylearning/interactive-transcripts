@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The find command on linux</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 0.71999997, "end": 33.63, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 0.71999997, "end": 1.52}, {"id": "sent_0_1", "text": "In this video we are going to look at the find command which is used to find files inside a file system.", "start": 1.52, "end": 10.559999}, {"id": "sent_0_2", "text": "So, it's actually really powerful if you were like, why did I know that file exists somewhere, so I'd better actually look for it.", "start": 10.559999, "end": 17.095}, {"id": "sent_0_3", "text": "Here's how it works, it's a little bit strange the way it works, but what you do is you type find and then you type the directory you're in and if you happen to wanna search from your current directory, you just type a period because that stands for the current directory.", "start": 17.095, "end": 30.614998}, {"id": "sent_0_4", "text": "Then you type dash name if you're searching for a name.", "start": 30.775, "end": 33.63}]}, {"id": "para_1", "paragraph_idx": 1, "start": 33.71, "end": 49.945, "sentences": [{"id": "sent_1_0", "text": "And then in quotation marks, put the, file you're looking for.", "start": 33.71, "end": 37.63}, {"id": "sent_1_1", "text": "So hello dot c for instance.", "start": 37.63, "end": 39.39}, {"id": "sent_1_2", "text": "Right?", "start": 39.55, "end": 39.79}, {"id": "sent_1_3", "text": "And if we type that, then, it should find all the instances of hello.c in my file system from the current directory.", "start": 39.79, "end": 48.585}, {"id": "sent_1_4", "text": "So in this case, there's a hello.", "start": 48.585, "end": 49.945}]}, {"id": "para_2", "paragraph_idx": 2, "start": 49.945, "end": 81.065, "sentences": [{"id": "sent_2_0", "text": "C and assign zero, assign one and assign five.", "start": 49.945, "end": 52.265}, {"id": "sent_2_1", "text": "So you can do that and that makes it pretty easy to do.", "start": 52.905, "end": 56.425}, {"id": "sent_2_2", "text": "You can also do find dot dash name and then wildcards.", "start": 56.425, "end": 60.585}, {"id": "sent_2_3", "text": "These are a little bit different than the gref wildcards but this, the asterisk basically means find, any match and then period c will be any dot c file and it would find all those files and there are plenty of them inside my folder here.", "start": 60.77, "end": 79.305}, {"id": "sent_2_4", "text": "Okay, so that's how find works.", "start": 79.385, "end": 81.065}]}, {"id": "para_3", "paragraph_idx": 3, "start": 81.145004, "end": 125.94, "sentences": [{"id": "sent_3_0", "text": "It's relatively straightforward.", "start": 81.145004, "end": 83.065}, {"id": "sent_3_1", "text": "Can instead of dot you can put any directory, know, you can search slash AFS slash IR slash class slash CS 107 etcetera and then start finding all the dot c files there.", "start": 84.505, "end": 98.57}, {"id": "sent_3_2", "text": "Okay, some of this stuff you probably don't have access to because it's in staff, but you can do that, you can also search for directories too.", "start": 98.73, "end": 107.884995}, {"id": "sent_3_3", "text": "So let's find all the directories, dot dash name dash, I think it's type equals d for directory, I believe that's right.", "start": 107.884995, "end": 121.14}, {"id": "sent_3_4", "text": "Actually, we're gonna need dot name and dash name for just finding all the directories.", "start": 122.1, "end": 125.94}]}, {"id": "para_4", "paragraph_idx": 4, "start": 125.94, "end": 165.505, "sentences": [{"id": "sent_4_0", "text": "I think that's it right there, maybe it's not.", "start": 125.94, "end": 128.42}, {"id": "sent_4_1", "text": "Type, let's see, dash type, let's see, doesn't actually seem to, I think maybe we do it this way, dash type d like that, There we go.", "start": 129.78499, "end": 143.53}, {"id": "sent_4_2", "text": "That'll find all the different folders that we have, directories in this current folder.", "start": 143.53, "end": 148.09}, {"id": "sent_4_3", "text": "So what if we wanna find, we can still do dot dash name and assign for instance, assign star let's say and this will find all the directories that start with assign star.", "start": 148.09, "end": 162.545}, {"id": "sent_4_4", "text": "If I happen to have files that start with assign star it would ignore those.", "start": 162.545, "end": 165.505}]}, {"id": "para_5", "paragraph_idx": 5, "start": 165.585, "end": 215.42006, "sentences": [{"id": "sent_5_0", "text": "So, find is a very, interesting command.", "start": 165.585, "end": 168.785}, {"id": "sent_5_1", "text": "If you want to do some other command on each file, you can also do that with a command called exe c, which is a flag.", "start": 169.02501, "end": 178.75}, {"id": "sent_5_2", "text": "Like it would be something like this, dash name, assign star, dash type d and then dash e x e c and it takes a little bit of time to get used to how e x e c works but it actually runs a particular command that you want like let's do an l s on all those directories and then you have to put weird brackets like this and some other weird incantations but it will actually list for you all of the it will actually run that command, the l s command in this case, on all of the matches that it found.", "start": 179.39, "end": 211.17}, {"id": "sent_5_3", "text": "So that's how this this actually works.", "start": 212.30006, "end": 215.02007}, {"id": "sent_5_4", "text": "Okay.", "start": 215.10007, "end": 215.42006}]}, {"id": "para_6", "paragraph_idx": 6, "start": 215.42006, "end": 216.70006, "sentences": [{"id": "sent_6_0", "text": "That's the find command.", "start": 215.42006, "end": 216.46007}, {"id": "sent_6_1", "text": "Thanks.", "start": 216.46007, "end": 216.70006}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "Kk0UFrDKS7E";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 219;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>The find command on linux</h1>
+                <p>Channel: Chris Gregg | Duration: 03:39</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="0.71999997" data-end-time="33.63">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="0.71999997"></div>
+                        <div class="timeline-timestamp">00:00</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="0.71999997" data-end-time="1.52">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="1.52" data-end-time="10.559999">In this video we are going to look at the find command which is used to find files inside a file system.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="10.559999" data-end-time="17.095">So, it's actually really powerful if you were like, why did I know that file exists somewhere, so I'd better actually look for it.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="17.095" data-end-time="30.614998">Here's how it works, it's a little bit strange the way it works, but what you do is you type find and then you type the directory you're in and if you happen to wanna search from your current directory, you just type a period because that stands for the current directory.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="30.775" data-end-time="33.63">Then you type dash name if you're searching for a name.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="33.71" data-end-time="49.945">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="33.71"></div>
+                        <div class="timeline-timestamp">00:33</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="33.71" data-end-time="37.63">And then in quotation marks, put the, file you're looking for.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="37.63" data-end-time="39.39">So hello dot c for instance.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="39.55" data-end-time="39.79">Right?</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="39.79" data-end-time="48.585">And if we type that, then, it should find all the instances of hello.c in my file system from the current directory.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="48.585" data-end-time="49.945">So in this case, there's a hello.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="49.945" data-end-time="81.065">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="49.945"></div>
+                        <div class="timeline-timestamp">00:49</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="49.945" data-end-time="52.265">C and assign zero, assign one and assign five.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="52.905" data-end-time="56.425">So you can do that and that makes it pretty easy to do.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="56.425" data-end-time="60.585">You can also do find dot dash name and then wildcards.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="60.77" data-end-time="79.305">These are a little bit different than the gref wildcards but this, the asterisk basically means find, any match and then period c will be any dot c file and it would find all those files and there are plenty of them inside my folder here.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="79.385" data-end-time="81.065">Okay, so that's how find works.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="81.145004" data-end-time="125.94">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="81.145004"></div>
+                        <div class="timeline-timestamp">01:21</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="81.145004" data-end-time="83.065">It's relatively straightforward.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="84.505" data-end-time="98.57">Can instead of dot you can put any directory, know, you can search slash AFS slash IR slash class slash CS 107 etcetera and then start finding all the dot c files there.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="98.73" data-end-time="107.884995">Okay, some of this stuff you probably don't have access to because it's in staff, but you can do that, you can also search for directories too.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="107.884995" data-end-time="121.14">So let's find all the directories, dot dash name dash, I think it's type equals d for directory, I believe that's right.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="122.1" data-end-time="125.94">Actually, we're gonna need dot name and dash name for just finding all the directories.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="125.94" data-end-time="165.505">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="125.94"></div>
+                        <div class="timeline-timestamp">02:05</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="125.94" data-end-time="128.42">I think that's it right there, maybe it's not.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="129.78499" data-end-time="143.53">Type, let's see, dash type, let's see, doesn't actually seem to, I think maybe we do it this way, dash type d like that, There we go.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="143.53" data-end-time="148.09">That'll find all the different folders that we have, directories in this current folder.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="148.09" data-end-time="162.545">So what if we wanna find, we can still do dot dash name and assign for instance, assign star let's say and this will find all the directories that start with assign star.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="162.545" data-end-time="165.505">If I happen to have files that start with assign star it would ignore those.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="165.585" data-end-time="215.42006">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="165.585"></div>
+                        <div class="timeline-timestamp">02:45</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="165.585" data-end-time="168.785">So, find is a very, interesting command.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="169.02501" data-end-time="178.75">If you want to do some other command on each file, you can also do that with a command called exe c, which is a flag.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="179.39" data-end-time="211.17">Like it would be something like this, dash name, assign star, dash type d and then dash e x e c and it takes a little bit of time to get used to how e x e c works but it actually runs a particular command that you want like let's do an l s on all those directories and then you have to put weird brackets like this and some other weird incantations but it will actually list for you all of the it will actually run that command, the l s command in this case, on all of the matches that it found.</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="212.30006" data-end-time="215.02007">So that's how this this actually works.</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="215.10007" data-end-time="215.42006">Okay.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="215.42006" data-end-time="216.70006">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="215.42006"></div>
+                        <div class="timeline-timestamp">03:35</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="215.42006" data-end-time="216.46007">That's the find command.</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="216.46007" data-end-time="216.70006">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

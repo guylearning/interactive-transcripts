@@ -1,0 +1,230 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 79338354-be61-4ed8-a7c1-61da3fdc3237
+Created: 2025-05-30T04:45:53.546Z
+Duration: 219.11507
+Channels: 1
+
+00:00:00.720 --> 00:00:02.800
+Hi there. In this video we are going
+
+00:00:02.800 --> 00:00:05.440
+to look at the find command which is
+
+00:00:05.440 --> 00:00:10.560
+used to find files inside a file system.
+
+00:00:10.560 --> 00:00:13.040
+So, it's actually really powerful if you were
+
+00:00:13.040 --> 00:00:15.520
+like, why did I know that file exists
+
+00:00:15.095 --> 00:00:17.095
+somewhere, so I'd better actually look for it.
+
+00:00:17.095 --> 00:00:18.535
+Here's how it works, it's a little bit
+
+00:00:18.535 --> 00:00:20.455
+strange the way it works, but what you
+
+00:00:20.455 --> 00:00:23.335
+do is you type find and then you
+
+00:00:23.335 --> 00:00:25.255
+type the directory you're in and if you
+
+00:00:25.255 --> 00:00:27.815
+happen to wanna search from your current directory,
+
+00:00:27.815 --> 00:00:29.415
+you just type a period because that stands
+
+00:00:29.415 --> 00:00:31.550
+for the current directory. Then you type dash
+
+00:00:31.550 --> 00:00:33.790
+name if you're searching for a name. And
+
+00:00:33.790 --> 00:00:37.150
+then in quotation marks, put the, file you're
+
+00:00:37.150 --> 00:00:39.390
+looking for. So hello dot c for instance.
+
+00:00:39.550 --> 00:00:42.110
+Right? And if we type that, then, it
+
+00:00:42.110 --> 00:00:45.390
+should find all the instances of hello.c in
+
+00:00:45.390 --> 00:00:48.745
+my file system from the current directory. So
+
+00:00:48.745 --> 00:00:50.185
+in this case, there's a hello. C and
+
+00:00:50.185 --> 00:00:53.545
+assign zero, assign one and assign five. So
+
+00:00:54.025 --> 00:00:55.145
+you can do that and that makes it
+
+00:00:55.145 --> 00:00:57.065
+pretty easy to do. You can also do
+
+00:00:57.065 --> 00:01:01.010
+find dot dash name and then wildcards. These
+
+00:01:01.010 --> 00:01:02.530
+are a little bit different than the gref
+
+00:01:02.530 --> 00:01:06.850
+wildcards but this, the asterisk basically means find,
+
+00:01:08.530 --> 00:01:11.410
+any match and then period c will be
+
+00:01:11.410 --> 00:01:13.810
+any dot c file and it would find
+
+00:01:13.810 --> 00:01:15.650
+all those files and there are plenty of
+
+00:01:15.650 --> 00:01:20.025
+them inside my folder here. Okay, so that's
+
+00:01:20.025 --> 00:01:26.185
+how find works. It's relatively straightforward. Can instead
+
+00:01:26.185 --> 00:01:28.265
+of dot you can put any directory, know,
+
+00:01:28.265 --> 00:01:31.770
+you can search slash AFS slash IR slash
+
+00:01:31.770 --> 00:01:36.410
+class slash CS 107 etcetera and then start
+
+00:01:36.410 --> 00:01:39.050
+finding all the dot c files there. Okay,
+
+00:01:39.050 --> 00:01:40.570
+some of this stuff you probably don't have
+
+00:01:40.570 --> 00:01:43.805
+access to because it's in staff, but you
+
+00:01:44.925 --> 00:01:46.205
+can do that, you can also search for
+
+00:01:46.205 --> 00:01:50.925
+directories too. So let's find all the directories,
+
+00:01:51.645 --> 00:01:57.220
+dot dash name dash, I think it's type
+
+00:01:57.220 --> 00:02:01.140
+equals d for directory, I believe that's right.
+
+00:02:02.100 --> 00:02:04.180
+Actually, we're gonna need dot name and dash
+
+00:02:04.180 --> 00:02:06.020
+name for just finding all the directories. I
+
+00:02:06.020 --> 00:02:08.420
+think that's it right there, maybe it's not.
+
+00:02:09.785 --> 00:02:17.065
+Type, let's see, dash type, let's see, doesn't
+
+00:02:17.065 --> 00:02:19.785
+actually seem to, I think maybe we do
+
+00:02:19.785 --> 00:02:22.505
+it this way, dash type d like that,
+
+00:02:22.890 --> 00:02:24.810
+There we go. That'll find all the different
+
+00:02:24.810 --> 00:02:27.610
+folders that we have, directories in this current
+
+00:02:27.610 --> 00:02:31.130
+folder. So what if we wanna find, we
+
+00:02:31.130 --> 00:02:36.250
+can still do dot dash name and assign
+
+00:02:36.250 --> 00:02:39.825
+for instance, assign star let's say and this
+
+00:02:39.825 --> 00:02:41.825
+will find all the directories that start with
+
+00:02:41.825 --> 00:02:43.425
+assign star. If I happen to have files
+
+00:02:43.425 --> 00:02:44.945
+that start with assign star it would ignore
+
+00:02:44.945 --> 00:02:48.785
+those. So, find is a very, interesting command.
+
+00:02:49.025 --> 00:02:51.230
+If you want to do some other command
+
+00:02:51.230 --> 00:02:54.750
+on each file, you can also do that
+
+00:02:54.750 --> 00:02:58.030
+with a command called exe c, which is
+
+00:02:58.030 --> 00:03:00.350
+a flag. Like it would be something like
+
+00:03:00.350 --> 00:03:05.705
+this, dash name, assign star, dash type d
+
+00:03:05.705 --> 00:03:08.265
+and then dash e x e c and
+
+00:03:08.425 --> 00:03:09.625
+it takes a little bit of time to
+
+00:03:09.625 --> 00:03:10.745
+get used to how e x e c
+
+00:03:10.745 --> 00:03:14.745
+works but it actually runs a particular command
+
+00:03:14.745 --> 00:03:16.345
+that you want like let's do an l
+
+00:03:16.345 --> 00:03:18.450
+s on all those directories and then you
+
+00:03:18.450 --> 00:03:19.890
+have to put weird brackets like this and
+
+00:03:19.890 --> 00:03:22.530
+some other weird incantations but it will actually
+
+00:03:23.010 --> 00:03:26.530
+list for you all of the it will
+
+00:03:26.530 --> 00:03:28.530
+actually run that command, the l s command
+
+00:03:28.530 --> 00:03:30.610
+in this case, on all of the matches
+
+00:03:30.610 --> 00:03:33.900
+that it found. So that's how this this
+
+00:03:33.900 --> 00:03:36.700
+actually works. Okay. That's the find command. Thanks.
