@@ -412,5 +412,17 @@
     "lesson_html_filename": "logging_to_myth_from_a_mac_interactive_lesson.html",
     "json_transcript_path_on_repo": "logging_to_myth_from_a_mac/logging_to_myth_from_a_mac_transcript.json",
     "vtt_transcript_path_on_repo": "logging_to_myth_from_a_mac/logging_to_myth_from_a_mac_transcript.vtt"
+  },
+  {
+    "title_original": "Logging to myth from Windows",
+    "video_name_clean": "logging_to_myth_from_windows",
+    "youtube_id": "1NwewrWyHpI",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:39:39.799100+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 332,
+    "lesson_html_filename": "logging_to_myth_from_windows_interactive_lesson.html",
+    "json_transcript_path_on_repo": "logging_to_myth_from_windows/logging_to_myth_from_windows_transcript.json",
+    "vtt_transcript_path_on_repo": "logging_to_myth_from_windows/logging_to_myth_from_windows_transcript.vtt"
   }
 ]

@@ -1,0 +1,389 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 3e86eda0-375b-4c1b-9733-9a9b09e51fe5
+Created: 2025-05-30T04:39:38.764Z
+Duration: 331.96405
+Channels: 1
+
+00:00:00.000 --> 00:00:03.200
+Hi there. This is Chris and I am
+
+00:00:03.200 --> 00:00:06.000
+going to show you how to log on
+
+00:00:06.000 --> 00:00:10.080
+to the NIF computers from a Windows PC.
+
+00:00:10.800 --> 00:00:12.560
+I happen to have Windows 10, so I'm
+
+00:00:12.560 --> 00:00:14.080
+actually gonna show you how to do two
+
+00:00:14.080 --> 00:00:16.775
+different methods for logging on. If you happen
+
+00:00:16.775 --> 00:00:19.415
+to have Windows 10, the easiest way to
+
+00:00:19.415 --> 00:00:24.855
+log on is to install the Bash Ubuntu
+
+00:00:24.855 --> 00:00:27.975
+subsystem into Windows. And to do that, you
+
+00:00:27.975 --> 00:00:32.430
+actually go to this website right here and,
+
+00:00:32.990 --> 00:00:34.510
+it will tell you exactly how to do
+
+00:00:34.510 --> 00:00:36.750
+that. I've already done that because it does
+
+00:00:36.750 --> 00:00:38.750
+take a little bit of time. But once
+
+00:00:38.750 --> 00:00:43.150
+you do that, you should you should be
+
+00:00:43.150 --> 00:00:44.750
+able to install that and then you'll be
+
+00:00:44.750 --> 00:00:48.085
+able to use the bash terminal which is
+
+00:00:48.085 --> 00:00:50.485
+very similar to the terminal that is actually
+
+00:00:50.485 --> 00:00:54.565
+built into the the myth computers itself. So
+
+00:00:54.565 --> 00:00:55.925
+this is the method I would suggest if
+
+00:00:55.925 --> 00:00:57.205
+you happen to be on Windows 10 this
+
+00:00:57.205 --> 00:00:58.790
+is a great way to do it. What
+
+00:00:58.790 --> 00:01:00.630
+you do when you have it loaded you
+
+00:01:00.630 --> 00:01:02.070
+just go to the search and you type
+
+00:01:02.070 --> 00:01:06.070
+bash b a s h or Ubuntu and
+
+00:01:06.070 --> 00:01:07.750
+when you click on that it pulls up
+
+00:01:07.750 --> 00:01:11.575
+a window that looks like this and from
+
+00:01:11.575 --> 00:01:13.975
+here we are going to use the SSH
+
+00:01:13.975 --> 00:01:16.855
+command which is the secure shell and it's
+
+00:01:16.855 --> 00:01:19.495
+built into the window here and you just
+
+00:01:19.495 --> 00:01:22.775
+type SSH and then your SUNET ID, mine
+
+00:01:22.775 --> 00:01:25.310
+happens to be CGreg and you type the
+
+00:01:25.310 --> 00:01:32.110
+@symbolandmiff.stanford.edu and you hit enter. And the first
+
+00:01:32.110 --> 00:01:33.550
+time you connect it will ask you if
+
+00:01:33.550 --> 00:01:35.630
+you are sure you want to continue connecting
+
+00:01:35.630 --> 00:01:37.710
+and you should type yes and then it
+
+00:01:37.710 --> 00:01:40.315
+will ask for your password. And as I'm
+
+00:01:40.315 --> 00:01:46.155
+typing my password, notice that it's not actually
+
+00:01:46.155 --> 00:01:48.315
+being shown on the screen. This is a
+
+00:01:48.315 --> 00:01:50.875
+security feature, it allows you to type your
+
+00:01:50.875 --> 00:01:52.955
+password without somebody who's looking over your shoulder
+
+00:01:52.955 --> 00:01:54.875
+to see it and, it's a nice feature.
+
+00:01:55.370 --> 00:01:57.370
+Anyway, you type that in and then it
+
+00:01:57.370 --> 00:02:01.530
+brings you down to, the actual prompt. We
+
+00:02:01.530 --> 00:02:05.130
+happen to log into myth nine here and,
+
+00:02:05.290 --> 00:02:07.690
+being logged into myth nine doesn't really matter,
+
+00:02:07.690 --> 00:02:09.370
+it just happened to log us in there.
+
+00:02:09.645 --> 00:02:11.165
+And then from here you can type all
+
+00:02:11.165 --> 00:02:12.845
+the different commands that you'll learn in other
+
+00:02:12.845 --> 00:02:15.485
+videos like c d one zero seven changes
+
+00:02:15.485 --> 00:02:18.045
+me into the one zero seven directory, l
+
+00:02:18.045 --> 00:02:22.205
+s lists the files, etcetera. Couple commands you
+
+00:02:22.205 --> 00:02:24.750
+might wanna know, when you're here, the clear
+
+00:02:24.750 --> 00:02:28.510
+command will clear the screen. The reset command
+
+00:02:28.510 --> 00:02:30.190
+will clear the screen in a little lower
+
+00:02:30.190 --> 00:02:32.190
+level. So if the if the colors on
+
+00:02:32.190 --> 00:02:33.870
+your screen get a little bit screwed up,
+
+00:02:33.870 --> 00:02:35.150
+it will do that. In fact, in here,
+
+00:02:35.150 --> 00:02:36.750
+it looks like it actually changed the size
+
+00:02:36.750 --> 00:02:39.645
+of the window like that as well. So
+
+00:02:39.645 --> 00:02:41.565
+that's that. If you wanna log out, you
+
+00:02:41.565 --> 00:02:44.285
+just type log out and then enter or
+
+00:02:44.285 --> 00:02:46.685
+you could hold down control and click the
+
+00:02:46.685 --> 00:02:48.845
+d key. So let me try that. If
+
+00:02:48.845 --> 00:02:50.765
+I hold down control and click d, it
+
+00:02:50.765 --> 00:02:52.685
+will actually type log out for me and
+
+00:02:52.685 --> 00:02:55.490
+log me out. Okay? So that's how you
+
+00:02:55.490 --> 00:02:57.730
+use login. As I said, this is the
+
+00:02:57.730 --> 00:03:00.290
+preferred method because it's once you set it
+
+00:03:00.290 --> 00:03:02.210
+up, it's all built into Windows and it's
+
+00:03:02.210 --> 00:03:04.770
+kinda nice. You can do that, but there's
+
+00:03:04.770 --> 00:03:07.095
+another way too. If you're not on a
+
+00:03:07.095 --> 00:03:08.855
+Windows 10 computer, you you have to do
+
+00:03:08.855 --> 00:03:11.815
+this method. But there is a program that
+
+00:03:11.815 --> 00:03:14.295
+you can download for free from Stanford called
+
+00:03:14.295 --> 00:03:18.295
+Secure CRT. And, you go to this website
+
+00:03:18.295 --> 00:03:22.680
+here and it actually, then you just download
+
+00:03:22.680 --> 00:03:25.880
+it. You do your, your regular SUNET login
+
+00:03:25.880 --> 00:03:28.040
+and you download it. Most people will use
+
+00:03:28.040 --> 00:03:29.720
+the the 64 bit. If you happen to
+
+00:03:29.720 --> 00:03:31.880
+be on a really old Windows version, you
+
+00:03:31.880 --> 00:03:33.880
+may need the 32 bit, but the 64
+
+00:03:33.880 --> 00:03:36.615
+bit should work for people. I have also
+
+00:03:36.615 --> 00:03:39.575
+already installed that. And if you use that
+
+00:03:39.575 --> 00:03:44.775
+program, you just type secure CRT and then,
+
+00:03:45.015 --> 00:03:46.615
+you click on it and a little window
+
+00:03:46.615 --> 00:03:50.400
+comes up. It actually prepopulates a couple of,
+
+00:03:50.960 --> 00:03:55.760
+different Stanford campuses, Stanford campus computer systems. We
+
+00:03:55.760 --> 00:03:58.560
+are gonna use a third one, called NIF.
+
+00:03:58.560 --> 00:04:00.400
+So what you do is you click on
+
+00:04:00.400 --> 00:04:02.240
+new session here. This is the only time
+
+00:04:02.240 --> 00:04:04.825
+you'll have to do this. And, you can
+
+00:04:04.825 --> 00:04:07.465
+just use the regular defaults here and click
+
+00:04:07.465 --> 00:04:09.065
+next and the host name is going to
+
+00:04:09.065 --> 00:04:12.265
+be nif dot stanford dot edu. You can
+
+00:04:12.265 --> 00:04:14.825
+leave the port the same, no firewall, and
+
+00:04:14.825 --> 00:04:18.160
+then you type your username. Okay and that's
+
+00:04:18.160 --> 00:04:20.960
+it and then for the secure FX protocol
+
+00:04:20.960 --> 00:04:24.400
+that's fine too and then you can just
+
+00:04:24.400 --> 00:04:26.720
+leave it at myth.stanford. If you want and
+
+00:04:26.720 --> 00:04:28.480
+there you go. And if you double click
+
+00:04:28.480 --> 00:04:29.855
+on that it'll bring it up the first
+
+00:04:29.855 --> 00:04:31.535
+time, it will ask you if you want
+
+00:04:31.535 --> 00:04:32.975
+to use this, you should say accept and
+
+00:04:32.975 --> 00:04:34.335
+save and then it shouldn't ask you that
+
+00:04:34.335 --> 00:04:37.855
+again. If you type your password, it's, blocked
+
+00:04:37.855 --> 00:04:41.615
+out with little dots and if you save
+
+00:04:41.615 --> 00:04:43.135
+it, it'll save it. I don't know if
+
+00:04:43.135 --> 00:04:44.975
+it's the best idea to save it but
+
+00:04:44.430 --> 00:04:46.110
+not not too bad probably if it's your
+
+00:04:46.110 --> 00:04:49.310
+own computer. But that's that. Click okay and
+
+00:04:49.310 --> 00:04:51.070
+then it logs you in and much like
+
+00:04:51.070 --> 00:04:52.990
+the other one we are here. Unfortunately, this
+
+00:04:52.990 --> 00:04:55.550
+doesn't allow fancy colors it looks like, which
+
+00:04:55.550 --> 00:04:56.830
+is too bad but you can still use
+
+00:04:56.830 --> 00:04:59.725
+the clear, you can use the reset, the
+
+00:04:59.725 --> 00:05:02.525
+CD command, LS command and so forth you
+
+00:05:02.525 --> 00:05:05.565
+are logged on officially. And that's how you
+
+00:05:05.565 --> 00:05:07.165
+do it. To log out just type log
+
+00:05:07.165 --> 00:05:10.125
+out or control D and that's that. In
+
+00:05:10.125 --> 00:05:12.045
+fact you are logged out when the little
+
+00:05:12.400 --> 00:05:14.400
+red minus here is there and then you
+
+00:05:14.400 --> 00:05:17.280
+can just click actually I think we could
+
+00:05:17.280 --> 00:05:20.720
+probably click, I'm not even sure, to get
+
+00:05:20.720 --> 00:05:23.680
+back to the original maybe it's session manager,
+
+00:05:23.680 --> 00:05:25.120
+there we go. And if you want to
+
+00:05:25.120 --> 00:05:27.539
+click again you can just do that. So
+
+00:05:27.539 --> 00:05:29.699
+that's that. How you log on. Thanks.
