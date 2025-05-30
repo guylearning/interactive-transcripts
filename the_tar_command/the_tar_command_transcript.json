@@ -1,0 +1,2188 @@
+{
+  "metadata": {
+    "transaction_key": "deprecated",
+    "request_id": "29789189-adb0-4f70-b3c2-af8cba8dad00",
+    "sha256": "4b3e0c9746752b95afd4d750277d5d05d0c398d040a2b4d62afd8e51b20c03ac",
+    "created": "2025-05-30T04:46:45.671Z",
+    "duration": 111.20325,
+    "channels": 1,
+    "models": [
+      "3b3aabe4-608a-46ac-9585-7960a25daf1a"
+    ],
+    "model_info": {
+      "3b3aabe4-608a-46ac-9585-7960a25daf1a": {
+        "name": "general-nova-3",
+        "version": "2024-12-20.0",
+        "arch": "nova-3"
+      }
+    }
+  },
+  "results": {
+    "channels": [
+      {
+        "alternatives": [
+          {
+            "transcript": "Hi there. Occasionally when you are using a Unix system you'll find files in a strange format. In other words the extension on them might be something like some file dot tar dot g z and you might say what is that? Well, it's basically a zipped up archive file. Basically it's just a zip file that you can extract and it gives you a folder or directory of files. So I just wanted to quickly go over how you would actually extract that from the command line. Here's how you do it, if you want to extract something like that you type tar which stands for tape archive, which is from back in the day when we actually used to use magnetic tape to store files and do backups and so forth. And you type tar and then the options dash XVF which stands for extract and V stands for show me all the files you've extracted and F stands for I'm about to give you a filename. And then, in this case I have one called assign zero dot tar dot g z and it will, untar the file for you. Okay? And if you wanna actually create a zip file like that, you could actually use the zip command, which is also pretty common. But if you wanna create this particular type of compressed file, you would type tar c z, which stands for compressed into a zipped form, and then v f, if you wanna see all the files again, and then a directory name and it will, oops, let's see tar dot g z, a directory, a filename and then a directory name and there you go. And that's how that's how a tar file tar command works. Thanks.",
+            "confidence": 0.9912177,
+            "words": [
+              {
+                "word": "hi",
+                "start": 0.96,
+                "end": 1.1999999,
+                "confidence": 0.9956327,
+                "punctuated_word": "Hi"
+              },
+              {
+                "word": "there",
+                "start": 1.1999999,
+                "end": 1.76,
+                "confidence": 0.91616786,
+                "punctuated_word": "there."
+              },
+              {
+                "word": "occasionally",
+                "start": 2.56,
+                "end": 3.1999998,
+                "confidence": 0.9986334,
+                "punctuated_word": "Occasionally"
+              },
+              {
+                "word": "when",
+                "start": 3.1999998,
+                "end": 3.6,
+                "confidence": 0.6246389,
+                "punctuated_word": "when"
+              },
+              {
+                "word": "you",
+                "start": 3.6,
+                "end": 3.76,
+                "confidence": 0.9987451,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "are",
+                "start": 3.76,
+                "end": 4.0,
+                "confidence": 0.99472886,
+                "punctuated_word": "are"
+              },
+              {
+                "word": "using",
+                "start": 4.0,
+                "end": 4.3199997,
+                "confidence": 0.9990402,
+                "punctuated_word": "using"
+              },
+              {
+                "word": "a",
+                "start": 4.3199997,
+                "end": 4.48,
+                "confidence": 0.97299665,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "unix",
+                "start": 4.48,
+                "end": 4.96,
+                "confidence": 0.82710004,
+                "punctuated_word": "Unix"
+              },
+              {
+                "word": "system",
+                "start": 4.96,
+                "end": 5.2,
+                "confidence": 0.97639865,
+                "punctuated_word": "system"
+              },
+              {
+                "word": "you'll",
+                "start": 5.2,
+                "end": 5.6,
+                "confidence": 0.74202085,
+                "punctuated_word": "you'll"
+              },
+              {
+                "word": "find",
+                "start": 5.6,
+                "end": 5.7599998,
+                "confidence": 0.9988164,
+                "punctuated_word": "find"
+              },
+              {
+                "word": "files",
+                "start": 5.7599998,
+                "end": 6.3999996,
+                "confidence": 0.9990534,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "in",
+                "start": 6.3999996,
+                "end": 6.7999997,
+                "confidence": 0.99951255,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "a",
+                "start": 6.7999997,
+                "end": 7.2,
+                "confidence": 0.99889404,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "strange",
+                "start": 7.2,
+                "end": 7.9199996,
+                "confidence": 0.9998292,
+                "punctuated_word": "strange"
+              },
+              {
+                "word": "format",
+                "start": 7.9199996,
+                "end": 8.559999,
+                "confidence": 0.9048491,
+                "punctuated_word": "format."
+              },
+              {
+                "word": "in",
+                "start": 8.559999,
+                "end": 8.88,
+                "confidence": 0.6434883,
+                "punctuated_word": "In"
+              },
+              {
+                "word": "other",
+                "start": 8.88,
+                "end": 8.96,
+                "confidence": 0.9934568,
+                "punctuated_word": "other"
+              },
+              {
+                "word": "words",
+                "start": 8.96,
+                "end": 9.12,
+                "confidence": 0.9978003,
+                "punctuated_word": "words"
+              },
+              {
+                "word": "the",
+                "start": 9.12,
+                "end": 9.36,
+                "confidence": 0.50073975,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "extension",
+                "start": 9.36,
+                "end": 9.76,
+                "confidence": 0.9978911,
+                "punctuated_word": "extension"
+              },
+              {
+                "word": "on",
+                "start": 9.76,
+                "end": 10.0,
+                "confidence": 0.9950008,
+                "punctuated_word": "on"
+              },
+              {
+                "word": "them",
+                "start": 10.0,
+                "end": 10.559999,
+                "confidence": 0.9973321,
+                "punctuated_word": "them"
+              },
+              {
+                "word": "might",
+                "start": 10.559999,
+                "end": 10.8,
+                "confidence": 0.9967193,
+                "punctuated_word": "might"
+              },
+              {
+                "word": "be",
+                "start": 10.8,
+                "end": 11.04,
+                "confidence": 0.9980636,
+                "punctuated_word": "be"
+              },
+              {
+                "word": "something",
+                "start": 11.04,
+                "end": 11.36,
+                "confidence": 0.99901175,
+                "punctuated_word": "something"
+              },
+              {
+                "word": "like",
+                "start": 11.36,
+                "end": 11.999999,
+                "confidence": 0.998257,
+                "punctuated_word": "like"
+              },
+              {
+                "word": "some",
+                "start": 12.24,
+                "end": 12.559999,
+                "confidence": 0.8751874,
+                "punctuated_word": "some"
+              },
+              {
+                "word": "file",
+                "start": 12.559999,
+                "end": 13.12,
+                "confidence": 0.78268677,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "dot",
+                "start": 13.12,
+                "end": 13.679999,
+                "confidence": 0.9513239,
+                "punctuated_word": "dot"
+              },
+              {
+                "word": "tar",
+                "start": 13.985,
+                "end": 14.865,
+                "confidence": 0.97323215,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "dot",
+                "start": 14.865,
+                "end": 15.184999,
+                "confidence": 0.9765796,
+                "punctuated_word": "dot"
+              },
+              {
+                "word": "g",
+                "start": 15.184999,
+                "end": 15.665,
+                "confidence": 0.93689865,
+                "punctuated_word": "g"
+              },
+              {
+                "word": "z",
+                "start": 15.665,
+                "end": 15.985,
+                "confidence": 0.50935954,
+                "punctuated_word": "z"
+              },
+              {
+                "word": "and",
+                "start": 15.985,
+                "end": 16.225,
+                "confidence": 0.70763415,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "you",
+                "start": 16.225,
+                "end": 16.305,
+                "confidence": 0.99841845,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "might",
+                "start": 16.305,
+                "end": 16.465,
+                "confidence": 0.9978662,
+                "punctuated_word": "might"
+              },
+              {
+                "word": "say",
+                "start": 16.465,
+                "end": 16.625,
+                "confidence": 0.99656975,
+                "punctuated_word": "say"
+              },
+              {
+                "word": "what",
+                "start": 16.625,
+                "end": 16.865,
+                "confidence": 0.6698726,
+                "punctuated_word": "what"
+              },
+              {
+                "word": "is",
+                "start": 16.865,
+                "end": 17.105,
+                "confidence": 0.99746203,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "that",
+                "start": 17.105,
+                "end": 17.425,
+                "confidence": 0.9189886,
+                "punctuated_word": "that?"
+              },
+              {
+                "word": "well",
+                "start": 17.425,
+                "end": 17.904999,
+                "confidence": 0.89726317,
+                "punctuated_word": "Well,"
+              },
+              {
+                "word": "it's",
+                "start": 17.904999,
+                "end": 18.145,
+                "confidence": 0.9794903,
+                "punctuated_word": "it's"
+              },
+              {
+                "word": "basically",
+                "start": 18.145,
+                "end": 18.385,
+                "confidence": 0.9989503,
+                "punctuated_word": "basically"
+              },
+              {
+                "word": "a",
+                "start": 18.385,
+                "end": 18.625,
+                "confidence": 0.9873219,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "zipped",
+                "start": 18.625,
+                "end": 19.025,
+                "confidence": 0.9797425,
+                "punctuated_word": "zipped"
+              },
+              {
+                "word": "up",
+                "start": 19.025,
+                "end": 19.505,
+                "confidence": 0.98491454,
+                "punctuated_word": "up"
+              },
+              {
+                "word": "archive",
+                "start": 19.505,
+                "end": 20.145,
+                "confidence": 0.97222,
+                "punctuated_word": "archive"
+              },
+              {
+                "word": "file",
+                "start": 20.145,
+                "end": 20.785,
+                "confidence": 0.9007127,
+                "punctuated_word": "file."
+              },
+              {
+                "word": "basically",
+                "start": 20.785,
+                "end": 21.105,
+                "confidence": 0.9985428,
+                "punctuated_word": "Basically"
+              },
+              {
+                "word": "it's",
+                "start": 21.105,
+                "end": 21.345,
+                "confidence": 0.7793358,
+                "punctuated_word": "it's"
+              },
+              {
+                "word": "just",
+                "start": 21.345,
+                "end": 21.425,
+                "confidence": 0.9962804,
+                "punctuated_word": "just"
+              },
+              {
+                "word": "a",
+                "start": 21.425,
+                "end": 21.585,
+                "confidence": 0.98837346,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "zip",
+                "start": 21.585,
+                "end": 21.824999,
+                "confidence": 0.97342414,
+                "punctuated_word": "zip"
+              },
+              {
+                "word": "file",
+                "start": 21.824999,
+                "end": 22.064999,
+                "confidence": 0.9992077,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "that",
+                "start": 22.064999,
+                "end": 22.224998,
+                "confidence": 0.998585,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "you",
+                "start": 22.224998,
+                "end": 22.384998,
+                "confidence": 0.9990864,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "can",
+                "start": 22.384998,
+                "end": 22.945,
+                "confidence": 0.9980198,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "extract",
+                "start": 23.744999,
+                "end": 24.465,
+                "confidence": 0.6458004,
+                "punctuated_word": "extract"
+              },
+              {
+                "word": "and",
+                "start": 26.465,
+                "end": 26.785,
+                "confidence": 0.975444,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 26.785,
+                "end": 26.945,
+                "confidence": 0.9899081,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "gives",
+                "start": 26.945,
+                "end": 27.105,
+                "confidence": 0.996968,
+                "punctuated_word": "gives"
+              },
+              {
+                "word": "you",
+                "start": 27.105,
+                "end": 27.265,
+                "confidence": 0.9981674,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "a",
+                "start": 27.265,
+                "end": 27.345,
+                "confidence": 0.9959376,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "folder",
+                "start": 27.345,
+                "end": 27.585,
+                "confidence": 0.9944165,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "or",
+                "start": 27.585,
+                "end": 27.825,
+                "confidence": 0.8203325,
+                "punctuated_word": "or"
+              },
+              {
+                "word": "directory",
+                "start": 27.825,
+                "end": 28.145,
+                "confidence": 0.8506819,
+                "punctuated_word": "directory"
+              },
+              {
+                "word": "of",
+                "start": 28.145,
+                "end": 28.305,
+                "confidence": 0.9866833,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "files",
+                "start": 28.305,
+                "end": 28.865,
+                "confidence": 0.9947838,
+                "punctuated_word": "files."
+              },
+              {
+                "word": "so",
+                "start": 28.865,
+                "end": 29.904999,
+                "confidence": 0.9984763,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "i",
+                "start": 29.08,
+                "end": 29.32,
+                "confidence": 0.5581579,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "just",
+                "start": 29.32,
+                "end": 29.48,
+                "confidence": 0.9987941,
+                "punctuated_word": "just"
+              },
+              {
+                "word": "wanted",
+                "start": 29.48,
+                "end": 29.72,
+                "confidence": 0.98838156,
+                "punctuated_word": "wanted"
+              },
+              {
+                "word": "to",
+                "start": 29.72,
+                "end": 29.8,
+                "confidence": 0.99709857,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "quickly",
+                "start": 29.8,
+                "end": 30.04,
+                "confidence": 0.9983778,
+                "punctuated_word": "quickly"
+              },
+              {
+                "word": "go",
+                "start": 30.04,
+                "end": 30.2,
+                "confidence": 0.99945444,
+                "punctuated_word": "go"
+              },
+              {
+                "word": "over",
+                "start": 30.2,
+                "end": 30.36,
+                "confidence": 0.9995653,
+                "punctuated_word": "over"
+              },
+              {
+                "word": "how",
+                "start": 30.36,
+                "end": 30.52,
+                "confidence": 0.99879223,
+                "punctuated_word": "how"
+              },
+              {
+                "word": "you",
+                "start": 30.52,
+                "end": 30.68,
+                "confidence": 0.9943988,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "would",
+                "start": 30.68,
+                "end": 30.92,
+                "confidence": 0.9897423,
+                "punctuated_word": "would"
+              },
+              {
+                "word": "actually",
+                "start": 30.92,
+                "end": 31.16,
+                "confidence": 0.9912499,
+                "punctuated_word": "actually"
+              },
+              {
+                "word": "extract",
+                "start": 31.16,
+                "end": 31.56,
+                "confidence": 0.99892163,
+                "punctuated_word": "extract"
+              },
+              {
+                "word": "that",
+                "start": 31.56,
+                "end": 31.72,
+                "confidence": 0.9937941,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "from",
+                "start": 31.72,
+                "end": 31.96,
+                "confidence": 0.9497727,
+                "punctuated_word": "from"
+              },
+              {
+                "word": "the",
+                "start": 31.96,
+                "end": 32.12,
+                "confidence": 0.97476894,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "command",
+                "start": 32.12,
+                "end": 32.36,
+                "confidence": 0.9965503,
+                "punctuated_word": "command"
+              },
+              {
+                "word": "line",
+                "start": 32.36,
+                "end": 32.92,
+                "confidence": 0.9710187,
+                "punctuated_word": "line."
+              },
+              {
+                "word": "here's",
+                "start": 33.08,
+                "end": 33.48,
+                "confidence": 0.74451554,
+                "punctuated_word": "Here's"
+              },
+              {
+                "word": "how",
+                "start": 33.48,
+                "end": 33.64,
+                "confidence": 0.99945134,
+                "punctuated_word": "how"
+              },
+              {
+                "word": "you",
+                "start": 33.64,
+                "end": 33.72,
+                "confidence": 0.9974541,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "do",
+                "start": 33.72,
+                "end": 33.88,
+                "confidence": 0.9614379,
+                "punctuated_word": "do"
+              },
+              {
+                "word": "it",
+                "start": 33.88,
+                "end": 34.04,
+                "confidence": 0.7409029,
+                "punctuated_word": "it,"
+              },
+              {
+                "word": "if",
+                "start": 34.04,
+                "end": 34.2,
+                "confidence": 0.9957261,
+                "punctuated_word": "if"
+              },
+              {
+                "word": "you",
+                "start": 34.2,
+                "end": 34.28,
+                "confidence": 0.998779,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "want",
+                "start": 34.28,
+                "end": 34.44,
+                "confidence": 0.823835,
+                "punctuated_word": "want"
+              },
+              {
+                "word": "to",
+                "start": 34.44,
+                "end": 34.52,
+                "confidence": 0.9970034,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "extract",
+                "start": 34.52,
+                "end": 34.92,
+                "confidence": 0.999106,
+                "punctuated_word": "extract"
+              },
+              {
+                "word": "something",
+                "start": 34.92,
+                "end": 35.239998,
+                "confidence": 0.9995939,
+                "punctuated_word": "something"
+              },
+              {
+                "word": "like",
+                "start": 35.239998,
+                "end": 35.4,
+                "confidence": 0.99895453,
+                "punctuated_word": "like"
+              },
+              {
+                "word": "that",
+                "start": 35.4,
+                "end": 35.56,
+                "confidence": 0.9983429,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "you",
+                "start": 35.56,
+                "end": 35.8,
+                "confidence": 0.5274611,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "type",
+                "start": 35.8,
+                "end": 36.12,
+                "confidence": 0.98620623,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "tar",
+                "start": 36.12,
+                "end": 36.6,
+                "confidence": 0.7869977,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "which",
+                "start": 36.6,
+                "end": 36.92,
+                "confidence": 0.614773,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "stands",
+                "start": 36.92,
+                "end": 37.16,
+                "confidence": 0.9924045,
+                "punctuated_word": "stands"
+              },
+              {
+                "word": "for",
+                "start": 37.16,
+                "end": 37.32,
+                "confidence": 0.997962,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "tape",
+                "start": 37.32,
+                "end": 37.64,
+                "confidence": 0.952349,
+                "punctuated_word": "tape"
+              },
+              {
+                "word": "archive",
+                "start": 37.64,
+                "end": 38.52,
+                "confidence": 0.75548077,
+                "punctuated_word": "archive,"
+              },
+              {
+                "word": "which",
+                "start": 38.68,
+                "end": 38.84,
+                "confidence": 0.99967754,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "is",
+                "start": 38.84,
+                "end": 38.92,
+                "confidence": 0.9986045,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "from",
+                "start": 38.92,
+                "end": 39.16,
+                "confidence": 0.99463296,
+                "punctuated_word": "from"
+              },
+              {
+                "word": "back",
+                "start": 39.16,
+                "end": 39.4,
+                "confidence": 0.9984383,
+                "punctuated_word": "back"
+              },
+              {
+                "word": "in",
+                "start": 39.4,
+                "end": 39.559998,
+                "confidence": 0.99856466,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "the",
+                "start": 39.559998,
+                "end": 39.64,
+                "confidence": 0.9992418,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "day",
+                "start": 39.64,
+                "end": 39.8,
+                "confidence": 0.999226,
+                "punctuated_word": "day"
+              },
+              {
+                "word": "when",
+                "start": 39.8,
+                "end": 40.04,
+                "confidence": 0.9933947,
+                "punctuated_word": "when"
+              },
+              {
+                "word": "we",
+                "start": 40.04,
+                "end": 40.2,
+                "confidence": 0.99845266,
+                "punctuated_word": "we"
+              },
+              {
+                "word": "actually",
+                "start": 40.2,
+                "end": 40.52,
+                "confidence": 0.99580175,
+                "punctuated_word": "actually"
+              },
+              {
+                "word": "used",
+                "start": 40.52,
+                "end": 40.760002,
+                "confidence": 0.97584563,
+                "punctuated_word": "used"
+              },
+              {
+                "word": "to",
+                "start": 40.760002,
+                "end": 40.84,
+                "confidence": 0.99929523,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "use",
+                "start": 40.84,
+                "end": 41.08,
+                "confidence": 0.9972972,
+                "punctuated_word": "use"
+              },
+              {
+                "word": "magnetic",
+                "start": 41.08,
+                "end": 41.72,
+                "confidence": 0.99946946,
+                "punctuated_word": "magnetic"
+              },
+              {
+                "word": "tape",
+                "start": 41.72,
+                "end": 42.12,
+                "confidence": 0.9996575,
+                "punctuated_word": "tape"
+              },
+              {
+                "word": "to",
+                "start": 42.425003,
+                "end": 42.745003,
+                "confidence": 0.998251,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "store",
+                "start": 42.745003,
+                "end": 43.145,
+                "confidence": 0.99767035,
+                "punctuated_word": "store"
+              },
+              {
+                "word": "files",
+                "start": 43.145,
+                "end": 43.465,
+                "confidence": 0.99963915,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "and",
+                "start": 43.465,
+                "end": 43.705,
+                "confidence": 0.9836932,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "do",
+                "start": 43.705,
+                "end": 43.945,
+                "confidence": 0.9912177,
+                "punctuated_word": "do"
+              },
+              {
+                "word": "backups",
+                "start": 43.945,
+                "end": 44.345,
+                "confidence": 0.9778564,
+                "punctuated_word": "backups"
+              },
+              {
+                "word": "and",
+                "start": 44.345,
+                "end": 44.585003,
+                "confidence": 0.99349725,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "so",
+                "start": 44.585003,
+                "end": 44.665,
+                "confidence": 0.99927455,
+                "punctuated_word": "so"
+              },
+              {
+                "word": "forth",
+                "start": 44.665,
+                "end": 45.225002,
+                "confidence": 0.9134711,
+                "punctuated_word": "forth."
+              },
+              {
+                "word": "and",
+                "start": 45.545002,
+                "end": 45.945,
+                "confidence": 0.97341037,
+                "punctuated_word": "And"
+              },
+              {
+                "word": "you",
+                "start": 45.945,
+                "end": 46.185,
+                "confidence": 0.93831015,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "type",
+                "start": 46.185,
+                "end": 46.505,
+                "confidence": 0.95901215,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "tar",
+                "start": 46.505,
+                "end": 46.825,
+                "confidence": 0.7813553,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "and",
+                "start": 46.825,
+                "end": 47.145,
+                "confidence": 0.97596514,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "then",
+                "start": 47.145,
+                "end": 47.465,
+                "confidence": 0.98199373,
+                "punctuated_word": "then"
+              },
+              {
+                "word": "the",
+                "start": 47.465,
+                "end": 48.025,
+                "confidence": 0.9826278,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "options",
+                "start": 48.025,
+                "end": 48.585,
+                "confidence": 0.94457275,
+                "punctuated_word": "options"
+              },
+              {
+                "word": "dash",
+                "start": 48.585,
+                "end": 48.985,
+                "confidence": 0.73360276,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "xvf",
+                "start": 48.985,
+                "end": 50.905,
+                "confidence": 0.79847074,
+                "punctuated_word": "XVF"
+              },
+              {
+                "word": "which",
+                "start": 50.905,
+                "end": 51.225002,
+                "confidence": 0.70995116,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "stands",
+                "start": 51.225002,
+                "end": 51.465,
+                "confidence": 0.99470747,
+                "punctuated_word": "stands"
+              },
+              {
+                "word": "for",
+                "start": 51.465,
+                "end": 51.705,
+                "confidence": 0.999141,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "extract",
+                "start": 51.705,
+                "end": 52.745003,
+                "confidence": 0.9678995,
+                "punctuated_word": "extract"
+              },
+              {
+                "word": "and",
+                "start": 52.985,
+                "end": 53.225002,
+                "confidence": 0.80844355,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "v",
+                "start": 53.225002,
+                "end": 53.545002,
+                "confidence": 0.7401471,
+                "punctuated_word": "V"
+              },
+              {
+                "word": "stands",
+                "start": 53.545002,
+                "end": 53.785,
+                "confidence": 0.9972262,
+                "punctuated_word": "stands"
+              },
+              {
+                "word": "for",
+                "start": 53.785,
+                "end": 53.945,
+                "confidence": 0.99815196,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "show",
+                "start": 53.945,
+                "end": 54.105,
+                "confidence": 0.9469575,
+                "punctuated_word": "show"
+              },
+              {
+                "word": "me",
+                "start": 54.105,
+                "end": 54.265,
+                "confidence": 0.99823403,
+                "punctuated_word": "me"
+              },
+              {
+                "word": "all",
+                "start": 54.265,
+                "end": 54.345,
+                "confidence": 0.99618953,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 54.345,
+                "end": 54.425003,
+                "confidence": 0.9740961,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 54.425003,
+                "end": 54.585,
+                "confidence": 0.9989196,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "you've",
+                "start": 54.585,
+                "end": 54.825,
+                "confidence": 0.8611533,
+                "punctuated_word": "you've"
+              },
+              {
+                "word": "extracted",
+                "start": 54.825,
+                "end": 55.065002,
+                "confidence": 0.99926394,
+                "punctuated_word": "extracted"
+              },
+              {
+                "word": "and",
+                "start": 55.065002,
+                "end": 55.305,
+                "confidence": 0.9429189,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "f",
+                "start": 55.305,
+                "end": 55.545002,
+                "confidence": 0.9540632,
+                "punctuated_word": "F"
+              },
+              {
+                "word": "stands",
+                "start": 55.545002,
+                "end": 55.785,
+                "confidence": 0.9987006,
+                "punctuated_word": "stands"
+              },
+              {
+                "word": "for",
+                "start": 55.785,
+                "end": 55.865,
+                "confidence": 0.99742585,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "i'm",
+                "start": 55.865,
+                "end": 56.105,
+                "confidence": 0.9526274,
+                "punctuated_word": "I'm"
+              },
+              {
+                "word": "about",
+                "start": 56.105,
+                "end": 56.265,
+                "confidence": 0.9797809,
+                "punctuated_word": "about"
+              },
+              {
+                "word": "to",
+                "start": 56.265,
+                "end": 56.425003,
+                "confidence": 0.999238,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "give",
+                "start": 56.425003,
+                "end": 56.505,
+                "confidence": 0.99933237,
+                "punctuated_word": "give"
+              },
+              {
+                "word": "you",
+                "start": 56.505,
+                "end": 56.665,
+                "confidence": 0.99655044,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "a",
+                "start": 56.665,
+                "end": 56.825,
+                "confidence": 0.9971711,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "filename",
+                "start": 56.825,
+                "end": 57.225002,
+                "confidence": 0.83812076,
+                "punctuated_word": "filename."
+              },
+              {
+                "word": "and",
+                "start": 57.61,
+                "end": 57.93,
+                "confidence": 0.99229383,
+                "punctuated_word": "And"
+              },
+              {
+                "word": "then",
+                "start": 57.93,
+                "end": 58.49,
+                "confidence": 0.93474513,
+                "punctuated_word": "then,"
+              },
+              {
+                "word": "in",
+                "start": 58.81,
+                "end": 59.05,
+                "confidence": 0.99928916,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "this",
+                "start": 59.05,
+                "end": 59.21,
+                "confidence": 0.9999138,
+                "punctuated_word": "this"
+              },
+              {
+                "word": "case",
+                "start": 59.21,
+                "end": 59.53,
+                "confidence": 0.9998661,
+                "punctuated_word": "case"
+              },
+              {
+                "word": "i",
+                "start": 59.53,
+                "end": 59.850002,
+                "confidence": 0.55851805,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "have",
+                "start": 59.850002,
+                "end": 60.25,
+                "confidence": 0.99961793,
+                "punctuated_word": "have"
+              },
+              {
+                "word": "one",
+                "start": 60.25,
+                "end": 60.65,
+                "confidence": 0.99817026,
+                "punctuated_word": "one"
+              },
+              {
+                "word": "called",
+                "start": 60.65,
+                "end": 61.53,
+                "confidence": 0.9982058,
+                "punctuated_word": "called"
+              },
+              {
+                "word": "assign",
+                "start": 62.33,
+                "end": 62.89,
+                "confidence": 0.8595631,
+                "punctuated_word": "assign"
+              },
+              {
+                "word": "zero",
+                "start": 62.89,
+                "end": 63.29,
+                "confidence": 0.59090877,
+                "punctuated_word": "zero"
+              },
+              {
+                "word": "dot",
+                "start": 63.29,
+                "end": 63.53,
+                "confidence": 0.93271995,
+                "punctuated_word": "dot"
+              },
+              {
+                "word": "tar",
+                "start": 63.53,
+                "end": 63.85,
+                "confidence": 0.9833249,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "dot",
+                "start": 63.85,
+                "end": 64.17,
+                "confidence": 0.984236,
+                "punctuated_word": "dot"
+              },
+              {
+                "word": "g",
+                "start": 64.17,
+                "end": 64.49,
+                "confidence": 0.96839505,
+                "punctuated_word": "g"
+              },
+              {
+                "word": "z",
+                "start": 64.49,
+                "end": 65.13,
+                "confidence": 0.82871354,
+                "punctuated_word": "z"
+              },
+              {
+                "word": "and",
+                "start": 65.37,
+                "end": 66.17,
+                "confidence": 0.823091,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 66.33,
+                "end": 66.65,
+                "confidence": 0.99722785,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "will",
+                "start": 66.65,
+                "end": 67.45,
+                "confidence": 0.86647135,
+                "punctuated_word": "will,"
+              },
+              {
+                "word": "untar",
+                "start": 67.93,
+                "end": 68.49,
+                "confidence": 0.96629333,
+                "punctuated_word": "untar"
+              },
+              {
+                "word": "the",
+                "start": 68.49,
+                "end": 68.73,
+                "confidence": 0.99635834,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "file",
+                "start": 68.73,
+                "end": 68.97,
+                "confidence": 0.99940705,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "for",
+                "start": 68.97,
+                "end": 69.21,
+                "confidence": 0.99963605,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "you",
+                "start": 69.21,
+                "end": 69.37,
+                "confidence": 0.95283645,
+                "punctuated_word": "you."
+              },
+              {
+                "word": "okay",
+                "start": 69.704994,
+                "end": 70.424995,
+                "confidence": 0.8352715,
+                "punctuated_word": "Okay?"
+              },
+              {
+                "word": "and",
+                "start": 70.66499,
+                "end": 71.30499,
+                "confidence": 0.8429862,
+                "punctuated_word": "And"
+              },
+              {
+                "word": "if",
+                "start": 71.945,
+                "end": 72.265,
+                "confidence": 0.9785839,
+                "punctuated_word": "if"
+              },
+              {
+                "word": "you",
+                "start": 72.265,
+                "end": 72.424995,
+                "confidence": 0.9989635,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "wanna",
+                "start": 72.424995,
+                "end": 72.66499,
+                "confidence": 0.7220789,
+                "punctuated_word": "wanna"
+              },
+              {
+                "word": "actually",
+                "start": 72.66499,
+                "end": 72.98499,
+                "confidence": 0.99296933,
+                "punctuated_word": "actually"
+              },
+              {
+                "word": "create",
+                "start": 72.98499,
+                "end": 73.465,
+                "confidence": 0.99887174,
+                "punctuated_word": "create"
+              },
+              {
+                "word": "a",
+                "start": 73.465,
+                "end": 73.784996,
+                "confidence": 0.99303305,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "zip",
+                "start": 73.784996,
+                "end": 74.104996,
+                "confidence": 0.844911,
+                "punctuated_word": "zip"
+              },
+              {
+                "word": "file",
+                "start": 74.104996,
+                "end": 74.424995,
+                "confidence": 0.9991641,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "like",
+                "start": 74.424995,
+                "end": 74.585,
+                "confidence": 0.9985342,
+                "punctuated_word": "like"
+              },
+              {
+                "word": "that",
+                "start": 74.585,
+                "end": 74.98499,
+                "confidence": 0.93618524,
+                "punctuated_word": "that,"
+              },
+              {
+                "word": "you",
+                "start": 74.98499,
+                "end": 75.064995,
+                "confidence": 0.99940467,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "could",
+                "start": 75.064995,
+                "end": 75.225,
+                "confidence": 0.5853363,
+                "punctuated_word": "could"
+              },
+              {
+                "word": "actually",
+                "start": 75.225,
+                "end": 75.465,
+                "confidence": 0.9953106,
+                "punctuated_word": "actually"
+              },
+              {
+                "word": "use",
+                "start": 75.465,
+                "end": 75.625,
+                "confidence": 0.99649197,
+                "punctuated_word": "use"
+              },
+              {
+                "word": "the",
+                "start": 75.625,
+                "end": 75.784996,
+                "confidence": 0.99447304,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "zip",
+                "start": 75.784996,
+                "end": 76.104996,
+                "confidence": 0.98410505,
+                "punctuated_word": "zip"
+              },
+              {
+                "word": "command",
+                "start": 76.104996,
+                "end": 76.744995,
+                "confidence": 0.892583,
+                "punctuated_word": "command,"
+              },
+              {
+                "word": "which",
+                "start": 76.98499,
+                "end": 77.62499,
+                "confidence": 0.5996739,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "is",
+                "start": 77.865,
+                "end": 78.585,
+                "confidence": 0.99826306,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "also",
+                "start": 78.744995,
+                "end": 78.905,
+                "confidence": 0.6712253,
+                "punctuated_word": "also"
+              },
+              {
+                "word": "pretty",
+                "start": 78.905,
+                "end": 79.62499,
+                "confidence": 0.99238163,
+                "punctuated_word": "pretty"
+              },
+              {
+                "word": "common",
+                "start": 79.625,
+                "end": 80.265,
+                "confidence": 0.7368568,
+                "punctuated_word": "common."
+              },
+              {
+                "word": "but",
+                "start": 80.265,
+                "end": 80.424995,
+                "confidence": 0.99117154,
+                "punctuated_word": "But"
+              },
+              {
+                "word": "if",
+                "start": 80.424995,
+                "end": 80.66499,
+                "confidence": 0.9065177,
+                "punctuated_word": "if"
+              },
+              {
+                "word": "you",
+                "start": 80.66499,
+                "end": 80.744995,
+                "confidence": 0.99824274,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "wanna",
+                "start": 80.744995,
+                "end": 80.905,
+                "confidence": 0.83954287,
+                "punctuated_word": "wanna"
+              },
+              {
+                "word": "create",
+                "start": 80.905,
+                "end": 81.145,
+                "confidence": 0.990122,
+                "punctuated_word": "create"
+              },
+              {
+                "word": "this",
+                "start": 81.145,
+                "end": 81.465,
+                "confidence": 0.9991762,
+                "punctuated_word": "this"
+              },
+              {
+                "word": "particular",
+                "start": 81.465,
+                "end": 81.94499,
+                "confidence": 0.99549437,
+                "punctuated_word": "particular"
+              },
+              {
+                "word": "type",
+                "start": 81.94499,
+                "end": 82.265,
+                "confidence": 0.99840623,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "of",
+                "start": 82.265,
+                "end": 82.66499,
+                "confidence": 0.99889994,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "compressed",
+                "start": 83.03,
+                "end": 83.909996,
+                "confidence": 0.9880298,
+                "punctuated_word": "compressed"
+              },
+              {
+                "word": "file",
+                "start": 83.909996,
+                "end": 84.71,
+                "confidence": 0.95675373,
+                "punctuated_word": "file,"
+              },
+              {
+                "word": "you",
+                "start": 84.79,
+                "end": 84.869995,
+                "confidence": 0.9994487,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "would",
+                "start": 84.869995,
+                "end": 85.11,
+                "confidence": 0.99805605,
+                "punctuated_word": "would"
+              },
+              {
+                "word": "type",
+                "start": 85.11,
+                "end": 85.35,
+                "confidence": 0.99895656,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "tar",
+                "start": 85.35,
+                "end": 86.39,
+                "confidence": 0.66906464,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "c",
+                "start": 86.63,
+                "end": 87.67,
+                "confidence": 0.60962695,
+                "punctuated_word": "c"
+              },
+              {
+                "word": "z",
+                "start": 87.67,
+                "end": 88.47,
+                "confidence": 0.7389966,
+                "punctuated_word": "z,"
+              },
+              {
+                "word": "which",
+                "start": 88.869995,
+                "end": 89.27,
+                "confidence": 0.70971,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "stands",
+                "start": 89.27,
+                "end": 89.51,
+                "confidence": 0.9889348,
+                "punctuated_word": "stands"
+              },
+              {
+                "word": "for",
+                "start": 89.51,
+                "end": 89.59,
+                "confidence": 0.9976688,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "compressed",
+                "start": 89.59,
+                "end": 90.07,
+                "confidence": 0.7724283,
+                "punctuated_word": "compressed"
+              },
+              {
+                "word": "into",
+                "start": 90.07,
+                "end": 90.39,
+                "confidence": 0.7828014,
+                "punctuated_word": "into"
+              },
+              {
+                "word": "a",
+                "start": 90.39,
+                "end": 90.63,
+                "confidence": 0.9971641,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "zipped",
+                "start": 90.63,
+                "end": 91.03,
+                "confidence": 0.9373073,
+                "punctuated_word": "zipped"
+              },
+              {
+                "word": "form",
+                "start": 91.03,
+                "end": 91.75,
+                "confidence": 0.7753701,
+                "punctuated_word": "form,"
+              },
+              {
+                "word": "and",
+                "start": 92.07,
+                "end": 92.15,
+                "confidence": 0.9982855,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "then",
+                "start": 92.15,
+                "end": 92.47,
+                "confidence": 0.99829465,
+                "punctuated_word": "then"
+              },
+              {
+                "word": "v",
+                "start": 92.47,
+                "end": 92.71,
+                "confidence": 0.946817,
+                "punctuated_word": "v"
+              },
+              {
+                "word": "f",
+                "start": 92.71,
+                "end": 93.19,
+                "confidence": 0.8036927,
+                "punctuated_word": "f,"
+              },
+              {
+                "word": "if",
+                "start": 93.19,
+                "end": 93.35,
+                "confidence": 0.9961838,
+                "punctuated_word": "if"
+              },
+              {
+                "word": "you",
+                "start": 93.35,
+                "end": 93.43,
+                "confidence": 0.99876887,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "wanna",
+                "start": 93.43,
+                "end": 93.59,
+                "confidence": 0.9371163,
+                "punctuated_word": "wanna"
+              },
+              {
+                "word": "see",
+                "start": 93.59,
+                "end": 93.75,
+                "confidence": 0.99505,
+                "punctuated_word": "see"
+              },
+              {
+                "word": "all",
+                "start": 93.75,
+                "end": 93.909996,
+                "confidence": 0.99790996,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 93.909996,
+                "end": 94.07,
+                "confidence": 0.9933344,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 94.07,
+                "end": 94.229996,
+                "confidence": 0.99967754,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "again",
+                "start": 94.229996,
+                "end": 94.87,
+                "confidence": 0.87210095,
+                "punctuated_word": "again,"
+              },
+              {
+                "word": "and",
+                "start": 94.95,
+                "end": 95.11,
+                "confidence": 0.9989606,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "then",
+                "start": 95.11,
+                "end": 95.59,
+                "confidence": 0.99884063,
+                "punctuated_word": "then"
+              },
+              {
+                "word": "a",
+                "start": 95.59,
+                "end": 95.909996,
+                "confidence": 0.9606178,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "directory",
+                "start": 95.909996,
+                "end": 96.39,
+                "confidence": 0.99884206,
+                "punctuated_word": "directory"
+              },
+              {
+                "word": "name",
+                "start": 96.39,
+                "end": 96.71,
+                "confidence": 0.999236,
+                "punctuated_word": "name"
+              },
+              {
+                "word": "and",
+                "start": 96.71,
+                "end": 97.11,
+                "confidence": 0.35486543,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 97.11,
+                "end": 97.27,
+                "confidence": 0.9973916,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "will",
+                "start": 97.27,
+                "end": 97.509995,
+                "confidence": 0.8570225,
+                "punctuated_word": "will,"
+              },
+              {
+                "word": "oops",
+                "start": 98.305,
+                "end": 98.865,
+                "confidence": 0.7209668,
+                "punctuated_word": "oops,"
+              },
+              {
+                "word": "let's",
+                "start": 98.865,
+                "end": 99.185,
+                "confidence": 0.9898429,
+                "punctuated_word": "let's"
+              },
+              {
+                "word": "see",
+                "start": 99.185,
+                "end": 99.345,
+                "confidence": 0.9979888,
+                "punctuated_word": "see"
+              },
+              {
+                "word": "tar",
+                "start": 99.345,
+                "end": 100.065,
+                "confidence": 0.5922792,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "dot",
+                "start": 100.065,
+                "end": 100.385,
+                "confidence": 0.82446724,
+                "punctuated_word": "dot"
+              },
+              {
+                "word": "g",
+                "start": 100.385,
+                "end": 100.705,
+                "confidence": 0.97361165,
+                "punctuated_word": "g"
+              },
+              {
+                "word": "z",
+                "start": 100.705,
+                "end": 101.025,
+                "confidence": 0.64379245,
+                "punctuated_word": "z,"
+              },
+              {
+                "word": "a",
+                "start": 101.025,
+                "end": 101.104996,
+                "confidence": 0.8866815,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "directory",
+                "start": 101.104996,
+                "end": 101.585,
+                "confidence": 0.6716054,
+                "punctuated_word": "directory,"
+              },
+              {
+                "word": "a",
+                "start": 101.585,
+                "end": 101.905,
+                "confidence": 0.9300149,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "filename",
+                "start": 101.905,
+                "end": 102.465,
+                "confidence": 0.85474986,
+                "punctuated_word": "filename"
+              },
+              {
+                "word": "and",
+                "start": 102.465,
+                "end": 102.784996,
+                "confidence": 0.71961856,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "then",
+                "start": 102.784996,
+                "end": 103.025,
+                "confidence": 0.9961158,
+                "punctuated_word": "then"
+              },
+              {
+                "word": "a",
+                "start": 103.025,
+                "end": 103.185,
+                "confidence": 0.9963224,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "directory",
+                "start": 103.185,
+                "end": 103.585,
+                "confidence": 0.9986449,
+                "punctuated_word": "directory"
+              },
+              {
+                "word": "name",
+                "start": 103.585,
+                "end": 104.225,
+                "confidence": 0.9990576,
+                "punctuated_word": "name"
+              },
+              {
+                "word": "and",
+                "start": 104.705,
+                "end": 105.185,
+                "confidence": 0.57790834,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "there",
+                "start": 105.185,
+                "end": 105.505,
+                "confidence": 0.99636143,
+                "punctuated_word": "there"
+              },
+              {
+                "word": "you",
+                "start": 105.505,
+                "end": 105.665,
+                "confidence": 0.9979699,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "go",
+                "start": 105.665,
+                "end": 106.065,
+                "confidence": 0.7880583,
+                "punctuated_word": "go."
+              },
+              {
+                "word": "and",
+                "start": 106.065,
+                "end": 106.225,
+                "confidence": 0.98875844,
+                "punctuated_word": "And"
+              },
+              {
+                "word": "that's",
+                "start": 106.225,
+                "end": 106.545,
+                "confidence": 0.9972323,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "how",
+                "start": 106.545,
+                "end": 106.705,
+                "confidence": 0.99673367,
+                "punctuated_word": "how"
+              },
+              {
+                "word": "that's",
+                "start": 106.705,
+                "end": 107.265,
+                "confidence": 0.7512902,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "how",
+                "start": 107.265,
+                "end": 107.424995,
+                "confidence": 0.994785,
+                "punctuated_word": "how"
+              },
+              {
+                "word": "a",
+                "start": 107.424995,
+                "end": 107.585,
+                "confidence": 0.55061585,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "tar",
+                "start": 107.585,
+                "end": 107.744995,
+                "confidence": 0.983482,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "file",
+                "start": 107.744995,
+                "end": 107.985,
+                "confidence": 0.87851506,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "tar",
+                "start": 108.145,
+                "end": 108.305,
+                "confidence": 0.9445066,
+                "punctuated_word": "tar"
+              },
+              {
+                "word": "command",
+                "start": 108.305,
+                "end": 108.625,
+                "confidence": 0.99853516,
+                "punctuated_word": "command"
+              },
+              {
+                "word": "works",
+                "start": 108.625,
+                "end": 109.265,
+                "confidence": 0.9886878,
+                "punctuated_word": "works."
+              },
+              {
+                "word": "thanks",
+                "start": 109.265,
+                "end": 109.585,
+                "confidence": 0.9901952,
+                "punctuated_word": "Thanks."
+              }
+            ],
+            "paragraphs": {
+              "transcript": "\nHi there. Occasionally when you are using a Unix system you'll find files in a strange format. In other words the extension on them might be something like some file dot tar dot g z and you might say what is that? Well, it's basically a zipped up archive file. Basically it's just a zip file that you can extract and it gives you a folder or directory of files.\n\nSo I just wanted to quickly go over how you would actually extract that from the command line. Here's how you do it, if you want to extract something like that you type tar which stands for tape archive, which is from back in the day when we actually used to use magnetic tape to store files and do backups and so forth. And you type tar and then the options dash XVF which stands for extract and V stands for show me all the files you've extracted and F stands for I'm about to give you a filename. And then, in this case I have one called assign zero dot tar dot g z and it will, untar the file for you. Okay?\n\nAnd if you wanna actually create a zip file like that, you could actually use the zip command, which is also pretty common. But if you wanna create this particular type of compressed file, you would type tar c z, which stands for compressed into a zipped form, and then v f, if you wanna see all the files again, and then a directory name and it will, oops, let's see tar dot g z, a directory, a filename and then a directory name and there you go. And that's how that's how a tar file tar command works. Thanks.",
+              "paragraphs": [
+                {
+                  "sentences": [
+                    {
+                      "text": "Hi there.",
+                      "start": 0.96,
+                      "end": 1.76
+                    },
+                    {
+                      "text": "Occasionally when you are using a Unix system you'll find files in a strange format.",
+                      "start": 2.56,
+                      "end": 8.559999
+                    },
+                    {
+                      "text": "In other words the extension on them might be something like some file dot tar dot g z and you might say what is that?",
+                      "start": 8.559999,
+                      "end": 17.425
+                    },
+                    {
+                      "text": "Well, it's basically a zipped up archive file.",
+                      "start": 17.425,
+                      "end": 20.785
+                    },
+                    {
+                      "text": "Basically it's just a zip file that you can extract and it gives you a folder or directory of files.",
+                      "start": 20.785,
+                      "end": 28.865
+                    }
+                  ],
+                  "start": 0.96,
+                  "end": 28.865,
+                  "num_words": 70
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "So I just wanted to quickly go over how you would actually extract that from the command line.",
+                      "start": 28.865,
+                      "end": 32.92
+                    },
+                    {
+                      "text": "Here's how you do it, if you want to extract something like that you type tar which stands for tape archive, which is from back in the day when we actually used to use magnetic tape to store files and do backups and so forth.",
+                      "start": 33.08,
+                      "end": 45.225002
+                    },
+                    {
+                      "text": "And you type tar and then the options dash XVF which stands for extract and V stands for show me all the files you've extracted and F stands for I'm about to give you a filename.",
+                      "start": 45.545002,
+                      "end": 57.225002
+                    },
+                    {
+                      "text": "And then, in this case I have one called assign zero dot tar dot g z and it will, untar the file for you.",
+                      "start": 57.61,
+                      "end": 69.37
+                    },
+                    {
+                      "text": "Okay?",
+                      "start": 69.704994,
+                      "end": 70.424995
+                    }
+                  ],
+                  "start": 28.865,
+                  "end": 70.424995,
+                  "num_words": 124
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "And if you wanna actually create a zip file like that, you could actually use the zip command, which is also pretty common.",
+                      "start": 70.66499,
+                      "end": 80.265
+                    },
+                    {
+                      "text": "But if you wanna create this particular type of compressed file, you would type tar c z, which stands for compressed into a zipped form, and then v f, if you wanna see all the files again, and then a directory name and it will, oops, let's see tar dot g z, a directory, a filename and then a directory name and there you go.",
+                      "start": 80.265,
+                      "end": 106.065
+                    },
+                    {
+                      "text": "And that's how that's how a tar file tar command works.",
+                      "start": 106.065,
+                      "end": 109.265
+                    },
+                    {
+                      "text": "Thanks.",
+                      "start": 109.265,
+                      "end": 109.585
+                    }
+                  ],
+                  "start": 70.66499,
+                  "end": 109.585,
+                  "num_words": 100
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

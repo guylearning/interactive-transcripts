@@ -1,0 +1,119 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 29789189-adb0-4f70-b3c2-af8cba8dad00
+Created: 2025-05-30T04:46:45.671Z
+Duration: 111.20325
+Channels: 1
+
+00:00:00.960 --> 00:00:04.480
+Hi there. Occasionally when you are using a
+
+00:00:04.480 --> 00:00:07.920
+Unix system you'll find files in a strange
+
+00:00:07.920 --> 00:00:10.560
+format. In other words the extension on them
+
+00:00:10.560 --> 00:00:14.865
+might be something like some file dot tar
+
+00:00:14.865 --> 00:00:16.865
+dot g z and you might say what
+
+00:00:16.865 --> 00:00:19.505
+is that? Well, it's basically a zipped up
+
+00:00:19.505 --> 00:00:22.065
+archive file. Basically it's just a zip file
+
+00:00:22.065 --> 00:00:27.265
+that you can extract and it gives you
+
+00:00:27.265 --> 00:00:29.320
+a folder or directory of files. So I
+
+00:00:29.320 --> 00:00:30.680
+just wanted to quickly go over how you
+
+00:00:30.680 --> 00:00:32.920
+would actually extract that from the command line.
+
+00:00:33.080 --> 00:00:34.440
+Here's how you do it, if you want
+
+00:00:34.440 --> 00:00:36.600
+to extract something like that you type tar
+
+00:00:36.600 --> 00:00:39.160
+which stands for tape archive, which is from
+
+00:00:39.160 --> 00:00:40.760
+back in the day when we actually used
+
+00:00:40.760 --> 00:00:43.705
+to use magnetic tape to store files and
+
+00:00:43.705 --> 00:00:46.505
+do backups and so forth. And you type
+
+00:00:46.505 --> 00:00:51.225
+tar and then the options dash XVF which
+
+00:00:51.225 --> 00:00:54.105
+stands for extract and V stands for show
+
+00:00:54.105 --> 00:00:55.545
+me all the files you've extracted and F
+
+00:00:55.545 --> 00:00:56.825
+stands for I'm about to give you a
+
+00:00:56.825 --> 00:01:00.250
+filename. And then, in this case I have
+
+00:01:00.250 --> 00:01:04.490
+one called assign zero dot tar dot g
+
+00:01:04.490 --> 00:01:09.210
+z and it will, untar the file for
+
+00:01:09.210 --> 00:01:13.465
+you. Okay? And if you wanna actually create
+
+00:01:13.465 --> 00:01:15.465
+a zip file like that, you could actually
+
+00:01:15.465 --> 00:01:19.625
+use the zip command, which is also pretty
+
+00:01:19.625 --> 00:01:21.945
+common. But if you wanna create this particular
+
+00:01:21.945 --> 00:01:26.390
+type of compressed file, you would type tar
+
+00:01:26.630 --> 00:01:30.630
+c z, which stands for compressed into a
+
+00:01:30.630 --> 00:01:33.430
+zipped form, and then v f, if you
+
+00:01:33.430 --> 00:01:35.590
+wanna see all the files again, and then
+
+00:01:35.590 --> 00:01:39.185
+a directory name and it will, oops, let's
+
+00:01:39.185 --> 00:01:41.905
+see tar dot g z, a directory, a
+
+00:01:41.905 --> 00:01:45.505
+filename and then a directory name and there
+
+00:01:45.505 --> 00:01:47.585
+you go. And that's how that's how a
+
+00:01:47.585 --> 00:01:49.585
+tar file tar command works. Thanks.
