@@ -1,0 +1,341 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: a5aeb407-cc06-4d79-b978-83290c3726d7
+Created: 2025-05-30T04:43:41.874Z
+Duration: 264.46368
+Channels: 1
+
+00:00:00.640 --> 00:00:02.560
+Hi there. In this video we are going
+
+00:00:02.560 --> 00:00:04.160
+to go over how to use the man
+
+00:00:04.160 --> 00:00:06.000
+command, which is one of the more important
+
+00:00:06.000 --> 00:00:09.280
+tools that you can use to find out
+
+00:00:09.280 --> 00:00:13.125
+about various commands and also about standard library
+
+00:00:13.125 --> 00:00:16.005
+functions for C. So man pages are pretty
+
+00:00:16.005 --> 00:00:18.085
+nice. The easiest way to use one is
+
+00:00:18.085 --> 00:00:19.205
+if you happen to know the command you're
+
+00:00:19.205 --> 00:00:20.965
+looking for, you can type man and then
+
+00:00:20.965 --> 00:00:23.125
+the name. So let's say man l s
+
+00:00:23.445 --> 00:00:25.205
+looks like this and it gives you a
+
+00:00:25.205 --> 00:00:27.445
+little description and it gives you all of
+
+00:00:27.445 --> 00:00:31.710
+the various flags that you use for the
+
+00:00:34.190 --> 00:00:35.950
+program you're trying to look at. So it's
+
+00:00:35.950 --> 00:00:37.070
+nice. And I'm just using the up and
+
+00:00:37.070 --> 00:00:38.670
+down arrow keys, you can also use the
+
+00:00:38.670 --> 00:00:40.590
+j to go down and the k to
+
+00:00:40.590 --> 00:00:43.465
+go back up, much like VIM which is
+
+00:00:43.465 --> 00:00:46.105
+in a different video. And you can, keep
+
+00:00:46.105 --> 00:00:47.945
+doing that, to find it. If you wanna
+
+00:00:47.945 --> 00:00:50.585
+find something, you type the slash key, forward
+
+00:00:50.585 --> 00:00:53.385
+slash, and notice I've typed forward slash down
+
+00:00:53.385 --> 00:00:55.065
+here, and then you type something like, let's
+
+00:00:55.065 --> 00:00:56.345
+say I wanted to find out what the
+
+00:00:56.990 --> 00:00:59.550
+dash a command did, I type slash then
+
+00:00:59.550 --> 00:01:03.070
+dash a and then enter and it will
+
+00:01:03.070 --> 00:01:04.590
+come up and over here that's not the
+
+00:01:04.590 --> 00:01:06.270
+one I'm looking for so I type n
+
+00:01:06.270 --> 00:01:08.030
+lowercase n to go to the next one,
+
+00:01:08.030 --> 00:01:11.225
+that's not it. Let's see, I guess I'm
+
+00:01:11.225 --> 00:01:13.065
+already too far down so if I because
+
+00:01:13.065 --> 00:01:14.345
+I kept hitting n and it says pattern
+
+00:01:14.345 --> 00:01:16.665
+not found but if I hit uppercase n
+
+00:01:16.665 --> 00:01:18.425
+it will take me back to the top
+
+00:01:18.665 --> 00:01:21.145
+and you can find that, there it is,
+
+00:01:22.060 --> 00:01:24.860
+dash a stands for do not ignore entries
+
+00:01:24.860 --> 00:01:27.340
+starting with period which are your hidden files.
+
+00:01:28.220 --> 00:01:32.300
+So, there's also for instance dash uppercase a
+
+00:01:32.300 --> 00:01:34.060
+which is nice, just it still gives you
+
+00:01:34.060 --> 00:01:35.980
+the hidden files but not the two special
+
+00:01:35.980 --> 00:01:38.705
+directories. So there you go. Now if you
+
+00:01:38.705 --> 00:01:40.785
+wanna exit out of man, you just type
+
+00:01:40.785 --> 00:01:43.585
+the q command and it will take you
+
+00:01:43.585 --> 00:01:44.865
+back to where you are which is kinda
+
+00:01:44.865 --> 00:01:46.865
+nice, it actually refreshes the screen back to
+
+00:01:46.865 --> 00:01:48.545
+where you are. So if I have something
+
+00:01:48.545 --> 00:01:49.505
+up here and I go, oh, how do
+
+00:01:49.505 --> 00:01:51.105
+I wanna keep that screen and I type
+
+00:01:51.105 --> 00:01:52.990
+man l s, when I type q it
+
+00:01:52.990 --> 00:01:54.750
+goes back and refreshes the screen to where
+
+00:01:54.750 --> 00:01:57.630
+you are, so so that's nice. Now what
+
+00:01:57.630 --> 00:01:59.390
+if you don't want to or you don't
+
+00:01:59.390 --> 00:02:01.070
+know the actual command but you go, you
+
+00:02:01.070 --> 00:02:03.230
+know, I think something has to do with,
+
+00:02:03.630 --> 00:02:07.635
+print for instance, man dash k print and
+
+00:02:07.635 --> 00:02:09.955
+it will it will, give you all the
+
+00:02:09.955 --> 00:02:12.995
+different things. Man dash k means, find all
+
+00:02:12.995 --> 00:02:15.955
+the commands that happen to, say something about
+
+00:02:15.955 --> 00:02:17.955
+printing in them. So you'll notice there's lots
+
+00:02:17.955 --> 00:02:19.795
+in here. I'm actually gonna do my regular
+
+00:02:19.795 --> 00:02:22.270
+scroll up to see some of these. But,
+
+00:02:22.430 --> 00:02:23.550
+let's say I look through this and I
+
+00:02:23.550 --> 00:02:25.390
+go, oh, you know what? It's actually printf
+
+00:02:25.390 --> 00:02:27.550
+that I'm looking for. If I type man
+
+00:02:27.550 --> 00:02:30.750
+dash k printf, it'll give me just the
+
+00:02:30.750 --> 00:02:33.310
+printf commands. And you'll notice there's a couple
+
+00:02:33.310 --> 00:02:35.310
+in here. Oh, it is just printf. So
+
+00:02:35.310 --> 00:02:39.785
+man printf will give me the Unix command
+
+00:02:39.785 --> 00:02:42.505
+print f, which says, oh, it's, you know,
+
+00:02:42.505 --> 00:02:44.505
+you have formatting and you have options. It's
+
+00:02:44.505 --> 00:02:47.385
+much like the c print f command actually.
+
+00:02:48.025 --> 00:02:50.025
+In fact, it'll do all the different, types
+
+00:02:50.025 --> 00:02:51.465
+of things. So if I wanna just type
+
+00:02:51.465 --> 00:02:55.670
+print f and then I type hello world
+
+00:02:55.830 --> 00:02:59.510
+like that and then a new line it
+
+00:02:59.510 --> 00:03:01.110
+will do hello world new line. I forgot
+
+00:03:01.110 --> 00:03:01.990
+the new line by the way it will
+
+00:03:01.990 --> 00:03:04.150
+do that and then put my prompt after
+
+00:03:04.150 --> 00:03:05.990
+it like this probably not what you want
+
+00:03:05.990 --> 00:03:07.775
+to do. Another similar command happens to be
+
+00:03:07.775 --> 00:03:10.335
+echo which we use probably more often. Hello
+
+00:03:10.335 --> 00:03:12.815
+world like that, we'll just echo hello world.
+
+00:03:13.455 --> 00:03:16.095
+So anyway that's how you use that, synonym
+
+00:03:16.095 --> 00:03:21.420
+for man k is actually apropos and then
+
+00:03:21.420 --> 00:03:23.420
+printf and it will give you that. Now,
+
+00:03:23.420 --> 00:03:25.260
+if you notice by the way, printf, there's
+
+00:03:25.260 --> 00:03:26.220
+two of them here. Which one do we
+
+00:03:26.220 --> 00:03:27.500
+look at? Well, the first one that comes
+
+00:03:27.500 --> 00:03:28.620
+up is the one if you just type
+
+00:03:28.620 --> 00:03:32.140
+man printf. But this means the type of,
+
+00:03:32.620 --> 00:03:34.780
+the part in the manual that it's actually
+
+00:03:34.780 --> 00:03:38.085
+in. Three happens to be all of the
+
+00:03:38.485 --> 00:03:41.205
+standard, the C standard library functions, which is
+
+00:03:41.205 --> 00:03:43.125
+actually kind of cool. If you type man
+
+00:03:43.125 --> 00:03:46.565
+three printf, it will tell you the how
+
+00:03:46.565 --> 00:03:49.045
+to actually use it. So you have pound
+
+00:03:49.045 --> 00:03:53.390
+includes studio dot h and then or s
+
+00:03:53.390 --> 00:03:55.390
+t d I o dot h and then
+
+00:03:55.390 --> 00:03:57.790
+you can use printf from there and it
+
+00:03:57.790 --> 00:03:59.310
+tells you how to do that. So for
+
+00:03:59.310 --> 00:04:01.950
+instance, there's another one man three a t
+
+00:04:01.950 --> 00:04:04.625
+o I, which actually stands for ASCII two
+
+00:04:04.625 --> 00:04:06.145
+integer. So for some reason you wanted to
+
+00:04:06.145 --> 00:04:07.665
+convert a string to an integer, this is
+
+00:04:07.665 --> 00:04:09.345
+one way to do it in c and
+
+00:04:09.345 --> 00:04:11.505
+it will tell you, how to actually do
+
+00:04:11.505 --> 00:04:13.345
+it. So that's kind of nice as well.
+
+00:04:13.759 --> 00:04:15.519
+So that's the man command, you should get
+
+00:04:15.519 --> 00:04:16.959
+used to it and you should you will
+
+00:04:16.959 --> 00:04:18.719
+use it frequently when you want to look
+
+00:04:18.719 --> 00:04:22.399
+up various flags and options for commands. Thanks.
