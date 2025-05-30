@@ -1,0 +1,380 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 862a47a7-a650-45dc-a52f-fafb341cdb6e
+Created: 2025-05-30T04:39:10.777Z
+Duration: 327.70612
+Channels: 1
+
+00:00:02.320 --> 00:00:05.520
+Hi there. This is Chris, and today I'm
+
+00:00:05.520 --> 00:00:08.000
+going to show you how to log on
+
+00:00:08.000 --> 00:00:11.360
+to the NIF computers, which are the set
+
+00:00:11.360 --> 00:00:12.960
+of computers we have in the basement of
+
+00:00:12.960 --> 00:00:15.255
+Gates and the computers that you're gonna use
+
+00:00:15.255 --> 00:00:17.415
+in the lab, but, you're going to use
+
+00:00:17.415 --> 00:00:20.535
+for all your other programs as well. And
+
+00:00:20.535 --> 00:00:23.655
+you're gonna log in, remotely using your own
+
+00:00:23.655 --> 00:00:26.215
+computer. So we're gonna use a program called
+
+00:00:26.215 --> 00:00:29.280
+the terminal, which is a program built into
+
+00:00:29.280 --> 00:00:31.680
+your Mac that allows you to, get to
+
+00:00:31.680 --> 00:00:35.600
+the file system of your, Mac directly. And
+
+00:00:35.600 --> 00:00:37.200
+it also has a program that allows us
+
+00:00:37.200 --> 00:00:40.480
+to connect to, other computers, namely in this
+
+00:00:40.480 --> 00:00:42.320
+case the Myth computers. What you're gonna do
+
+00:00:42.320 --> 00:00:45.225
+is you're gonna go up to the top
+
+00:00:45.225 --> 00:00:47.145
+right up here and you're gonna click on
+
+00:00:47.145 --> 00:00:49.065
+the little spotlight icon or you can just
+
+00:00:49.065 --> 00:00:53.945
+type command space to actually bring up the
+
+00:00:53.945 --> 00:00:57.190
+spotlight search. And if you type terminal, this
+
+00:00:57.190 --> 00:00:59.990
+will bring up the terminal program which you
+
+00:00:59.990 --> 00:01:01.590
+want. What I normally do because I use
+
+00:01:01.590 --> 00:01:03.590
+it all the time is I right click
+
+00:01:03.590 --> 00:01:06.150
+or control click on the terminal down here
+
+00:01:06.230 --> 00:01:07.750
+and I go to options and I just
+
+00:01:07.750 --> 00:01:10.145
+say keep in dock and that will keep
+
+00:01:10.145 --> 00:01:11.185
+it in the dock so I don't ever
+
+00:01:11.185 --> 00:01:12.945
+have to find it again, it's just always
+
+00:01:12.945 --> 00:01:15.665
+gonna be there. So here's what we do.
+
+00:01:15.665 --> 00:01:18.305
+This is the inner workings of your Mac
+
+00:01:18.305 --> 00:01:20.545
+right here. But we're gonna use a program
+
+00:01:20.545 --> 00:01:25.520
+called SSH and we're going to type SSH
+
+00:01:25.520 --> 00:01:28.800
+and then you're going to type your SUNET
+
+00:01:28.800 --> 00:01:31.280
+ID, mine happens to be CGregg, then you
+
+00:01:31.280 --> 00:01:35.120
+type the at symbol and then nif. Stanford
+
+00:01:35.120 --> 00:01:37.715
+dot edu. In fact, if you're on the
+
+00:01:37.715 --> 00:01:41.955
+Stanford campus, can leave off the stanford.edu.cgreg@myth will
+
+00:01:41.955 --> 00:01:45.875
+work just fine. When you type, return, then
+
+00:01:45.875 --> 00:01:48.275
+it asks you, are you sure you wanna
+
+00:01:48.275 --> 00:01:50.275
+continue connecting? This is the only time it
+
+00:01:50.275 --> 00:01:51.820
+will ask you that. If you answer yes
+
+00:01:51.820 --> 00:01:53.500
+now, it will never ask you that again.
+
+00:01:53.820 --> 00:01:56.540
+But then it will bring up a prompt
+
+00:01:56.540 --> 00:01:58.940
+for your password. This is going be your
+
+00:01:58.940 --> 00:02:03.740
+SUNET ID password. And, I'm going to type
+
+00:02:03.740 --> 00:02:06.675
+it here and you'll notice that as I'm
+
+00:02:06.675 --> 00:02:09.955
+typing it, in fact, I'm typing right now,
+
+00:02:10.355 --> 00:02:12.115
+nothing is showing up. And this is a
+
+00:02:12.115 --> 00:02:14.115
+security feature so that you can type your
+
+00:02:14.115 --> 00:02:15.795
+password and nobody can look over your shoulder
+
+00:02:15.795 --> 00:02:17.890
+and actually see it. But after I type
+
+00:02:17.890 --> 00:02:20.770
+my password, I hit return and it logs
+
+00:02:20.770 --> 00:02:23.010
+me in. In this case, it logged me
+
+00:02:23.010 --> 00:02:26.530
+into myth seven. It chooses one of the
+
+00:02:26.530 --> 00:02:28.770
+myth machines and log you into it. It
+
+00:02:28.770 --> 00:02:32.485
+doesn't actually matter which machine you're in, but
+
+00:02:32.485 --> 00:02:34.485
+we logged on in this case to myth
+
+00:02:34.485 --> 00:02:38.085
+seven. And now that you're in, you can
+
+00:02:38.485 --> 00:02:41.765
+have access to your folders. One of the
+
+00:02:41.925 --> 00:02:43.685
+a couple I'll do a couple key commands
+
+00:02:43.685 --> 00:02:46.090
+here and then in other videos, we'll go
+
+00:02:46.090 --> 00:02:47.450
+through some of the key commands in more
+
+00:02:47.450 --> 00:02:52.410
+detail. But one is the, l s command.
+
+00:02:52.410 --> 00:02:54.090
+Actually, first first one I wanna show you
+
+00:02:54.090 --> 00:02:56.890
+is the c d command, which is c
+
+00:02:56.890 --> 00:03:00.305
+d, which means change directory. And the c
+
+00:03:00.305 --> 00:03:01.985
+d command will change in directory. I happen
+
+00:03:01.985 --> 00:03:03.425
+to have a directory called one zero seven
+
+00:03:03.425 --> 00:03:08.625
+built already. And, it changed the directory into
+
+00:03:08.625 --> 00:03:11.105
+that directory. Notice something here. There's a little
+
+00:03:11.105 --> 00:03:14.830
+tilde sign. By the way, my prompt may
+
+00:03:14.830 --> 00:03:17.470
+look a little different than your prompt. It's
+
+00:03:17.470 --> 00:03:19.950
+very easy to change it to look similar
+
+00:03:19.950 --> 00:03:21.790
+to this, but it gives you the directory
+
+00:03:21.790 --> 00:03:23.950
+that you're in, which is kind of nice.
+
+00:03:23.950 --> 00:03:25.390
+Nice to know that you're in the one
+
+00:03:25.390 --> 00:03:27.665
+zero seven directory right now, which is on
+
+00:03:27.665 --> 00:03:29.585
+my own, in my case it's on my
+
+00:03:29.585 --> 00:03:32.945
+home folder. And, I just used the c
+
+00:03:32.945 --> 00:03:35.265
+d command to actually move into that folder.
+
+00:03:36.545 --> 00:03:40.065
+The other a couple other commands, l s
+
+00:03:39.600 --> 00:03:42.000
+lists all the files that are in your
+
+00:03:42.000 --> 00:03:43.680
+folder. I happen to have one, two, three,
+
+00:03:43.680 --> 00:03:46.880
+four files in the folder. L s dash
+
+00:03:46.880 --> 00:03:51.040
+l will list all the files, and some
+
+00:03:51.040 --> 00:03:52.800
+other information about them like how big they
+
+00:03:52.800 --> 00:03:54.925
+are and so forth. It will also tell
+
+00:03:54.925 --> 00:03:56.925
+you if they're directory. So for instance, these
+
+00:03:56.925 --> 00:03:59.485
+three files here are all directories because it
+
+00:03:59.485 --> 00:04:01.245
+has a little d there and I can
+
+00:04:01.245 --> 00:04:04.525
+change into the assigned zero directory as well
+
+00:04:04.525 --> 00:04:07.720
+and do that. So so that's the cd
+
+00:04:07.720 --> 00:04:10.440
+command. If you want to get back to
+
+00:04:10.440 --> 00:04:12.200
+your home directory, the easiest thing to do
+
+00:04:12.200 --> 00:04:14.200
+is just type cd enter and it will
+
+00:04:14.200 --> 00:04:15.640
+take you right back to your home directory.
+
+00:04:15.640 --> 00:04:17.880
+You could also type cd tilde if you
+
+00:04:17.880 --> 00:04:21.015
+wanted to. Your home directory is located on
+
+00:04:21.015 --> 00:04:24.615
+the AFS file system, which is Stanford wide.
+
+00:04:24.695 --> 00:04:27.095
+In fact, if you type p w d
+
+00:04:27.095 --> 00:04:30.135
+for print working directory, you will actually show
+
+00:04:30.215 --> 00:04:32.615
+it shows you your entire path, which is
+
+00:04:32.615 --> 00:04:34.830
+all the way to you. This happens to
+
+00:04:34.830 --> 00:04:38.510
+be mine, right here and, everybody at Stanford
+
+00:04:38.510 --> 00:04:40.830
+has one that looks like this. No matter
+
+00:04:40.830 --> 00:04:43.070
+which myth machine you're logged on to, you
+
+00:04:43.070 --> 00:04:45.710
+will be using the same file system. So
+
+00:04:45.710 --> 00:04:47.710
+it's, it's kind of nice in that regard.
+
+00:04:48.245 --> 00:04:49.845
+A couple other quick commands you might wanna
+
+00:04:49.845 --> 00:04:53.205
+know, the clear command will clear your screen,
+
+00:04:53.685 --> 00:04:54.965
+which is kind of nice if you want
+
+00:04:54.965 --> 00:04:57.285
+a nice clear screen. If your screen gets
+
+00:04:57.285 --> 00:04:59.605
+screwed up, like the colors are weird or
+
+00:04:59.605 --> 00:05:01.285
+there's weird characters on it, you can actually
+
+00:05:01.285 --> 00:05:04.060
+type reset, which will clear the screen in
+
+00:05:04.060 --> 00:05:08.940
+a slightly more, low level fashion. Alright. So
+
+00:05:08.940 --> 00:05:10.700
+now, what do you do if you wanna
+
+00:05:10.700 --> 00:05:12.540
+log out? It's pretty easy. You just type
+
+00:05:12.540 --> 00:05:15.020
+log out or you type, you hold down
+
+00:05:15.020 --> 00:05:17.980
+the control key and type d and that
+
+00:05:17.980 --> 00:05:19.345
+will log you out. If you just type
+
+00:05:19.345 --> 00:05:21.425
+log out and then enter, that will log
+
+00:05:21.425 --> 00:05:23.665
+you out. And that's all there is to
+
+00:05:23.665 --> 00:05:24.865
+it. Thanks.
