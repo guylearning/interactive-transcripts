@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The File System is a Tree</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 0.96, "end": 44.624996, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 0.96, "end": 1.5999999}, {"id": "sent_0_1", "text": "This is Chris and in this video we are going to look at the file system for the Myth computers which happens to be, simply a tree just like you would have learned in CS one zero six b.", "start": 1.5999999, "end": 14.934999}, {"id": "sent_0_2", "text": "The tree that has a root and has all these children and the children are files and directories and so forth and that's how the file system is built.", "start": 15.095, "end": 25.975}, {"id": "sent_0_3", "text": "And we're gonna take a quick look at this and see a couple different ways of looking at it.", "start": 26.76, "end": 33.8}, {"id": "sent_0_4", "text": "But in other videos like the CD change directory and the LS list directory videos, you can see more details about how you actually navigate the tree.", "start": 35.48, "end": 44.624996}]}, {"id": "para_1", "paragraph_idx": 1, "start": 44.784996, "end": 86.63, "sentences": [{"id": "sent_1_0", "text": "We're gonna take a look at this.", "start": 44.784996, "end": 45.824997}, {"id": "sent_1_1", "text": "So I have me logged on to the myth system and I have a folder called CS one zero seven.", "start": 45.824997, "end": 52.385}, {"id": "sent_1_2", "text": "And in that folder, have an assignments folder, which I just kind of made up.", "start": 52.385, "end": 58.370003}, {"id": "sent_1_3", "text": "And if I take the command tree assignments, then what it does it lists all the folders and directories and files underneath the assignments.", "start": 58.530003, "end": 70.225}, {"id": "sent_1_4", "text": "So as you can see assignments here has one child, two children, three, four, five, six, seven different children, their files and directories and some of them have multiple files in them, some have a folder with another file in them.", "start": 70.225, "end": 86.63}]}, {"id": "para_2", "paragraph_idx": 2, "start": 86.63, "end": 118.63, "sentences": [{"id": "sent_2_0", "text": "Assignment one here has a bunch of children called file one, file two dot txt folder one and folder two and then folder one has a child called my program.", "start": 86.63, "end": 97.924995}, {"id": "sent_2_1", "text": "So that's really the structure of the the system here.", "start": 98.085, "end": 102.244995}, {"id": "sent_2_2", "text": "You can actually type another command tree dash f, which will give you a little bit oops.", "start": 102.565, "end": 107.445}, {"id": "sent_2_3", "text": "Tree dash f assignments, which will give you a little bit more information about that.", "start": 107.445, "end": 112.39}, {"id": "sent_2_4", "text": "And in this case, it gives you, some little trailing characters at the end of some of the names.", "start": 112.78999, "end": 118.63}]}, {"id": "para_3", "paragraph_idx": 3, "start": 119.35, "end": 138.025, "sentences": [{"id": "sent_3_0", "text": "If it if a name ends with a slash, it means it's a directory.", "start": 119.35, "end": 123.75}, {"id": "sent_3_1", "text": "If a name ends with a asterisk, it actually means that it is executable or runnable.", "start": 123.75, "end": 129.385}, {"id": "sent_3_2", "text": "It's an app of some sort.", "start": 129.385, "end": 130.985}, {"id": "sent_3_3", "text": "And we're actually gonna try that out in a minute.", "start": 131.385, "end": 133.145}, {"id": "sent_3_4", "text": "And then all the other files all the other names are just files.", "start": 133.305, "end": 138.025}]}, {"id": "para_4", "paragraph_idx": 4, "start": 138.47, "end": 160.745, "sentences": [{"id": "sent_4_0", "text": "In fact, can look at the tilde one here.", "start": 138.47, "end": 140.39}, {"id": "sent_4_1", "text": "This is not has nothing to do with the file system.", "start": 140.39, "end": 143.34999}, {"id": "sent_4_2", "text": "It's just the name of the file hello dot c tilde, which is a backup file that, some editors like VIM, create.", "start": 143.34999, "end": 150.54999}, {"id": "sent_4_3", "text": "So that's that's the tree structure.", "start": 151.22499, "end": 154.185}, {"id": "sent_4_4", "text": "If you wanted to go to the actual root of the tree, that's the slash file.", "start": 154.825, "end": 160.745}]}, {"id": "para_5", "paragraph_idx": 5, "start": 160.745, "end": 182.755, "sentences": [{"id": "sent_5_0", "text": "And if you look at this, there's there's all these files you may not have any idea what they mean, but they are, this is the root of the root of the entire file system and you only have access to certain parts of the file system.", "start": 160.745, "end": 174.2}, {"id": "sent_5_1", "text": "But it's pretty big.", "start": 174.28, "end": 175.16}, {"id": "sent_5_2", "text": "It's, we're talking like thousands of people at Stanford on this one file system.", "start": 175.475, "end": 180.035}, {"id": "sent_5_3", "text": "So it's a gigantic file system.", "start": 180.035, "end": 181.95502}, {"id": "sent_5_4", "text": "Okay?", "start": 182.115, "end": 182.755}]}, {"id": "para_6", "paragraph_idx": 6, "start": 183.075, "end": 238.23502, "sentences": [{"id": "sent_6_0", "text": "I will actually go back to my, my regular working directory, which is part of this is where my directory lives on the file system.", "start": 183.075, "end": 192.59001}, {"id": "sent_6_1", "text": "And there's a main directory and then subdirectory, subdirectory, subdirectory, subdirectory, and then my my directory.", "start": 192.91, "end": 198.67001}, {"id": "sent_6_2", "text": "And you're in your directory you actually have access to all the files in your directory.", "start": 199.23, "end": 209.24501}, {"id": "sent_6_3", "text": "Okay, so let's actually take a look again at CS107 and then assignments here and we can actually do an LS and this LS is list files, this actually just shows you all the files.", "start": 209.96501, "end": 221.44}, {"id": "sent_6_4", "text": "But again if you wanna see more details you can type tree and get all the details there, can type tree dash f and get more details or you can do l s dash l which you'll see in the l s the l s video as well.", "start": 222.4, "end": 238.23502}]}, {"id": "para_7", "paragraph_idx": 7, "start": 238.715, "end": 260.635, "sentences": [{"id": "sent_7_0", "text": "There's two specific files.", "start": 238.715, "end": 240.235}, {"id": "sent_7_1", "text": "If we actually do l s dash al, there's two specific files here which are important for the file system.", "start": 240.235, "end": 245.435}, {"id": "sent_7_2", "text": "The first one is the dot and dot is just a the name for the current directory.", "start": 245.88, "end": 255.31999}, {"id": "sent_7_3", "text": "So whatever current directory you're in, that is the dot directory.", "start": 255.31999, "end": 259.56}, {"id": "sent_7_4", "text": "Okay.", "start": 260.075, "end": 260.635}]}, {"id": "para_8", "paragraph_idx": 8, "start": 260.635, "end": 281.47, "sentences": [{"id": "sent_8_0", "text": "The dot dot directory is your parent directory.", "start": 260.635, "end": 264.315}, {"id": "sent_8_1", "text": "Okay.", "start": 264.475, "end": 264.95502}, {"id": "sent_8_2", "text": "So if we go back, let's go back to 10 7 and if we do l s, there's two two files in here, assignments and old, they both have to be folders.", "start": 264.95502, "end": 273.595}, {"id": "sent_8_3", "text": "And by the way, ls also has a dash f to give you a little more information, dash uppercase f.", "start": 274.11, "end": 279.47}, {"id": "sent_8_4", "text": "And, there's two folders in here.", "start": 279.79, "end": 281.47}]}, {"id": "para_9", "paragraph_idx": 9, "start": 281.47, "end": 307.86002, "sentences": [{"id": "sent_9_0", "text": "If we go into assignments and we do ls dash al, notice that we've got dot and dot dot.", "start": 281.47, "end": 287.38998}, {"id": "sent_9_1", "text": "If we do ls dot dot, that means give us a directory of our parent which was c which is C S 1 0 7.", "start": 287.38998, "end": 297.265}, {"id": "sent_9_2", "text": "And guess what?", "start": 297.42502, "end": 298.305}, {"id": "sent_9_3", "text": "If we do that, it's assignments and old because the we are the assignments folder and the one above is CS107.", "start": 298.305, "end": 306.74002}, {"id": "sent_9_4", "text": "So that's what dot dot means.", "start": 306.74002, "end": 307.86002}]}, {"id": "para_10", "paragraph_idx": 10, "start": 307.86002, "end": 335.82, "sentences": [{"id": "sent_10_0", "text": "Now why do you care about the parent directory or the current directory?", "start": 307.86002, "end": 311.22}, {"id": "sent_10_1", "text": "Well, it's useful when you talk about relative paths which is also another video that you can look in.", "start": 311.22, "end": 317.845}, {"id": "sent_10_2", "text": "Okay.", "start": 318.005, "end": 318.405}, {"id": "sent_10_3", "text": "We also use the current directory in a very specific way.", "start": 318.405, "end": 323.125}, {"id": "sent_10_4", "text": "Let's see if we do tree again and if we go into assignment zero and in here we've got a bunch of, things.", "start": 323.445, "end": 335.82}]}, {"id": "para_11", "paragraph_idx": 11, "start": 335.82, "end": 376.005, "sentences": [{"id": "sent_11_0", "text": "Notice that we have the hello program.", "start": 335.82, "end": 339.1}, {"id": "sent_11_1", "text": "Okay, this is just a program that I wrote that says hello world and because it has the x before it had an asterisk, but because it has an x on here, it means that we can execute it and it's a runnable app and instead of just saying hello, which will say, the program hello cannot be found, then you could have them try to install it, but it's not currently installed.", "start": 339.41998, "end": 361.5}, {"id": "sent_11_2", "text": "But we have a hello here.", "start": 361.58002, "end": 362.78}, {"id": "sent_11_3", "text": "Well, how do you actually run that?", "start": 362.78, "end": 364.22}, {"id": "sent_11_4", "text": "You type dot slash hello, and that says run the hello program in my current directory and that you will use this command a billion times in c s one zero seven.", "start": 364.22, "end": 376.005}]}, {"id": "para_12", "paragraph_idx": 12, "start": 376.005, "end": 417.95682, "sentences": [{"id": "sent_12_0", "text": "Anyway, you run dot slash hello and it says okay, I know exactly where that file is and that's the one I'm going to run.", "start": 376.005, "end": 381.525}, {"id": "sent_12_1", "text": "And in the, video on paths, you can, see how to actually modify things so that your path is is, where it can find certain files a little bit easier if you if you really want to.", "start": 382.27, "end": 396.75}, {"id": "sent_12_2", "text": "But anyway, the dot is just the ls dot would be the same as just saying ls because it's the same directory but it gives you a way to refer to your own directory explicitly.", "start": 396.75, "end": 406.765}, {"id": "sent_12_3", "text": "So that's that.", "start": 408.285, "end": 409.165}, {"id": "sent_12_4", "text": "That's the file system is a tree and you will become very familiar with that tree as you go through CS107.", "start": 409.23682, "end": 417.95682}]}, {"id": "para_13", "paragraph_idx": 13, "start": 417.95682, "end": 418.27682, "sentences": [{"id": "sent_13_0", "text": "Thanks.", "start": 417.95682, "end": 418.27682}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "IA8brNYJTk4";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 420;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>The File System is a Tree</h1>
+                <p>Channel: Chris Gregg | Duration: 07:00</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="0.96" data-end-time="44.624996">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="0.96"></div>
+                        <div class="timeline-timestamp">00:00</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="0.96" data-end-time="1.5999999">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="1.5999999" data-end-time="14.934999">This is Chris and in this video we are going to look at the file system for the Myth computers which happens to be, simply a tree just like you would have learned in CS one zero six b.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="15.095" data-end-time="25.975">The tree that has a root and has all these children and the children are files and directories and so forth and that's how the file system is built.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="26.76" data-end-time="33.8">And we're gonna take a quick look at this and see a couple different ways of looking at it.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="35.48" data-end-time="44.624996">But in other videos like the CD change directory and the LS list directory videos, you can see more details about how you actually navigate the tree.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="44.784996" data-end-time="86.63">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="44.784996"></div>
+                        <div class="timeline-timestamp">00:44</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="44.784996" data-end-time="45.824997">We're gonna take a look at this.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="45.824997" data-end-time="52.385">So I have me logged on to the myth system and I have a folder called CS one zero seven.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="52.385" data-end-time="58.370003">And in that folder, have an assignments folder, which I just kind of made up.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="58.530003" data-end-time="70.225">And if I take the command tree assignments, then what it does it lists all the folders and directories and files underneath the assignments.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="70.225" data-end-time="86.63">So as you can see assignments here has one child, two children, three, four, five, six, seven different children, their files and directories and some of them have multiple files in them, some have a folder with another file in them.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="86.63" data-end-time="118.63">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="86.63"></div>
+                        <div class="timeline-timestamp">01:26</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="86.63" data-end-time="97.924995">Assignment one here has a bunch of children called file one, file two dot txt folder one and folder two and then folder one has a child called my program.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="98.085" data-end-time="102.244995">So that's really the structure of the the system here.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="102.565" data-end-time="107.445">You can actually type another command tree dash f, which will give you a little bit oops.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="107.445" data-end-time="112.39">Tree dash f assignments, which will give you a little bit more information about that.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="112.78999" data-end-time="118.63">And in this case, it gives you, some little trailing characters at the end of some of the names.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="119.35" data-end-time="138.025">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="119.35"></div>
+                        <div class="timeline-timestamp">01:59</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="119.35" data-end-time="123.75">If it if a name ends with a slash, it means it's a directory.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="123.75" data-end-time="129.385">If a name ends with a asterisk, it actually means that it is executable or runnable.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="129.385" data-end-time="130.985">It's an app of some sort.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="131.385" data-end-time="133.145">And we're actually gonna try that out in a minute.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="133.305" data-end-time="138.025">And then all the other files all the other names are just files.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="138.47" data-end-time="160.745">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="138.47"></div>
+                        <div class="timeline-timestamp">02:18</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="138.47" data-end-time="140.39">In fact, can look at the tilde one here.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="140.39" data-end-time="143.34999">This is not has nothing to do with the file system.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="143.34999" data-end-time="150.54999">It's just the name of the file hello dot c tilde, which is a backup file that, some editors like VIM, create.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="151.22499" data-end-time="154.185">So that's that's the tree structure.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="154.825" data-end-time="160.745">If you wanted to go to the actual root of the tree, that's the slash file.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="160.745" data-end-time="182.755">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="160.745"></div>
+                        <div class="timeline-timestamp">02:40</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="160.745" data-end-time="174.2">And if you look at this, there's there's all these files you may not have any idea what they mean, but they are, this is the root of the root of the entire file system and you only have access to certain parts of the file system.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="174.28" data-end-time="175.16">But it's pretty big.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="175.475" data-end-time="180.035">It's, we're talking like thousands of people at Stanford on this one file system.</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="180.035" data-end-time="181.95502">So it's a gigantic file system.</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="182.115" data-end-time="182.755">Okay?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="183.075" data-end-time="238.23502">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="183.075"></div>
+                        <div class="timeline-timestamp">03:03</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="183.075" data-end-time="192.59001">I will actually go back to my, my regular working directory, which is part of this is where my directory lives on the file system.</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="192.91" data-end-time="198.67001">And there's a main directory and then subdirectory, subdirectory, subdirectory, subdirectory, and then my my directory.</span> <span class="transcript-sentence" id="sent_6_2" data-start-time="199.23" data-end-time="209.24501">And you're in your directory you actually have access to all the files in your directory.</span> <span class="transcript-sentence" id="sent_6_3" data-start-time="209.96501" data-end-time="221.44">Okay, so let's actually take a look again at CS107 and then assignments here and we can actually do an LS and this LS is list files, this actually just shows you all the files.</span> <span class="transcript-sentence" id="sent_6_4" data-start-time="222.4" data-end-time="238.23502">But again if you wanna see more details you can type tree and get all the details there, can type tree dash f and get more details or you can do l s dash l which you'll see in the l s the l s video as well.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_7" data-paragraph-idx="7" data-start-time="238.715" data-end-time="260.635">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="238.715"></div>
+                        <div class="timeline-timestamp">03:58</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_7"><span class="transcript-sentence" id="sent_7_0" data-start-time="238.715" data-end-time="240.235">There's two specific files.</span> <span class="transcript-sentence" id="sent_7_1" data-start-time="240.235" data-end-time="245.435">If we actually do l s dash al, there's two specific files here which are important for the file system.</span> <span class="transcript-sentence" id="sent_7_2" data-start-time="245.88" data-end-time="255.31999">The first one is the dot and dot is just a the name for the current directory.</span> <span class="transcript-sentence" id="sent_7_3" data-start-time="255.31999" data-end-time="259.56">So whatever current directory you're in, that is the dot directory.</span> <span class="transcript-sentence" id="sent_7_4" data-start-time="260.075" data-end-time="260.635">Okay.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_8" data-paragraph-idx="8" data-start-time="260.635" data-end-time="281.47">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="260.635"></div>
+                        <div class="timeline-timestamp">04:20</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_8"><span class="transcript-sentence" id="sent_8_0" data-start-time="260.635" data-end-time="264.315">The dot dot directory is your parent directory.</span> <span class="transcript-sentence" id="sent_8_1" data-start-time="264.475" data-end-time="264.95502">Okay.</span> <span class="transcript-sentence" id="sent_8_2" data-start-time="264.95502" data-end-time="273.595">So if we go back, let's go back to 10 7 and if we do l s, there's two two files in here, assignments and old, they both have to be folders.</span> <span class="transcript-sentence" id="sent_8_3" data-start-time="274.11" data-end-time="279.47">And by the way, ls also has a dash f to give you a little more information, dash uppercase f.</span> <span class="transcript-sentence" id="sent_8_4" data-start-time="279.79" data-end-time="281.47">And, there's two folders in here.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_9" data-paragraph-idx="9" data-start-time="281.47" data-end-time="307.86002">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="281.47"></div>
+                        <div class="timeline-timestamp">04:41</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_9"><span class="transcript-sentence" id="sent_9_0" data-start-time="281.47" data-end-time="287.38998">If we go into assignments and we do ls dash al, notice that we've got dot and dot dot.</span> <span class="transcript-sentence" id="sent_9_1" data-start-time="287.38998" data-end-time="297.265">If we do ls dot dot, that means give us a directory of our parent which was c which is C S 1 0 7.</span> <span class="transcript-sentence" id="sent_9_2" data-start-time="297.42502" data-end-time="298.305">And guess what?</span> <span class="transcript-sentence" id="sent_9_3" data-start-time="298.305" data-end-time="306.74002">If we do that, it's assignments and old because the we are the assignments folder and the one above is CS107.</span> <span class="transcript-sentence" id="sent_9_4" data-start-time="306.74002" data-end-time="307.86002">So that's what dot dot means.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_10" data-paragraph-idx="10" data-start-time="307.86002" data-end-time="335.82">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="307.86002"></div>
+                        <div class="timeline-timestamp">05:07</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_10"><span class="transcript-sentence" id="sent_10_0" data-start-time="307.86002" data-end-time="311.22">Now why do you care about the parent directory or the current directory?</span> <span class="transcript-sentence" id="sent_10_1" data-start-time="311.22" data-end-time="317.845">Well, it's useful when you talk about relative paths which is also another video that you can look in.</span> <span class="transcript-sentence" id="sent_10_2" data-start-time="318.005" data-end-time="318.405">Okay.</span> <span class="transcript-sentence" id="sent_10_3" data-start-time="318.405" data-end-time="323.125">We also use the current directory in a very specific way.</span> <span class="transcript-sentence" id="sent_10_4" data-start-time="323.445" data-end-time="335.82">Let's see if we do tree again and if we go into assignment zero and in here we've got a bunch of, things.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_11" data-paragraph-idx="11" data-start-time="335.82" data-end-time="376.005">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="335.82"></div>
+                        <div class="timeline-timestamp">05:35</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_11"><span class="transcript-sentence" id="sent_11_0" data-start-time="335.82" data-end-time="339.1">Notice that we have the hello program.</span> <span class="transcript-sentence" id="sent_11_1" data-start-time="339.41998" data-end-time="361.5">Okay, this is just a program that I wrote that says hello world and because it has the x before it had an asterisk, but because it has an x on here, it means that we can execute it and it's a runnable app and instead of just saying hello, which will say, the program hello cannot be found, then you could have them try to install it, but it's not currently installed.</span> <span class="transcript-sentence" id="sent_11_2" data-start-time="361.58002" data-end-time="362.78">But we have a hello here.</span> <span class="transcript-sentence" id="sent_11_3" data-start-time="362.78" data-end-time="364.22">Well, how do you actually run that?</span> <span class="transcript-sentence" id="sent_11_4" data-start-time="364.22" data-end-time="376.005">You type dot slash hello, and that says run the hello program in my current directory and that you will use this command a billion times in c s one zero seven.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_12" data-paragraph-idx="12" data-start-time="376.005" data-end-time="417.95682">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="376.005"></div>
+                        <div class="timeline-timestamp">06:16</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_12"><span class="transcript-sentence" id="sent_12_0" data-start-time="376.005" data-end-time="381.525">Anyway, you run dot slash hello and it says okay, I know exactly where that file is and that's the one I'm going to run.</span> <span class="transcript-sentence" id="sent_12_1" data-start-time="382.27" data-end-time="396.75">And in the, video on paths, you can, see how to actually modify things so that your path is is, where it can find certain files a little bit easier if you if you really want to.</span> <span class="transcript-sentence" id="sent_12_2" data-start-time="396.75" data-end-time="406.765">But anyway, the dot is just the ls dot would be the same as just saying ls because it's the same directory but it gives you a way to refer to your own directory explicitly.</span> <span class="transcript-sentence" id="sent_12_3" data-start-time="408.285" data-end-time="409.165">So that's that.</span> <span class="transcript-sentence" id="sent_12_4" data-start-time="409.23682" data-end-time="417.95682">That's the file system is a tree and you will become very familiar with that tree as you go through CS107.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_13" data-paragraph-idx="13" data-start-time="417.95682" data-end-time="418.27682">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="417.95682"></div>
+                        <div class="timeline-timestamp">06:57</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_13"><span class="transcript-sentence" id="sent_13_0" data-start-time="417.95682" data-end-time="418.27682">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

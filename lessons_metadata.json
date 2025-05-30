@@ -436,5 +436,17 @@
     "lesson_html_filename": "logging_to_myth_from_linux_interactive_lesson.html",
     "json_transcript_path_on_repo": "logging_to_myth_from_linux/logging_to_myth_from_linux_transcript.json",
     "vtt_transcript_path_on_repo": "logging_to_myth_from_linux/logging_to_myth_from_linux_transcript.vtt"
+  },
+  {
+    "title_original": "The File System is a Tree",
+    "video_name_clean": "the_file_system_is_a_tree",
+    "youtube_id": "IA8brNYJTk4",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:40:35.551104+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 420,
+    "lesson_html_filename": "the_file_system_is_a_tree_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_file_system_is_a_tree/the_file_system_is_a_tree_transcript.json",
+    "vtt_transcript_path_on_repo": "the_file_system_is_a_tree/the_file_system_is_a_tree_transcript.vtt"
   }
 ]
