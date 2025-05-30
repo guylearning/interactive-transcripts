@@ -676,5 +676,17 @@
     "lesson_html_filename": "redirecting_and_piping_commands_on_linux_interactive_lesson.html",
     "json_transcript_path_on_repo": "redirecting_and_piping_commands_on_linux/redirecting_and_piping_commands_on_linux_transcript.json",
     "vtt_transcript_path_on_repo": "redirecting_and_piping_commands_on_linux/redirecting_and_piping_commands_on_linux_transcript.vtt"
+  },
+  {
+    "title_original": "Compiling C programs with gcc",
+    "video_name_clean": "compiling_c_programs_with_gcc",
+    "youtube_id": "3A6uapoPMfw",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:49:11.594975+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 343,
+    "lesson_html_filename": "compiling_c_programs_with_gcc_interactive_lesson.html",
+    "json_transcript_path_on_repo": "compiling_c_programs_with_gcc/compiling_c_programs_with_gcc_transcript.json",
+    "vtt_transcript_path_on_repo": "compiling_c_programs_with_gcc/compiling_c_programs_with_gcc_transcript.vtt"
   }
 ]

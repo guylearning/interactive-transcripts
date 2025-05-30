@@ -1,0 +1,386 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 5cac829b-2b28-4278-a80c-2a05ee145341
+Created: 2025-05-30T04:49:10.889Z
+Duration: 342.85712
+Channels: 1
+
+00:00:01.120 --> 00:00:02.640
+Hi there. This is going to be a
+
+00:00:02.640 --> 00:00:06.640
+quick look at how you compile programs using
+
+00:00:06.640 --> 00:00:10.960
+GCC. For our class CS107, we are mainly
+
+00:00:10.960 --> 00:00:14.585
+going to use make files which means that
+
+00:00:14.585 --> 00:00:16.265
+we'll, a lot of this, what I'm gonna
+
+00:00:16.265 --> 00:00:17.465
+talk about right now is going to be
+
+00:00:17.465 --> 00:00:18.905
+hidden from you. But if you ever want
+
+00:00:18.905 --> 00:00:20.665
+to compile a program on your own, you
+
+00:00:20.665 --> 00:00:22.425
+should know how to do this. We are
+
+00:00:22.425 --> 00:00:25.305
+going to be using the GCC which stands
+
+00:00:25.305 --> 00:00:29.030
+for the GNU Compiler Collection, which is the
+
+00:00:29.030 --> 00:00:32.070
+compiler that we use for the class and
+
+00:00:32.070 --> 00:00:34.790
+it compiles our code, it assembles our code,
+
+00:00:34.790 --> 00:00:36.470
+and it creates machine code, and it links
+
+00:00:36.470 --> 00:00:38.390
+our code, it does a whole bunch of
+
+00:00:38.390 --> 00:00:43.555
+things. It is a very powerful compiler And,
+
+00:00:44.035 --> 00:00:46.435
+we are going to use it, like I
+
+00:00:46.435 --> 00:00:48.595
+said, mainly through make files, but if you
+
+00:00:48.595 --> 00:00:53.155
+want to actually, compile a program using GCC,
+
+00:00:53.395 --> 00:00:55.235
+it's pretty simple. I have a little hello
+
+00:00:55.235 --> 00:00:58.470
+world program, called hello dot c. If I
+
+00:00:58.470 --> 00:01:00.390
+type g c c hello dot c then
+
+00:01:00.390 --> 00:01:03.910
+enter, it compiles my program. And you would
+
+00:01:03.910 --> 00:01:05.910
+think that maybe it would put the output
+
+00:01:05.910 --> 00:01:08.470
+file in something called hello or something like
+
+00:01:08.470 --> 00:01:10.310
+that, but nope. It puts the file in
+
+00:01:10.310 --> 00:01:13.510
+a file called a dot out a dot
+
+00:01:13.510 --> 00:01:15.235
+out. Now if we try to type a
+
+00:01:15.235 --> 00:01:16.995
+dot out by the way, it will say
+
+00:01:16.995 --> 00:01:19.715
+command not found even though if we look
+
+00:01:19.715 --> 00:01:22.435
+there is an a dot out file there.
+
+00:01:22.435 --> 00:01:24.355
+So what's the story with that? Well, when
+
+00:01:24.355 --> 00:01:26.115
+you run a file you have to tell
+
+00:01:26.115 --> 00:01:28.195
+it what folder it's in unless it happens
+
+00:01:28.195 --> 00:01:31.690
+to be in your path which is another
+
+00:01:31.690 --> 00:01:34.890
+topic altogether. But basically you run the program
+
+00:01:34.890 --> 00:01:37.370
+by saying dot slash which says in the
+
+00:01:37.370 --> 00:01:41.530
+current directory run a dot out and it
+
+00:01:41.530 --> 00:01:43.655
+will say hello world. So that's the the
+
+00:01:43.655 --> 00:01:46.295
+very basic, way to run g c c
+
+00:01:46.295 --> 00:01:47.975
+and if you always want your output files
+
+00:01:47.975 --> 00:01:49.895
+to called a dot out, that's how you
+
+00:01:49.895 --> 00:01:52.375
+do it. But, of course, you can you
+
+00:01:52.375 --> 00:01:54.695
+can tell it to put your, file in
+
+00:01:54.695 --> 00:01:56.855
+a different name. You can actually put the
+
+00:01:56.855 --> 00:01:58.550
+the program in different name. We can type
+
+00:01:58.550 --> 00:02:03.190
+gcc hello dot c dash o hello and
+
+00:02:03.190 --> 00:02:07.750
+it will put the file in, put the
+
+00:02:07.750 --> 00:02:10.955
+program in a file called hello. Great. You
+
+00:02:10.955 --> 00:02:12.555
+have to be very careful with this dash
+
+00:02:12.555 --> 00:02:14.555
+o. If you typed the following, we said
+
+00:02:14.555 --> 00:02:16.075
+g c c hello dot c dash o
+
+00:02:16.075 --> 00:02:18.395
+hello dot c. A lot of people do
+
+00:02:18.395 --> 00:02:20.075
+that just because they're not necessarily thinking about
+
+00:02:20.075 --> 00:02:23.435
+it. What happens is it compiles your program
+
+00:02:23.435 --> 00:02:25.755
+and then it sets everything up and then
+
+00:02:25.755 --> 00:02:28.170
+it writes it into the file called hello
+
+00:02:28.170 --> 00:02:31.290
+dot c which used to contain your program
+
+00:02:31.290 --> 00:02:34.410
+text and now contains a binary file that
+
+00:02:34.410 --> 00:02:39.850
+you cannot go back to your text from.
+
+00:02:40.010 --> 00:02:41.555
+So for instance, let me make a copy
+
+00:02:41.555 --> 00:02:45.235
+here, copy hello dot c to hello dot
+
+00:02:45.235 --> 00:02:49.475
+backup and let's try this, gcc hello dot
+
+00:02:49.475 --> 00:02:52.515
+c dash oh hello dot c and it
+
+00:02:52.515 --> 00:02:54.035
+goes oh sure and then you go dot
+
+00:02:54.035 --> 00:02:56.870
+slash hello dot c you go oh it's
+
+00:02:56.870 --> 00:02:58.150
+a binary file and if we look at
+
+00:02:58.150 --> 00:03:02.230
+it hello dot if we go let's go
+
+00:03:02.230 --> 00:03:04.230
+change our program hello dot c it ends
+
+00:03:04.230 --> 00:03:07.110
+up as this binary garbage that we can't
+
+00:03:07.110 --> 00:03:09.110
+get through and we have no way to
+
+00:03:09.110 --> 00:03:12.265
+get back to our original program. So that's
+
+00:03:12.265 --> 00:03:16.345
+bad news. Okay. So let's move hello back
+
+00:03:16.345 --> 00:03:19.465
+to hello c to get our backup and
+
+00:03:19.465 --> 00:03:21.865
+we're gonna do that and that's that. Now
+
+00:03:21.945 --> 00:03:25.545
+GCC comes with plenty of flags, many many
+
+00:03:25.545 --> 00:03:27.390
+many types of flags And by the way,
+
+00:03:27.390 --> 00:03:29.630
+it will tell you if you have syntax
+
+00:03:29.630 --> 00:03:32.270
+errors. So let's go introduce a syntax error
+
+00:03:32.270 --> 00:03:35.790
+in here. Let's say we forget the semicolon
+
+00:03:35.790 --> 00:03:37.550
+at the end of this line, something like
+
+00:03:37.550 --> 00:03:41.390
+that. And if we do gcc hello. C,
+
+00:03:42.055 --> 00:03:44.615
+it will say, oh, guess what, in function
+
+00:03:44.615 --> 00:03:47.575
+main we had an error, we forgot a
+
+00:03:47.575 --> 00:03:50.135
+semicolon. It says there expected semicolon before the
+
+00:03:50.135 --> 00:03:52.855
+return zero and we go back and we
+
+00:03:52.855 --> 00:03:55.255
+fix it. And this does not create an
+
+00:03:55.255 --> 00:03:56.730
+executable. If it doesn't know how to compile
+
+00:03:56.730 --> 00:03:58.650
+it, it won't create the executable. If you
+
+00:03:58.650 --> 00:04:00.090
+get an error and there is still an
+
+00:04:00.090 --> 00:04:02.330
+executable and you say, hey, wait a minute,
+
+00:04:02.330 --> 00:04:04.650
+it does work. It's the old executable, not
+
+00:04:04.650 --> 00:04:06.570
+your new one. So if you get errors,
+
+00:04:07.290 --> 00:04:10.650
+you'd know that you did not produce a,
+
+00:04:12.055 --> 00:04:15.095
+did not produce the correct, an actual output
+
+00:04:15.095 --> 00:04:17.895
+file. Now you could get warnings and no
+
+00:04:17.895 --> 00:04:19.575
+errors and it will produce a file but
+
+00:04:19.575 --> 00:04:22.615
+remember in CS107 we should try to compile
+
+00:04:22.615 --> 00:04:25.895
+our code with no warnings. So that's that,
+
+00:04:25.895 --> 00:04:28.960
+let's go fix it. Go back up and
+
+00:04:28.960 --> 00:04:31.440
+we add that and then we compile it
+
+00:04:31.440 --> 00:04:34.480
+again, there we go. Now it's compiled just
+
+00:04:34.480 --> 00:04:36.320
+fine. Now what other flags are there? What
+
+00:04:36.320 --> 00:04:38.640
+other options are there? Well, the ones that
+
+00:04:38.640 --> 00:04:40.160
+we're gonna use for this class are gonna
+
+00:04:40.160 --> 00:04:43.805
+be the following dash g and og basically
+
+00:04:43.805 --> 00:04:48.125
+mean make your program such that the debugger
+
+00:04:48.125 --> 00:04:50.925
+can run it and give you as much
+
+00:04:50.925 --> 00:04:52.845
+information as possible. So those are the big
+
+00:04:52.845 --> 00:04:54.445
+things. The other one that we're gonna do
+
+00:04:54.445 --> 00:04:57.490
+is going to be dash t d equals
+
+00:04:57.490 --> 00:05:02.210
+gnu 99 which means, there's a particular flavor
+
+00:05:02.210 --> 00:05:03.890
+of c that we're going to be using
+
+00:05:03.890 --> 00:05:07.330
+in the class and, it's called the, c
+
+00:05:07.330 --> 00:05:10.850
+99 and the gnu flavor of c 99
+
+00:05:11.175 --> 00:05:12.935
+is the one we're gonna use. Standard that
+
+00:05:12.935 --> 00:05:15.255
+that allows you to do things like put
+
+00:05:15.655 --> 00:05:20.535
+define integers inside your for loop expression and
+
+00:05:20.535 --> 00:05:22.695
+so forth. So we're gonna use that. And
+
+00:05:22.695 --> 00:05:25.495
+then hello dot c dash o hello and
+
+00:05:25.495 --> 00:05:30.200
+there you go. Okay. So now it, that
+
+00:05:30.200 --> 00:05:31.880
+compiled it just fine. So there's tons of
+
+00:05:31.880 --> 00:05:33.320
+different flags you can use. We have plenty
+
+00:05:33.320 --> 00:05:35.400
+in the make file, but, this is how
+
+00:05:35.400 --> 00:05:37.480
+you run GCC on your own if you
+
+00:05:37.480 --> 00:05:39.800
+just want to quickly compile a file. Thanks.
