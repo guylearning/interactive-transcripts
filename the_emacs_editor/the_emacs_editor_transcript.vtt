@@ -1,0 +1,341 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: d68ccc60-f125-4608-9b4a-bf34c51cd871
+Created: 2025-05-30T04:52:10.372Z
+Duration: 296.09793
+Channels: 1
+
+00:00:00.720 --> 00:00:02.400
+Hi there. This video is going to be
+
+00:00:02.400 --> 00:00:05.600
+a very quick introduction to the Emacs editor
+
+00:00:05.600 --> 00:00:07.760
+which is one of the standard editors on
+
+00:00:07.760 --> 00:00:10.080
+the NIF system and in fact most Unix
+
+00:00:10.080 --> 00:00:12.800
+systems. It's a very old editor but it
+
+00:00:12.800 --> 00:00:15.735
+has a ton of functionality once you get
+
+00:00:15.735 --> 00:00:17.655
+used to using it. There's definitely a learning
+
+00:00:17.655 --> 00:00:21.335
+curve to using Emacs but it's, once you
+
+00:00:21.335 --> 00:00:23.015
+learn it, you can do lots and lots
+
+00:00:23.015 --> 00:00:25.495
+of different things. Now you may have to
+
+00:00:25.495 --> 00:00:27.255
+bear with me in this video because I
+
+00:00:27.255 --> 00:00:31.860
+am not an Emacs user myself. I use
+
+00:00:32.100 --> 00:00:35.060
+VIM primarily, so I may not understand quite
+
+00:00:35.060 --> 00:00:36.420
+some of the commands I'm about to try
+
+00:00:36.420 --> 00:00:39.220
+to show you. But we will do the
+
+00:00:39.220 --> 00:00:41.380
+best we can the best we can with
+
+00:00:41.380 --> 00:00:45.365
+this. So if we type emacs and then
+
+00:00:45.365 --> 00:00:48.805
+hello dot c will open up the file.
+
+00:00:48.965 --> 00:00:50.965
+You can go around the file with the
+
+00:00:50.965 --> 00:00:53.445
+arrow keys, you're already ready to type, you
+
+00:00:53.445 --> 00:00:56.165
+can just type something else, print f and
+
+00:00:56.165 --> 00:01:00.550
+then hello one or something like that. I
+
+00:01:00.550 --> 00:01:02.230
+think if you wanna set it so that
+
+00:01:02.230 --> 00:01:04.950
+it makes your indentation four characters, you have
+
+00:01:04.950 --> 00:01:08.070
+to do that in a settings file. And
+
+00:01:08.070 --> 00:01:11.555
+then you can, you can, just do the
+
+00:01:11.795 --> 00:01:13.875
+change, make the changes you want and save
+
+00:01:13.875 --> 00:01:18.035
+it. How do you save in Emacs? Well,
+
+00:01:18.435 --> 00:01:22.595
+you do, you use what we call the,
+
+00:01:23.930 --> 00:01:27.050
+actually in this case I believe use control
+
+00:01:27.210 --> 00:01:32.170
+to save. So it's actually control x and
+
+00:01:32.170 --> 00:01:34.330
+it'll say what the command that you're starting
+
+00:01:34.330 --> 00:01:36.810
+down here is and control s will save
+
+00:01:36.810 --> 00:01:39.865
+and that's how you save. To quit, you
+
+00:01:39.865 --> 00:01:43.785
+do control x control c and you can
+
+00:01:43.785 --> 00:01:46.185
+quit like that. So let's open it back
+
+00:01:46.185 --> 00:01:48.105
+up again and notice that I did save
+
+00:01:48.105 --> 00:01:50.825
+my work here and I can just go
+
+00:01:50.825 --> 00:01:52.650
+and delete that if I want to. There
+
+00:01:52.650 --> 00:01:54.330
+is a command to delete the entire line,
+
+00:01:54.330 --> 00:01:56.250
+I just don't know what it is. But,
+
+00:01:56.810 --> 00:01:58.570
+you'll notice up here that there is a
+
+00:01:58.570 --> 00:02:03.130
+menu bar, up here like this and, it's
+
+00:02:03.130 --> 00:02:04.570
+it's a little weird, that should not have
+
+00:02:04.570 --> 00:02:06.330
+scrolled, but it's a little weird because there's
+
+00:02:06.330 --> 00:02:07.855
+no way to use the mouse if you're
+
+00:02:07.855 --> 00:02:10.975
+SSH ing in to do this. Actually there
+
+00:02:10.975 --> 00:02:12.975
+may be, but, in this I don't know
+
+00:02:12.975 --> 00:02:14.895
+exactly how to do this, to do that.
+
+00:02:14.895 --> 00:02:16.015
+But what I do know is if you
+
+00:02:16.015 --> 00:02:18.175
+type the f 10 key and in my
+
+00:02:18.175 --> 00:02:19.855
+Mac I have to type function and then
+
+00:02:19.855 --> 00:02:22.810
+f 10, it, brings up the options and
+
+00:02:22.810 --> 00:02:24.410
+you can see down here it says, if
+
+00:02:24.410 --> 00:02:27.610
+you wanna do, any of these various, things
+
+00:02:27.610 --> 00:02:28.890
+you can do that. So if I type
+
+00:02:28.890 --> 00:02:30.490
+o, it'll get me to option, it'll say
+
+00:02:30.490 --> 00:02:33.050
+highlight active region, etcetera. If you ever get
+
+00:02:33.050 --> 00:02:34.490
+in the middle of a command and want
+
+00:02:34.490 --> 00:02:37.395
+to back out of it, control g will
+
+00:02:37.395 --> 00:02:39.635
+go and go quit and go back to,
+
+00:02:39.795 --> 00:02:42.915
+where you were before. So let's say I
+
+00:02:42.915 --> 00:02:46.195
+want to, add line numbers to this. There's
+
+00:02:46.195 --> 00:02:52.200
+another control key or another modifier key kind
+
+00:02:52.200 --> 00:02:54.680
+of like control called the meta key. On
+
+00:02:54.680 --> 00:02:56.920
+my Mac it doesn't work through SSH again,
+
+00:02:56.920 --> 00:02:57.960
+but what you can do is you can
+
+00:02:57.960 --> 00:03:00.120
+just type escape and that stands for the
+
+00:03:00.120 --> 00:03:01.720
+meta key. So if you ever are looking
+
+00:03:01.720 --> 00:03:05.015
+at Emacs tutorials or references and it says
+
+00:03:05.015 --> 00:03:06.615
+meta, just know oh I have to hit
+
+00:03:06.615 --> 00:03:08.775
+escape. And in this case we do escape
+
+00:03:08.775 --> 00:03:10.935
+x, then it's going to say okay give
+
+00:03:10.935 --> 00:03:13.095
+me like a written command and in this
+
+00:03:13.095 --> 00:03:16.370
+case I think the written command is, what
+
+00:03:16.370 --> 00:03:20.130
+is it for here? It's line num dash
+
+00:03:20.130 --> 00:03:22.930
+mode and that should actually, there we go.
+
+00:03:22.930 --> 00:03:25.330
+Now we've got line numbers in here. Okay,
+
+00:03:25.490 --> 00:03:30.265
+there are various ways to jump around the
+
+00:03:30.265 --> 00:03:32.185
+document. If you want to go to a
+
+00:03:32.185 --> 00:03:33.945
+particular line, let's say we wanted to go
+
+00:03:33.945 --> 00:03:36.345
+to line six, we can type meta which
+
+00:03:36.345 --> 00:03:38.825
+is escape and then lowercase g and then
+
+00:03:38.825 --> 00:03:40.985
+another g and it says go to line
+
+00:03:40.985 --> 00:03:42.745
+and we can type six and it will
+
+00:03:42.745 --> 00:03:46.460
+jump right to that line. If we wanna
+
+00:03:46.460 --> 00:03:48.700
+actually search for something, we just type control
+
+00:03:48.700 --> 00:03:51.900
+s and it does a search. So if
+
+00:03:51.900 --> 00:03:54.540
+I wanna search for hello, there it is
+
+00:03:54.540 --> 00:03:57.100
+and it comes up immediately that that's where
+
+00:03:57.100 --> 00:03:59.885
+we wanna go to. So, and in fact
+
+00:03:59.885 --> 00:04:01.485
+if you wanna type, let's say we wanted
+
+00:04:01.485 --> 00:04:05.885
+to find just, o, control s and then
+
+00:04:05.885 --> 00:04:07.485
+o, it will jump to the o and
+
+00:04:07.485 --> 00:04:09.965
+if you keep hitting control s again, it
+
+00:04:09.965 --> 00:04:12.680
+will go to the next, instance and then
+
+00:04:12.680 --> 00:04:16.680
+wrap around if you don't find it. So,
+
+00:04:17.080 --> 00:04:20.440
+that's the very very very basics for Emacs.
+
+00:04:20.440 --> 00:04:22.840
+It's a great editor, I don't use it
+
+00:04:22.840 --> 00:04:24.360
+much so that's why I don't really know
+
+00:04:24.360 --> 00:04:26.225
+what I'm doing in here. You can open
+
+00:04:26.225 --> 00:04:28.225
+multiple files at once, they're called buffers in
+
+00:04:28.225 --> 00:04:31.585
+Emacs and it is very powerful. In fact,
+
+00:04:31.585 --> 00:04:34.225
+there's an entire programming language list built into
+
+00:04:34.225 --> 00:04:35.905
+Emacs so you can make your own commands
+
+00:04:35.905 --> 00:04:40.305
+and make it do very very advanced things.
+
+00:04:40.730 --> 00:04:43.610
+So anyway, right now I will do control
+
+00:04:43.610 --> 00:04:48.170
+X, control C and it will ask me
+
+00:04:48.170 --> 00:04:49.370
+if I wanna save it. Let's say I
+
+00:04:49.370 --> 00:04:51.050
+save it and I type Y and it
+
+00:04:51.050 --> 00:04:54.490
+brings you back to the terminal. Thanks.

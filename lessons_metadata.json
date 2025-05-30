@@ -736,5 +736,17 @@
     "lesson_html_filename": "the_vim_editor_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_vim_editor/the_vim_editor_transcript.json",
     "vtt_transcript_path_on_repo": "the_vim_editor/the_vim_editor_transcript.vtt"
+  },
+  {
+    "title_original": "The emacs editor.",
+    "video_name_clean": "the_emacs_editor",
+    "youtube_id": "gHjX4RAa0FM",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:52:11.123772+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 296,
+    "lesson_html_filename": "the_emacs_editor_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_emacs_editor/the_emacs_editor_transcript.json",
+    "vtt_transcript_path_on_repo": "the_emacs_editor/the_emacs_editor_transcript.vtt"
   }
 ]
