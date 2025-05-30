@@ -1,0 +1,167 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: bececf86-96a2-4a80-85cd-5bc12f939331
+Created: 2025-05-30T04:42:58.806Z
+Duration: 148.062
+Channels: 1
+
+00:00:00.080 --> 00:00:02.160
+Hi there. In this video, we're gonna talk
+
+00:00:02.160 --> 00:00:04.480
+about a couple of commands that are useful
+
+00:00:04.480 --> 00:00:06.720
+if you're doing a lot of moving between
+
+00:00:06.720 --> 00:00:09.360
+directories and you want to go back to
+
+00:00:09.360 --> 00:00:14.075
+a directory you were recently in. So the
+
+00:00:14.075 --> 00:00:17.435
+commands are actually called push d and pop
+
+00:00:17.435 --> 00:00:21.035
+d. And by the names, should recognize that
+
+00:00:21.035 --> 00:00:25.275
+they're basically stack based commands. And here's how
+
+00:00:25.275 --> 00:00:28.330
+you use them. You say push d to
+
+00:00:28.330 --> 00:00:30.330
+a particular directory. So let's say I wanted
+
+00:00:30.330 --> 00:00:32.090
+to go for some reason back to my
+
+00:00:32.090 --> 00:00:35.210
+home directory. Right. I would type the tilde
+
+00:00:35.210 --> 00:00:36.970
+command, push d. And it would what it
+
+00:00:36.970 --> 00:00:38.970
+would do is it would actually move me
+
+00:00:38.970 --> 00:00:43.115
+to my command or to my home directory,
+
+00:00:43.515 --> 00:00:47.755
+but it would save on this stack the
+
+00:00:47.755 --> 00:00:51.115
+directory that I just came from. So basically,
+
+00:00:51.115 --> 00:00:53.195
+it would save the assigned zero directory and
+
+00:00:53.195 --> 00:00:54.715
+say, you ever wanna get back to that,
+
+00:00:54.715 --> 00:00:57.380
+I'm keeping track of it. So in that
+
+00:00:57.380 --> 00:00:59.860
+case we can actually cd to other places
+
+00:00:59.860 --> 00:01:02.980
+too, cs one zero seven, cd old, whatever
+
+00:01:02.980 --> 00:01:06.740
+and if we type pop d it pops
+
+00:01:06.740 --> 00:01:08.660
+the last one off the stack which happened
+
+00:01:08.660 --> 00:01:10.420
+to be assigned zero and it takes us
+
+00:01:10.420 --> 00:01:13.515
+back to assigned zero. So if you're in
+
+00:01:13.515 --> 00:01:15.435
+a particular directory and you want to move
+
+00:01:15.435 --> 00:01:18.795
+to another directory to do some work, but
+
+00:01:18.795 --> 00:01:19.915
+you want to come back to this one
+
+00:01:19.915 --> 00:01:22.795
+eventually, just instead of doing c d, type
+
+00:01:22.795 --> 00:01:25.755
+push d to push the directory and go
+
+00:01:25.755 --> 00:01:27.220
+there. And of course to stack so you
+
+00:01:27.220 --> 00:01:28.340
+can push as many as you want on
+
+00:01:28.340 --> 00:01:32.100
+there. Push d to the home directory and
+
+00:01:32.100 --> 00:01:37.380
+then push d to cs 107 old etc.
+
+00:01:37.620 --> 00:01:39.700
+And then pop d will take us and
+
+00:01:39.700 --> 00:01:44.295
+then let's actually change whatever reason to CS107.
+
+00:01:44.295 --> 00:01:48.295
+Popd will take us back to assignment zero
+
+00:01:48.615 --> 00:01:51.015
+and popd again will take us back to
+
+00:01:51.015 --> 00:01:55.030
+sorry, popd originally took us back to the
+
+00:01:55.030 --> 00:01:56.870
+home directory and then pop d again will
+
+00:01:56.870 --> 00:02:00.310
+take us back to the assignment zero directory.
+
+00:02:00.790 --> 00:02:03.430
+And that's the two commands. Now another one
+
+00:02:03.430 --> 00:02:04.470
+that I like to use all the time
+
+00:02:04.470 --> 00:02:08.685
+is related command and if I type c
+
+00:02:08.685 --> 00:02:11.005
+d tilde to go back to my home
+
+00:02:11.005 --> 00:02:12.525
+directory and then I wanna go just back
+
+00:02:12.525 --> 00:02:14.605
+to the last directory, I can type c
+
+00:02:14.605 --> 00:02:16.285
+d minus and that will go, hey, go
+
+00:02:16.285 --> 00:02:18.547
+back to the directory you were just in.
+
+00:02:18.547 --> 00:02:21.587
+So I use that one fairly regularly as
+
+00:02:21.587 --> 00:02:24.627
+well. And that's push d and pop d
+
+00:02:24.627 --> 00:02:26.627
+and also c d minus. Thanks.
