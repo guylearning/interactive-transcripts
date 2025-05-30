@@ -664,5 +664,17 @@
     "lesson_html_filename": "tab_completion_on_linux_interactive_lesson.html",
     "json_transcript_path_on_repo": "tab_completion_on_linux/tab_completion_on_linux_transcript.json",
     "vtt_transcript_path_on_repo": "tab_completion_on_linux/tab_completion_on_linux_transcript.vtt"
+  },
+  {
+    "title_original": "\"Redirecting\" and \"Piping\" commands on linux",
+    "video_name_clean": "redirecting_and_piping_commands_on_linux",
+    "youtube_id": "CE8bukfjOZ4",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:48:42.311947+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 997,
+    "lesson_html_filename": "redirecting_and_piping_commands_on_linux_interactive_lesson.html",
+    "json_transcript_path_on_repo": "redirecting_and_piping_commands_on_linux/redirecting_and_piping_commands_on_linux_transcript.json",
+    "vtt_transcript_path_on_repo": "redirecting_and_piping_commands_on_linux/redirecting_and_piping_commands_on_linux_transcript.vtt"
   }
 ]

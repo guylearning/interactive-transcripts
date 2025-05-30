@@ -1,0 +1,1046 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 5361a16f-f8b0-4592-a302-35197a818a26
+Created: 2025-05-30T04:48:40.730Z
+Duration: 997.45953
+Channels: 1
+
+00:00:02.000 --> 00:00:04.240
+Hi there. In this video, I'm gonna show
+
+00:00:04.240 --> 00:00:07.280
+you how to use the redirection commands, the
+
+00:00:07.280 --> 00:00:10.640
+angle brackets, and the pipe command, which is
+
+00:00:10.640 --> 00:00:15.680
+the vertical bar, to do some interesting things
+
+00:00:13.785 --> 00:00:17.385
+with your input and output for your files
+
+00:00:18.025 --> 00:00:21.545
+and your programs. So let's let's jump right
+
+00:00:21.545 --> 00:00:22.905
+in. I happen to be on the Myth
+
+00:00:22.905 --> 00:00:26.265
+computer with the in a folder where I
+
+00:00:26.265 --> 00:00:29.040
+have a hello world program. And if I
+
+00:00:29.040 --> 00:00:32.400
+run the hello world program, it just, prints
+
+00:00:32.400 --> 00:00:36.160
+out hello world. Okay. Not too, great, confusing
+
+00:00:36.160 --> 00:00:39.440
+there. And let's say that I wanted to,
+
+00:00:40.160 --> 00:00:42.000
+print hello world, but I wanted to actually
+
+00:00:42.000 --> 00:00:44.745
+send it into a file. Well, in Linux,
+
+00:00:44.745 --> 00:00:46.905
+all you have to do is say hello
+
+00:00:46.905 --> 00:00:51.225
+and then the, greater than symbol and then
+
+00:00:51.225 --> 00:00:55.785
+a file name. So, hello output dot t
+
+00:00:55.785 --> 00:00:58.220
+x t and it doesn't actually show you
+
+00:00:58.220 --> 00:01:00.060
+anything because all the output is going into
+
+00:01:00.060 --> 00:01:01.900
+hello output. So if we look at hello
+
+00:01:01.900 --> 00:01:04.540
+output, then we can see that it now
+
+00:01:04.540 --> 00:01:07.340
+says hello world. So that's called redirecting to
+
+00:01:07.340 --> 00:01:10.300
+an output, redirecting standard out as it turns
+
+00:01:10.300 --> 00:01:12.665
+out. Things that normally get printed from your
+
+00:01:12.665 --> 00:01:16.105
+program go into the output file that you
+
+00:01:16.105 --> 00:01:19.225
+redirect it to. Okay, so that's fairly simple.
+
+00:01:19.385 --> 00:01:22.025
+You can do the reverse as well. Oh,
+
+00:01:22.025 --> 00:01:24.505
+and by the way, that right angle bracket
+
+00:01:24.505 --> 00:01:27.920
+should look somewhat familiar in the sense that
+
+00:01:27.920 --> 00:01:31.760
+it looks it's it's reminiscent of c out,
+
+00:01:31.760 --> 00:01:34.640
+although c out uses two angle brackets. So
+
+00:01:34.640 --> 00:01:37.440
+let's actually go back to another folder that
+
+00:01:37.440 --> 00:01:42.195
+I have called add two numbers. And in
+
+00:01:42.195 --> 00:01:44.435
+add two numbers, let me show you the
+
+00:01:44.435 --> 00:01:47.955
+actual code. If you look at add two
+
+00:01:47.955 --> 00:01:52.035
+numbers, it basically just reads in two doubles
+
+00:01:52.355 --> 00:01:55.650
+and it ends up adding them together and
+
+00:01:55.650 --> 00:01:59.010
+printing the results out. Not too hard. Okay,
+
+00:01:59.010 --> 00:02:01.730
+and if we actually run it, it says
+
+00:02:01.730 --> 00:02:03.570
+the program will add two doubles, please enter
+
+00:02:03.570 --> 00:02:09.535
+a double 24.6 and let's see let's do
+
+00:02:09.535 --> 00:02:14.095
+another one, 19.4 or something like that. And
+
+00:02:14.095 --> 00:02:15.775
+the sum in this case is 44 so
+
+00:02:15.775 --> 00:02:18.095
+that's pretty simple. Now what if you wanted
+
+00:02:18.095 --> 00:02:21.110
+to have your program actually read in data?
+
+00:02:21.110 --> 00:02:22.550
+Let's say you were testing your program and
+
+00:02:22.550 --> 00:02:24.870
+you didn't wanna type the numbers in, you
+
+00:02:24.870 --> 00:02:27.510
+could do the following. You could have an
+
+00:02:27.510 --> 00:02:29.430
+input file. In fact, I have one here
+
+00:02:29.430 --> 00:02:32.710
+called two numbers dot TXT, and, there are
+
+00:02:32.710 --> 00:02:35.095
+two numbers in there. And if I say
+
+00:02:35.095 --> 00:02:37.895
+add two numbers and then I say, oh,
+
+00:02:37.895 --> 00:02:40.935
+read in from two numbers dot t x
+
+00:02:40.935 --> 00:02:45.415
+t with the less than character, any input
+
+00:02:45.415 --> 00:02:48.250
+that the program requires, it will look for
+
+00:02:48.250 --> 00:02:49.850
+it in two numbers dot t x t.
+
+00:02:49.850 --> 00:02:51.610
+Now you have to make sure that the
+
+00:02:51.770 --> 00:02:53.930
+input file is properly formatted to give you
+
+00:02:53.930 --> 00:02:56.010
+exactly the type of input that you're looking
+
+00:02:56.010 --> 00:02:58.410
+for. But but this is the way you
+
+00:02:58.410 --> 00:03:00.650
+actually read it in. Okay. So let's see
+
+00:03:00.650 --> 00:03:03.225
+what happens when we run this. Okay. It
+
+00:03:03.225 --> 00:03:04.905
+actually says this program will add you doubles
+
+00:03:04.905 --> 00:03:06.665
+and it says please enter a double and
+
+00:03:06.665 --> 00:03:08.345
+then nothing. And then please enter a double
+
+00:03:08.345 --> 00:03:09.785
+and then nothing and then the sum is
+
+00:03:09.785 --> 00:03:13.385
+42. No returns or anything. That's because the
+
+00:03:13.385 --> 00:03:17.840
+the shell actually forwards the information, the numbers
+
+00:03:17.840 --> 00:03:20.400
+to your program, and then it does the
+
+00:03:20.400 --> 00:03:22.800
+printing on the screen, and you're bypassing that
+
+00:03:22.800 --> 00:03:26.400
+step by using the less than to actually
+
+00:03:26.400 --> 00:03:28.960
+read in from the file. So your output
+
+00:03:28.960 --> 00:03:31.600
+will not necessarily look exactly the way you
+
+00:03:31.600 --> 00:03:34.265
+think it should, but rest assured that the
+
+00:03:34.265 --> 00:03:37.225
+input is going into your file. Now in
+
+00:03:37.225 --> 00:03:40.985
+CS one zero seven, we rarely use input
+
+00:03:40.985 --> 00:03:42.985
+this way. We rarely ask the user to
+
+00:03:42.985 --> 00:03:45.945
+actually type anything for our programs. We generally
+
+00:03:45.945 --> 00:03:47.930
+do it from if we wanna read something
+
+00:03:47.930 --> 00:03:51.210
+in, will use a file. So we'll learn
+
+00:03:51.210 --> 00:03:53.210
+about that as the course goes along, about
+
+00:03:53.210 --> 00:03:56.090
+how to read from a parameter. So in
+
+00:03:56.090 --> 00:03:58.810
+that case, would be something like add two
+
+00:03:58.810 --> 00:04:01.605
+numbers and then it would be num one
+
+00:04:01.605 --> 00:04:04.485
+and num two or something like that. Or
+
+00:04:04.485 --> 00:04:06.245
+it would be a file, like that's one
+
+00:04:06.245 --> 00:04:07.285
+way to do it or it would be
+
+00:04:07.285 --> 00:04:10.565
+some, you know, two numbers dot txt and
+
+00:04:10.565 --> 00:04:11.845
+it would read it in. Would not work
+
+00:04:11.845 --> 00:04:15.810
+now because there's no didn't build that into
+
+00:04:15.810 --> 00:04:19.810
+the program. So that's that's how you use
+
+00:04:19.810 --> 00:04:23.570
+the redirection commands. Now a somewhat related command,
+
+00:04:23.570 --> 00:04:26.050
+but actually in fact a much more powerful
+
+00:04:26.210 --> 00:04:30.455
+command is the pipe command, which is the,
+
+00:04:31.015 --> 00:04:33.655
+it's the vertical bar. And what it does
+
+00:04:33.655 --> 00:04:35.255
+is it allows you to do something like
+
+00:04:35.255 --> 00:04:39.015
+this. L s dash a l, gives you
+
+00:04:39.015 --> 00:04:40.535
+a listing like this. But what if I
+
+00:04:40.535 --> 00:04:45.240
+wanted just the last last line, like the
+
+00:04:45.240 --> 00:04:46.840
+last file in here? In fact, let's say
+
+00:04:46.840 --> 00:04:48.280
+I do that my favorite command l s
+
+00:04:48.280 --> 00:04:50.840
+a l s a l r t, which
+
+00:04:50.840 --> 00:04:55.240
+says which files were last in line. Okay?
+
+00:04:55.240 --> 00:04:58.905
+Or were most recently changed. Okay? In fact,
+
+00:04:58.905 --> 00:05:00.185
+let's just do it this way. L s
+
+00:05:00.185 --> 00:05:03.865
+dash just l r t, so we don't
+
+00:05:03.865 --> 00:05:07.625
+have the the special files in there. Okay?
+
+00:05:07.625 --> 00:05:08.985
+So in fact, two numbers would be the
+
+00:05:08.985 --> 00:05:10.470
+last one. Well, what I can do is
+
+00:05:10.470 --> 00:05:12.150
+I can use this pipe command that says
+
+00:05:12.150 --> 00:05:15.510
+take the output of LS and send it
+
+00:05:15.510 --> 00:05:18.550
+while line by line to some other program.
+
+00:05:18.710 --> 00:05:21.270
+Right? So many times you'll you'll do this.
+
+00:05:21.270 --> 00:05:22.390
+Let's say I wanted to find out how
+
+00:05:22.390 --> 00:05:24.295
+many files I had. I could use a
+
+00:05:24.295 --> 00:05:27.255
+program called word count, w c, which counts
+
+00:05:27.255 --> 00:05:30.135
+how many lines there are in the in
+
+00:05:30.135 --> 00:05:32.615
+a file that it gets passed. Right? So
+
+00:05:32.615 --> 00:05:34.615
+in this case, l s dash l r
+
+00:05:34.615 --> 00:05:36.695
+t will then get piped into word w
+
+00:05:36.695 --> 00:05:38.770
+c and it will say, in this case,
+
+00:05:38.770 --> 00:05:40.450
+it'll actually be wrong by one because it'll
+
+00:05:40.450 --> 00:05:43.410
+say, it'll count the total 12 line up
+
+00:05:43.410 --> 00:05:46.530
+here and then it will count the one,
+
+00:05:46.530 --> 00:05:48.930
+two, three, four, actually, it should say five
+
+00:05:48.930 --> 00:05:51.090
+if this works right. Yep. There we go.
+
+00:05:51.605 --> 00:05:54.085
+If I do l s dash one, that
+
+00:05:54.085 --> 00:05:55.685
+would actually do. L s dash one just
+
+00:05:55.685 --> 00:05:58.245
+lists the files and then w c would
+
+00:05:58.245 --> 00:06:04.085
+actually say four, four lines and let's see,
+
+00:06:04.085 --> 00:06:09.040
+62 is the characters. I think it's words,
+
+00:06:09.040 --> 00:06:13.520
+lines, characters. Actually, might be the other way
+
+00:06:13.520 --> 00:06:16.720
+around. Sorry, it's lines, words, characters. So in
+
+00:06:16.720 --> 00:06:18.000
+this case, happen to have the same number
+
+00:06:18.000 --> 00:06:19.920
+of words as lines because they just printed
+
+00:06:19.920 --> 00:06:21.905
+one word per line. But that's how you
+
+00:06:21.905 --> 00:06:24.545
+use the pipe command. You can actually do
+
+00:06:24.545 --> 00:06:26.305
+it, you can pipe as many things as
+
+00:06:26.305 --> 00:06:29.185
+you want through here. So you can let's
+
+00:06:29.185 --> 00:06:31.665
+let's just do another example here. There is
+
+00:06:31.665 --> 00:06:35.890
+a command called cut, which says take a
+
+00:06:36.050 --> 00:06:39.170
+line and break it up by one character.
+
+00:06:39.570 --> 00:06:41.010
+It's not for full strings, it's just for
+
+00:06:41.010 --> 00:06:43.410
+one character. So if I say cut and
+
+00:06:43.410 --> 00:06:47.935
+then dash d and period, That will say,
+
+00:06:48.095 --> 00:06:50.095
+the delimiter that I'm cutting on is the
+
+00:06:50.095 --> 00:06:52.895
+period character. And then if I say dash
+
+00:06:52.895 --> 00:06:55.695
+f two, actually, let's just do f one,
+
+00:06:55.695 --> 00:06:59.055
+it will say print the first column of
+
+00:06:59.055 --> 00:07:01.700
+all the broken up lines. So if there
+
+00:07:01.700 --> 00:07:03.060
+are many periods in there, it would print
+
+00:07:03.060 --> 00:07:05.140
+just the first column. Okay. This would actually
+
+00:07:05.140 --> 00:07:08.020
+be nice to do on our, file list
+
+00:07:08.020 --> 00:07:10.500
+if we didn't want the extensions for instance.
+
+00:07:10.580 --> 00:07:12.100
+Right. So if I just do cut dash
+
+00:07:12.100 --> 00:07:14.335
+d period dash f one and then start
+
+00:07:14.335 --> 00:07:18.655
+typing things like add to numbers dot c.
+
+00:07:18.815 --> 00:07:20.975
+Well, if I hit return, it actually just
+
+00:07:20.975 --> 00:07:23.695
+cuts out the dot c and it gives
+
+00:07:23.695 --> 00:07:25.535
+me the first field when I break it
+
+00:07:25.535 --> 00:07:27.650
+up by the period. So it's kind of
+
+00:07:27.650 --> 00:07:29.090
+nice. If I did another one, a b
+
+00:07:29.090 --> 00:07:31.170
+c dot d e f, well, guess what?
+
+00:07:31.170 --> 00:07:34.050
+A b c. Okay. Well, what's nice is
+
+00:07:34.050 --> 00:07:35.490
+you can run that on a file, but
+
+00:07:35.490 --> 00:07:37.650
+you could also do l s dash one
+
+00:07:37.890 --> 00:07:41.025
+and then pipe through to the cut command,
+
+00:07:41.025 --> 00:07:43.665
+cut dash d period dash f one, and
+
+00:07:43.665 --> 00:07:45.985
+guess what? It stripped all the lines of
+
+00:07:45.985 --> 00:07:49.345
+our file like that. Okay? Now, what if
+
+00:07:49.345 --> 00:07:52.865
+I wanted to know, how many let's what
+
+00:07:52.865 --> 00:07:55.250
+if I just wanted the last one? Okay.
+
+00:07:55.250 --> 00:07:57.970
+There's a command called tail and tail actually
+
+00:07:57.970 --> 00:08:00.930
+gives you the last 10 on by default
+
+00:08:00.930 --> 00:08:03.250
+lines in a file. So if I do
+
+00:08:03.250 --> 00:08:06.050
+dash tail dash n one, it will just
+
+00:08:06.050 --> 00:08:08.065
+give me the last line. A, C, D,
+
+00:08:08.065 --> 00:08:09.665
+E, F, G, H, I, and then I
+
+00:08:09.665 --> 00:08:10.865
+end it, it just gives me the last
+
+00:08:10.865 --> 00:08:13.505
+line, G, H, I. Okay? So watch this.
+
+00:08:13.505 --> 00:08:17.025
+L s dash one cut dash d period
+
+00:08:17.025 --> 00:08:19.825
+dash f one and then tail dash n
+
+00:08:19.825 --> 00:08:23.330
+one says, okay, give me a directory of
+
+00:08:23.330 --> 00:08:25.650
+just the file names. Pass that to the
+
+00:08:25.650 --> 00:08:27.170
+cut file and just give me the first
+
+00:08:27.170 --> 00:08:30.050
+field when I when I, have a delimiter
+
+00:08:30.050 --> 00:08:31.810
+of a period and then give me just
+
+00:08:31.810 --> 00:08:34.625
+the last line. Okay. When I run that,
+
+00:08:34.625 --> 00:08:37.505
+it will say two numbers. Right? Because it
+
+00:08:37.505 --> 00:08:39.985
+did first got to all the files, two
+
+00:08:39.985 --> 00:08:42.305
+numbers was the last one. It it cut
+
+00:08:42.305 --> 00:08:45.425
+out the, took off the extension and then
+
+00:08:45.425 --> 00:08:47.025
+just gave me the last line in that.
+
+00:08:47.180 --> 00:08:49.900
+So you can pipe these files through there
+
+00:08:49.900 --> 00:08:52.060
+all you want. Now I have an interesting
+
+00:08:52.060 --> 00:08:55.020
+example here. If you use the w get
+
+00:08:55.020 --> 00:08:58.380
+command, the w get command actually allows you
+
+00:08:58.380 --> 00:09:03.195
+to, read in a file or capture a
+
+00:09:03.195 --> 00:09:06.315
+file from a website. It actually just downloads
+
+00:09:06.315 --> 00:09:07.675
+it. Right? And it's probably gonna be an
+
+00:09:07.675 --> 00:09:09.595
+HTML file because that's what most files on
+
+00:09:09.595 --> 00:09:12.155
+the Internet are. But, I happen to have
+
+00:09:12.155 --> 00:09:14.635
+a one queued up here although I'm just
+
+00:09:14.635 --> 00:09:27.090
+looking at it and it's pretty long. Www.payrolles.musique.com/parolestailorswift,
+
+00:09:28.385 --> 00:09:33.825
+I can spell swift underscore or rather dash
+
+00:09:34.705 --> 00:09:41.760
+look what you make me do lyrics. I
+
+00:09:41.760 --> 00:09:43.280
+understand this is what the kids are watching
+
+00:09:43.280 --> 00:09:45.680
+these days or listening to these days, comma,
+
+00:09:45.680 --> 00:09:49.680
+p one nine two seven two four. Alright.
+
+00:09:49.680 --> 00:09:51.360
+That will actually pull the file down. If
+
+00:09:51.360 --> 00:09:53.440
+I have dash o, it it will put
+
+00:09:53.440 --> 00:09:55.575
+it into a particular file for me, a
+
+00:09:55.575 --> 00:09:58.535
+nice easy to remember look dot HTML file.
+
+00:09:58.535 --> 00:10:00.615
+And if I typed it right, it says
+
+00:10:00.615 --> 00:10:02.535
+connected and it says all this stuff and
+
+00:10:02.535 --> 00:10:04.775
+says waiting response and it actually pulled it
+
+00:10:04.775 --> 00:10:10.910
+down. Now if we look at look. Html,
+
+00:10:11.150 --> 00:10:15.630
+well it's a bunch of HTML and JavaScript
+
+00:10:15.630 --> 00:10:18.670
+and so forth, but somewhere up here it
+
+00:10:18.670 --> 00:10:21.745
+actually and it's way up at the near
+
+00:10:21.745 --> 00:10:24.305
+the top I think there. Is that it?
+
+00:10:25.665 --> 00:10:27.185
+I think that's it right there. There we
+
+00:10:27.185 --> 00:10:32.705
+go. So this is the actual lyrics and
+
+00:10:32.785 --> 00:10:34.545
+but it's got all this other HTML in
+
+00:10:34.545 --> 00:10:36.625
+there. So I thought I'd write a little
+
+00:10:36.625 --> 00:10:38.840
+command that I did practice this, I don't
+
+00:10:38.840 --> 00:10:39.800
+know this one off the top of my
+
+00:10:39.800 --> 00:10:43.080
+head, to actually in one line strip out
+
+00:10:43.080 --> 00:10:46.200
+just the, details of the lyrics. Alright? So
+
+00:10:46.200 --> 00:10:48.280
+watch this. You can use a command called
+
+00:10:48.280 --> 00:10:53.115
+sed, which actually, allows you to pull out,
+
+00:10:53.675 --> 00:10:56.795
+it'll actually allow you to change, particular words
+
+00:10:56.795 --> 00:10:58.155
+in a file, but it'll also allow you
+
+00:10:58.155 --> 00:10:59.515
+to find something and then print the rest
+
+00:10:59.515 --> 00:11:01.755
+of the file. Okay? So if I do
+
+00:11:01.755 --> 00:11:03.995
+sed and then this command, it looks like
+
+00:11:03.995 --> 00:11:06.640
+this, I d equals lyrics. Remember, I've already
+
+00:11:06.640 --> 00:11:10.800
+looked through the, the command. And then I
+
+00:11:10.800 --> 00:11:14.160
+say, a couple other incantations here that says
+
+00:11:14.160 --> 00:11:21.655
+basically, don't, or just just start typing at
+
+00:11:21.655 --> 00:11:25.335
+the AirDart start printing out after it finds
+
+00:11:25.335 --> 00:11:26.935
+that ID lyrics. That happens to be the
+
+00:11:26.935 --> 00:11:29.495
+line right before the start of the lyrics.
+
+00:11:29.495 --> 00:11:30.935
+So if I just type this command, I'm
+
+00:11:30.935 --> 00:11:32.375
+gonna clear the screen and type this command.
+
+00:11:32.890 --> 00:11:34.410
+And you can see it'll print out a
+
+00:11:34.410 --> 00:11:36.090
+whole bunch of stuff, but then right at
+
+00:11:36.090 --> 00:11:37.930
+the top is just the beginning of the
+
+00:11:37.930 --> 00:11:40.010
+lyrics except for that first line there. The
+
+00:11:40.010 --> 00:11:41.770
+rest of it is just the lyrics. Now
+
+00:11:41.770 --> 00:11:43.530
+what else in this lyrics? Well, first of
+
+00:11:43.530 --> 00:11:46.075
+all, I wanna get rid of this this
+
+00:11:46.075 --> 00:11:48.075
+line here. So it actually what I can
+
+00:11:48.075 --> 00:11:50.555
+do is I can run this command. I
+
+00:11:50.555 --> 00:11:51.835
+just hit the up arrow key, by the
+
+00:11:51.835 --> 00:11:55.595
+way. I can pipe this through tail dash,
+
+00:11:56.475 --> 00:11:59.595
+n plus two. Oops. It's not actually looking
+
+00:11:59.595 --> 00:12:01.675
+nice on my screen here. It's maybe a
+
+00:12:01.810 --> 00:12:04.210
+let me reset the thing here. Okay. Let
+
+00:12:04.210 --> 00:12:08.770
+me try this again. Tail dash n and
+
+00:12:08.770 --> 00:12:10.530
+then if I do plus two, it will
+
+00:12:10.530 --> 00:12:14.450
+give me the entire thing minus the first
+
+00:12:14.450 --> 00:12:16.370
+line. So it'll start on line two as
+
+00:12:16.370 --> 00:12:20.515
+it turns out and, it didn't work. Let
+
+00:12:20.515 --> 00:12:22.595
+me see why that's the case. Oh, you
+
+00:12:22.595 --> 00:12:28.595
+know, let's see. Tail dash n plus two.
+
+00:12:28.595 --> 00:12:32.350
+It actually should work. Don't know why it
+
+00:12:32.350 --> 00:12:35.150
+didn't do that. Well, let's keep going on.
+
+00:12:35.150 --> 00:12:36.910
+Oh, there it goes. Yeah. There it goes.
+
+00:12:36.910 --> 00:12:37.950
+So it got I don't know why it
+
+00:12:37.950 --> 00:12:39.070
+didn't do it that time, but there it
+
+00:12:39.070 --> 00:12:40.910
+goes. The first line of our file is
+
+00:12:41.150 --> 00:12:43.950
+the end, or the first line of the
+
+00:12:43.950 --> 00:12:46.625
+lyrics. Okay. So now we're we're there. Now
+
+00:12:46.625 --> 00:12:48.865
+we can say, okay, let's get rid of
+
+00:12:48.865 --> 00:12:52.145
+those pesky b r and that div command
+
+00:12:52.145 --> 00:12:54.305
+that, if you if you saw it, that's
+
+00:12:54.305 --> 00:12:56.305
+actually located in there too. Well, I'll just
+
+00:12:56.305 --> 00:12:58.625
+use another sed command. And I'll say sed
+
+00:12:58.625 --> 00:13:01.530
+replace. Oh, here we go again with the
+
+00:13:01.530 --> 00:13:05.450
+weird characters here. Sed let me reset it
+
+00:13:05.450 --> 00:13:09.130
+again. Sometimes it actually, does this. Okay. Let's
+
+00:13:09.130 --> 00:13:12.970
+do sed and then s slash b r,
+
+00:13:12.970 --> 00:13:15.445
+which is what we're trying to remove and
+
+00:13:15.445 --> 00:13:17.205
+remove all of them in the file on
+
+00:13:17.205 --> 00:13:20.165
+each line. And then we're also gonna remove
+
+00:13:20.245 --> 00:13:27.125
+the, div as well. And these are all
+
+00:13:27.125 --> 00:13:29.100
+like commands you can learn to to do
+
+00:13:29.100 --> 00:13:31.020
+but the whole point is that I'm piping
+
+00:13:31.020 --> 00:13:33.260
+each command through the next one. Right? And
+
+00:13:33.260 --> 00:13:36.460
+then I'm going to, actually use another said
+
+00:13:36.460 --> 00:13:40.300
+command to find the last part of the
+
+00:13:41.705 --> 00:13:43.465
+after the lyrics, the first line after the
+
+00:13:43.465 --> 00:13:46.985
+lyrics and then remove everything from then on.
+
+00:13:47.225 --> 00:13:51.385
+Okay? So this should, let's see, act like
+
+00:13:51.385 --> 00:13:56.265
+this and that and then that will almost
+
+00:13:56.265 --> 00:14:00.310
+work. Right, it will almost work but now
+
+00:14:00.310 --> 00:14:02.470
+we need to, you'll see what happens when
+
+00:14:02.470 --> 00:14:05.190
+we do this. Maybe we won't, let's see
+
+00:14:05.190 --> 00:14:13.585
+unknown option, let's see, said there, there. Let's
+
+00:14:13.585 --> 00:14:16.625
+see. That one, that one looks right, let's
+
+00:14:16.625 --> 00:14:17.825
+do this let's do one at a time
+
+00:14:17.825 --> 00:14:21.585
+and see which one I screwed up. Let's
+
+00:14:21.585 --> 00:14:23.985
+see it might be the let's try that
+
+00:14:23.985 --> 00:14:25.345
+let's try the BR one and the DIV
+
+00:14:25.345 --> 00:14:28.100
+one and see what happens. Nope, same problem.
+
+00:14:28.580 --> 00:14:31.700
+So maybe it's that one so it's there.
+
+00:14:31.700 --> 00:14:33.860
+Oh, there we go, okay. So now let's
+
+00:14:33.860 --> 00:14:36.500
+see if I can retype this correctly. SED
+
+00:14:36.500 --> 00:14:39.185
+oh I know what I did. SED and
+
+00:14:39.185 --> 00:14:44.705
+then let's see it's going to be it's
+
+00:14:44.705 --> 00:14:50.945
+going to be s slash that there we
+
+00:14:50.945 --> 00:14:53.105
+go I missed a missed a character on
+
+00:14:53.105 --> 00:15:04.330
+there and then said class equals CONTActQ like
+
+00:15:04.330 --> 00:15:07.825
+that and that should if I did it
+
+00:15:07.825 --> 00:15:11.745
+right here, that should go all the lyrics
+
+00:15:11.745 --> 00:15:14.385
+except the last line is still there so
+
+00:15:14.385 --> 00:15:16.225
+if I do the whole command again and
+
+00:15:16.225 --> 00:15:19.470
+then pipe it through head this time dash
+
+00:15:19.470 --> 00:15:21.150
+n dash one which says give me the
+
+00:15:21.150 --> 00:15:23.150
+first lines but except for the last one.
+
+00:15:23.710 --> 00:15:26.350
+Then look what it did. Right? So one
+
+00:15:26.350 --> 00:15:28.190
+liner, now again I had to look through
+
+00:15:28.190 --> 00:15:29.310
+this and it took me a little while
+
+00:15:29.310 --> 00:15:30.830
+to figure out, but one liner took that
+
+00:15:30.830 --> 00:15:34.335
+whole crazy HTML file and turned it into
+
+00:15:34.495 --> 00:15:38.175
+just the lyrics from the the thing. And
+
+00:15:38.175 --> 00:15:39.695
+then we can also if you want, we
+
+00:15:39.695 --> 00:15:41.295
+can continue this. We could say, okay, now
+
+00:15:41.295 --> 00:15:44.255
+count all the lines that actually say look.
+
+00:15:44.255 --> 00:15:46.575
+Actually, just count all the lines. Alright. Just
+
+00:15:46.575 --> 00:15:49.670
+give me the number of lines. Okay. 69
+
+00:15:49.670 --> 00:15:52.710
+lines in the output and if we say
+
+00:15:53.110 --> 00:15:56.230
+just look for the ones that actually say
+
+00:15:57.270 --> 00:16:01.590
+have look in them and count those lines,
+
+00:16:02.070 --> 00:16:05.705
+that is 26. So 26 out of the
+
+00:16:05.705 --> 00:16:08.905
+69 lines are have look in them. So,
+
+00:16:09.145 --> 00:16:12.585
+that seems like a fair percentage of lines
+
+00:16:12.585 --> 00:16:14.665
+that have look in them. Alright. If we
+
+00:16:14.665 --> 00:16:15.785
+just wanted to see them all, we could
+
+00:16:15.785 --> 00:16:17.145
+take up the word count and just say,
+
+00:16:17.145 --> 00:16:19.465
+oh, look. There's all the lines that have
+
+00:16:19.200 --> 00:16:25.120
+the the look in there. Alright. So that
+
+00:16:25.120 --> 00:16:31.200
+is the pipe and the redirection commands that
+
+00:16:31.200 --> 00:16:33.440
+you can use if you get a little
+
+00:16:33.440 --> 00:16:36.095
+bit more involved into Unix. Thanks.
