@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute and Relative paths</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 0.64, "end": 53.625, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 0.64, "end": 1.52}, {"id": "sent_0_1", "text": "In this video we are gonna talk about the difference between the absolute and relative paths when you are on a Unix system.", "start": 1.68, "end": 10.959999}, {"id": "sent_0_2", "text": "So as we've described before on a different video, the file system is just a tree and the root path is slash and all the directories for everybody who's using the myth system or any, in fact, almost any computer at Stanford has the files and directories underneath that root.", "start": 11.04, "end": 32.030003}, {"id": "sent_0_3", "text": "The absolute path of a particular file is the path that starts with slash from the root and lists all the different directories up to the particular file or directory that you are looking at as, it goes along.", "start": 32.43, "end": 47.545}, {"id": "sent_0_4", "text": "So, if we do a I happen to be, in my home folder and a subfolder called CS one zero seven.", "start": 47.545, "end": 53.625}]}, {"id": "para_1", "paragraph_idx": 1, "start": 53.870003, "end": 98.945, "sentences": [{"id": "sent_1_0", "text": "If I type p w d that says slash a f s slash dot I r slash user slash c slash greg slash c or g blah blah blah.", "start": 53.870003, "end": 63.15}, {"id": "sent_1_1", "text": "All of that and that is the absolute path of the file or the folder.", "start": 63.23, "end": 70.095}, {"id": "sent_1_2", "text": "Okay, so if I look in, if I go into assignments and then assignment zero, assignment zero and hello, I can type pwd and that will give me the directory, absolute directory for the assignment zero folder.", "start": 70.735, "end": 88.87}, {"id": "sent_1_3", "text": "Okay, so if I was to actually do the assignment zero folder and then hello, that would be the absolute path to hello.", "start": 89.11, "end": 97.83}, {"id": "sent_1_4", "text": "Okay.", "start": 98.465, "end": 98.945}]}, {"id": "para_2", "paragraph_idx": 2, "start": 98.945, "end": 127.28, "sentences": [{"id": "sent_2_0", "text": "And there you go.", "start": 98.945, "end": 99.505}, {"id": "sent_2_1", "text": "And I've just run that file hello from the absolute path.", "start": 99.505, "end": 103.505}, {"id": "sent_2_2", "text": "Now, most of the time we don't wanna have to type all of these paths because it's a bit painful and we don't necessarily remember what they are.", "start": 103.505, "end": 111.585}, {"id": "sent_2_3", "text": "But the nice thing about Unix is that you are allowed to use relative paths.", "start": 111.585, "end": 117.92}, {"id": "sent_2_4", "text": "So notice something, the path up to here is just my home directory and we actually have a shortcut for the home directory called tilde.", "start": 117.92, "end": 127.28}]}, {"id": "para_3", "paragraph_idx": 3, "start": 127.28, "end": 176.77, "sentences": [{"id": "sent_3_0", "text": "So if I actually type tilde cs107assignmentsassign0hello that's a relative path for the the hello program.", "start": 127.28, "end": 144.06999}, {"id": "sent_3_1", "text": "Okay, so one way we can use relative paths if we use the tilde sign to say look start at my home directory.", "start": 144.06999, "end": 148.87001}, {"id": "sent_3_2", "text": "Another way is to use the dot and the dot dot files which we already said stand for the dot stands for the current directory and dot dot stands for the parent directory.", "start": 148.95, "end": 162.165}, {"id": "sent_3_3", "text": "So if I wanna say dot slash hello, well guess what, that means in my current directory run the hello program and it works perfectly fine.", "start": 162.165, "end": 170.77}, {"id": "sent_3_4", "text": "Now what if I was in the assign one folder, right?", "start": 170.93, "end": 176.77}]}, {"id": "para_4", "paragraph_idx": 4, "start": 176.77, "end": 227.70001, "sentences": [{"id": "sent_4_0", "text": "Well this folder doesn't have hello in it but if I wanna run hello I don't have to type the entire path again nor do I even have to start from my home directory path because I can just start from here if I know that assign one and assign zero are siblings of each other, I can type dot dot to get to the parent directory and then I can type assign zero and then hello and that's a relative path to go from where I am to the hello program.", "start": 176.77, "end": 205.68001}, {"id": "sent_4_1", "text": "Okay and there you go.", "start": 205.92, "end": 207.2}, {"id": "sent_4_2", "text": "So you will use relative paths all the time to refer to various places you are.", "start": 207.28, "end": 213.695}, {"id": "sent_4_3", "text": "It's it's no fun trying to type out the entire folder name from this giant AFSIR business.", "start": 214.015, "end": 221.055}, {"id": "sent_4_4", "text": "It's just not not very fun and 99.999% of the time, you don't need to have an absolute path.", "start": 221.055, "end": 227.70001}]}, {"id": "para_5", "paragraph_idx": 5, "start": 228.26001, "end": 228.74, "sentences": [{"id": "sent_5_0", "text": "Thank you.", "start": 228.26001, "end": 228.74}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "TKK-aTgPlvc";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 232;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>Absolute and Relative paths</h1>
+                <p>Channel: Chris Gregg | Duration: 03:52</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="0.64" data-end-time="53.625">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="0.64"></div>
+                        <div class="timeline-timestamp">00:00</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="0.64" data-end-time="1.52">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="1.68" data-end-time="10.959999">In this video we are gonna talk about the difference between the absolute and relative paths when you are on a Unix system.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="11.04" data-end-time="32.030003">So as we've described before on a different video, the file system is just a tree and the root path is slash and all the directories for everybody who's using the myth system or any, in fact, almost any computer at Stanford has the files and directories underneath that root.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="32.43" data-end-time="47.545">The absolute path of a particular file is the path that starts with slash from the root and lists all the different directories up to the particular file or directory that you are looking at as, it goes along.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="47.545" data-end-time="53.625">So, if we do a I happen to be, in my home folder and a subfolder called CS one zero seven.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="53.870003" data-end-time="98.945">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="53.870003"></div>
+                        <div class="timeline-timestamp">00:53</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="53.870003" data-end-time="63.15">If I type p w d that says slash a f s slash dot I r slash user slash c slash greg slash c or g blah blah blah.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="63.23" data-end-time="70.095">All of that and that is the absolute path of the file or the folder.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="70.735" data-end-time="88.87">Okay, so if I look in, if I go into assignments and then assignment zero, assignment zero and hello, I can type pwd and that will give me the directory, absolute directory for the assignment zero folder.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="89.11" data-end-time="97.83">Okay, so if I was to actually do the assignment zero folder and then hello, that would be the absolute path to hello.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="98.465" data-end-time="98.945">Okay.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="98.945" data-end-time="127.28">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="98.945"></div>
+                        <div class="timeline-timestamp">01:38</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="98.945" data-end-time="99.505">And there you go.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="99.505" data-end-time="103.505">And I've just run that file hello from the absolute path.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="103.505" data-end-time="111.585">Now, most of the time we don't wanna have to type all of these paths because it's a bit painful and we don't necessarily remember what they are.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="111.585" data-end-time="117.92">But the nice thing about Unix is that you are allowed to use relative paths.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="117.92" data-end-time="127.28">So notice something, the path up to here is just my home directory and we actually have a shortcut for the home directory called tilde.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="127.28" data-end-time="176.77">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="127.28"></div>
+                        <div class="timeline-timestamp">02:07</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="127.28" data-end-time="144.06999">So if I actually type tilde cs107assignmentsassign0hello that's a relative path for the the hello program.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="144.06999" data-end-time="148.87001">Okay, so one way we can use relative paths if we use the tilde sign to say look start at my home directory.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="148.95" data-end-time="162.165">Another way is to use the dot and the dot dot files which we already said stand for the dot stands for the current directory and dot dot stands for the parent directory.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="162.165" data-end-time="170.77">So if I wanna say dot slash hello, well guess what, that means in my current directory run the hello program and it works perfectly fine.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="170.93" data-end-time="176.77">Now what if I was in the assign one folder, right?</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="176.77" data-end-time="227.70001">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="176.77"></div>
+                        <div class="timeline-timestamp">02:56</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="176.77" data-end-time="205.68001">Well this folder doesn't have hello in it but if I wanna run hello I don't have to type the entire path again nor do I even have to start from my home directory path because I can just start from here if I know that assign one and assign zero are siblings of each other, I can type dot dot to get to the parent directory and then I can type assign zero and then hello and that's a relative path to go from where I am to the hello program.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="205.92" data-end-time="207.2">Okay and there you go.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="207.28" data-end-time="213.695">So you will use relative paths all the time to refer to various places you are.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="214.015" data-end-time="221.055">It's it's no fun trying to type out the entire folder name from this giant AFSIR business.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="221.055" data-end-time="227.70001">It's just not not very fun and 99.999% of the time, you don't need to have an absolute path.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="228.26001" data-end-time="228.74">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="228.26001"></div>
+                        <div class="timeline-timestamp">03:48</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="228.26001" data-end-time="228.74">Thank you.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

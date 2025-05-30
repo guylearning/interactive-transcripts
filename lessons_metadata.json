@@ -472,5 +472,17 @@
     "lesson_html_filename": "the_working_directory_on_linux_computers_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_working_directory_on_linux_computers/the_working_directory_on_linux_computers_transcript.json",
     "vtt_transcript_path_on_repo": "the_working_directory_on_linux_computers/the_working_directory_on_linux_computers_transcript.vtt"
+  },
+  {
+    "title_original": "Absolute and Relative paths",
+    "video_name_clean": "absolute_and_relative_paths",
+    "youtube_id": "TKK-aTgPlvc",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:41:41.637896+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 232,
+    "lesson_html_filename": "absolute_and_relative_paths_interactive_lesson.html",
+    "json_transcript_path_on_repo": "absolute_and_relative_paths/absolute_and_relative_paths_transcript.json",
+    "vtt_transcript_path_on_repo": "absolute_and_relative_paths/absolute_and_relative_paths_transcript.vtt"
   }
 ]

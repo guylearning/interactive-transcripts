@@ -1,0 +1,227 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: fdc42e48-d7d5-4b03-8fb5-1d399898b4e2
+Created: 2025-05-30T04:41:41.209Z
+Duration: 232.51587
+Channels: 1
+
+00:00:00.640 --> 00:00:02.960
+Hi there. In this video we are gonna
+
+00:00:02.960 --> 00:00:06.240
+talk about the difference between the absolute and
+
+00:00:06.240 --> 00:00:10.320
+relative paths when you are on a Unix
+
+00:00:10.320 --> 00:00:13.840
+system. So as we've described before on a
+
+00:00:13.840 --> 00:00:15.680
+different video, the file system is just a
+
+00:00:15.680 --> 00:00:20.295
+tree and the root path is slash and
+
+00:00:20.295 --> 00:00:24.455
+all the directories for everybody who's using the
+
+00:00:24.455 --> 00:00:26.935
+myth system or any, in fact, almost any
+
+00:00:26.935 --> 00:00:30.590
+computer at Stanford has the files and directories
+
+00:00:30.590 --> 00:00:34.430
+underneath that root. The absolute path of a
+
+00:00:34.430 --> 00:00:37.630
+particular file is the path that starts with
+
+00:00:37.630 --> 00:00:41.385
+slash from the root and lists all the
+
+00:00:41.385 --> 00:00:43.865
+different directories up to the particular file or
+
+00:00:43.865 --> 00:00:46.905
+directory that you are looking at as, it
+
+00:00:46.905 --> 00:00:49.385
+goes along. So, if we do a I
+
+00:00:49.385 --> 00:00:51.945
+happen to be, in my home folder and
+
+00:00:51.945 --> 00:00:54.190
+a subfolder called CS one zero seven. If
+
+00:00:54.190 --> 00:00:57.070
+I type p w d that says slash
+
+00:00:57.070 --> 00:00:59.070
+a f s slash dot I r slash
+
+00:00:59.070 --> 00:01:01.470
+user slash c slash greg slash c or
+
+00:01:01.470 --> 00:01:04.990
+g blah blah blah. All of that and
+
+00:01:05.310 --> 00:01:08.895
+that is the absolute path of the file
+
+00:01:08.895 --> 00:01:12.575
+or the folder. Okay, so if I look
+
+00:01:12.575 --> 00:01:15.135
+in, if I go into assignments and then
+
+00:01:15.135 --> 00:01:20.095
+assignment zero, assignment zero and hello, I can
+
+00:01:20.095 --> 00:01:22.975
+type pwd and that will give me the
+
+00:01:23.055 --> 00:01:28.870
+directory, absolute directory for the assignment zero folder.
+
+00:01:29.110 --> 00:01:31.030
+Okay, so if I was to actually do
+
+00:01:31.030 --> 00:01:34.550
+the assignment zero folder and then hello, that
+
+00:01:34.550 --> 00:01:38.945
+would be the absolute path to hello. Okay.
+
+00:01:38.945 --> 00:01:40.225
+And there you go. And I've just run
+
+00:01:40.225 --> 00:01:44.225
+that file hello from the absolute path. Now,
+
+00:01:44.305 --> 00:01:45.505
+most of the time we don't wanna have
+
+00:01:45.505 --> 00:01:48.625
+to type all of these paths because it's
+
+00:01:48.625 --> 00:01:50.945
+a bit painful and we don't necessarily remember
+
+00:01:50.945 --> 00:01:52.545
+what they are. But the nice thing about
+
+00:01:52.545 --> 00:01:56.640
+Unix is that you are allowed to use
+
+00:01:56.640 --> 00:02:00.240
+relative paths. So notice something, the path up
+
+00:02:00.240 --> 00:02:03.600
+to here is just my home directory and
+
+00:02:03.600 --> 00:02:06.080
+we actually have a shortcut for the home
+
+00:02:06.080 --> 00:02:08.560
+directory called tilde. So if I actually type
+
+00:02:08.265 --> 00:02:21.990
+tilde cs107assignmentsassign0hello that's a relative path for the
+
+00:02:22.950 --> 00:02:24.870
+the hello program. Okay, so one way we
+
+00:02:24.870 --> 00:02:26.230
+can use relative paths if we use the
+
+00:02:26.230 --> 00:02:27.910
+tilde sign to say look start at my
+
+00:02:27.910 --> 00:02:31.030
+home directory. Another way is to use the
+
+00:02:31.030 --> 00:02:33.925
+dot and the dot dot files which we
+
+00:02:33.925 --> 00:02:37.205
+already said stand for the dot stands for
+
+00:02:37.205 --> 00:02:40.005
+the current directory and dot dot stands for
+
+00:02:40.005 --> 00:02:43.285
+the parent directory. So if I wanna say
+
+00:02:43.605 --> 00:02:46.930
+dot slash hello, well guess what, that means
+
+00:02:46.930 --> 00:02:49.170
+in my current directory run the hello program
+
+00:02:49.170 --> 00:02:51.490
+and it works perfectly fine. Now what if
+
+00:02:51.490 --> 00:02:56.770
+I was in the assign one folder, right?
+
+00:02:56.770 --> 00:02:58.370
+Well this folder doesn't have hello in it
+
+00:02:58.370 --> 00:03:00.595
+but if I wanna run hello I don't
+
+00:03:00.595 --> 00:03:03.155
+have to type the entire path again nor
+
+00:03:03.155 --> 00:03:04.915
+do I even have to start from my
+
+00:03:05.075 --> 00:03:08.595
+home directory path because I can just start
+
+00:03:08.595 --> 00:03:11.715
+from here if I know that assign one
+
+00:03:11.715 --> 00:03:13.715
+and assign zero are siblings of each other,
+
+00:03:13.715 --> 00:03:15.235
+I can type dot dot to get to
+
+00:03:15.235 --> 00:03:17.120
+the parent directory and then I can type
+
+00:03:17.120 --> 00:03:20.720
+assign zero and then hello and that's a
+
+00:03:20.720 --> 00:03:24.000
+relative path to go from where I am
+
+00:03:24.000 --> 00:03:26.720
+to the hello program. Okay and there you
+
+00:03:26.720 --> 00:03:30.175
+go. So you will use relative paths all
+
+00:03:30.175 --> 00:03:33.215
+the time to refer to various places you
+
+00:03:33.215 --> 00:03:35.615
+are. It's it's no fun trying to type
+
+00:03:35.615 --> 00:03:39.535
+out the entire folder name from this giant
+
+00:03:39.535 --> 00:03:42.580
+AFSIR business. It's just not not very fun
+
+00:03:42.580 --> 00:03:46.020
+and 99.999% of the time, you don't need
+
+00:03:46.020 --> 00:03:48.740
+to have an absolute path. Thank you.
