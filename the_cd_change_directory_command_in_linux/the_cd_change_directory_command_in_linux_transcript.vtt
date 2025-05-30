@@ -1,0 +1,146 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 0d62db58-339d-4a7e-89fa-230f1d929ded
+Created: 2025-05-30T04:41:58.874Z
+Duration: 129.30612
+Channels: 1
+
+00:00:00.320 --> 00:00:04.080
+Hi there. This is a video on the
+
+00:00:04.080 --> 00:00:08.240
+c d or change directory command in Linux.
+
+00:00:08.640 --> 00:00:12.080
+And I'm just quickly gonna describe the c
+
+00:00:12.080 --> 00:00:14.240
+d command and you will use it every
+
+00:00:14.240 --> 00:00:16.705
+single time you log on to the NIF
+
+00:00:16.705 --> 00:00:19.665
+computers or any other Linux computer. It's just
+
+00:00:19.665 --> 00:00:22.625
+that important command. Basically, it is your way
+
+00:00:22.625 --> 00:00:27.665
+of navigating through the file system. So c
+
+00:00:27.665 --> 00:00:30.440
+d stands for change directory. Okay. To change
+
+00:00:30.440 --> 00:00:31.800
+to your home directory, I happen to be
+
+00:00:31.800 --> 00:00:34.680
+in my home directory. Let's say I wasn't,
+
+00:00:34.680 --> 00:00:37.240
+let's say you're in one zero seven assignments,
+
+00:00:37.240 --> 00:00:39.800
+assignment zero, whatever. If I wanna change to
+
+00:00:39.800 --> 00:00:42.520
+my home directory, I can either type c
+
+00:00:42.520 --> 00:00:45.795
+d tilde, which does that. C d minus,
+
+00:00:45.795 --> 00:00:46.995
+by the way, goes back to the previous
+
+00:00:46.995 --> 00:00:48.755
+directory. Or I can just type c d
+
+00:00:48.755 --> 00:00:51.235
+and c d also takes you to your
+
+00:00:51.315 --> 00:00:54.915
+home directory. To change to the parent directory,
+
+00:00:54.995 --> 00:00:56.915
+so if I go back to the sign
+
+00:00:56.915 --> 00:00:58.675
+zero directory and I wanna go to the
+
+00:00:58.675 --> 00:01:03.520
+parent directory, I can do that by just
+
+00:01:03.520 --> 00:01:05.440
+typing cd dot dot and that will take
+
+00:01:05.440 --> 00:01:07.520
+me up to the assignments directory and cd
+
+00:01:07.520 --> 00:01:09.280
+dot dot again will take me to the
+
+00:01:09.280 --> 00:01:12.000
+cs one hundred seven directory etc. By the
+
+00:01:12.000 --> 00:01:15.195
+way, if I'm in assignments assign zero I
+
+00:01:15.195 --> 00:01:16.875
+can type c d dot dot slash dot
+
+00:01:16.875 --> 00:01:18.555
+dot slash dot dot and that will take
+
+00:01:18.555 --> 00:01:19.675
+me all the way back to my home
+
+00:01:19.675 --> 00:01:21.675
+directory because it just kinda climbs up the
+
+00:01:21.675 --> 00:01:24.795
+directories. Remember dot dot just means the previous
+
+00:01:24.795 --> 00:01:27.595
+directory. So if you go the previous directory
+
+00:01:27.595 --> 00:01:30.395
+slash the previous directory slash the previous directory,
+
+00:01:30.790 --> 00:01:34.070
+it will go all the way back to
+
+00:01:34.070 --> 00:01:38.790
+your main commands. So that's really about it
+
+00:01:38.790 --> 00:01:40.950
+for the cd command. There's not too much
+
+00:01:40.950 --> 00:01:42.550
+more to it except to say that you
+
+00:01:42.550 --> 00:01:44.390
+should get very used to using it and
+
+00:01:44.390 --> 00:01:46.615
+very used to using it with the dot
+
+00:01:46.615 --> 00:01:49.495
+dot and with the tilde. So for instance
+
+00:01:49.495 --> 00:01:51.815
+if I wanted to change to, let's say
+
+00:01:51.815 --> 00:01:54.855
+I was in CS107 assignments and I wanted
+
+00:01:54.855 --> 00:01:58.615
+to change to CS107 old, I could type
+
+00:01:58.615 --> 00:02:03.481
+cd cs107old and that would take me right
+
+00:02:03.481 --> 00:02:08.041
+there. Right? So that's how it works. Thanks.

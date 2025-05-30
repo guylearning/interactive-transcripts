@@ -484,5 +484,17 @@
     "lesson_html_filename": "absolute_and_relative_paths_interactive_lesson.html",
     "json_transcript_path_on_repo": "absolute_and_relative_paths/absolute_and_relative_paths_transcript.json",
     "vtt_transcript_path_on_repo": "absolute_and_relative_paths/absolute_and_relative_paths_transcript.vtt"
+  },
+  {
+    "title_original": "The cd (change directory) command in linux",
+    "video_name_clean": "the_cd_change_directory_command_in_linux",
+    "youtube_id": "MKai-i4mtqA",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:41:59.223017+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 129,
+    "lesson_html_filename": "the_cd_change_directory_command_in_linux_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_cd_change_directory_command_in_linux/the_cd_change_directory_command_in_linux_transcript.json",
+    "vtt_transcript_path_on_repo": "the_cd_change_directory_command_in_linux/the_cd_change_directory_command_in_linux_transcript.vtt"
   }
 ]
