@@ -1,0 +1,272 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: f7b3e2e7-3fb4-4f9a-99bd-af5df27827af
+Created: 2025-05-30T04:47:29.274Z
+Duration: 231.88893
+Channels: 1
+
+00:00:00.000 --> 00:00:03.440
+Hi there. In this video, I'm going to
+
+00:00:03.440 --> 00:00:07.520
+talk about using what we call tab completion
+
+00:00:07.680 --> 00:00:12.320
+to speed up typing commands and and going
+
+00:00:12.320 --> 00:00:14.720
+to various paths in your directory structure, etcetera.
+
+00:00:15.305 --> 00:00:18.745
+And tab completion is, pretty simple. Just means
+
+00:00:18.745 --> 00:00:21.785
+that whenever you get to a, typing a
+
+00:00:21.785 --> 00:00:24.985
+file or a path that you know what's
+
+00:00:24.985 --> 00:00:26.985
+coming, or even if you don't, you can
+
+00:00:26.985 --> 00:00:30.345
+actually hit the tab key and it will
+
+00:00:30.470 --> 00:00:33.430
+automatically try to fill in, as best it
+
+00:00:33.430 --> 00:00:35.510
+can. And if it's unambiguous, it'll be able
+
+00:00:35.510 --> 00:00:37.350
+to fill in as much as you need
+
+00:00:37.350 --> 00:00:41.590
+for the, the command. So for instance, I
+
+00:00:41.590 --> 00:00:44.230
+happen to have a folder here on Myth
+
+00:00:44.175 --> 00:00:46.655
+that is, let's see, c s one zero
+
+00:00:46.655 --> 00:00:49.135
+seven. And in c s one zero seven,
+
+00:00:49.135 --> 00:00:50.735
+actually, let's do a tree on C S
+
+00:00:50.735 --> 00:00:54.095
+107. On C S 107, it there's actually
+
+00:00:54.095 --> 00:00:57.055
+a fair amount of things here. It it
+
+00:00:57.055 --> 00:00:58.655
+has a whole bunch of folders in it.
+
+00:00:59.010 --> 00:01:02.530
+One is called assignments. And in the assignments
+
+00:01:02.530 --> 00:01:08.130
+folder, there is another set of folders. Let's
+
+00:01:08.130 --> 00:01:10.290
+see. What's a good one here? There's assign
+
+00:01:10.290 --> 00:01:14.530
+one, and then assign one has folder one,
+
+00:01:14.745 --> 00:01:17.465
+and assign one has file one, etcetera. So
+
+00:01:17.465 --> 00:01:20.825
+let's do this. If I want to l
+
+00:01:20.825 --> 00:01:23.465
+s c s one zero seven, now I
+
+00:01:23.465 --> 00:01:25.465
+just type the c s and watch what
+
+00:01:25.465 --> 00:01:27.890
+happens when I hit the tab key. Boop.
+
+00:01:27.890 --> 00:01:29.970
+It fills in the rest of it very
+
+00:01:29.970 --> 00:01:31.410
+quickly because it happens that there are no
+
+00:01:31.410 --> 00:01:33.890
+other files in my main directory that are
+
+00:01:33.890 --> 00:01:36.530
+c s one zero seven. And then, if
+
+00:01:36.530 --> 00:01:39.170
+I type a and I hit tab again,
+
+00:01:39.170 --> 00:01:41.325
+it doesn't do anything. But if I hit
+
+00:01:41.325 --> 00:01:44.605
+tab twice, it will say, oh, okay. You've
+
+00:01:44.605 --> 00:01:46.205
+got two things that I've been trying to
+
+00:01:46.205 --> 00:01:47.805
+fill in, both start with an a. So
+
+00:01:47.805 --> 00:01:49.885
+if I type a s and then tab,
+
+00:01:49.885 --> 00:01:51.485
+it will fill in the rest of assignments.
+
+00:01:51.485 --> 00:01:53.165
+Now you'll notice this is actually pretty quick.
+
+00:01:53.165 --> 00:01:55.405
+If you know where you're going, you can
+
+00:01:55.980 --> 00:01:58.860
+get there very quickly. Okay. So in assignments,
+
+00:01:58.860 --> 00:01:59.740
+I think there were a whole bunch of
+
+00:01:59.740 --> 00:02:02.940
+assignment sign. Yep. So all all the rest
+
+00:02:02.940 --> 00:02:05.260
+of things started with AS were assign. And
+
+00:02:05.260 --> 00:02:07.580
+then if I hit tab again, it will
+
+00:02:07.580 --> 00:02:10.475
+show me all the different choices. So let's
+
+00:02:10.475 --> 00:02:12.635
+do assign zero and then if I hit
+
+00:02:12.635 --> 00:02:14.075
+tab, it will fill in the slash for
+
+00:02:14.075 --> 00:02:15.995
+me. And then I think I had some
+
+00:02:15.995 --> 00:02:18.155
+things in assign zero started with f. Nope,
+
+00:02:18.155 --> 00:02:20.395
+maybe not. So let's actually hit tab a
+
+00:02:20.395 --> 00:02:21.755
+couple times and it will tell us, oh,
+
+00:02:21.755 --> 00:02:25.470
+there's all our choices. So if I have,
+
+00:02:26.110 --> 00:02:27.950
+let's say output file, if I type o
+
+00:02:27.950 --> 00:02:30.350
+u tab, it fills in the rest of
+
+00:02:30.350 --> 00:02:32.670
+it for me. Okay. So let's actually do,
+
+00:02:32.670 --> 00:02:34.990
+let's actually change to a directory c d
+
+00:02:34.990 --> 00:02:39.485
+c s tab, assignments tab assign one tab,
+
+00:02:39.805 --> 00:02:41.485
+there, and then boom, I got there very
+
+00:02:41.485 --> 00:02:44.045
+quickly without typing much at all. Okay. And
+
+00:02:44.045 --> 00:02:47.085
+then c a c d f, and it
+
+00:02:47.085 --> 00:02:48.920
+will be a folder for me. It it
+
+00:02:48.920 --> 00:02:50.520
+actually is kind of clever if you do
+
+00:02:50.520 --> 00:02:53.080
+c d f, it will actually know that
+
+00:02:53.080 --> 00:02:55.640
+you can't c d into a file, so
+
+00:02:55.640 --> 00:02:58.600
+it automatically fills in the f for folder.
+
+00:02:58.760 --> 00:03:00.280
+It fills in the folder part for you.
+
+00:03:00.455 --> 00:03:02.935
+CD folder two. And if I look at
+
+00:03:02.935 --> 00:03:05.735
+that, there's nothing in there. CD to go
+
+00:03:05.735 --> 00:03:10.135
+back. Let's see. CD folder one and in
+
+00:03:10.135 --> 00:03:11.815
+fact there's nothing in there as well. And
+
+00:03:11.815 --> 00:03:13.575
+I knew that by just continuing there's no
+
+00:03:13.575 --> 00:03:17.240
+other folders I could change into. So again,
+
+00:03:17.480 --> 00:03:19.000
+you can get to a can get to
+
+00:03:19.000 --> 00:03:21.640
+a folder very quickly without typing much, thanks.
+
+00:03:21.640 --> 00:03:22.680
+So let's go back to my home directory
+
+00:03:22.680 --> 00:03:25.640
+and watch this again. CD CS one zero
+
+00:03:25.640 --> 00:03:30.600
+seven assignments assignment one folder one. Boom. I
+
+00:03:30.600 --> 00:03:32.785
+got there in about two seconds and I
+
+00:03:32.785 --> 00:03:34.945
+didn't have to type anything more than the
+
+00:03:34.945 --> 00:03:37.425
+first character of each one of those names
+
+00:03:37.425 --> 00:03:40.625
+in the path. So tab completion is super
+
+00:03:40.625 --> 00:03:43.025
+fast. It's something that you should really start
+
+00:03:43.025 --> 00:03:45.424
+to use so that you don't sit there
+
+00:03:45.424 --> 00:03:48.784
+and take all this time typing things in.
+
+00:03:49.184 --> 00:03:49.584
+Thanks.

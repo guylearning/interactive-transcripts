@@ -652,5 +652,17 @@
     "lesson_html_filename": "the_linux_history_command_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_linux_history_command/the_linux_history_command_transcript.json",
     "vtt_transcript_path_on_repo": "the_linux_history_command/the_linux_history_command_transcript.vtt"
+  },
+  {
+    "title_original": "Tab completion on linux",
+    "video_name_clean": "tab_completion_on_linux",
+    "youtube_id": "pc3OgxD5IXQ",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:47:30.183187+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 232,
+    "lesson_html_filename": "tab_completion_on_linux_interactive_lesson.html",
+    "json_transcript_path_on_repo": "tab_completion_on_linux/tab_completion_on_linux_transcript.json",
+    "vtt_transcript_path_on_repo": "tab_completion_on_linux/tab_completion_on_linux_transcript.vtt"
   }
 ]
