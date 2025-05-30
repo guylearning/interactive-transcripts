@@ -1,0 +1,275 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: c6b4c36b-0762-4d21-92d8-cb56b2d7e81d
+Created: 2025-05-30T04:46:18.265Z
+Duration: 255.05956
+Channels: 1
+
+00:00:00.640 --> 00:00:02.720
+Hi there. In this video we are going
+
+00:00:02.720 --> 00:00:05.280
+to look at the diff command, D I
+
+00:00:05.280 --> 00:00:08.320
+F F. And the diff command allows us
+
+00:00:08.320 --> 00:00:12.400
+to see the differences between two files. Now
+
+00:00:12.400 --> 00:00:14.445
+it does take a little bit of time
+
+00:00:14.445 --> 00:00:17.885
+to kinda get used to the diff output,
+
+00:00:18.045 --> 00:00:20.205
+but we're gonna look at some examples here
+
+00:00:20.205 --> 00:00:23.085
+and see what we can find. But it's
+
+00:00:23.085 --> 00:00:25.485
+useful if you wanna know what's changed between
+
+00:00:26.220 --> 00:00:29.180
+two versions of a file or two files
+
+00:00:29.180 --> 00:00:33.180
+in different directories or so forth. So here's
+
+00:00:33.180 --> 00:00:35.420
+how we generally use it. Well, first of
+
+00:00:35.420 --> 00:00:36.940
+all, let's look at some files that we
+
+00:00:36.940 --> 00:00:38.300
+have here. We have a file called hello
+
+00:00:38.300 --> 00:00:39.900
+dot c and I also have a file
+
+00:00:39.900 --> 00:00:43.155
+called hello two dot c. And the only
+
+00:00:43.155 --> 00:00:46.035
+thing different in these two files is there
+
+00:00:46.035 --> 00:00:48.275
+is an uppercase o in this file here
+
+00:00:48.275 --> 00:00:50.515
+and there is a lowercase o in this
+
+00:00:50.515 --> 00:00:53.870
+file here. Now if I type diff and
+
+00:00:53.870 --> 00:00:56.350
+we type hello dot c and hello two
+
+00:00:56.350 --> 00:00:59.230
+dot c, we get the output that says
+
+00:00:59.230 --> 00:01:02.030
+something weird here, we'll talk about in a
+
+00:01:02.030 --> 00:01:04.830
+second. And then we have the line from
+
+00:01:04.830 --> 00:01:06.590
+the the two lines that are different in
+
+00:01:06.590 --> 00:01:07.950
+this case, the line from the first one
+
+00:01:07.950 --> 00:01:09.455
+that's different and the line from the second
+
+00:01:09.455 --> 00:01:13.535
+one that's different. And as it turns out
+
+00:01:13.535 --> 00:01:17.295
+the c here means that, it's a change
+
+00:01:17.295 --> 00:01:19.775
+from one file to the next. Okay? And
+
+00:01:19.775 --> 00:01:22.255
+it turns out that from the first file,
+
+00:01:22.255 --> 00:01:26.470
+which is the left facing angle bracket, is
+
+00:01:26.470 --> 00:01:29.750
+changed to the second file both happen to
+
+00:01:29.750 --> 00:01:32.070
+be on line five. That's what that means.
+
+00:01:32.070 --> 00:01:33.350
+So it's pretty easy to say okay look
+
+00:01:33.350 --> 00:01:34.950
+these are the two file lines that have
+
+00:01:34.950 --> 00:01:39.735
+changed and, that's that's that. Okay? Let's look
+
+00:01:39.735 --> 00:01:41.575
+at a different one. Let's look at hello
+
+00:01:41.575 --> 00:01:45.575
+three dot c. Hello three has the o
+
+00:01:45.575 --> 00:01:47.815
+here as well, the uppercase o and it
+
+00:01:47.815 --> 00:01:49.815
+also has an extra line which isn't in
+
+00:01:49.815 --> 00:01:53.530
+the first one which is comment line in
+
+00:01:53.530 --> 00:01:55.130
+there. Now if we do the same thing
+
+00:01:55.130 --> 00:01:57.690
+again, we say diff hello dot c and
+
+00:01:57.690 --> 00:02:01.050
+hello three dot c, watch what happens. It
+
+00:02:01.050 --> 00:02:07.305
+says, okay. It says there is, there are
+
+00:02:07.305 --> 00:02:10.425
+two changes. Well, actually one is an addition.
+
+00:02:10.585 --> 00:02:13.385
+On line three in the first file, which
+
+00:02:13.385 --> 00:02:15.545
+is would be added at line four in
+
+00:02:15.545 --> 00:02:17.945
+the second file, okay, or is added in
+
+00:02:17.945 --> 00:02:19.705
+line four at the second file is this
+
+00:02:20.360 --> 00:02:24.680
+comment. Okay. So from line three in the
+
+00:02:24.680 --> 00:02:27.000
+first file, it's not there. We add it
+
+00:02:27.000 --> 00:02:29.880
+in line. The second file, a comment is
+
+00:02:29.880 --> 00:02:35.295
+there. Okay. In the five c six here
+
+00:02:35.295 --> 00:02:36.815
+is the same thing as before, there's a
+
+00:02:36.815 --> 00:02:42.655
+change on line five in the first file,
+
+00:02:42.655 --> 00:02:44.415
+they've got the lowercase o and the file
+
+00:02:44.415 --> 00:02:46.415
+line five and the second file it becomes
+
+00:02:46.415 --> 00:02:48.410
+or line six rather because of that extra
+
+00:02:48.410 --> 00:02:52.810
+comment line, it's the uppercase o in that.
+
+00:02:53.050 --> 00:02:54.970
+Okay? Now it turns out that it has
+
+00:02:54.970 --> 00:02:59.530
+to the way these work, there's add, there's
+
+00:02:59.530 --> 00:03:02.090
+change, there's also delete. Watch what happens if
+
+00:03:02.090 --> 00:03:05.345
+we do diff hello three dot c and
+
+00:03:05.345 --> 00:03:07.985
+hello dot c. Watch what happens. Well, first
+
+00:03:07.985 --> 00:03:10.625
+of all, says okay fine, at line four
+
+00:03:10.625 --> 00:03:12.385
+in the first file which is now hello
+
+00:03:12.385 --> 00:03:15.185
+three dot c. At line four, we would
+
+00:03:15.185 --> 00:03:18.900
+delete that line and that would be at
+
+00:03:18.900 --> 00:03:21.780
+line three in the original. Okay, that's what
+
+00:03:21.780 --> 00:03:24.820
+that means. And then, the six c five
+
+00:03:24.820 --> 00:03:28.260
+means oh, we at line six we change
+
+00:03:28.260 --> 00:03:31.380
+the uppercase to lowercase which is in line
+
+00:03:31.380 --> 00:03:34.475
+five in the first file. Okay, That's how
+
+00:03:34.475 --> 00:03:40.395
+the actual diff command works. Again, it takes
+
+00:03:40.395 --> 00:03:41.835
+a little time to figure out what it's
+
+00:03:41.835 --> 00:03:45.115
+actually doing. The numbers here are relevant because
+
+00:03:45.115 --> 00:03:48.500
+it allows you to automatically make changes from
+
+00:03:48.500 --> 00:03:49.940
+one file to the other if you just
+
+00:03:49.940 --> 00:03:52.500
+have the diff between them. So that's a
+
+00:03:52.500 --> 00:03:54.500
+that's kind of a neat thing. And, by
+
+00:03:54.500 --> 00:03:57.780
+the way, diff uses, generally, I don't know
+
+00:03:57.780 --> 00:04:00.035
+if the diff we use is this exact
+
+00:04:00.035 --> 00:04:03.155
+algorithm, but it uses the longest common subsequence
+
+00:04:03.155 --> 00:04:07.235
+problem to figure out where there are, common,
+
+00:04:07.235 --> 00:04:09.795
+like, differences in the file and, you may
+
+00:04:09.795 --> 00:04:11.315
+have learned about that in CS one zero
+
+00:04:11.315 --> 00:04:12.675
+six b. Thanks.

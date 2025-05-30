@@ -604,5 +604,17 @@
     "lesson_html_filename": "the_find_command_on_linux_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_find_command_on_linux/the_find_command_on_linux_transcript.json",
     "vtt_transcript_path_on_repo": "the_find_command_on_linux/the_find_command_on_linux_transcript.vtt"
+  },
+  {
+    "title_original": "The diff command in linux",
+    "video_name_clean": "the_diff_command_in_linux",
+    "youtube_id": "CIhCZSxkWTI",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:46:18.859897+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 255,
+    "lesson_html_filename": "the_diff_command_in_linux_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_diff_command_in_linux/the_diff_command_in_linux_transcript.json",
+    "vtt_transcript_path_on_repo": "the_diff_command_in_linux/the_diff_command_in_linux_transcript.vtt"
   }
 ]
