@@ -1,0 +1,1298 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: a462127c-86dd-4b1d-b742-33ce7b61464e
+Created: 2025-05-30T04:51:08.890Z
+Duration: 1079.3011
+Channels: 1
+
+00:00:00.720 --> 00:00:04.960
+Hi there. This video is on GDB, which
+
+00:00:04.960 --> 00:00:07.840
+is the GNU debugger. It may actually be
+
+00:00:07.840 --> 00:00:09.360
+a little bit longer than some of the
+
+00:00:09.360 --> 00:00:12.880
+other videos because GDB is a giant program
+
+00:00:12.545 --> 00:00:14.225
+that you really need to learn how to
+
+00:00:14.225 --> 00:00:17.185
+use for CS one zero seven. It's super
+
+00:00:17.185 --> 00:00:18.785
+important that you learn how to use it.
+
+00:00:18.945 --> 00:00:20.385
+You will get lots and lots of practice
+
+00:00:20.385 --> 00:00:23.825
+using it, but you should, at least start
+
+00:00:23.825 --> 00:00:25.665
+out by learning some of the basic commands
+
+00:00:25.665 --> 00:00:27.665
+so that you don't get, overwhelmed when it
+
+00:00:27.665 --> 00:00:29.780
+comes to having to debug some big programs
+
+00:00:29.780 --> 00:00:34.500
+using GDB. GDB is a command line debugger
+
+00:00:34.580 --> 00:00:37.220
+unlike what you may have used in Eclipse
+
+00:00:37.220 --> 00:00:40.100
+or in QT Creator. So it's all on
+
+00:00:40.100 --> 00:00:42.955
+the command line. Surprise, surprise, because we've been
+
+00:00:42.955 --> 00:00:45.275
+doing all these videos are involved with command
+
+00:00:45.275 --> 00:00:47.595
+line. But what we're gonna do is I'm
+
+00:00:47.595 --> 00:00:51.035
+gonna show you some of the commands using
+
+00:00:51.035 --> 00:00:53.850
+a program as an example so that we
+
+00:00:53.850 --> 00:00:56.810
+actually get a real example here. Here's the
+
+00:00:56.810 --> 00:00:59.450
+program I'm gonna use. It's called square dot
+
+00:00:59.450 --> 00:01:02.250
+c and it's a pretty simple program. Basically,
+
+00:01:02.250 --> 00:01:04.730
+there's a function called square, which takes an
+
+00:01:04.730 --> 00:01:07.465
+integer and returns an integer. And then in
+
+00:01:07.465 --> 00:01:10.185
+main, it actually says that it will square
+
+00:01:10.185 --> 00:01:12.265
+an integer and what we're gonna do is
+
+00:01:12.265 --> 00:01:15.465
+we're going to use a command line argument
+
+00:01:15.465 --> 00:01:17.625
+to be the integer. So basically we're gonna,
+
+00:01:17.705 --> 00:01:20.020
+in the end, type square and then some
+
+00:01:20.020 --> 00:01:22.340
+number and it will just print out the,
+
+00:01:22.580 --> 00:01:25.700
+it'll print the number that is, squared. So
+
+00:01:25.700 --> 00:01:28.180
+that's it. It, looks at the arguments, sees
+
+00:01:28.180 --> 00:01:32.900
+if it's actually, there and it will, then
+
+00:01:32.900 --> 00:01:36.115
+try to square it using a c standard
+
+00:01:36.115 --> 00:01:39.555
+library function and then it actually just runs
+
+00:01:39.555 --> 00:01:41.395
+the program the function which is a very
+
+00:01:41.395 --> 00:01:43.875
+simple program to square the number and return
+
+00:01:43.875 --> 00:01:46.755
+the value. Okay. So how do we do
+
+00:01:46.755 --> 00:01:50.490
+this? Well, we actually type g c c
+
+00:01:50.490 --> 00:01:53.850
+and then dash g and dash o g,
+
+00:01:53.850 --> 00:01:56.410
+that's an uppercase o not a zero, and
+
+00:01:56.410 --> 00:02:00.010
+then and then the program name and then
+
+00:02:00.010 --> 00:02:01.530
+dash o square and this will compile it.
+
+00:02:02.005 --> 00:02:03.925
+Again, for our class, normally we're gonna use
+
+00:02:03.925 --> 00:02:06.245
+make files, to do that, but in this
+
+00:02:06.245 --> 00:02:07.685
+case I'm just gonna show you that we
+
+00:02:07.685 --> 00:02:09.925
+we have to put the dash g and
+
+00:02:09.925 --> 00:02:12.805
+dash o g to make the debugger, work
+
+00:02:12.805 --> 00:02:15.060
+correctly in this case. Anyway, we can do
+
+00:02:15.060 --> 00:02:16.900
+that and it compiles just fine. And then
+
+00:02:16.900 --> 00:02:18.420
+if we type square, if we type square
+
+00:02:18.420 --> 00:02:21.460
+by itself by the way, it says, hey,
+
+00:02:21.460 --> 00:02:23.460
+you don't have the argument on there. So
+
+00:02:23.460 --> 00:02:25.940
+you need to type dot square and then
+
+00:02:25.940 --> 00:02:28.235
+some number. So if we type five, it
+
+00:02:28.235 --> 00:02:29.835
+will say the program will square an integer,
+
+00:02:29.835 --> 00:02:33.115
+five squared is 25. Alright. So our program
+
+00:02:33.115 --> 00:02:34.635
+doesn't have any bugs, but we're gonna use
+
+00:02:34.635 --> 00:02:36.795
+g b to actually look at it. And
+
+00:02:36.795 --> 00:02:38.315
+what we can do is say g d
+
+00:02:38.315 --> 00:02:40.635
+b and then square and it will load
+
+00:02:40.635 --> 00:02:42.970
+the program up like this, and it gives
+
+00:02:42.970 --> 00:02:45.530
+you all this, stuff about the the GNU
+
+00:02:45.530 --> 00:02:48.490
+debugger. But when you see this little, parenthesis
+
+00:02:48.490 --> 00:02:50.730
+GDB, that's the prompt that you're at for
+
+00:02:50.730 --> 00:02:55.715
+GDB, meaning that you can start to type,
+
+00:02:55.715 --> 00:02:59.555
+you know, the commands there. Okay? So what
+
+00:02:59.555 --> 00:03:01.075
+are some of these commands? Well, one of
+
+00:03:01.075 --> 00:03:02.355
+the first commands that you should probably know
+
+00:03:02.355 --> 00:03:04.515
+is help. If you just type help, it
+
+00:03:04.515 --> 00:03:08.990
+gives you some, it says, here's some types
+
+00:03:08.990 --> 00:03:10.430
+of commands that you can do and so
+
+00:03:10.430 --> 00:03:11.870
+forth. But if you happen to know the
+
+00:03:11.870 --> 00:03:14.910
+command that you want to use, you just
+
+00:03:14.910 --> 00:03:16.350
+type help and then the command. So for
+
+00:03:16.350 --> 00:03:19.975
+instance, one command is list, list. Help list
+
+00:03:19.975 --> 00:03:23.735
+and it says, okay, list the specified function
+
+00:03:23.735 --> 00:03:26.295
+or line, etcetera. Okay. So if I typed
+
+00:03:26.295 --> 00:03:28.375
+list main, because I know I have the
+
+00:03:28.375 --> 00:03:30.935
+main function, it will show us at least
+
+00:03:30.935 --> 00:03:32.935
+the beginning part, at least the first ten
+
+00:03:32.935 --> 00:03:35.850
+lines of the program. Okay. If I typed
+
+00:03:36.010 --> 00:03:39.850
+list square, it will actually list the it'll
+
+00:03:39.850 --> 00:03:42.010
+give you the line number for the program.
+
+00:03:42.010 --> 00:03:43.450
+And this is kind of cool. This is
+
+00:03:43.450 --> 00:03:47.370
+all embedded into the binary file for square.
+
+00:03:48.105 --> 00:03:49.705
+Actually, I think the list may be being
+
+00:03:49.705 --> 00:03:52.505
+read off the from the actual file itself,
+
+00:03:52.745 --> 00:03:55.545
+the c file itself. But it links them
+
+00:03:55.545 --> 00:03:57.865
+together so that it knows what it's doing.
+
+00:03:57.865 --> 00:04:00.505
+So anyway, the help command is super important
+
+00:04:00.505 --> 00:04:03.430
+so that you know how to get help
+
+00:04:03.430 --> 00:04:05.590
+if you need it. So that's the first
+
+00:04:05.590 --> 00:04:07.590
+one you should probably know. Another one is
+
+00:04:07.590 --> 00:04:09.670
+the info command. And if you have the
+
+00:04:09.670 --> 00:04:12.390
+in the info command takes another command like
+
+00:04:12.390 --> 00:04:15.215
+breakpoints or something like that and it says,
+
+00:04:15.215 --> 00:04:17.215
+oh, there's no breakpoints right now. So a
+
+00:04:17.215 --> 00:04:19.535
+lot of commands have, you can say info
+
+00:04:19.535 --> 00:04:21.455
+and then something, and it will give you,
+
+00:04:21.775 --> 00:04:25.295
+that information. Okay. Like info functions will give
+
+00:04:25.295 --> 00:04:27.055
+you all the functions. In fact, info functions
+
+00:04:27.055 --> 00:04:29.535
+gives you all the functions in that your
+
+00:04:29.070 --> 00:04:32.270
+program has the potential of using, and that
+
+00:04:32.270 --> 00:04:34.430
+would include all the standard library functions and
+
+00:04:34.430 --> 00:04:36.990
+so forth. It's not necessarily the best command
+
+00:04:36.990 --> 00:04:39.790
+to use. Okay. The next command I wanna
+
+00:04:39.790 --> 00:04:42.030
+show you is the run command. The run
+
+00:04:42.030 --> 00:04:43.790
+command, if we just type run, watch what
+
+00:04:43.790 --> 00:04:45.645
+happens. It'll actually run the program and then
+
+00:04:45.645 --> 00:04:47.565
+it will say this program square ninja, oh,
+
+00:04:47.565 --> 00:04:50.205
+we never had a command line argument. Right?
+
+00:04:50.205 --> 00:04:51.405
+So we didn't need to do that. Well,
+
+00:04:51.405 --> 00:04:53.245
+the nice thing is you can say run
+
+00:04:53.245 --> 00:04:56.685
+and then four and it will it will
+
+00:04:56.685 --> 00:04:59.230
+actually run and, it will go all the
+
+00:04:59.230 --> 00:05:00.430
+way to completion and then it will say
+
+00:05:00.430 --> 00:05:03.310
+that it exited normally. Great. Okay. So that's
+
+00:05:03.310 --> 00:05:04.990
+our program and it ran and and that's
+
+00:05:04.990 --> 00:05:10.350
+fine. Okay? But the, what we wanna normally
+
+00:05:10.350 --> 00:05:13.625
+do is stop the program somewhere in the
+
+00:05:13.625 --> 00:05:16.345
+middle of it. Okay? So how do we
+
+00:05:16.345 --> 00:05:18.665
+do that? We actually type a break command.
+
+00:05:18.825 --> 00:05:21.865
+Okay? So let's say that we want to
+
+00:05:21.945 --> 00:05:24.185
+break on the first line of the code,
+
+00:05:24.185 --> 00:05:26.920
+break on main. So you can type break
+
+00:05:26.920 --> 00:05:28.600
+main and it says, oh look, I'm gonna
+
+00:05:28.600 --> 00:05:31.320
+create a break point on line six of
+
+00:05:31.320 --> 00:05:32.920
+your code, which happens to be the line
+
+00:05:32.920 --> 00:05:37.400
+where main actually starts. Okay? You can also
+
+00:05:37.400 --> 00:05:39.705
+type a line number. So if I say
+
+00:05:39.705 --> 00:05:41.225
+break, in fact you can just do b
+
+00:05:41.225 --> 00:05:43.865
+for abbreviated, a lot of the GDB commands,
+
+00:05:44.185 --> 00:05:46.665
+you can abbreviate. But if I say b,
+
+00:05:47.305 --> 00:05:49.785
+let's say 10, then it will say oh
+
+00:05:49.785 --> 00:05:51.545
+I'm gonna make a breakpoint on line 10.
+
+00:05:51.545 --> 00:05:53.500
+If we had another file, we would type
+
+00:05:53.500 --> 00:05:56.140
+b and then the file name and then,
+
+00:05:56.460 --> 00:05:58.860
+the line number. Okay? So many times you'll
+
+00:05:58.860 --> 00:06:01.420
+do that. Anyway, it will create a breakpoint
+
+00:06:01.420 --> 00:06:04.060
+at that position. Now if we type run
+
+00:06:04.060 --> 00:06:07.835
+four, then it will actually stop the program
+
+00:06:07.915 --> 00:06:11.595
+at line six. Okay? And what's nice about
+
+00:06:11.595 --> 00:06:13.515
+this is once you're stopped, if you just
+
+00:06:13.515 --> 00:06:16.475
+type l for list, it will list around
+
+00:06:16.475 --> 00:06:18.610
+where you stop. So notice it didn't just
+
+00:06:18.610 --> 00:06:20.530
+list starting at line six, it listed around
+
+00:06:20.530 --> 00:06:23.250
+where we stop. Okay? And so you can
+
+00:06:23.250 --> 00:06:26.370
+kinda say, alright, look, I'm on, line six,
+
+00:06:26.370 --> 00:06:28.930
+which is where the breakpoint is, and we
+
+00:06:28.930 --> 00:06:31.490
+are, this is the code that's around it.
+
+00:06:31.575 --> 00:06:33.895
+So that's kind of nice. Okay? If you
+
+00:06:33.895 --> 00:06:36.455
+want to go to the, like, into the
+
+00:06:36.455 --> 00:06:38.935
+program and actually start running line by line,
+
+00:06:39.015 --> 00:06:40.695
+there's actually two different ways you can do
+
+00:06:40.695 --> 00:06:44.920
+it. The next command abbreviated n will actually
+
+00:06:44.920 --> 00:06:46.840
+take you to the next line in the
+
+00:06:46.840 --> 00:06:50.280
+code and it will not go through, it
+
+00:06:50.280 --> 00:06:53.320
+will not go into functions. So notice printf
+
+00:06:53.320 --> 00:06:54.680
+is a function. Even though you didn't write
+
+00:06:54.680 --> 00:06:56.200
+it, it's still a function. And if we
+
+00:06:56.200 --> 00:06:59.640
+type n, it will run the next line
+
+00:06:59.985 --> 00:07:02.945
+and step over the printf function. Okay? A
+
+00:07:02.945 --> 00:07:04.625
+lot of times this is called step over
+
+00:07:04.705 --> 00:07:07.665
+and it will do that line and then
+
+00:07:07.665 --> 00:07:09.025
+end up on the next line, right, which
+
+00:07:09.025 --> 00:07:10.545
+in this case happens to be line 10.
+
+00:07:10.545 --> 00:07:11.585
+It's, by the way, it's telling us that
+
+00:07:11.585 --> 00:07:14.385
+it's a breakpoint there too. And here's another
+
+00:07:14.385 --> 00:07:17.090
+command, clear will clear the breakpoint at that
+
+00:07:17.090 --> 00:07:19.250
+point. So we don't need any breakpoints anymore.
+
+00:07:19.250 --> 00:07:23.810
+Watch this, info breakpoints. Right? And it says,
+
+00:07:23.810 --> 00:07:26.850
+oh, we've got one breakpoint at line, at
+
+00:07:26.850 --> 00:07:31.445
+main on line 6 and, it we've already
+
+00:07:31.445 --> 00:07:32.485
+hit it one time. So it'll give you
+
+00:07:32.485 --> 00:07:35.445
+some nice information about that. But anyway, now,
+
+00:07:35.445 --> 00:07:36.805
+we've already typed a bunch of things here
+
+00:07:36.805 --> 00:07:38.325
+and I say, well, where are we in
+
+00:07:38.325 --> 00:07:41.285
+the program? Well, here's another command, where. Where
+
+00:07:41.285 --> 00:07:43.045
+tells you exactly where in the program you
+
+00:07:43.045 --> 00:07:45.470
+are. So we're at line 10 in square
+
+00:07:45.470 --> 00:07:47.470
+Dot C. And if I do list, it
+
+00:07:47.470 --> 00:07:49.630
+lists around that area. Right? So I know
+
+00:07:49.630 --> 00:07:50.910
+I'm at line 10 and this is about
+
+00:07:50.910 --> 00:07:53.710
+what I'm going to do. Okay? Now, the
+
+00:07:53.710 --> 00:07:56.190
+other command that we could use besides next
+
+00:07:56.190 --> 00:08:00.005
+or n is s or step. Now step
+
+00:08:00.005 --> 00:08:02.485
+will do the similar thing, like in this
+
+00:08:02.485 --> 00:08:05.845
+case, it will step through line 10 because
+
+00:08:05.845 --> 00:08:08.645
+line 10 happens to be, it's not a
+
+00:08:08.645 --> 00:08:10.485
+function. Right? It's just doing a a check
+
+00:08:10.485 --> 00:08:11.525
+and it does this. So if I type
+
+00:08:11.525 --> 00:08:15.040
+step, it will go to line 16. Okay,
+
+00:08:15.040 --> 00:08:18.720
+because line 16 happens to be a, the
+
+00:08:18.720 --> 00:08:21.200
+next thing because it stepped over the if
+
+00:08:21.200 --> 00:08:23.200
+statement and it's not in the if statement.
+
+00:08:23.280 --> 00:08:25.360
+Okay, now watch this, if I type step
+
+00:08:25.360 --> 00:08:27.255
+again and if I type step again and
+
+00:08:27.255 --> 00:08:29.975
+by the way just s works or actually
+
+00:08:29.975 --> 00:08:32.135
+you could actually just type return, I mean
+
+00:08:32.135 --> 00:08:33.815
+it will do the last thing again. If
+
+00:08:33.815 --> 00:08:36.695
+I do return, uh-oh, watch this. Now it
+
+00:08:36.695 --> 00:08:38.695
+says we're in the a t o I
+
+00:08:38.695 --> 00:08:41.090
+function and it says return blah blah blah
+
+00:08:41.090 --> 00:08:43.490
+and all this and you say, oh, now
+
+00:08:43.490 --> 00:08:46.210
+I'm in trouble. Okay, because if I type
+
+00:08:46.210 --> 00:08:49.490
+where, it will say I'm actually this, by
+
+00:08:49.490 --> 00:08:51.810
+the way, where types an entire stack trace.
+
+00:08:51.810 --> 00:08:54.210
+So it says now I'm in the ATOI
+
+00:08:54.210 --> 00:08:58.015
+function and, on line 280, but you didn't
+
+00:08:58.015 --> 00:08:59.695
+write that function. So what do you do?
+
+00:08:59.695 --> 00:09:01.775
+If you keep typing step, you'll go now
+
+00:09:01.775 --> 00:09:03.695
+into some other file and it even tells
+
+00:09:03.695 --> 00:09:06.175
+you it can't even find that file. So
+
+00:09:06.175 --> 00:09:08.095
+we've seen, it sounds like we're in trouble.
+
+00:09:08.175 --> 00:09:09.775
+What you can do is you can type
+
+00:09:09.775 --> 00:09:13.080
+finish and it will finish the current function,
+
+00:09:13.320 --> 00:09:15.800
+do whatever it needs to do, and it
+
+00:09:15.800 --> 00:09:18.920
+will, return you to the last function. Now
+
+00:09:18.920 --> 00:09:20.600
+we happen to be two functions down. So
+
+00:09:20.600 --> 00:09:23.160
+if I type where again, we're still in,
+
+00:09:23.480 --> 00:09:25.560
+the ATOI function. But if I type finish
+
+00:09:25.560 --> 00:09:28.035
+again, it will then bring us back to
+
+00:09:28.035 --> 00:09:31.635
+our own program. Okay? So, so if you
+
+00:09:31.635 --> 00:09:34.035
+accidentally step into a function that's not yours,
+
+00:09:34.035 --> 00:09:35.635
+it may look a little scary, but there's
+
+00:09:35.635 --> 00:09:38.035
+nothing to be worried about. Okay. So now
+
+00:09:38.035 --> 00:09:39.555
+I'm on line 18 and I should have
+
+00:09:39.555 --> 00:09:42.035
+used n to step over those two function
+
+00:09:42.195 --> 00:09:44.330
+that function, but, that's the way it goes.
+
+00:09:44.410 --> 00:09:46.490
+Now I actually want to step into this
+
+00:09:46.490 --> 00:09:48.970
+function. Let's say I wanna go into, the
+
+00:09:48.970 --> 00:09:51.930
+square function. If I type n, it will
+
+00:09:52.730 --> 00:09:54.010
+actually, let's just do it. If we type
+
+00:09:54.010 --> 00:09:56.170
+n, it will actually go into the function
+
+00:09:56.170 --> 00:09:58.505
+and then be done. If I wanted to
+
+00:09:58.505 --> 00:10:00.185
+actually go in or it will skip over
+
+00:10:00.185 --> 00:10:02.265
+the function by doing it and then it
+
+00:10:02.265 --> 00:10:04.025
+will be go to the next line and
+
+00:10:04.025 --> 00:10:06.425
+then I'm now on line 20. So if
+
+00:10:06.425 --> 00:10:07.945
+I want to step into that, I would
+
+00:10:07.945 --> 00:10:09.945
+have to go back and rerun the program
+
+00:10:09.945 --> 00:10:11.705
+and step into it. In fact, let's do
+
+00:10:11.705 --> 00:10:14.560
+it. Okay, let's do this. Let's type a,
+
+00:10:15.040 --> 00:10:17.840
+let's delete the first break point. Delete one.
+
+00:10:17.920 --> 00:10:20.000
+Okay. That deleted the first break point. If
+
+00:10:20.000 --> 00:10:23.040
+I type break on line 18 now, okay,
+
+00:10:23.040 --> 00:10:24.160
+it will do that. And if I type
+
+00:10:24.160 --> 00:10:27.655
+run and say four again, okay, it will
+
+00:10:27.655 --> 00:10:29.175
+say, oh, the program being debugged to start
+
+00:10:29.175 --> 00:10:31.335
+already. And you wanna say, oh, alright, well,
+
+00:10:31.335 --> 00:10:33.095
+I know I'm restarting the program so you
+
+00:10:33.095 --> 00:10:36.215
+can hit y. And it then broke on
+
+00:10:36.215 --> 00:10:37.815
+line 18. So we're back to where we
+
+00:10:37.815 --> 00:10:40.375
+were again and we are on line 18
+
+00:10:40.375 --> 00:10:42.375
+and maybe we wanna go into the square
+
+00:10:42.375 --> 00:10:44.510
+function. Okay? So if we wanna go into
+
+00:10:44.510 --> 00:10:46.990
+the square function, we type s for step
+
+00:10:47.550 --> 00:10:49.150
+and now look at this, we are now
+
+00:10:49.150 --> 00:10:51.230
+inside our square function. If we type l,
+
+00:10:51.230 --> 00:10:52.830
+we'll get a list of, oh, look at
+
+00:10:52.830 --> 00:10:54.110
+this, that's where we are, we're on line
+
+00:10:54.110 --> 00:10:56.990
+27 and we are inside our square function.
+
+00:10:57.515 --> 00:11:00.075
+Very nice. Okay. Now once we're in the
+
+00:11:00.075 --> 00:11:01.755
+square function, we can do a couple things
+
+00:11:01.755 --> 00:11:03.435
+and here's a couple more commands that you
+
+00:11:03.435 --> 00:11:06.635
+that you might want to want to know.
+
+00:11:06.635 --> 00:11:08.235
+If you want to figure out what a
+
+00:11:08.235 --> 00:11:11.515
+variable value is, you can type print or
+
+00:11:11.515 --> 00:11:14.130
+just p and then the value name. Okay?
+
+00:11:14.130 --> 00:11:17.330
+So p x says that, x is four
+
+00:11:17.330 --> 00:11:19.570
+and it actually gives it a little, number
+
+00:11:19.570 --> 00:11:21.250
+that you could refer to later, but it
+
+00:11:21.250 --> 00:11:23.730
+says, it's four. So x is four and
+
+00:11:23.730 --> 00:11:25.250
+that's good because that's what we passed into
+
+00:11:25.250 --> 00:11:28.105
+our function. Okay? If I type p s
+
+00:11:28.105 --> 00:11:30.425
+q for square, well, what line are we
+
+00:11:30.425 --> 00:11:31.865
+on by the way? We are on line
+
+00:11:31.865 --> 00:11:35.065
+27. Okay. We're right here. We're about to
+
+00:11:35.065 --> 00:11:36.505
+do this line. We haven't done it yet.
+
+00:11:36.505 --> 00:11:38.585
+We're about to do this line. Okay? And
+
+00:11:38.585 --> 00:11:40.740
+it says square is four, well that doesn't
+
+00:11:40.740 --> 00:11:42.580
+make any sense. Turns out that it hasn't
+
+00:11:42.580 --> 00:11:46.340
+been, initialized yet so it's just some, kind
+
+00:11:46.340 --> 00:11:48.660
+of random value. Okay? In fact, we'll learn
+
+00:11:48.660 --> 00:11:51.140
+about what that value might be a little
+
+00:11:51.140 --> 00:11:53.245
+bit later. But let's do this, let's do
+
+00:11:53.245 --> 00:11:57.325
+next to step over this line 27. Okay.
+
+00:11:57.325 --> 00:11:59.405
+And now we're on line 29, but guess
+
+00:11:59.405 --> 00:12:01.325
+what, we can type p s q again
+
+00:12:01.325 --> 00:12:03.325
+and now it will say that s q
+
+00:12:03.325 --> 00:12:06.360
+has become 16. Okay? If you type n
+
+00:12:06.360 --> 00:12:09.080
+again, it will go back outside the function,
+
+00:12:09.080 --> 00:12:11.640
+back to the original function and we can
+
+00:12:11.640 --> 00:12:13.880
+actually do n to print f and if
+
+00:12:13.880 --> 00:12:15.320
+we wanna do n to continue, it'll keep
+
+00:12:15.320 --> 00:12:17.400
+going and so forth and if you keep
+
+00:12:17.400 --> 00:12:20.505
+hitting n, it will continue like that. Okay?
+
+00:12:20.585 --> 00:12:23.385
+So those are a whole bunch of interesting
+
+00:12:23.385 --> 00:12:27.065
+commands. Let's let's run it again. By the
+
+00:12:27.065 --> 00:12:28.425
+way, I think if you just type run
+
+00:12:28.425 --> 00:12:30.265
+right now, it will assume that you meant
+
+00:12:30.265 --> 00:12:32.425
+to use the same command line as before
+
+00:12:32.730 --> 00:12:35.130
+and so, so it does. So it actually,
+
+00:12:35.930 --> 00:12:37.930
+did say that it was gonna run with
+
+00:12:37.930 --> 00:12:40.010
+four. I'm not sure how you would go
+
+00:12:40.010 --> 00:12:41.690
+and run it again without any command line
+
+00:12:41.690 --> 00:12:44.170
+arguments at this point. But anyway, let's step
+
+00:12:44.170 --> 00:12:46.490
+into the, square function again. And so now
+
+00:12:46.490 --> 00:12:48.785
+we're at line 27 in here. And if
+
+00:12:48.785 --> 00:12:51.345
+we type where, it says, oh look, you're
+
+00:12:51.345 --> 00:12:53.505
+in the square function and that was called
+
+00:12:53.505 --> 00:12:57.105
+from main. Okay? And don't worry about all
+
+00:12:57.105 --> 00:12:59.185
+the details of the other other things here.
+
+00:12:59.185 --> 00:13:01.025
+By the way, you ever see optimized out
+
+00:13:01.025 --> 00:13:04.740
+for a variable name, it means that it's
+
+00:13:04.740 --> 00:13:08.500
+not available right at this point in time
+
+00:13:08.660 --> 00:13:11.220
+and in fact it may not be available
+
+00:13:11.220 --> 00:13:12.820
+and you have to do some other things
+
+00:13:12.820 --> 00:13:14.820
+to find it out. But sometimes that happens
+
+00:13:14.820 --> 00:13:18.095
+with variables. You get them optimized out because
+
+00:13:18.095 --> 00:13:19.775
+GCC thinks it knows a little better than
+
+00:13:19.775 --> 00:13:24.815
+you. Alright. And, so anyway, we are in
+
+00:13:24.815 --> 00:13:28.575
+square and, we're at line 27, but let's
+
+00:13:28.575 --> 00:13:30.815
+say we wanted to look at what main
+
+00:13:30.815 --> 00:13:34.120
+was, go back to where main called it
+
+00:13:34.120 --> 00:13:36.520
+from, we can actually use the up command
+
+00:13:36.680 --> 00:13:40.360
+to go back to the calling function and
+
+00:13:40.360 --> 00:13:42.040
+be in the calling function. So if we
+
+00:13:42.040 --> 00:13:43.800
+wanted to find out what num to square
+
+00:13:43.800 --> 00:13:45.720
+was, we can do up and then type
+
+00:13:45.720 --> 00:13:49.535
+print num to square and it will tell
+
+00:13:49.535 --> 00:13:51.455
+us that it's optimized out. So this is
+
+00:13:51.455 --> 00:13:53.615
+a situation where you go, oh, at this
+
+00:13:53.615 --> 00:13:55.695
+point it's already used that value so it's
+
+00:13:55.695 --> 00:13:58.415
+already done something where it can't get get
+
+00:13:58.415 --> 00:13:59.855
+the value. But many times you'll be able
+
+00:13:59.855 --> 00:14:04.890
+to get the the previous previous variables like
+
+00:14:04.890 --> 00:14:06.810
+that. But anyway, we're in main right now
+
+00:14:06.810 --> 00:14:08.410
+so if we wanna go back to our
+
+00:14:08.410 --> 00:14:10.170
+calling function we can type down and it
+
+00:14:10.170 --> 00:14:12.570
+goes okay now you're back at at make.
+
+00:14:12.570 --> 00:14:14.490
+So if we type print s q, it'll
+
+00:14:14.490 --> 00:14:16.330
+say four and that was the value that
+
+00:14:16.330 --> 00:14:18.925
+was that was passed in. So not much
+
+00:14:18.925 --> 00:14:20.285
+you can do about some of the optimized
+
+00:14:20.285 --> 00:14:21.885
+out things, but there are there are some
+
+00:14:21.885 --> 00:14:23.725
+tricks you can use if you really need
+
+00:14:23.725 --> 00:14:26.205
+to get the variable as we as you
+
+00:14:26.205 --> 00:14:29.005
+go through there. So what else do I
+
+00:14:29.005 --> 00:14:30.445
+wanna show you? I showed you most of
+
+00:14:30.445 --> 00:14:32.740
+the basic commands. You will use all the
+
+00:14:32.740 --> 00:14:36.180
+commands we talked about like very extensively. A
+
+00:14:36.180 --> 00:14:37.860
+couple other commands that are we're gonna use
+
+00:14:37.860 --> 00:14:41.780
+later in the class, there's the disassemble command,
+
+00:14:42.340 --> 00:14:46.685
+which is like this. Okay? And be careful,
+
+00:14:46.685 --> 00:14:48.525
+your eyes may bleed. We will learn all
+
+00:14:48.525 --> 00:14:51.885
+about this later. Before I disassemble, it says
+
+00:14:51.885 --> 00:14:55.005
+that this is the function square. So the
+
+00:14:55.005 --> 00:14:56.845
+square function looks like this and this is
+
+00:14:56.845 --> 00:14:59.850
+actually the assembly code for it. Okay. GCC
+
+00:14:59.850 --> 00:15:04.090
+produces from your c code assembly code that,
+
+00:15:04.250 --> 00:15:05.770
+we will learn about in the class. So
+
+00:15:05.770 --> 00:15:07.130
+it's kind of fun and it actually is
+
+00:15:07.130 --> 00:15:10.650
+doing, it's moving some, values into registers, we
+
+00:15:10.650 --> 00:15:13.595
+will learn all about what those values are,
+
+00:15:14.075 --> 00:15:16.635
+later. And then it's multiplying them and that's
+
+00:15:16.635 --> 00:15:18.795
+kinda what we're doing. And then it is
+
+00:15:18.795 --> 00:15:21.675
+returning from the function. So we will learn,
+
+00:15:21.835 --> 00:15:23.835
+learn all about that. So let's actually go
+
+00:15:23.835 --> 00:15:26.910
+back to main function. If we type disassemble
+
+00:15:26.910 --> 00:15:28.670
+now, I think it's just disas is all
+
+00:15:28.670 --> 00:15:30.590
+you need to type, it actually shows what
+
+00:15:30.590 --> 00:15:33.310
+main is and all of this is what
+
+00:15:33.310 --> 00:15:34.990
+main is doing. Main is not a particularly
+
+00:15:34.990 --> 00:15:38.190
+long function but that's what it's doing. So
+
+00:15:38.190 --> 00:15:41.885
+you will use this, you will use this
+
+00:15:41.885 --> 00:15:45.325
+pretty frequently once we get to assembly language.
+
+00:15:45.325 --> 00:15:47.725
+So disassembling says, okay, I've got my c
+
+00:15:47.725 --> 00:15:49.245
+code and now I'm gonna see what the
+
+00:15:49.245 --> 00:15:51.885
+actual machine code or the assembly language code
+
+00:15:51.885 --> 00:15:55.030
+that the compiler produced looks like. So it's
+
+00:15:55.030 --> 00:15:56.310
+kind of fun. I think you'll enjoy it
+
+00:15:56.310 --> 00:15:58.470
+when we get to it. Alright. There's one
+
+00:15:58.470 --> 00:15:59.910
+other thing I do wanna show you which
+
+00:15:59.910 --> 00:16:02.870
+is, a special mode. If you type control
+
+00:16:02.870 --> 00:16:07.590
+x control a, brings you into this mode
+
+00:16:06.975 --> 00:16:09.855
+called TUI mode. And what's nice about this
+
+00:16:09.855 --> 00:16:11.615
+is you can actually scroll up and down
+
+00:16:11.615 --> 00:16:13.775
+and it tells you where the breakpoints are.
+
+00:16:13.775 --> 00:16:15.535
+Like for instance, there's a breakpoint on line
+
+00:16:15.535 --> 00:16:19.215
+18 right there and right now we're on
+
+00:16:19.215 --> 00:16:23.430
+line 20 and we type, I'm not sure
+
+00:16:23.430 --> 00:16:25.830
+why it just went up to there. Sometimes
+
+00:16:25.830 --> 00:16:27.430
+you need, it's a bit buggy sometimes. If
+
+00:16:27.430 --> 00:16:30.790
+you type control L it will refresh the
+
+00:16:30.790 --> 00:16:36.155
+screen. Let's see, might have been because we're
+
+00:16:36.155 --> 00:16:38.955
+inside the program but I am not a
+
+00:16:38.955 --> 00:16:40.395
+% sure right off the top of my
+
+00:16:40.395 --> 00:16:42.075
+head how we can make that bigger. But
+
+00:16:42.075 --> 00:16:44.075
+control X control A goes back again, let's
+
+00:16:44.075 --> 00:16:45.675
+see control X control A now, it's not
+
+00:16:45.675 --> 00:16:50.400
+gonna be smaller like this. Let's see, where
+
+00:16:50.400 --> 00:16:52.800
+are we here? We're in main, line 20,
+
+00:16:52.800 --> 00:16:54.880
+let's just run it again. Start from beginning,
+
+00:16:54.880 --> 00:16:58.080
+line 18, control x, control a, yeah, I'm
+
+00:16:58.080 --> 00:17:00.240
+not sure why it is so small but
+
+00:17:00.240 --> 00:17:01.840
+I'll define that up. But anyway, point is
+
+00:17:01.840 --> 00:17:04.445
+if I type s, it will actually step
+
+00:17:04.445 --> 00:17:06.525
+into the function up here and I can
+
+00:17:06.525 --> 00:17:08.285
+continue to run my commands down here. So
+
+00:17:08.285 --> 00:17:10.445
+it's in a slightly nicer way, once you
+
+00:17:10.445 --> 00:17:12.605
+make the window a little bit bigger to
+
+00:17:12.605 --> 00:17:16.250
+actually, to work with your code. So it
+
+00:17:16.250 --> 00:17:18.330
+makes a little bit more user friendly than
+
+00:17:18.330 --> 00:17:22.410
+just the command line arguments. Okay. So that
+
+00:17:22.410 --> 00:17:24.090
+is to get out of gdb just type
+
+00:17:24.090 --> 00:17:25.850
+quit and then if it says still active
+
+00:17:25.850 --> 00:17:30.185
+it will it will actually quit. So you
+
+00:17:30.185 --> 00:17:32.345
+have to type quit and oops quit and
+
+00:17:32.345 --> 00:17:36.425
+then enter, maybe not, quit. Let's see, to
+
+00:17:36.425 --> 00:17:38.505
+return you're gonna quit. I think you have
+
+00:17:38.505 --> 00:17:40.665
+to type control x control a and then
+
+00:17:40.665 --> 00:17:42.345
+quit and then it will say yes, right.
+
+00:17:42.860 --> 00:17:45.980
+So anyway, that's GDB in a nutshell, in
+
+00:17:45.980 --> 00:17:48.620
+a very very small nutshell. You will use
+
+00:17:48.620 --> 00:17:52.380
+GDB very very very very often in CS
+
+00:17:52.380 --> 00:17:54.860
+one zero seven and you should get used
+
+00:17:55.900 --> 00:17:57.900
+to it as quickly as you can. Thanks.

@@ -712,5 +712,17 @@
     "lesson_html_filename": "how_to_use_valgrind_interactive_lesson.html",
     "json_transcript_path_on_repo": "how_to_use_valgrind/how_to_use_valgrind_transcript.json",
     "vtt_transcript_path_on_repo": "how_to_use_valgrind/how_to_use_valgrind_transcript.vtt"
+  },
+  {
+    "title_original": "A very brief guide to gdb",
+    "video_name_clean": "a_very_brief_guide_to_gdb",
+    "youtube_id": "uhIt8YqtmuQ",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:51:11.245822+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 1079,
+    "lesson_html_filename": "a_very_brief_guide_to_gdb_interactive_lesson.html",
+    "json_transcript_path_on_repo": "a_very_brief_guide_to_gdb/a_very_brief_guide_to_gdb_transcript.json",
+    "vtt_transcript_path_on_repo": "a_very_brief_guide_to_gdb/a_very_brief_guide_to_gdb_transcript.vtt"
   }
 ]
