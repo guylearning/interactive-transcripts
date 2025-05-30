@@ -388,5 +388,17 @@
     "lesson_html_filename": "the_modern_trivium_ii_grammar_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_modern_trivium_ii_grammar/the_modern_trivium_ii_grammar_transcript.json",
     "vtt_transcript_path_on_repo": "the_modern_trivium_ii_grammar/the_modern_trivium_ii_grammar_transcript.vtt"
+  },
+  {
+    "title_original": "Command Line - CS50 Shorts",
+    "video_name_clean": "command_line_-_cs50_shorts",
+    "youtube_id": "BnJ013X02b8",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T03:46:51.590715+00:00",
+    "uploader": "CS50",
+    "duration_seconds": 1072,
+    "lesson_html_filename": "command_line_-_cs50_shorts_interactive_lesson.html",
+    "json_transcript_path_on_repo": "command_line_-_cs50_shorts/command_line_-_cs50_shorts_transcript.json",
+    "vtt_transcript_path_on_repo": "command_line_-_cs50_shorts/command_line_-_cs50_shorts_transcript.vtt"
   }
 ]

@@ -1,0 +1,1352 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 54292377-f01a-4afe-b50c-f62f44a5d47c
+Created: 2025-05-30T03:46:49.368Z
+Duration: 1071.6735
+Channels: 1
+
+00:00:04.560 --> 00:00:06.880
+One: Okay. So let's talk about how to
+
+00:00:06.880 --> 00:00:09.760
+use the Linux command line. Now, the CS50
+
+00:00:09.760 --> 00:00:12.160
+IDE, or in fact, the CS50 Appliance, if
+
+00:00:12.160 --> 00:00:13.920
+you're familiar with that or you're taking an
+
+00:00:13.920 --> 00:00:16.245
+older version of CS50, is a cloud based
+
+00:00:16.245 --> 00:00:18.085
+machine which runs Ubuntu, which is one of
+
+00:00:18.085 --> 00:00:20.405
+the many flavors of the Linux operating system.
+
+00:00:20.485 --> 00:00:22.805
+Linux operating system is favored by programmers because
+
+00:00:22.805 --> 00:00:27.525
+it's just cooler, right? Many modern Linux distributions
+
+00:00:27.525 --> 00:00:30.085
+have graphical user interfaces, which we also call
+
+00:00:30.085 --> 00:00:33.990
+GUIs, GUI, to allow easy mouse based navigation,
+
+00:00:33.990 --> 00:00:35.350
+which you're probably familiar with if you're a
+
+00:00:35.350 --> 00:00:38.070
+Windows or Mac user, moving around your mouse,
+
+00:00:38.070 --> 00:00:40.390
+double clicking on icons, and so on. Still
+
+00:00:40.390 --> 00:00:42.070
+though, as a programmer, and even though the
+
+00:00:42.070 --> 00:00:44.470
+IDE contains the ability to do some graphical
+
+00:00:44.470 --> 00:00:46.870
+user stuff, clicking and dragging and all that,
+
+00:00:47.375 --> 00:00:49.535
+you'll still be using your terminal window pretty
+
+00:00:49.535 --> 00:00:51.535
+frequently. And you can do many of the
+
+00:00:51.535 --> 00:00:52.975
+same tasks that you can do with a
+
+00:00:52.975 --> 00:00:55.215
+mouse with keyboard commands. And we're going to
+
+00:00:55.215 --> 00:00:56.255
+talk a little bit about what some of
+
+00:00:56.255 --> 00:01:00.280
+those commands are right now. Now these commands
+
+00:01:00.280 --> 00:01:02.760
+can be used on any Unix based operating
+
+00:01:02.760 --> 00:01:05.800
+system, which includes Linux, but also includes Mac
+
+00:01:05.800 --> 00:01:10.440
+OS. If you, open up Terminal on your
+
+00:01:10.440 --> 00:01:13.560
+Mac, you can use these exact commands. Windows
+
+00:01:13.560 --> 00:01:15.805
+also has command prompt, but some of the
+
+00:01:15.805 --> 00:01:17.325
+commands are slightly different. It doesn't actually work
+
+00:01:17.325 --> 00:01:19.485
+because Windows is not a Unix based system.
+
+00:01:19.965 --> 00:01:21.085
+So let's take a look at some of
+
+00:01:21.085 --> 00:01:23.885
+these Linux commands. The first one that you'll
+
+00:01:23.885 --> 00:01:26.525
+probably use quite a lot is ls. That's
+
+00:01:26.525 --> 00:01:28.765
+a lowercase l followed by a lowercase s,
+
+00:01:28.960 --> 00:01:31.040
+which is short for list. Now what the
+
+00:01:31.040 --> 00:01:32.640
+list command does is it gives you a
+
+00:01:32.640 --> 00:01:34.960
+readout of all the files and folders in
+
+00:01:34.960 --> 00:01:37.280
+your current directory. So you can see everything
+
+00:01:37.360 --> 00:01:39.120
+you can get to from where you currently
+
+00:01:39.120 --> 00:01:41.520
+are. So I've opened up here the CS50
+
+00:01:41.520 --> 00:01:42.960
+IDE. And I'm going zoom in in a
+
+00:01:42.960 --> 00:01:45.175
+second to give you a closer look. Here's
+
+00:01:45.175 --> 00:01:46.855
+the broad picture of what the IDE looks
+
+00:01:46.855 --> 00:01:48.775
+like. On the left, can see we have
+
+00:01:48.775 --> 00:01:50.455
+a file tree, which you're probably familiar with,
+
+00:01:50.455 --> 00:01:52.375
+double clicking and files and folders and all
+
+00:01:52.375 --> 00:01:53.655
+that stuff. So that's still there on the
+
+00:01:53.655 --> 00:01:56.055
+CS50 appliance. At the center and the top
+
+00:01:56.055 --> 00:01:57.575
+is where you're going to be writing your
+
+00:01:57.575 --> 00:01:59.290
+code once you click on a file. And
+
+00:01:59.290 --> 00:02:01.050
+at the bottom we have a terminal window,
+
+00:02:01.050 --> 00:02:02.730
+which is where we can execute these terminal
+
+00:02:02.730 --> 00:02:07.210
+commands. I'm going to zoom in and head
+
+00:02:07.210 --> 00:02:08.410
+over here just to show you that in
+
+00:02:08.410 --> 00:02:11.530
+fact I can click on these files and
+
+00:02:11.530 --> 00:02:14.195
+folders. So clearly where I currently am, I
+
+00:02:14.195 --> 00:02:17.395
+have two folders called pset0 and pset1, and
+
+00:02:17.395 --> 00:02:20.195
+three files, one called hello, one called hello.
+
+00:02:20.195 --> 00:02:23.395
+C, and one called hello. Txt. So let's
+
+00:02:23.395 --> 00:02:26.700
+move down to the terminal window and get
+
+00:02:26.700 --> 00:02:28.220
+a closer look. So we just talked again
+
+00:02:28.220 --> 00:02:30.380
+about the fact that we have three files
+
+00:02:30.940 --> 00:02:33.340
+and two folders in the current directory. If
+
+00:02:33.340 --> 00:02:36.460
+I type ls, which again is the command
+
+00:02:36.460 --> 00:02:39.020
+to list the contents of the current directory,
+
+00:02:39.020 --> 00:02:42.460
+and then I hit Enter, look what I
+
+00:02:41.475 --> 00:02:45.635
+see. Hello, hello dot c, hello dot text,
+
+00:02:45.635 --> 00:02:48.115
+pset zero, and pset one. Pset zero and
+
+00:02:48.115 --> 00:02:49.955
+pset one are colored blue to indicate to
+
+00:02:49.955 --> 00:02:51.715
+you that those are directories that we could
+
+00:02:51.715 --> 00:02:53.235
+navigate into. And we'll learn a little bit
+
+00:02:53.235 --> 00:02:55.075
+about how to navigate into directories in a
+
+00:02:55.075 --> 00:02:59.150
+minute. And every other thing is colored black
+
+00:02:59.150 --> 00:03:00.990
+if it's a text file or a source
+
+00:03:00.990 --> 00:03:03.550
+code file, and green if it's an executable
+
+00:03:03.550 --> 00:03:05.150
+file. So clearly that means that I could
+
+00:03:05.150 --> 00:03:07.070
+run a program called hello. That's what the
+
+00:03:07.070 --> 00:03:09.355
+green one there means. But basically, typing the
+
+00:03:09.355 --> 00:03:11.195
+ls command has allowed me to look at
+
+00:03:11.195 --> 00:03:13.675
+everything that exists in my current directory, which
+
+00:03:13.675 --> 00:03:17.195
+matches what we see here in the graphical
+
+00:03:17.195 --> 00:03:19.195
+display the same. The next command you probably
+
+00:03:19.195 --> 00:03:22.590
+use quite a bit is cd, Lowercase c,
+
+00:03:22.590 --> 00:03:25.230
+lowercase d, which is short for change directory.
+
+00:03:25.230 --> 00:03:26.510
+This allows us to do what I was
+
+00:03:26.510 --> 00:03:27.870
+just talking about a second ago, which is
+
+00:03:27.870 --> 00:03:31.470
+to navigate between directories at the command line
+
+00:03:31.470 --> 00:03:34.190
+as opposed to double clicking on folders. So
+
+00:03:34.190 --> 00:03:36.015
+if we type c d and then the
+
+00:03:36.015 --> 00:03:38.495
+name of a directory, we can get into
+
+00:03:38.495 --> 00:03:42.895
+that directory. As an aside, know that the
+
+00:03:42.895 --> 00:03:45.695
+name of the current directory is always dot,
+
+00:03:45.855 --> 00:03:47.695
+and the name of the directory one level
+
+00:03:47.695 --> 00:03:49.295
+above where we are now, that is the
+
+00:03:49.295 --> 00:03:52.160
+name of the folder in which our folder
+
+00:03:52.160 --> 00:03:55.440
+is, is dot dot, or in which our
+
+00:03:55.440 --> 00:03:58.080
+folder is, is dot dot. And if you're
+
+00:03:58.080 --> 00:03:59.680
+ever curious about the name of your directory,
+
+00:03:59.680 --> 00:04:02.560
+you can type pwd, which stands for present
+
+00:04:02.560 --> 00:04:04.535
+working directory. We'll take a look at all
+
+00:04:04.535 --> 00:04:06.135
+of these now by heading back to the
+
+00:04:06.135 --> 00:04:08.055
+CS50 IDE. So I'm back in my workspace
+
+00:04:08.055 --> 00:04:09.975
+now, and I'll zoom in again on the
+
+00:04:09.975 --> 00:04:12.295
+terminal so we can take a look at
+
+00:04:12.295 --> 00:04:15.015
+moving around within the IDE. So I'm going
+
+00:04:15.015 --> 00:04:16.775
+to list the contents of my directory again
+
+00:04:16.775 --> 00:04:19.015
+just to reground us in where we are.
+
+00:04:19.255 --> 00:04:20.830
+So if I type ls, which is for
+
+00:04:20.830 --> 00:04:22.750
+list again, I see that I can get
+
+00:04:22.750 --> 00:04:24.670
+to pset zero and pset one. Those are
+
+00:04:24.670 --> 00:04:26.590
+the directories I can get to from here.
+
+00:04:26.670 --> 00:04:28.430
+I know that because the IDE gives me
+
+00:04:28.430 --> 00:04:30.910
+a clue by coloring them blue. Let's say
+
+00:04:30.910 --> 00:04:32.590
+that I want to get into my pset
+
+00:04:32.590 --> 00:04:34.830
+one directory, because I'm working on problem set
+
+00:04:34.830 --> 00:04:37.685
+one. I can type c d, again short
+
+00:04:37.685 --> 00:04:41.925
+for change directory, space, pset one. And if
+
+00:04:41.925 --> 00:04:44.405
+I hit Enter, notice what happens. It doesn't
+
+00:04:44.405 --> 00:04:45.525
+look like a lot has happened, but if
+
+00:04:45.525 --> 00:04:47.525
+you look at the prompt, it now tells
+
+00:04:47.525 --> 00:04:50.010
+me that I'm in tilde slash workspace slash
+
+00:04:50.010 --> 00:04:54.330
+pset1. I've navigated into the pset1 folder that
+
+00:04:54.330 --> 00:04:56.650
+was within my workspace. And if I type
+
+00:04:56.650 --> 00:05:00.650
+ls, I see some different stuff here, right?
+
+00:05:00.650 --> 00:05:02.650
+This isn't the same list that I saw
+
+00:05:02.650 --> 00:05:06.045
+before. I've navigated into pset1, and so now
+
+00:05:06.045 --> 00:05:07.965
+when I type ls, I'm getting the context
+
+00:05:07.965 --> 00:05:10.125
+of what can I see from within the
+
+00:05:10.125 --> 00:05:14.045
+pset1 folder? Now I'm going to type control
+
+00:05:14.045 --> 00:05:17.190
+l, which just clears the screen. And I'm
+
+00:05:17.190 --> 00:05:18.310
+going to list the content of the directory
+
+00:05:18.310 --> 00:05:19.350
+again, just so you can see. I just
+
+00:05:19.350 --> 00:05:20.630
+wanted to do that to clear out some
+
+00:05:20.630 --> 00:05:21.750
+of the stuff that you saw down below
+
+00:05:21.750 --> 00:05:23.190
+and to prevent this from going too far
+
+00:05:23.190 --> 00:05:25.910
+down out of range. Now I said earlier
+
+00:05:25.910 --> 00:05:27.590
+that if I want to navigate to the
+
+00:05:27.590 --> 00:05:31.665
+current directory, I can type cd space dot
+
+00:05:31.665 --> 00:05:33.585
+and hit Enter. It doesn't do anything, right?
+
+00:05:33.585 --> 00:05:35.905
+I'm changing directories to the current directory. You're
+
+00:05:35.905 --> 00:05:37.345
+not always going to find a need for
+
+00:05:37.345 --> 00:05:40.145
+single dot, but you will occasionally. Let's say
+
+00:05:40.145 --> 00:05:42.145
+that I want to move up one level.
+
+00:05:42.145 --> 00:05:43.745
+I want to get back to my workspace
+
+00:05:43.745 --> 00:05:49.010
+directory. I can't type cd workspace. There's no
+
+00:05:49.010 --> 00:05:50.690
+such file or directory. And the reason for
+
+00:05:50.690 --> 00:05:52.850
+that, if I type ls one more time,
+
+00:05:53.010 --> 00:05:56.130
+is that there's no directory called workspace inside
+
+00:05:56.130 --> 00:05:58.770
+of my pset1 directory. I'm going clear my
+
+00:05:58.770 --> 00:06:01.735
+screen again with Control L. Remember what I
+
+00:06:01.735 --> 00:06:03.335
+said earlier, though, that we can navigate back
+
+00:06:03.335 --> 00:06:04.855
+with dot dot? That's the name of the
+
+00:06:04.855 --> 00:06:07.495
+parent directory. So if I type c d
+
+00:06:07.495 --> 00:06:11.095
+space dot dot and then hit Enter, now
+
+00:06:11.095 --> 00:06:13.015
+look at what happened. My command prompt tells
+
+00:06:13.015 --> 00:06:14.570
+me that I'm back in my tilde slash
+
+00:06:14.570 --> 00:06:17.850
+workspace directory. I moved up one level, thanks
+
+00:06:17.850 --> 00:06:20.890
+to dot dot. Now let's say that I'm
+
+00:06:20.890 --> 00:06:23.610
+using an operating system that is Linux based,
+
+00:06:23.610 --> 00:06:25.610
+but doesn't necessarily tell me where I am.
+
+00:06:25.610 --> 00:06:26.905
+This one happens to tell us that I'm
+
+00:06:26.905 --> 00:06:28.905
+in tilde slash workspace right now, right at
+
+00:06:28.905 --> 00:06:31.065
+the prompt. But I could be completely lost
+
+00:06:31.065 --> 00:06:32.585
+in a mess of folders, and I have
+
+00:06:32.585 --> 00:06:33.785
+no idea where I am and no idea
+
+00:06:33.785 --> 00:06:35.705
+where I want to get back to. There's
+
+00:06:35.705 --> 00:06:36.985
+two things I can do. First of all,
+
+00:06:36.985 --> 00:06:39.310
+I can figure out where I am by
+
+00:06:39.310 --> 00:06:42.990
+typing pwd. That's my present working directory. And
+
+00:06:42.990 --> 00:06:44.990
+if I hit Enter, it tells me exactly
+
+00:06:44.990 --> 00:06:47.550
+where I am. Now slash home slash ubuntu
+
+00:06:47.550 --> 00:06:49.790
+is the long way of saying tilde, which
+
+00:06:49.790 --> 00:06:52.325
+is your home directory. But it tells me
+
+00:06:52.325 --> 00:06:54.645
+that I'm in home Ubuntu workspace or tilde
+
+00:06:54.645 --> 00:06:57.765
+slash workspace. I'm going to navigate to my
+
+00:06:57.765 --> 00:07:02.645
+pset1 directory again. And I'm going to list
+
+00:07:02.645 --> 00:07:03.685
+the contents. And I see that I have
+
+00:07:03.685 --> 00:07:05.525
+another directory there called extras. So I'm going
+
+00:07:05.525 --> 00:07:07.430
+to cd into extras, and then I'm going
+
+00:07:07.430 --> 00:07:10.150
+to clear my screen. So now I'm pretty
+
+00:07:10.150 --> 00:07:12.390
+far in, right? What if I want to
+
+00:07:12.390 --> 00:07:14.230
+get back to workspace immediately? There's a couple
+
+00:07:14.230 --> 00:07:15.270
+of things I could do. I could type
+
+00:07:15.270 --> 00:07:18.070
+cd dot dot slash dot dot to move
+
+00:07:18.070 --> 00:07:20.025
+up one level and then another level, But
+
+00:07:20.025 --> 00:07:21.785
+that's kind of annoying. So if I ever
+
+00:07:21.785 --> 00:07:23.305
+want to get back to just my home
+
+00:07:23.305 --> 00:07:27.225
+directory, tilde, I can type cd with nothing
+
+00:07:27.225 --> 00:07:30.025
+after it. Cd enter, and now I'm in
+
+00:07:30.025 --> 00:07:30.985
+tilde. And then if I want to get
+
+00:07:30.985 --> 00:07:34.510
+to workspace, I can just type cd workspace.
+
+00:07:34.510 --> 00:07:37.390
+And that's how you work changing directories within
+
+00:07:37.390 --> 00:07:40.750
+the CS50 IDE, or any Linux operating system,
+
+00:07:40.750 --> 00:07:43.150
+at the command line. All right. The next
+
+00:07:43.150 --> 00:07:45.870
+one that might come in handy is mkdir,
+
+00:07:45.870 --> 00:07:47.710
+which is short for make a directory. If
+
+00:07:47.710 --> 00:07:49.345
+I need to create a new folder, if
+
+00:07:49.345 --> 00:07:51.185
+you're familiar with a GUI operating system, you
+
+00:07:51.185 --> 00:07:52.785
+might right click, and then when the context
+
+00:07:52.785 --> 00:07:55.345
+menu pops up, choose New Folder. That's probably
+
+00:07:55.345 --> 00:07:57.025
+how you've done it before. But we can
+
+00:07:57.025 --> 00:08:01.345
+also create directories at the command line. So
+
+00:08:01.345 --> 00:08:02.705
+we're back in the IDE. I'll zoom in
+
+00:08:02.705 --> 00:08:07.810
+on the terminal and list the contents of
+
+00:08:07.810 --> 00:08:09.330
+my directory again just to get us back
+
+00:08:10.210 --> 00:08:12.370
+just give us a frame of reference. Let's
+
+00:08:12.370 --> 00:08:13.970
+say that now I finished working on problem
+
+00:08:13.970 --> 00:08:16.145
+set zero and problem set one, so I
+
+00:08:16.145 --> 00:08:18.145
+want to create a new directory to work
+
+00:08:18.145 --> 00:08:19.985
+on for problem set two. How do I
+
+00:08:19.985 --> 00:08:21.825
+do that? Well, again, I could right click
+
+00:08:21.825 --> 00:08:24.065
+on the left side there and choose New
+
+00:08:24.065 --> 00:08:25.745
+Folder and create a pset two directory. That
+
+00:08:25.745 --> 00:08:27.105
+would work, too. But I can also do
+
+00:08:27.105 --> 00:08:28.385
+it at the command line pretty quickly by
+
+00:08:28.385 --> 00:08:32.360
+typing mkdir, space I typed an n, but
+
+00:08:32.360 --> 00:08:36.600
+space pset2. If I hit Enter, and then
+
+00:08:36.600 --> 00:08:38.600
+I list the contents of my directory again,
+
+00:08:38.840 --> 00:08:40.120
+I see that, look, now I have a
+
+00:08:40.120 --> 00:08:42.040
+pset2 folder. And I can navigate into that
+
+00:08:42.040 --> 00:08:43.880
+using cd and do all the work I
+
+00:08:43.880 --> 00:08:47.035
+need to do for pset2. Incidentally, I'll just
+
+00:08:47.035 --> 00:08:48.475
+pop over here really quickly to the file
+
+00:08:48.475 --> 00:08:50.875
+tree, and you can see that also in
+
+00:08:51.515 --> 00:08:54.475
+the graphical file explorer, we can see that
+
+00:08:54.475 --> 00:08:56.395
+the pset2 directory has also been created there.
+
+00:08:56.395 --> 00:08:57.995
+And I can navigate to it using the
+
+00:08:57.995 --> 00:09:00.400
+GUI as well. The next command that's probably
+
+00:09:00.400 --> 00:09:02.400
+going to come in handy is cp, which
+
+00:09:02.400 --> 00:09:05.360
+is short for copy. Copy, unlike the other
+
+00:09:06.080 --> 00:09:09.200
+commands we've seen before, takes two arguments, a
+
+00:09:09.200 --> 00:09:10.960
+source, the name of the file that you
+
+00:09:10.960 --> 00:09:13.325
+want to copy, and a destination, where you
+
+00:09:13.325 --> 00:09:16.605
+want to copy the file to. It's pretty
+
+00:09:16.605 --> 00:09:18.925
+easy to copy a file, so let's do
+
+00:09:18.925 --> 00:09:20.925
+that. So we're back in the IDE. I'm
+
+00:09:20.925 --> 00:09:22.205
+going to list the contents of my current
+
+00:09:22.205 --> 00:09:26.125
+directory with ls. Now let's say that I
+
+00:09:26.205 --> 00:09:28.600
+want to make a copy of hello. Txt.
+
+00:09:28.600 --> 00:09:31.480
+Again, from the file tree on the left,
+
+00:09:31.480 --> 00:09:33.240
+the graphical interface, I could right click on
+
+00:09:33.240 --> 00:09:36.280
+hello. Txt, make a copy, paste the copy.
+
+00:09:36.520 --> 00:09:37.720
+But I can do it pretty quickly at
+
+00:09:37.720 --> 00:09:39.080
+the command line, Let's say I want to
+
+00:09:39.080 --> 00:09:43.155
+copy hello. Txt to hi. Txt. I can
+
+00:09:43.155 --> 00:09:46.995
+cp space hello. Txt. That's my source file,
+
+00:09:46.995 --> 00:09:48.275
+so that's why I'm going to choose that
+
+00:09:48.275 --> 00:09:49.795
+one first. And then I need to name
+
+00:09:49.795 --> 00:09:54.755
+the destination file, hi. Txt. I hit Enter.
+
+00:09:54.755 --> 00:09:56.030
+And if I list the contents of my
+
+00:09:56.030 --> 00:09:58.590
+directory again, there's hi. Txt. I made a
+
+00:09:58.590 --> 00:10:00.030
+copy of it. And in fact, if I
+
+00:10:00.030 --> 00:10:02.190
+went into hi. Txt, could see that it
+
+00:10:02.190 --> 00:10:04.270
+would be an exact duplicate of everything that
+
+00:10:04.270 --> 00:10:08.775
+existed in my hello. Txt file. So that's
+
+00:10:08.775 --> 00:10:10.455
+how you copy a file. But what if
+
+00:10:10.455 --> 00:10:12.855
+you want to copy an entire directory? So
+
+00:10:12.855 --> 00:10:14.055
+for a second, let's take a look at
+
+00:10:14.055 --> 00:10:16.935
+what's in my pset zero directory. If I
+
+00:10:16.935 --> 00:10:21.740
+cd pset zero and list the contents, I
+
+00:10:21.740 --> 00:10:24.860
+have a directory called sample and a Scratch
+
+00:10:24.860 --> 00:10:27.420
+file, scratch. Sb2. So that's good to know.
+
+00:10:27.420 --> 00:10:29.260
+So let's clear the screen, and I'm going
+
+00:10:29.260 --> 00:10:31.260
+to go back to my workspace directory for
+
+00:10:31.260 --> 00:10:33.900
+a second. Let's say that now I want
+
+00:10:33.900 --> 00:10:35.740
+to make a copy of my pset zero
+
+00:10:35.740 --> 00:10:41.555
+directory. I can't just say cp pset0 pset3,
+
+00:10:41.555 --> 00:10:44.755
+for instance. You get this weird message, omitting
+
+00:10:44.755 --> 00:10:47.635
+directory pset0. Why do you get that message?
+
+00:10:47.635 --> 00:10:49.395
+Well, turns out that when you have a
+
+00:10:49.395 --> 00:10:51.810
+directory that has other stuff inside of it,
+
+00:10:51.970 --> 00:10:54.370
+the cp command doesn't really necessarily know what
+
+00:10:54.370 --> 00:10:58.290
+to do with it. We to explicitly tell
+
+00:10:58.290 --> 00:11:01.250
+Linux, the terminal, I want you to copy
+
+00:11:01.250 --> 00:11:04.945
+the pset zero directory and copy every folder
+
+00:11:04.945 --> 00:11:07.585
+that exists inside of it, and every file
+
+00:11:07.585 --> 00:11:09.665
+that exists inside of it. In other words,
+
+00:11:09.665 --> 00:11:12.705
+I need you to recursively dive down into
+
+00:11:12.705 --> 00:11:15.025
+pset0 and make a copy of everything in
+
+00:11:15.025 --> 00:11:17.665
+there. If I want to do that, what
+
+00:11:17.665 --> 00:11:21.090
+I can do is cp dash r for
+
+00:11:21.090 --> 00:11:27.330
+recursive, pset zero, pset three, hit Enter. Now
+
+00:11:27.330 --> 00:11:29.330
+if I list the contents of my directory,
+
+00:11:29.410 --> 00:11:31.410
+I see there's the pset three directory that
+
+00:11:31.410 --> 00:11:33.305
+I can work with. And if I cd
+
+00:11:33.305 --> 00:11:36.825
+into pset3 now, and then list the contents,
+
+00:11:36.985 --> 00:11:40.265
+look, there's sample and Scratch. Sp2 again. So
+
+00:11:40.265 --> 00:11:41.385
+that's pretty cool. So that's how you can
+
+00:11:41.385 --> 00:11:43.465
+copy an entire directory, and not just a
+
+00:11:43.465 --> 00:11:45.010
+single file. So if you want to copy
+
+00:11:45.010 --> 00:11:46.930
+a directory, just remember to use the dash
+
+00:11:46.930 --> 00:11:49.490
+r flag when you're working with the cp
+
+00:11:49.490 --> 00:11:51.490
+command. All right. So I've copied a file,
+
+00:11:51.490 --> 00:11:52.770
+but I've done it by mistake. And now
+
+00:11:52.770 --> 00:11:53.890
+I want to get rid of it. How
+
+00:11:53.890 --> 00:11:56.050
+do I do that? Again, if you're familiar
+
+00:11:56.050 --> 00:11:57.650
+with a GUI interface, you can right click
+
+00:11:57.650 --> 00:11:59.010
+and just choose delete, and they'll send it
+
+00:11:59.010 --> 00:12:00.925
+to the trash or the recycle bin. But
+
+00:12:00.925 --> 00:12:02.765
+at the command line, can just type rm
+
+00:12:02.765 --> 00:12:04.285
+for remove, and then the name of the
+
+00:12:04.285 --> 00:12:06.365
+file we want to get rid of. Now
+
+00:12:06.365 --> 00:12:10.045
+rm is very careful. Does a lot of
+
+00:12:10.045 --> 00:12:11.565
+double checking to make sure that you actually
+
+00:12:11.565 --> 00:12:13.085
+want to delete the file. It doesn't want
+
+00:12:13.085 --> 00:12:15.485
+to make any mistakes because there's no recycle
+
+00:12:15.150 --> 00:12:17.070
+bin here. Once we delete a file, it's
+
+00:12:17.070 --> 00:12:18.830
+gone, there's really no way to recover it.
+
+00:12:18.990 --> 00:12:20.510
+So we need to be pretty careful, and
+
+00:12:20.510 --> 00:12:22.110
+so RM is going be really careful for
+
+00:12:22.110 --> 00:12:24.910
+us. So let's go back to the IDE
+
+00:12:24.910 --> 00:12:27.310
+and get rid of that hi. Txt file
+
+00:12:27.310 --> 00:12:28.830
+that I created a minute ago with copy.
+
+00:12:29.625 --> 00:12:30.985
+So we're in the IDE, and I'm going
+
+00:12:30.985 --> 00:12:32.345
+to list the contents of my directory again
+
+00:12:32.345 --> 00:12:33.625
+just to give us some context. And we
+
+00:12:33.625 --> 00:12:35.305
+can see that there's hi. Txt, which I
+
+00:12:35.305 --> 00:12:37.225
+created a little while ago. Now I want
+
+00:12:37.225 --> 00:12:38.825
+to get rid of it. How do I
+
+00:12:38.825 --> 00:12:40.265
+do it? Again, it's just rm. So I
+
+00:12:40.265 --> 00:12:45.650
+can type rm hi dot txt and hit
+
+00:12:45.650 --> 00:12:48.050
+Enter. And there's rm being really careful for
+
+00:12:48.050 --> 00:12:49.330
+us and making sure we actually want to
+
+00:12:49.330 --> 00:12:51.010
+delete this file. Do you really want to
+
+00:12:51.010 --> 00:12:53.330
+remove regular empty file hi dot txt? That's
+
+00:12:53.330 --> 00:12:55.185
+just like an operating system like Windows or
+
+00:12:55.185 --> 00:12:56.465
+Mac that you might be familiar with popping
+
+00:12:56.465 --> 00:12:57.665
+up that box that says, are you really
+
+00:12:57.665 --> 00:12:59.265
+sure you want to do this? I'm pretty
+
+00:12:59.265 --> 00:13:00.145
+sure I want to do this. So I'm
+
+00:13:00.145 --> 00:13:01.265
+going to type yes, or I could also
+
+00:13:01.265 --> 00:13:04.945
+just type y and hit Enter. And if
+
+00:13:04.945 --> 00:13:06.625
+I list the contents of my directory again,
+
+00:13:07.210 --> 00:13:10.570
+hi. Txt is gone. Not bad, right? Let's
+
+00:13:10.570 --> 00:13:12.170
+press Control L just to get rid of
+
+00:13:12.170 --> 00:13:13.210
+all this stuff and get us back at
+
+00:13:13.210 --> 00:13:16.650
+the top of the screen. Now, there is
+
+00:13:16.650 --> 00:13:18.810
+a way to short circuit RM so that
+
+00:13:18.810 --> 00:13:21.025
+it doesn't ask us that question. We really
+
+00:13:21.025 --> 00:13:21.985
+know we want to get rid of that
+
+00:13:21.985 --> 00:13:23.105
+file, and we don't even want to be
+
+00:13:23.105 --> 00:13:24.705
+asked the question. How do we do that?
+
+00:13:24.865 --> 00:13:27.185
+Well, we can specify an extra flag, just
+
+00:13:27.185 --> 00:13:29.105
+like we did with cp, where we could
+
+00:13:29.265 --> 00:13:32.065
+add the -r flag to recursively copy into
+
+00:13:32.065 --> 00:13:34.880
+a directory. There's another flag for rm, which
+
+00:13:34.880 --> 00:13:37.440
+is dash f, which is to force rm
+
+00:13:37.440 --> 00:13:38.880
+to do exactly what we're telling it to
+
+00:13:38.880 --> 00:13:41.520
+do. So let's say that now I want
+
+00:13:41.520 --> 00:13:44.560
+to get rid of my hello dot txt
+
+00:13:44.560 --> 00:13:46.895
+file. I don't want that one either. What
+
+00:13:46.895 --> 00:13:50.095
+can I do? Well, I can r m
+
+00:13:50.575 --> 00:13:55.215
+dash f hello. Txt. What do you think
+
+00:13:55.215 --> 00:13:58.230
+is going to happen here? It's gone. It
+
+00:13:58.230 --> 00:13:59.750
+didn't even ask me the question. And in
+
+00:13:59.750 --> 00:14:00.870
+fact, if I list the contents of my
+
+00:14:00.870 --> 00:14:05.670
+directory again, it's gone. There's no undo here.
+
+00:14:05.670 --> 00:14:07.350
+Hello dot text is gone, and I wasn't
+
+00:14:07.350 --> 00:14:09.030
+even asked if I wanted to delete it.
+
+00:14:09.830 --> 00:14:10.950
+What if I want to get rid of
+
+00:14:10.950 --> 00:14:15.615
+an entire directory? The way you do that
+
+00:14:16.335 --> 00:14:18.255
+is very similar to copy. If you want
+
+00:14:18.255 --> 00:14:19.375
+to delete a directory, you don't just want
+
+00:14:19.375 --> 00:14:20.495
+to delete the directory. You want to delete
+
+00:14:20.495 --> 00:14:22.815
+everything inside of it. And so you use
+
+00:14:22.815 --> 00:14:26.495
+dash r to recursively delete a directory. So
+
+00:14:26.495 --> 00:14:29.090
+that's r m dash r pset2. I'm not
+
+00:14:29.090 --> 00:14:30.850
+actually working on pset2, so I can get
+
+00:14:30.850 --> 00:14:33.330
+rid of that directory. I hit Enter. Do
+
+00:14:33.330 --> 00:14:35.730
+I want to remove the directory pset2? Yes,
+
+00:14:35.730 --> 00:14:38.210
+I do. And if I list the contents
+
+00:14:38.210 --> 00:14:42.050
+of my directory again, it's gone. All right?
+
+00:14:42.130 --> 00:14:44.385
+One more variation on this theme. So I'll
+
+00:14:44.385 --> 00:14:45.585
+clear the screen again to put everything at
+
+00:14:45.585 --> 00:14:48.145
+the top. Hit ls. Now I want to
+
+00:14:48.145 --> 00:14:50.465
+get rid of my pset3 directory, and I
+
+00:14:50.465 --> 00:14:51.585
+really know I want to get rid of
+
+00:14:51.585 --> 00:14:57.505
+my pset3 directory. I can recursively and forcibly
+
+00:14:57.825 --> 00:15:00.800
+remove my pset3 directory. Now you're going to
+
+00:15:00.800 --> 00:15:03.200
+be really careful when you're using rm dash
+
+00:15:03.200 --> 00:15:05.520
+rf. As you program more, it'll be something
+
+00:15:05.520 --> 00:15:07.760
+you just do really quickly. And in fact,
+
+00:15:07.760 --> 00:15:08.640
+I do it all the time, but it
+
+00:15:08.640 --> 00:15:10.880
+can lead to some disastrous consequences if you
+
+00:15:10.880 --> 00:15:12.815
+accidentally delete the wrong thing. So I want
+
+00:15:12.815 --> 00:15:14.095
+you to be aware that this is an
+
+00:15:14.095 --> 00:15:16.095
+option available to you, but use it sparingly
+
+00:15:16.095 --> 00:15:18.175
+and use it with caution. I know for
+
+00:15:18.175 --> 00:15:19.695
+a fact I'm not working on my problem
+
+00:15:19.695 --> 00:15:21.695
+set three anymore, so I'm going to get
+
+00:15:21.695 --> 00:15:23.135
+rid of all of those files. And I
+
+00:15:23.135 --> 00:15:24.495
+know I don't I don't want to be
+
+00:15:24.495 --> 00:15:26.490
+asked every single time if I want to
+
+00:15:26.490 --> 00:15:28.170
+delete a file. So I'm going to rm
+
+00:15:28.170 --> 00:15:31.610
+dash rf pset3. Didn't even ask me if
+
+00:15:31.610 --> 00:15:32.970
+I wanted to get rid of it. I
+
+00:15:32.970 --> 00:15:36.330
+hit ls. Pset3 is gone. So that's all
+
+00:15:36.330 --> 00:15:37.610
+the variations that you can use to get
+
+00:15:37.610 --> 00:15:40.625
+rid of files with rm. The last command
+
+00:15:40.625 --> 00:15:43.585
+line command that's going to be pretty useful
+
+00:15:43.585 --> 00:15:45.585
+for you is mv, which is short for
+
+00:15:45.585 --> 00:15:49.345
+move. Move is basically equivalent to rename. It
+
+00:15:49.345 --> 00:15:51.425
+moves a file from one location to another,
+
+00:15:51.425 --> 00:15:55.030
+the source to the destination. Let's see where
+
+00:15:55.030 --> 00:15:57.830
+using a move might be handy at the
+
+00:15:57.830 --> 00:16:01.350
+terminal window. So I'm in my pset1 directory,
+
+00:16:01.590 --> 00:16:03.350
+and I've noticed something has gone a little
+
+00:16:03.350 --> 00:16:05.990
+wrong. I was working on my greedy problem,
+
+00:16:05.990 --> 00:16:09.075
+but I accidentally named it greedy. So when
+
+00:16:09.075 --> 00:16:10.435
+I try and run it through check 50,
+
+00:16:10.435 --> 00:16:12.115
+it doesn't really work. I do have a
+
+00:16:12.115 --> 00:16:13.635
+couple of options. We could do what we've
+
+00:16:13.635 --> 00:16:15.955
+done before, which is to make a copy
+
+00:16:15.955 --> 00:16:19.955
+of the file. I could copy greedy. C
+
+00:16:20.195 --> 00:16:26.090
+to greedy. C. Right? Hit enter. I see
+
+00:16:26.090 --> 00:16:28.970
+that both files are there. And then I
+
+00:16:28.970 --> 00:16:36.730
+could r m to remove greedy. C. That
+
+00:16:36.730 --> 00:16:38.970
+gets rid of it. So that would work
+
+00:16:39.005 --> 00:16:40.445
+after I confirm that I want to get
+
+00:16:40.445 --> 00:16:43.005
+rid of it. And I effectively have renamed
+
+00:16:43.805 --> 00:16:46.045
+greedy. C to greedy. C. I copied it,
+
+00:16:46.365 --> 00:16:49.805
+and then removed the original. But that's a
+
+00:16:49.805 --> 00:16:51.485
+multi step process, and certainly there's a better
+
+00:16:51.485 --> 00:16:53.400
+way. In fact, there is. So let's hit
+
+00:16:53.400 --> 00:16:55.320
+Control L just to bring this back up
+
+00:16:55.800 --> 00:16:58.120
+and list the contents of my directory again.
+
+00:16:58.840 --> 00:17:00.360
+So let's say, oh, you know, made a
+
+00:17:00.360 --> 00:17:01.720
+mistake. I actually really did want to call
+
+00:17:01.720 --> 00:17:05.240
+that file greedy. C. In one fell swoop,
+
+00:17:05.240 --> 00:17:10.385
+I can type move greedy. C to greedy.
+
+00:17:10.385 --> 00:17:13.425
+C, hit Enter. And now I didn't have
+
+00:17:13.425 --> 00:17:15.905
+to copy and remove it. I just was
+
+00:17:15.905 --> 00:17:20.385
+able to rename it, One Stop Shopping. Now
+
+00:17:19.290 --> 00:17:20.810
+there are a lot of other basic command
+
+00:17:20.810 --> 00:17:22.090
+line utilities that you can use at the
+
+00:17:22.090 --> 00:17:23.690
+Linux command line. And we'll be discussing a
+
+00:17:23.690 --> 00:17:25.210
+lot of them in the future in CS50.
+
+00:17:25.210 --> 00:17:26.650
+But for now, just getting your feet wet
+
+00:17:26.650 --> 00:17:28.890
+with working with this terminal environment, these five
+
+00:17:28.890 --> 00:17:32.010
+commands should get you pretty far in navigating
+
+00:17:32.010 --> 00:17:35.015
+around and working with files in your IDE
+
+00:17:35.015 --> 00:17:37.255
+or on whatever Linux based operating system you're
+
+00:17:37.255 --> 00:17:39.575
+using. If you're curious and you want to
+
+00:17:39.575 --> 00:17:40.935
+look ahead a little bit at some of
+
+00:17:40.935 --> 00:17:43.015
+the command line commands we'll be using in
+
+00:17:43.015 --> 00:17:44.455
+the future, here's a list of a couple
+
+00:17:44.455 --> 00:17:48.055
+of the more common ones. I'm Doug Lloyd.
+
+00:17:48.055 --> 00:17:49.255
+This is CS50.
