@@ -1,0 +1,275 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: f6b014ed-2e38-4ef4-872f-71d4246ef84f
+Created: 2025-05-30T04:44:36.961Z
+Duration: 237.06119
+Channels: 1
+
+00:00:00.480 --> 00:00:02.400
+Hi there. In this video, we are going
+
+00:00:02.400 --> 00:00:05.040
+to learn about the RM command, stands for
+
+00:00:05.040 --> 00:00:09.600
+remove, and it will permanently remove files or
+
+00:00:09.600 --> 00:00:11.600
+folders from your system. So you do have
+
+00:00:11.600 --> 00:00:13.935
+to be a little bit careful with the
+
+00:00:14.015 --> 00:00:16.415
+the r m command. There's no trash can
+
+00:00:16.415 --> 00:00:18.735
+and there's no, way to really get back
+
+00:00:18.735 --> 00:00:21.935
+unless you use the backup directory, which means
+
+00:00:21.935 --> 00:00:24.735
+that you may have something from the previous
+
+00:00:24.735 --> 00:00:26.390
+day. But if you're working on a file
+
+00:00:26.390 --> 00:00:28.470
+that's an hour old and you remove it,
+
+00:00:28.470 --> 00:00:30.150
+well, it's gone forever. So you have to
+
+00:00:30.150 --> 00:00:32.230
+be a little bit careful. Let's see what
+
+00:00:32.230 --> 00:00:33.830
+we can do. In this folder here, we
+
+00:00:33.830 --> 00:00:37.030
+have some folders and some files. Let's say
+
+00:00:37.030 --> 00:00:39.030
+that I don't want file one dot txt
+
+00:00:39.030 --> 00:00:42.455
+anymore. So I can just type rm file
+
+00:00:42.455 --> 00:00:44.615
+one dot txt which stands for remove file
+
+00:00:44.615 --> 00:00:46.455
+one and then the nice thing about the
+
+00:00:46.455 --> 00:00:49.015
+myth system is it asks you if you
+
+00:00:49.015 --> 00:00:50.535
+are sure you wanna do that and I
+
+00:00:50.535 --> 00:00:52.535
+can type yes and it's gone. So that
+
+00:00:52.535 --> 00:00:56.240
+file is gone forever And unless I have
+
+00:00:56.240 --> 00:00:58.240
+it in my backup somewhere or somewhere else
+
+00:00:58.240 --> 00:01:00.000
+it's gone. So you have to be a
+
+00:01:00.000 --> 00:01:03.440
+little bit careful there. Now, I also have
+
+00:01:03.440 --> 00:01:05.760
+some other folders in here so let's do
+
+00:01:05.760 --> 00:01:10.335
+assign twenty three. So that's a directory and
+
+00:01:10.335 --> 00:01:13.855
+if I just type r m assign twenty
+
+00:01:13.855 --> 00:01:17.455
+three, it will say, I can't remember that,
+
+00:01:17.455 --> 00:01:19.215
+it's a directory. So what you can do
+
+00:01:19.215 --> 00:01:21.615
+is you can say r m dash r
+
+00:01:21.615 --> 00:01:25.560
+assign twenty three and that will recursively go
+
+00:01:25.560 --> 00:01:28.360
+into assignment twenty three and ask you for
+
+00:01:28.360 --> 00:01:30.280
+each file if you wanna do each file,
+
+00:01:30.280 --> 00:01:33.880
+right? And that's kind of painful if you
+
+00:01:33.880 --> 00:01:37.485
+wanted to do that, but it's and then
+
+00:01:37.485 --> 00:01:39.565
+it goes into other directories and so forth
+
+00:01:39.565 --> 00:01:41.405
+and you just have to keep hitting Y
+
+00:01:41.405 --> 00:01:42.925
+to do this. There we go and I
+
+00:01:42.925 --> 00:01:45.405
+hit Y too many times. Let's do this.
+
+00:01:45.405 --> 00:01:51.170
+Let's copy dash r assign zero to assign
+
+00:01:51.170 --> 00:01:54.050
+23. So let's recreate the assign 23 folder
+
+00:01:54.370 --> 00:01:56.290
+and let's do it a slightly different way
+
+00:01:56.290 --> 00:01:57.490
+so we don't have to hit y all
+
+00:01:57.490 --> 00:01:59.250
+these times. Now what you can do is
+
+00:01:59.250 --> 00:02:04.095
+you can say rm rf for force and
+
+00:02:04.175 --> 00:02:08.815
+then I can do assign 23 and oops
+
+00:02:08.815 --> 00:02:13.615
+assign 23 and it will remove all the
+
+00:02:13.615 --> 00:02:16.380
+folders or all the files and folders underneath
+
+00:02:16.380 --> 00:02:18.460
+that and it will remove the assign 20
+
+00:02:18.460 --> 00:02:20.860
+three directory. So notice there's no assign 23
+
+00:02:20.860 --> 00:02:23.580
+directory. Now this dash r f notice it
+
+00:02:23.580 --> 00:02:25.660
+didn't ask me, prompt me for anything and
+
+00:02:25.660 --> 00:02:26.780
+it just did it. You have to be
+
+00:02:26.780 --> 00:02:29.575
+very very careful. If you are on your
+
+00:02:29.575 --> 00:02:31.575
+own system and you type something like r
+
+00:02:31.575 --> 00:02:35.575
+m r f slash that would go and
+
+00:02:35.575 --> 00:02:40.055
+remove as many files as it could throughout
+
+00:02:40.055 --> 00:02:44.500
+your entire system. Now, luckily most of the
+
+00:02:44.500 --> 00:02:47.380
+files in slash are root access only, which
+
+00:02:47.380 --> 00:02:49.220
+means you can't actually access them, but this
+
+00:02:49.220 --> 00:02:52.340
+would be a very very bad command. So
+
+00:02:52.340 --> 00:02:53.700
+you have to be very careful when you
+
+00:02:53.700 --> 00:02:57.215
+use dash r f because it's helpful and
+
+00:02:57.215 --> 00:02:58.975
+that it doesn't prompt you for every file,
+
+00:02:58.975 --> 00:03:00.415
+but you just have to know exactly when
+
+00:03:00.415 --> 00:03:02.575
+you're using it. What if I had done
+
+00:03:02.575 --> 00:03:06.095
+this? If I had done RM -RF assignments
+
+00:03:06.735 --> 00:03:10.220
+and then forgot to do like and then
+
+00:03:10.220 --> 00:03:12.780
+I did assignment assign zero and I forgot
+
+00:03:12.780 --> 00:03:14.220
+the slash in there, it would go and
+
+00:03:14.220 --> 00:03:17.100
+remove everything in the assignments folder and then
+
+00:03:17.660 --> 00:03:19.740
+try to remove everything in the assign zero
+
+00:03:19.740 --> 00:03:21.500
+folder but that's already not even there and
+
+00:03:21.500 --> 00:03:23.420
+so forth. That would be very very bad.
+
+00:03:23.500 --> 00:03:25.955
+So you have to be very careful when
+
+00:03:25.955 --> 00:03:29.075
+you use the r m command. There's another
+
+00:03:29.075 --> 00:03:31.875
+choice if you have a directory that's empty.
+
+00:03:32.355 --> 00:03:35.475
+Let's try 23 again. So now assign twenty
+
+00:03:35.475 --> 00:03:37.875
+three happens to be completely empty. You can
+
+00:03:37.875 --> 00:03:39.960
+also just type instead of r m dash
+
+00:03:39.960 --> 00:03:43.880
+r assign twenty three which would work and
+
+00:03:43.880 --> 00:03:45.000
+it would ask you if you wanna do
+
+00:03:45.000 --> 00:03:46.600
+that. You can also type r m d
+
+00:03:46.600 --> 00:03:48.840
+I r assign 23 and it just says
+
+00:03:48.840 --> 00:03:51.000
+oh look if it's an empty directory I
+
+00:03:51.000 --> 00:03:53.000
+can remove it immediately and that's how that
+
+00:03:53.000 --> 00:03:55.556
+works. So that's the RM command. Thanks.
