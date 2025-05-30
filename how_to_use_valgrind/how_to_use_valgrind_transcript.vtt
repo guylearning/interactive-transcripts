@@ -1,0 +1,374 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 95a19421-1d62-4f3f-b448-76433e5504c8
+Created: 2025-05-30T04:50:04.636Z
+Duration: 341.76
+Channels: 1
+
+00:00:01.280 --> 00:00:03.440
+Hi there. In this video, we are gonna
+
+00:00:03.440 --> 00:00:06.720
+take a look at the Valgrind program, which
+
+00:00:06.720 --> 00:00:09.200
+is a very important tool that you will
+
+00:00:09.200 --> 00:00:12.320
+use in CS one zero seven to help
+
+00:00:12.320 --> 00:00:16.605
+debug your code. In particular, it is used
+
+00:00:16.605 --> 00:00:19.485
+to find memory leaks in your code. For
+
+00:00:19.485 --> 00:00:22.365
+instance, when you allocated memory during your program
+
+00:00:22.365 --> 00:00:27.645
+and then forgot to free it later when
+
+00:00:27.645 --> 00:00:31.230
+you before the program ends. So I have
+
+00:00:31.230 --> 00:00:34.030
+an example here that I want to show
+
+00:00:34.030 --> 00:00:38.030
+you. So let's take a look at memory
+
+00:00:38.030 --> 00:00:41.710
+leak dot c. And here's the program. It's
+
+00:00:41.710 --> 00:00:44.425
+a very simple program. Basically, we're saying that
+
+00:00:44.425 --> 00:00:46.105
+we have an array size of a thousand.
+
+00:00:46.345 --> 00:00:48.425
+We are creating an array. I know we
+
+00:00:48.425 --> 00:00:50.425
+haven't gotten there yet at the beginning of
+
+00:00:50.425 --> 00:00:54.905
+the school year for, 01/2007 yet, but, instead
+
+00:00:54.905 --> 00:00:57.865
+of, using new like we might in c
+
+00:00:57.865 --> 00:01:02.080
+plus plus we use malloc here to ask
+
+00:01:02.080 --> 00:01:04.640
+for memory from the memory system and to
+
+00:01:04.640 --> 00:01:06.960
+allocate the memory. And in this case, we
+
+00:01:06.960 --> 00:01:10.720
+are allocating an int array, just put the
+
+00:01:10.720 --> 00:01:14.315
+numbers zero through 999 into each one. Then
+
+00:01:14.315 --> 00:01:17.275
+we're gonna randomly grab one to print out.
+
+00:01:17.675 --> 00:01:19.035
+And what we're gonna do is we're gonna
+
+00:01:19.035 --> 00:01:21.755
+end the program without freeing the memory. So
+
+00:01:21.755 --> 00:01:23.355
+in other words, we have a memory leak.
+
+00:01:23.515 --> 00:01:25.115
+Alright. So what I'm gonna do is I'm
+
+00:01:25.115 --> 00:01:27.435
+gonna compile this. And to compile this, we're
+
+00:01:27.435 --> 00:01:30.950
+gonna use some compiler commands flags that allow
+
+00:01:30.950 --> 00:01:33.830
+Valgrind to tell us exactly in our program
+
+00:01:33.990 --> 00:01:36.790
+where the memory leak is, which is actually
+
+00:01:36.790 --> 00:01:40.310
+very nice. So what we can do is
+
+00:01:40.310 --> 00:01:41.990
+we can do a dash g and dash
+
+00:01:41.990 --> 00:01:44.735
+o g, and that is an o, uppercase
+
+00:01:44.735 --> 00:01:46.655
+o and not a zero. And then dash
+
+00:01:46.655 --> 00:01:51.135
+s t d equals, gnu 99 for the
+
+00:01:51.135 --> 00:01:53.455
+type of c that we're using and then
+
+00:01:53.455 --> 00:01:55.775
+memory leak dot c and then let's just
+
+00:01:55.775 --> 00:02:00.430
+call the program memory leak. Okay. And it
+
+00:02:00.430 --> 00:02:03.950
+compiled just fine. Remember, GCC can't tell if
+
+00:02:03.950 --> 00:02:06.750
+we have unfreed memory, straight off the bat.
+
+00:02:06.750 --> 00:02:08.990
+So it's, we're gonna just try to run
+
+00:02:08.990 --> 00:02:11.550
+it. If we run this, it'll actually say
+
+00:02:11.550 --> 00:02:14.205
+memory leak and or it'll say, it won't
+
+00:02:14.205 --> 00:02:16.205
+say memory leak, it'll say a number and
+
+00:02:16.205 --> 00:02:18.525
+it won't give us any overt errors. But
+
+00:02:18.525 --> 00:02:20.365
+there is a memory leak and if we
+
+00:02:20.365 --> 00:02:22.765
+run a program called valgrind on it, v
+
+00:02:22.765 --> 00:02:25.725
+a l g r I n d, and
+
+00:02:25.725 --> 00:02:27.560
+we will find this. Now, you have to
+
+00:02:27.560 --> 00:02:29.640
+type Valgrind and then as if you were
+
+00:02:29.640 --> 00:02:33.800
+running the, file. So you type Valgrind and
+
+00:02:33.800 --> 00:02:37.160
+memory leak and watch what happens. Okay. It
+
+00:02:37.160 --> 00:02:39.240
+gives us some things and it runs the
+
+00:02:39.240 --> 00:02:42.135
+code and it actually printed out our answer
+
+00:02:42.135 --> 00:02:43.335
+here and then it gives us a little
+
+00:02:43.335 --> 00:02:46.535
+status at the end here. And what it
+
+00:02:46.535 --> 00:02:51.335
+says is, in use at exit 4,000 bytes.
+
+00:02:51.415 --> 00:02:54.295
+Well, it turns out that, integers are four
+
+00:02:54.295 --> 00:02:56.455
+bytes each and we have 1,000 of them.
+
+00:02:56.455 --> 00:02:58.400
+So this makes sense given what we know
+
+00:02:58.400 --> 00:03:02.320
+about our program. There's 4,000 bytes that are
+
+00:03:02.320 --> 00:03:04.080
+still in use. So if you know a
+
+00:03:04.080 --> 00:03:05.440
+number like that and you happen to know
+
+00:03:05.440 --> 00:03:06.880
+the program and you might be able to
+
+00:03:06.960 --> 00:03:07.920
+that might tell you all you need to
+
+00:03:07.920 --> 00:03:10.080
+know right there. But then it says, look,
+
+00:03:10.080 --> 00:03:12.400
+I made one allocation, I didn't do any
+
+00:03:12.400 --> 00:03:15.955
+freeze and I allocated 4,000 bytes, therefore there
+
+00:03:15.955 --> 00:03:18.035
+are 4,000 bytes left. And then it says,
+
+00:03:18.035 --> 00:03:21.075
+look, you definitely lost 4,000 bytes in one
+
+00:03:21.075 --> 00:03:24.275
+block of memory and it also tells you
+
+00:03:24.275 --> 00:03:25.795
+some other things. So we didn't it didn't
+
+00:03:26.435 --> 00:03:29.180
+sometimes it can't quite tell, so it's possibly
+
+00:03:29.180 --> 00:03:33.260
+lost. And it says that you, you know,
+
+00:03:33.260 --> 00:03:35.020
+that that's the deal. Now, I promised you
+
+00:03:35.020 --> 00:03:36.380
+that we'd be able to tell exactly where
+
+00:03:36.380 --> 00:03:39.100
+the leak was and it says here, rerun
+
+00:03:39.100 --> 00:03:41.660
+with dash dash leak check equals full to
+
+00:03:41.660 --> 00:03:43.745
+see the details of the leaked memory. So
+
+00:03:43.745 --> 00:03:46.065
+if we go and we say valgrind dash
+
+00:03:46.065 --> 00:03:50.065
+dash leak check equals full and then dot
+
+00:03:50.065 --> 00:03:54.225
+slash memory leak, it reruns our code again
+
+00:03:54.385 --> 00:03:56.545
+and it gives us more information. And if
+
+00:03:56.545 --> 00:03:58.770
+there's lots of issues, it will give you
+
+00:03:58.770 --> 00:04:00.690
+lots and lots of information. But in this
+
+00:04:00.690 --> 00:04:04.690
+case, it says, that 4,000 bytes and one
+
+00:04:04.690 --> 00:04:07.890
+box are definitely lost. And what happened was
+
+00:04:07.890 --> 00:04:14.155
+you said malloc in memory leak dot c
+
+00:04:14.155 --> 00:04:16.955
+line nine. And you go, oh, I guess
+
+00:04:16.955 --> 00:04:19.515
+I never freed the memory that I allocated
+
+00:04:19.515 --> 00:04:21.115
+on line nine. So if we look at
+
+00:04:21.115 --> 00:04:23.675
+memoryleak.c, we go down to line nine, we
+
+00:04:23.675 --> 00:04:26.235
+say, oh, yep, look at that, there's our
+
+00:04:26.235 --> 00:04:28.235
+malloc and it looks like we never freed
+
+00:04:28.235 --> 00:04:31.360
+it. So this is a super super important
+
+00:04:31.360 --> 00:04:34.480
+tool to give us enough information to help
+
+00:04:34.480 --> 00:04:36.880
+debug our code, especially when we want to
+
+00:04:36.880 --> 00:04:38.720
+find memory leaks. Now in CS one zero
+
+00:04:38.720 --> 00:04:44.445
+seven, we will expect that your programs don't
+
+00:04:44.445 --> 00:04:46.685
+have any leaks in them or you'll lose
+
+00:04:46.685 --> 00:04:48.845
+points. So how might we fix this? If
+
+00:04:48.845 --> 00:04:52.445
+we go to memoryleak.c and, I actually put
+
+00:04:52.445 --> 00:04:53.725
+this comment in because I knew what I
+
+00:04:53.725 --> 00:04:57.180
+was doing, but if I type free and
+
+00:04:57.340 --> 00:05:01.260
+the pointer which was our int array and
+
+00:05:01.580 --> 00:05:05.500
+then I rerun gcc on it, still compiles
+
+00:05:05.500 --> 00:05:07.500
+just fine. If I run it, it gives
+
+00:05:07.500 --> 00:05:10.060
+me some random number and random array access.
+
+00:05:10.615 --> 00:05:13.895
+And if we run valgrind on it, and
+
+00:05:13.895 --> 00:05:15.975
+let's just run the regular one. I'll clear
+
+00:05:15.975 --> 00:05:17.895
+your screen first. And I'll do that and
+
+00:05:17.895 --> 00:05:20.615
+it says, oh, look, use of exit zero
+
+00:05:20.615 --> 00:05:23.095
+bytes and zero blocks. We had one allocation
+
+00:05:23.095 --> 00:05:25.815
+and one free. Great. We allocated 4,000 bytes.
+
+00:05:26.260 --> 00:05:28.340
+All heap blocks were freed. This is the
+
+00:05:28.340 --> 00:05:30.340
+one that you wanna look for. No leaks
+
+00:05:30.340 --> 00:05:32.900
+are possible. So if you can see that
+
+00:05:32.900 --> 00:05:34.820
+in your code, you know you you know
+
+00:05:34.820 --> 00:05:37.620
+you don't have any memory leaks. So that
+
+00:05:37.620 --> 00:05:40.420
+is how you run Valgrind. Thanks.

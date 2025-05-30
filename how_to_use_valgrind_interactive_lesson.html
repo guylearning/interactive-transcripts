@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to use valgrind</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to external CSS -->
+    <script id="allTranscriptData" type="application/json">[{"id": "para_0", "paragraph_idx": 0, "start": 1.28, "end": 34.43, "sentences": [{"id": "sent_0_0", "text": "Hi there.", "start": 1.28, "end": 2.08}, {"id": "sent_0_1", "text": "In this video, we are gonna take a look at the Valgrind program, which is a very important tool that you will use in CS one zero seven to help debug your code.", "start": 2.08, "end": 13.36}, {"id": "sent_0_2", "text": "In particular, it is used to find memory leaks in your code.", "start": 13.36, "end": 19.005}, {"id": "sent_0_3", "text": "For instance, when you allocated memory during your program and then forgot to free it later when you before the program ends.", "start": 19.005, "end": 30.43}, {"id": "sent_0_4", "text": "So I have an example here that I want to show you.", "start": 30.51, "end": 34.43}]}, {"id": "para_1", "paragraph_idx": 1, "start": 34.43, "end": 47.784996, "sentences": [{"id": "sent_1_0", "text": "So let's take a look at memory leak dot c.", "start": 34.43, "end": 39.47}, {"id": "sent_1_1", "text": "And here's the program.", "start": 39.71, "end": 41.23}, {"id": "sent_1_2", "text": "It's a very simple program.", "start": 41.39, "end": 42.83}, {"id": "sent_1_3", "text": "Basically, we're saying that we have an array size of a thousand.", "start": 42.83, "end": 46.105}, {"id": "sent_1_4", "text": "We are creating an array.", "start": 46.344997, "end": 47.784996}]}, {"id": "para_2", "paragraph_idx": 2, "start": 47.945, "end": 83.355, "sentences": [{"id": "sent_2_0", "text": "I know we haven't gotten there yet at the beginning of the school year for, 01/2007 yet, but, instead of, using new like we might in c plus plus we use malloc here to ask for memory from the memory system and to allocate the memory.", "start": 47.945, "end": 65.76}, {"id": "sent_2_1", "text": "And in this case, we are allocating an int array, just put the numbers zero through 999 into each one.", "start": 66.0, "end": 73.76}, {"id": "sent_2_2", "text": "Then we're gonna randomly grab one to print out.", "start": 74.075005, "end": 77.275}, {"id": "sent_2_3", "text": "And what we're gonna do is we're gonna end the program without freeing the memory.", "start": 77.675, "end": 81.595}, {"id": "sent_2_4", "text": "So in other words, we have a memory leak.", "start": 81.595, "end": 83.355}]}, {"id": "para_3", "paragraph_idx": 3, "start": 83.515, "end": 118.73499, "sentences": [{"id": "sent_3_0", "text": "Alright.", "start": 83.515, "end": 84.075005}, {"id": "sent_3_1", "text": "So what I'm gonna do is I'm gonna compile this.", "start": 84.075005, "end": 86.235}, {"id": "sent_3_2", "text": "And to compile this, we're gonna use some compiler commands flags that allow Valgrind to tell us exactly in our program where the memory leak is, which is actually very nice.", "start": 86.235, "end": 97.670006}, {"id": "sent_3_3", "text": "So what we can do is we can do a dash g and dash o g, and that is an o, uppercase o and not a zero.", "start": 99.03, "end": 105.935}, {"id": "sent_3_4", "text": "And then dash s t d equals, gnu 99 for the type of c that we're using and then memory leak dot c and then let's just call the program memory leak.", "start": 105.935, "end": 118.73499}]}, {"id": "para_4", "paragraph_idx": 4, "start": 119.23, "end": 138.20502, "sentences": [{"id": "sent_4_0", "text": "Okay.", "start": 119.23, "end": 119.87}, {"id": "sent_4_1", "text": "And it compiled just fine.", "start": 120.11, "end": 121.47}, {"id": "sent_4_2", "text": "Remember, GCC can't tell if we have unfreed memory, straight off the bat.", "start": 121.47, "end": 126.75}, {"id": "sent_4_3", "text": "So it's, we're gonna just try to run it.", "start": 126.75, "end": 129.31}, {"id": "sent_4_4", "text": "If we run this, it'll actually say memory leak and or it'll say, it won't say memory leak, it'll say a number and it won't give us any overt errors.", "start": 129.31, "end": 138.20502}]}, {"id": "para_5", "paragraph_idx": 5, "start": 138.365, "end": 165.175, "sentences": [{"id": "sent_5_0", "text": "But there is a memory leak and if we run a program called valgrind on it, v a l g r I n d, and we will find this.", "start": 138.365, "end": 146.68501}, {"id": "sent_5_1", "text": "Now, you have to type Valgrind and then as if you were running the, file.", "start": 146.68501, "end": 152.44}, {"id": "sent_5_2", "text": "So you type Valgrind and memory leak and watch what happens.", "start": 152.76, "end": 155.72}, {"id": "sent_5_3", "text": "Okay.", "start": 156.04, "end": 156.68001}, {"id": "sent_5_4", "text": "It gives us some things and it runs the code and it actually printed out our answer here and then it gives us a little status at the end here.", "start": 156.76, "end": 165.175}]}, {"id": "para_6", "paragraph_idx": 6, "start": 165.975, "end": 188.80002, "sentences": [{"id": "sent_6_0", "text": "And what it says is, in use at exit 4,000 bytes.", "start": 165.975, "end": 171.335}, {"id": "sent_6_1", "text": "Well, it turns out that, integers are four bytes each and we have 1,000 of them.", "start": 171.415, "end": 176.455}, {"id": "sent_6_2", "text": "So this makes sense given what we know about our program.", "start": 176.455, "end": 179.36002}, {"id": "sent_6_3", "text": "There's 4,000 bytes that are still in use.", "start": 179.76001, "end": 183.36002}, {"id": "sent_6_4", "text": "So if you know a number like that and you happen to know the program and you might be able to that might tell you all you need to know right there.", "start": 183.44, "end": 188.80002}]}, {"id": "para_7", "paragraph_idx": 7, "start": 189.28, "end": 223.34001, "sentences": [{"id": "sent_7_0", "text": "But then it says, look, I made one allocation, I didn't do any freeze and I allocated 4,000 bytes, therefore there are 4,000 bytes left.", "start": 189.28, "end": 197.155}, {"id": "sent_7_1", "text": "And then it says, look, you definitely lost 4,000 bytes in one block of memory and it also tells you some other things.", "start": 197.155, "end": 204.915}, {"id": "sent_7_2", "text": "So we didn't it didn't sometimes it can't quite tell, so it's possibly lost.", "start": 204.915, "end": 209.82}, {"id": "sent_7_3", "text": "And it says that you, you know, that that's the deal.", "start": 210.14, "end": 214.14}, {"id": "sent_7_4", "text": "Now, I promised you that we'd be able to tell exactly where the leak was and it says here, rerun with dash dash leak check equals full to see the details of the leaked memory.", "start": 214.14, "end": 223.34001}]}, {"id": "para_8", "paragraph_idx": 8, "start": 223.425, "end": 260.475, "sentences": [{"id": "sent_8_0", "text": "So if we go and we say valgrind dash dash leak check equals full and then dot slash memory leak, it reruns our code again and it gives us more information.", "start": 223.425, "end": 236.30501}, {"id": "sent_8_1", "text": "And if there's lots of issues, it will give you lots and lots of information.", "start": 236.30501, "end": 240.13}, {"id": "sent_8_2", "text": "But in this case, it says, that 4,000 bytes and one box are definitely lost.", "start": 240.21, "end": 245.97}, {"id": "sent_8_3", "text": "And what happened was you said malloc in memory leak dot c line nine.", "start": 246.29001, "end": 255.35501}, {"id": "sent_8_4", "text": "And you go, oh, I guess I never freed the memory that I allocated on line nine.", "start": 255.755, "end": 260.475}]}, {"id": "para_9", "paragraph_idx": 9, "start": 260.475, "end": 306.22, "sentences": [{"id": "sent_9_0", "text": "So if we look at memoryleak.c, we go down to line nine, we say, oh, yep, look at that, there's our malloc and it looks like we never freed it.", "start": 260.475, "end": 268.395}, {"id": "sent_9_1", "text": "So this is a super super important tool to give us enough information to help debug our code, especially when we want to find memory leaks.", "start": 268.88, "end": 277.68}, {"id": "sent_9_2", "text": "Now in CS one zero seven, we will expect that your programs don't have any leaks in them or you'll lose points.", "start": 277.68, "end": 287.08502}, {"id": "sent_9_3", "text": "So how might we fix this?", "start": 287.08502, "end": 288.52502}, {"id": "sent_9_4", "text": "If we go to memoryleak.c and, I actually put this comment in because I knew what I was doing, but if I type free and the pointer which was our int array and then I rerun gcc on it, still compiles just fine.", "start": 288.685, "end": 306.22}]}, {"id": "para_10", "paragraph_idx": 10, "start": 306.22, "end": 324.055, "sentences": [{"id": "sent_10_0", "text": "If I run it, it gives me some random number and random array access.", "start": 306.22, "end": 310.06}, {"id": "sent_10_1", "text": "And if we run valgrind on it, and let's just run the regular one.", "start": 310.615, "end": 315.495}, {"id": "sent_10_2", "text": "I'll clear your screen first.", "start": 315.57498, "end": 316.935}, {"id": "sent_10_3", "text": "And I'll do that and it says, oh, look, use of exit zero bytes and zero blocks.", "start": 317.095, "end": 322.13498}, {"id": "sent_10_4", "text": "We had one allocation and one free.", "start": 322.13498, "end": 324.055}]}, {"id": "para_11", "paragraph_idx": 11, "start": 324.055, "end": 331.38, "sentences": [{"id": "sent_11_0", "text": "Great.", "start": 324.055, "end": 324.375}, {"id": "sent_11_1", "text": "We allocated 4,000 bytes.", "start": 324.375, "end": 325.81497}, {"id": "sent_11_2", "text": "All heap blocks were freed.", "start": 326.26, "end": 327.94}, {"id": "sent_11_3", "text": "This is the one that you wanna look for.", "start": 327.94, "end": 329.62}, {"id": "sent_11_4", "text": "No leaks are possible.", "start": 329.62, "end": 331.38}]}, {"id": "para_12", "paragraph_idx": 12, "start": 331.86002, "end": 340.42, "sentences": [{"id": "sent_12_0", "text": "So if you can see that in your code, you know you you know you don't have any memory leaks.", "start": 331.86002, "end": 336.42}, {"id": "sent_12_1", "text": "So that is how you run Valgrind.", "start": 336.5, "end": 340.1}, {"id": "sent_12_2", "text": "Thanks.", "start": 340.1, "end": 340.42}]}]</script>
+    <script>
+        window.YT_VIDEO_ID = "A5Rc4AwdaOA";
+        window.ORIGINAL_UPLOADER = "Chris Gregg";
+        window.ORIGINAL_DURATION = 342;
+    </script>
+    <style>
+        /* Inline critical styles to ensure layout works even before external CSS loads */
+        .transcript-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-column {
+            width: 60px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .transcript-column {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 250px);
+            padding-right: 20px;
+        }
+
+        .timeline-connecting-line {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .paragraph-container {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-dot-wrapper {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .paragraph-text {
+            flex: 1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paragraph-active .paragraph-text {
+            background-color: rgba(144, 202, 249, 0.2);
+        }
+
+        .paragraph-active .timeline-dot {
+            background-color: #2196F3;
+            width: 18px;
+            height: 18px;
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+        }
+
+        .transcript-sentence {
+            transition: background-color 0.3s ease;
+        }
+
+        .sentence-active {
+            background-color: rgba(33, 150, 243, 0.3);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="video-section">
+            <div id="youtube-player-iframe"></div>
+        </div>
+        <header class="page-header">
+             <div class="video-info">
+                <h1>How to use valgrind</h1>
+                <p>Channel: Chris Gregg | Duration: 05:42</p>
+            </div>
+            <div class="settings-bar">
+                <label for="autoScrollTranscriptCheckbox"><input type="checkbox" id="autoScrollTranscriptCheckbox" checked> Auto-scroll Transcript</label>
+                <label for="minimalVideoToggle"><input type="checkbox" id="minimalVideoToggle"> Minimal Video Player</label>
+            </div>
+        </header>
+        <div class="content-section" id="mainContentArea">
+            
+        <div class="transcript-container">
+            <div class="timeline-column">
+                <div class="timeline-connecting-line"></div>
+            </div>
+            <div class="transcript-column">
+        
+                <div class="paragraph-container" data-paragraph-id="para_0" data-paragraph-idx="0" data-start-time="1.28" data-end-time="34.43">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="1.28"></div>
+                        <div class="timeline-timestamp">00:01</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_0"><span class="transcript-sentence" id="sent_0_0" data-start-time="1.28" data-end-time="2.08">Hi there.</span> <span class="transcript-sentence" id="sent_0_1" data-start-time="2.08" data-end-time="13.36">In this video, we are gonna take a look at the Valgrind program, which is a very important tool that you will use in CS one zero seven to help debug your code.</span> <span class="transcript-sentence" id="sent_0_2" data-start-time="13.36" data-end-time="19.005">In particular, it is used to find memory leaks in your code.</span> <span class="transcript-sentence" id="sent_0_3" data-start-time="19.005" data-end-time="30.43">For instance, when you allocated memory during your program and then forgot to free it later when you before the program ends.</span> <span class="transcript-sentence" id="sent_0_4" data-start-time="30.51" data-end-time="34.43">So I have an example here that I want to show you.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_1" data-paragraph-idx="1" data-start-time="34.43" data-end-time="47.784996">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="34.43"></div>
+                        <div class="timeline-timestamp">00:34</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_1"><span class="transcript-sentence" id="sent_1_0" data-start-time="34.43" data-end-time="39.47">So let's take a look at memory leak dot c.</span> <span class="transcript-sentence" id="sent_1_1" data-start-time="39.71" data-end-time="41.23">And here's the program.</span> <span class="transcript-sentence" id="sent_1_2" data-start-time="41.39" data-end-time="42.83">It's a very simple program.</span> <span class="transcript-sentence" id="sent_1_3" data-start-time="42.83" data-end-time="46.105">Basically, we're saying that we have an array size of a thousand.</span> <span class="transcript-sentence" id="sent_1_4" data-start-time="46.344997" data-end-time="47.784996">We are creating an array.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_2" data-paragraph-idx="2" data-start-time="47.945" data-end-time="83.355">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="47.945"></div>
+                        <div class="timeline-timestamp">00:47</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_2"><span class="transcript-sentence" id="sent_2_0" data-start-time="47.945" data-end-time="65.76">I know we haven't gotten there yet at the beginning of the school year for, 01/2007 yet, but, instead of, using new like we might in c plus plus we use malloc here to ask for memory from the memory system and to allocate the memory.</span> <span class="transcript-sentence" id="sent_2_1" data-start-time="66.0" data-end-time="73.76">And in this case, we are allocating an int array, just put the numbers zero through 999 into each one.</span> <span class="transcript-sentence" id="sent_2_2" data-start-time="74.075005" data-end-time="77.275">Then we're gonna randomly grab one to print out.</span> <span class="transcript-sentence" id="sent_2_3" data-start-time="77.675" data-end-time="81.595">And what we're gonna do is we're gonna end the program without freeing the memory.</span> <span class="transcript-sentence" id="sent_2_4" data-start-time="81.595" data-end-time="83.355">So in other words, we have a memory leak.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_3" data-paragraph-idx="3" data-start-time="83.515" data-end-time="118.73499">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="83.515"></div>
+                        <div class="timeline-timestamp">01:23</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_3"><span class="transcript-sentence" id="sent_3_0" data-start-time="83.515" data-end-time="84.075005">Alright.</span> <span class="transcript-sentence" id="sent_3_1" data-start-time="84.075005" data-end-time="86.235">So what I'm gonna do is I'm gonna compile this.</span> <span class="transcript-sentence" id="sent_3_2" data-start-time="86.235" data-end-time="97.670006">And to compile this, we're gonna use some compiler commands flags that allow Valgrind to tell us exactly in our program where the memory leak is, which is actually very nice.</span> <span class="transcript-sentence" id="sent_3_3" data-start-time="99.03" data-end-time="105.935">So what we can do is we can do a dash g and dash o g, and that is an o, uppercase o and not a zero.</span> <span class="transcript-sentence" id="sent_3_4" data-start-time="105.935" data-end-time="118.73499">And then dash s t d equals, gnu 99 for the type of c that we're using and then memory leak dot c and then let's just call the program memory leak.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_4" data-paragraph-idx="4" data-start-time="119.23" data-end-time="138.20502">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="119.23"></div>
+                        <div class="timeline-timestamp">01:59</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_4"><span class="transcript-sentence" id="sent_4_0" data-start-time="119.23" data-end-time="119.87">Okay.</span> <span class="transcript-sentence" id="sent_4_1" data-start-time="120.11" data-end-time="121.47">And it compiled just fine.</span> <span class="transcript-sentence" id="sent_4_2" data-start-time="121.47" data-end-time="126.75">Remember, GCC can't tell if we have unfreed memory, straight off the bat.</span> <span class="transcript-sentence" id="sent_4_3" data-start-time="126.75" data-end-time="129.31">So it's, we're gonna just try to run it.</span> <span class="transcript-sentence" id="sent_4_4" data-start-time="129.31" data-end-time="138.20502">If we run this, it'll actually say memory leak and or it'll say, it won't say memory leak, it'll say a number and it won't give us any overt errors.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_5" data-paragraph-idx="5" data-start-time="138.365" data-end-time="165.175">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="138.365"></div>
+                        <div class="timeline-timestamp">02:18</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_5"><span class="transcript-sentence" id="sent_5_0" data-start-time="138.365" data-end-time="146.68501">But there is a memory leak and if we run a program called valgrind on it, v a l g r I n d, and we will find this.</span> <span class="transcript-sentence" id="sent_5_1" data-start-time="146.68501" data-end-time="152.44">Now, you have to type Valgrind and then as if you were running the, file.</span> <span class="transcript-sentence" id="sent_5_2" data-start-time="152.76" data-end-time="155.72">So you type Valgrind and memory leak and watch what happens.</span> <span class="transcript-sentence" id="sent_5_3" data-start-time="156.04" data-end-time="156.68001">Okay.</span> <span class="transcript-sentence" id="sent_5_4" data-start-time="156.76" data-end-time="165.175">It gives us some things and it runs the code and it actually printed out our answer here and then it gives us a little status at the end here.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_6" data-paragraph-idx="6" data-start-time="165.975" data-end-time="188.80002">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="165.975"></div>
+                        <div class="timeline-timestamp">02:45</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_6"><span class="transcript-sentence" id="sent_6_0" data-start-time="165.975" data-end-time="171.335">And what it says is, in use at exit 4,000 bytes.</span> <span class="transcript-sentence" id="sent_6_1" data-start-time="171.415" data-end-time="176.455">Well, it turns out that, integers are four bytes each and we have 1,000 of them.</span> <span class="transcript-sentence" id="sent_6_2" data-start-time="176.455" data-end-time="179.36002">So this makes sense given what we know about our program.</span> <span class="transcript-sentence" id="sent_6_3" data-start-time="179.76001" data-end-time="183.36002">There's 4,000 bytes that are still in use.</span> <span class="transcript-sentence" id="sent_6_4" data-start-time="183.44" data-end-time="188.80002">So if you know a number like that and you happen to know the program and you might be able to that might tell you all you need to know right there.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_7" data-paragraph-idx="7" data-start-time="189.28" data-end-time="223.34001">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="189.28"></div>
+                        <div class="timeline-timestamp">03:09</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_7"><span class="transcript-sentence" id="sent_7_0" data-start-time="189.28" data-end-time="197.155">But then it says, look, I made one allocation, I didn't do any freeze and I allocated 4,000 bytes, therefore there are 4,000 bytes left.</span> <span class="transcript-sentence" id="sent_7_1" data-start-time="197.155" data-end-time="204.915">And then it says, look, you definitely lost 4,000 bytes in one block of memory and it also tells you some other things.</span> <span class="transcript-sentence" id="sent_7_2" data-start-time="204.915" data-end-time="209.82">So we didn't it didn't sometimes it can't quite tell, so it's possibly lost.</span> <span class="transcript-sentence" id="sent_7_3" data-start-time="210.14" data-end-time="214.14">And it says that you, you know, that that's the deal.</span> <span class="transcript-sentence" id="sent_7_4" data-start-time="214.14" data-end-time="223.34001">Now, I promised you that we'd be able to tell exactly where the leak was and it says here, rerun with dash dash leak check equals full to see the details of the leaked memory.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_8" data-paragraph-idx="8" data-start-time="223.425" data-end-time="260.475">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="223.425"></div>
+                        <div class="timeline-timestamp">03:43</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_8"><span class="transcript-sentence" id="sent_8_0" data-start-time="223.425" data-end-time="236.30501">So if we go and we say valgrind dash dash leak check equals full and then dot slash memory leak, it reruns our code again and it gives us more information.</span> <span class="transcript-sentence" id="sent_8_1" data-start-time="236.30501" data-end-time="240.13">And if there's lots of issues, it will give you lots and lots of information.</span> <span class="transcript-sentence" id="sent_8_2" data-start-time="240.21" data-end-time="245.97">But in this case, it says, that 4,000 bytes and one box are definitely lost.</span> <span class="transcript-sentence" id="sent_8_3" data-start-time="246.29001" data-end-time="255.35501">And what happened was you said malloc in memory leak dot c line nine.</span> <span class="transcript-sentence" id="sent_8_4" data-start-time="255.755" data-end-time="260.475">And you go, oh, I guess I never freed the memory that I allocated on line nine.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_9" data-paragraph-idx="9" data-start-time="260.475" data-end-time="306.22">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="260.475"></div>
+                        <div class="timeline-timestamp">04:20</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_9"><span class="transcript-sentence" id="sent_9_0" data-start-time="260.475" data-end-time="268.395">So if we look at memoryleak.c, we go down to line nine, we say, oh, yep, look at that, there's our malloc and it looks like we never freed it.</span> <span class="transcript-sentence" id="sent_9_1" data-start-time="268.88" data-end-time="277.68">So this is a super super important tool to give us enough information to help debug our code, especially when we want to find memory leaks.</span> <span class="transcript-sentence" id="sent_9_2" data-start-time="277.68" data-end-time="287.08502">Now in CS one zero seven, we will expect that your programs don't have any leaks in them or you'll lose points.</span> <span class="transcript-sentence" id="sent_9_3" data-start-time="287.08502" data-end-time="288.52502">So how might we fix this?</span> <span class="transcript-sentence" id="sent_9_4" data-start-time="288.685" data-end-time="306.22">If we go to memoryleak.c and, I actually put this comment in because I knew what I was doing, but if I type free and the pointer which was our int array and then I rerun gcc on it, still compiles just fine.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_10" data-paragraph-idx="10" data-start-time="306.22" data-end-time="324.055">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="306.22"></div>
+                        <div class="timeline-timestamp">05:06</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_10"><span class="transcript-sentence" id="sent_10_0" data-start-time="306.22" data-end-time="310.06">If I run it, it gives me some random number and random array access.</span> <span class="transcript-sentence" id="sent_10_1" data-start-time="310.615" data-end-time="315.495">And if we run valgrind on it, and let's just run the regular one.</span> <span class="transcript-sentence" id="sent_10_2" data-start-time="315.57498" data-end-time="316.935">I'll clear your screen first.</span> <span class="transcript-sentence" id="sent_10_3" data-start-time="317.095" data-end-time="322.13498">And I'll do that and it says, oh, look, use of exit zero bytes and zero blocks.</span> <span class="transcript-sentence" id="sent_10_4" data-start-time="322.13498" data-end-time="324.055">We had one allocation and one free.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_11" data-paragraph-idx="11" data-start-time="324.055" data-end-time="331.38">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="324.055"></div>
+                        <div class="timeline-timestamp">05:24</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_11"><span class="transcript-sentence" id="sent_11_0" data-start-time="324.055" data-end-time="324.375">Great.</span> <span class="transcript-sentence" id="sent_11_1" data-start-time="324.375" data-end-time="325.81497">We allocated 4,000 bytes.</span> <span class="transcript-sentence" id="sent_11_2" data-start-time="326.26" data-end-time="327.94">All heap blocks were freed.</span> <span class="transcript-sentence" id="sent_11_3" data-start-time="327.94" data-end-time="329.62">This is the one that you wanna look for.</span> <span class="transcript-sentence" id="sent_11_4" data-start-time="329.62" data-end-time="331.38">No leaks are possible.</span> </div>
+                </div>
+                <div class="paragraph-container" data-paragraph-id="para_12" data-paragraph-idx="12" data-start-time="331.86002" data-end-time="340.42">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot" data-timestamp="331.86002"></div>
+                        <div class="timeline-timestamp">05:31</div>
+                    </div>
+                    <div class="paragraph-text" id="text-para_12"><span class="transcript-sentence" id="sent_12_0" data-start-time="331.86002" data-end-time="336.42">So if you can see that in your code, you know you you know you don't have any memory leaks.</span> <span class="transcript-sentence" id="sent_12_1" data-start-time="336.5" data-end-time="340.1">So that is how you run Valgrind.</span> <span class="transcript-sentence" id="sent_12_2" data-start-time="340.1" data-end-time="340.42">Thanks.</span> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/lesson_player.js"></script>
+</body>
+</html>

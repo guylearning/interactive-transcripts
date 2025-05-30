@@ -700,5 +700,17 @@
     "lesson_html_filename": "using_makefiles_to_make_your_programs_interactive_lesson.html",
     "json_transcript_path_on_repo": "using_makefiles_to_make_your_programs/using_makefiles_to_make_your_programs_transcript.json",
     "vtt_transcript_path_on_repo": "using_makefiles_to_make_your_programs/using_makefiles_to_make_your_programs_transcript.vtt"
+  },
+  {
+    "title_original": "How to use valgrind",
+    "video_name_clean": "how_to_use_valgrind",
+    "youtube_id": "A5Rc4AwdaOA",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:50:05.720489+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 342,
+    "lesson_html_filename": "how_to_use_valgrind_interactive_lesson.html",
+    "json_transcript_path_on_repo": "how_to_use_valgrind/how_to_use_valgrind_transcript.json",
+    "vtt_transcript_path_on_repo": "how_to_use_valgrind/how_to_use_valgrind_transcript.vtt"
   }
 ]
