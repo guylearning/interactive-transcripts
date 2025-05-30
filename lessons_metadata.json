@@ -508,5 +508,17 @@
     "lesson_html_filename": "the_cat_command_on_linux_interactive_lesson.html",
     "json_transcript_path_on_repo": "the_cat_command_on_linux/the_cat_command_on_linux_transcript.json",
     "vtt_transcript_path_on_repo": "the_cat_command_on_linux/the_cat_command_on_linux_transcript.vtt"
+  },
+  {
+    "title_original": "The ls (list directory) command",
+    "video_name_clean": "the_ls_list_directory_command",
+    "youtube_id": "tb76MM5FAm4",
+    "tags": [],
+    "created_timestamp_iso": "2025-05-30T04:42:40.006478+00:00",
+    "uploader": "Chris Gregg",
+    "duration_seconds": 221,
+    "lesson_html_filename": "the_ls_list_directory_command_interactive_lesson.html",
+    "json_transcript_path_on_repo": "the_ls_list_directory_command/the_ls_list_directory_command_transcript.json",
+    "vtt_transcript_path_on_repo": "the_ls_list_directory_command/the_ls_list_directory_command_transcript.vtt"
   }
 ]

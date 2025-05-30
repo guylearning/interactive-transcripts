@@ -1,0 +1,263 @@
+WEBVTT
+
+NOTE
+Transcription provided by Deepgram
+Request Id: 1c8261fa-257f-4ab5-917b-c52205f2f2dd
+Created: 2025-05-30T04:42:39.473Z
+Duration: 221.38776
+Channels: 1
+
+00:00:00.240 --> 00:00:03.040
+Hi there. This is Chris, and I'm going
+
+00:00:03.040 --> 00:00:06.880
+to show you how to use the l
+
+00:00:06.880 --> 00:00:10.400
+s command when you're logged into the Linux
+
+00:00:10.400 --> 00:00:14.925
+Smith computers. And to do that, it's pretty
+
+00:00:14.925 --> 00:00:17.485
+simple. You actually, once you're logged in, there's
+
+00:00:17.485 --> 00:00:20.285
+a command called l s, just l s
+
+00:00:20.285 --> 00:00:21.805
+and it will list all the files in
+
+00:00:21.805 --> 00:00:23.405
+your folder. I happen to have a whole
+
+00:00:23.405 --> 00:00:25.805
+bunch of files in my home folder here.
+
+00:00:26.830 --> 00:00:28.270
+But if we, let's say we're gonna go
+
+00:00:28.270 --> 00:00:30.670
+into my one zero seven folder with the
+
+00:00:30.670 --> 00:00:32.270
+c d command, which is covered in a
+
+00:00:32.270 --> 00:00:35.710
+different video. I can type l s and
+
+00:00:35.710 --> 00:00:39.025
+get all the files in there and that's
+
+00:00:39.025 --> 00:00:41.505
+the basic way of using the command, but
+
+00:00:41.505 --> 00:00:44.065
+the ls command has lots of different flags
+
+00:00:44.065 --> 00:00:45.745
+that go along with it. So you can
+
+00:00:45.745 --> 00:00:48.225
+type ls dash l and it will list
+
+00:00:48.225 --> 00:00:51.105
+all your files, all the non hidden files
+
+00:00:51.105 --> 00:00:54.210
+as it turns out in a, an interesting
+
+00:00:54.210 --> 00:00:57.250
+format here that, tells you more information about
+
+00:00:57.250 --> 00:00:59.090
+the files. It tells you in fact how
+
+00:00:59.090 --> 00:01:01.170
+big the file is and it tells you
+
+00:01:01.170 --> 00:01:02.930
+whether the file is a directory or not.
+
+00:01:02.930 --> 00:01:04.610
+The little d at the beginning here means
+
+00:01:04.610 --> 00:01:07.395
+that it's a directory. So the assign zero
+
+00:01:07.395 --> 00:01:09.955
+folder in the old and the pandoc folder
+
+00:01:09.955 --> 00:01:14.115
+here are, all, directories. So if I type
+
+00:01:14.115 --> 00:01:16.995
+c d to change directory into the pandoc
+
+00:01:16.995 --> 00:01:20.050
+folder, it will, go into there and then
+
+00:01:20.050 --> 00:01:21.730
+that's that's an actual folder that I can
+
+00:01:21.730 --> 00:01:23.250
+do l s on and see all the
+
+00:01:23.250 --> 00:01:26.850
+files in that folder as well. Some of
+
+00:01:26.850 --> 00:01:29.650
+the other, flags that you can use, I
+
+00:01:29.650 --> 00:01:32.130
+like the l s dash one which lists
+
+00:01:32.130 --> 00:01:34.025
+them all out one after the other and
+
+00:01:34.025 --> 00:01:35.625
+then I can just scroll back and back
+
+00:01:35.625 --> 00:01:36.905
+and up and down here and see them
+
+00:01:36.905 --> 00:01:39.145
+like that. Sometimes that's nice. As I said,
+
+00:01:39.145 --> 00:01:41.385
+the l s dash l works great. L
+
+00:01:41.385 --> 00:01:44.185
+s dash al means even show me the
+
+00:01:44.345 --> 00:01:47.250
+hidden files as well. So in this case,
+
+00:01:47.250 --> 00:01:50.050
+there's a couple of files that are hidden.
+
+00:01:50.050 --> 00:01:52.770
+Files that begin with a period are all
+
+00:01:52.770 --> 00:01:57.410
+hidden on your in your folder system. So
+
+00:01:57.410 --> 00:01:59.650
+anything that's actually starts with a period is
+
+00:01:59.650 --> 00:02:05.645
+hidden, including the two interesting directories called dot,
+
+00:02:05.645 --> 00:02:07.725
+which means the current directory that you're in,
+
+00:02:07.885 --> 00:02:10.525
+and dot dot, which means your previous directory.
+
+00:02:10.525 --> 00:02:13.405
+And that's also covered in a different video
+
+00:02:13.405 --> 00:02:15.965
+on the c d command and working directories
+
+00:02:15.965 --> 00:02:18.150
+and so forth. If you wanna know more
+
+00:02:18.150 --> 00:02:20.150
+information about LS and all the different flags,
+
+00:02:20.150 --> 00:02:22.630
+you can type man LS for the manual
+
+00:02:22.630 --> 00:02:25.190
+page and it gives you the manual page
+
+00:02:25.190 --> 00:02:27.830
+here and it says all the different types
+
+00:02:27.830 --> 00:02:30.950
+of flags and there's a ton of flags
+
+00:02:30.950 --> 00:02:35.535
+for for the ls command. And by the
+
+00:02:35.535 --> 00:02:37.615
+way, I'm just using the arrow keys to
+
+00:02:37.615 --> 00:02:40.895
+to go down in this file and see
+
+00:02:40.895 --> 00:02:42.335
+all the different commands. You can also type
+
+00:02:42.335 --> 00:02:44.335
+q to quit out of the manual page.
+
+00:02:44.740 --> 00:02:46.900
+My favorite l s command is l s
+
+00:02:46.900 --> 00:02:49.860
+dash a l r t, which means list
+
+00:02:49.860 --> 00:02:52.020
+all the files including the hidden ones, list
+
+00:02:52.020 --> 00:02:53.620
+them in that special format that gives me
+
+00:02:53.620 --> 00:02:56.340
+more information, list them in reverse order, and
+
+00:02:56.340 --> 00:02:58.735
+list them by time. So what this actually
+
+00:02:58.735 --> 00:03:01.135
+does is it lists the files in the
+
+00:03:01.135 --> 00:03:03.615
+reverse order from when they were created. This
+
+00:03:03.615 --> 00:03:04.815
+directory is not the best one to do
+
+00:03:04.815 --> 00:03:06.415
+it. Let's go into a previous directory. L
+
+00:03:06.415 --> 00:03:08.815
+s dash a l r t says, okay.
+
+00:03:09.375 --> 00:03:15.620
+I created the old folder, the most, most
+
+00:03:15.620 --> 00:03:18.660
+passed and the newest folder happens to be
+
+00:03:18.660 --> 00:03:22.420
+the pan doc folder here, which is, like
+
+00:03:22.420 --> 00:03:23.780
+that. So I like the l s dash
+
+00:03:23.780 --> 00:03:26.075
+a l r t to give you just
+
+00:03:26.075 --> 00:03:27.755
+a listing of, like, hey, which files did
+
+00:03:27.755 --> 00:03:30.235
+I modify most recently? Those are ones at
+
+00:03:30.235 --> 00:03:32.635
+the bottom of the folder. So that's it
+
+00:03:32.635 --> 00:03:34.075
+for the l s command. You will use
+
+00:03:34.075 --> 00:03:36.235
+this every single time you log on to
+
+00:03:36.235 --> 00:03:38.395
+the myth computers, and you should get used
+
+00:03:38.395 --> 00:03:39.515
+to it. Thanks.

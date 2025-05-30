@@ -1,0 +1,4983 @@
+{
+  "metadata": {
+    "transaction_key": "deprecated",
+    "request_id": "1c8261fa-257f-4ab5-917b-c52205f2f2dd",
+    "sha256": "aa0f31fe1cc6ce26d4c42f537545342749412e2c0fe77cc866a9dcc8d2558701",
+    "created": "2025-05-30T04:42:39.473Z",
+    "duration": 221.38776,
+    "channels": 1,
+    "models": [
+      "3b3aabe4-608a-46ac-9585-7960a25daf1a"
+    ],
+    "model_info": {
+      "3b3aabe4-608a-46ac-9585-7960a25daf1a": {
+        "name": "general-nova-3",
+        "version": "2024-12-20.0",
+        "arch": "nova-3"
+      }
+    }
+  },
+  "results": {
+    "channels": [
+      {
+        "alternatives": [
+          {
+            "transcript": "Hi there. This is Chris, and I'm going to show you how to use the l s command when you're logged into the Linux Smith computers. And to do that, it's pretty simple. You actually, once you're logged in, there's a command called l s, just l s and it will list all the files in your folder. I happen to have a whole bunch of files in my home folder here. But if we, let's say we're gonna go into my one zero seven folder with the c d command, which is covered in a different video. I can type l s and get all the files in there and that's the basic way of using the command, but the ls command has lots of different flags that go along with it. So you can type ls dash l and it will list all your files, all the non hidden files as it turns out in a, an interesting format here that, tells you more information about the files. It tells you in fact how big the file is and it tells you whether the file is a directory or not. The little d at the beginning here means that it's a directory. So the assign zero folder in the old and the pandoc folder here are, all, directories. So if I type c d to change directory into the pandoc folder, it will, go into there and then that's that's an actual folder that I can do l s on and see all the files in that folder as well. Some of the other, flags that you can use, I like the l s dash one which lists them all out one after the other and then I can just scroll back and back and up and down here and see them like that. Sometimes that's nice. As I said, the l s dash l works great. L s dash al means even show me the hidden files as well. So in this case, there's a couple of files that are hidden. Files that begin with a period are all hidden on your in your folder system. So anything that's actually starts with a period is hidden, including the two interesting directories called dot, which means the current directory that you're in, and dot dot, which means your previous directory. And that's also covered in a different video on the c d command and working directories and so forth. If you wanna know more information about LS and all the different flags, you can type man LS for the manual page and it gives you the manual page here and it says all the different types of flags and there's a ton of flags for for the ls command. And by the way, I'm just using the arrow keys to to go down in this file and see all the different commands. You can also type q to quit out of the manual page. My favorite l s command is l s dash a l r t, which means list all the files including the hidden ones, list them in that special format that gives me more information, list them in reverse order, and list them by time. So what this actually does is it lists the files in the reverse order from when they were created. This directory is not the best one to do it. Let's go into a previous directory. L s dash a l r t says, okay. I created the old folder, the most, most passed and the newest folder happens to be the pan doc folder here, which is, like that. So I like the l s dash a l r t to give you just a listing of, like, hey, which files did I modify most recently? Those are ones at the bottom of the folder. So that's it for the l s command. You will use this every single time you log on to the myth computers, and you should get used to it. Thanks.",
+            "confidence": 0.99612314,
+            "words": [
+              {
+                "word": "hi",
+                "start": 0.24,
+                "end": 0.48,
+                "confidence": 0.99766207,
+                "punctuated_word": "Hi"
+              },
+              {
+                "word": "there",
+                "start": 0.48,
+                "end": 0.88,
+                "confidence": 0.8678727,
+                "punctuated_word": "there."
+              },
+              {
+                "word": "this",
+                "start": 0.88,
+                "end": 1.04,
+                "confidence": 0.99856657,
+                "punctuated_word": "This"
+              },
+              {
+                "word": "is",
+                "start": 1.04,
+                "end": 1.12,
+                "confidence": 0.9992213,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "chris",
+                "start": 1.12,
+                "end": 1.76,
+                "confidence": 0.7878647,
+                "punctuated_word": "Chris,"
+              },
+              {
+                "word": "and",
+                "start": 1.8399999,
+                "end": 2.32,
+                "confidence": 0.99969923,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "i'm",
+                "start": 2.32,
+                "end": 2.8,
+                "confidence": 0.80356276,
+                "punctuated_word": "I'm"
+              },
+              {
+                "word": "going",
+                "start": 2.8,
+                "end": 3.04,
+                "confidence": 0.99856347,
+                "punctuated_word": "going"
+              },
+              {
+                "word": "to",
+                "start": 3.04,
+                "end": 3.1999998,
+                "confidence": 0.999577,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "show",
+                "start": 3.1999998,
+                "end": 3.4399998,
+                "confidence": 0.9998367,
+                "punctuated_word": "show"
+              },
+              {
+                "word": "you",
+                "start": 3.4399998,
+                "end": 3.9999998,
+                "confidence": 0.99966145,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "how",
+                "start": 4.16,
+                "end": 4.64,
+                "confidence": 0.99583757,
+                "punctuated_word": "how"
+              },
+              {
+                "word": "to",
+                "start": 4.64,
+                "end": 5.28,
+                "confidence": 0.99956423,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "use",
+                "start": 5.92,
+                "end": 6.3199997,
+                "confidence": 0.9938259,
+                "punctuated_word": "use"
+              },
+              {
+                "word": "the",
+                "start": 6.3199997,
+                "end": 6.56,
+                "confidence": 0.99960476,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "l",
+                "start": 6.56,
+                "end": 6.8799996,
+                "confidence": 0.7403546,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 6.8799996,
+                "end": 7.04,
+                "confidence": 0.9710292,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "command",
+                "start": 7.04,
+                "end": 7.7599998,
+                "confidence": 0.99965596,
+                "punctuated_word": "command"
+              },
+              {
+                "word": "when",
+                "start": 7.7599998,
+                "end": 8.16,
+                "confidence": 0.5048544,
+                "punctuated_word": "when"
+              },
+              {
+                "word": "you're",
+                "start": 8.16,
+                "end": 8.4,
+                "confidence": 0.99699605,
+                "punctuated_word": "you're"
+              },
+              {
+                "word": "logged",
+                "start": 8.4,
+                "end": 8.639999,
+                "confidence": 0.9995993,
+                "punctuated_word": "logged"
+              },
+              {
+                "word": "into",
+                "start": 8.639999,
+                "end": 9.04,
+                "confidence": 0.6919954,
+                "punctuated_word": "into"
+              },
+              {
+                "word": "the",
+                "start": 9.04,
+                "end": 9.759999,
+                "confidence": 0.9978988,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "linux",
+                "start": 10.0,
+                "end": 10.4,
+                "confidence": 0.972042,
+                "punctuated_word": "Linux"
+              },
+              {
+                "word": "smith",
+                "start": 10.4,
+                "end": 10.8,
+                "confidence": 0.31501082,
+                "punctuated_word": "Smith"
+              },
+              {
+                "word": "computers",
+                "start": 10.8,
+                "end": 11.679999,
+                "confidence": 0.9754448,
+                "punctuated_word": "computers."
+              },
+              {
+                "word": "and",
+                "start": 12.24,
+                "end": 13.5199995,
+                "confidence": 0.9988954,
+                "punctuated_word": "And"
+              },
+              {
+                "word": "to",
+                "start": 13.165,
+                "end": 13.405001,
+                "confidence": 0.97338134,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "do",
+                "start": 13.405001,
+                "end": 13.645,
+                "confidence": 0.99959797,
+                "punctuated_word": "do"
+              },
+              {
+                "word": "that",
+                "start": 13.645,
+                "end": 14.285,
+                "confidence": 0.92345494,
+                "punctuated_word": "that,"
+              },
+              {
+                "word": "it's",
+                "start": 14.365,
+                "end": 14.685,
+                "confidence": 0.976079,
+                "punctuated_word": "it's"
+              },
+              {
+                "word": "pretty",
+                "start": 14.685,
+                "end": 14.925,
+                "confidence": 0.99971336,
+                "punctuated_word": "pretty"
+              },
+              {
+                "word": "simple",
+                "start": 14.925,
+                "end": 15.485,
+                "confidence": 0.9482289,
+                "punctuated_word": "simple."
+              },
+              {
+                "word": "you",
+                "start": 16.045,
+                "end": 16.205,
+                "confidence": 0.9051335,
+                "punctuated_word": "You"
+              },
+              {
+                "word": "actually",
+                "start": 16.205,
+                "end": 16.605,
+                "confidence": 0.65036225,
+                "punctuated_word": "actually,"
+              },
+              {
+                "word": "once",
+                "start": 16.605,
+                "end": 16.765,
+                "confidence": 0.993254,
+                "punctuated_word": "once"
+              },
+              {
+                "word": "you're",
+                "start": 16.765,
+                "end": 16.925,
+                "confidence": 0.98250574,
+                "punctuated_word": "you're"
+              },
+              {
+                "word": "logged",
+                "start": 16.925,
+                "end": 17.085,
+                "confidence": 0.99889165,
+                "punctuated_word": "logged"
+              },
+              {
+                "word": "in",
+                "start": 17.085,
+                "end": 17.405,
+                "confidence": 0.8708925,
+                "punctuated_word": "in,"
+              },
+              {
+                "word": "there's",
+                "start": 17.405,
+                "end": 17.485,
+                "confidence": 0.9945794,
+                "punctuated_word": "there's"
+              },
+              {
+                "word": "a",
+                "start": 17.485,
+                "end": 17.645,
+                "confidence": 0.98284644,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "command",
+                "start": 17.645,
+                "end": 17.805,
+                "confidence": 0.9967796,
+                "punctuated_word": "command"
+              },
+              {
+                "word": "called",
+                "start": 17.805,
+                "end": 17.965,
+                "confidence": 0.992939,
+                "punctuated_word": "called"
+              },
+              {
+                "word": "l",
+                "start": 17.965,
+                "end": 18.445,
+                "confidence": 0.562938,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 18.445,
+                "end": 19.085,
+                "confidence": 0.78212523,
+                "punctuated_word": "s,"
+              },
+              {
+                "word": "just",
+                "start": 19.405,
+                "end": 19.725,
+                "confidence": 0.98319376,
+                "punctuated_word": "just"
+              },
+              {
+                "word": "l",
+                "start": 19.725,
+                "end": 20.045,
+                "confidence": 0.9968184,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 20.045,
+                "end": 20.285,
+                "confidence": 0.99912626,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "and",
+                "start": 20.285,
+                "end": 20.445,
+                "confidence": 0.6319441,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 20.445,
+                "end": 20.525,
+                "confidence": 0.89864206,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "will",
+                "start": 20.525,
+                "end": 20.685,
+                "confidence": 0.7537499,
+                "punctuated_word": "will"
+              },
+              {
+                "word": "list",
+                "start": 20.685,
+                "end": 20.925,
+                "confidence": 0.9981224,
+                "punctuated_word": "list"
+              },
+              {
+                "word": "all",
+                "start": 20.925,
+                "end": 21.085,
+                "confidence": 0.999121,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 21.085,
+                "end": 21.244999,
+                "confidence": 0.9781569,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 21.244999,
+                "end": 21.645,
+                "confidence": 0.9997447,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "in",
+                "start": 21.645,
+                "end": 21.805,
+                "confidence": 0.99960166,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "your",
+                "start": 21.805,
+                "end": 22.045,
+                "confidence": 0.99910235,
+                "punctuated_word": "your"
+              },
+              {
+                "word": "folder",
+                "start": 22.045,
+                "end": 22.525002,
+                "confidence": 0.95212424,
+                "punctuated_word": "folder."
+              },
+              {
+                "word": "i",
+                "start": 22.525002,
+                "end": 22.605,
+                "confidence": 0.99985063,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "happen",
+                "start": 22.605,
+                "end": 22.845001,
+                "confidence": 0.97310174,
+                "punctuated_word": "happen"
+              },
+              {
+                "word": "to",
+                "start": 22.845001,
+                "end": 22.925,
+                "confidence": 0.9993113,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "have",
+                "start": 22.925,
+                "end": 23.085,
+                "confidence": 0.999869,
+                "punctuated_word": "have"
+              },
+              {
+                "word": "a",
+                "start": 23.085,
+                "end": 23.244999,
+                "confidence": 0.9989998,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "whole",
+                "start": 23.244999,
+                "end": 23.404999,
+                "confidence": 0.9997366,
+                "punctuated_word": "whole"
+              },
+              {
+                "word": "bunch",
+                "start": 23.404999,
+                "end": 23.565,
+                "confidence": 0.999686,
+                "punctuated_word": "bunch"
+              },
+              {
+                "word": "of",
+                "start": 23.565,
+                "end": 23.725,
+                "confidence": 0.99900824,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "files",
+                "start": 23.725,
+                "end": 23.965,
+                "confidence": 0.99970907,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "in",
+                "start": 23.965,
+                "end": 24.205,
+                "confidence": 0.999559,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "my",
+                "start": 24.205,
+                "end": 24.685,
+                "confidence": 0.9995623,
+                "punctuated_word": "my"
+              },
+              {
+                "word": "home",
+                "start": 24.845001,
+                "end": 25.244999,
+                "confidence": 0.9698729,
+                "punctuated_word": "home"
+              },
+              {
+                "word": "folder",
+                "start": 25.244999,
+                "end": 25.564999,
+                "confidence": 0.9996637,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "here",
+                "start": 25.564999,
+                "end": 25.805,
+                "confidence": 0.88996756,
+                "punctuated_word": "here."
+              },
+              {
+                "word": "but",
+                "start": 26.83,
+                "end": 27.070002,
+                "confidence": 0.9731977,
+                "punctuated_word": "But"
+              },
+              {
+                "word": "if",
+                "start": 27.070002,
+                "end": 27.230001,
+                "confidence": 0.95255566,
+                "punctuated_word": "if"
+              },
+              {
+                "word": "we",
+                "start": 27.230001,
+                "end": 27.550001,
+                "confidence": 0.77281934,
+                "punctuated_word": "we,"
+              },
+              {
+                "word": "let's",
+                "start": 27.550001,
+                "end": 27.710001,
+                "confidence": 0.99500805,
+                "punctuated_word": "let's"
+              },
+              {
+                "word": "say",
+                "start": 27.710001,
+                "end": 27.87,
+                "confidence": 0.99910957,
+                "punctuated_word": "say"
+              },
+              {
+                "word": "we're",
+                "start": 27.87,
+                "end": 28.03,
+                "confidence": 0.9422213,
+                "punctuated_word": "we're"
+              },
+              {
+                "word": "gonna",
+                "start": 28.03,
+                "end": 28.19,
+                "confidence": 0.87198323,
+                "punctuated_word": "gonna"
+              },
+              {
+                "word": "go",
+                "start": 28.19,
+                "end": 28.27,
+                "confidence": 0.9869977,
+                "punctuated_word": "go"
+              },
+              {
+                "word": "into",
+                "start": 28.27,
+                "end": 28.59,
+                "confidence": 0.99011177,
+                "punctuated_word": "into"
+              },
+              {
+                "word": "my",
+                "start": 28.59,
+                "end": 29.15,
+                "confidence": 0.9974948,
+                "punctuated_word": "my"
+              },
+              {
+                "word": "one",
+                "start": 29.230001,
+                "end": 29.550001,
+                "confidence": 0.97600526,
+                "punctuated_word": "one"
+              },
+              {
+                "word": "zero",
+                "start": 29.550001,
+                "end": 29.710001,
+                "confidence": 0.74777913,
+                "punctuated_word": "zero"
+              },
+              {
+                "word": "seven",
+                "start": 29.710001,
+                "end": 29.95,
+                "confidence": 0.9997539,
+                "punctuated_word": "seven"
+              },
+              {
+                "word": "folder",
+                "start": 29.95,
+                "end": 30.27,
+                "confidence": 0.9987513,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "with",
+                "start": 30.27,
+                "end": 30.51,
+                "confidence": 0.99294937,
+                "punctuated_word": "with"
+              },
+              {
+                "word": "the",
+                "start": 30.51,
+                "end": 30.67,
+                "confidence": 0.8490955,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "c",
+                "start": 30.67,
+                "end": 30.830002,
+                "confidence": 0.6557355,
+                "punctuated_word": "c"
+              },
+              {
+                "word": "d",
+                "start": 30.830002,
+                "end": 31.07,
+                "confidence": 0.62988853,
+                "punctuated_word": "d"
+              },
+              {
+                "word": "command",
+                "start": 31.07,
+                "end": 31.470001,
+                "confidence": 0.87753195,
+                "punctuated_word": "command,"
+              },
+              {
+                "word": "which",
+                "start": 31.470001,
+                "end": 31.630001,
+                "confidence": 0.99735415,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "is",
+                "start": 31.630001,
+                "end": 31.79,
+                "confidence": 0.9926207,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "covered",
+                "start": 31.79,
+                "end": 32.03,
+                "confidence": 0.99965453,
+                "punctuated_word": "covered"
+              },
+              {
+                "word": "in",
+                "start": 32.03,
+                "end": 32.11,
+                "confidence": 0.99930716,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "a",
+                "start": 32.11,
+                "end": 32.27,
+                "confidence": 0.9986759,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "different",
+                "start": 32.27,
+                "end": 32.510002,
+                "confidence": 0.99978775,
+                "punctuated_word": "different"
+              },
+              {
+                "word": "video",
+                "start": 32.510002,
+                "end": 33.07,
+                "confidence": 0.8879331,
+                "punctuated_word": "video."
+              },
+              {
+                "word": "i",
+                "start": 33.71,
+                "end": 33.95,
+                "confidence": 0.98502743,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "can",
+                "start": 33.95,
+                "end": 34.11,
+                "confidence": 0.99909556,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "type",
+                "start": 34.11,
+                "end": 34.35,
+                "confidence": 0.9982508,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "l",
+                "start": 34.35,
+                "end": 34.59,
+                "confidence": 0.7506517,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 34.59,
+                "end": 34.99,
+                "confidence": 0.91751724,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "and",
+                "start": 34.99,
+                "end": 35.71,
+                "confidence": 0.98592365,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "get",
+                "start": 35.71,
+                "end": 36.190002,
+                "confidence": 0.6597826,
+                "punctuated_word": "get"
+              },
+              {
+                "word": "all",
+                "start": 36.190002,
+                "end": 36.35,
+                "confidence": 0.99966395,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 36.35,
+                "end": 36.43,
+                "confidence": 0.9957183,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 36.43,
+                "end": 36.75,
+                "confidence": 0.9997652,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "in",
+                "start": 36.75,
+                "end": 36.91,
+                "confidence": 0.99979097,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "there",
+                "start": 36.91,
+                "end": 37.39,
+                "confidence": 0.99952316,
+                "punctuated_word": "there"
+              },
+              {
+                "word": "and",
+                "start": 37.71,
+                "end": 39.23,
+                "confidence": 0.67861164,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "that's",
+                "start": 38.625,
+                "end": 39.024998,
+                "confidence": 0.99579275,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "the",
+                "start": 39.024998,
+                "end": 39.265,
+                "confidence": 0.999734,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "basic",
+                "start": 39.265,
+                "end": 39.585,
+                "confidence": 0.99990535,
+                "punctuated_word": "basic"
+              },
+              {
+                "word": "way",
+                "start": 39.585,
+                "end": 39.745,
+                "confidence": 0.9997954,
+                "punctuated_word": "way"
+              },
+              {
+                "word": "of",
+                "start": 39.745,
+                "end": 39.905,
+                "confidence": 0.99947375,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "using",
+                "start": 39.905,
+                "end": 40.225,
+                "confidence": 0.9997019,
+                "punctuated_word": "using"
+              },
+              {
+                "word": "the",
+                "start": 40.225,
+                "end": 40.464996,
+                "confidence": 0.9992354,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "command",
+                "start": 40.464996,
+                "end": 41.344997,
+                "confidence": 0.50664294,
+                "punctuated_word": "command,"
+              },
+              {
+                "word": "but",
+                "start": 41.344997,
+                "end": 41.504997,
+                "confidence": 0.99928707,
+                "punctuated_word": "but"
+              },
+              {
+                "word": "the",
+                "start": 41.504997,
+                "end": 41.745,
+                "confidence": 0.9986242,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "ls",
+                "start": 41.745,
+                "end": 42.065,
+                "confidence": 0.69887197,
+                "punctuated_word": "ls"
+              },
+              {
+                "word": "command",
+                "start": 42.065,
+                "end": 42.464996,
+                "confidence": 0.998909,
+                "punctuated_word": "command"
+              },
+              {
+                "word": "has",
+                "start": 42.464996,
+                "end": 42.864998,
+                "confidence": 0.99930024,
+                "punctuated_word": "has"
+              },
+              {
+                "word": "lots",
+                "start": 42.864998,
+                "end": 43.184998,
+                "confidence": 0.99792373,
+                "punctuated_word": "lots"
+              },
+              {
+                "word": "of",
+                "start": 43.184998,
+                "end": 43.344997,
+                "confidence": 0.9996954,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "different",
+                "start": 43.344997,
+                "end": 43.664997,
+                "confidence": 0.99964523,
+                "punctuated_word": "different"
+              },
+              {
+                "word": "flags",
+                "start": 43.664997,
+                "end": 44.065,
+                "confidence": 0.99970645,
+                "punctuated_word": "flags"
+              },
+              {
+                "word": "that",
+                "start": 44.065,
+                "end": 44.305,
+                "confidence": 0.9972542,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "go",
+                "start": 44.305,
+                "end": 44.464996,
+                "confidence": 0.9977532,
+                "punctuated_word": "go"
+              },
+              {
+                "word": "along",
+                "start": 44.464996,
+                "end": 44.704998,
+                "confidence": 0.9995421,
+                "punctuated_word": "along"
+              },
+              {
+                "word": "with",
+                "start": 44.704998,
+                "end": 44.784996,
+                "confidence": 0.9998103,
+                "punctuated_word": "with"
+              },
+              {
+                "word": "it",
+                "start": 44.784996,
+                "end": 45.105,
+                "confidence": 0.9778706,
+                "punctuated_word": "it."
+              },
+              {
+                "word": "so",
+                "start": 45.105,
+                "end": 45.265,
+                "confidence": 0.9989919,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "you",
+                "start": 45.265,
+                "end": 45.585,
+                "confidence": 0.9837922,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "can",
+                "start": 45.585,
+                "end": 45.745,
+                "confidence": 0.93854904,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "type",
+                "start": 45.745,
+                "end": 45.905,
+                "confidence": 0.998955,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "ls",
+                "start": 45.905,
+                "end": 46.385,
+                "confidence": 0.7626891,
+                "punctuated_word": "ls"
+              },
+              {
+                "word": "dash",
+                "start": 46.385,
+                "end": 46.784996,
+                "confidence": 0.87566227,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "l",
+                "start": 46.784996,
+                "end": 47.425,
+                "confidence": 0.97714895,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "and",
+                "start": 47.504997,
+                "end": 47.745,
+                "confidence": 0.6147109,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 47.745,
+                "end": 47.905,
+                "confidence": 0.9977329,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "will",
+                "start": 47.905,
+                "end": 48.065,
+                "confidence": 0.99511296,
+                "punctuated_word": "will"
+              },
+              {
+                "word": "list",
+                "start": 48.065,
+                "end": 48.225,
+                "confidence": 0.99952865,
+                "punctuated_word": "list"
+              },
+              {
+                "word": "all",
+                "start": 48.225,
+                "end": 48.464996,
+                "confidence": 0.9997303,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "your",
+                "start": 48.464996,
+                "end": 48.625,
+                "confidence": 0.990351,
+                "punctuated_word": "your"
+              },
+              {
+                "word": "files",
+                "start": 48.625,
+                "end": 49.265,
+                "confidence": 0.9017754,
+                "punctuated_word": "files,"
+              },
+              {
+                "word": "all",
+                "start": 49.664997,
+                "end": 49.984997,
+                "confidence": 0.96754986,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 49.984997,
+                "end": 50.144997,
+                "confidence": 0.9972459,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "non",
+                "start": 50.144997,
+                "end": 50.385,
+                "confidence": 0.99636203,
+                "punctuated_word": "non"
+              },
+              {
+                "word": "hidden",
+                "start": 50.385,
+                "end": 50.784996,
+                "confidence": 0.98212034,
+                "punctuated_word": "hidden"
+              },
+              {
+                "word": "files",
+                "start": 50.784996,
+                "end": 51.104996,
+                "confidence": 0.99908435,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "as",
+                "start": 51.104996,
+                "end": 51.344997,
+                "confidence": 0.71656764,
+                "punctuated_word": "as"
+              },
+              {
+                "word": "it",
+                "start": 51.344997,
+                "end": 51.504997,
+                "confidence": 0.9988059,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "turns",
+                "start": 51.504997,
+                "end": 51.664997,
+                "confidence": 0.99971706,
+                "punctuated_word": "turns"
+              },
+              {
+                "word": "out",
+                "start": 51.664997,
+                "end": 51.984997,
+                "confidence": 0.9994522,
+                "punctuated_word": "out"
+              },
+              {
+                "word": "in",
+                "start": 52.21,
+                "end": 52.69,
+                "confidence": 0.70007485,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "a",
+                "start": 52.69,
+                "end": 53.41,
+                "confidence": 0.8144022,
+                "punctuated_word": "a,"
+              },
+              {
+                "word": "an",
+                "start": 53.57,
+                "end": 53.809998,
+                "confidence": 0.9766566,
+                "punctuated_word": "an"
+              },
+              {
+                "word": "interesting",
+                "start": 53.809998,
+                "end": 54.21,
+                "confidence": 0.9997638,
+                "punctuated_word": "interesting"
+              },
+              {
+                "word": "format",
+                "start": 54.21,
+                "end": 54.69,
+                "confidence": 0.999949,
+                "punctuated_word": "format"
+              },
+              {
+                "word": "here",
+                "start": 54.69,
+                "end": 55.17,
+                "confidence": 0.99925584,
+                "punctuated_word": "here"
+              },
+              {
+                "word": "that",
+                "start": 55.329998,
+                "end": 55.73,
+                "confidence": 0.8588929,
+                "punctuated_word": "that,"
+              },
+              {
+                "word": "tells",
+                "start": 55.89,
+                "end": 56.21,
+                "confidence": 0.9992506,
+                "punctuated_word": "tells"
+              },
+              {
+                "word": "you",
+                "start": 56.21,
+                "end": 56.37,
+                "confidence": 0.9999137,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "more",
+                "start": 56.37,
+                "end": 56.61,
+                "confidence": 0.99955803,
+                "punctuated_word": "more"
+              },
+              {
+                "word": "information",
+                "start": 56.61,
+                "end": 57.01,
+                "confidence": 0.9997094,
+                "punctuated_word": "information"
+              },
+              {
+                "word": "about",
+                "start": 57.01,
+                "end": 57.25,
+                "confidence": 0.9996964,
+                "punctuated_word": "about"
+              },
+              {
+                "word": "the",
+                "start": 57.25,
+                "end": 57.41,
+                "confidence": 0.9992816,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 57.41,
+                "end": 57.809998,
+                "confidence": 0.9489776,
+                "punctuated_word": "files."
+              },
+              {
+                "word": "it",
+                "start": 57.809998,
+                "end": 57.89,
+                "confidence": 0.99399537,
+                "punctuated_word": "It"
+              },
+              {
+                "word": "tells",
+                "start": 57.89,
+                "end": 58.129997,
+                "confidence": 0.9994961,
+                "punctuated_word": "tells"
+              },
+              {
+                "word": "you",
+                "start": 58.129997,
+                "end": 58.37,
+                "confidence": 0.9994142,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "in",
+                "start": 58.37,
+                "end": 58.69,
+                "confidence": 0.5820285,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "fact",
+                "start": 58.69,
+                "end": 58.85,
+                "confidence": 0.9997373,
+                "punctuated_word": "fact"
+              },
+              {
+                "word": "how",
+                "start": 58.85,
+                "end": 59.09,
+                "confidence": 0.64937884,
+                "punctuated_word": "how"
+              },
+              {
+                "word": "big",
+                "start": 59.09,
+                "end": 59.329998,
+                "confidence": 0.9997646,
+                "punctuated_word": "big"
+              },
+              {
+                "word": "the",
+                "start": 59.329998,
+                "end": 59.489998,
+                "confidence": 0.9996346,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "file",
+                "start": 59.489998,
+                "end": 59.73,
+                "confidence": 0.9988105,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "is",
+                "start": 59.73,
+                "end": 60.289997,
+                "confidence": 0.9995498,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "and",
+                "start": 60.449997,
+                "end": 60.69,
+                "confidence": 0.6555668,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 60.69,
+                "end": 60.85,
+                "confidence": 0.99662113,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "tells",
+                "start": 60.85,
+                "end": 61.01,
+                "confidence": 0.99939454,
+                "punctuated_word": "tells"
+              },
+              {
+                "word": "you",
+                "start": 61.01,
+                "end": 61.17,
+                "confidence": 0.9985946,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "whether",
+                "start": 61.17,
+                "end": 61.41,
+                "confidence": 0.9991875,
+                "punctuated_word": "whether"
+              },
+              {
+                "word": "the",
+                "start": 61.41,
+                "end": 61.57,
+                "confidence": 0.8891796,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "file",
+                "start": 61.57,
+                "end": 61.73,
+                "confidence": 0.8109619,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "is",
+                "start": 61.73,
+                "end": 61.89,
+                "confidence": 0.716711,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "a",
+                "start": 61.89,
+                "end": 62.05,
+                "confidence": 0.98009115,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "directory",
+                "start": 62.05,
+                "end": 62.449997,
+                "confidence": 0.99639904,
+                "punctuated_word": "directory"
+              },
+              {
+                "word": "or",
+                "start": 62.449997,
+                "end": 62.61,
+                "confidence": 0.9979977,
+                "punctuated_word": "or"
+              },
+              {
+                "word": "not",
+                "start": 62.61,
+                "end": 62.93,
+                "confidence": 0.91444004,
+                "punctuated_word": "not."
+              },
+              {
+                "word": "the",
+                "start": 62.93,
+                "end": 63.01,
+                "confidence": 0.9764039,
+                "punctuated_word": "The"
+              },
+              {
+                "word": "little",
+                "start": 63.01,
+                "end": 63.25,
+                "confidence": 0.9993956,
+                "punctuated_word": "little"
+              },
+              {
+                "word": "d",
+                "start": 63.25,
+                "end": 63.57,
+                "confidence": 0.82190806,
+                "punctuated_word": "d"
+              },
+              {
+                "word": "at",
+                "start": 63.57,
+                "end": 63.809998,
+                "confidence": 0.99669975,
+                "punctuated_word": "at"
+              },
+              {
+                "word": "the",
+                "start": 63.809998,
+                "end": 63.89,
+                "confidence": 0.9995726,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "beginning",
+                "start": 63.89,
+                "end": 64.13,
+                "confidence": 0.9995566,
+                "punctuated_word": "beginning"
+              },
+              {
+                "word": "here",
+                "start": 64.13,
+                "end": 64.369995,
+                "confidence": 0.99601483,
+                "punctuated_word": "here"
+              },
+              {
+                "word": "means",
+                "start": 64.369995,
+                "end": 64.61,
+                "confidence": 0.99378526,
+                "punctuated_word": "means"
+              },
+              {
+                "word": "that",
+                "start": 64.61,
+                "end": 64.77,
+                "confidence": 0.99695516,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "it's",
+                "start": 64.77,
+                "end": 64.93,
+                "confidence": 0.99845195,
+                "punctuated_word": "it's"
+              },
+              {
+                "word": "a",
+                "start": 64.93,
+                "end": 65.09,
+                "confidence": 0.9987865,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "directory",
+                "start": 65.09,
+                "end": 65.409996,
+                "confidence": 0.9247904,
+                "punctuated_word": "directory."
+              },
+              {
+                "word": "so",
+                "start": 65.715,
+                "end": 66.034996,
+                "confidence": 0.9981956,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "the",
+                "start": 66.034996,
+                "end": 66.274994,
+                "confidence": 0.9767844,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "assign",
+                "start": 66.274994,
+                "end": 66.91499,
+                "confidence": 0.7268392,
+                "punctuated_word": "assign"
+              },
+              {
+                "word": "zero",
+                "start": 66.91499,
+                "end": 67.395,
+                "confidence": 0.8671648,
+                "punctuated_word": "zero"
+              },
+              {
+                "word": "folder",
+                "start": 67.395,
+                "end": 67.795,
+                "confidence": 0.99853945,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "in",
+                "start": 67.795,
+                "end": 68.034996,
+                "confidence": 0.65273994,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "the",
+                "start": 68.034996,
+                "end": 68.195,
+                "confidence": 0.98423404,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "old",
+                "start": 68.195,
+                "end": 68.59499,
+                "confidence": 0.93515575,
+                "punctuated_word": "old"
+              },
+              {
+                "word": "and",
+                "start": 68.59499,
+                "end": 68.835,
+                "confidence": 0.8545527,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "the",
+                "start": 68.835,
+                "end": 68.994995,
+                "confidence": 0.9927614,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "pandoc",
+                "start": 68.994995,
+                "end": 69.55499,
+                "confidence": 0.7855018,
+                "punctuated_word": "pandoc"
+              },
+              {
+                "word": "folder",
+                "start": 69.55499,
+                "end": 69.954994,
+                "confidence": 0.9990128,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "here",
+                "start": 69.954994,
+                "end": 70.354996,
+                "confidence": 0.9930454,
+                "punctuated_word": "here"
+              },
+              {
+                "word": "are",
+                "start": 70.354996,
+                "end": 70.994995,
+                "confidence": 0.85581106,
+                "punctuated_word": "are,"
+              },
+              {
+                "word": "all",
+                "start": 71.55499,
+                "end": 72.195,
+                "confidence": 0.9440527,
+                "punctuated_word": "all,"
+              },
+              {
+                "word": "directories",
+                "start": 72.835,
+                "end": 73.475,
+                "confidence": 0.96646076,
+                "punctuated_word": "directories."
+              },
+              {
+                "word": "so",
+                "start": 73.475,
+                "end": 73.55499,
+                "confidence": 0.99904615,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "if",
+                "start": 73.55499,
+                "end": 73.795,
+                "confidence": 0.9832072,
+                "punctuated_word": "if"
+              },
+              {
+                "word": "i",
+                "start": 73.795,
+                "end": 73.875,
+                "confidence": 0.9494822,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "type",
+                "start": 73.875,
+                "end": 74.115,
+                "confidence": 0.9945825,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "c",
+                "start": 74.115,
+                "end": 74.435,
+                "confidence": 0.94456065,
+                "punctuated_word": "c"
+              },
+              {
+                "word": "d",
+                "start": 74.435,
+                "end": 74.674995,
+                "confidence": 0.9293759,
+                "punctuated_word": "d"
+              },
+              {
+                "word": "to",
+                "start": 74.674995,
+                "end": 74.994995,
+                "confidence": 0.9915547,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "change",
+                "start": 74.994995,
+                "end": 75.314995,
+                "confidence": 0.99928266,
+                "punctuated_word": "change"
+              },
+              {
+                "word": "directory",
+                "start": 75.314995,
+                "end": 75.715,
+                "confidence": 0.9964663,
+                "punctuated_word": "directory"
+              },
+              {
+                "word": "into",
+                "start": 75.715,
+                "end": 76.19499,
+                "confidence": 0.99755067,
+                "punctuated_word": "into"
+              },
+              {
+                "word": "the",
+                "start": 76.19499,
+                "end": 76.354996,
+                "confidence": 0.99887246,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "pandoc",
+                "start": 76.354996,
+                "end": 76.994995,
+                "confidence": 0.9818437,
+                "punctuated_word": "pandoc"
+              },
+              {
+                "word": "folder",
+                "start": 76.994995,
+                "end": 77.314995,
+                "confidence": 0.873297,
+                "punctuated_word": "folder,"
+              },
+              {
+                "word": "it",
+                "start": 77.97,
+                "end": 78.29,
+                "confidence": 0.998002,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "will",
+                "start": 78.29,
+                "end": 78.69,
+                "confidence": 0.7757096,
+                "punctuated_word": "will,"
+              },
+              {
+                "word": "go",
+                "start": 79.01,
+                "end": 79.33,
+                "confidence": 0.99885225,
+                "punctuated_word": "go"
+              },
+              {
+                "word": "into",
+                "start": 79.33,
+                "end": 79.57,
+                "confidence": 0.972121,
+                "punctuated_word": "into"
+              },
+              {
+                "word": "there",
+                "start": 79.57,
+                "end": 79.73,
+                "confidence": 0.9983304,
+                "punctuated_word": "there"
+              },
+              {
+                "word": "and",
+                "start": 79.73,
+                "end": 79.89,
+                "confidence": 0.957764,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "then",
+                "start": 79.89,
+                "end": 80.05,
+                "confidence": 0.9696209,
+                "punctuated_word": "then"
+              },
+              {
+                "word": "that's",
+                "start": 80.05,
+                "end": 80.37,
+                "confidence": 0.99437785,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "that's",
+                "start": 80.37,
+                "end": 80.61,
+                "confidence": 0.85047877,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "an",
+                "start": 80.61,
+                "end": 80.770004,
+                "confidence": 0.9952118,
+                "punctuated_word": "an"
+              },
+              {
+                "word": "actual",
+                "start": 80.770004,
+                "end": 81.01,
+                "confidence": 0.99563205,
+                "punctuated_word": "actual"
+              },
+              {
+                "word": "folder",
+                "start": 81.01,
+                "end": 81.25,
+                "confidence": 0.96241486,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "that",
+                "start": 81.25,
+                "end": 81.41,
+                "confidence": 0.9097199,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "i",
+                "start": 81.41,
+                "end": 81.490005,
+                "confidence": 0.9709819,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "can",
+                "start": 81.490005,
+                "end": 81.73,
+                "confidence": 0.9990089,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "do",
+                "start": 81.73,
+                "end": 82.05,
+                "confidence": 0.99603987,
+                "punctuated_word": "do"
+              },
+              {
+                "word": "l",
+                "start": 82.05,
+                "end": 82.29,
+                "confidence": 0.62802947,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 82.29,
+                "end": 82.450005,
+                "confidence": 0.89088404,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "on",
+                "start": 82.450005,
+                "end": 82.61,
+                "confidence": 0.99438417,
+                "punctuated_word": "on"
+              },
+              {
+                "word": "and",
+                "start": 82.61,
+                "end": 82.850006,
+                "confidence": 0.99124837,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "see",
+                "start": 82.850006,
+                "end": 83.01,
+                "confidence": 0.99674356,
+                "punctuated_word": "see"
+              },
+              {
+                "word": "all",
+                "start": 83.01,
+                "end": 83.170006,
+                "confidence": 0.999111,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 83.170006,
+                "end": 83.25,
+                "confidence": 0.9973484,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 83.25,
+                "end": 83.65,
+                "confidence": 0.99976474,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "in",
+                "start": 83.65,
+                "end": 83.97,
+                "confidence": 0.99897695,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "that",
+                "start": 83.97,
+                "end": 84.130005,
+                "confidence": 0.9995492,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "folder",
+                "start": 84.130005,
+                "end": 84.37,
+                "confidence": 0.9997545,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "as",
+                "start": 84.37,
+                "end": 84.69,
+                "confidence": 0.99612314,
+                "punctuated_word": "as"
+              },
+              {
+                "word": "well",
+                "start": 84.69,
+                "end": 85.090004,
+                "confidence": 0.99845684,
+                "punctuated_word": "well."
+              },
+              {
+                "word": "some",
+                "start": 86.450005,
+                "end": 86.69,
+                "confidence": 0.99815804,
+                "punctuated_word": "Some"
+              },
+              {
+                "word": "of",
+                "start": 86.69,
+                "end": 86.850006,
+                "confidence": 0.9859555,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "the",
+                "start": 86.850006,
+                "end": 87.01,
+                "confidence": 0.99967825,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "other",
+                "start": 87.01,
+                "end": 87.57,
+                "confidence": 0.9152656,
+                "punctuated_word": "other,"
+              },
+              {
+                "word": "flags",
+                "start": 88.61,
+                "end": 88.93,
+                "confidence": 0.9994771,
+                "punctuated_word": "flags"
+              },
+              {
+                "word": "that",
+                "start": 88.93,
+                "end": 89.090004,
+                "confidence": 0.8937146,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "you",
+                "start": 89.090004,
+                "end": 89.170006,
+                "confidence": 0.9996631,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "can",
+                "start": 89.170006,
+                "end": 89.33,
+                "confidence": 0.9986249,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "use",
+                "start": 89.33,
+                "end": 89.57001,
+                "confidence": 0.76109886,
+                "punctuated_word": "use,"
+              },
+              {
+                "word": "i",
+                "start": 89.57001,
+                "end": 89.65,
+                "confidence": 0.9882493,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "like",
+                "start": 89.65,
+                "end": 89.810005,
+                "confidence": 0.9975339,
+                "punctuated_word": "like"
+              },
+              {
+                "word": "the",
+                "start": 89.810005,
+                "end": 89.97,
+                "confidence": 0.9541625,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "l",
+                "start": 89.97,
+                "end": 90.37,
+                "confidence": 0.9854995,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 90.37,
+                "end": 90.69,
+                "confidence": 0.9951007,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "dash",
+                "start": 90.69,
+                "end": 91.170006,
+                "confidence": 0.98256195,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "one",
+                "start": 91.170006,
+                "end": 91.41,
+                "confidence": 0.996594,
+                "punctuated_word": "one"
+              },
+              {
+                "word": "which",
+                "start": 91.41,
+                "end": 91.810005,
+                "confidence": 0.68749166,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "lists",
+                "start": 91.810005,
+                "end": 92.130005,
+                "confidence": 0.8837868,
+                "punctuated_word": "lists"
+              },
+              {
+                "word": "them",
+                "start": 92.130005,
+                "end": 92.29,
+                "confidence": 0.9990645,
+                "punctuated_word": "them"
+              },
+              {
+                "word": "all",
+                "start": 92.29,
+                "end": 92.450005,
+                "confidence": 0.9984511,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "out",
+                "start": 92.450005,
+                "end": 93.33,
+                "confidence": 0.9987129,
+                "punctuated_word": "out"
+              },
+              {
+                "word": "one",
+                "start": 92.745,
+                "end": 93.305,
+                "confidence": 0.49633175,
+                "punctuated_word": "one"
+              },
+              {
+                "word": "after",
+                "start": 93.305,
+                "end": 93.545006,
+                "confidence": 0.99282384,
+                "punctuated_word": "after"
+              },
+              {
+                "word": "the",
+                "start": 93.545006,
+                "end": 93.625,
+                "confidence": 0.9916741,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "other",
+                "start": 93.625,
+                "end": 93.785,
+                "confidence": 0.9994085,
+                "punctuated_word": "other"
+              },
+              {
+                "word": "and",
+                "start": 93.785,
+                "end": 94.025,
+                "confidence": 0.86917484,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "then",
+                "start": 94.025,
+                "end": 94.185005,
+                "confidence": 0.9770032,
+                "punctuated_word": "then"
+              },
+              {
+                "word": "i",
+                "start": 94.185005,
+                "end": 94.265,
+                "confidence": 0.98558503,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "can",
+                "start": 94.265,
+                "end": 94.425,
+                "confidence": 0.9921325,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "just",
+                "start": 94.425,
+                "end": 94.585,
+                "confidence": 0.99186254,
+                "punctuated_word": "just"
+              },
+              {
+                "word": "scroll",
+                "start": 94.585,
+                "end": 94.905,
+                "confidence": 0.99816823,
+                "punctuated_word": "scroll"
+              },
+              {
+                "word": "back",
+                "start": 94.905,
+                "end": 95.145004,
+                "confidence": 0.989684,
+                "punctuated_word": "back"
+              },
+              {
+                "word": "and",
+                "start": 95.145004,
+                "end": 95.385,
+                "confidence": 0.8087304,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "back",
+                "start": 95.385,
+                "end": 95.625,
+                "confidence": 0.776468,
+                "punctuated_word": "back"
+              },
+              {
+                "word": "and",
+                "start": 95.625,
+                "end": 95.785,
+                "confidence": 0.8006913,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "up",
+                "start": 95.785,
+                "end": 96.025,
+                "confidence": 0.9874894,
+                "punctuated_word": "up"
+              },
+              {
+                "word": "and",
+                "start": 96.025,
+                "end": 96.105,
+                "confidence": 0.99206513,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "down",
+                "start": 96.105,
+                "end": 96.265,
+                "confidence": 0.9996834,
+                "punctuated_word": "down"
+              },
+              {
+                "word": "here",
+                "start": 96.265,
+                "end": 96.425,
+                "confidence": 0.99021965,
+                "punctuated_word": "here"
+              },
+              {
+                "word": "and",
+                "start": 96.425,
+                "end": 96.585,
+                "confidence": 0.9913583,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "see",
+                "start": 96.585,
+                "end": 96.745,
+                "confidence": 0.99716175,
+                "punctuated_word": "see"
+              },
+              {
+                "word": "them",
+                "start": 96.745,
+                "end": 96.905,
+                "confidence": 0.9966635,
+                "punctuated_word": "them"
+              },
+              {
+                "word": "like",
+                "start": 96.905,
+                "end": 97.065,
+                "confidence": 0.99875677,
+                "punctuated_word": "like"
+              },
+              {
+                "word": "that",
+                "start": 97.065,
+                "end": 97.385,
+                "confidence": 0.7818364,
+                "punctuated_word": "that."
+              },
+              {
+                "word": "sometimes",
+                "start": 97.385,
+                "end": 97.625,
+                "confidence": 0.9966403,
+                "punctuated_word": "Sometimes"
+              },
+              {
+                "word": "that's",
+                "start": 97.625,
+                "end": 97.945,
+                "confidence": 0.9681566,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "nice",
+                "start": 97.945,
+                "end": 98.425,
+                "confidence": 0.9744351,
+                "punctuated_word": "nice."
+              },
+              {
+                "word": "as",
+                "start": 98.505005,
+                "end": 98.745,
+                "confidence": 0.8959418,
+                "punctuated_word": "As"
+              },
+              {
+                "word": "i",
+                "start": 98.745,
+                "end": 98.905,
+                "confidence": 0.9855967,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "said",
+                "start": 98.905,
+                "end": 99.145004,
+                "confidence": 0.8038767,
+                "punctuated_word": "said,"
+              },
+              {
+                "word": "the",
+                "start": 99.145004,
+                "end": 99.305,
+                "confidence": 0.9779222,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "l",
+                "start": 99.305,
+                "end": 99.465004,
+                "confidence": 0.9966049,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 99.465004,
+                "end": 99.625,
+                "confidence": 0.9976451,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "dash",
+                "start": 99.625,
+                "end": 99.865005,
+                "confidence": 0.9931778,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "l",
+                "start": 99.865005,
+                "end": 100.345,
+                "confidence": 0.98722875,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "works",
+                "start": 100.345,
+                "end": 100.825005,
+                "confidence": 0.88825697,
+                "punctuated_word": "works"
+              },
+              {
+                "word": "great",
+                "start": 100.825005,
+                "end": 101.145004,
+                "confidence": 0.9156713,
+                "punctuated_word": "great."
+              },
+              {
+                "word": "l",
+                "start": 101.145004,
+                "end": 101.385,
+                "confidence": 0.6569866,
+                "punctuated_word": "L"
+              },
+              {
+                "word": "s",
+                "start": 101.385,
+                "end": 101.545006,
+                "confidence": 0.99774206,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "dash",
+                "start": 101.545006,
+                "end": 101.865005,
+                "confidence": 0.9970976,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "al",
+                "start": 101.865005,
+                "end": 102.345,
+                "confidence": 0.5297088,
+                "punctuated_word": "al"
+              },
+              {
+                "word": "means",
+                "start": 102.345,
+                "end": 102.745,
+                "confidence": 0.996188,
+                "punctuated_word": "means"
+              },
+              {
+                "word": "even",
+                "start": 102.745,
+                "end": 103.145004,
+                "confidence": 0.96846324,
+                "punctuated_word": "even"
+              },
+              {
+                "word": "show",
+                "start": 103.145004,
+                "end": 103.465004,
+                "confidence": 0.98955077,
+                "punctuated_word": "show"
+              },
+              {
+                "word": "me",
+                "start": 103.465004,
+                "end": 103.705,
+                "confidence": 0.99944,
+                "punctuated_word": "me"
+              },
+              {
+                "word": "the",
+                "start": 103.705,
+                "end": 104.185005,
+                "confidence": 0.9976458,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "hidden",
+                "start": 104.345,
+                "end": 104.825005,
+                "confidence": 0.9998555,
+                "punctuated_word": "hidden"
+              },
+              {
+                "word": "files",
+                "start": 104.825005,
+                "end": 105.225006,
+                "confidence": 0.99963343,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "as",
+                "start": 105.225006,
+                "end": 105.465004,
+                "confidence": 0.9967109,
+                "punctuated_word": "as"
+              },
+              {
+                "word": "well",
+                "start": 105.465004,
+                "end": 105.705,
+                "confidence": 0.97642857,
+                "punctuated_word": "well."
+              },
+              {
+                "word": "so",
+                "start": 106.29,
+                "end": 106.61,
+                "confidence": 0.99749136,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "in",
+                "start": 106.61,
+                "end": 106.770004,
+                "confidence": 0.9588414,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "this",
+                "start": 106.770004,
+                "end": 106.93,
+                "confidence": 0.99930096,
+                "punctuated_word": "this"
+              },
+              {
+                "word": "case",
+                "start": 106.93,
+                "end": 107.25,
+                "confidence": 0.805322,
+                "punctuated_word": "case,"
+              },
+              {
+                "word": "there's",
+                "start": 107.25,
+                "end": 107.490005,
+                "confidence": 0.9590684,
+                "punctuated_word": "there's"
+              },
+              {
+                "word": "a",
+                "start": 107.490005,
+                "end": 107.57,
+                "confidence": 0.99713314,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "couple",
+                "start": 107.57,
+                "end": 107.810005,
+                "confidence": 0.9996903,
+                "punctuated_word": "couple"
+              },
+              {
+                "word": "of",
+                "start": 107.810005,
+                "end": 107.97,
+                "confidence": 0.9836624,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "files",
+                "start": 107.97,
+                "end": 108.29,
+                "confidence": 0.9991917,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "that",
+                "start": 108.29,
+                "end": 108.53001,
+                "confidence": 0.99930465,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "are",
+                "start": 108.53001,
+                "end": 109.170006,
+                "confidence": 0.9997048,
+                "punctuated_word": "are"
+              },
+              {
+                "word": "hidden",
+                "start": 109.33,
+                "end": 110.05,
+                "confidence": 0.9276742,
+                "punctuated_word": "hidden."
+              },
+              {
+                "word": "files",
+                "start": 110.05,
+                "end": 110.450005,
+                "confidence": 0.99747884,
+                "punctuated_word": "Files"
+              },
+              {
+                "word": "that",
+                "start": 110.450005,
+                "end": 110.69,
+                "confidence": 0.99930215,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "begin",
+                "start": 110.69,
+                "end": 111.090004,
+                "confidence": 0.99553657,
+                "punctuated_word": "begin"
+              },
+              {
+                "word": "with",
+                "start": 111.090004,
+                "end": 111.33,
+                "confidence": 0.99961406,
+                "punctuated_word": "with"
+              },
+              {
+                "word": "a",
+                "start": 111.33,
+                "end": 111.490005,
+                "confidence": 0.99767715,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "period",
+                "start": 111.490005,
+                "end": 112.05,
+                "confidence": 0.9995383,
+                "punctuated_word": "period"
+              },
+              {
+                "word": "are",
+                "start": 112.05,
+                "end": 112.450005,
+                "confidence": 0.9879538,
+                "punctuated_word": "are"
+              },
+              {
+                "word": "all",
+                "start": 112.450005,
+                "end": 112.770004,
+                "confidence": 0.9993729,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "hidden",
+                "start": 112.770004,
+                "end": 113.490005,
+                "confidence": 0.9997495,
+                "punctuated_word": "hidden"
+              },
+              {
+                "word": "on",
+                "start": 113.57,
+                "end": 113.97,
+                "confidence": 0.90740854,
+                "punctuated_word": "on"
+              },
+              {
+                "word": "your",
+                "start": 113.97,
+                "end": 114.61,
+                "confidence": 0.99629325,
+                "punctuated_word": "your"
+              },
+              {
+                "word": "in",
+                "start": 116.05,
+                "end": 116.37,
+                "confidence": 0.57868874,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "your",
+                "start": 116.37,
+                "end": 116.53,
+                "confidence": 0.99861395,
+                "punctuated_word": "your"
+              },
+              {
+                "word": "folder",
+                "start": 116.53,
+                "end": 116.850006,
+                "confidence": 0.9988226,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "system",
+                "start": 116.850006,
+                "end": 117.25,
+                "confidence": 0.9495773,
+                "punctuated_word": "system."
+              },
+              {
+                "word": "so",
+                "start": 117.25,
+                "end": 117.41,
+                "confidence": 0.99943036,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "anything",
+                "start": 117.41,
+                "end": 117.65,
+                "confidence": 0.9954717,
+                "punctuated_word": "anything"
+              },
+              {
+                "word": "that's",
+                "start": 117.65,
+                "end": 117.97,
+                "confidence": 0.8675054,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "actually",
+                "start": 117.97,
+                "end": 118.37,
+                "confidence": 0.9965867,
+                "punctuated_word": "actually"
+              },
+              {
+                "word": "starts",
+                "start": 118.37,
+                "end": 118.93,
+                "confidence": 0.9126376,
+                "punctuated_word": "starts"
+              },
+              {
+                "word": "with",
+                "start": 118.93,
+                "end": 119.090004,
+                "confidence": 0.99825054,
+                "punctuated_word": "with"
+              },
+              {
+                "word": "a",
+                "start": 119.090004,
+                "end": 119.170006,
+                "confidence": 0.9920608,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "period",
+                "start": 119.170006,
+                "end": 119.490005,
+                "confidence": 0.9997688,
+                "punctuated_word": "period"
+              },
+              {
+                "word": "is",
+                "start": 119.490005,
+                "end": 119.65,
+                "confidence": 0.9902063,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "hidden",
+                "start": 119.65,
+                "end": 120.05,
+                "confidence": 0.7537333,
+                "punctuated_word": "hidden,"
+              },
+              {
+                "word": "including",
+                "start": 120.05,
+                "end": 120.37,
+                "confidence": 0.9875617,
+                "punctuated_word": "including"
+              },
+              {
+                "word": "the",
+                "start": 121.245,
+                "end": 121.565,
+                "confidence": 0.9969037,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "two",
+                "start": 121.565,
+                "end": 122.205,
+                "confidence": 0.99930453,
+                "punctuated_word": "two"
+              },
+              {
+                "word": "interesting",
+                "start": 122.285,
+                "end": 123.085,
+                "confidence": 0.956098,
+                "punctuated_word": "interesting"
+              },
+              {
+                "word": "directories",
+                "start": 123.965004,
+                "end": 124.605,
+                "confidence": 0.9762959,
+                "punctuated_word": "directories"
+              },
+              {
+                "word": "called",
+                "start": 124.605,
+                "end": 125.005005,
+                "confidence": 0.99514455,
+                "punctuated_word": "called"
+              },
+              {
+                "word": "dot",
+                "start": 125.005005,
+                "end": 125.645004,
+                "confidence": 0.8833661,
+                "punctuated_word": "dot,"
+              },
+              {
+                "word": "which",
+                "start": 125.645004,
+                "end": 125.805,
+                "confidence": 0.9998425,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "means",
+                "start": 125.805,
+                "end": 125.965004,
+                "confidence": 0.99890125,
+                "punctuated_word": "means"
+              },
+              {
+                "word": "the",
+                "start": 125.965004,
+                "end": 126.205,
+                "confidence": 0.9962458,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "current",
+                "start": 126.205,
+                "end": 126.525,
+                "confidence": 0.99807537,
+                "punctuated_word": "current"
+              },
+              {
+                "word": "directory",
+                "start": 126.525,
+                "end": 126.845,
+                "confidence": 0.9650033,
+                "punctuated_word": "directory"
+              },
+              {
+                "word": "that",
+                "start": 126.845,
+                "end": 127.005005,
+                "confidence": 0.99773455,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "you're",
+                "start": 127.005005,
+                "end": 127.245,
+                "confidence": 0.99739355,
+                "punctuated_word": "you're"
+              },
+              {
+                "word": "in",
+                "start": 127.245,
+                "end": 127.725,
+                "confidence": 0.7415433,
+                "punctuated_word": "in,"
+              },
+              {
+                "word": "and",
+                "start": 127.885,
+                "end": 128.045,
+                "confidence": 0.99921227,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "dot",
+                "start": 128.045,
+                "end": 128.365,
+                "confidence": 0.9976254,
+                "punctuated_word": "dot"
+              },
+              {
+                "word": "dot",
+                "start": 128.365,
+                "end": 128.765,
+                "confidence": 0.8743808,
+                "punctuated_word": "dot,"
+              },
+              {
+                "word": "which",
+                "start": 128.765,
+                "end": 128.925,
+                "confidence": 0.9998036,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "means",
+                "start": 128.925,
+                "end": 129.16501,
+                "confidence": 0.9991899,
+                "punctuated_word": "means"
+              },
+              {
+                "word": "your",
+                "start": 129.16501,
+                "end": 129.405,
+                "confidence": 0.9938724,
+                "punctuated_word": "your"
+              },
+              {
+                "word": "previous",
+                "start": 129.405,
+                "end": 129.88501,
+                "confidence": 0.9995982,
+                "punctuated_word": "previous"
+              },
+              {
+                "word": "directory",
+                "start": 129.88501,
+                "end": 130.52501,
+                "confidence": 0.87579215,
+                "punctuated_word": "directory."
+              },
+              {
+                "word": "and",
+                "start": 130.52501,
+                "end": 130.685,
+                "confidence": 0.9904535,
+                "punctuated_word": "And"
+              },
+              {
+                "word": "that's",
+                "start": 130.685,
+                "end": 130.925,
+                "confidence": 0.999481,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "also",
+                "start": 130.925,
+                "end": 131.085,
+                "confidence": 0.9993625,
+                "punctuated_word": "also"
+              },
+              {
+                "word": "covered",
+                "start": 131.085,
+                "end": 131.485,
+                "confidence": 0.99979657,
+                "punctuated_word": "covered"
+              },
+              {
+                "word": "in",
+                "start": 131.485,
+                "end": 131.88501,
+                "confidence": 0.9988469,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "a",
+                "start": 131.88501,
+                "end": 132.445,
+                "confidence": 0.99927336,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "different",
+                "start": 132.685,
+                "end": 133.005,
+                "confidence": 0.9991008,
+                "punctuated_word": "different"
+              },
+              {
+                "word": "video",
+                "start": 133.005,
+                "end": 133.405,
+                "confidence": 0.9999126,
+                "punctuated_word": "video"
+              },
+              {
+                "word": "on",
+                "start": 133.405,
+                "end": 133.80501,
+                "confidence": 0.9990495,
+                "punctuated_word": "on"
+              },
+              {
+                "word": "the",
+                "start": 133.80501,
+                "end": 134.045,
+                "confidence": 0.99446267,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "c",
+                "start": 134.045,
+                "end": 134.365,
+                "confidence": 0.77603155,
+                "punctuated_word": "c"
+              },
+              {
+                "word": "d",
+                "start": 134.365,
+                "end": 134.605,
+                "confidence": 0.9577612,
+                "punctuated_word": "d"
+              },
+              {
+                "word": "command",
+                "start": 134.605,
+                "end": 134.925,
+                "confidence": 0.9993591,
+                "punctuated_word": "command"
+              },
+              {
+                "word": "and",
+                "start": 134.925,
+                "end": 135.16501,
+                "confidence": 0.953586,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "working",
+                "start": 135.16501,
+                "end": 135.485,
+                "confidence": 0.9992938,
+                "punctuated_word": "working"
+              },
+              {
+                "word": "directories",
+                "start": 135.485,
+                "end": 135.965,
+                "confidence": 0.9985523,
+                "punctuated_word": "directories"
+              },
+              {
+                "word": "and",
+                "start": 135.965,
+                "end": 136.205,
+                "confidence": 0.9768868,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "so",
+                "start": 136.205,
+                "end": 136.365,
+                "confidence": 0.9996984,
+                "punctuated_word": "so"
+              },
+              {
+                "word": "forth",
+                "start": 136.365,
+                "end": 136.52501,
+                "confidence": 0.9996557,
+                "punctuated_word": "forth."
+              },
+              {
+                "word": "if",
+                "start": 137.19,
+                "end": 137.51001,
+                "confidence": 0.9977684,
+                "punctuated_word": "If"
+              },
+              {
+                "word": "you",
+                "start": 137.51001,
+                "end": 137.59001,
+                "confidence": 0.99969304,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "wanna",
+                "start": 137.59001,
+                "end": 137.83,
+                "confidence": 0.8203937,
+                "punctuated_word": "wanna"
+              },
+              {
+                "word": "know",
+                "start": 137.83,
+                "end": 137.99,
+                "confidence": 0.9937552,
+                "punctuated_word": "know"
+              },
+              {
+                "word": "more",
+                "start": 137.99,
+                "end": 138.15001,
+                "confidence": 0.99894875,
+                "punctuated_word": "more"
+              },
+              {
+                "word": "information",
+                "start": 138.15001,
+                "end": 138.47,
+                "confidence": 0.99659604,
+                "punctuated_word": "information"
+              },
+              {
+                "word": "about",
+                "start": 138.47,
+                "end": 138.71,
+                "confidence": 0.9946931,
+                "punctuated_word": "about"
+              },
+              {
+                "word": "ls",
+                "start": 138.71,
+                "end": 139.11,
+                "confidence": 0.62492293,
+                "punctuated_word": "LS"
+              },
+              {
+                "word": "and",
+                "start": 139.11,
+                "end": 139.27,
+                "confidence": 0.98794156,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "all",
+                "start": 139.27,
+                "end": 139.43001,
+                "confidence": 0.9997441,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 139.43001,
+                "end": 139.51001,
+                "confidence": 0.9943593,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "different",
+                "start": 139.51001,
+                "end": 139.75,
+                "confidence": 0.9992718,
+                "punctuated_word": "different"
+              },
+              {
+                "word": "flags",
+                "start": 139.75,
+                "end": 140.15001,
+                "confidence": 0.92201877,
+                "punctuated_word": "flags,"
+              },
+              {
+                "word": "you",
+                "start": 140.15001,
+                "end": 140.31001,
+                "confidence": 0.99763536,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "can",
+                "start": 140.31001,
+                "end": 140.47,
+                "confidence": 0.95702726,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "type",
+                "start": 140.47,
+                "end": 140.71,
+                "confidence": 0.998697,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "man",
+                "start": 140.71,
+                "end": 141.27,
+                "confidence": 0.9691153,
+                "punctuated_word": "man"
+              },
+              {
+                "word": "ls",
+                "start": 141.27,
+                "end": 141.83,
+                "confidence": 0.7939847,
+                "punctuated_word": "LS"
+              },
+              {
+                "word": "for",
+                "start": 141.83,
+                "end": 142.07,
+                "confidence": 0.9680873,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "the",
+                "start": 142.07,
+                "end": 142.23001,
+                "confidence": 0.999498,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "manual",
+                "start": 142.23001,
+                "end": 142.63,
+                "confidence": 0.99873596,
+                "punctuated_word": "manual"
+              },
+              {
+                "word": "page",
+                "start": 142.63,
+                "end": 143.11,
+                "confidence": 0.9997274,
+                "punctuated_word": "page"
+              },
+              {
+                "word": "and",
+                "start": 143.11,
+                "end": 143.35,
+                "confidence": 0.87144357,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 143.35,
+                "end": 143.51001,
+                "confidence": 0.99964416,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "gives",
+                "start": 143.51001,
+                "end": 143.75,
+                "confidence": 0.99951136,
+                "punctuated_word": "gives"
+              },
+              {
+                "word": "you",
+                "start": 143.75,
+                "end": 143.91,
+                "confidence": 0.99949384,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "the",
+                "start": 143.91,
+                "end": 144.15001,
+                "confidence": 0.9993693,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "manual",
+                "start": 144.15001,
+                "end": 144.95001,
+                "confidence": 0.8080915,
+                "punctuated_word": "manual"
+              },
+              {
+                "word": "page",
+                "start": 144.95001,
+                "end": 145.19,
+                "confidence": 0.99970824,
+                "punctuated_word": "page"
+              },
+              {
+                "word": "here",
+                "start": 145.19,
+                "end": 145.75,
+                "confidence": 0.9995598,
+                "punctuated_word": "here"
+              },
+              {
+                "word": "and",
+                "start": 145.75,
+                "end": 146.07,
+                "confidence": 0.8146851,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "it",
+                "start": 146.07,
+                "end": 146.23001,
+                "confidence": 0.9996195,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "says",
+                "start": 146.23001,
+                "end": 146.87001,
+                "confidence": 0.9990977,
+                "punctuated_word": "says"
+              },
+              {
+                "word": "all",
+                "start": 146.95001,
+                "end": 147.27,
+                "confidence": 0.9596251,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 147.27,
+                "end": 147.43001,
+                "confidence": 0.99830353,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "different",
+                "start": 147.43001,
+                "end": 147.67001,
+                "confidence": 0.99971575,
+                "punctuated_word": "different"
+              },
+              {
+                "word": "types",
+                "start": 147.67001,
+                "end": 147.83,
+                "confidence": 0.9994893,
+                "punctuated_word": "types"
+              },
+              {
+                "word": "of",
+                "start": 147.83,
+                "end": 147.99,
+                "confidence": 0.9996656,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "flags",
+                "start": 147.99,
+                "end": 148.31001,
+                "confidence": 0.99968183,
+                "punctuated_word": "flags"
+              },
+              {
+                "word": "and",
+                "start": 148.31001,
+                "end": 148.47,
+                "confidence": 0.8994993,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "there's",
+                "start": 148.47,
+                "end": 149.03,
+                "confidence": 0.9928427,
+                "punctuated_word": "there's"
+              },
+              {
+                "word": "a",
+                "start": 149.03,
+                "end": 149.75002,
+                "confidence": 0.8447199,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "ton",
+                "start": 149.83,
+                "end": 150.15001,
+                "confidence": 0.9991079,
+                "punctuated_word": "ton"
+              },
+              {
+                "word": "of",
+                "start": 150.15001,
+                "end": 150.47,
+                "confidence": 0.9996406,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "flags",
+                "start": 150.47,
+                "end": 150.95001,
+                "confidence": 0.99832505,
+                "punctuated_word": "flags"
+              },
+              {
+                "word": "for",
+                "start": 150.95001,
+                "end": 151.51001,
+                "confidence": 0.99855965,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "for",
+                "start": 152.975,
+                "end": 153.05501,
+                "confidence": 0.54263395,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "the",
+                "start": 153.05501,
+                "end": 153.21501,
+                "confidence": 0.9989202,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "ls",
+                "start": 153.21501,
+                "end": 153.615,
+                "confidence": 0.7458915,
+                "punctuated_word": "ls"
+              },
+              {
+                "word": "command",
+                "start": 153.615,
+                "end": 154.25502,
+                "confidence": 0.8834908,
+                "punctuated_word": "command."
+              },
+              {
+                "word": "and",
+                "start": 154.895,
+                "end": 155.21501,
+                "confidence": 0.91979253,
+                "punctuated_word": "And"
+              },
+              {
+                "word": "by",
+                "start": 155.21501,
+                "end": 155.455,
+                "confidence": 0.7982858,
+                "punctuated_word": "by"
+              },
+              {
+                "word": "the",
+                "start": 155.455,
+                "end": 155.535,
+                "confidence": 0.995565,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "way",
+                "start": 155.535,
+                "end": 155.695,
+                "confidence": 0.85282016,
+                "punctuated_word": "way,"
+              },
+              {
+                "word": "i'm",
+                "start": 155.695,
+                "end": 155.77501,
+                "confidence": 0.9933075,
+                "punctuated_word": "I'm"
+              },
+              {
+                "word": "just",
+                "start": 155.77501,
+                "end": 155.93501,
+                "confidence": 0.9986413,
+                "punctuated_word": "just"
+              },
+              {
+                "word": "using",
+                "start": 155.93501,
+                "end": 156.175,
+                "confidence": 0.9982698,
+                "punctuated_word": "using"
+              },
+              {
+                "word": "the",
+                "start": 156.175,
+                "end": 156.335,
+                "confidence": 0.99758804,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "arrow",
+                "start": 156.335,
+                "end": 156.895,
+                "confidence": 0.99561346,
+                "punctuated_word": "arrow"
+              },
+              {
+                "word": "keys",
+                "start": 156.895,
+                "end": 157.21501,
+                "confidence": 0.9996555,
+                "punctuated_word": "keys"
+              },
+              {
+                "word": "to",
+                "start": 157.21501,
+                "end": 157.615,
+                "confidence": 0.99843687,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "to",
+                "start": 157.615,
+                "end": 158.01501,
+                "confidence": 0.59983,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "go",
+                "start": 158.01501,
+                "end": 158.49501,
+                "confidence": 0.9990036,
+                "punctuated_word": "go"
+              },
+              {
+                "word": "down",
+                "start": 158.49501,
+                "end": 158.895,
+                "confidence": 0.9959817,
+                "punctuated_word": "down"
+              },
+              {
+                "word": "in",
+                "start": 158.895,
+                "end": 159.05501,
+                "confidence": 0.994706,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "this",
+                "start": 159.05501,
+                "end": 159.21501,
+                "confidence": 0.9985318,
+                "punctuated_word": "this"
+              },
+              {
+                "word": "file",
+                "start": 159.21501,
+                "end": 159.85501,
+                "confidence": 0.99978155,
+                "punctuated_word": "file"
+              },
+              {
+                "word": "and",
+                "start": 160.095,
+                "end": 160.41501,
+                "confidence": 0.98551756,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "see",
+                "start": 160.41501,
+                "end": 160.895,
+                "confidence": 0.67314535,
+                "punctuated_word": "see"
+              },
+              {
+                "word": "all",
+                "start": 160.895,
+                "end": 160.975,
+                "confidence": 0.9979361,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 160.975,
+                "end": 161.13501,
+                "confidence": 0.97461885,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "different",
+                "start": 161.13501,
+                "end": 161.29501,
+                "confidence": 0.99582183,
+                "punctuated_word": "different"
+              },
+              {
+                "word": "commands",
+                "start": 161.29501,
+                "end": 161.695,
+                "confidence": 0.8869398,
+                "punctuated_word": "commands."
+              },
+              {
+                "word": "you",
+                "start": 161.695,
+                "end": 161.77501,
+                "confidence": 0.6281763,
+                "punctuated_word": "You"
+              },
+              {
+                "word": "can",
+                "start": 161.77501,
+                "end": 161.93501,
+                "confidence": 0.97526574,
+                "punctuated_word": "can"
+              },
+              {
+                "word": "also",
+                "start": 161.93501,
+                "end": 162.095,
+                "confidence": 0.9990151,
+                "punctuated_word": "also"
+              },
+              {
+                "word": "type",
+                "start": 162.095,
+                "end": 162.335,
+                "confidence": 0.98453844,
+                "punctuated_word": "type"
+              },
+              {
+                "word": "q",
+                "start": 162.335,
+                "end": 162.815,
+                "confidence": 0.97174656,
+                "punctuated_word": "q"
+              },
+              {
+                "word": "to",
+                "start": 162.815,
+                "end": 163.05501,
+                "confidence": 0.9918813,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "quit",
+                "start": 163.05501,
+                "end": 163.375,
+                "confidence": 0.9988397,
+                "punctuated_word": "quit"
+              },
+              {
+                "word": "out",
+                "start": 163.375,
+                "end": 163.535,
+                "confidence": 0.9956808,
+                "punctuated_word": "out"
+              },
+              {
+                "word": "of",
+                "start": 163.535,
+                "end": 163.615,
+                "confidence": 0.9862687,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "the",
+                "start": 163.615,
+                "end": 163.77501,
+                "confidence": 0.71546125,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "manual",
+                "start": 163.77501,
+                "end": 164.095,
+                "confidence": 0.9984944,
+                "punctuated_word": "manual"
+              },
+              {
+                "word": "page",
+                "start": 164.095,
+                "end": 164.335,
+                "confidence": 0.99861085,
+                "punctuated_word": "page."
+              },
+              {
+                "word": "my",
+                "start": 164.74,
+                "end": 165.3,
+                "confidence": 0.99579203,
+                "punctuated_word": "My"
+              },
+              {
+                "word": "favorite",
+                "start": 165.3,
+                "end": 165.62,
+                "confidence": 0.9925684,
+                "punctuated_word": "favorite"
+              },
+              {
+                "word": "l",
+                "start": 165.62,
+                "end": 165.94,
+                "confidence": 0.8233149,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 165.94,
+                "end": 166.1,
+                "confidence": 0.8475009,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "command",
+                "start": 166.1,
+                "end": 166.34,
+                "confidence": 0.9983713,
+                "punctuated_word": "command"
+              },
+              {
+                "word": "is",
+                "start": 166.34,
+                "end": 166.5,
+                "confidence": 0.9936644,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "l",
+                "start": 166.5,
+                "end": 166.74,
+                "confidence": 0.9802145,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 166.74,
+                "end": 166.90001,
+                "confidence": 0.9927846,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "dash",
+                "start": 166.90001,
+                "end": 167.54001,
+                "confidence": 0.9939108,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "a",
+                "start": 167.7,
+                "end": 168.02,
+                "confidence": 0.8816402,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "l",
+                "start": 168.02,
+                "end": 168.26,
+                "confidence": 0.9919938,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "r",
+                "start": 168.26,
+                "end": 168.5,
+                "confidence": 0.9956226,
+                "punctuated_word": "r"
+              },
+              {
+                "word": "t",
+                "start": 168.5,
+                "end": 168.98,
+                "confidence": 0.79023707,
+                "punctuated_word": "t,"
+              },
+              {
+                "word": "which",
+                "start": 168.98,
+                "end": 169.06,
+                "confidence": 0.9987066,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "means",
+                "start": 169.06,
+                "end": 169.46,
+                "confidence": 0.9957218,
+                "punctuated_word": "means"
+              },
+              {
+                "word": "list",
+                "start": 169.46,
+                "end": 169.86,
+                "confidence": 0.8984103,
+                "punctuated_word": "list"
+              },
+              {
+                "word": "all",
+                "start": 169.86,
+                "end": 170.1,
+                "confidence": 0.99814665,
+                "punctuated_word": "all"
+              },
+              {
+                "word": "the",
+                "start": 170.1,
+                "end": 170.26,
+                "confidence": 0.96825033,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 170.26,
+                "end": 170.5,
+                "confidence": 0.99953055,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "including",
+                "start": 170.5,
+                "end": 170.82,
+                "confidence": 0.81423175,
+                "punctuated_word": "including"
+              },
+              {
+                "word": "the",
+                "start": 170.82,
+                "end": 170.98,
+                "confidence": 0.8929613,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "hidden",
+                "start": 170.98,
+                "end": 171.22,
+                "confidence": 0.9848453,
+                "punctuated_word": "hidden"
+              },
+              {
+                "word": "ones",
+                "start": 171.22,
+                "end": 171.78,
+                "confidence": 0.84202015,
+                "punctuated_word": "ones,"
+              },
+              {
+                "word": "list",
+                "start": 171.78,
+                "end": 172.02,
+                "confidence": 0.9925068,
+                "punctuated_word": "list"
+              },
+              {
+                "word": "them",
+                "start": 172.02,
+                "end": 172.18001,
+                "confidence": 0.9987128,
+                "punctuated_word": "them"
+              },
+              {
+                "word": "in",
+                "start": 172.18001,
+                "end": 172.34,
+                "confidence": 0.99909055,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "that",
+                "start": 172.34,
+                "end": 172.5,
+                "confidence": 0.99249834,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "special",
+                "start": 172.5,
+                "end": 172.82,
+                "confidence": 0.9989561,
+                "punctuated_word": "special"
+              },
+              {
+                "word": "format",
+                "start": 172.82,
+                "end": 173.14,
+                "confidence": 0.99951255,
+                "punctuated_word": "format"
+              },
+              {
+                "word": "that",
+                "start": 173.14,
+                "end": 173.3,
+                "confidence": 0.9923396,
+                "punctuated_word": "that"
+              },
+              {
+                "word": "gives",
+                "start": 173.3,
+                "end": 173.54001,
+                "confidence": 0.9939254,
+                "punctuated_word": "gives"
+              },
+              {
+                "word": "me",
+                "start": 173.54001,
+                "end": 173.62,
+                "confidence": 0.99635834,
+                "punctuated_word": "me"
+              },
+              {
+                "word": "more",
+                "start": 173.62,
+                "end": 173.86,
+                "confidence": 0.9983069,
+                "punctuated_word": "more"
+              },
+              {
+                "word": "information",
+                "start": 173.86,
+                "end": 174.50002,
+                "confidence": 0.94067657,
+                "punctuated_word": "information,"
+              },
+              {
+                "word": "list",
+                "start": 174.58,
+                "end": 174.82,
+                "confidence": 0.993816,
+                "punctuated_word": "list"
+              },
+              {
+                "word": "them",
+                "start": 174.82,
+                "end": 174.98,
+                "confidence": 0.99889636,
+                "punctuated_word": "them"
+              },
+              {
+                "word": "in",
+                "start": 174.98,
+                "end": 175.14,
+                "confidence": 0.999302,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "reverse",
+                "start": 175.14,
+                "end": 175.7,
+                "confidence": 0.99501365,
+                "punctuated_word": "reverse"
+              },
+              {
+                "word": "order",
+                "start": 175.7,
+                "end": 176.26,
+                "confidence": 0.75067556,
+                "punctuated_word": "order,"
+              },
+              {
+                "word": "and",
+                "start": 176.26,
+                "end": 176.34,
+                "confidence": 0.9972978,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "list",
+                "start": 176.34,
+                "end": 176.66,
+                "confidence": 0.9860641,
+                "punctuated_word": "list"
+              },
+              {
+                "word": "them",
+                "start": 176.66,
+                "end": 176.82,
+                "confidence": 0.9986558,
+                "punctuated_word": "them"
+              },
+              {
+                "word": "by",
+                "start": 176.82,
+                "end": 177.14,
+                "confidence": 0.9990926,
+                "punctuated_word": "by"
+              },
+              {
+                "word": "time",
+                "start": 177.14,
+                "end": 177.70001,
+                "confidence": 0.9946195,
+                "punctuated_word": "time."
+              },
+              {
+                "word": "so",
+                "start": 177.86,
+                "end": 178.34,
+                "confidence": 0.8696409,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "what",
+                "start": 177.935,
+                "end": 178.25499,
+                "confidence": 0.9823392,
+                "punctuated_word": "what"
+              },
+              {
+                "word": "this",
+                "start": 178.25499,
+                "end": 178.415,
+                "confidence": 0.99842477,
+                "punctuated_word": "this"
+              },
+              {
+                "word": "actually",
+                "start": 178.415,
+                "end": 178.735,
+                "confidence": 0.9984659,
+                "punctuated_word": "actually"
+              },
+              {
+                "word": "does",
+                "start": 178.735,
+                "end": 179.215,
+                "confidence": 0.99979454,
+                "punctuated_word": "does"
+              },
+              {
+                "word": "is",
+                "start": 179.215,
+                "end": 179.455,
+                "confidence": 0.8538829,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "it",
+                "start": 179.455,
+                "end": 179.69499,
+                "confidence": 0.9810136,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "lists",
+                "start": 179.69499,
+                "end": 179.935,
+                "confidence": 0.84537756,
+                "punctuated_word": "lists"
+              },
+              {
+                "word": "the",
+                "start": 179.935,
+                "end": 180.175,
+                "confidence": 0.9974732,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "files",
+                "start": 180.175,
+                "end": 180.655,
+                "confidence": 0.9995851,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "in",
+                "start": 180.655,
+                "end": 180.97499,
+                "confidence": 0.9996799,
+                "punctuated_word": "in"
+              },
+              {
+                "word": "the",
+                "start": 180.97499,
+                "end": 181.135,
+                "confidence": 0.98951435,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "reverse",
+                "start": 181.135,
+                "end": 181.53499,
+                "confidence": 0.9985147,
+                "punctuated_word": "reverse"
+              },
+              {
+                "word": "order",
+                "start": 181.53499,
+                "end": 181.855,
+                "confidence": 0.9996457,
+                "punctuated_word": "order"
+              },
+              {
+                "word": "from",
+                "start": 181.855,
+                "end": 182.095,
+                "confidence": 0.99558866,
+                "punctuated_word": "from"
+              },
+              {
+                "word": "when",
+                "start": 182.095,
+                "end": 182.33499,
+                "confidence": 0.99930274,
+                "punctuated_word": "when"
+              },
+              {
+                "word": "they",
+                "start": 182.33499,
+                "end": 182.415,
+                "confidence": 0.9994081,
+                "punctuated_word": "they"
+              },
+              {
+                "word": "were",
+                "start": 182.415,
+                "end": 182.575,
+                "confidence": 0.86310816,
+                "punctuated_word": "were"
+              },
+              {
+                "word": "created",
+                "start": 182.575,
+                "end": 183.135,
+                "confidence": 0.99658936,
+                "punctuated_word": "created."
+              },
+              {
+                "word": "this",
+                "start": 183.455,
+                "end": 183.61499,
+                "confidence": 0.99970704,
+                "punctuated_word": "This"
+              },
+              {
+                "word": "directory",
+                "start": 183.61499,
+                "end": 183.935,
+                "confidence": 0.9935464,
+                "punctuated_word": "directory"
+              },
+              {
+                "word": "is",
+                "start": 183.935,
+                "end": 184.095,
+                "confidence": 0.9045141,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "not",
+                "start": 184.095,
+                "end": 184.17499,
+                "confidence": 0.99980026,
+                "punctuated_word": "not"
+              },
+              {
+                "word": "the",
+                "start": 184.17499,
+                "end": 184.33499,
+                "confidence": 0.99964046,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "best",
+                "start": 184.33499,
+                "end": 184.495,
+                "confidence": 0.99990547,
+                "punctuated_word": "best"
+              },
+              {
+                "word": "one",
+                "start": 184.495,
+                "end": 184.655,
+                "confidence": 0.9966239,
+                "punctuated_word": "one"
+              },
+              {
+                "word": "to",
+                "start": 184.655,
+                "end": 184.735,
+                "confidence": 0.99440825,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "do",
+                "start": 184.735,
+                "end": 184.815,
+                "confidence": 0.99969196,
+                "punctuated_word": "do"
+              },
+              {
+                "word": "it",
+                "start": 184.815,
+                "end": 185.055,
+                "confidence": 0.7023166,
+                "punctuated_word": "it."
+              },
+              {
+                "word": "let's",
+                "start": 185.055,
+                "end": 185.135,
+                "confidence": 0.99531907,
+                "punctuated_word": "Let's"
+              },
+              {
+                "word": "go",
+                "start": 185.135,
+                "end": 185.215,
+                "confidence": 0.99530643,
+                "punctuated_word": "go"
+              },
+              {
+                "word": "into",
+                "start": 185.215,
+                "end": 185.375,
+                "confidence": 0.58467436,
+                "punctuated_word": "into"
+              },
+              {
+                "word": "a",
+                "start": 185.375,
+                "end": 185.53499,
+                "confidence": 0.6661458,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "previous",
+                "start": 185.53499,
+                "end": 185.69499,
+                "confidence": 0.9992879,
+                "punctuated_word": "previous"
+              },
+              {
+                "word": "directory",
+                "start": 185.69499,
+                "end": 186.17499,
+                "confidence": 0.8168524,
+                "punctuated_word": "directory."
+              },
+              {
+                "word": "l",
+                "start": 186.17499,
+                "end": 186.415,
+                "confidence": 0.69140327,
+                "punctuated_word": "L"
+              },
+              {
+                "word": "s",
+                "start": 186.415,
+                "end": 186.575,
+                "confidence": 0.87585753,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "dash",
+                "start": 186.575,
+                "end": 186.815,
+                "confidence": 0.9837083,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "a",
+                "start": 186.815,
+                "end": 187.055,
+                "confidence": 0.8901421,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "l",
+                "start": 187.055,
+                "end": 187.215,
+                "confidence": 0.9893611,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "r",
+                "start": 187.215,
+                "end": 187.455,
+                "confidence": 0.99407816,
+                "punctuated_word": "r"
+              },
+              {
+                "word": "t",
+                "start": 187.455,
+                "end": 187.61499,
+                "confidence": 0.9977665,
+                "punctuated_word": "t"
+              },
+              {
+                "word": "says",
+                "start": 187.61499,
+                "end": 188.415,
+                "confidence": 0.783079,
+                "punctuated_word": "says,"
+              },
+              {
+                "word": "okay",
+                "start": 188.415,
+                "end": 188.815,
+                "confidence": 0.8471432,
+                "punctuated_word": "okay."
+              },
+              {
+                "word": "i",
+                "start": 189.375,
+                "end": 189.69499,
+                "confidence": 0.999488,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "created",
+                "start": 189.69499,
+                "end": 190.25499,
+                "confidence": 0.9997067,
+                "punctuated_word": "created"
+              },
+              {
+                "word": "the",
+                "start": 190.98001,
+                "end": 191.38,
+                "confidence": 0.9995055,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "old",
+                "start": 191.38,
+                "end": 191.86,
+                "confidence": 0.9992742,
+                "punctuated_word": "old"
+              },
+              {
+                "word": "folder",
+                "start": 191.86,
+                "end": 192.66002,
+                "confidence": 0.82213795,
+                "punctuated_word": "folder,"
+              },
+              {
+                "word": "the",
+                "start": 192.98001,
+                "end": 193.54001,
+                "confidence": 0.98670954,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "most",
+                "start": 193.70001,
+                "end": 194.42001,
+                "confidence": 0.79972684,
+                "punctuated_word": "most,"
+              },
+              {
+                "word": "most",
+                "start": 195.06,
+                "end": 195.62001,
+                "confidence": 0.9979533,
+                "punctuated_word": "most"
+              },
+              {
+                "word": "passed",
+                "start": 195.62001,
+                "end": 196.42001,
+                "confidence": 0.49910575,
+                "punctuated_word": "passed"
+              },
+              {
+                "word": "and",
+                "start": 196.74,
+                "end": 197.14,
+                "confidence": 0.5505388,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "the",
+                "start": 197.14,
+                "end": 197.38,
+                "confidence": 0.99941266,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "newest",
+                "start": 197.38,
+                "end": 197.86,
+                "confidence": 0.9998696,
+                "punctuated_word": "newest"
+              },
+              {
+                "word": "folder",
+                "start": 197.86,
+                "end": 198.18001,
+                "confidence": 0.9994842,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "happens",
+                "start": 198.18001,
+                "end": 198.5,
+                "confidence": 0.8681976,
+                "punctuated_word": "happens"
+              },
+              {
+                "word": "to",
+                "start": 198.5,
+                "end": 198.58,
+                "confidence": 0.9993685,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "be",
+                "start": 198.58,
+                "end": 198.66,
+                "confidence": 0.99669856,
+                "punctuated_word": "be"
+              },
+              {
+                "word": "the",
+                "start": 198.66,
+                "end": 198.82,
+                "confidence": 0.9918853,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "pan",
+                "start": 198.82,
+                "end": 199.22,
+                "confidence": 0.4386827,
+                "punctuated_word": "pan"
+              },
+              {
+                "word": "doc",
+                "start": 199.22,
+                "end": 199.54001,
+                "confidence": 0.94008195,
+                "punctuated_word": "doc"
+              },
+              {
+                "word": "folder",
+                "start": 199.54001,
+                "end": 200.02,
+                "confidence": 0.9995733,
+                "punctuated_word": "folder"
+              },
+              {
+                "word": "here",
+                "start": 200.02,
+                "end": 200.74,
+                "confidence": 0.9705882,
+                "punctuated_word": "here,"
+              },
+              {
+                "word": "which",
+                "start": 201.22,
+                "end": 201.62001,
+                "confidence": 0.99983287,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "is",
+                "start": 201.62001,
+                "end": 201.86,
+                "confidence": 0.9738728,
+                "punctuated_word": "is,"
+              },
+              {
+                "word": "like",
+                "start": 202.1,
+                "end": 202.42,
+                "confidence": 0.9995492,
+                "punctuated_word": "like"
+              },
+              {
+                "word": "that",
+                "start": 202.42,
+                "end": 202.58,
+                "confidence": 0.9862414,
+                "punctuated_word": "that."
+              },
+              {
+                "word": "so",
+                "start": 202.58,
+                "end": 202.74,
+                "confidence": 0.9993457,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "i",
+                "start": 202.74,
+                "end": 202.82,
+                "confidence": 0.98258084,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "like",
+                "start": 202.82,
+                "end": 202.98001,
+                "confidence": 0.99264455,
+                "punctuated_word": "like"
+              },
+              {
+                "word": "the",
+                "start": 202.98001,
+                "end": 203.14,
+                "confidence": 0.9502432,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "l",
+                "start": 203.14,
+                "end": 203.38,
+                "confidence": 0.9366673,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 203.38,
+                "end": 203.54001,
+                "confidence": 0.9942029,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "dash",
+                "start": 203.54001,
+                "end": 203.78,
+                "confidence": 0.9961738,
+                "punctuated_word": "dash"
+              },
+              {
+                "word": "a",
+                "start": 203.78,
+                "end": 204.02,
+                "confidence": 0.9891719,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "l",
+                "start": 204.02,
+                "end": 204.26001,
+                "confidence": 0.9974377,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "r",
+                "start": 204.26001,
+                "end": 204.42,
+                "confidence": 0.996624,
+                "punctuated_word": "r"
+              },
+              {
+                "word": "t",
+                "start": 204.42,
+                "end": 204.74,
+                "confidence": 0.99909306,
+                "punctuated_word": "t"
+              },
+              {
+                "word": "to",
+                "start": 204.74,
+                "end": 204.98001,
+                "confidence": 0.99584347,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "give",
+                "start": 204.98001,
+                "end": 205.14,
+                "confidence": 0.9998387,
+                "punctuated_word": "give"
+              },
+              {
+                "word": "you",
+                "start": 205.14,
+                "end": 205.54001,
+                "confidence": 0.9998505,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "just",
+                "start": 205.755,
+                "end": 206.07501,
+                "confidence": 0.9760501,
+                "punctuated_word": "just"
+              },
+              {
+                "word": "a",
+                "start": 206.07501,
+                "end": 206.235,
+                "confidence": 0.973476,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "listing",
+                "start": 206.235,
+                "end": 206.475,
+                "confidence": 0.99958235,
+                "punctuated_word": "listing"
+              },
+              {
+                "word": "of",
+                "start": 206.475,
+                "end": 206.795,
+                "confidence": 0.776371,
+                "punctuated_word": "of,"
+              },
+              {
+                "word": "like",
+                "start": 206.795,
+                "end": 206.955,
+                "confidence": 0.9939866,
+                "punctuated_word": "like,"
+              },
+              {
+                "word": "hey",
+                "start": 206.955,
+                "end": 207.195,
+                "confidence": 0.8606167,
+                "punctuated_word": "hey,"
+              },
+              {
+                "word": "which",
+                "start": 207.195,
+                "end": 207.27501,
+                "confidence": 0.9995845,
+                "punctuated_word": "which"
+              },
+              {
+                "word": "files",
+                "start": 207.27501,
+                "end": 207.515,
+                "confidence": 0.9997937,
+                "punctuated_word": "files"
+              },
+              {
+                "word": "did",
+                "start": 207.515,
+                "end": 207.755,
+                "confidence": 0.997166,
+                "punctuated_word": "did"
+              },
+              {
+                "word": "i",
+                "start": 207.755,
+                "end": 207.835,
+                "confidence": 0.9983676,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "modify",
+                "start": 207.835,
+                "end": 208.63501,
+                "confidence": 0.9995403,
+                "punctuated_word": "modify"
+              },
+              {
+                "word": "most",
+                "start": 208.71501,
+                "end": 209.115,
+                "confidence": 0.6879999,
+                "punctuated_word": "most"
+              },
+              {
+                "word": "recently",
+                "start": 209.115,
+                "end": 209.515,
+                "confidence": 0.8087342,
+                "punctuated_word": "recently?"
+              },
+              {
+                "word": "those",
+                "start": 209.515,
+                "end": 209.755,
+                "confidence": 0.9939355,
+                "punctuated_word": "Those"
+              },
+              {
+                "word": "are",
+                "start": 209.755,
+                "end": 209.91501,
+                "confidence": 0.8540721,
+                "punctuated_word": "are"
+              },
+              {
+                "word": "ones",
+                "start": 209.91501,
+                "end": 210.07501,
+                "confidence": 0.9931787,
+                "punctuated_word": "ones"
+              },
+              {
+                "word": "at",
+                "start": 210.07501,
+                "end": 210.235,
+                "confidence": 0.9972905,
+                "punctuated_word": "at"
+              },
+              {
+                "word": "the",
+                "start": 210.235,
+                "end": 210.395,
+                "confidence": 0.9996099,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "bottom",
+                "start": 210.395,
+                "end": 210.63501,
+                "confidence": 0.9999695,
+                "punctuated_word": "bottom"
+              },
+              {
+                "word": "of",
+                "start": 210.63501,
+                "end": 210.875,
+                "confidence": 0.99940324,
+                "punctuated_word": "of"
+              },
+              {
+                "word": "the",
+                "start": 210.875,
+                "end": 211.035,
+                "confidence": 0.99953103,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "folder",
+                "start": 211.035,
+                "end": 211.67502,
+                "confidence": 0.9994464,
+                "punctuated_word": "folder."
+              },
+              {
+                "word": "so",
+                "start": 211.99501,
+                "end": 212.235,
+                "confidence": 0.99852484,
+                "punctuated_word": "So"
+              },
+              {
+                "word": "that's",
+                "start": 212.235,
+                "end": 212.475,
+                "confidence": 0.9991424,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "it",
+                "start": 212.475,
+                "end": 212.63501,
+                "confidence": 0.99894625,
+                "punctuated_word": "it"
+              },
+              {
+                "word": "for",
+                "start": 212.63501,
+                "end": 212.795,
+                "confidence": 0.999671,
+                "punctuated_word": "for"
+              },
+              {
+                "word": "the",
+                "start": 212.795,
+                "end": 212.875,
+                "confidence": 0.9997687,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "l",
+                "start": 212.875,
+                "end": 213.035,
+                "confidence": 0.9835702,
+                "punctuated_word": "l"
+              },
+              {
+                "word": "s",
+                "start": 213.035,
+                "end": 213.195,
+                "confidence": 0.99918276,
+                "punctuated_word": "s"
+              },
+              {
+                "word": "command",
+                "start": 213.195,
+                "end": 213.595,
+                "confidence": 0.99456215,
+                "punctuated_word": "command."
+              },
+              {
+                "word": "you",
+                "start": 213.595,
+                "end": 213.675,
+                "confidence": 0.9993703,
+                "punctuated_word": "You"
+              },
+              {
+                "word": "will",
+                "start": 213.675,
+                "end": 213.835,
+                "confidence": 0.99385226,
+                "punctuated_word": "will"
+              },
+              {
+                "word": "use",
+                "start": 213.835,
+                "end": 214.07501,
+                "confidence": 0.9994491,
+                "punctuated_word": "use"
+              },
+              {
+                "word": "this",
+                "start": 214.07501,
+                "end": 214.395,
+                "confidence": 0.9998167,
+                "punctuated_word": "this"
+              },
+              {
+                "word": "every",
+                "start": 214.395,
+                "end": 214.795,
+                "confidence": 0.9996773,
+                "punctuated_word": "every"
+              },
+              {
+                "word": "single",
+                "start": 214.795,
+                "end": 215.035,
+                "confidence": 0.9997199,
+                "punctuated_word": "single"
+              },
+              {
+                "word": "time",
+                "start": 215.035,
+                "end": 215.27501,
+                "confidence": 0.99991274,
+                "punctuated_word": "time"
+              },
+              {
+                "word": "you",
+                "start": 215.27501,
+                "end": 215.515,
+                "confidence": 0.999556,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "log",
+                "start": 215.515,
+                "end": 215.835,
+                "confidence": 0.9991559,
+                "punctuated_word": "log"
+              },
+              {
+                "word": "on",
+                "start": 215.835,
+                "end": 215.99501,
+                "confidence": 0.9216559,
+                "punctuated_word": "on"
+              },
+              {
+                "word": "to",
+                "start": 215.99501,
+                "end": 216.235,
+                "confidence": 0.99791306,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "the",
+                "start": 216.235,
+                "end": 216.55501,
+                "confidence": 0.99144626,
+                "punctuated_word": "the"
+              },
+              {
+                "word": "myth",
+                "start": 216.55501,
+                "end": 216.795,
+                "confidence": 0.5048128,
+                "punctuated_word": "myth"
+              },
+              {
+                "word": "computers",
+                "start": 216.795,
+                "end": 217.515,
+                "confidence": 0.8820989,
+                "punctuated_word": "computers,"
+              },
+              {
+                "word": "and",
+                "start": 217.515,
+                "end": 217.595,
+                "confidence": 0.9997836,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "you",
+                "start": 217.595,
+                "end": 217.835,
+                "confidence": 0.9999269,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "should",
+                "start": 217.835,
+                "end": 217.99501,
+                "confidence": 0.99997294,
+                "punctuated_word": "should"
+              },
+              {
+                "word": "get",
+                "start": 217.99501,
+                "end": 218.155,
+                "confidence": 0.9998534,
+                "punctuated_word": "get"
+              },
+              {
+                "word": "used",
+                "start": 218.155,
+                "end": 218.395,
+                "confidence": 0.9988856,
+                "punctuated_word": "used"
+              },
+              {
+                "word": "to",
+                "start": 218.395,
+                "end": 218.475,
+                "confidence": 0.9994197,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "it",
+                "start": 218.475,
+                "end": 218.95502,
+                "confidence": 0.99957085,
+                "punctuated_word": "it."
+              },
+              {
+                "word": "thanks",
+                "start": 219.115,
+                "end": 219.515,
+                "confidence": 0.99863327,
+                "punctuated_word": "Thanks."
+              }
+            ],
+            "paragraphs": {
+              "transcript": "\nHi there. This is Chris, and I'm going to show you how to use the l s command when you're logged into the Linux Smith computers. And to do that, it's pretty simple. You actually, once you're logged in, there's a command called l s, just l s and it will list all the files in your folder. I happen to have a whole bunch of files in my home folder here.\n\nBut if we, let's say we're gonna go into my one zero seven folder with the c d command, which is covered in a different video. I can type l s and get all the files in there and that's the basic way of using the command, but the ls command has lots of different flags that go along with it. So you can type ls dash l and it will list all your files, all the non hidden files as it turns out in a, an interesting format here that, tells you more information about the files. It tells you in fact how big the file is and it tells you whether the file is a directory or not. The little d at the beginning here means that it's a directory.\n\nSo the assign zero folder in the old and the pandoc folder here are, all, directories. So if I type c d to change directory into the pandoc folder, it will, go into there and then that's that's an actual folder that I can do l s on and see all the files in that folder as well. Some of the other, flags that you can use, I like the l s dash one which lists them all out one after the other and then I can just scroll back and back and up and down here and see them like that. Sometimes that's nice. As I said, the l s dash l works great.\n\nL s dash al means even show me the hidden files as well. So in this case, there's a couple of files that are hidden. Files that begin with a period are all hidden on your in your folder system. So anything that's actually starts with a period is hidden, including the two interesting directories called dot, which means the current directory that you're in, and dot dot, which means your previous directory. And that's also covered in a different video on the c d command and working directories and so forth.\n\nIf you wanna know more information about LS and all the different flags, you can type man LS for the manual page and it gives you the manual page here and it says all the different types of flags and there's a ton of flags for for the ls command. And by the way, I'm just using the arrow keys to to go down in this file and see all the different commands. You can also type q to quit out of the manual page. My favorite l s command is l s dash a l r t, which means list all the files including the hidden ones, list them in that special format that gives me more information, list them in reverse order, and list them by time. So what this actually does is it lists the files in the reverse order from when they were created.\n\nThis directory is not the best one to do it. Let's go into a previous directory. L s dash a l r t says, okay. I created the old folder, the most, most passed and the newest folder happens to be the pan doc folder here, which is, like that. So I like the l s dash a l r t to give you just a listing of, like, hey, which files did I modify most recently?\n\nThose are ones at the bottom of the folder. So that's it for the l s command. You will use this every single time you log on to the myth computers, and you should get used to it. Thanks.",
+              "paragraphs": [
+                {
+                  "sentences": [
+                    {
+                      "text": "Hi there.",
+                      "start": 0.24,
+                      "end": 0.88
+                    },
+                    {
+                      "text": "This is Chris, and I'm going to show you how to use the l s command when you're logged into the Linux Smith computers.",
+                      "start": 0.88,
+                      "end": 11.679999
+                    },
+                    {
+                      "text": "And to do that, it's pretty simple.",
+                      "start": 12.24,
+                      "end": 15.485
+                    },
+                    {
+                      "text": "You actually, once you're logged in, there's a command called l s, just l s and it will list all the files in your folder.",
+                      "start": 16.045,
+                      "end": 22.525002
+                    },
+                    {
+                      "text": "I happen to have a whole bunch of files in my home folder here.",
+                      "start": 22.525002,
+                      "end": 25.805
+                    }
+                  ],
+                  "start": 0.24,
+                  "end": 25.805,
+                  "num_words": 72
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "But if we, let's say we're gonna go into my one zero seven folder with the c d command, which is covered in a different video.",
+                      "start": 26.83,
+                      "end": 33.07
+                    },
+                    {
+                      "text": "I can type l s and get all the files in there and that's the basic way of using the command, but the ls command has lots of different flags that go along with it.",
+                      "start": 33.71,
+                      "end": 45.105
+                    },
+                    {
+                      "text": "So you can type ls dash l and it will list all your files, all the non hidden files as it turns out in a, an interesting format here that, tells you more information about the files.",
+                      "start": 45.105,
+                      "end": 57.809998
+                    },
+                    {
+                      "text": "It tells you in fact how big the file is and it tells you whether the file is a directory or not.",
+                      "start": 57.809998,
+                      "end": 62.93
+                    },
+                    {
+                      "text": "The little d at the beginning here means that it's a directory.",
+                      "start": 62.93,
+                      "end": 65.409996
+                    }
+                  ],
+                  "start": 26.83,
+                  "end": 65.409996,
+                  "num_words": 132
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "So the assign zero folder in the old and the pandoc folder here are, all, directories.",
+                      "start": 65.715,
+                      "end": 73.475
+                    },
+                    {
+                      "text": "So if I type c d to change directory into the pandoc folder, it will, go into there and then that's that's an actual folder that I can do l s on and see all the files in that folder as well.",
+                      "start": 73.475,
+                      "end": 85.090004
+                    },
+                    {
+                      "text": "Some of the other, flags that you can use, I like the l s dash one which lists them all out one after the other and then I can just scroll back and back and up and down here and see them like that.",
+                      "start": 86.450005,
+                      "end": 97.385
+                    },
+                    {
+                      "text": "Sometimes that's nice.",
+                      "start": 97.385,
+                      "end": 98.425
+                    },
+                    {
+                      "text": "As I said, the l s dash l works great.",
+                      "start": 98.505005,
+                      "end": 101.145004
+                    }
+                  ],
+                  "start": 65.715,
+                  "end": 101.145004,
+                  "num_words": 115
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "L s dash al means even show me the hidden files as well.",
+                      "start": 101.145004,
+                      "end": 105.705
+                    },
+                    {
+                      "text": "So in this case, there's a couple of files that are hidden.",
+                      "start": 106.29,
+                      "end": 110.05
+                    },
+                    {
+                      "text": "Files that begin with a period are all hidden on your in your folder system.",
+                      "start": 110.05,
+                      "end": 117.25
+                    },
+                    {
+                      "text": "So anything that's actually starts with a period is hidden, including the two interesting directories called dot, which means the current directory that you're in, and dot dot, which means your previous directory.",
+                      "start": 117.25,
+                      "end": 130.52501
+                    },
+                    {
+                      "text": "And that's also covered in a different video on the c d command and working directories and so forth.",
+                      "start": 130.52501,
+                      "end": 136.52501
+                    }
+                  ],
+                  "start": 101.145004,
+                  "end": 136.52501,
+                  "num_words": 92
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "If you wanna know more information about LS and all the different flags, you can type man LS for the manual page and it gives you the manual page here and it says all the different types of flags and there's a ton of flags for for the ls command.",
+                      "start": 137.19,
+                      "end": 154.25502
+                    },
+                    {
+                      "text": "And by the way, I'm just using the arrow keys to to go down in this file and see all the different commands.",
+                      "start": 154.895,
+                      "end": 161.695
+                    },
+                    {
+                      "text": "You can also type q to quit out of the manual page.",
+                      "start": 161.695,
+                      "end": 164.335
+                    },
+                    {
+                      "text": "My favorite l s command is l s dash a l r t, which means list all the files including the hidden ones, list them in that special format that gives me more information, list them in reverse order, and list them by time.",
+                      "start": 164.74,
+                      "end": 177.70001
+                    },
+                    {
+                      "text": "So what this actually does is it lists the files in the reverse order from when they were created.",
+                      "start": 177.86,
+                      "end": 183.135
+                    }
+                  ],
+                  "start": 137.19,
+                  "end": 183.135,
+                  "num_words": 148
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "This directory is not the best one to do it.",
+                      "start": 183.455,
+                      "end": 185.055
+                    },
+                    {
+                      "text": "Let's go into a previous directory.",
+                      "start": 185.055,
+                      "end": 186.17499
+                    },
+                    {
+                      "text": "L s dash a l r t says, okay.",
+                      "start": 186.17499,
+                      "end": 188.815
+                    },
+                    {
+                      "text": "I created the old folder, the most, most passed and the newest folder happens to be the pan doc folder here, which is, like that.",
+                      "start": 189.375,
+                      "end": 202.58
+                    },
+                    {
+                      "text": "So I like the l s dash a l r t to give you just a listing of, like, hey, which files did I modify most recently?",
+                      "start": 202.58,
+                      "end": 209.515
+                    }
+                  ],
+                  "start": 183.455,
+                  "end": 209.515,
+                  "num_words": 77
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "Those are ones at the bottom of the folder.",
+                      "start": 209.515,
+                      "end": 211.67502
+                    },
+                    {
+                      "text": "So that's it for the l s command.",
+                      "start": 211.99501,
+                      "end": 213.595
+                    },
+                    {
+                      "text": "You will use this every single time you log on to the myth computers, and you should get used to it.",
+                      "start": 213.595,
+                      "end": 218.95502
+                    },
+                    {
+                      "text": "Thanks.",
+                      "start": 219.115,
+                      "end": 219.515
+                    }
+                  ],
+                  "start": 209.515,
+                  "end": 219.515,
+                  "num_words": 39
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
